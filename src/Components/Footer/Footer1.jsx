@@ -8,15 +8,32 @@ const Footer1 = () => {
                   <div className="col-lg-4 col-md-6 col-12">
                        <div className="single-footer-items footer-logo-area">
                             <div className="footer-logo">
-                              <a href=""><img src="/assets/img/logo/sbros-logo1.png" alt="" /></a>
+                              <Link to="/"><img src="/assets/img/logo/sbros-logo1.png" alt="SBROS Tech Logo" /></Link>
                             </div>
                             <div className="space20"></div>
-                            
+
+                            <p className="footer-about-text">
+                              Empowering businesses with reliable software, network, and digital solutions — your dreams, our mission.
+                            </p>
+
+                            <div className="space20"></div>
+
                             <ul className="social-icon">
-                                 <li><a href="#"><i className="bi bi-linkedin"></i></a></li>
-                                 <li><a href="#"><i className="bi bi-twitter"></i></a></li>
-                                 <li><a href="#"><i className="bi bi-youtube"></i></a></li>
-                                 <li><a href="#"><i className="bi bi-instagram"></i></a></li>
+                                 <li>
+                                   <a href="https://www.facebook.com/sbrostechsg" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                     <i className="bi bi-facebook"></i>
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="https://www.instagram.com/sbrostechsg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                     <i className="bi bi-instagram"></i>
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="https://www.youtube.com/@sbrostechsg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                     <i className="bi bi-youtube"></i>
+                                   </a>
+                                 </li>
                             </ul>
                        </div>
                   </div>
@@ -26,13 +43,12 @@ const Footer1 = () => {
                             <h3>Service We Offer</h3>
 
                             <ul className="menu-list">
-                                 <li><Link to="/service/service-details">Software Development</Link></li>
-                                 <li><Link to="/service/service-details">Website Development</Link></li>
-                                 <li><Link to="/service/service-details">Network Solutions</Link></li>
-                                 <li><Link to="/service/service-details">Trading</Link></li>
-                                 <li><Link to="/service/service-details">Digital Marketing</Link></li>
-                                 <li><Link to="/service/service-details">SEO & SEM</Link></li>
-
+                                 <li><Link to="/service/software-development">Software Development</Link></li>
+                                 <li><Link to="/service/website-development">Website Development</Link></li>
+                                 <li><Link to="/service/network-solutions">Network Solutions</Link></li>
+                                 <li><Link to="/service/trading">Trading</Link></li>
+                                 <li><Link to="/service/digital-marketing">Digital Marketing</Link></li>
+                                 <li><Link to="/service/seo-sem">SEO & SEM</Link></li>
                             </ul>
                        </div>
                   </div>
@@ -42,7 +58,7 @@ const Footer1 = () => {
                             <h3>Useful Links</h3>
 
                             <ul className="menu-list">
-                                 <li><Link to="/about">About us </Link></li>
+                                 <li><Link to="/about">About us</Link></li>
                                  <li><Link to="/service">Services</Link></li>
                                  <li><Link to="/blog">Products</Link></li>
                                  <li><Link to="/contact">Contact us</Link></li>
@@ -50,19 +66,16 @@ const Footer1 = () => {
                        </div>
                   </div>
 
-
                   <div className="col-lg-3 col-md-6 col-12">
                        <div className="single-footer-items">
                             <h3>Contact Us</h3>
-
-                           
 
                             <div className="contact-box">
                               <div className="icon">
                                 <img src="/assets/img/icons/footer1-icon2.png" alt="" />
                               </div>
                               <div className="pera">
-                                <a href="tel:+65 90214545">+65 90214545</a>
+                                <a href="tel:+6590214545">+65 90214545</a>
                               </div>
                             </div>
 
@@ -75,15 +88,7 @@ const Footer1 = () => {
                               </div>
                             </div>
 
-                            <div className="contact-box">
-                              <div className="icon">
-                                <img src="/assets/img/icons/footer1-icon4.png" alt="" />
-                              </div>
-                              <div className="pera">
-                                <a href="mailto:admin@techxen.org">www.techxen.org</a>
-                              </div>
-                            </div>
-
+                           
                        </div>
                   </div>
 
@@ -97,7 +102,7 @@ const Footer1 = () => {
             <div className="row align-items-center">
               <div className="col-md-5">
                    <div className="coppyright">
-                     <p>Copyright @2024 TechXen.All Rights Reserved</p>
+                     <p>Copyright @2024 SBROS TECH PTE LTD. All Rights Reserved</p>
                    </div>
               </div>
               <div className="col-md-7">

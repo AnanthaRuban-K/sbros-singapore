@@ -42,11 +42,11 @@ const ServiceDetailsLeft1 = () => {
                             <h3>Our Services</h3>
                             <ul className="features-list">
                                 <li><Link to="/service/service-details">Software Development <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Consulting Service <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Cloud Solution <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Website Development <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Network Solutions <span><i className="bi bi-chevron-right"></i></span></Link></li>
                                 <li><Link to="/service/service-details">Cyber Security <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Data Analytics <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Manage It Services <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Digital Marketing <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Managed IT Services <span><i className="bi bi-chevron-right"></i></span></Link></li>
                             </ul>
                         </div>
 
@@ -54,19 +54,19 @@ const ServiceDetailsLeft1 = () => {
                             <h3>Tags</h3>
                             <ul className="tags">
                                 <li><a href="#">Software Development</a></li>
-                                <li><a href="#">Cloud </a></li>
-                                <li><a href="#">It Solution</a></li>
-                                <li><a href="#">Data Analytics Service</a></li>
+                                <li><a href="#">Website Development</a></li>
+                                <li><a href="#">Network Solutions</a></li>
+                                <li><a href="#">Digital Marketing</a></li>
                                 <li><a href="#">Technology</a></li>
                                 <li><a href="#">Custom Development</a></li>
                                 <li><a href="#">Cyber Security</a></li>
-                                <li><a href="#">Consulting Service</a></li>
+                                <li><a href="#">SEO & SEM</a></li>
                             </ul>
                         </div>
 
                         <div className="sidebar-box-area sidebar-bg mb-40">
                             <h3>Download Brochure</h3>
-                            <p>With a focus on excellence  &  commitment to exceeding expectations, our experienced team is here to empower Solution.</p>
+                            <p>With a focus on excellence and a commitment to exceeding expectations, our experienced team at SBROS Tech (S) Pte Ltd is here to power your business forward.</p>
                             <div className="download-btns">
                                 <a className="daownload1" href="#">PDF Download <img src="/assets/img/icons/download-img.png" alt="" /></a>
                                 <a className="daownload2" href="#">DOC Download <img src="/assets/img/icons/download-img.png" alt="" /></a>
@@ -114,7 +114,7 @@ const ServiceDetailsLeft1 = () => {
                                     <div className="heading1">
                                         <h2>Software Development</h2>
                                         <div className="space16"></div>
-                                        <p>Welcome to TechXen IT Solutions, your premier destination for comprehensive software development services tailored to meet your business needs. Our team of experienced developers is dedicated to delivering high-quality, scalable, and innovative software solutions that drive business growth success.</p>
+                                        <p>Welcome to SBROS Tech (S) Pte Ltd, your trusted partner for comprehensive software development services tailored to meet your business needs. Our team of experienced developers is dedicated to delivering high-quality, scalable, and innovative software solutions that drive real business growth — because at SBROS Tech, your dreams are our mission.</p>
                                     </div>
                                 </div>
                             </article>
@@ -128,7 +128,7 @@ const ServiceDetailsLeft1 = () => {
                                             <div className="heading1">
                                                 <h5>Our Approach</h5>
                                                 <div className="space16"></div>
-                                                <p>At TechXen IT Solutions, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications. We then collaborate closely with you at every stage of the development cycle to ensure that the final product exceeds your expectations.</p>
+                                                <p>At SBROS Tech (S) Pte Ltd, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications. We then collaborate closely with you at every stage of the development cycle to ensure that the final product exceeds your expectations.</p>
                                             </div>
                                         </div>
 
@@ -137,7 +137,7 @@ const ServiceDetailsLeft1 = () => {
                                             <div className="heading1">
                                                 <h5>Custom Development</h5>
                                                 <div className="space20"></div>
-                                                <p>Our team specializes in developing custom software solutions tailored to address your specific business challenges. Whether you need a web application, mobile app, or enterprise </p>
+                                                <p>Our team specializes in developing custom software solutions tailored to address your specific business challenges. Whether you need a web application, mobile app, or enterprise system, SBROS Tech builds it around your needs.</p>
                                             </div>
                                         </div>
 
@@ -146,7 +146,7 @@ const ServiceDetailsLeft1 = () => {
                                             <div className="heading1">
                                                 <h5>Development Services</h5>
                                                 <div className="space20"></div>
-                                                <p>From initial concept and design to development, testing, and deployment, we offer comprehensive full-cycle development services to ensure a seamless and efficient development process.</p>
+                                                <p>From initial concept and design to development, testing, and deployment, we offer comprehensive full-cycle development services to ensure a seamless and efficient process from start to finish.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -157,9 +157,9 @@ const ServiceDetailsLeft1 = () => {
                             <article>
                                 <div className="details-post-area">
                                     <div className="heading1">
-                                        <h5>Our Approach</h5>
+                                        <h5>Our Expertise</h5>
                                         <div className="space16"></div>
-                                        <p>At TechXen IT Solutions, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications. We then collaborate closely with you at every stage of the development cycle to ensure that the final product exceeds your expectations.</p>
+                                        <p>At SBROS Tech (S) Pte Ltd, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications. We then collaborate closely with you at every stage of the development cycle to ensure that the final product exceeds your expectations.</p>
 
                                         <div className="space20"></div>
                                         <ul className="expart-list">
@@ -184,9 +184,9 @@ const ServiceDetailsLeft1 = () => {
                                     </div>
                                     <Link to="/service/service-details" className="arrow"><i className="bi bi-arrow-right"></i></Link>
                                     <div className="heading1">
-                                      <h4><Link to="/service/service-details">Consulting Service</Link></h4>
+                                      <h4><Link to="/service/service-details">Network Solutions</Link></h4>
                                       <div className="space16"></div>
-                                      <p>Strategic IT planning  roadmap development Business process analysis and improvement for It solution & technology.</p>
+                                      <p>Strategic IT planning, network infrastructure design, and business process analysis to strengthen your technology foundation.</p>
                                     </div>
                                   </div>
                                 </div>
@@ -200,9 +200,9 @@ const ServiceDetailsLeft1 = () => {
                                     </div>
                                     <Link to="/service/service-details" className="arrow"><i className="bi bi-arrow-right"></i></Link>
                                     <div className="heading1">
-                                      <h4><Link to="/service/service-details">Software Development</Link></h4>
+                                      <h4><Link to="/service/service-details">Website Development</Link></h4>
                                       <div className="space16"></div>
-                                      <p>Mobile app development for iOS, Android, and cross-platform solutions & web <br/> application.</p>
+                                      <p>Mobile app development for iOS, Android, and cross-platform solutions & responsive web <br/> applications.</p>
                                     </div>
                                   </div>
                                 </div>

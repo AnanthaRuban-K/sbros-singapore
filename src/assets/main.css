@@ -12312,14 +12312,14 @@ a.header__search.header-search-btn p {
 }
 
 .common-hero {
-  min-height: 400px;
+  min-height: 300px;
   display: flex;
   padding-top: 90px;
   align-items: center;
   position: relative;
   z-index: -2;
   overflow: hidden;
-  background: #E7EAF3;
+ 
 }
 .common-hero .main-heading span.span {
   display: inline-block;
@@ -25371,4 +25371,244 @@ padding-top: 100px;
 }
 .comon-body .service-details-area-all .servcie2-box.servcie2-box-2{
 background-color: unset;
+}
+/* =========================================
+   SERVICES DROPDOWN - FINAL STYLE
+========================================= */
+
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul {
+  width: 320px !important;
+  padding: 16px !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li {
+  margin: 0 0 6px 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  width: 100% !important;
+  padding: 10px 12px !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+}
+
+/* Icon box */
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li > a > svg {
+  flex: 0 0 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+  padding: 13px !important;
+  box-sizing: border-box !important;
+  border-radius: 10px !important;
+  background: #eaf2ff !important;
+  color: #1264e8 !important;
+  stroke-width: 2 !important;
+}
+
+/* Text container */
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li > a > span {
+  display: flex !important;
+  flex: 1 !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  line-height: 1.3 !important;
+  color: #111827 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+/* Subtitle */
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li > a > span small {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #7b8494 !important;
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+  font-weight: 400 !important;
+}
+
+/* Hover */
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li > a:hover {
+  background: #f1f6ff !important;
+}
+
+.cs_nav_list .menu-item-has-children .cs_dropdown > ul > li > a:hover > svg {
+  background: #1264e8 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+/* ===== Footer Base ===== */
+.footer1 {
+  background: #0d0d0d;
+  padding: 50px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer1 .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Logo Area ===== */
+.footer-logo-area .footer-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.footer-about-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 260px;
+  margin: 12px 0 0;
+}
+
+/* ===== Social Icons ===== */
+.social-icon {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.social-icon li a {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.social-icon li a:hover {
+  background: #e50019;
+  border-color: #e50019;
+  transform: translateY(-3px);
+}
+
+/* ===== Section Titles ===== */
+.single-footer-items h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.single-footer-items h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 2px;
+  background: #e50019;
+}
+
+/* ===== Menu Links ===== */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  margin-bottom: 8px;
+}
+
+.menu-list li a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.menu-list li a:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+/* ===== Contact Box (FIXED ICON VISIBILITY) ===== */
+
+/* ===== Contact Box (Icon with matching hover like social-icon) ===== */
+.contact-box {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.contact-box .icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.contact-box .icon img {
+  width: 15px;
+  height: 15px;
+  transition: filter 0.3s ease;
+}
+
+.contact-box:hover .icon {
+  background: #e50019;
+  border-color: #e50019;
+  transform: translateY(-3px);
+}
+
+.contact-box:hover .icon img {
+  filter: brightness(0) invert(1); /* hover la icon white ah maarum, red bg la clear ah theriyum */
+}
+
+.contact-box .pera a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.contact-box:hover .pera a {
+  color: #fff;
+}
+/* ===== Responsive ===== */
+@media (max-width: 767px) {
+  .footer1 {
+    padding: 35px 0 0;
+  }
+
+  .single-footer-items {
+    margin-bottom: 24px;
+  }
+
+  .coppyright.right-area {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
 }

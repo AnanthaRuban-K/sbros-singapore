@@ -4,222 +4,64 @@ import { Link } from 'react-router-dom';
 export default function Nav({ setMobileToggle }) {
   return (
     <ul className="cs_nav_list fw-medium">
-      <li className="menu-item-has-children">
-        <Link to="/">Home</Link>
-        
-      </li>
+      <li>
+  <Link to="/" onClick={() => setMobileToggle(false)}>
+    Home
+  </Link>
+</li>
+
+     <li>
+  <Link to="/about" onClick={() => setMobileToggle(false)}>
+    About Us
+  </Link>
+</li>     
 
       <li className="menu-item-has-children">
-        <Link to="/about" onClick={() => setMobileToggle(false)}>
-        About Us  
-        </Link>
-       
-
-      </li>      
-
-      <li className="menu-item-has-children">
-        <Link to="#">Pages</Link>
+        <Link to="/service">Services</Link>
         <DropDown>
           <ul>
             <li>
-              <Link to="/about" onClick={() => setMobileToggle(false)}>
-                About Us
+              <Link to="/service/service-details" onClick={() => setMobileToggle(false)}>
+                Software Development
               </Link>
             </li>
             <li>
               <Link to="/team" onClick={() => setMobileToggle(false)}>
-               Our Team
+            Website Development
               </Link>
             </li>            
             <li>
               <Link to="/testimonial" onClick={() => setMobileToggle(false)}>
-              Testimonial
+              Network Solutions
               </Link>
             </li>  
             <li>
               <Link to="/service" onClick={() => setMobileToggle(false)}>
-                Services
+                Trading
               </Link>
             </li>         
             <li>
               <Link to="/service/service-details" onClick={() => setMobileToggle(false)}>
-                Service Details
+                Digital Marketing
               </Link>
             </li>                        
             <li>
               <Link to="/project" onClick={() => setMobileToggle(false)}>
-                Project
+                SEO & SEM
               </Link>
             </li>           
-            <li>
-              <Link to="/project/project-details" onClick={() => setMobileToggle(false)}>
-                 Project Details
-              </Link>
-            </li> 
-            <li>
-              <Link to="/contact" onClick={() => setMobileToggle(false)}>
-              Contact
-              </Link>
-            </li>                         
+                                 
           </ul>
         </DropDown>
       </li>      
-      <li className="menu-item-has-children">
-        <Link to="/project" onClick={() => setMobileToggle(false)}>
-        Project  
-        </Link>
-        <DropDown>
-          <ul>
-            <li>
-              <Link to="/project" onClick={() => setMobileToggle(false)}>
-              Project Light
-              </Link>
-            </li>
-            <li>
-              <Link to="/projectDark" onClick={() => setMobileToggle(false)}>
-              Project Dark
-              </Link>
-            </li>            
-            <li>
-              <Link to="/project/project-details" onClick={() => setMobileToggle(false)}>
-                Project Details Left
-              </Link>
-            </li>
-            <li>
-              <Link to="/project/project-details-right" onClick={() => setMobileToggle(false)}>
-              Project Details Right
-              </Link>
-            </li>
-            <li>
-              <Link to="/project/project-details-center" onClick={() => setMobileToggle(false)}>
-              Project Details Center
-              </Link>
-            </li> 
-            <li>
-              <Link to="/project/project-details-dark" onClick={() => setMobileToggle(false)}>
-                Project Details Left Dark
-              </Link>
-            </li>
-            <li>
-              <Link to="/project/project-details-right-dark" onClick={() => setMobileToggle(false)}>
-                Project Details Right Dark
-              </Link>
-            </li> 
-            <li>
-              <Link to="/project/project-details-center-dark" onClick={() => setMobileToggle(false)}>
-                Project Detail Center Dark
-              </Link>
-            </li>                                                              
-          </ul>
-        </DropDown>
+    <li>
+  <Link to="/blog" onClick={() => setMobileToggle(false)}>
+    Product
+  </Link>
+</li>
 
-      </li>      
-      <li className="menu-item-has-children">
-        <Link to="/service" onClick={() => setMobileToggle(false)}>
-          Services
-        </Link>
-        <DropDown>
-          <ul>
-            <li>
-              <Link to="/service" onClick={() => setMobileToggle(false)}>
-                Services Light
-              </Link>
-            </li>
-            <li>
-              <Link to="/serviceDark" onClick={() => setMobileToggle(false)}>
-                Services Dark
-              </Link>
-            </li>           
-            <li>
-              <Link to="/service/service-details" onClick={() => setMobileToggle(false)}>
-                Service Details Left
-              </Link>
-            </li>
-            <li>
-              <Link to="/service/service-details-right" onClick={() => setMobileToggle(false)}>
-                Service Details Right
-              </Link>
-            </li>
-            <li>
-              <Link to="/service/service-details-center" onClick={() => setMobileToggle(false)}>
-                Service Details Left Centre
-              </Link>
-            </li> 
-            <li>
-              <Link to="/service/service-details-dark" onClick={() => setMobileToggle(false)}>
-                Service Details Left Dark
-              </Link>
-            </li>
-            <li>
-              <Link to="/service/service-details-right-dark" onClick={() => setMobileToggle(false)}>
-                Service Details Right Dark
-              </Link>
-            </li>
-            <li>
-              <Link to="/service/service-details-center-dark" onClick={() => setMobileToggle(false)}>
-                Service Detail Center Dark
-              </Link>
-            </li>                       
-          </ul>
-        </DropDown>
-
-      </li>      
-      <li className="menu-item-has-children">
-        <Link to="/blog" onClick={() => setMobileToggle(false)}>
-          Blog
-        </Link>
-        <DropDown>
-          <ul>
-            <li>
-              <Link to="/blog" onClick={() => setMobileToggle(false)}>
-                Blog Light
-              </Link>
-            </li> 
-            <li>
-              <Link to="/blogdark" onClick={() => setMobileToggle(false)}>
-                Blog Dark
-              </Link>
-            </li>                      
-            <li>
-              <Link
-                to="/blog/blog-details"
-                onClick={() => setMobileToggle(false)}
-              >
-                Blog Details Left
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog/blog-details-right" onClick={() => setMobileToggle(false)}>
-              Blog Details Right
-              </Link>
-            </li>  
-            <li>
-              <Link to="/blog/blog-details-center" onClick={() => setMobileToggle(false)}>
-              Blog Details Center
-              </Link>
-            </li> 
-            <li>
-              <Link
-                to="/blog/blog-details-dark"
-                onClick={() => setMobileToggle(false)}
-              >
-                Blog Details Left Dark
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog/blog-details-right-dark" onClick={() => setMobileToggle(false)}>
-              Blog Details Right Dark
-              </Link>
-            </li>  
-            <li>
-              <Link to="/blog/blog-details-center-dark" onClick={() => setMobileToggle(false)}>
-              Blog Detail Center Dark
-              </Link>
-            </li>           
-
-          </ul>
-        </DropDown>
-      </li>
+           
+      
     </ul>
   );
 }

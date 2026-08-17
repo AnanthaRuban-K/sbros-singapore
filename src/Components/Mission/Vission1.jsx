@@ -69,8 +69,7 @@ const Vission1 = () => {
                SBROS TECH (S) PTE LTD is a forward-thinking technology company based in Singapore, delivering innovative digital solutions designed to help businesses thrive in a rapidly evolving digital landscape. We provide end-to-end IT services, including customized software development, website and e-commerce development, business web portals, digital marketing, and network solutions.
               </p>
 
-              <p>Our focus is on transforming business requirements into smart, scalable, and high-performing technology solutions that create measurable value. By combining modern technologies, technical expertise, and a customer-centric approach, we help businesses improve efficiency, strengthen their digital presence, and achieve sustainable growth.</p>
-
+              
               
 
             </div>
