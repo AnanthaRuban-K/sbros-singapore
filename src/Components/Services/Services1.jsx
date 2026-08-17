@@ -7,32 +7,32 @@ const Services1 = () => {
     <div className="service sp">
       <div className="container">
 
-        <div className="row align-items-end">
-          <div className="col-lg-7">
-            <div className="heading1">
-              <SectionTitle
-                SubTitle="Our Services"
-                Title="Technology Solutions Designed To Move Your Business Forward"
-              />
+        {/* OUR SERVICES HEADING */}
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="heading1 services-heading">
+              <SectionTitle Title="Our Services" />
             </div>
           </div>
         </div>
 
         <div className="space40"></div>
 
+        {/* SERVICES BOX */}
         <div className="services-list">
 
           {data.map((item, i) => (
             <div className="service-row" key={i}>
 
+              {/* IMAGE + CONTENT */}
               <div className="service-left">
 
                 {/* IMAGE */}
                 <div
                   style={{
-                    width: "160px",
-                    height: "100px",
-                    minWidth: "120px",
+                    width: item.imageWidth || "160px",
+                    height: item.imageHeight || "100px",
+                    minWidth: item.imageWidth || "120px",
                     overflow: "hidden",
                     borderRadius: "8px",
                     flexShrink: 0
@@ -58,7 +58,7 @@ const Services1 = () => {
 
               </div>
 
-              {/* ARROW ONLY */}
+              {/* ARROW */}
               <Link
                 to={item.btnLink}
                 className="service-arrow"
