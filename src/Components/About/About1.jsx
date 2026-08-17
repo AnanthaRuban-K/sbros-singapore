@@ -13,17 +13,12 @@ const About1 = ({image1,image2,supIcon,supTitle,supCon,subTitle,Title,content,fe
                   <div className="image2 image-anime">
                     <img src={image2} alt="" />
                   </div>
-                  <div className="icon-box">
-                    <img src={supIcon} alt="" />
-                    <h4>{supTitle}</h4>
-                    <p>{supCon}</p>
-                  </div>
+                 
                 </div>
               </div>
 
               <div className="col-lg-6">
                 <div className="heading1">
-                  <span className="span" data-aos="zoom-in-left" data-aos-duration="700"><img src="/assets/img/icons/span1.png" alt="" /> {subTitle}</span>
                   <h2 className="title tg-element-title">{Title}</h2>
                   <div className="space16"></div>
                   <p data-aos="fade-left" data-aos-duration="800">{content}</p>
@@ -34,9 +29,7 @@ const About1 = ({image1,image2,supIcon,supTitle,supCon,subTitle,Title,content,fe
                     ))}
                     </ul>
                     <div className="space30"></div>
-                    <div className="" data-aos="fade-left" data-aos-duration="900">
-                      <Link className="theme-btn1" to={btnUrl}>{btnName} <span><i className="bi bi-arrow-right"></i></span></Link>
-                    </div>
+                    
                 </div>
               </div>
             </div>
