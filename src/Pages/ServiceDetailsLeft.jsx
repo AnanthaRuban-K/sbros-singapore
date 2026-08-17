@@ -9,7 +9,7 @@ const ServiceDetailsLeft = () => {
             <BreadCumb Title="Software Developer"></BreadCumb>
         
             <ServiceDetailsLeft1></ServiceDetailsLeft1>
-            <Cta1></Cta1>
+            
         </div>
     );
 };
