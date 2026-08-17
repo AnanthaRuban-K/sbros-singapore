@@ -18,9 +18,8 @@ const Home = () => {
                 content=" We deliver innovative, secure, and scalable IT solutions that simplify operations, enhance efficiency, and empower businesses to achieve sustainable growth."
                 btnName="Explore"
                 btnUrl="/service"
-                image1="/assets/img/hero/hero1-image1.png"
 
-                image2="/assets/img/hero/headimg1.png"
+                image2="/assets/img/hero/headimg1-remove.png"
             ></HeroBanner1>
             <Award1></Award1>
             <About1

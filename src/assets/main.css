@@ -5332,6 +5332,49 @@ a.header__search.header-search-btn p {
 
 
 
+
+
+/* Increase background circle for all 3 icons */
+.work .single-items .icon {
+  width: 60px !important;
+  height: 60px !important;
+
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex-shrink: 0;
+}
+
+/* Keep the actual icons properly sized */
+.work .single-items .icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+
+
+
+
+/* Hover effect for all three icons */
+.work .single-items:hover .icon {
+  background-color: #E8F2FF !important;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(22, 119, 255, 0.20);
+}
+
+.work .single-items:hover .icon img {
+  transform: scale(1.05);
+}
+
+
+
+
+
 .about1 .about-image .icon-box h4 {
   font-size: var(--f-fs-font-fs24);
   line-height: var(--f-fs-font-fs24);
