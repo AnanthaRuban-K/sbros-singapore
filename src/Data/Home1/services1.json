@@ -1,0 +1,52 @@
+[
+  {
+    "image": "/assets/img/service/software.png",
+     "imageWidth": "150px",
+    "imageHeight": "90px",
+    "title": "Software Development",
+    "desc": "Custom software designed to simplify work and improve performance. Built to support your business growth with smart solutions.",   
+    "btnText": "Learn More",
+    "btnLink": "/service/service-details",
+    "addClass": "col-lg-6"
+  },
+  {
+    "image": "/assets/img/service/website.jpeg",
+    "title": "Website Development",
+    "desc": "Build a strong online presence with responsive websites designed to attract visitors, improve engagement, and support business growth.",   
+    "btnText": "Learn More",
+    "btnLink": "/service/service-details",
+    "addClass": "col-lg-6"
+  },
+  {
+    "image": "/assets/img/service/network.jpg",
+    "title": "Network Solutions",
+    "desc": "Reliable network solutions that ensure secure connectivity, smooth performance, and seamless business communication.",   
+    "btnText": "Learn More",
+    "btnLink": "/service/service-details",
+    "addClass": "col-lg-4"
+  },
+  {
+    "image": "/assets/img/service/trading.png",
+    "title": "Trading",
+    "desc": "Smart ERP solutions designed to simplify operations, boost productivity, streamline workflows, and support better business decisions.",   
+    "btnText": "Learn More",
+    "btnLink": "/service/service-details",
+    "addClass": "col-lg-4"
+  },
+  {
+    "image": "/assets/img/service/digitalmarketing.png",
+    "title": "Digital Marketing",
+    "desc": "Strategic digital marketing solutions that grow your brand, reach the right audience, and deliver measurable results.",   
+    "btnText": "Learn More",
+    "btnLink": "/service/service-details",
+    "addClass": "col-lg-4"
+  },   
+   {
+    "image": "/assets/img/service/seo.png",
+    "title": "SEO & SEM",
+    "desc": "Expert SEO and SEM solutions that boost visibility, drive traffic, and generate quality leads for business growth.",   
+    "btnText": "Learn More",
+    "btnLink": "/service/service-details",
+    "addClass": "col-lg-4"
+  }   
+]

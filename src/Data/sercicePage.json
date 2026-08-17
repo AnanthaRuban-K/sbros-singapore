@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "/assets/img/icons/service-page-icon1.png",
+    "title": "Software Development",
+    "desc": "Custom software designed to simplify work and improve performance. Built to support your business growth with smart solutions.",   
+    "btnLink": "/service/service-details"
+  },
+  {
+    "icon": "/assets/img/icons/service-page-icon2.png",
+    "title": "Website Development",
+    "desc": "Build a strong online presence with responsive websites designed to attract visitors, improve engagement, and support business growth.",   
+    "btnLink": "/service/service-details"
+  },
+  {
+    "icon": "/assets/img/icons/service-page-icon3.png",
+    "title": "Network Solutions",
+    "desc": "Reliable network solutions that ensure secure connectivity, smooth performance, and seamless business communication.",   
+    "btnLink": "/service/service-details"
+  },
+  {
+    "icon": "/assets/img/icons/service-page-icon4.png",
+    "title": "Trading",
+    "desc": "Smart ERP solutions designed to simplify operations, boost productivity, streamline workflows, and support better business decisions.",   
+    "btnLink": "/service/service-details"
+  },
+  {
+    "icon": "/assets/img/icons/service-page-icon5.png",
+    "title": "Digital Marketing",
+    "desc": "Strategic digital marketing solutions that grow your brand, reach the right audience, and deliver measurable results.",   
+    "btnLink": "/service/service-details"
+  },
+  {
+    "icon": "/assets/img/icons/service-page-icon6.png",
+    "title": "SEO & SEM",
+    "desc": "Expert SEO and SEM solutions that boost visibility, drive traffic, and generate quality leads for business growth.",   
+    "btnLink": "/service/service-details"
+  }      
+]
