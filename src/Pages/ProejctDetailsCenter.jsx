@@ -5,7 +5,7 @@ import ProjectDetailsCenter1 from "../Components/ProjectDetails/ProjectDetailsCe
 const ProejctDetailsCenter = () => {
     return (
         <div>
-            <BreadCumb Title="Projects"></BreadCumb>
+            <BreadCumb Title="Products"></BreadCumb>
             <ProjectDetailsCenter1></ProjectDetailsCenter1>
            
             

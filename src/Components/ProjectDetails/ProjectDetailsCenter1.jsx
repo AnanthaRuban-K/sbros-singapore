@@ -178,7 +178,7 @@ const ProjectDetailsCenter1 = () => {
 
                           <ul>
 
-                            <li>Biometric Punch Integration</li>
+                            <li>Biometric Integration</li>
                             <li>Punch Logs</li>
                             <li>Daily Attendance</li>
                             <li>Attendance Validation</li>
