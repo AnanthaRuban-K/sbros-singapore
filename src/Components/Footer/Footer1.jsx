@@ -127,7 +127,7 @@ const Footer1 = () => {
             <div className="row align-items-center">
               <div className="col-md-5">
                    <div className="coppyright">
-                     <p>Copyright @2024 SBROS TECH PTE LTD. All Rights Reserved</p>
+                     <p>Copyright @2024 SBROS TECH(S) PTE LTD. All Rights Reserved</p>
                    </div>
               </div>
               <div className="col-md-7">
