@@ -40,17 +40,42 @@ const Footer1 = () => {
 
                   <div className="col-lg col-md-6 col-12">
                        <div className="single-footer-items">
-                            <h3>Service We Offer</h3>
+  <h3>Services We Offer</h3>
 
-                            <ul className="menu-list">
-                                 <li><Link to="/service/software-development">Software Development</Link></li>
-                                 <li><Link to="/service/website-development">Website Development</Link></li>
-                                 <li><Link to="/service/network-solutions">Network Solutions</Link></li>
-                                 <li><Link to="/service/trading">Trading</Link></li>
-                                 <li><Link to="/service/digital-marketing">Digital Marketing</Link></li>
-                                 <li><Link to="/service/seo-sem">SEO & SEM</Link></li>
-                            </ul>
-                       </div>
+  <ul className="menu-list">
+
+    <li>
+      <Link to="/service/service-details-right">
+        ERP Solutions
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/service-details">
+        Software Development
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/service-details-center">
+        Website Development
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/service-it-networking">
+        IT Networking
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/service/service-trading">
+        Trading
+      </Link>
+    </li>
+
+  </ul>
+</div>
                   </div>
 
                   <div className="col-lg col-md-6 col-12">

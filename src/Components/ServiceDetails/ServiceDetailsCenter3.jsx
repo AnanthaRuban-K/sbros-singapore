@@ -1,203 +1,704 @@
-import { useEffect, useRef, useState } from "react";
-import data from '../../Data/home3/faq1.json';
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import data from "../../Data/home3/faq1.json";
 
 const ServiceDetailsCenter3 = () => {
+    const [openItemIndex, setOpenItemIndex] = useState(0);
 
-    const accordionContentRef = useRef(null);
-    const [openItemIndex, setOpenItemIndex] = useState(-1);
-    const [firstItemOpen, setFirstItemOpen] = useState(true);
-  
-    const handleItemClick = index => {
-      if (index === openItemIndex) {
-        setOpenItemIndex(-1);
-      } else {
-        setOpenItemIndex(index);
-      }
+    const handleItemClick = (index) => {
+        setOpenItemIndex(
+            openItemIndex === index ? -1 : index
+        );
     };
-    useEffect(() => {
-      if (firstItemOpen) {
-        setOpenItemIndex(0);
-        setFirstItemOpen(false);
-      }
-    }, [firstItemOpen]);
 
-    // Featured projects — replace image/title/category with your real work
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+
     const projects = [
-      { title: "Corporate Website Revamp", category: "Corporate Website", image: "/assets/img/service/service-details-img.png" },
-      { title: "Online Retail Store", category: "E-commerce", image: "/assets/img/service/service-details-img.png" },
-      { title: "Product Landing Page", category: "Landing Page", image: "/assets/img/service/service-details-img.png" },
-      { title: "Business Blog & CMS", category: "CMS Website", image: "/assets/img/service/service-details-img.png" },
+        {
+            number: "01",
+            title: "First Choice Hub",
+            category: "Business & IT Solutions",
+            description:
+                "A professional business website presenting software development, ERP systems, digital marketing, networking, security and IT consulting services.",
+            image: "/assets/img/service/image.png",
+            url: "https://firstchoicehub.com.sg/",
+            tag: "Corporate Website",
+        },
+
+        {
+            number: "02",
+            title: "ANS Fresh & Frozen",
+            category: "E-Commerce Website",
+            description:
+                "A fresh food and seafood e-commerce platform designed for product browsing, online shopping and convenient customer ordering.",
+            image: "/assets/img/service/image2.png",
+            url: "https://ansfreshmeat.com.sg/",
+            tag: "E-Commerce",
+        },
+
+        {
+            number: "03",
+            title: "SASAN Construction",
+            category: "Construction Website",
+            description:
+                "A modern corporate website showcasing construction, earthwork, demolition, commercial projects and engineering services.",
+            image: "/assets/img/service/image3.png",
+            url: "https://www.sasansg.com/",
+            tag: "Corporate Website",
+        },
+
+        {
+            number: "04",
+            title: "Gold Sea Group",
+            category: "Engineering Website",
+            description:
+                "A professional group website presenting engineering, maritime, mechanical, project management and quality assurance services.",
+            image: "/assets/img/service/image4.png",
+            url: "https://goldseagroups.com/",
+            tag: "Business Website",
+        },
     ];
 
     return (
-        <div className="service-details-area-all sp">
-            <div className="container">
-                <div className="row">
-                    
-                    <div className="col-lg-8 m-auto">
-                        <div className="service-details-post">
-                            <article>
-                                <div className="details-post-area">
+        <div className="website-service-page">
 
-                                  <div className="space30"></div>
-                                    <div className="heading1">
-                                        <h2>Websites That Turn Visitors Into Customers</h2>
-                                       
-                                        <div className="space16"></div>
-                                        <p>A website is more than a digital brochure — it's your strongest sales tool, working around the clock. We design and build fast, responsive, SEO-ready websites that don't just look good, but convert visitors into leads and customers.</p>
+            {/* =====================================================
+                MAIN SERVICE AREA
+            ===================================================== */}
+
+            <div className="service-details-area-all sp">
+
+                <div className="container">
+
+                    <div className="website-service-content">
+
+                        {/* =================================================
+                            HERO / INTRO
+                        ================================================= */}
+
+                        <section className="website-intro-section">
+
+                            <div className="website-intro-content">
+
+                                <span className="website-label">
+                                    WEB DEVELOPMENT
+                                </span>
+
+                                <h1>
+                                    Websites That Turn
+                                    <span> Visitors Into Customers</span>
+                                </h1>
+
+                                <p>
+                                    A website is more than a digital brochure —
+                                    it is your strongest sales tool, working
+                                    around the clock. We design and build fast,
+                                    responsive and SEO-ready websites that don't
+                                    just look good, but convert visitors into
+                                    leads and customers.
+                                </p>
+
+                                <div className="website-intro-points">
+
+                                    <div>
+                                        <i className="bi bi-check-circle-fill"></i>
+                                        <span>Responsive Design</span>
                                     </div>
-                                    <div className="image">
-                                        <img src="/assets/img/service/website.jpg" alt="" />
+
+                                    <div>
+                                        <i className="bi bi-check-circle-fill"></i>
+                                        <span>SEO Ready</span>
                                     </div>
-                                    
+
+                                    <div>
+                                        <i className="bi bi-check-circle-fill"></i>
+                                        <span>Fast Performance</span>
+                                    </div>
+
                                 </div>
-                            </article>
 
-                            <div className="space50"></div>
-
-                            <article>
-                                <div className="details-post-area">
-                                    <div className="row">
-                                       
-
-                                        <div className="col-lg-6">
-                                            <div className="space30"></div>
-                                            <div className="heading1">
-                                                <h5>Responsive & Fast</h5>
-                                                <div className="space20"></div>
-                                                <p>Every website we build adapts seamlessly across desktop, tablet, and mobile — with performance optimized for fast load times and better conversions.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="col-lg-6">
-                                            <div className="space30"></div>
-                                            <div className="heading1">
-                                                <h5>Built to Convert</h5>
-                                                <div className="space20"></div>
-                                                <p>We design with your customer's journey in mind — clear calls-to-action, easy navigation, and SEO-ready structure that helps you get found and get chosen.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div className="space50"></div>
-                            <article>
-                                <div className="details-post-area">
-                                    <div className="heading1">
-                                        <h5>Our Website Services</h5>
-                                        <div className="space16"></div>
-                                        <p>We build a wide range of websites tailored to your business goals — from simple business sites to full-scale e-commerce platforms, all optimized for search engines and easy to maintain.</p>
-
-                                        <div className="space20"></div>
-                                        <ul className="expart-list">
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Corporate Websites</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Business Websites</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">E-commerce</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">CMS Websites</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Landing Pages</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">SEO-Ready Websites</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Responsive Websites</span></li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Website Maintenance</span></li>
-                                        </ul>
-                                </div>
-                            </div>
-                            </article>
-
-                            <div className="space50"></div>
-
-                            {/* Recent Projects Showcase */}
-                            {/* <article>
-                              <div className="details-post-area">
-                                <div className="heading1">
-                                  <h5>Recent Projects</h5>
-                                  <div className="space16"></div>
-                                </div>
-                                <div className="row">
-                                  {projects.map((project, i) => (
-                                    <div className="col-lg-6 col-md-6" key={i}>
-                                      <div className="space20"></div>
-                                      <div className="project-thumb">
-                                        <img src={project.image} alt={project.title} style={{ width: "100%", borderRadius: "8px" }} />
-                                        <div className="space16"></div>
-                                        <h6>{project.title}</h6>
-                                        <p style={{ margin: 0, fontSize: "14px" }}>{project.category}</p>
-                                      </div>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </article> */}
-
-                            <div className="space20"></div>
-
-                            <div className="row">
-                            <div className="col-lg-6 col-md-6">
-                                <div className="">
-                                  <div className="servcie2-box servcie2-box-2">
-                                    <div className="icon">
-                                      <img src="/assets/img/icons/service-page-icon1.png" alt="" />
-                                    </div>
-                                    <Link to="/service/service-details" className="arrow"><i className="bi bi-arrow-right"></i></Link>
-                                    <div className="heading1">
-                                      <h4><Link to="/service/service-details">Software Development</Link></h4>
-                                      <div className="space16"></div>
-                                      <p>Custom software solutions tailored to your business needs, from web apps to enterprise systems.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                
-                              <div className="col-lg-6 col-md-6">
-                                <div className="">
-                                  <div className="servcie2-box servcie2-box-2">
-                                    <div className="icon">
-                                      <img src="/assets/img/icons/service-page-icon2.png" alt="" />
-                                    </div>
-                                    <Link to="/service/service-it-networking" className="arrow"><i className="bi bi-arrow-right"></i></Link>
-                                    <div className="heading1">
-                                      <h4><Link to="/service/service-it-networking">IT Networking</Link></h4>
-                                      <div className="space16"></div>
-                                      <p>Strategic IT planning and network infrastructure design to strengthen your technology foundation.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                
                             </div>
 
-                            <div className="space50"></div>
+                            <div className="website-intro-image">
 
-                            <div className="faq-area-all">
-                                <div className="heading1">
-                                    <h5>Frequently Asked Question</h5>
+                                <img
+                                    src="/assets/img/service/website.jpg"
+                                    alt="Website Development"
+                                />
+
+                                <div className="intro-floating-card">
+
+                                    <i className="bi bi-globe2"></i>
+
+                                    <div>
+                                        <strong>Digital Presence</strong>
+                                        <span>Built for Growth</span>
+                                    </div>
+
                                 </div>
-                                <div className="space20"></div>
 
-                                <div className="accordion accordion1 accordion-flush" id="accordionFlushExample">
+                            </div>
 
-                                {data.slice(0,4).map((item, index)=>(
-                                    <div key={index} className={`accordion-item ${index === openItemIndex ? "active" : "" }`}>
-                                      <h2 onClick={() => handleItemClick(index)} className="accordion-header" id="flush-headingOne">
-                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        {item.title}
+                        </section>
+
+
+                        {/* =================================================
+                            FEATURES
+                        ================================================= */}
+
+                        <section className="website-feature-section">
+
+                            <div className="website-section-title">
+
+                                <span>OUR APPROACH</span>
+
+                                <h2>
+                                    Built For Performance.
+                                    <br />
+                                    Designed For Growth.
+                                </h2>
+
+                                <p>
+                                    Every website we create combines modern
+                                    design, performance and business-focused
+                                    functionality.
+                                </p>
+
+                            </div>
+
+
+                            <div className="website-feature-grid">
+
+                                <div className="website-feature-card">
+
+                                    <div className="feature-icon">
+                                        <i className="bi bi-phone"></i>
+                                    </div>
+
+                                    <span className="feature-number">
+                                        01
+                                    </span>
+
+                                    <h3>
+                                        Responsive & Fast
+                                    </h3>
+
+                                    <p>
+                                        Every website adapts seamlessly across
+                                        desktop, tablet and mobile devices with
+                                        performance optimized for fast loading.
+                                    </p>
+
+                                </div>
+
+
+                                <div className="website-feature-card">
+
+                                    <div className="feature-icon">
+                                        <i className="bi bi-bullseye"></i>
+                                    </div>
+
+                                    <span className="feature-number">
+                                        02
+                                    </span>
+
+                                    <h3>
+                                        Built To Convert
+                                    </h3>
+
+                                    <p>
+                                        We design around the customer journey
+                                        with clear calls-to-action and simple
+                                        navigation.
+                                    </p>
+
+                                </div>
+
+
+                                <div className="website-feature-card">
+
+                                    <div className="feature-icon">
+                                        <i className="bi bi-search"></i>
+                                    </div>
+
+                                    <span className="feature-number">
+                                        03
+                                    </span>
+
+                                    <h3>
+                                        SEO Ready
+                                    </h3>
+
+                                    <p>
+                                        Clean structure and search-friendly
+                                        development help your website become
+                                        easier to discover online.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            WEBSITE SERVICES
+                        ================================================= */}
+
+                        <section className="website-services-section">
+
+                            <div className="website-section-title">
+
+                                <span>WHAT WE BUILD</span>
+
+                                <h2>
+                                    Complete Website Solutions
+                                </h2>
+
+                                <p>
+                                    From business websites to e-commerce
+                                    platforms, we build digital experiences
+                                    around your business goals.
+                                </p>
+
+                            </div>
+
+
+                            <div className="website-services-list">
+
+                                <div className="website-service-item">
+                                    <div className="service-check">
+                                        <i className="bi bi-check-lg"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Corporate Websites</strong>
+                                        <p>
+                                            Professional websites that build
+                                            trust and strengthen your brand.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div className="website-service-item">
+                                    <div className="service-check">
+                                        <i className="bi bi-check-lg"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Business Websites</strong>
+                                        <p>
+                                            Modern websites designed to present
+                                            your products and services clearly.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div className="website-service-item">
+                                    <div className="service-check">
+                                        <i className="bi bi-check-lg"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>E-Commerce</strong>
+                                        <p>
+                                            User-friendly online stores built
+                                            for products, orders and growth.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div className="website-service-item">
+                                    <div className="service-check">
+                                        <i className="bi bi-check-lg"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>CMS Websites</strong>
+                                        <p>
+                                            Easy-to-manage content systems for
+                                            growing businesses.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div className="website-service-item">
+                                    <div className="service-check">
+                                        <i className="bi bi-check-lg"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Landing Pages</strong>
+                                        <p>
+                                            Conversion-focused pages designed
+                                            for campaigns and lead generation.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div className="website-service-item">
+                                    <div className="service-check">
+                                        <i className="bi bi-check-lg"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Website Maintenance</strong>
+                                        <p>
+                                            Continuous updates, improvements
+                                            and technical support.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            PROJECT SHOWCASE
+                        ================================================= */}
+
+                        <section className="website-project-section">
+
+                            <div className="project-heading">
+
+                                <div>
+
+                                    <span>
+                                        OUR WORK
+                                    </span>
+
+                                    <h2>
+                                        Websites We've Built
+                                    </h2>
+
+                                </div>
+
+                                <p>
+                                    A selection of websites developed for
+                                    businesses across different industries.
+                                </p>
+
+                            </div>
+
+
+                            <div className="project-showcase-grid">
+
+                                {projects.map((project, index) => (
+
+                                    <div
+                                        className="website-project-card"
+                                        key={index}
+                                    >
+
+                                        {/* IMAGE */}
+
+                                        <div className="project-image">
+
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                            />
+
+                                            <div className="project-overlay">
+
+                                                <a
+                                                    href={project.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="project-view-btn"
+                                                >
+                                                    <i className="bi bi-arrow-up-right"></i>
+                                                </a>
+
+                                            </div>
+
+                                            <span className="project-tag">
+                                                {project.tag}
+                                            </span>
+
+                                        </div>
+
+
+                                        {/* CONTENT */}
+
+                                        <div className="project-content">
+
+                                            <div className="project-number">
+                                                {project.number}
+                                            </div>
+
+                                            <span className="project-category">
+                                                {project.category}
+                                            </span>
+
+                                            <h3>
+                                                {project.title}
+                                            </h3>
+
+                                            <p>
+                                                {project.description}
+                                            </p>
+
+                                            <a
+                                                href={project.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="project-link"
+                                            >
+                                                Visit Website
+                                                <i className="bi bi-arrow-up-right"></i>
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            PROJECT STATS
+                        ================================================= */}
+
+                        <section className="project-stats-section">
+
+                            <div className="project-stat">
+
+                                <strong>25+</strong>
+
+                                <span>
+                                    Featured Websites
+                                </span>
+
+                            </div>
+
+
+                            <div className="project-stat">
+
+                                <strong>100%</strong>
+
+                                <span>
+                                    Responsive Design
+                                </span>
+
+                            </div>
+
+
+                            <div className="project-stat">
+
+                                <strong>SEO</strong>
+
+                                <span>
+                                    Ready Structure
+                                </span>
+
+                            </div>
+
+
+                            <div className="project-stat">
+
+                                <strong>24/7</strong>
+
+                                <span>
+                                    Digital Presence
+                                </span>
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            RELATED SERVICES
+                        ================================================= */}
+
+                        <section className="related-services-section">
+
+                            <div className="website-section-title">
+
+                                <span>EXPLORE MORE</span>
+
+                                <h2>
+                                    Related Services
+                                </h2>
+
+                            </div>
+
+
+                            <div className="related-service-grid">
+
+                                <div className="related-service-card">
+
+                                    <div className="related-service-icon">
+                                        <img
+                                            src="/assets/img/icons/service-page-icon1.png"
+                                            alt="Software Development"
+                                        />
+                                    </div>
+
+                                    <div>
+
+                                        <h3>
+                                            <Link to="/service/service-details">
+                                                Software Development
+                                            </Link>
+                                        </h3>
+
+                                        <p>
+                                            Custom software solutions tailored
+                                            to your business needs.
+                                        </p>
+
+                                        <Link
+                                            to="/service/service-details"
+                                            className="related-service-link"
+                                        >
+                                            Explore Service
+                                            <i className="bi bi-arrow-right"></i>
+                                        </Link>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div className="related-service-card">
+
+                                    <div className="related-service-icon">
+                                        <img
+                                            src="/assets/img/icons/service-page-icon2.png"
+                                            alt="IT Networking"
+                                        />
+                                    </div>
+
+                                    <div>
+
+                                        <h3>
+                                            <Link to="/service/service-it-networking">
+                                                IT Networking
+                                            </Link>
+                                        </h3>
+
+                                        <p>
+                                            Secure and reliable networking
+                                            infrastructure for modern business.
+                                        </p>
+
+                                        <Link
+                                            to="/service/service-it-networking"
+                                            className="related-service-link"
+                                        >
+                                            Explore Service
+                                            <i className="bi bi-arrow-right"></i>
+                                        </Link>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            FAQ
+                        ================================================= */}
+
+                        <section className="website-faq-section">
+
+                            <div className="website-section-title">
+
+                                <span>
+                                    FAQ
+                                </span>
+
+                                <h2>
+                                    Frequently Asked Questions
+                                </h2>
+
+                                <p>
+                                    Find answers to common questions about
+                                    our website development services.
+                                </p>
+
+                            </div>
+
+
+                            <div className="website-faq-list">
+
+                                {data.slice(0, 4).map((item, index) => (
+
+                                    <div
+                                        key={index}
+                                        className={`website-faq-item ${
+                                            openItemIndex === index
+                                                ? "active"
+                                                : ""
+                                        }`}
+                                    >
+
+                                        <button
+                                            type="button"
+                                            className="website-faq-question"
+                                            onClick={() =>
+                                                handleItemClick(index)
+                                            }
+                                        >
+
+                                            <span>
+                                                {item.title}
+                                            </span>
+
+                                            <i
+                                                className={`bi ${
+                                                    openItemIndex === index
+                                                        ? "bi-dash"
+                                                        : "bi-plus"
+                                                }`}
+                                            ></i>
+
                                         </button>
-                                      </h2>
-                                      <div ref={accordionContentRef} id="flush-collapseOne" className="accordion-collapse collapse accordion-content" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div className="accordion-body">{item.desc}</div>
-                                      </div>
-                                    </div>
-                                    ))}
 
-                                  </div>
+
+                                        {openItemIndex === index && (
+
+                                            <div className="website-faq-answer">
+                                                <p>
+                                                    {item.desc}
+                                                </p>
+                                            </div>
+
+                                        )}
+
+                                    </div>
+
+                                ))}
+
                             </div>
 
-                        </div>
+                        </section>
+
                     </div>
-                  
+
                 </div>
+
             </div>
+
         </div>
     );
 };
