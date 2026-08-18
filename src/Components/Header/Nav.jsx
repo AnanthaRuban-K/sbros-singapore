@@ -50,12 +50,12 @@ export default function Nav({ setMobileToggle }) {
         </DropDown>
       </li>
 
-      {/* <li className="menu-item-has-children">
-        <Link to="/product">Products</Link>
+       <li className="menu-item-has-children">
+        <Link>Products</Link>
         <DropDown>
           <ul>
             <li>
-              <Link to="/product/one-solution-erp" onClick={() => setMobileToggle(false)}>
+              <Link to="/project/project-details-center" onClick={() => setMobileToggle(false)}>
                 One Solution ERP
               </Link>
             </li>
@@ -63,7 +63,7 @@ export default function Nav({ setMobileToggle }) {
         </DropDown>
       </li>
 
-      <li className="menu-item-has-children">
+      {/*<li className="menu-item-has-children">
         <Link to="/industries">Industries</Link>
         <DropDown>
           <ul>
@@ -98,7 +98,7 @@ export default function Nav({ setMobileToggle }) {
       </li> */}
 
       <li>
-        <Link to="/projects" onClick={() => setMobileToggle(false)}>
+        <Link to="/testimonial" onClick={() => setMobileToggle(false)}>
           Projects 
         </Link>
       </li>

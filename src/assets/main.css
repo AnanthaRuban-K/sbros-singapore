@@ -379,6 +379,7 @@ body.body {
 
 .space16 {
   height: 16px;
+   
 }
 
 
@@ -523,6 +524,56 @@ body.body {
     height: 15px;
   }
 }
+
+
+
+.get-started-box {
+  background-color: #0B1F3A;
+  border-radius: 6px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* Buttons */
+.get-started-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  margin: 5px 8px 5px 0;
+  background-color: #27C2D8;
+  color: #0B1F3A !important;
+  border: 2px solid #27C2D8;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(39, 194, 216, 0.25);
+}
+
+/* Hover */
+.get-started-btn:hover {
+  background-color: transparent;
+  color: #27C2D8 !important;
+  border-color: #27C2D8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(39, 194, 216, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .get-started-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
 .space40 {
   height: 40px;
 }
@@ -7822,6 +7873,21 @@ a.header__search.header-search-btn p {
   line-height: 16px;
   padding-top: 16px;
 }
+
+
+
+
+
+.details-post-area .heading1 > h5 {
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
+
+
 .details-post-area .expart-list li span.check {
   display: inline-block;
   font-size: 12px;
@@ -10076,6 +10142,8 @@ a.header__search.header-search-btn p {
   line-height: var(--f-fs-font-fs28);
   font-weight: var(--f-fw-regular);
   color: var(--ztc-text-text-1);
+  
+  
 }
 
 .brands6 {
@@ -11768,7 +11836,7 @@ a.header__search.header-search-btn p {
 .hero1 .hero1-all-images .image2 {
   position: absolute;
   right: -30px;
-  bottom: 40px;
+  bottom: 160px;
 }
 .hero1 .hero1-all-images .image3 {
   position: absolute;
@@ -14844,21 +14912,30 @@ a.header__search.header-search-btn p {
 }
 
 .get-started-box {
-  background-color: #0E38B1;
-  border-radius: 4px;
+  background-color: #0B1F3A;
+  border-radius: 6px;
   padding: 24px;
+  margin-right: -35%;
+  margin-left: -35%;
+   margin-top: 5%;
+
 }
 .get-started-box h3 {
   font-size: var(--f-fs-font-fs32);
   line-height: var(--f-fs-font-fs32);
   font-weight: var(--f-fw-semibold);
   color: #fff;
+  text-align: center;
 }
 .get-started-box p {
   font-size: var(--f-fs-font-fs16);
   line-height: var(--f-fs-font-fs28);
   font-weight: var(--f-fw-regular);
   color: #fff;
+   
+   margin-right: 10%;
+  margin-left: 10%;
+
 }
 
 .project6 {
@@ -16965,22 +17042,411 @@ a.header__search.header-search-btn p {
     padding-right: 0;
   }
 }
+
+
+
+
+
+
 .work .work-images {
   position: relative;
 }
+
 .work .work-images .image {
   margin-top: 30px;
+  overflow: hidden;
 }
+
+/* Image 1 */
+.work .work-images .col-md-6:first-child .image:nth-child(1) {
+  height: 250px;
+}
+
+/* Image 2 */
+.work .work-images .col-md-6:first-child .image:nth-child(2) {
+  height: 250px;
+}
+
+/* Image 3 */
+.work .work-images .col-md-6:last-child .image {
+  height: 300px;
+}
+
+/* Keep image inside the selected size */
 .work .work-images .image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 7px;
 }
+
 .work .work-images .bg-image {
   position: absolute;
   top: 160px;
   right: 50px;
   z-index: -1;
 }
+
+
+
+
+
+
+
+
+
+/* =========================================
+   NORMAL CARD
+========================================= */
+
+.erp-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e5e9ee;
+  border-radius: 14px;
+  padding: 30px 26px;
+  margin-bottom: 30px;
+   margin-top: 30px;
+
+  min-height: 290px;
+  height: auto;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  box-shadow: 0 5px 20px rgba(11, 31, 58, 0.06);
+}
+
+
+/* =========================================
+   TOP LINE
+========================================= */
+
+.erp-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #27C2D8;
+
+  transform: scaleX(0.25);
+  transform-origin: left;
+
+  transition: transform 0.35s ease;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.erp-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eefcff;
+
+  border-radius: 12px;
+
+  margin-bottom: 18px;
+
+  transition: all 0.35s ease;
+}
+
+.erp-icon i {
+  font-size: 27px;
+  color: #0B1F3A;
+
+  transition: color 0.35s ease;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.erp-card h4 {
+  color: #0B1F3A;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  margin-bottom: 14px;
+}
+
+
+/* =========================================
+   DESCRIPTION - NORMAL
+========================================= */
+
+.erp-card > p {
+  color: #68727d !important;
+
+  font-size: 14px;
+
+  font-weight: 400 !important;
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+/* =========================================
+   FEATURE LIST - HIDDEN
+========================================= */
+
+.erp-features {
+  max-height: 0;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  overflow: hidden;
+
+  transform: translateY(-10px);
+
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.erp-features ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   FEATURE ITEMS
+========================================= */
+
+.erp-features ul li {
+  position: relative;
+
+  padding-left: 23px;
+
+  margin-bottom: 8px;
+
+  color: #4f5964;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+
+/* Check icon */
+
+.erp-features ul li::before {
+  content: "✓";
+
+  position: absolute;
+
+  left: 0;
+  top: 1px;
+
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8fbfe;
+
+  color: #27C2D8;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   HOVER / TOUCH CARD
+========================================= */
+
+.erp-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #27C2D8;
+
+  box-shadow:
+    0 18px 40px rgba(11, 31, 58, 0.15);
+
+  z-index: 20;
+}
+
+
+/* Top line */
+
+.erp-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* =========================================
+   ICON STAYS VISIBLE
+========================================= */
+
+.erp-card:hover .erp-icon {
+  background: #0B1F3A;
+
+  transform: translateY(-3px);
+}
+
+.erp-card:hover .erp-icon i {
+  color: #27C2D8;
+}
+
+
+/* =========================================
+   HEADING STAYS VISIBLE
+========================================= */
+
+.erp-card:hover h4 {
+  color: #0B1F3A;
+}
+
+
+/* =========================================
+   DESCRIPTION DISAPPEARS
+========================================= */
+
+.erp-card:hover > p {
+  opacity: 0;
+
+  visibility: hidden;
+
+  position: absolute;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   LIST APPEARS
+========================================= */
+
+.erp-card:hover .erp-features {
+  max-height: 450px;
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .erp-card {
+    padding: 26px 22px;
+  }
+
+  .erp-card h4 {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .erp-card {
+    min-height: auto;
+
+    padding: 24px 20px;
+
+    margin-bottom: 20px;
+  }
+
+  .erp-card h4 {
+    font-size: 18px;
+  }
+
+  /*
+     On mobile, show the list
+     and hide description.
+  */
+
+  .erp-card .erp-features {
+    max-height: 450px;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+  }
+
+  .erp-card > p {
+    display: none;
+  }
+
+  .erp-card:hover {
+    transform: none;
+
+    box-shadow:
+      0 8px 25px rgba(11, 31, 58, 0.10);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .work2 .work2-box {
   padding: 24px;
