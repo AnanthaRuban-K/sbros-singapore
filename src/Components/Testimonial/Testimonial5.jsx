@@ -6,7 +6,9 @@ const Testimonial5 = () => {
     {
       title: "SASAN SG",
       category: "Corporate Website",
-      image: "/assets/img/projects/sasan.jpg",
+      description:
+        "A modern digital platform designed to present the company and its services with a professional online presence.",
+      image: "/assets/img/work/sasan.jpg",
       url: "https://www.sasansg.com/",
       size: "large",
     },
@@ -14,7 +16,9 @@ const Testimonial5 = () => {
     {
       title: "GOLDSEA GROUP",
       category: "Business Website",
-      image: "/assets/img/projects/goldsea.jpg",
+      description:
+        "A professional business website created to showcase services, strengthen brand visibility, and connect with customers.",
+      image: "/assets/img/work/goldsea.jpg",
       url: "https://goldseagroups.com/",
       size: "small",
     },
@@ -22,7 +26,9 @@ const Testimonial5 = () => {
     {
       title: "TUCK LEE 1935",
       category: "Corporate Website",
-      image: "/assets/img/projects/tucklee.jpg",
+      description:
+        "A clean corporate website that presents the company's services, brand identity, and business information.",
+      image: "/assets/img/work/tucklee.jpg",
       url: "https://tucklee1935.sg/",
       size: "wide",
     },
@@ -30,7 +36,9 @@ const Testimonial5 = () => {
     {
       title: "FIRST CHOICE HUB",
       category: "IT Solutions",
-      image: "/assets/img/projects/firstchoice.jpg",
+      description:
+        "A modern technology-focused website built to communicate digital services and business solutions clearly.",
+      image: "/assets/img/work/firstchoice.jpg",
       url: "https://firstchoicehub.com.sg/",
       size: "small",
     },
@@ -38,23 +46,19 @@ const Testimonial5 = () => {
     {
       title: "SKY MOON ENGINEERING",
       category: "Engineering Website",
-      image: "/assets/img/projects/skymoon.jpg",
+      description:
+        "A professional engineering website developed to highlight company capabilities, services, and completed work.",
+      image: "/assets/img/work/skymoon.jpg",
       url: "https://skymooneng.com.sg/",
       size: "large",
     },
 
     {
-      title: "SBROS TECH",
-      category: "IT Solutions",
-      image: "/assets/img/projects/sbrostech.jpg",
-      url: "https://sbrostech.com.sg/",
-      size: "small",
-    },
-
-    {
       title: "ANS FRESH & FROZEN",
       category: "E-Commerce Website",
-      image: "/assets/img/projects/ansfresh.jpg",
+      description:
+        "A user-friendly online platform designed to showcase fresh products and provide a smooth digital shopping experience.",
+      image: "/assets/img/work/ansfresh.jpg",
       url: "https://ansfreshmeat.com.sg/",
       size: "wide",
     },
@@ -62,24 +66,10 @@ const Testimonial5 = () => {
     {
       title: "PINNACLE ACME",
       category: "Business Website",
-      image: "/assets/img/projects/pinnacle.jpg",
+      description:
+        "A professional business platform created to strengthen digital presence and showcase the company's solutions.",
+      image: "/assets/img/work/pinnacle.jpg",
       url: "https://pinnacleacme.com/",
-      size: "small",
-    },
-
-    {
-      title: "DTM",
-      category: "Business Website",
-      image: "/assets/img/projects/dtm.jpg",
-      url: "https://dtm.sg/",
-      size: "large",
-    },
-
-    {
-      title: "VS BUILDERS SG",
-      category: "Construction Website",
-      image: "/assets/img/projects/vsbuilders.jpg",
-      url: "https://vsbuilderssg.com/",
       size: "small",
     },
   ];
@@ -89,9 +79,9 @@ const Testimonial5 = () => {
 
       <div className="container">
 
-        {/* =========================
-            HEADING
-        ========================= */}
+        {/* =================================================
+            PROJECT PAGE HEADING
+        ================================================= */}
 
         <div className="project-page-heading">
 
@@ -107,9 +97,9 @@ const Testimonial5 = () => {
         </div>
 
 
-        {/* =========================
+        {/* =================================================
             PROJECT GRID
-        ========================= */}
+        ================================================= */}
 
         <div className="project-grid">
 
@@ -120,7 +110,9 @@ const Testimonial5 = () => {
               key={index}
             >
 
-              {/* IMAGE */}
+              {/* =================================================
+                  PROJECT IMAGE
+              ================================================= */}
 
               <div className="project-image">
 
@@ -129,41 +121,56 @@ const Testimonial5 = () => {
                   alt={project.title}
                 />
 
-                {/* HOVER */}
+
+                {/* =================================================
+                    IMAGE OVERLAY
+                ================================================= */}
 
                 <div className="project-overlay">
 
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-view-btn"
-                  >
-                    Visit Website →
-                  </a>
+                  <div className="project-overlay-content">
 
-                </div>
+                    {/* Category */}
 
-              </div>
+                    <span className="project-category">
+                      {project.category}
+                    </span>
 
 
-              {/* PROJECT NAME */}
+                    {/* Company Name */}
 
-              <div className="project-info">
+                    <h3>
+                      {project.title}
+                    </h3>
 
-                <span className="project-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
 
-                <div>
+                    {/* Two Line Description */}
 
-                  <h3>
-                    {project.title}
-                  </h3>
+                    <p className="project-description">
+                      {project.description}
+                    </p>
 
-                  <p>
-                    {project.category}
-                  </p>
+
+                    {/* Modern Button */}
+
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-modern-btn"
+                    >
+
+                      <span>
+                        View Project
+                      </span>
+
+                      <span className="project-arrow">
+                        ↗
+                      </span>
+
+                    </a>
+
+                  </div>
 
                 </div>
 
@@ -176,9 +183,9 @@ const Testimonial5 = () => {
         </div>
 
 
-        {/* =========================
-            CONTACT BOX
-        ========================= */}
+        {/* =================================================
+            CONTACT SECTION
+        ================================================= */}
 
         <div className="project-contact-box">
 

@@ -25039,7 +25039,6 @@ li.has-dropdown1 span {
 
 
 
-
 /* =========================================================
    PROJECT PAGE
 ========================================================= */
@@ -25051,7 +25050,7 @@ li.has-dropdown1 span {
 
 
 /* =========================================================
-   HEADING
+   PROJECT PAGE HEADING
 ========================================================= */
 
 .project-page-heading {
@@ -25061,11 +25060,13 @@ li.has-dropdown1 span {
 
 .project-page-heading span {
   display: block;
+
   margin-bottom: 10px;
 
   color: #1264e8;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
@@ -25077,7 +25078,9 @@ li.has-dropdown1 span {
   color: #111827;
 
   font-size: 42px;
+
   line-height: 1.2;
+
   font-weight: 700;
 }
 
@@ -25087,6 +25090,7 @@ li.has-dropdown1 span {
   color: #6b7280;
 
   font-size: 16px;
+
   line-height: 1.7;
 }
 
@@ -25100,14 +25104,16 @@ li.has-dropdown1 span {
 
   grid-template-columns: repeat(12, 1fr);
 
-  gap: 55px 28px;
+  column-gap: 28px;
+
+  row-gap: 55px;
 
   align-items: start;
 }
 
 
 /* =========================================================
-   DIFFERENT PROJECT SIZES
+   PROJECT SIZES
 ========================================================= */
 
 .project-large {
@@ -25116,6 +25122,7 @@ li.has-dropdown1 span {
 
 .project-small {
   grid-column: span 5;
+
   margin-top: 90px;
 }
 
@@ -25135,49 +25142,73 @@ li.has-dropdown1 span {
 
   overflow: hidden;
 
-  border-radius: 16px;
+  border-radius: 18px;
 
   background: #f4f6f9;
+
+  cursor: pointer;
 }
 
 
-/* Large */
+/* =========================================================
+   LARGE IMAGE
+========================================================= */
 
 .project-large .project-image {
   height: 450px;
 }
 
 
-/* Small */
+/* =========================================================
+   SMALL IMAGE
+========================================================= */
 
 .project-small .project-image {
   height: 330px;
 }
 
 
-/* Wide */
+/* =========================================================
+   WIDE IMAGE
+========================================================= */
 
 .project-wide .project-image {
   height: 400px;
 }
 
 
-/* Image */
+/* =========================================================
+   IMAGE
+========================================================= */
 
 .project-image img {
   width: 100%;
+
   height: 100%;
 
   display: block;
 
   object-fit: cover;
 
-  transition: transform 0.6s ease;
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
 }
 
 
 /* =========================================================
-   HOVER OVERLAY
+   IMAGE HOVER
+========================================================= */
+
+.project-image:hover img {
+  transform: scale(1.07);
+
+  filter: brightness(0.8);
+}
+
+
+/* =========================================================
+   PROJECT OVERLAY
 ========================================================= */
 
 .project-overlay {
@@ -25188,105 +25219,209 @@ li.has-dropdown1 span {
   display: flex;
 
   align-items: flex-end;
-  justify-content: flex-end;
 
-  padding: 25px;
+  justify-content: flex-start;
+
+  padding: 35px;
 
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.7),
-    transparent 55%
+    rgba(5, 12, 25, 0.96) 0%,
+    rgba(5, 12, 25, 0.78) 40%,
+    rgba(5, 12, 25, 0.15) 100%
   );
 
   opacity: 0;
 
-  transition: all 0.35s ease;
-}
+  visibility: hidden;
 
-.project-image:hover img {
-  transform: scale(1.05);
-}
-
-.project-image:hover .project-overlay {
-  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
 }
 
 
 /* =========================================================
-   VISIT BUTTON
+   SHOW OVERLAY
 ========================================================= */
 
-.project-view-btn {
+.project-image:hover .project-overlay {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================================
+   OVERLAY CONTENT
+========================================================= */
+
+.project-overlay-content {
+  width: 100%;
+
+  max-width: 440px;
+
+  transform: translateY(25px);
+
+  transition: transform 0.45s ease;
+}
+
+.project-image:hover .project-overlay-content {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.project-category {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #9fc3ff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COMPANY NAME
+========================================================= */
+
+.project-overlay-content h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 29px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.project-description {
+  margin: 0 0 22px;
+
+  max-width: 410px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MODERN VIEW PROJECT BUTTON
+========================================================= */
+
+.project-modern-btn {
   display: inline-flex;
 
   align-items: center;
 
-  padding: 11px 20px;
+  justify-content: center;
 
-  border-radius: 30px;
+  gap: 12px;
+
+  padding: 8px 8px 8px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.project-arrow {
+  width: 35px;
+
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
 
   background: #ffffff;
 
   color: #1264e8;
 
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 17px;
 
-  text-decoration: none;
-
-  transform: translateY(15px);
+  line-height: 1;
 
   transition: all 0.3s ease;
 }
 
-.project-image:hover .project-view-btn {
-  transform: translateY(0);
-}
-
-.project-view-btn:hover {
-  background: #1264e8;
-  color: #ffffff;
-}
-
 
 /* =========================================================
-   PROJECT INFORMATION
+   BUTTON HOVER
 ========================================================= */
 
-.project-info {
-  display: flex;
+.project-modern-btn:hover {
+  background: #1264e8;
 
-  align-items: flex-start;
+  border-color: #1264e8;
 
-  gap: 14px;
+  color: #ffffff;
 
-  padding-top: 18px;
+  transform: translateY(-2px);
 }
 
-.project-number {
-  padding-top: 3px;
+.project-modern-btn:hover .project-arrow {
+  transform: rotate(45deg);
+
+  background: #ffffff;
 
   color: #1264e8;
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.project-info h3 {
-  margin: 0;
-
-  color: #20242b;
-
-  font-size: 20px;
-  font-weight: 650;
-}
-
-.project-info p {
-  margin: 5px 0 0;
-
-  color: #7b8494;
-
-  font-size: 13px;
 }
 
 
@@ -25312,6 +25447,8 @@ li.has-dropdown1 span {
   color: #111827;
 
   font-size: 30px;
+
+  line-height: 1.3;
 }
 
 .project-contact-box p {
@@ -25336,6 +25473,7 @@ li.has-dropdown1 span {
   color: #ffffff;
 
   font-size: 14px;
+
   font-weight: 600;
 
   text-decoration: none;
@@ -25345,6 +25483,7 @@ li.has-dropdown1 span {
 
 .project-contact-btn:hover {
   background: #0d4fb9;
+
   color: #ffffff;
 
   transform: translateY(-2px);
@@ -25360,13 +25499,16 @@ li.has-dropdown1 span {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 40px 20px;
+    column-gap: 20px;
+
+    row-gap: 40px;
   }
 
   .project-large,
   .project-small,
   .project-wide {
     grid-column: span 1;
+
     margin-top: 0;
   }
 
@@ -25376,6 +25518,13 @@ li.has-dropdown1 span {
     height: 320px;
   }
 
+  .project-overlay {
+    padding: 25px;
+  }
+
+  .project-overlay-content h3 {
+    font-size: 24px;
+  }
 }
 
 
@@ -25401,10 +25550,13 @@ li.has-dropdown1 span {
     font-size: 14px;
   }
 
+
+  /* One column */
+
   .project-grid {
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 35px;
   }
 
   .project-large,
@@ -25415,15 +25567,89 @@ li.has-dropdown1 span {
     margin-top: 0;
   }
 
+
+  /* Image sizes */
+
   .project-large .project-image,
   .project-small .project-image,
   .project-wide .project-image {
     height: 280px;
   }
 
-  .project-info h3 {
-    font-size: 18px;
+
+  /* =====================================================
+     MOBILE TOUCH
+  ===================================================== */
+
+  .project-image:active .project-overlay {
+    opacity: 1;
+
+    visibility: visible;
   }
+
+  .project-image:active .project-overlay-content {
+    transform: translateY(0);
+  }
+
+
+  /* Also show overlay when focused */
+
+  .project-image:focus-within .project-overlay {
+    opacity: 1;
+
+    visibility: visible;
+  }
+
+  .project-image:focus-within .project-overlay-content {
+    transform: translateY(0);
+  }
+
+
+  /* Mobile content */
+
+  .project-overlay {
+    padding: 25px;
+  }
+
+  .project-overlay-content h3 {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+  }
+
+  .project-category {
+    font-size: 10px;
+
+    margin-bottom: 7px;
+  }
+
+  .project-description {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+  }
+
+
+  /* Mobile button */
+
+  .project-modern-btn {
+    padding: 7px 7px 7px 15px;
+
+    font-size: 12px;
+  }
+
+  .project-arrow {
+    width: 30px;
+
+    height: 30px;
+
+    font-size: 15px;
+  }
+
+
+  /* Contact */
 
   .project-contact-box {
     margin-top: 60px;
@@ -25434,7 +25660,6 @@ li.has-dropdown1 span {
   .project-contact-box h3 {
     font-size: 25px;
   }
-
 }
 
 
