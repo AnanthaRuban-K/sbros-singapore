@@ -7,7 +7,7 @@ const HeroBanner2 = ({subTitle,title,featureList,image1,image2,image3}) => {
             <div className="row">
               <div className="col-lg-6">
                 <div className="main-heading">
-                    <span className="span" data-aos="zoom-in-right" data-aos-duration="700"><img src="/assets/img/icons/span2.png" alt="" /> {subTitle}</span>
+                    <span className="span" data-aos="zoom-in-right" data-aos-duration="700">{subTitle}</span>
                     <h1 className="title tg-element-title">{title}</h1>
                 </div>
 

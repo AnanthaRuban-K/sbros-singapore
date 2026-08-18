@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import data from '../../Data/home3/faq1.json';
 
-const ServiceDetailsLeft1 = () => {
+const ServiceTrading = () => {
 
   const accordionContentRef = useRef(null);
   const [openItemIndex, setOpenItemIndex] = useState(-1);
@@ -41,31 +41,29 @@ const ServiceDetailsLeft1 = () => {
                         <div className="sidebar-box-area sidebar-bg mb-40">
                             <h3>Our Services</h3>
                             <ul className="features-list">
-                                <li><Link to="/service/service-details">Software Development <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Website Development <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Network Solutions <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Cyber Security <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Digital Marketing <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Managed IT Services <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">IT Hardware Supply <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Networking Equipment Supply <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Software Licensing Solutions <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">Security & Surveillance Products <span><i className="bi bi-chevron-right"></i></span></Link></li>
+                                <li><Link to="/service/service-details">IT Procurement & Technology Consulting <span><i className="bi bi-chevron-right"></i></span></Link></li>
                             </ul>
                         </div>
 
                         <div className="sidebar-box-area sidebar-bg mb-40">
                             <h3>Tags</h3>
                             <ul className="tags">
-                                <li><a href="#">Software Development</a></li>
-                                <li><a href="#">Website Development</a></li>
-                                <li><a href="#">Network Solutions</a></li>
-                                <li><a href="#">Digital Marketing</a></li>
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Custom Development</a></li>
-                                <li><a href="#">Cyber Security</a></li>
-                                <li><a href="#">SEO & SEM</a></li>
+                                <li><a href="#">IT Hardware</a></li>
+                                <li><a href="#">Networking</a></li>
+                                <li><a href="#">Software Licensing</a></li>
+                                <li><a href="#">Cybersecurity</a></li>
+                                <li><a href="#">Surveillance Systems</a></li>
+                                <li><a href="#">IT Procurement</a></li>
+                                <li><a href="#">Technology Consulting</a></li>
+                                <li><a href="#">Enterprise Solutions</a></li>
                             </ul>
                         </div>
 
-                        
-
+                      
                         <div className="sidebar-box-area sidebar-bg mb-40">
                             <h3>Get A Free Quote</h3>
                             <div className="contact-form">
@@ -101,13 +99,13 @@ const ServiceDetailsLeft1 = () => {
                             <article>
                                 <div className="details-post-area">
                                     <div className="image">
-                                        <img src="/assets/img/service/software.jpg" alt="" />
+                                        <img src="/assets/img/service/trading.jpg" alt="" />
                                     </div>
                                     <div className="space30"></div>
                                     <div className="heading1">
-                                        <h2>Software Development</h2>
+                                        <h2>Professional IT Trading & Technology Supply Solutions in Singapore</h2>
                                         <div className="space16"></div>
-                                        <p>Welcome to SBROS Tech (S) Pte Ltd, your trusted partner for comprehensive software development services tailored to meet your business needs. Our team of experienced developers is dedicated to delivering high-quality, scalable, and innovative software solutions that drive real business growth — because at SBROS Tech, your dreams are our mission.</p>
+                                        <p>Reliable technology products are the foundation of every successful business, enabling organizations to work efficiently, securely, and competitively. At SBros Tech, we offer comprehensive IT trading services in Singapore, supplying genuine computer hardware, networking equipment, software licenses, and enterprise technology solutions tailored to businesses of all sizes.</p>
                                     </div>
                                 </div>
                             </article>
@@ -121,25 +119,25 @@ const ServiceDetailsLeft1 = () => {
                                             <div className="heading1">
                                                 <h5>Our Approach</h5>
                                                 <div className="space16"></div>
-                                                <p>At SBROS Tech (S) Pte Ltd, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications. We then collaborate closely with you at every stage of the development cycle to ensure that the final product exceeds your expectations.</p>
+                                                <p>From business laptops and desktop computers to servers, networking devices, cybersecurity solutions, software licenses, and complete IT infrastructure procurement, we deliver trusted products from leading global brands. Backed by competitive pricing, expert consultation, and reliable after-sales support, our team ensures your business has the right technology to achieve long-term growth and operational excellence.</p>
                                             </div>
                                         </div>
 
                                         <div className="col-lg-6">
                                             <div className="space30"></div>
                                             <div className="heading1">
-                                                <h5>Custom Development</h5>
+                                                <h5>IT Hardware Supply</h5>
                                                 <div className="space20"></div>
-                                                <p>Our team specializes in developing custom software solutions tailored to address your specific business challenges. Whether you need a web application, mobile app, or enterprise system, SBROS Tech builds it around your needs.</p>
+                                                <p>We supply genuine IT hardware that helps businesses build reliable, high-performance technology environments. Our products are sourced from trusted manufacturers to ensure quality, durability, and long-term performance.</p>
                                             </div>
                                         </div>
 
                                         <div className="col-lg-6">
                                             <div className="space30"></div>
                                             <div className="heading1">
-                                                <h5>Development Services</h5>
+                                                <h5>Networking Equipment Supply</h5>
                                                 <div className="space20"></div>
-                                                <p>From initial concept and design to development, testing, and deployment, we offer comprehensive full-cycle development services to ensure a seamless and efficient process from start to finish.</p>
+                                                <p>Build a secure and reliable network infrastructure with our enterprise networking solutions designed for businesses of all sizes.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -152,15 +150,15 @@ const ServiceDetailsLeft1 = () => {
                                     <div className="heading1">
                                         <h5>Our Expertise</h5>
                                         <div className="space16"></div>
-                                        <p>At SBROS Tech (S) Pte Ltd, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications. We then collaborate closely with you at every stage of the development cycle to ensure that the final product exceeds your expectations.</p>
+                                        <p>We help businesses procure the right technology solutions based on operational requirements, business objectives, and budget. Our team ensures every product we supply meets industry standards and delivers long-term value.</p>
 
                                         <div className="space20"></div>
                                         <ul className="expart-list">
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Frontend:</span> (HTML, CSS, JavaScript, React, Angular, Vue.js)</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Backend:</span> (Node.js, Python, Ruby on Rails, PHP, .NET)</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Database:</span> (MySQL, MongoDB, PostgreSQL, Oracle)</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Mobile:</span> (iOS (Swift), Android (Java, Kotlin), React Native)</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Cloud Platform:</span> (AWS, Azure, Google Cloud Platform)</li>
+                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Software Licensing:</span> Genuine software licences that improve productivity, security, and compliance</li>
+                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Security & Surveillance:</span> Advanced security and surveillance systems for business safety and control</li>
+                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Hardware:</span> Business laptops, desktop computers, servers, and networking devices</li>
+                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Cybersecurity:</span> Trusted cybersecurity solutions from leading global brands</li>
+                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Consulting:</span> Expert IT procurement and technology consulting services</li>
                                         </ul>
                                 </div>
                             </div>
@@ -177,29 +175,29 @@ const ServiceDetailsLeft1 = () => {
                                     </div>
                                     <Link to="/service/service-it-networking" className="arrow"><i className="bi bi-arrow-right"></i></Link>
                                     <div className="heading1">
-                                      <h4><Link to="/service/service-it-networking">Network Solutions</Link></h4>
+                                      <h4><Link to="/service/service-it-networking">IT Networking</Link></h4>
                                       <div className="space16"></div>
-                                      <p>Strategic IT planning, network infrastructure design, and business process analysis to strengthen your technology foundation.</p>
+                                      <p>Enterprise networking solutions built for reliable, secure infrastructure across businesses of all sizes.</p>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                 
-                              <div className="col-lg-6 col-md-6">
-                                <div className="">
-                                  <div className="servcie2-box servcie2-box-2">
-                                    <div className="icon">
-                                      <img src="/assets/img/icons/service-page-icon2.png" alt="" />
-                                    </div>
-                                    <Link to="/service/service-details-center" className="arrow"><i className="bi bi-arrow-right"></i></Link>
-                                    <div className="heading1">
-                                      <h4><Link to="/service/service-details-center">Website Development</Link></h4>
-                                      <div className="space16"></div>
-                                      <p>Mobile app development for iOS, Android, and cross-platform solutions & responsive web <br/> applications.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                            <div className="col-lg-6 col-md-6">
+  <div className="">
+    <div className="servcie2-box servcie2-box-2">
+      <div className="icon">
+        <img src="/assets/img/icons/service-page-icon2.png" alt="" />
+      </div>
+      <Link to="/service/service-details" className="arrow"><i className="bi bi-arrow-right"></i></Link>
+      <div className="heading1">
+        <h4><Link to="/service/service-details">Software Development</Link></h4>
+        <div className="space16"></div>
+        <p>Custom software solutions tailored to your business needs, from web apps to enterprise systems.</p>
+      </div>
+    </div>
+  </div>
+</div>
                 
                             </div>
 
@@ -237,4 +235,4 @@ const ServiceDetailsLeft1 = () => {
     );
 };
 
-export default ServiceDetailsLeft1;
+export default ServiceTrading;

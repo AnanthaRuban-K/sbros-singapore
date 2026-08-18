@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "erp-solutions",
+    "title": "ERP Solutions",
+    "image": "/assets/img/service/service-details-img.png",
+    "intro": "We implement smart ERP systems that unify your business operations, giving you real-time visibility and control across departments.",
+    "approach": "We start by mapping your existing workflows, then configure and deploy an ERP system tailored to your processes — with training and support to ensure smooth adoption.",
+    "expertise": [
+      "ERP implementation and configuration",
+      "Inventory and supply chain management",
+      "Financial reporting tools",
+      "Process automation",
+      "System training and support"
+    ]
+  },
+  {
+    "slug": "software-development",
+    "title": "Software Development",
+    "image": "/assets/img/service/service-details-img.png",
+    "intro": "We design and build custom software tailored to your business needs, helping you streamline operations, improve efficiency, and scale with confidence.",
+    "approach": "Our team follows an agile, collaborative process — from requirements gathering and architecture design to development, testing, and deployment — ensuring every solution is reliable, scalable, and aligned with your goals.",
+    "expertise": [
+      "Custom application development",
+      "API design and integration",
+      "Cloud-native architecture",
+      "Quality assurance and testing",
+      "Ongoing maintenance and support"
+    ]
+  },
+  {
+    "slug": "website-development",
+    "title": "Website Development",
+    "image": "/assets/img/service/service-details-img.png",
+    "intro": "We build responsive, high-performance websites that strengthen your online presence and turn visitors into customers.",
+    "approach": "We combine clean design with solid engineering — building fast, SEO-friendly, mobile-first websites using modern frameworks, then rigorously testing across devices before launch.",
+    "expertise": [
+      "Responsive website design",
+      "E-commerce development",
+      "CMS integration",
+      "Performance optimization",
+      "Website maintenance"
+    ]
+  },
+  {
+    "slug": "it-networking",
+    "title": "IT Networking",
+    "image": "/assets/img/service/service-details-img.png",
+    "intro": "We deliver secure, reliable network infrastructure that keeps your business connected and running smoothly.",
+    "approach": "We assess your infrastructure needs, design a network architecture built for security and uptime, and implement it with minimal disruption to daily operations.",
+    "expertise": [
+      "Network design and setup",
+      "Cybersecurity and firewalls",
+      "Cloud connectivity",
+      "24/7 monitoring and support",
+      "Disaster recovery planning"
+    ]
+  },
+  {
+    "slug": "trading",
+    "title": "Trading",
+    "image": "/assets/img/service/service-details-img.png",
+    "intro": "Our smart trading solutions simplify operations, streamline workflows, and support better business decisions.",
+    "approach": "We work closely with your team to understand your trading operations, then implement systems that automate processes and provide real-time visibility.",
+    "expertise": [
+      "Trade operations management",
+      "Inventory and stock control",
+      "Financial reporting tools",
+      "Process automation",
+      "System training and support"
+    ]
+  }
+]
