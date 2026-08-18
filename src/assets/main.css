@@ -19664,13 +19664,7 @@ body,
   padding-top: 100px;
 
   /* Black → White → Cherry Red */
-background: linear-gradient(
-  180deg,
-  #43464C 0%,
-  #383A40 30%,
-  #642D3D 60%,
-  #B41A41 100%
-);
+background: black;
 }
 
 
