@@ -50,8 +50,57 @@ export default function Nav({ setMobileToggle }) {
         </DropDown>
       </li>
 
+
+        <li className="menu-item-has-children">
+        <a href="#" onClick={(e) => e.preventDefault()}>Products</a>
+        <DropDown>
+          <ul>
+            <li>
+              <Link to="/project/project-details-center" onClick={() => setMobileToggle(false)}>
+                One Solution ERP
+              </Link>
+            </li>
+          </ul>
+        </DropDown>
+      </li>
+
+      {/*<li className="menu-item-has-children">
+        <Link to="/industries">Industries</Link>
+        <DropDown>
+          <ul>
+            <li>
+              <Link to="/industries/construction" onClick={() => setMobileToggle(false)}>
+                Construction
+              </Link>
+            </li>
+            <li>
+              <Link to="/industries/smes" onClick={() => setMobileToggle(false)}>
+                SMEs
+              </Link>
+            </li>
+            <li>
+              <Link to="/industries/trading" onClick={() => setMobileToggle(false)}>
+                Trading
+              </Link>
+            </li>
+            <li>
+              <Link to="/industries/other-businesses" onClick={() => setMobileToggle(false)}>
+                Other Businesses
+              </Link>
+            </li>
+          </ul>
+        </DropDown>
+      </li> */}
+
+      {/* <li>
+        <Link to="/technology" onClick={() => setMobileToggle(false)}>
+          Technology
+        </Link>
+      </li> */}
+
+
       <li>
-        <Link to="/projects" onClick={() => setMobileToggle(false)}>
+        <Link to="/testimonial" onClick={() => setMobileToggle(false)}>
           Projects 
         </Link>
       </li>

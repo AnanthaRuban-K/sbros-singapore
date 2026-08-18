@@ -9,9 +9,9 @@ const Choose1 = () => {
         Content:'At SBros, we deliver flexible IT solutions tailored to your unique business needs, challenges, and growth goals.',
       
     
-        img1:'/assets/img/work/work-img1.png',
-        img2:'/assets/img/work/work-img3.png',
-        img3:'/assets/img/work/work-img2.png',
+        img1:'/assets/img/work/plan2.jpeg',
+        img2:'/assets/img/work/build2.jpeg',
+        img3:'/assets/img/work/launch2.jpeg',
       }
 
     return (
