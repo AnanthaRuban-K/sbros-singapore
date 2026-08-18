@@ -1,238 +1,692 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import data from '../../Data/home3/faq1.json';
+import data from "../../Data/home3/faq1.json";
 
 const ServiceTrading = () => {
+  const [openItemIndex, setOpenItemIndex] = useState(0);
 
-  const accordionContentRef = useRef(null);
-  const [openItemIndex, setOpenItemIndex] = useState(-1);
-  const [firstItemOpen, setFirstItemOpen] = useState(true);
-
-  const handleItemClick = index => {
-    if (index === openItemIndex) {
-      setOpenItemIndex(-1);
-    } else {
-      setOpenItemIndex(index);
-    }
+  const handleItemClick = (index) => {
+    setOpenItemIndex(openItemIndex === index ? -1 : index);
   };
-  useEffect(() => {
-    if (firstItemOpen) {
-      setOpenItemIndex(0);
-      setFirstItemOpen(false);
-    }
-  }, [firstItemOpen]);
 
-    return (
-        <div className="service-details-area-all sp">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-4">
-                        <div className="sidebar-box-area mb-40">
-                            <h3>Search by Keyword</h3>
-                            <div className="search">
-                                <input type="text" placeholder="Type keyword here" /> 
+  return (
+    <div className="trading-service-page">
 
-                                <div className="button">
-                                    <button><i className="bi bi-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
+      {/* ================= BREADCRUMB ================= */}
+      {/* If your project already has BreadCumb, uncomment below */}
+      {/* <BreadCumb Title="IT Trading & Technology Supply" /> */}
 
-                        <div className="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Our Services</h3>
-                            <ul className="features-list">
-                                <li><Link to="/service/service-details">IT Hardware Supply <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Networking Equipment Supply <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Software Licensing Solutions <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">Security & Surveillance Products <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                                <li><Link to="/service/service-details">IT Procurement & Technology Consulting <span><i className="bi bi-chevron-right"></i></span></Link></li>
-                            </ul>
-                        </div>
 
-                        <div className="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Tags</h3>
-                            <ul className="tags">
-                                <li><a href="#">IT Hardware</a></li>
-                                <li><a href="#">Networking</a></li>
-                                <li><a href="#">Software Licensing</a></li>
-                                <li><a href="#">Cybersecurity</a></li>
-                                <li><a href="#">Surveillance Systems</a></li>
-                                <li><a href="#">IT Procurement</a></li>
-                                <li><a href="#">Technology Consulting</a></li>
-                                <li><a href="#">Enterprise Solutions</a></li>
-                            </ul>
-                        </div>
+      {/* =====================================================
+          HERO SECTION
+      ===================================================== */}
+      <section className="trading-hero-section">
+        <div className="container">
 
-                      
-                        <div className="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Get A Free Quote</h3>
-                            <div className="contact-form">
-                                <form action="#">
-                                    
-                                    <div className="single-input">
-                                        <input type="text" placeholder="Your Name" />
-                                    </div>
+          <div className="trading-hero">
 
-                                    <div className="single-input">
-                                        <input type="email" placeholder="Email Address" />
-                                    </div>
+            <div className="trading-hero-content">
 
-                                    <div className="single-input">
-                                        <input type="number" placeholder="Phone Number" />
-                                    </div>
+              <span className="trading-label">
+                IT TRADING & TECHNOLOGY SUPPLY
+              </span>
 
-                                    <div className="single-input">
-                                        <textarea placeholder="Your Message" cols="30" rows="3"></textarea>
-                                    </div>
+              <h1>
+                Smart Technology
+                <span> For Better Business</span>
+              </h1>
 
-                                    <div className="button">
-                                        <button className="theme-btn1">Learn More <span><i className="bi bi-arrow-right"></i></span></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+              <p>
+                Reliable technology products are the foundation of every
+                successful business. We provide trusted IT hardware,
+                networking equipment, software licensing and enterprise
+                technology solutions tailored to your business needs.
+              </p>
 
-                    </div>
-
-                    <div className="col-lg-8 details-left-space">
-                        <div className="service-details-post">
-                            <article>
-                                <div className="details-post-area">
-                                    <div className="image">
-                                        <img src="/assets/img/service/trading.jpg" alt="" />
-                                    </div>
-                                    <div className="space30"></div>
-                                    <div className="heading1">
-                                        <h2>Professional IT Trading & Technology Supply Solutions in Singapore</h2>
-                                        <div className="space16"></div>
-                                        <p>Reliable technology products are the foundation of every successful business, enabling organizations to work efficiently, securely, and competitively. At SBros Tech, we offer comprehensive IT trading services in Singapore, supplying genuine computer hardware, networking equipment, software licenses, and enterprise technology solutions tailored to businesses of all sizes.</p>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div className="space50"></div>
-
-                            <article>
-                                <div className="details-post-area">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="heading1">
-                                                <h5>Our Approach</h5>
-                                                <div className="space16"></div>
-                                                <p>From business laptops and desktop computers to servers, networking devices, cybersecurity solutions, software licenses, and complete IT infrastructure procurement, we deliver trusted products from leading global brands. Backed by competitive pricing, expert consultation, and reliable after-sales support, our team ensures your business has the right technology to achieve long-term growth and operational excellence.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="col-lg-6">
-                                            <div className="space30"></div>
-                                            <div className="heading1">
-                                                <h5>IT Hardware Supply</h5>
-                                                <div className="space20"></div>
-                                                <p>We supply genuine IT hardware that helps businesses build reliable, high-performance technology environments. Our products are sourced from trusted manufacturers to ensure quality, durability, and long-term performance.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="col-lg-6">
-                                            <div className="space30"></div>
-                                            <div className="heading1">
-                                                <h5>Networking Equipment Supply</h5>
-                                                <div className="space20"></div>
-                                                <p>Build a secure and reliable network infrastructure with our enterprise networking solutions designed for businesses of all sizes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div className="space50"></div>
-                            <article>
-                                <div className="details-post-area">
-                                    <div className="heading1">
-                                        <h5>Our Expertise</h5>
-                                        <div className="space16"></div>
-                                        <p>We help businesses procure the right technology solutions based on operational requirements, business objectives, and budget. Our team ensures every product we supply meets industry standards and delivers long-term value.</p>
-
-                                        <div className="space20"></div>
-                                        <ul className="expart-list">
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Software Licensing:</span> Genuine software licences that improve productivity, security, and compliance</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Security & Surveillance:</span> Advanced security and surveillance systems for business safety and control</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Hardware:</span> Business laptops, desktop computers, servers, and networking devices</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Cybersecurity:</span> Trusted cybersecurity solutions from leading global brands</li>
-                                            <li><span className="check"><i className="bi bi-check-lg"></i></span> <span className="text">Consulting:</span> Expert IT procurement and technology consulting services</li>
-                                        </ul>
-                                </div>
-                            </div>
-                            </article>
-
-                            <div className="space20"></div>
-
-                            <div className="row">
-                              <div className="col-lg-6 col-md-6">
-                                <div className="">
-                                  <div className="servcie2-box servcie2-box-2">
-                                    <div className="icon">
-                                      <img src="/assets/img/icons/service-page-icon1.png" alt="" />
-                                    </div>
-                                    <Link to="/service/service-it-networking" className="arrow"><i className="bi bi-arrow-right"></i></Link>
-                                    <div className="heading1">
-                                      <h4><Link to="/service/service-it-networking">IT Networking</Link></h4>
-                                      <div className="space16"></div>
-                                      <p>Enterprise networking solutions built for reliable, secure infrastructure across businesses of all sizes.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                
-                            <div className="col-lg-6 col-md-6">
-  <div className="">
-    <div className="servcie2-box servcie2-box-2">
-      <div className="icon">
-        <img src="/assets/img/icons/service-page-icon2.png" alt="" />
-      </div>
-      <Link to="/service/service-details" className="arrow"><i className="bi bi-arrow-right"></i></Link>
-      <div className="heading1">
-        <h4><Link to="/service/service-details">Software Development</Link></h4>
-        <div className="space16"></div>
-        <p>Custom software solutions tailored to your business needs, from web apps to enterprise systems.</p>
-      </div>
-    </div>
-  </div>
-</div>
-                
-                            </div>
-
-                            <div className="space50"></div>
-
-                            <div className="faq-area-all">
-                                <div className="heading1">
-                                    <h5>Frequently Asked Question</h5>
-                                </div>
-                                <div className="space20"></div>
-
-                                <div className="accordion accordion1 accordion-flush" id="accordionFlushExample">
-
-                                {data.slice(0,4).map((item, index)=>(
-                                    <div key={index} className={`accordion-item ${index === openItemIndex ? "active" : "" }`}>
-                                      <h2 onClick={() => handleItemClick(index)} className="accordion-header" id="flush-headingOne">
-                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        {item.title}
-                                        </button>
-                                      </h2>
-                                      <div ref={accordionContentRef} id="flush-collapseOne" className="accordion-collapse collapse accordion-content" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div className="accordion-body">{item.desc}</div>
-                                      </div>
-                                    </div>
-                                    ))}
-
-                                  </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
+
+
+            <div className="trading-hero-image">
+
+              <div className="trading-image-shape"></div>
+
+              <img
+                src="/assets/img/service/trading.jpg"
+                alt="IT Trading and Technology Supply"
+              />
+
+              <div className="trading-floating-card">
+                <div className="floating-icon">
+                  <i className="bi bi-shield-check"></i>
+                </div>
+
+                <div>
+                  <strong>Trusted Technology</strong>
+                  <span>Business Ready Solutions</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
-    );
+      </section>
+
+
+      {/* =====================================================
+          MAIN CONTENT
+      ===================================================== */}
+      <section className="trading-main-content">
+
+        <div className="container">
+
+          <div className="trading-content-wrapper">
+
+
+            {/* =====================================================
+                INTRO
+            ===================================================== */}
+            <section className="trading-intro-section">
+
+              <div className="trading-section-heading">
+
+                <span className="trading-small-label">
+                  ABOUT OUR SERVICE
+                </span>
+
+                <h2>
+                  Professional IT Trading & Technology
+                  <span> Supply Solutions</span>
+                </h2>
+
+                <p>
+                  At SBROS Tech, we offer comprehensive IT trading services
+                  in Singapore, supplying genuine computer hardware,
+                  networking equipment, software licenses and enterprise
+                  technology solutions tailored to businesses of all sizes.
+                </p>
+
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                STATS
+            ===================================================== */}
+            <section className="trading-stats">
+
+              <div className="trading-stat-card">
+                <div className="trading-stat-icon">
+                  <i className="bi bi-pc-display"></i>
+                </div>
+                <h3>IT Hardware</h3>
+                <p>Reliable business technology products</p>
+              </div>
+
+              <div className="trading-stat-card">
+                <div className="trading-stat-icon">
+                  <i className="bi bi-diagram-3"></i>
+                </div>
+                <h3>Networking</h3>
+                <p>Secure and scalable infrastructure</p>
+              </div>
+
+              <div className="trading-stat-card">
+                <div className="trading-stat-icon">
+                  <i className="bi bi-key"></i>
+                </div>
+                <h3>Licensing</h3>
+                <p>Genuine software licensing solutions</p>
+              </div>
+
+              <div className="trading-stat-card">
+                <div className="trading-stat-icon">
+                  <i className="bi bi-headset"></i>
+                </div>
+                <h3>Support</h3>
+                <p>Reliable technology consultation</p>
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                OUR APPROACH
+            ===================================================== */}
+            <section className="trading-approach-section">
+
+              <div className="trading-section-heading">
+
+                <span className="trading-small-label">
+                  OUR APPROACH
+                </span>
+
+                <h2>
+                  Technology Procurement Made
+                  <span> Simple & Reliable</span>
+                </h2>
+
+                <p>
+                  From product selection to delivery and after-sales support,
+                  our team helps businesses procure the right technology
+                  based on operational requirements, business objectives
+                  and budget.
+                </p>
+
+              </div>
+
+
+              <div className="trading-process-grid">
+
+                <div className="trading-process-card">
+
+                  <span className="process-number">01</span>
+
+                  <div className="process-icon">
+                    <i className="bi bi-search"></i>
+                  </div>
+
+                  <h3>Understand</h3>
+
+                  <p>
+                    We understand your business requirements, technical
+                    needs and budget before recommending solutions.
+                  </p>
+
+                </div>
+
+
+                <div className="trading-process-card">
+
+                  <span className="process-number">02</span>
+
+                  <div className="process-icon">
+                    <i className="bi bi-box-seam"></i>
+                  </div>
+
+                  <h3>Source</h3>
+
+                  <p>
+                    We source genuine technology products from trusted
+                    manufacturers and global brands.
+                  </p>
+
+                </div>
+
+
+                <div className="trading-process-card">
+
+                  <span className="process-number">03</span>
+
+                  <div className="process-icon">
+                    <i className="bi bi-truck"></i>
+                  </div>
+
+                  <h3>Deliver</h3>
+
+                  <p>
+                    We coordinate product delivery while ensuring quality,
+                    reliability and timely procurement.
+                  </p>
+
+                </div>
+
+
+                <div className="trading-process-card">
+
+                  <span className="process-number">04</span>
+
+                  <div className="process-icon">
+                    <i className="bi bi-person-check"></i>
+                  </div>
+
+                  <h3>Support</h3>
+
+                  <p>
+                    Our team provides ongoing consultation and after-sales
+                    support for your technology environment.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                SERVICES
+            ===================================================== */}
+            <section
+              className="trading-services-section"
+              id="trading-services"
+            >
+
+              <div className="trading-section-heading">
+
+                <span className="trading-small-label">
+                  WHAT WE PROVIDE
+                </span>
+
+                <h2>
+                  Complete Technology
+                  <span> Supply Solutions</span>
+                </h2>
+
+                <p>
+                  Choose from a complete range of technology products and
+                  solutions designed to support modern businesses.
+                </p>
+
+              </div>
+
+
+              <div className="trading-service-grid">
+
+                <div className="trading-service-card">
+
+                  <div className="service-card-icon">
+                    <i className="bi bi-laptop"></i>
+                  </div>
+
+                  <span className="service-card-number">
+                    01
+                  </span>
+
+                  <h3>IT Hardware Supply</h3>
+
+                  <p>
+                    Business laptops, desktop computers, servers and
+                    technology devices sourced from trusted manufacturers.
+                  </p>
+
+
+                </div>
+
+
+                <div className="trading-service-card">
+
+                  <div className="service-card-icon">
+                    <i className="bi bi-router"></i>
+                  </div>
+
+                  <span className="service-card-number">
+                    02
+                  </span>
+
+                  <h3>Networking Equipment</h3>
+
+                  <p>
+                    Enterprise networking products designed to build
+                    secure, stable and scalable business infrastructure.
+                  </p>
+
+                 
+
+                </div>
+
+
+                <div className="trading-service-card">
+
+                  <div className="service-card-icon">
+                    <i className="bi bi-file-earmark-lock"></i>
+                  </div>
+
+                  <span className="service-card-number">
+                    03
+                  </span>
+
+                  <h3>Software Licensing</h3>
+
+                  <p>
+                    Genuine software licenses that improve productivity,
+                    security and compliance across your organization.
+                  </p>
+
+                 
+
+                </div>
+
+
+                <div className="trading-service-card">
+
+                  <div className="service-card-icon">
+                    <i className="bi bi-camera-video"></i>
+                  </div>
+
+                  <span className="service-card-number">
+                    04
+                  </span>
+
+                  <h3>Security & Surveillance</h3>
+
+                  <p>
+                    Advanced security and surveillance solutions for
+                    business safety, monitoring and control.
+                  </p>
+
+                 
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                EXPERTISE
+            ===================================================== */}
+            <section className="trading-expertise-section">
+
+              <div className="trading-expertise-wrapper">
+
+                <div className="trading-expertise-left">
+
+                  <span className="trading-small-label">
+                    OUR EXPERTISE
+                  </span>
+
+                  <h2>
+                    The Right Technology
+                    <span> For Your Business</span>
+                  </h2>
+
+                  <p>
+                    We help businesses select and procure technology
+                    solutions that deliver long-term value, performance
+                    and reliability.
+                  </p>
+
+                  <Link
+                    to="/contact"
+                    className="trading-primary-btn"
+                  >
+                    Talk To Our Experts
+                    <i className="bi bi-arrow-right"></i>
+                  </Link>
+
+                </div>
+
+
+                <div className="trading-expertise-list">
+
+                  <div className="expertise-item">
+                    <span>
+                      <i className="bi bi-check-lg"></i>
+                    </span>
+                    <div>
+                      <strong>Software Licensing</strong>
+                      <p>
+                        Genuine licenses for productivity and compliance.
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div className="expertise-item">
+                    <span>
+                      <i className="bi bi-check-lg"></i>
+                    </span>
+                    <div>
+                      <strong>Cybersecurity</strong>
+                      <p>
+                        Trusted security solutions from global brands.
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div className="expertise-item">
+                    <span>
+                      <i className="bi bi-check-lg"></i>
+                    </span>
+                    <div>
+                      <strong>Hardware</strong>
+                      <p>
+                        Business computers, servers and networking devices.
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div className="expertise-item">
+                    <span>
+                      <i className="bi bi-check-lg"></i>
+                    </span>
+                    <div>
+                      <strong>Technology Consulting</strong>
+                      <p>
+                        Practical procurement and technology guidance.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                RELATED SERVICES
+            ===================================================== */}
+            <section className="trading-related-section">
+
+              <div className="trading-section-heading">
+
+                <span className="trading-small-label">
+                  EXPLORE MORE
+                </span>
+
+                <h2>
+                  Related Technology
+                  <span> Services</span>
+                </h2>
+
+              </div>
+
+
+              <div className="trading-related-grid">
+
+                <div className="trading-related-card">
+
+                  <div className="related-icon">
+                    <img
+                      src="/assets/img/icons/service-page-icon1.png"
+                      alt="IT Networking"
+                    />
+                  </div>
+
+                  <div>
+                    <h3>
+                      <Link to="/service/service-it-networking">
+                        IT Networking
+                      </Link>
+                    </h3>
+
+                    <p>
+                      Enterprise networking solutions for secure and
+                      reliable business infrastructure.
+                    </p>
+
+                    <Link
+                      to="/service/service-it-networking"
+                      className="related-link"
+                    >
+                      Explore Service
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
+                  </div>
+
+                </div>
+
+
+                <div className="trading-related-card">
+
+                  <div className="related-icon">
+                    <img
+                      src="/assets/img/icons/service-page-icon2.png"
+                      alt="Software Development"
+                    />
+                  </div>
+
+                  <div>
+                    <h3>
+                      <Link to="/service/service-details">
+                        Software Development
+                      </Link>
+                    </h3>
+
+                    <p>
+                      Custom software solutions designed around your
+                      business requirements.
+                    </p>
+
+                    <Link
+                      to="/service/service-details"
+                      className="related-link"
+                    >
+                      Explore Service
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                FAQ
+            ===================================================== */}
+            <section className="trading-faq-section">
+
+              <div className="trading-section-heading">
+
+                <span className="trading-small-label">
+                  FAQ
+                </span>
+
+                <h2>
+                  Frequently Asked
+                  <span> Questions</span>
+                </h2>
+
+                <p>
+                  Find answers to common questions about our IT trading
+                  and technology supply services.
+                </p>
+
+              </div>
+
+
+              <div className="trading-faq-list">
+
+                {data.slice(0, 4).map((item, index) => (
+
+                  <div
+                    key={index}
+                    className={`trading-faq-item ${
+                      openItemIndex === index ? "active" : ""
+                    }`}
+                  >
+
+                    <button
+                      type="button"
+                      className="trading-faq-question"
+                      onClick={() => handleItemClick(index)}
+                    >
+
+                      <span className="faq-count">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="faq-question-text">
+                        {item.title}
+                      </span>
+
+                      <span className="faq-toggle">
+                        <i
+                          className={`bi ${
+                            openItemIndex === index
+                              ? "bi-dash"
+                              : "bi-plus"
+                          }`}
+                        ></i>
+                      </span>
+
+                    </button>
+
+
+                    {openItemIndex === index && (
+
+                      <div className="trading-faq-answer">
+                        <p>{item.desc}</p>
+                      </div>
+
+                    )}
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </section>
+
+
+            {/* =====================================================
+                CTA
+            ===================================================== */}
+            <section className="trading-cta-section">
+
+              <div className="trading-cta-content">
+
+                <span className="trading-small-label">
+                  READY TO UPGRADE?
+                </span>
+
+                <h2>
+                  Let's Build Your
+                  <span> Technology Foundation</span>
+                </h2>
+
+                <p>
+                  Get the right technology products, reliable support and
+                  expert guidance for your business.
+                </p>
+
+                <Link
+                  to="/contact"
+                  className="trading-cta-btn"
+                >
+                  Contact Our Team
+                  <i className="bi bi-arrow-right"></i>
+                </Link>
+
+              </div>
+
+              <div className="cta-decoration">
+                <i className="bi bi-cpu"></i>
+              </div>
+
+            </section>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+  );
 };
 
 export default ServiceTrading;
