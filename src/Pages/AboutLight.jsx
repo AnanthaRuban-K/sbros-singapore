@@ -13,9 +13,9 @@ const AboutLight = () => {
           
              <BreadCumb Title="About us"></BreadCumb>
             <About6
-                image1="/assets/img/about/about1.jpg"
-                image2="/assets/img/about/about2-img2.png"
-                image3="/assets/img/about/about2-img3.png"
+                // image1="/assets/img/about/about1.jpg"
+                image2="/assets/img/about/about11.jpg"
+               
                 experienceNum="5"
                 experienceTitle="Years Of <br> Experience"
                 

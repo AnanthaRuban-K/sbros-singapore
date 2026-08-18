@@ -18,6 +18,8 @@ import ContactPage from "../Pages/ContactPage";
 import TeamPage from "../Pages/TeamPage";
 import TestimonialPage from "../Pages/TestimonialPage";
 import ServiceDetailsLeft from "../Pages/ServiceDetailsLeft";
+import ServiceITNetworking from "../Pages/ServiceITNetworking";
+import ServiceTrading from "../Pages/ServiceTrading";
 import ServiceDetailsRight from "../Pages/ServiceDetailsRight";
 import ServiceDetailsCenter from "../Pages/ServiceDetailsCenter";
 import ProjectDetailsLeft from "../Pages/ProjectDetailsLeft";
@@ -63,6 +65,14 @@ export const router = createBrowserRouter([
         {
           path: "/service/service-details",
           element:<ServiceDetailsLeft></ServiceDetailsLeft> ,
+        }, 
+        {
+          path: "/service/service-it-networking",
+          element:<ServiceITNetworking></ServiceITNetworking>,
+        },
+        {
+          path: "/service/service-trading",
+          element:<ServiceTrading></ServiceTrading>,
         }, 
         {
           path: "/service/service-details-right",
@@ -189,6 +199,7 @@ export const router = createBrowserRouter([
           path: '/service/service-details-dark',
           element: <ServiceDetailsLeftDark></ServiceDetailsLeftDark>,
         },
+        
         {
           path: '/service/service-details-right-dark',
           element: <ServiceDetailsRightDark></ServiceDetailsRightDark>,

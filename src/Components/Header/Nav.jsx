@@ -22,7 +22,7 @@ export default function Nav({ setMobileToggle }) {
         <DropDown>
           <ul>
             <li>
-              <Link to="/service/services1" onClick={() => setMobileToggle(false)}>
+              <Link to="/service/service-details-right" onClick={() => setMobileToggle(false)}>
                 ERP Solutions
               </Link>
             </li>
@@ -32,17 +32,17 @@ export default function Nav({ setMobileToggle }) {
               </Link>
             </li>
             <li>
-              <Link to="/service/website-development" onClick={() => setMobileToggle(false)}>
+              <Link to="/service/service-details-center" onClick={() => setMobileToggle(false)}>
                 Website Development
               </Link>
             </li>
             <li>
-              <Link to="/service/it-networking" onClick={() => setMobileToggle(false)}>
+              <Link to="/service/service-it-networking" onClick={() => setMobileToggle(false)}>
                 IT Networking
               </Link>
             </li>
             <li>
-              <Link to="/service/trading" onClick={() => setMobileToggle(false)}>
+              <Link to="/service/service-trading" onClick={() => setMobileToggle(false)}>
                 Trading
               </Link>
             </li>
@@ -50,8 +50,9 @@ export default function Nav({ setMobileToggle }) {
         </DropDown>
       </li>
 
-       <li className="menu-item-has-children">
-        <Link>Products</Link>
+
+        <li className="menu-item-has-children">
+        <a href="#" onClick={(e) => e.preventDefault()}>Products</a>
         <DropDown>
           <ul>
             <li>
@@ -97,19 +98,13 @@ export default function Nav({ setMobileToggle }) {
         </Link>
       </li> */}
 
+
       <li>
         <Link to="/testimonial" onClick={() => setMobileToggle(false)}>
           Projects
         </Link>
       </li>
 
-      {/* <li>
-        <Link to="/insights" onClick={() => setMobileToggle(false)}>
-          Insights
-        </Link>
-      </li> */}
-
-     
     </ul>
   );
 }

@@ -15,19 +15,13 @@ const ProjectDetailsCenter1 = () => {
               <article>
                 <div className="details-post-area">
 
-                  <div className="image">
-                    <img
-                      src="/assets/img/others/project-details-img1.png"
-                      alt="ERP System"
-                    />
-                  </div>
 
-                  <div className="space30"></div>
+                    <div className="space30"></div>
 
                   <div className="heading1">
 
                     <h2>
-                      Streamline Your Business Operations with (ERP) Systems
+                      Streamline Your Business Operations with (ERP) Solutions
                     </h2>
 
                     <div className="space16"></div>
@@ -43,44 +37,22 @@ const ProjectDetailsCenter1 = () => {
                     </p>
 
                   </div>
+
+                  <div className="image">
+                    <img
+                      src="/assets/img/others/erpimg1.jpg"
+                      alt="ERP System"
+                    />
+                  </div>
+
+                  
                 </div>
               </article>
 
 
-              {/* =========================================
-                  GET STARTED
-              ========================================= */}
-              <div className="get-started-box">
+              
 
-                <h3>Get Started with ERP Implementation Today</h3>
-
-                <div className="space16"></div>
-
-                <p>
-                  Ready to transform your business with ERP? Contact us today
-                  to optimize your operations and drive business success.
-                </p>
-
-                <div className="space30"></div>
-
-                <Link
-                  to="/contact"
-                  className="get-started-btn"
-                >
-                  Request a Demo
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className="get-started-btn"
-                >
-                  Talk to Our Team
-                </Link>
-
-              </div>
-
-
-              <div className="space50"></div>
+             
 
 
 
@@ -374,89 +346,118 @@ Track employee attendance and working hours with an integrated HR system.
               </article>
 
 
-
-                            {/* =========================================
-                  ERP IMPLEMENTATION PROCESS
+              {/* =========================================
+                  GET STARTED
               ========================================= */}
-              <article>
+              <div className="get-started-box">
 
-                <div className="details-post-area">
+                <h3>Get Started with ERP Implementation Today</h3>
 
-                  <div className="row">
+                <div className="space16"></div>
 
-                    <div className="col-lg-12">
+                <p>
+                  Ready to transform your business with ERP? Contact us today
+                  to optimize your operations and drive business success.
+                </p>
 
-                      <div className="heading1">
+                <div className="space30"></div>
 
-                        <h5>From Lead to Operations</h5>
+                <Link
+                  to="/contact"
+                  className="get-started-btn"
+                >
+                  Request a Demo
+                </Link>
 
-                        <div className="space16"></div>
+                <Link
+                  to="/contact"
+                  className="get-started-btn"
+                >
+                  Talk to Our Team
+                </Link>
 
-                        <div className="boxs-area">
-
-                          <ul>
-
-                            <li>
-                              <span className="check">
-                                <i className="bi bi-check-lg"></i>
-                              </span>
-                              Needs Assessment
-                            </li>
-
-                            <li>
-                              <span className="check">
-                                <i className="bi bi-check-lg"></i>
-                              </span>
-                              Solution Design
-                            </li>
-
-                            <li>
-                              <span className="check">
-                                <i className="bi bi-check-lg"></i>
-                              </span>
-                              Data Migration
-                            </li>
-
-                          </ul>
+              </div>
 
 
-                          <ul>
 
-                            <li>
-                              <span className="check">
-                                <i className="bi bi-check-lg"></i>
-                              </span>
-                              Change Management
-                            </li>
 
-                            <li>
-                              <span className="check">
-                                <i className="bi bi-check-lg"></i>
-                              </span>
-                              Testing & Quality
-                            </li>
+{/* =========================================
+    ERP IMPLEMENTATION WORKFLOW
+========================================= */}
+<article className="erp-workflow-section">
+  <div className="details-post-area">
 
-                            <li>
-                              <span className="check">
-                                <i className="bi bi-check-lg"></i>
-                              </span>
-                              Go Live & Support
-                            </li>
+    <div className="heading1">
+      <h5>ERP Implementation Workflow</h5>
 
-                          </ul>
+      <div className="space16"></div>
 
-                        </div>
+      <div className="erp-workflow">
 
-                      </div>
+        {/* Step 1 */}
+        <div className="workflow-box">
+          <div className="workflow-icon">
+            <i className="bi bi-megaphone"></i>
+          </div>
 
-                    </div>
+          <h6>Marketing</h6>
+        </div>
 
-                  </div>
 
-                </div>
+        {/* Step 2 */}
+        <div className="workflow-box">
+          <div className="workflow-icon">
+            <i className="bi bi-lightbulb"></i>
+          </div>
 
-              </article>
+          <h6>Solution Design</h6>
+        </div>
 
+
+        {/* Step 3 */}
+        <div className="workflow-box">
+          <div className="workflow-icon">
+            <i className="bi bi-database"></i>
+          </div>
+
+          <h6>Data Migration</h6>
+        </div>
+
+
+        {/* Step 4 */}
+        <div className="workflow-box">
+          <div className="workflow-icon">
+            <i className="bi bi-people"></i>
+          </div>
+
+          <h6>Change Management</h6>
+        </div>
+
+
+        {/* Step 5 */}
+        <div className="workflow-box">
+          <div className="workflow-icon">
+            <i className="bi bi-check2-circle"></i>
+          </div>
+
+          <h6>Testing & Quality</h6>
+        </div>
+
+
+        {/* Step 6 */}
+        <div className="workflow-box">
+          <div className="workflow-icon">
+            <i className="bi bi-rocket-takeoff"></i>
+          </div>
+
+          <h6>Go Live & Support</h6>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</article>
 
 
 

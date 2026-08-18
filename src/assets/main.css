@@ -7864,6 +7864,7 @@ a.header__search.header-search-btn p {
 
 .details-post-area .image img {
   width: 100%;
+  border-radius: 10px;
 }
 .details-post-area .expart-list li {
   color: var(--Paragraph-Color, #676879);
@@ -12421,7 +12422,212 @@ a.header__search.header-search-btn p {
     display: block;
   }
 }
+ /* =========================================
+   FULL LIGHT THEME
+   ========================================= */
 
+body,
+.comon-body {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Common Hero */
+.common-hero,
+.comon-body .common-hero {
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff !important;
+  color: #111111 !important;
+
+  z-index: 0 !important;
+}
+
+/* Remove dark background images */
+.common-hero::after,
+.comon-body .common-hero::after {
+  display: none !important;
+  background: none !important;
+}
+
+/* Hero Title */
+.common-hero .main-heading h1,
+.comon-body .common-hero .main-heading h1 {
+  color: #111111 !important;
+}
+
+/* Breadcrumb */
+.common-hero .main-heading span.span,
+.comon-body .common-hero .main-heading span.span {
+  color: #555555 !important;
+}
+
+/* Home link */
+.common-hero .main-heading span.span a,
+.comon-body .common-hero .main-heading span.span a {
+  color: #111111 !important;
+}
+
+/* Arrow */
+.common-hero .main-heading span.span .arrow,
+.comon-body .common-hero .main-heading span.span .arrow {
+  color: #777777 !important;
+}
+
+/* Paragraph */
+.common-hero p,
+.comon-body .common-hero p {
+  color: #555555 !important;
+}
+
+
+/* =========================================
+   LIGHT SERVICE SECTION
+   ========================================= */
+
+.services-list,
+.service-list {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.services-list .service-row,
+.service-list .service-item {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.services-list .service-content h4,
+.service-list .service-item h4 {
+  color: #111111 !important;
+}
+
+.services-list .service-content p,
+.service-list .service-item p {
+  color: #555555 !important;
+}
+
+
+/* =========================================
+   LIGHT SIDEBAR
+   ========================================= */
+
+.service-sidebar,
+.services-sidebar,
+.sidebar {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.service-sidebar h3,
+.services-sidebar h3,
+.sidebar h3 {
+  color: #111111 !important;
+}
+
+
+/* =========================================
+   REMOVE DARK BACKGROUNDS
+   ========================================= */
+
+.comon-body .common-hero,
+.common-hero,
+.service-details,
+.service-details-area,
+.services-area {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+
+/* =========================================
+   LIGHT TEXT
+   ========================================= */
+
+.comon-body h1,
+.comon-body h2,
+.comon-body h3,
+.comon-body h4,
+.comon-body h5,
+.comon-body h6 {
+  color: #111111 !important;
+}
+
+.comon-body p {
+  color: #555555 !important;
+}
+
+
+/* =========================================
+   LIGHT SEARCH BOX
+   ========================================= */
+
+.search-box,
+.search-form {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.search-box input,
+.search-form input {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #dddddd !important;
+}
+
+.search-box input::placeholder,
+.search-form input::placeholder {
+  color: #888888 !important;
+}
+
+
+/* =========================================
+   LIGHT SERVICE BUTTONS
+   ========================================= */
+
+.services-list .service-row {
+  border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.services-list .service-row:hover {
+  background: #f8f8f8 !important;
+}
+
+
+/* =========================================
+   REMOVE DARK OVERLAYS
+   ========================================= */
+
+.common-hero::before,
+.comon-body .common-hero::before {
+  background: transparent !important;
+  opacity: 0 !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+  .common-hero,
+  .comon-body .common-hero {
+    min-height: 300px;
+    padding-top: 80px;
+    background: #ffffff !important;
+  }
+
+  .common-hero .main-heading h1,
+  .comon-body .common-hero .main-heading h1 {
+    font-size: 40px;
+    line-height: 48px;
+    color: #111111 !important;
+  }
+}
 .common-hero {
   min-height: 300px;
   display: flex;
@@ -17095,6 +17301,212 @@ a.header__search.header-search-btn p {
 
 
 
+
+/* =========================================
+   ERP IMPLEMENTATION WORKFLOW
+========================================= */
+
+.erp-workflow-section {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.erp-workflow {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+
+/* =========================================
+   SMALL WORKFLOW BOX
+========================================= */
+
+.workflow-box {
+  flex: 1;
+  min-height: 100px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e8ed;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px 10px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+
+  transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.workflow-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(14, 56, 177, 0.08);
+
+  border-radius: 50%;
+
+  margin-bottom: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.workflow-icon i {
+  font-size: 20px;
+  color: #0e38b1;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.workflow-box h6 {
+  margin: 0;
+
+  color: #30343b;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.workflow-box:hover {
+  transform: translateY(-4px);
+
+  border-color: #0e38b1;
+
+  box-shadow: 0 8px 22px rgba(14, 56, 177, 0.12);
+}
+
+.workflow-box:hover .workflow-icon {
+  background: #0e38b1;
+}
+
+.workflow-box:hover .workflow-icon i {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .erp-workflow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .workflow-box {
+    min-height: 105px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .erp-workflow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .workflow-box {
+    min-height: 100px;
+    padding: 15px 8px;
+  }
+
+  .workflow-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .workflow-icon i {
+    font-size: 18px;
+  }
+
+  .workflow-box h6 {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .erp-workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-box {
+    min-height: 75px;
+
+    flex-direction: row;
+    justify-content: flex-start;
+
+    text-align: left;
+
+    padding: 12px 15px;
+  }
+
+  .workflow-icon {
+    margin-bottom: 0;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  .workflow-box h6 {
+    text-align: left;
+  }
+
+}
+
+
+
+
+
+
+
+
+
 /* =========================================
    NORMAL CARD
 ========================================= */
@@ -17105,7 +17517,7 @@ a.header__search.header-search-btn p {
   border: 1px solid #e5e9ee;
   border-radius: 14px;
   padding: 30px 26px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
    margin-top: 30px;
 
   min-height: 290px;
@@ -17435,7 +17847,6 @@ a.header__search.header-search-btn p {
   }
 
 }
-
 
 
 
@@ -26120,4 +26531,15 @@ background-color: unset;
     justify-content: flex-start;
     margin-top: 8px;
   }
+}
+.details-post-area .expart-list li .text {
+  color: #000000 !important;
+}
+
+.details-post-area .expart-list li {
+  color: #000000 !important;
+}
+
+.details-post-area .expart-list li .check {
+  color: #000000 !important;
 }
