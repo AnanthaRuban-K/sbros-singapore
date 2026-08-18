@@ -32600,3 +32600,707 @@ background-color: unset;
         right: 15px;
     }
 }
+/* =====================================================
+   SBROS CREATIVE CONTACT PAGE
+===================================================== */
+
+.sbros-contact-page {
+    width: 100%;
+    background: #f6f8fc;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.sbros-contact-section {
+    padding: 110px 0 100px;
+}
+
+.sbros-contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sbros-contact-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: #eaf0ff;
+    color: #1745c2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.sbros-contact-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1745c2;
+}
+
+.sbros-contact-header h2 {
+    font-size: 48px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 18px;
+}
+
+.sbros-contact-header h2 span {
+    color: #1745c2;
+}
+
+.sbros-contact-header p {
+    color: #6b7280;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =====================================================
+   LEFT CONTACT CARD
+===================================================== */
+
+.sbros-contact-info {
+    height: 100%;
+    min-height: 590px;
+    padding: 38px;
+    border-radius: 28px;
+    background: #1745c2;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 25px 60px rgba(23, 69, 194, 0.18);
+}
+
+.sbros-contact-info::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    right: -100px;
+    top: -100px;
+}
+
+.sbros-contact-info::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+    left: -80px;
+    bottom: -80px;
+}
+
+.sbros-info-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.sbros-info-circle {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.sbros-info-top small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.65;
+    margin-bottom: 6px;
+}
+
+.sbros-info-top h3 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0;
+    color: #fff;
+}
+
+
+/* =====================================================
+   CONTACT ITEMS
+===================================================== */
+
+.sbros-contact-items {
+    margin-top: 42px;
+    position: relative;
+    z-index: 2;
+}
+
+.sbros-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 19px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sbros-contact-item:hover {
+    padding-left: 8px;
+    color: #fff;
+}
+
+.sbros-contact-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sbros-contact-icon img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+
+.sbros-contact-item span {
+    display: block;
+    font-size: 12px;
+    opacity: 0.6;
+    margin-bottom: 4px;
+}
+
+.sbros-contact-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.sbros-arrow {
+    margin-left: auto;
+    font-size: 21px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.sbros-contact-item:hover .sbros-arrow {
+    opacity: 1;
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   LEFT BOTTOM
+===================================================== */
+
+.sbros-contact-bottom {
+    position: absolute;
+    left: 38px;
+    bottom: 35px;
+    z-index: 2;
+}
+
+.sbros-contact-bottom span {
+    display: block;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 5px;
+}
+
+.sbros-contact-bottom strong {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.sbros-form-card {
+    height: 100%;
+    min-height: 590px;
+    margin-left: 20px;
+    padding: 42px;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid #e8ebf2;
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.06);
+}
+
+.sbros-form-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.sbros-form-title span {
+    display: block;
+    color: #1745c2;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin-bottom: 8px;
+}
+
+.sbros-form-title h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.sbros-form-number {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f0f4ff;
+    color: #1745c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.sbros-input {
+    margin-bottom: 22px;
+}
+
+.sbros-input label {
+    display: block;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.sbros-input input,
+.sbros-input textarea {
+    width: 100%;
+    border: 1px solid #e4e7ec;
+    background: #fafbfc;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.sbros-input input {
+    height: 52px;
+}
+
+.sbros-input textarea {
+    resize: none;
+}
+
+.sbros-input input::placeholder,
+.sbros-input textarea::placeholder {
+    color: #a0a6b1;
+}
+
+.sbros-input input:focus,
+.sbros-input textarea:focus {
+    border-color: #1745c2;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(23,69,194,0.08);
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.sbros-submit-btn {
+    width: 100%;
+    min-height: 58px;
+    border: none;
+    border-radius: 13px;
+    background: #1745c2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 8px 7px 22px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sbros-submit-btn:hover {
+    background: #1239a3;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(23,69,194,0.2);
+}
+
+.sbros-submit-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+
+/* =====================================================
+   MAP SECTION
+===================================================== */
+
+.sbros-map-section {
+    padding: 0 0 100px;
+}
+
+.sbros-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+}
+
+.sbros-map-header span {
+    display: block;
+    color: #1745c2;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.sbros-map-header h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.sbros-map-header p {
+    max-width: 430px;
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.sbros-map-wrapper {
+    height: 430px;
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    background: #e9edf5;
+    box-shadow: 0 20px 50px rgba(17,24,39,0.08);
+}
+
+.sbros-map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.sbros-map-card {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.sbros-map-pin {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: #eef3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sbros-map-card small {
+    display: block;
+    color: #1745c2;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 3px;
+}
+
+.sbros-map-card strong {
+    display: block;
+    color: #111827;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .sbros-contact-section {
+        padding: 80px 0;
+    }
+
+    .sbros-contact-header h2 {
+        font-size: 40px;
+    }
+
+    .sbros-form-card {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .sbros-contact-info {
+        min-height: 550px;
+    }
+
+    .sbros-map-header {
+        display: block;
+    }
+
+    .sbros-map-header p {
+        text-align: left;
+        margin-top: 12px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .sbros-contact-section {
+        padding: 60px 0;
+    }
+
+    .sbros-contact-header {
+        margin-bottom: 40px;
+    }
+
+    .sbros-contact-header h2 {
+        font-size: 32px;
+    }
+
+    .sbros-contact-header p br {
+        display: none;
+    }
+
+    .sbros-contact-info {
+        padding: 28px;
+        min-height: 520px;
+        border-radius: 22px;
+    }
+
+    .sbros-contact-bottom {
+        left: 28px;
+        bottom: 28px;
+    }
+
+    .sbros-form-card {
+        padding: 28px 20px;
+        min-height: auto;
+        border-radius: 22px;
+    }
+
+    .sbros-form-title h3 {
+        font-size: 21px;
+    }
+
+    .sbros-map-section {
+        padding-bottom: 60px;
+    }
+
+    .sbros-map-wrapper {
+        height: 350px;
+        border-radius: 20px;
+    }
+
+    .sbros-map-card {
+        left: 15px;
+        bottom: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .sbros-contact-header h2 {
+        font-size: 28px;
+    }
+
+    .sbros-info-top h3 {
+        font-size: 18px;
+    }
+
+    .sbros-contact-item strong {
+        font-size: 13px;
+    }
+
+    .sbros-contact-icon {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+    }
+
+    .sbros-form-number {
+        display: none;
+    }
+
+    .sbros-map-wrapper {
+        height: 300px;
+    }
+}
+/* =========================================
+   PREMIUM SEND MESSAGE BUTTON
+========================================= */
+
+.sbros-send-btn {
+    width: 100%;
+    height: 58px;
+    padding: 5px 6px 5px 24px;
+    border: none;
+    border-radius: 12px;
+    background: #1745c2;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    transition: all 0.3s ease;
+}
+
+/* subtle shine */
+.sbros-send-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.6s ease;
+}
+
+.sbros-send-btn:hover::before {
+    left: 140%;
+}
+
+/* Text */
+.sbros-send-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Arrow circle */
+.sbros-send-arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.14);
+
+    position: relative;
+    z-index: 2;
+
+    transition: all 0.3s ease;
+}
+
+.sbros-send-arrow i {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover */
+.sbros-send-btn:hover {
+    background: #123aa8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(23,69,194,0.22);
+}
+
+.sbros-send-btn:hover .sbros-send-arrow {
+    background: #fff;
+}
+
+.sbros-send-btn:hover .sbros-send-arrow i {
+    color: #1745c2;
+    transform: translate(3px, -3px);
+}
+
+
+/* Click */
+.sbros-send-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .sbros-send-btn {
+        height: 54px;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+
+    .sbros-send-arrow {
+        width: 42px;
+        height: 42px;
+    }
+}
