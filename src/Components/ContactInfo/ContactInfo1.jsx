@@ -1,119 +1,269 @@
 const ContactInfo1 = () => {
     return (
-        <div>
-            <div className="space100"></div>
-        <div className="contact-page">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="contact-boxs">
-                            <div className="heading1">
-                                <h2>Contact Information</h2>
-                                <div className="space16"></div>
-                                <p>We have grown up with the digital revolution, and we <br/> know how to deliver on its promise.</p>
-                            </div>
-                            <div className="contact-box">
-                                <div className="icon">
-                                    <img src="/assets/img/icons/contact-page-icon1.png" alt="" />
-                                </div>
-                                <div className="heading">
-                                    <h5>Contact Us</h5>
-                                    <a href="tel:+6590214545" className="text">+65 9021 4545</a>
-                                </div>
-                            </div>
+        <div className="sbros-contact-page">
 
-                            <div className="contact-box">
-                                <div className="icon">
-                                    <img src="/assets/img/icons/contact-page-icon2.png" alt="" />
-                                </div>
-                                <div className="heading">
-                                    <h5>Send Us a Mail</h5>
-                                    <a href="mailto:enquiry@sbrostech.com.sg" className="text">enquiry@sbrostech.com.sg</a>
-                                </div>
-                            </div>
+            {/* CONTACT HERO */}
+            <section className="sbros-contact-section">
+                <div className="container">
 
-                            <div className="contact-box">
-                                <div className="icon">
-                                    <img src="/assets/img/icons/contact-page-icon3.png" alt="" />
-                                </div>
-                                <div className="heading">
-                                    <h5>Office Location</h5>
-                                    <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="text">
-                                        Singapore
-                                    </a>
-                                </div>
-                            </div>
+                    <div className="sbros-contact-header">
+                        <span className="sbros-contact-tag">GET IN TOUCH</span>
 
-                        </div>
+                        <h2>
+                            Let's Start a <span>Conversation</span>
+                        </h2>
+
+                        <p>
+                            Have a question, project idea, or simply want to connect?
+                            <br />
+                            Our team is ready to hear from you.
+                        </p>
                     </div>
 
-                    <div className="col-lg-6">
-                        <div className="contact-form-details">
-                            <form action="#">
-                                <div className="row">
-                                    <div className="col-lg-6">
-                                        <div className="single-input">
-                                            <input type="text" placeholder="First Name" required />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="single-input">
-                                            <input type="text" placeholder="Last Name" required />
-                                        </div>
+                    <div className="row align-items-stretch">
+
+                        {/* LEFT SIDE */}
+                        <div className="col-lg-5">
+
+                            <div className="sbros-contact-info">
+
+                                <div className="sbros-info-top">
+                                    <div className="sbros-info-circle">
+                                        <span>✦</span>
                                     </div>
 
-                                    <div className="col-lg-6">
-                                        <div className="single-input">
-                                            <input type="email" placeholder="Email" required />
-                                        </div>
+                                    <div>
+                                        <small>CONTACT US</small>
+                                        <h3>We'd love to hear from you.</h3>
                                     </div>
+                                </div>
 
-                                    <div className="col-lg-6">
-                                        <div className="single-input">
-                                            <input type="number" placeholder="Phone" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-12">
-                                        <div className="single-input">
-                                            <input type="text" placeholder="Subject" />
-                                        </div>
-                                    </div>
+                                <div className="sbros-contact-items">
 
-                                    <div className="col-lg-12">
-                                        <div className="single-input">
-                                            <textarea cols="30" rows="5" placeholder="Message"></textarea>
+                                    {/* PHONE */}
+                                    <a
+                                        href="tel:+6590214545"
+                                        className="sbros-contact-item"
+                                    >
+                                        <div className="sbros-contact-icon">
+                                            <img
+                                                src="/assets/img/icons/contact-page-icon1.png"
+                                                alt="Phone"
+                                            />
                                         </div>
-                                    </div>
 
-                                    <div className="col-lg-12">
-                                        <button type="submit" className="theme-btn1">Submit <span><i className="bi bi-arrow-right"></i></span></button>
-                                    </div>
+                                        <div>
+                                            <span>Call Us</span>
+                                            <strong>+65 9021 4545</strong>
+                                        </div>
+
+                                        <div className="sbros-arrow">↗</div>
+                                    </a>
+
+                                    {/* EMAIL */}
+                                    <a
+                                        href="mailto:enquiry@sbrostech.com.sg"
+                                        className="sbros-contact-item"
+                                    >
+                                        <div className="sbros-contact-icon">
+                                            <img
+                                                src="/assets/img/icons/contact-page-icon2.png"
+                                                alt="Email"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <span>Email Us</span>
+                                            <strong>enquiry@sbrostech.com.sg</strong>
+                                        </div>
+
+                                        <div className="sbros-arrow">↗</div>
+                                    </a>
+
+                                    {/* LOCATION */}
+                                    <a
+                                        href="https://www.google.com/maps"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sbros-contact-item"
+                                    >
+                                        <div className="sbros-contact-icon">
+                                            <img
+                                                src="/assets/img/icons/contact-page-icon3.png"
+                                                alt="Location"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <span>Our Office</span>
+                                            <strong>Singapore</strong>
+                                        </div>
+
+                                        <div className="sbros-arrow">↗</div>
+                                    </a>
 
                                 </div>
-                            </form>
+
+                                <div className="sbros-contact-bottom">
+                                    <span>Have a project in mind?</span>
+                                    <strong>Let's make it happen.</strong>
+                                </div>
+
+                            </div>
+
                         </div>
+
+                        {/* RIGHT SIDE FORM */}
+                        <div className="col-lg-7">
+
+                            <div className="sbros-form-card">
+
+                                <div className="sbros-form-title">
+                                    <div>
+                                        <span>DROP US A MESSAGE</span>
+                                        <h3>Tell us about your project</h3>
+                                    </div>
+
+                                    <div className="sbros-form-number">
+                                        01
+                                    </div>
+                                </div>
+
+                                <form action="#">
+
+                                    <div className="row">
+
+                                        <div className="col-md-6">
+                                            <div className="sbros-input">
+                                                <label>First Name</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Enter your first name"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-md-6">
+                                            <div className="sbros-input">
+                                                <label>Last Name</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Enter your last name"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-md-6">
+                                            <div className="sbros-input">
+                                                <label>Email Address</label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="your@email.com"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-md-6">
+                                            <div className="sbros-input">
+                                                <label>Phone Number</label>
+                                                <input
+                                                    type="tel"
+                                                    placeholder="+65 XXXXXXXX"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-12">
+                                            <div className="sbros-input">
+                                                <label>Subject</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="What can we help you with?"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-12">
+                                            <div className="sbros-input">
+                                                <label>Your Message</label>
+                                                <textarea
+                                                    rows="5"
+                                                    placeholder="Tell us a little about your requirements..."
+                                                ></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div className="col-12">
+                                           <button type="submit" className="sbros-send-btn">
+    <span className="sbros-send-text">Send Message</span>
+
+    <span className="sbros-send-arrow">
+        <i className="bi bi-arrow-up-right"></i>
+    </span>
+</button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
-            </div>
+            </section>
+
+            {/* MAP SECTION */}
+            <section className="sbros-map-section">
+
+                <div className="container">
+
+                    <div className="sbros-map-header">
+
+                        <div>
+                            <span>FIND US</span>
+                            <h3>Our Location</h3>
+                        </div>
+
+                      
+
+                    </div>
+
+                    <div className="sbros-map-wrapper">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127793.0!2d103.8198!3d1.3521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2ssg!4v1673751720794!5m2!1sen!2ssg"
+                            loading="lazy"
+                            allowFullScreen=""
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="SBROS Tech Singapore Location"
+                        ></iframe>
+
+                        <div className="sbros-map-card">
+
+                            <div className="sbros-map-pin">
+                                📍
+                            </div>
+
+                            <div>
+                                <small>SBROS TECH</small>
+                                <strong>Singapore</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
-
-        <div className="space100"></div>
-
-        <div className="contact-map-page">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127793.0!2d103.8198!3d1.3521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2ssg!4v1673751720794!5m2!1sen!2ssg"
-                width="600"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="SBROS Tech Location Map"
-            ></iframe>
-          </div>
-
-    </div>
-
     );
 };
 
