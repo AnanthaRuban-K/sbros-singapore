@@ -383,10 +383,7 @@ const ServiceDetailsCenter3 = () => {
 
                                 </div>
 
-                                <p>
-                                    A selection of websites developed for
-                                    businesses across different industries.
-                                </p>
+                               
 
                             </div>
 
