@@ -6640,6 +6640,63 @@ a.header__search.header-search-btn p {
 
 
 
+/* Copyright - Keep Everything in One Line */
+.copyright-area .coppyright p {
+  white-space: nowrap !important;
+  display: block;
+  width: max-content;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Give copyright column enough space */
+.copyright-area .col-md-5 {
+  width: 65%;
+  flex: 0 0 65%;
+}
+
+/* Privacy Policy */
+.copyright-area .col-md-7 {
+  width: 35%;
+  flex: 0 0 35%;
+}
+
+.copyright-area .right-area {
+  text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .copyright-area .coppyright p {
+    white-space: nowrap !important;
+    font-size: 12px;
+  }
+
+  .copyright-area .col-md-5 {
+    width: 100%;
+    flex: 0 0 100%;
+    overflow-x: auto;
+  }
+
+  .copyright-area .col-md-7 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .copyright-area .right-area {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 /* =========================================================
    SERVICES SECTION
