@@ -6,7 +6,7 @@ import ServiceDetailsLeft1 from "../Components/ServiceDetails/ServiceDetailsLeft
 const ServiceDetailsLeft = () => {
     return (
         <div>
-            <BreadCumb Title="Software Developer"></BreadCumb>
+            <BreadCumb Title="Software Developement"></BreadCumb>
         
             <ServiceDetailsLeft1></ServiceDetailsLeft1>
             

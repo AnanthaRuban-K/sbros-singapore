@@ -1,6 +1,11 @@
 [
   {
-    "img": "/assets/img/icons/hero-bottom-icon1.png",
+     "img": "/assets/img/icons/hero-bottom-icon4.png",
+    "title": "ERP Solutions",
+    "desc": ""
+  },
+  {
+   "img": "/assets/img/icons/hero-bottom-icon1.png",
     "title": "Software Development",
     "desc": ""
   },
@@ -11,22 +16,14 @@
   },
   {
     "img": "/assets/img/icons/hero-bottom-icon3.png",
-    "title": "Network Solutions",
+    "title": "IT Networking",
     "desc": ""
   },
   {
     "img": "/assets/img/icons/hero-bottom-icon4.png",
     "title": "Trading",
     "desc": ""
-  },
-  {
-    "img": "/assets/img/icons/hero-bottom-icon4.png",
-    "title": "Digital Marketing",
-    "desc": ""
-  },
-  {
-    "img": "/assets/img/icons/hero-bottom-icon4.png",
-    "title": "SEO & SEM",
-    "desc": ""
   }
+  
+  
 ]

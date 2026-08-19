@@ -6,7 +6,7 @@ import Service7 from "../Components/Services/Service7";
 const ServiceDetailsCenter = () => {
     return (
         <div>
-            <BreadCumb Title="Website Developer"></BreadCumb>
+            <BreadCumb Title="Website Developement"></BreadCumb>
           
             <ServiceDetailsCenter3></ServiceDetailsCenter3>
           

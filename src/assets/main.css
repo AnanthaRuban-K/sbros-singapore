@@ -19664,13 +19664,7 @@ body,
   padding-top: 100px;
 
   /* Black → White → Cherry Red */
-background: linear-gradient(
-  180deg,
-  #43464C 0%,
-  #383A40 30%,
-  #642D3D 60%,
-  #B41A41 100%
-);
+background: black;
 }
 
 
@@ -33869,5 +33863,561 @@ background-color: unset;
     .sbros-send-arrow {
         width: 42px;
         height: 42px;
+    }
+}
+/* =====================================================
+   SBROS TECH - TERMS & CONDITIONS
+===================================================== */
+
+.sbros-terms-page {
+    background: #f7f9fc;
+    color: #172033;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.sbros-terms-hero {
+    padding: 115px 0 100px;
+    background: #1745c2;
+    position: relative;
+    overflow: hidden;
+}
+
+.sbros-terms-hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -150px;
+    top: -220px;
+}
+
+.sbros-terms-hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 50%;
+    left: -140px;
+    bottom: -180px;
+}
+
+.sbros-terms-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.sbros-terms-badge {
+    display: inline-block;
+    padding: 8px 17px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.sbros-terms-hero h1 {
+    color: #fff;
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.sbros-terms-hero p {
+    max-width: 650px;
+    color: rgba(255,255,255,0.75);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.sbros-terms-content {
+    padding: 90px 0 110px;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sbros-terms-sidebar {
+    position: sticky;
+    top: 100px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e8ebf2;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(20,35,70,0.05);
+}
+
+.sbros-terms-sidebar-title {
+    padding-bottom: 20px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.sbros-terms-sidebar-title span {
+    display: block;
+    color: #1745c2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.sbros-terms-sidebar-title h3 {
+    font-size: 20px;
+    color: #172033;
+    margin: 0;
+    font-weight: 700;
+}
+
+.sbros-terms-sidebar a {
+    display: block;
+    padding: 12px 14px;
+    margin: 3px 0;
+    border-radius: 9px;
+    color: #657084;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.sbros-terms-sidebar a:hover {
+    color: #1745c2;
+    background: #f0f4ff;
+    padding-left: 19px;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.sbros-terms-card {
+    padding: 48px;
+    background: #fff;
+    border: 1px solid #e8ebf2;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(20,35,70,0.05);
+}
+
+.sbros-last-updated {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    margin-bottom: 45px;
+    border-radius: 10px;
+    background: #f5f7fb;
+}
+
+.sbros-last-updated span {
+    color: #7b8495;
+    font-size: 12px;
+}
+
+.sbros-last-updated strong {
+    color: #1745c2;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.sbros-terms-section {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 22px;
+    padding-bottom: 42px;
+    margin-bottom: 42px;
+    border-bottom: 1px solid #edf0f4;
+    scroll-margin-top: 100px;
+}
+
+.sbros-terms-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sbros-section-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #eef3ff;
+    color: #1745c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sbros-terms-section h2 {
+    color: #172033;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.sbros-terms-section p {
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 13px;
+}
+
+.sbros-terms-section p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.sbros-terms-section ul {
+    margin: 15px 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.sbros-terms-section li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.sbros-terms-section li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 2px;
+    top: 9px;
+    border-radius: 50%;
+    background: #1745c2;
+}
+
+
+/* =====================================================
+   CONTACT DETAILS
+===================================================== */
+
+.sbros-legal-contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.sbros-legal-contact > div {
+    padding: 17px;
+    border-radius: 12px;
+    background: #f7f9fc;
+    border: 1px solid #edf0f4;
+}
+
+.sbros-legal-contact span {
+    display: block;
+    color: #8a93a3;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.sbros-legal-contact a,
+.sbros-legal-contact strong {
+    color: #1745c2;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .sbros-terms-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+
+    .sbros-terms-hero {
+        padding: 90px 0 80px;
+    }
+
+    .sbros-terms-hero h1 {
+        font-size: 44px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* =====================================================
+       TABLET - HERO HEADER GAP FIX
+    ===================================================== */
+
+    .sbros-terms-hero {
+        padding: 125px 30px 85px;
+    }
+
+    .sbros-terms-hero-content {
+        max-width: 700px;
+    }
+
+    .sbros-terms-badge {
+        margin-bottom: 18px;
+        font-size: 10px;
+    }
+
+    .sbros-terms-hero h1 {
+        font-size: 44px;
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+
+    .sbros-terms-hero p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .sbros-terms-content {
+        padding: 70px 30px 90px;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+    .sbros-terms-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+
+
+    /* =====================================================
+       MAIN CARD
+    ===================================================== */
+
+    .sbros-terms-card {
+        padding: 40px;
+    }
+
+
+    /* =====================================================
+       TERMS SECTIONS
+    ===================================================== */
+
+    .sbros-terms-section {
+        grid-template-columns: 55px 1fr;
+        gap: 20px;
+        scroll-margin-top: 110px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .sbros-legal-contact {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    /* =====================================================
+       MOBILE HERO - HEADER GAP FIX
+    ===================================================== */
+
+    .sbros-terms-hero {
+        padding: 120px 20px 65px;
+        min-height: auto;
+    }
+
+    .sbros-terms-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sbros-terms-badge {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 18px;
+        padding: 7px 14px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .sbros-terms-hero h1 {
+        font-size: 35px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .sbros-terms-hero p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .sbros-terms-content {
+        padding: 50px 15px 70px;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+    .sbros-terms-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 25px;
+        padding: 20px;
+    }
+
+    .sbros-terms-sidebar-title {
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    .sbros-terms-sidebar-title h3 {
+        font-size: 18px;
+    }
+
+    .sbros-terms-sidebar a {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       MAIN CARD
+    ===================================================== */
+
+    .sbros-terms-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+
+    /* =====================================================
+       LAST UPDATED
+    ===================================================== */
+
+    .sbros-last-updated {
+        display: block;
+        padding: 13px 15px;
+        margin-bottom: 35px;
+    }
+
+    .sbros-last-updated strong {
+        display: block;
+        margin-top: 5px;
+    }
+
+
+    /* =====================================================
+       TERMS SECTIONS
+    ===================================================== */
+
+    .sbros-terms-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-bottom: 35px;
+        margin-bottom: 35px;
+        scroll-margin-top: 110px;
+    }
+
+    .sbros-section-number {
+        width: 42px;
+        height: 42px;
+        border-radius: 11px;
+        font-size: 11px;
+    }
+
+    .sbros-terms-section h2 {
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 13px;
+    }
+
+    .sbros-terms-section p,
+    .sbros-terms-section li {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .sbros-legal-contact {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .sbros-legal-contact > div {
+        padding: 15px;
+    }
+}
+@media (max-width: 480px) {
+
+    .sbros-terms-hero h1 {
+        font-size: 30px;
+    }
+
+    .sbros-terms-sidebar {
+        padding: 20px;
+    }
+
+    .sbros-terms-card {
+        padding: 22px 17px;
     }
 }

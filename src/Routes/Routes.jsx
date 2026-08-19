@@ -43,7 +43,7 @@ import BlogPageDark from "../Pages/BlogPageDark";
 import BlogDetailsLeftDark from "../Pages/BlogDetailsLeftDark";
 import BlogDetailsRightDark from "../Pages/BlogDetailsRightDark";
 import BlogDetailsCenterDark from "../Pages/BlogDetailsCenterDark";
-
+import TermsAndConditions from "../Components/Common/Terms";
 
 export const router = createBrowserRouter([
     {
@@ -125,7 +125,11 @@ export const router = createBrowserRouter([
         {
           path: "/contact",
           element:<ContactPage></ContactPage> ,
-        },                                                                                 
+        }, 
+        {
+  path: "/terms",
+  element: <TermsAndConditions />,
+},                                                                                
       ],
     },
     {
