@@ -132,7 +132,7 @@ const Footer1 = () => {
               </div>
               <div className="col-md-7">
                    <div className="coppyright right-area">
-                        <a href="#">Terms & Conditions</a>
+                        <Link to="/terms">Terms & Conditions</Link>
                         <a href="#">Privacy Policy</a>
                    </div>
               </div>

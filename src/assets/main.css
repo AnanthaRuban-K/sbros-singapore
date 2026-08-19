@@ -33298,3 +33298,393 @@ background-color: unset;
         height: 42px;
     }
 }
+/* =====================================================
+   SBROS TECH - TERMS & CONDITIONS
+===================================================== */
+
+.sbros-terms-page {
+    background: #f7f9fc;
+    color: #172033;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.sbros-terms-hero {
+    padding: 115px 0 100px;
+    background: #1745c2;
+    position: relative;
+    overflow: hidden;
+}
+
+.sbros-terms-hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -150px;
+    top: -220px;
+}
+
+.sbros-terms-hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 50%;
+    left: -140px;
+    bottom: -180px;
+}
+
+.sbros-terms-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.sbros-terms-badge {
+    display: inline-block;
+    padding: 8px 17px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.sbros-terms-hero h1 {
+    color: #fff;
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.sbros-terms-hero p {
+    max-width: 650px;
+    color: rgba(255,255,255,0.75);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.sbros-terms-content {
+    padding: 90px 0 110px;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sbros-terms-sidebar {
+    position: sticky;
+    top: 100px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e8ebf2;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(20,35,70,0.05);
+}
+
+.sbros-terms-sidebar-title {
+    padding-bottom: 20px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.sbros-terms-sidebar-title span {
+    display: block;
+    color: #1745c2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.sbros-terms-sidebar-title h3 {
+    font-size: 20px;
+    color: #172033;
+    margin: 0;
+    font-weight: 700;
+}
+
+.sbros-terms-sidebar a {
+    display: block;
+    padding: 12px 14px;
+    margin: 3px 0;
+    border-radius: 9px;
+    color: #657084;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.sbros-terms-sidebar a:hover {
+    color: #1745c2;
+    background: #f0f4ff;
+    padding-left: 19px;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.sbros-terms-card {
+    padding: 48px;
+    background: #fff;
+    border: 1px solid #e8ebf2;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(20,35,70,0.05);
+}
+
+.sbros-last-updated {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    margin-bottom: 45px;
+    border-radius: 10px;
+    background: #f5f7fb;
+}
+
+.sbros-last-updated span {
+    color: #7b8495;
+    font-size: 12px;
+}
+
+.sbros-last-updated strong {
+    color: #1745c2;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.sbros-terms-section {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 22px;
+    padding-bottom: 42px;
+    margin-bottom: 42px;
+    border-bottom: 1px solid #edf0f4;
+    scroll-margin-top: 100px;
+}
+
+.sbros-terms-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sbros-section-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #eef3ff;
+    color: #1745c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sbros-terms-section h2 {
+    color: #172033;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.sbros-terms-section p {
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 13px;
+}
+
+.sbros-terms-section p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.sbros-terms-section ul {
+    margin: 15px 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.sbros-terms-section li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.sbros-terms-section li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 2px;
+    top: 9px;
+    border-radius: 50%;
+    background: #1745c2;
+}
+
+
+/* =====================================================
+   CONTACT DETAILS
+===================================================== */
+
+.sbros-legal-contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.sbros-legal-contact > div {
+    padding: 17px;
+    border-radius: 12px;
+    background: #f7f9fc;
+    border: 1px solid #edf0f4;
+}
+
+.sbros-legal-contact span {
+    display: block;
+    color: #8a93a3;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.sbros-legal-contact a,
+.sbros-legal-contact strong {
+    color: #1745c2;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .sbros-terms-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+
+    .sbros-terms-hero {
+        padding: 90px 0 80px;
+    }
+
+    .sbros-terms-hero h1 {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .sbros-terms-hero {
+        padding: 70px 0;
+    }
+
+    .sbros-terms-hero h1 {
+        font-size: 35px;
+    }
+
+    .sbros-terms-hero p {
+        font-size: 14px;
+    }
+
+    .sbros-terms-content {
+        padding: 60px 0 70px;
+    }
+
+    .sbros-terms-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .sbros-terms-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .sbros-section-number {
+        width: 42px;
+        height: 42px;
+    }
+
+    .sbros-terms-section h2 {
+        font-size: 20px;
+    }
+
+    .sbros-terms-section p,
+    .sbros-terms-section li {
+        font-size: 13px;
+    }
+
+    .sbros-last-updated {
+        display: block;
+    }
+
+    .sbros-last-updated strong {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .sbros-legal-contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .sbros-terms-hero h1 {
+        font-size: 30px;
+    }
+
+    .sbros-terms-sidebar {
+        padding: 20px;
+    }
+
+    .sbros-terms-card {
+        padding: 22px 17px;
+    }
+}
