@@ -171,7 +171,7 @@ const ContactInfo1 = () => {
                                                 <label>Phone Number</label>
                                                 <input
                                                     type="tel"
-                                                    placeholder="+65 XXXXXXXX"
+                                                  
                                                 />
                                             </div>
                                         </div>
