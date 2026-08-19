@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
 
 const ProjectDetailsCenter1 = () => {
+  const benefits = [
+    {
+      icon: "bi bi-grid-1x2",
+      title: "One Platform",
+      text: "Manage essential business functions from one connected system.",
+    },
+    {
+      icon: "bi bi-diagram-3",
+      title: "Connected Data",
+      text: "Keep information connected across departments and operations.",
+    },
+    {
+      icon: "bi bi-bar-chart-line",
+      title: "Better Visibility",
+      text: "Get clearer insights through dashboards and business reports.",
+    },
+    {
+      icon: "bi bi-arrow-up-right-circle",
+      title: "Scalable",
+      text: "Expand your ERP capabilities as your business grows.",
+    },
+  ];
+
   const modules = [
     {
       icon: "bi bi-people",
@@ -20,14 +43,14 @@ const ProjectDetailsCenter1 = () => {
       features: [
         "Biometric Integration",
         "Punch Logs",
-        "Daily Attendance",
         "Attendance Reports",
+        "Shift Management",
       ],
     },
     {
       icon: "bi bi-calendar2-check",
       title: "Leave Management",
-      text: "Manage leave requests, approvals and employee leave balances.",
+      text: "Manage leave requests, approvals and employee balances.",
       features: [
         "Leave Types",
         "Leave Applications",
@@ -38,18 +61,18 @@ const ProjectDetailsCenter1 = () => {
     {
       icon: "bi bi-cash-stack",
       title: "Payroll",
-      text: "Simplify salary processing by connecting employee and attendance data.",
+      text: "Simplify payroll using connected employee and attendance data.",
       features: [
         "Payroll Processing",
-        "Salary Structures",
         "Attendance Integration",
         "Payslip Generation",
+        "Payroll Reports",
       ],
     },
     {
       icon: "bi bi-person-lines-fill",
-      title: "CRM & Customer Management",
-      text: "Manage leads, follow-ups and customer relationships in one workspace.",
+      title: "CRM",
+      text: "Manage leads, follow-ups and customer relationships.",
       features: [
         "Lead Management",
         "Lead Assignment",
@@ -59,8 +82,8 @@ const ProjectDetailsCenter1 = () => {
     },
     {
       icon: "bi bi-cart-check",
-      title: "Procurement & Purchasing",
-      text: "Manage purchasing from requests and quotations to purchase orders.",
+      title: "Procurement",
+      text: "Manage purchasing from requests to purchase orders.",
       features: [
         "Material Master",
         "Purchase Requests",
@@ -70,8 +93,8 @@ const ProjectDetailsCenter1 = () => {
     },
     {
       icon: "bi bi-box-seam",
-      title: "Inventory & Stock",
-      text: "Maintain better visibility over materials and stock movements.",
+      title: "Inventory Management",
+      text: "Track materials, stock levels and inventory movements.",
       features: [
         "Stock Management",
         "Goods Receipt",
@@ -81,17 +104,45 @@ const ProjectDetailsCenter1 = () => {
     },
   ];
 
+  const workflow = [
+    {
+      number: "01",
+      title: "Marketing",
+      text: "Generate and manage leads.",
+    },
+    {
+      number: "02",
+      title: "Customer",
+      text: "Convert qualified leads.",
+    },
+    {
+      number: "03",
+      title: "Procurement",
+      text: "Manage purchasing requirements.",
+    },
+    {
+      number: "04",
+      title: "Inventory",
+      text: "Track materials and stock.",
+    },
+    {
+      number: "05",
+      title: "HR & Payroll",
+      text: "Manage workforce operations.",
+    },
+  ];
+
   return (
     <div className="service-details-area-all sp erp-page">
       <div className="container">
         <div className="row">
-          <div className="col-lg-10 m-auto">
+          <div className="col-lg-11 m-auto">
 
             <div className="service-details-post">
 
-              {/* =========================================
-                  ERP INTRO
-              ========================================= */}
+              {/* =====================================================
+                  HERO
+              ===================================================== */}
               <section className="erp-intro">
 
                 <div className="erp-intro-content">
@@ -107,8 +158,9 @@ const ProjectDetailsCenter1 = () => {
                   </h1>
 
                   <p>
-                    Bring HR, attendance, leave, payroll, CRM, procurement
-                    and inventory together in one integrated platform.
+                    Manage HR, attendance, leave, payroll, CRM,
+                    procurement and inventory from one integrated
+                    business platform.
                   </p>
 
                   <div className="erp-buttons">
@@ -135,9 +187,9 @@ const ProjectDetailsCenter1 = () => {
               </section>
 
 
-              {/* =========================================
+              {/* =====================================================
                   ERP IMAGE
-              ========================================= */}
+              ===================================================== */}
               <div className="erp-image">
 
                 <img
@@ -148,22 +200,69 @@ const ProjectDetailsCenter1 = () => {
               </div>
 
 
-              {/* =========================================
-                  COMPLETE BUSINESS MANAGEMENT
-              ========================================= */}
+              {/* =====================================================
+                  KEY BENEFITS
+              ===================================================== */}
+              <section className="erp-benefits">
+
+                <div className="erp-section-heading">
+
+                  <span>WHY ONE SOLUTION ERP</span>
+
+                  <h2>
+                    Run Your Business From One Place
+                  </h2>
+
+                  <p>
+                    Bring your core business operations together
+                    and reduce disconnected processes.
+                  </p>
+
+                </div>
+
+
+                <div className="erp-benefit-grid">
+
+                  {benefits.map((item, index) => (
+                    <div
+                      className="erp-benefit-card"
+                      key={index}
+                    >
+
+                      <div className="erp-benefit-icon">
+                        <i className={item.icon}></i>
+                      </div>
+
+                      <div>
+                        <h3>{item.title}</h3>
+
+                        <p>{item.text}</p>
+                      </div>
+
+                    </div>
+                  ))}
+
+                </div>
+
+              </section>
+
+
+              {/* =====================================================
+                  CORE MODULES
+              ===================================================== */}
               <section className="erp-business">
 
-                <div className="erp-business-title">
+                <div className="erp-section-heading">
 
-                  <span>ERP MODULES</span>
+                  <span>CORE ERP MODULES</span>
 
                   <h2>
                     Complete Business Management
                   </h2>
 
                   <p>
-                    Manage your essential business operations from one
-                    connected ERP platform.
+                    Powerful modules designed to simplify
+                    everyday business operations.
                   </p>
 
                 </div>
@@ -184,28 +283,25 @@ const ProjectDetailsCenter1 = () => {
                         </div>
 
                         <span>
-                          0{index + 1}
+                          {String(index + 1).padStart(2, "0")}
                         </span>
 
                       </div>
-
 
                       <h3>
                         {module.title}
                       </h3>
 
-
                       <p className="erp-card-text">
                         {module.text}
                       </p>
-
 
                       <ul>
                         {module.features.map(
                           (feature, featureIndex) => (
                             <li key={featureIndex}>
                               <i className="bi bi-check2"></i>
-                              {feature}
+                              <span>{feature}</span>
                             </li>
                           )
                         )}
@@ -219,12 +315,12 @@ const ProjectDetailsCenter1 = () => {
               </section>
 
 
-              {/* =========================================
-                  BUSINESS WORKFLOW
-              ========================================= */}
+              {/* =====================================================
+                  WORKFLOW
+              ===================================================== */}
               <section className="erp-workflow-section">
 
-                <div className="erp-workflow-title">
+                <div className="erp-section-heading">
 
                   <span>CONNECTED WORKFLOW</span>
 
@@ -232,102 +328,110 @@ const ProjectDetailsCenter1 = () => {
                     From Lead to Operations
                   </h2>
 
+                  <p>
+                    Connect important business processes
+                    through one integrated workflow.
+                  </p>
+
                 </div>
 
 
                 <div className="erp-workflow">
 
-                  <div className="workflow-item">
+                  {workflow.map((item, index) => (
 
-                    <div className="workflow-number">
-                      01
+                    <div
+                      className="workflow-wrapper"
+                      key={index}
+                    >
+
+                      <div className="workflow-item">
+
+                        <div className="workflow-number">
+                          {item.number}
+                        </div>
+
+                        <div>
+                          <h4>{item.title}</h4>
+
+                          <p>{item.text}</p>
+                        </div>
+
+                      </div>
+
+
+                      {index < workflow.length - 1 && (
+                        <div className="workflow-arrow">
+                          <i className="bi bi-arrow-right"></i>
+                        </div>
+                      )}
+
                     </div>
 
-                    <h4>Marketing</h4>
+                  ))}
+
+                </div>
+
+              </section>
+
+
+              {/* =====================================================
+                  GROWTH SECTION
+              ===================================================== */}
+              <section className="erp-growth">
+
+                <div className="erp-growth-content">
+
+                  <div className="erp-growth-text">
+
+                    <span>
+                      BUILT FOR GROWING BUSINESSES
+                    </span>
+
+                    <h2>
+                      A Platform That Grows With You
+                    </h2>
 
                     <p>
-                      Generate and manage leads.
+                      Start with the modules your business needs
+                      today and expand your platform as your
+                      operational requirements grow.
                     </p>
 
                   </div>
 
 
-                  <div className="workflow-arrow">
-                    <i className="bi bi-arrow-right"></i>
-                  </div>
+                  <div className="erp-growth-list">
 
-
-                  <div className="workflow-item">
-
-                    <div className="workflow-number">
-                      02
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      HR & Workforce
                     </div>
 
-                    <h4>Customer</h4>
-
-                    <p>
-                      Convert qualified leads.
-                    </p>
-
-                  </div>
-
-
-                  <div className="workflow-arrow">
-                    <i className="bi bi-arrow-right"></i>
-                  </div>
-
-
-                  <div className="workflow-item">
-
-                    <div className="workflow-number">
-                      03
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Attendance & Leave
                     </div>
 
-                    <h4>Procurement</h4>
-
-                    <p>
-                      Manage purchasing.
-                    </p>
-
-                  </div>
-
-
-                  <div className="workflow-arrow">
-                    <i className="bi bi-arrow-right"></i>
-                  </div>
-
-
-                  <div className="workflow-item">
-
-                    <div className="workflow-number">
-                      04
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Payroll
                     </div>
 
-                    <h4>Inventory</h4>
-
-                    <p>
-                      Track materials and stock.
-                    </p>
-
-                  </div>
-
-
-                  <div className="workflow-arrow">
-                    <i className="bi bi-arrow-right"></i>
-                  </div>
-
-
-                  <div className="workflow-item">
-
-                    <div className="workflow-number">
-                      05
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      CRM
                     </div>
 
-                    <h4>HR & Payroll</h4>
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Procurement
+                    </div>
 
-                    <p>
-                      Manage workforce operations.
-                    </p>
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Inventory
+                    </div>
 
                   </div>
 
@@ -336,39 +440,50 @@ const ProjectDetailsCenter1 = () => {
               </section>
 
 
-              {/* =========================================
+              {/* =====================================================
                   FINAL CTA
-              ========================================= */}
+              ===================================================== */}
               <section className="erp-cta">
 
-                <div>
+                <div className="erp-cta-content">
 
-                  <span>ONE SOLUTION ERP</span>
+                  <span>
+                    ONE SOLUTION ERP
+                  </span>
 
                   <h2>
-                    Simplify Your Business Operations
+                    Ready to Simplify Your Business?
                   </h2>
 
                   <p>
-                    Connect your teams, processes and business information
-                    with one integrated ERP platform.
+                    Connect your teams, processes and business
+                    information with one powerful ERP platform.
                   </p>
 
-                  <Link
-                    to="/contact"
-                    className="erp-cta-btn"
-                  >
-                    Request a Product Demo
-                    <i className="bi bi-arrow-right"></i>
-                  </Link>
+                  <div className="erp-buttons">
+
+                    <Link
+                      to="/contact"
+                      className="erp-btn erp-btn-white"
+                    >
+                      Request a Product Demo
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
+
+                    <Link
+                      to="/contact"
+                      className="erp-btn erp-btn-transparent"
+                    >
+                      Talk to Our ERP Team
+                    </Link>
+
+                  </div>
 
                 </div>
 
               </section>
 
-
             </div>
-
           </div>
         </div>
       </div>
