@@ -125,7 +125,7 @@ const Footer1 = () => {
       <div className="pera">
         <p>
          
-          <br />
+          
           27 Woodlands Industrial Park E1
           <br />
           #03-10, Singapore
