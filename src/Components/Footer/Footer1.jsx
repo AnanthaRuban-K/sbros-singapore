@@ -119,7 +119,6 @@ const Footer1 = () => {
 
         </div>
 
-<<<<<<< HEAD
         <div className="copyright-area">
           <div className="container">
             <div className="row align-items-center">
@@ -142,9 +141,7 @@ const Footer1 = () => {
           </div>
      </div>
 
-=======
         <div className="space40"></div>
->>>>>>> 66e04585cd4783c752c6c23738a5dbe07bdc9dbd
       </div>
 
       <div className="copyright-area">
