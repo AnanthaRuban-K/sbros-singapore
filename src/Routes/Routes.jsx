@@ -44,12 +44,20 @@ import BlogDetailsLeftDark from "../Pages/BlogDetailsLeftDark";
 import BlogDetailsRightDark from "../Pages/BlogDetailsRightDark";
 import BlogDetailsCenterDark from "../Pages/BlogDetailsCenterDark";
 import TermsAndConditions from "../Components/Common/Terms";
-
+import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
+import ScrollToTop from "../Components/Common/ScrollToTop";
+import FloatingButtons from "../Components/Common/FloatingButtons";
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children: [
+  {
+    path: "/",
+    element: (
+      <>
+        <ScrollToTop />
+        <Main />
+         <FloatingButtons />
+      </>
+    ),
+    children: [
         {
           path: "/",
           element: <Home></Home>,
@@ -129,7 +137,11 @@ export const router = createBrowserRouter([
         {
   path: "/terms",
   element: <TermsAndConditions />,
-},                                                                                
+},         
+{
+    path: "/privacy-policy",
+    element: <PrivacyPolicy />,
+},                                                                       
       ],
     },
     {
