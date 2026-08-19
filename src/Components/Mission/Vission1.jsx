@@ -14,12 +14,7 @@ const Vission1 = () => {
               <div className="overview-row mission-card">
                 <div className="overview-number">01</div>
 
-                <div className="overview-icon">
-                  <img
-                    src="/assets/img/icons/about-solution-iocn1.png"
-                    alt="Our Mission"
-                  />
-                </div>
+               
 
                 <div className="overview-content">
                   <span>WHAT DRIVES US</span>
@@ -37,12 +32,7 @@ const Vission1 = () => {
               <div className="overview-row vision-card">
                 <div className="overview-number">02</div>
 
-                <div className="overview-icon">
-                  <img
-                    src="/assets/img/icons/about-solution-iocn2.png"
-                    alt="Our Vision"
-                  />
-                </div>
+                
 
                 <div className="overview-content">
                   <span>WHERE WE ARE HEADED</span>

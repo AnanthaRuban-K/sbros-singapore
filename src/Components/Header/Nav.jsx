@@ -104,7 +104,14 @@ export default function Nav({ setMobileToggle }) {
           Projects
         </Link>
       </li>
-
+<li className="mobile-contact-menu">
+  <Link
+    to="/contact"
+    onClick={() => setMobileToggle(false)}
+  >
+    Contact Us
+  </Link>
+</li>
     </ul>
   );
 }

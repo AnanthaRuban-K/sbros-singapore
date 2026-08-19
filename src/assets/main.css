@@ -297,10 +297,10 @@ body.body {
   z-index: -33;
   position: relative;
 }
-
+/* 
 .sp {
   padding: 100px 0px;
-}
+} */
 
 .sp2 {
   padding: 120px 0px;
@@ -8330,7 +8330,44 @@ a.header__search.header-search-btn p {
 
   line-height: 1.7;
 }
+/* ================================
+   ERP MAIN IMAGE
+================================ */
 
+.erp-main-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.erp-main-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .erp-main-image img {
+        height: 320px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .erp-main-image img {
+        height: 260px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .erp-main-image img {
+        height: 220px;
+    }
+}
 
 /* =========================================================
    COMPLETE BUSINESS MANAGEMENT
@@ -21823,27 +21860,6 @@ background: black;
   height: 20px;
   background-color: rgba(255, 255, 255, 0.5);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer-logo-area {
   padding-right: 70px;
 }
@@ -23146,64 +23162,7 @@ background: black;
     line-height: 1.5;
   }
 }
-/* =========================================
-   ADDRESS - PERFECT ALIGNMENT
-========================================= */
 
-.footer1 .contact-box.address-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-top: 18px;
-  padding: 8px 0;
-}
-
-/* Location icon */
-.footer1 .contact-box.address-box .icon {
-  width: 44px;
-  min-width: 44px;
-  height: 44px;
-  margin: 0;
-  margin-top: 0;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-}
-
-/* Location icon itself */
-.footer1 .contact-box.address-box .icon i {
-  font-size: 20px;
-  color: #111111;
-  line-height: 1;
-}
-
-/* Address text container */
-.footer1 .contact-box.address-box .pera {
-  flex: 1;
-  padding-top: 2px;
-}
-
-/* Address text */
-.footer1 .contact-box.address-box .pera p {
-  margin: 0 !important;
-  padding: 0 !important;
-
-  color: #ffffff !important;
-  font-size: 16px;
-  line-height: 1.55;
-  font-weight: 400;
-
-  text-align: left;
-}
-
-/* Remove unwanted empty first line */
-.footer1 .contact-box.address-box .pera p br:first-child {
-  display: none;
-}
 
 /*
 ::::::::::::::::::::::::::
@@ -27195,7 +27154,24 @@ li.has-dropdown1 span {
 
 
 
+/* Desktop */
+.mobile-contact-menu {
+  display: none;
+}
 
+/* Mobile */
+@media (max-width: 991px) {
+
+  /* Hide desktop Contact Us button */
+  .desktop-contact {
+    display: none !important;
+  }
+
+  /* Show Contact Us inside hamburger */
+  .mobile-contact-menu {
+    display: block;
+  }
+}
 
 
 
@@ -30060,7 +30036,7 @@ background-color: unset;
 /* Image */
 .erp-main-image img {
     width: 100%;
-    height: 100%;
+  
     display: block;
     object-fit: cover;
     object-position: center center;
@@ -30767,7 +30743,6 @@ background-color: unset;
 
 .professional-service-page {
     background: #f7f9fc;
-    padding: 80px 0 100px;
     color: #172033;
 }
 
@@ -31657,8 +31632,8 @@ background-color: unset;
 
 .details-right-only .details-post-area > .image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 380px;
+    
 }
 
 .details-right-only .heading1 h2 {
@@ -32444,7 +32419,7 @@ background-color: unset;
 ========================================================= */
 
 .trading-hero-section {
-    padding: 90px 0 80px;
+    
     background:
         linear-gradient(135deg, #f4f7ff 0%, #ffffff 60%);
     overflow: hidden;
@@ -34251,7 +34226,7 @@ background-color: unset;
 
 .about6 {
     position: relative;
-    padding: 110px 0;
+   
     background: #ffffff;
     overflow: hidden;
 }
@@ -34986,7 +34961,7 @@ background-color: unset;
 }
 
 .overview-row:hover .overview-icon {
-    background: #173fb8;
+  
     transform: rotate(-5deg) scale(1.05);
 }
 
@@ -35402,8 +35377,8 @@ background-color: unset;
 ===================================================== */
 
 .sbros-contact-info {
-    height: 100%;
-    min-height: 590px;
+    /* height: 100%; */
+    min-height: 500px;
     padding: 38px;
     border-radius: 28px;
     background: #1745c2;
@@ -35502,7 +35477,7 @@ background-color: unset;
     height: 48px;
     flex: 0 0 48px;
     border-radius: 14px;
-    background: rgba(255,255,255,0.12);
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;

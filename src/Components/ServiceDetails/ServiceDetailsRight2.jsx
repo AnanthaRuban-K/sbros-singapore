@@ -332,9 +332,9 @@ const ServiceERP = () => {
                                 {/* IMPLEMENTATION */}
                                 <div className="erp-expertise-item">
 
-                                    <span className="erp-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </span>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
 
@@ -354,10 +354,9 @@ const ServiceERP = () => {
 
                                 {/* INVENTORY */}
                                 <div className="erp-expertise-item">
-
-                                    <span className="erp-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </span>
+ <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
 
@@ -378,10 +377,9 @@ const ServiceERP = () => {
                                 {/* FINANCE */}
                                 <div className="erp-expertise-item">
 
-                                    <span className="erp-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </span>
-
+                                   <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
                                     <div>
 
                                         <strong>
@@ -401,9 +399,9 @@ const ServiceERP = () => {
                                 {/* INTEGRATION */}
                                 <div className="erp-expertise-item">
 
-                                    <span className="erp-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </span>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
 
@@ -424,9 +422,9 @@ const ServiceERP = () => {
                                 {/* SUPPORT */}
                                 <div className="erp-expertise-item">
 
-                                    <span className="erp-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </span>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
 
