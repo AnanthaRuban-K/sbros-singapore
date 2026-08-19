@@ -35843,3 +35843,243 @@ background-color: unset;
         height: 45px;
     }
 }
+/* =========================================
+   FOOTER CONTACT & ADDRESS STYLE
+========================================= */
+
+.footer1 {
+  background: #000;
+  color: #fff;
+}
+
+.footer1 .single-footer-items h3 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer1 .single-footer-items h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: #ed1c24;
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   CONTACT BOX
+========================================= */
+
+.footer1 .contact-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.footer1 .contact-box .icon {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer1 .contact-box .icon i {
+  font-size: 19px;
+  color: #111;
+}
+
+.footer1 .contact-box .pera {
+  flex: 1;
+  padding-top: 8px;
+}
+
+
+/* Phone & Email */
+
+.footer1 .contact-box .pera a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  word-break: break-word;
+}
+
+.footer1 .contact-box .pera a:hover {
+  color: #ed1c24;
+}
+
+
+/* =========================================
+   ADDRESS STYLE
+========================================= */
+
+.footer1 .address-box {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.footer1 .address-box .pera {
+  padding-top: 0;
+}
+
+.footer1 .address-box .pera p {
+  margin: 0;
+  color: #d7d7d7 !important;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+.footer1 .address-box .pera strong {
+  display: block;
+  color: #fff !important;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+
+/* =========================================
+   FOOTER DESCRIPTION
+========================================= */
+
+.footer1 .footer-about-text {
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   SOCIAL ICON
+========================================= */
+
+.footer1 .social-icon {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer1 .social-icon li a {
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.footer1 .social-icon li a i {
+  color: #c8102e;
+  font-size: 18px;
+}
+
+.footer1 .social-icon li a:hover {
+  background: #ed1c24;
+  transform: translateY(-4px);
+}
+
+.footer1 .social-icon li a:hover i {
+  color: #fff;
+}
+
+
+/* =========================================
+   FOOTER MENU
+========================================= */
+
+.footer1 .menu-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer1 .menu-list li {
+  margin-bottom: 18px;
+}
+
+.footer1 .menu-list li a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer1 .menu-list li a:hover {
+  color: #ed1c24;
+  padding-left: 5px;
+}
+
+
+/* =========================================
+   CONTACT COLUMN
+========================================= */
+
+.footer1 .col-lg-3:last-child {
+  padding-left: 25px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+  .footer1 .col-lg-3:last-child {
+    padding-left: 15px;
+  }
+
+  .footer1 .single-footer-items h3 {
+    font-size: 23px;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .footer1 .contact-box {
+    gap: 14px;
+  }
+
+  .footer1 .contact-box .icon {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .footer1 .contact-box .icon i {
+    font-size: 17px;
+  }
+
+  .footer1 .contact-box .pera a {
+    font-size: 14px;
+  }
+
+  .footer1 .address-box .pera p {
+    font-size: 13px;
+  }
+
+  .footer1 .address-box .pera strong {
+    font-size: 15px;
+  }
+
+}

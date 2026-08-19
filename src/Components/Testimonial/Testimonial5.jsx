@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
 const Testimonial5 = () => {
-
   const projects = [
     {
       title: "SASAN SG",
       category: "Corporate Website",
       description:
-        "A modern digital platform designed to present the company and its services with a professional online presence.",
+        "Professional corporate website showcasing services and company information.",
       image: "/assets/img/work/sasan.jpg",
       url: "https://www.sasansg.com/",
       size: "large",
@@ -17,7 +16,7 @@ const Testimonial5 = () => {
       title: "GOLDSEA GROUP",
       category: "Business Website",
       description:
-        "A professional business website created to showcase services, strengthen brand visibility, and connect with customers.",
+        "Modern business website presenting services, solutions, and company profile.",
       image: "/assets/img/work/goldsea.jpg",
       url: "https://goldseagroups.com/",
       size: "small",
@@ -27,7 +26,7 @@ const Testimonial5 = () => {
       title: "TUCK LEE 1935",
       category: "Corporate Website",
       description:
-        "A clean corporate website that presents the company's services, brand identity, and business information.",
+        "Professional website showcasing company services and business capabilities.",
       image: "/assets/img/work/tucklee.jpg",
       url: "https://tucklee1935.sg/",
       size: "wide",
@@ -37,7 +36,7 @@ const Testimonial5 = () => {
       title: "FIRST CHOICE HUB",
       category: "IT Solutions",
       description:
-        "A modern technology-focused website built to communicate digital services and business solutions clearly.",
+        "Technology website presenting IT services and digital business solutions.",
       image: "/assets/img/work/firstchoice.jpg",
       url: "https://firstchoicehub.com.sg/",
       size: "small",
@@ -47,7 +46,7 @@ const Testimonial5 = () => {
       title: "SKY MOON ENGINEERING",
       category: "Engineering Website",
       description:
-        "A professional engineering website developed to highlight company capabilities, services, and completed work.",
+        "Engineering website highlighting technical services and company capabilities.",
       image: "/assets/img/work/skymoon.jpg",
       url: "https://skymooneng.com.sg/",
       size: "large",
@@ -57,7 +56,7 @@ const Testimonial5 = () => {
       title: "ANS FRESH & FROZEN",
       category: "E-Commerce Website",
       description:
-        "A user-friendly online platform designed to showcase fresh products and provide a smooth digital shopping experience.",
+        "Online platform showcasing fresh and frozen food products.",
       image: "/assets/img/work/ansfresh.jpg",
       url: "https://ansfreshmeat.com.sg/",
       size: "wide",
@@ -67,7 +66,7 @@ const Testimonial5 = () => {
       title: "PINNACLE ACME",
       category: "Business Website",
       description:
-        "A professional business platform created to strengthen digital presence and showcase the company's solutions.",
+        "Professional website presenting business services and company information.",
       image: "/assets/img/work/pinnacle.jpg",
       url: "https://pinnacleacme.com/",
       size: "small",
@@ -76,7 +75,6 @@ const Testimonial5 = () => {
 
   return (
     <section className="project-page-all">
-
       <div className="container">
 
         {/* =================================================
@@ -84,7 +82,6 @@ const Testimonial5 = () => {
         ================================================= */}
 
         <div className="project-page-heading">
-
           <span>OUR WORK</span>
 
           <h2>Projects We've Built</h2>
@@ -93,7 +90,6 @@ const Testimonial5 = () => {
             Explore our latest websites and digital solutions
             created for businesses across different industries.
           </p>
-
         </div>
 
 
@@ -104,7 +100,6 @@ const Testimonial5 = () => {
         <div className="project-grid">
 
           {projects.map((project, index) => (
-
             <div
               className={`project-box project-${project.size}`}
               key={index}
@@ -144,14 +139,14 @@ const Testimonial5 = () => {
                     </h3>
 
 
-                    {/* Two Line Description */}
+                    {/* Description */}
 
                     <p className="project-description">
                       {project.description}
                     </p>
 
 
-                    {/* Modern Button */}
+                    {/* View Project Button */}
 
                     <a
                       href={project.url}
@@ -159,7 +154,6 @@ const Testimonial5 = () => {
                       rel="noopener noreferrer"
                       className="project-modern-btn"
                     >
-
                       <span>
                         View Project
                       </span>
@@ -167,7 +161,6 @@ const Testimonial5 = () => {
                       <span className="project-arrow">
                         ↗
                       </span>
-
                     </a>
 
                   </div>
@@ -177,7 +170,6 @@ const Testimonial5 = () => {
               </div>
 
             </div>
-
           ))}
 
         </div>
@@ -207,7 +199,6 @@ const Testimonial5 = () => {
         </div>
 
       </div>
-
     </section>
   );
 };
