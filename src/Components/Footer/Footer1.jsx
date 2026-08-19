@@ -6,7 +6,9 @@ const Footer1 = () => {
       <div className="container">
         <div className="row">
 
-          {/* Footer Logo & About */}
+          {/* ================================
+              FOOTER LOGO & ABOUT
+          ================================= */}
           <div className="col-lg-4 col-md-6 col-12">
             <div className="single-footer-items footer-logo-area">
 
@@ -30,6 +32,8 @@ const Footer1 = () => {
 
               {/* Social Icons */}
               <ul className="social-icon">
+
+                {/* Facebook */}
                 <li>
                   <a
                     href="https://www.facebook.com/sbrostechsg"
@@ -41,6 +45,7 @@ const Footer1 = () => {
                   </a>
                 </li>
 
+                {/* Instagram */}
                 <li>
                   <a
                     href="https://www.instagram.com/sbrostechsg/"
@@ -52,6 +57,7 @@ const Footer1 = () => {
                   </a>
                 </li>
 
+                {/* YouTube */}
                 <li>
                   <a
                     href="https://www.youtube.com/@sbrostechsg"
@@ -62,17 +68,22 @@ const Footer1 = () => {
                     <i className="bi bi-youtube"></i>
                   </a>
                 </li>
+
               </ul>
 
             </div>
           </div>
 
-          {/* Services */}
+          {/* ================================
+              SERVICES
+          ================================= */}
           <div className="col-lg col-md-6 col-12">
             <div className="single-footer-items">
+
               <h3>Services We Offer</h3>
 
               <ul className="menu-list">
+
                 <li>
                   <Link to="/service/service-details/erp-solutions">
                     ERP Solutions
@@ -102,42 +113,62 @@ const Footer1 = () => {
                     Trading
                   </Link>
                 </li>
+
               </ul>
+
             </div>
           </div>
 
-          {/* Useful Links */}
+          {/* ================================
+              USEFUL LINKS
+          ================================= */}
           <div className="col-lg col-md-6 col-12">
             <div className="single-footer-items">
+
               <h3>Useful Links</h3>
 
               <ul className="menu-list">
+
                 <li>
-                  <Link to="/about">About Us</Link>
+                  <Link to="/about">
+                    About Us
+                  </Link>
                 </li>
 
                 <li>
-                  <Link to="/service">Services</Link>
+                  <Link to="/service">
+                    Services
+                  </Link>
                 </li>
 
                 <li>
-                  <Link to="/blog">Products</Link>
+                  <Link to="/blog">
+                    Products
+                  </Link>
                 </li>
 
                 <li>
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact">
+                    Contact Us
+                  </Link>
                 </li>
+
               </ul>
+
             </div>
           </div>
 
-          {/* Contact Us */}
+          {/* ================================
+              CONTACT US
+          ================================= */}
           <div className="col-lg-3 col-md-6 col-12">
             <div className="single-footer-items">
+
               <h3>Contact Us</h3>
 
               {/* Phone */}
               <div className="contact-box">
+
                 <div className="icon">
                   <img
                     src="/assets/img/icons/footer1-icon2.png"
@@ -150,10 +181,12 @@ const Footer1 = () => {
                     +65 90214545
                   </a>
                 </div>
+
               </div>
 
               {/* Email */}
               <div className="contact-box">
+
                 <div className="icon">
                   <img
                     src="/assets/img/icons/footer1-icon3.png"
@@ -166,6 +199,7 @@ const Footer1 = () => {
                     enquiry@sbrostech.com.sg
                   </a>
                 </div>
+
               </div>
 
             </div>
@@ -173,33 +207,47 @@ const Footer1 = () => {
 
         </div>
 
-        {/* Copyright */}
+        {/* ================================
+            COPYRIGHT AREA
+        ================================= */}
         <div className="copyright-area">
+
           <div className="container">
+
             <div className="row align-items-center">
 
+              {/* Copyright */}
               <div className="col-md-5">
+
                 <div className="coppyright">
+
                   <p>
-                    Copyright @2024 SBROS TECH(S) PTE LTD. All Rights Reserved
+                    Copyright © 2024 SBROS TECH(S) PTE LTD. All Rights Reserved
                   </p>
+
                 </div>
+
               </div>
 
+              {/* Terms & Privacy */}
               <div className="col-md-7">
+
                 <div className="coppyright right-area">
-                  <Link to="/terms">
-                    Terms & Conditions
-                  </Link>
+
+                 
 
                   <Link to="/privacy-policy">
                     Privacy Policy
                   </Link>
+
                 </div>
+
               </div>
 
             </div>
+
           </div>
+
         </div>
 
         <div className="space40"></div>

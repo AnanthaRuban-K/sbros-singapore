@@ -7,7 +7,7 @@ import ServiceITNetworking from "../Components/ServiceDetails/ServiceITNetworkin
 const ServicePageDark = () => {
     return (
         <div className="service-page-dark">
-            <BreadCumb2 Title="Our Service"></BreadCumb2>
+            <BreadCumb2 Title="Our Services"></BreadCumb2>
             <MarqueeText></MarqueeText>
            <ServiceITNetworking></ServiceITNetworking>
          
