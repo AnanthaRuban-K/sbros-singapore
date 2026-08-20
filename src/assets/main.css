@@ -8126,6 +8126,174 @@ a.header__search.header-search-btn p {
 }
 
 
+
+
+
+
+
+
+
+/* =========================================
+   COMPLETE BUSINESS MANAGEMENT - 8 BOXES
+========================================= */
+
+.erp-module-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Each module box */
+.erp-module-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 400px;
+  padding: 28px 24px;
+}
+
+/* Card heading */
+.erp-module-card h3 {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.erp-card-text {
+  min-height: 72px;
+  margin-bottom: 18px;
+}
+
+/* List */
+.erp-module-card ul {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  width: 100%;
+}
+
+/* Each list item */
+.erp-module-card ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  width: 100%;
+}
+
+/* Check icon */
+.erp-module-card ul li i {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* List text */
+.erp-module-card ul li span {
+  flex: 1;
+  display: block;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+  .erp-module-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .erp-module-card {
+    min-height: 380px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+  .erp-module-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .erp-module-card {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .erp-module-card h3,
+  .erp-card-text {
+    min-height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+/* Center Request a Demo button in Hero */
+.erp-intro .erp-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.erp-intro .erp-btn {
+  margin: 0 auto;
+}
+
+
+
+
+
+
+@media (max-width: 767px) {
+  .erp-intro .erp-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .erp-intro .erp-btn {
+    font-size: 14px;
+    padding: 11px 20px;
+    min-width: auto;
+    width: auto;
+    height: auto;
+    line-height: 1.2;
+  }
+
+  .erp-intro .erp-btn i {
+    font-size: 13px;
+    margin-left: 6px;
+  }
+}
+
+
+
+
+
+
+
+.erp-cta .erp-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
 /* =========================================
    PRIMARY BUTTON
 ========================================= */

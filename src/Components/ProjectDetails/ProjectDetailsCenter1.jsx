@@ -102,35 +102,21 @@ const ProjectDetailsCenter1 = () => {
         "Stock Tracking",
       ],
     },
+
+    {
+  icon: "bi bi-wallet2",
+  title: "Finance Management",
+  text: "Manage financial transactions, expenses, payments and business accounts from one centralized system.",
+  features: [
+    "Accounts Management",
+    "Income & Expense Tracking",
+    "Invoice & Payment Management",
+    "Financial Reports",
+  ],
+},
   ];
 
-  const workflow = [
-    {
-      number: "01",
-      title: "Marketing",
-      text: "Generate and manage leads.",
-    },
-    {
-      number: "02",
-      title: "Customer",
-      text: "Convert qualified leads.",
-    },
-    {
-      number: "03",
-      title: "Procurement",
-      text: "Manage purchasing requirements.",
-    },
-    {
-      number: "04",
-      title: "Inventory",
-      text: "Track materials and stock.",
-    },
-    {
-      number: "05",
-      title: "HR & Payroll",
-      text: "Manage workforce operations.",
-    },
-  ];
+ 
 
   return (
     <div className="service-details-area-all sp erp-page">
@@ -173,12 +159,7 @@ const ProjectDetailsCenter1 = () => {
                       <i className="bi bi-arrow-right"></i>
                     </Link>
 
-                    <Link
-                      to="/contact"
-                      className="erp-btn erp-btn-outline"
-                    >
-                      Talk to Our Team
-                    </Link>
+                   
 
                   </div>
 
@@ -315,64 +296,7 @@ const ProjectDetailsCenter1 = () => {
               </section>
 
 
-              {/* =====================================================
-                  WORKFLOW
-              ===================================================== */}
-              <section className="erp-workflow-section">
-
-                <div className="erp-section-heading">
-
-                  <span>CONNECTED WORKFLOW</span>
-
-                  <h2>
-                    From Lead to Operations
-                  </h2>
-
-                  <p>
-                    Connect important business processes
-                    through one integrated workflow.
-                  </p>
-
-                </div>
-
-
-                <div className="erp-workflow">
-
-                  {workflow.map((item, index) => (
-
-                    <div
-                      className="workflow-wrapper"
-                      key={index}
-                    >
-
-                      <div className="workflow-item">
-
-                        <div className="workflow-number">
-                          {item.number}
-                        </div>
-
-                        <div>
-                          <h4>{item.title}</h4>
-
-                          <p>{item.text}</p>
-                        </div>
-
-                      </div>
-
-
-                      {index < workflow.length - 1 && (
-                        <div className="workflow-arrow">
-                          <i className="bi bi-arrow-right"></i>
-                        </div>
-                      )}
-
-                    </div>
-
-                  ))}
-
-                </div>
-
-              </section>
+             
 
 
               {/* =====================================================
@@ -462,13 +386,7 @@ const ProjectDetailsCenter1 = () => {
 
                   <div className="erp-buttons">
 
-                    <Link
-                      to="/contact"
-                      className="erp-btn erp-btn-white"
-                    >
-                      Request a Product Demo
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
+                   
 
                     <Link
                       to="/contact"
