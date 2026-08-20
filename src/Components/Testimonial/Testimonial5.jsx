@@ -3,162 +3,144 @@ import { Link } from "react-router-dom";
 const Testimonial5 = () => {
   const projects = [
     {
-      title: "SASAN SG",
+      title: "SASAN Construction PTE. LTD",
       category: "Corporate Website",
       description:
-        "Professional corporate website showcasing services and company information.",
-      image: "/assets/img/work/sasan.jpg",
+        "A professional corporate website designed to showcase services, projects and company information.",
+      image: "/assets/img/work/sasanimg1.png",
       url: "https://www.sasansg.com/",
-      size: "large",
     },
-
     {
       title: "GOLDSEA GROUP",
       category: "Business Website",
       description:
-        "Modern business website presenting services, solutions, and company profile.",
-      image: "/assets/img/work/goldsea.jpg",
+        "A modern business website presenting company services, solutions and business capabilities.",
+      image: "/assets/img/work/goldseaimg1.png",
       url: "https://goldseagroups.com/",
-      size: "small",
     },
-
     {
-      title: "TUCK LEE 1935",
+      title: "Tuck Lee",
       category: "Corporate Website",
       description:
-        "Professional website showcasing company services and business capabilities.",
-      image: "/assets/img/work/tucklee.jpg",
+        "A professional digital presence highlighting company services and business capabilities.",
+      image: "/assets/img/work/tuckleeimg1.png",
       url: "https://tucklee1935.sg/",
-      size: "wide",
     },
-
     {
-      title: "FIRST CHOICE HUB",
+      title: "First Choice Hub",
       category: "IT Solutions",
       description:
-        "Technology website presenting IT services and digital business solutions.",
-      image: "/assets/img/work/firstchoice.jpg",
+        "A technology-focused website presenting IT services and digital business solutions.",
+      image: "/assets/img/work/firstchoiceimg1.png",
       url: "https://firstchoicehub.com.sg/",
-      size: "small",
     },
-
     {
-      title: "SKY MOON ENGINEERING",
+      title: "Sky Moon Engineering",
       category: "Engineering Website",
       description:
-        "Engineering website highlighting technical services and company capabilities.",
-      image: "/assets/img/work/skymoon.jpg",
+        "A professional engineering website highlighting technical services and expertise.",
+      image: "/assets/img/work/skymoonimg1.png",
       url: "https://skymooneng.com.sg/",
-      size: "large",
     },
-
     {
-      title: "ANS FRESH & FROZEN",
+      title: "ANS Fresh & Frozen",
       category: "E-Commerce Website",
       description:
-        "Online platform showcasing fresh and frozen food products.",
-      image: "/assets/img/work/ansfresh.jpg",
+        "An attractive e-commerce platform showcasing fresh and frozen food products.",
+      image: "/assets/img/work/ansimg1.png",
       url: "https://ansfreshmeat.com.sg/",
-      size: "wide",
     },
-
     {
       title: "PINNACLE ACME",
       category: "Business Website",
       description:
-        "Professional website presenting business services and company information.",
-      image: "/assets/img/work/pinnacle.jpg",
+        "A professional website presenting business services and company information.",
+      image: "/assets/img/work/pinnacleimg1.png",
       url: "https://pinnacleacme.com/",
-      size: "small",
     },
   ];
 
   return (
-    <section className="project-page-all">
+    <section className="portfolio-section">
       <div className="container">
 
-        {/* =================================================
-            PROJECT PAGE HEADING
-        ================================================= */}
+        {/* ================================
+            HEADER
+        ================================= */}
 
-        <div className="project-page-heading">
-          <span>OUR WORK</span>
+        <div className="portfolio-heading">
 
-          <h2>Projects We've Built</h2>
+          <span className="portfolio-label">
+            OUR PORTFOLIO
+          </span>
+
+          <h2>
+            Websites We've Built
+          </h2>
 
           <p>
-            Explore our latest websites and digital solutions
-            created for businesses across different industries.
+            Explore our collection of professional websites and
+            digital solutions created for businesses across
+            different industries.
           </p>
+
         </div>
 
 
-        {/* =================================================
+        {/* ================================
             PROJECT GRID
-        ================================================= */}
+        ================================= */}
 
-        <div className="project-grid">
+        <div className="portfolio-grid">
 
           {projects.map((project, index) => (
-            <div
-              className={`project-box project-${project.size}`}
+            <article
+              className={`portfolio-card ${
+                index === projects.length - 1
+                  ? "portfolio-last"
+                  : ""
+              }`}
               key={index}
             >
 
-              {/* =================================================
-                  PROJECT IMAGE
-              ================================================= */}
-
-              <div className="project-image">
+              <div className="portfolio-image">
 
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                 />
 
 
-                {/* =================================================
-                    IMAGE OVERLAY
-                ================================================= */}
+                {/* ================================
+                    HOVER OVERLAY
+                ================================= */}
 
-                <div className="project-overlay">
+                <div className="portfolio-overlay">
 
-                  <div className="project-overlay-content">
+                  <div className="portfolio-content">
 
-                    {/* Category */}
-
-                    <span className="project-category">
+                    <span className="portfolio-category">
                       {project.category}
                     </span>
-
-
-                    {/* Company Name */}
 
                     <h3>
                       {project.title}
                     </h3>
 
-
-                    {/* Description */}
-
-                    <p className="project-description">
+                    <p>
                       {project.description}
                     </p>
-
-
-                    {/* View Project Button */}
 
                     <a
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-modern-btn"
+                      className="portfolio-view-btn"
                     >
-                      <span>
-                        View Project
-                      </span>
+                      <span>View Project</span>
 
-                      <span className="project-arrow">
+                      <span className="portfolio-btn-icon">
                         ↗
                       </span>
                     </a>
@@ -169,31 +151,43 @@ const Testimonial5 = () => {
 
               </div>
 
-            </div>
+            </article>
           ))}
 
         </div>
 
 
-        {/* =================================================
-            CONTACT SECTION
-        ================================================= */}
+        {/* ================================
+            CTA
+        ================================= */}
 
-        <div className="project-contact-box">
+        <div className="portfolio-cta">
 
-          <h3>
-            Have a Project in Mind?
-          </h3>
+          <div className="portfolio-cta-content">
 
-          <p>
-            Let's build something great together.
-          </p>
+            <span>
+               NEED A PROFESSIONAL WEBSITE?
+            </span>
+
+            <h3>
+              
+               Let's Create Your Digital Presence
+            </h3>
+
+            <p>
+              Whether you need a corporate website, e-commerce platform,
+      or custom web solution, our team can turn your ideas into
+      a modern and effective website.
+            </p>
+
+          </div>
 
           <Link
             to="/contact"
-            className="project-contact-btn"
+            className="portfolio-cta-btn"
           >
-            Start a Project →
+            Start a Project
+            <span>↗</span>
           </Link>
 
         </div>
