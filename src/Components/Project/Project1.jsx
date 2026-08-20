@@ -1,76 +1,107 @@
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import data from '../../Data/Home1/project1.json';
+import data from "../../Data/Home1/project1.json";
 import SectionTitle from "../Common/SectionTitle";
 
-
 const Project1 = () => {
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 2000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: false,
-        swipeToSlide: true,
-        autoplay: true,
-        responsive: [
-          {
-            breakpoint: 1399,
-            settings: {
-              slidesToShow: 3,
-            }
-          },
-          {
-            breakpoint: 1199,
-            settings: {
-              slidesToShow: 2,
-            }
-          },{
-            breakpoint: 575,
-            settings: {
-              slidesToShow: 1,
-            }
-          }
-        ]
-      }; 
+    slidesToShow: 4,
+    slidesToScroll: 1,
 
-    return (
-        <div className="project sp">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8 m-auto text-center">
-                <div className="heading1">
-                    <SectionTitle
-                        SubTitle=""
-                        Title="Our Clients"
-                    ></SectionTitle>
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 5000,
+    cssEase: "linear",
+
+    pauseOnHover: true,
+    pauseOnFocus: true,
+
+    swipe: true,
+    draggable: true,
+    swipeToSlide: true,
+    touchMove: true,
+
+    responsive: [
+      /* Laptop / Medium screens */
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          speed: 5000,
+          autoplaySpeed: 0,
+        },
+      },
+
+      /* Tablet */
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          speed: 5500,
+          autoplaySpeed: 0,
+        },
+      },
+
+      /* Mobile */
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          speed: 6000,
+          autoplaySpeed: 0,
+        },
+      },
+
+      /* Small Mobile */
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          speed: 5500,
+          autoplaySpeed: 0,
+        },
+      },
+    ],
+  };
+
+  return (
+    <section className="sbros-clients">
+      <div className="container">
+
+        {/* Our Clients Heading */}
+        <div className="sbros-clients-title-box">
+          <SectionTitle
+            SubTitle=""
+            Title="Our Clients"
+          />
+        </div>
+
+        {/* Client Logo Slider */}
+        <div className="sbros-clients-slider">
+          <Slider {...settings}>
+            {data.map((item, index) => (
+              <div className="sbros-client-slide" key={index}>
+                <div className="sbros-client-image">
+                  <img
+                    src={item.img}
+                    alt={`Client ${index + 1}`}
+                  />
                 </div>
               </div>
-            </div>
+            ))}
+          </Slider>
+        </div>
 
-            <div className="space30"></div>
-            <div className="row">
-              <div className="project-slider cs_slider_gap_30">
-                <Slider {...settings}>
-                {data.map((item, i) => (
-                <div key={i} className="single-slider">
-                  <div className="slider-img">
-                    <img src={item.img} alt="" />
-                  </div>
-                  
-                </div>
-                ))}
-                </Slider>
-
-              </div>
-
-
-              </div>
-            </div>
-          </div>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Project1;

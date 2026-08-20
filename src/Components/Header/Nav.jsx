@@ -51,18 +51,15 @@ export default function Nav({ setMobileToggle }) {
       </li>
 
 
-        <li className="menu-item-has-children">
-        <a href="#" onClick={(e) => e.preventDefault()}>Products</a>
-        <DropDown>
-          <ul>
-            <li>
-              <Link to="/project/project-details-center" onClick={() => setMobileToggle(false)}>
-                One Solution ERP
-              </Link>
-            </li>
-          </ul>
-        </DropDown>
+
+ <li>
+        <Link to="/project/project-details-center" onClick={() => setMobileToggle(false)}>
+          Products
+        </Link>
       </li>
+
+
+        
 
       {/*<li className="menu-item-has-children">
         <Link to="/industries">Industries</Link>

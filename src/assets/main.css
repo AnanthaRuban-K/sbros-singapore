@@ -7351,7 +7351,577 @@ a.header__search.header-search-btn p {
 
 
 
+/* =========================================================
+   SBROS CLIENTS
+========================================================= */
 
+.sbros-clients {
+    width: 100%;
+
+    padding: 55px 0;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   OUR CLIENTS TITLE
+========================================================= */
+
+.sbros-clients-title-box {
+    width: fit-content;
+
+    margin: 0 auto 30px;
+
+    padding: 10px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(14, 56, 177, 0.15);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 5px 18px rgba(14, 56, 177, 0.08);
+
+    position: relative;
+}
+
+
+/* Small line */
+
+.sbros-clients-title-box::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -4px;
+
+    width: 32px;
+
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background: #0e38b1;
+
+    border-radius: 10px;
+}
+
+
+/* Heading */
+
+.sbros-clients-title-box h2 {
+    margin: 0 !important;
+
+    font-size: 28px !important;
+
+    line-height: 1.2 !important;
+
+    font-weight: 700 !important;
+
+    color: #151922;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.sbros-clients-slider {
+    width: 100%;
+
+    overflow: hidden;
+
+    cursor: grab;
+}
+
+
+/* When dragging */
+
+.sbros-clients-slider:active {
+    cursor: grabbing;
+}
+
+
+/* Slick list */
+
+.sbros-clients-slider .slick-list {
+    overflow: hidden !important;
+
+    padding: 10px 0 15px !important;
+}
+
+
+/* Track */
+
+.sbros-clients-slider .slick-track {
+    display: flex !important;
+
+    align-items: center !important;
+
+    transition-timing-function: linear !important;
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.sbros-client-slide {
+    padding: 0 22px;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.sbros-client-image {
+    width: 100%;
+
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   CLIENT IMAGE
+========================================================= */
+
+.sbros-client-image img {
+    display: block;
+
+    width: auto;
+
+    max-width: 190px;
+
+    height: 85px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.sbros-client-image:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .sbros-clients {
+        padding: 45px 0;
+    }
+
+    .sbros-clients-title-box {
+        margin-bottom: 25px;
+
+        padding: 9px 27px;
+    }
+
+    .sbros-clients-title-box h2 {
+        font-size: 25px !important;
+    }
+
+    .sbros-client-slide {
+        padding: 0 15px;
+    }
+
+    .sbros-client-image {
+        height: 110px;
+    }
+
+    .sbros-client-image img {
+        max-width: 165px;
+
+        height: 75px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    .sbros-clients {
+        padding: 40px 0;
+    }
+
+    .sbros-clients-title-box {
+        margin-bottom: 20px;
+
+        padding: 8px 23px;
+
+        border-radius: 40px;
+    }
+
+    .sbros-clients-title-box h2 {
+        font-size: 22px !important;
+    }
+
+    .sbros-client-slide {
+        padding: 0 10px;
+    }
+
+    .sbros-client-image {
+        height: 95px;
+    }
+
+    .sbros-client-image img {
+        max-width: 145px;
+
+        height: 65px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 400px) {
+
+    .sbros-client-image {
+        height: 90px;
+    }
+
+    .sbros-client-image img {
+        max-width: 135px;
+
+        height: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FOOTER CONTACT
+========================================================= */
+
+.footer1 .contact-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer1 .address-box {
+  margin-bottom: 18px;
+}
+
+.footer1 .address-box .icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer1 .address-box .icon i {
+  font-size: 18px;
+}
+
+.footer1 .address-box .pera {
+  flex: 1;
+}
+
+.footer1 .address-box .pera p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer1 .address-box .pera strong {
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   INDIA BRANCH CLICKABLE
+========================================================= */
+
+.footer1 .india-address-link {
+  display: block;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.footer1 .india-address-link strong {
+  color: #ffffff;
+}
+
+.footer1 .india-address-link:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+.footer1 .india-address-link:hover strong {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .footer1 .address-box {
+    margin-bottom: 20px;
+  }
+
+  .footer1 .address-box .pera p,
+  .footer1 .india-address-link {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+}
+
+/* CLIENT SLIDER */
+
+.sbros-clients-slider {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.sbros-clients-slider:active {
+  cursor: grabbing;
+}
+
+.sbros-clients-slider .slick-list {
+  overflow: hidden !important;
+}
+
+.sbros-clients-slider .slick-track {
+  display: flex !important;
+  align-items: center !important;
+  transition-timing-function: linear !important;
+}
+
+.sbros-client-slide {
+  padding: 0 20px;
+}
+
+.sbros-client-image {
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sbros-client-image img {
+  width: auto;
+  max-width: 190px;
+  height: 85px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+/* TABLET */
+
+@media screen and (max-width: 991px) {
+  .sbros-client-slide {
+    padding: 0 15px;
+  }
+
+  .sbros-client-image {
+    height: 110px;
+  }
+
+  .sbros-client-image img {
+    max-width: 165px;
+    height: 75px;
+  }
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 767px) {
+  .sbros-clients-slider {
+    touch-action: pan-y;
+  }
+
+  .sbros-client-slide {
+    padding: 0 8px;
+  }
+
+  .sbros-client-image {
+    height: 95px;
+  }
+
+  .sbros-client-image img {
+    max-width: 140px;
+    height: 65px;
+  }
+}
+
+
+/* SMALL MOBILE */
+
+@media screen and (max-width: 480px) {
+  .sbros-client-slide {
+    padding: 0 5px;
+  }
+
+  .sbros-client-image {
+    height: 85px;
+  }
+
+  .sbros-client-image img {
+    max-width: 125px;
+    height: 58px;
+  }
+}/* =========================================================
+   CLIENTS SLIDER
+========================================================= */
+
+.sbros-clients-slider {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.sbros-clients-slider:active {
+  cursor: grabbing;
+}
+
+.sbros-clients-slider .slick-list {
+  overflow: hidden !important;
+}
+
+.sbros-clients-slider .slick-track {
+  display: flex !important;
+  align-items: center !important;
+  transition-timing-function: linear !important;
+}
+
+.sbros-client-slide {
+  padding: 0 20px;
+}
+
+.sbros-client-image {
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sbros-client-image img {
+  width: auto;
+  max-width: 190px;
+  height: 85px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 991px) {
+  .sbros-client-slide {
+    padding: 0 15px;
+  }
+
+  .sbros-client-image {
+    height: 110px;
+  }
+
+  .sbros-client-image img {
+    max-width: 165px;
+    height: 75px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 767px) {
+  .sbros-clients-slider {
+    touch-action: pan-y;
+  }
+
+  .sbros-client-slide {
+    padding: 0 8px;
+  }
+
+  .sbros-client-image {
+    height: 95px;
+  }
+
+  .sbros-client-image img {
+    max-width: 140px;
+    height: 65px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+  .sbros-client-slide {
+    padding: 0 5px;
+  }
+
+  .sbros-client-image {
+    height: 85px;
+  }
+
+  .sbros-client-image img {
+    max-width: 125px;
+    height: 58px;
+  }
+}
 
 
 .cs_case_study.cs_style_1 .cs_case_study_category {

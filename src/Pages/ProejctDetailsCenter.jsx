@@ -7,9 +7,8 @@ const ProejctDetailsCenter = () => {
     return (
         <div>
            <BreadCumb
-  Title="One Solution ERP"
-  ParentTitle="Products"
-  ParentLink="/Products"
+  Title="Products"
+  
 />
             <ProjectDetailsCenter1></ProjectDetailsCenter1>
            

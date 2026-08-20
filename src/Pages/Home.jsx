@@ -23,7 +23,7 @@ const Home = () => {
             ></HeroBanner1>
             <Award1></Award1>
             <About1
-  image1="/assets/img/about/about3.jpg"
+  image1="/assets/img/about/about5.jpg"
   image2="/assets/img/about/about1img1.jpeg"
 
   Title="From Vision to Innovation - Technology Solutions That Move Your Business Forward."
@@ -31,9 +31,9 @@ const Home = () => {
   content="SBros transforms business challenges into smarter digital opportunities through innovative, secure, and scalable technology solutions. From software and web development to IT infrastructure and cybersecurity, we help businesses streamline operations, strengthen performance, and build a future-ready digital presence."
 
   featurelist={[
-    "Dramatically re-engineer value added IT system.",
-    "Highlight any unique selling points or differentiators.",
-    "Incorporate visuals such as team photos shots.",
+    "Turning challenges into smarter digital solutions.",
+    "Innovating technology to accelerate business growth.",
+    "Technology that moves your business forward.F",
   ]}
 />
             <Services1></Services1>
