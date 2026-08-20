@@ -1,11 +1,15 @@
-import BreadCumb2 from "../Components/Common/BreadCumb2";
+import BreadCumb from "../Components/Common/BreadCumb";
 
 import ServiceITNetworking from "../Components/ServiceDetails/ServiceITNetworking";
 
 const ServiceDetailsLeftDark = () => {
     return (
         <div>
-            <BreadCumb2 Title="IT Networking"></BreadCumb2>
+            <BreadCumb
+  Title="IT Networking"
+  ParentTitle="Services"
+  ParentLink="/services"
+/>
          
             <ServiceITNetworking></ServiceITNetworking>
          

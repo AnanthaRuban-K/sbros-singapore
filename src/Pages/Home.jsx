@@ -19,7 +19,7 @@ const Home = () => {
                 btnName="Explore"
                 btnUrl="/service"
 
-                image2="/assets/img/hero/headimg4.png"
+                image2="/assets/img/hero/headimg5.png"
             ></HeroBanner1>
             <Award1></Award1>
             <About1

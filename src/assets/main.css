@@ -7980,13 +7980,6 @@ a.header__search.header-search-btn p {
   overflow: hidden;
   border-radius: 24px;
 
-  background: linear-gradient(
-    135deg,
-    #0b1f4d 0%,
-    #123c9e 45%,
-    #1769d5 75%,
-    #2b8cff 100%
-  );
 
   isolation: isolate;
 }
@@ -8255,6 +8248,161 @@ a.header__search.header-search-btn p {
 /* =========================================================
    ERP INTRODUCTION
 ========================================================= */
+/* =====================================================
+   ERP INTRO SECTION - CLEAN VERSION
+   Paste this at the VERY END of your CSS file so it
+   overrides every earlier duplicate .erp-intro rule.
+===================================================== */
+
+.erp-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.erp-intro {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 0 60px !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  isolation: auto !important;
+}
+
+.erp-intro::before,
+.erp-intro::after {
+  display: none !important;
+}
+
+/* ---------- MAIN IMAGE ---------- */
+.erp-main-image {
+  width: 100%;
+  height: 420px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 20px;
+  /* box-shadow: 0 15px 40px rgba(14, 56, 177, 0.12); */
+}
+
+.erp-main-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.erp-main-image:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- INTRO CONTENT (text card) ---------- */
+.erp-intro-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 55px 60px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0e38b1 0%, #1d73df 100%);
+  box-shadow: 0 20px 45px rgba(14, 56, 177, 0.18);
+}
+
+.erp-label,
+.erp-tag {
+  display: inline-block !important;
+  margin-bottom: 18px !important;
+  padding: 8px 18px !important;
+  border-radius: 50px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+}
+
+.erp-intro-content h1 {
+  margin: 0 0 22px !important;
+  color: #ffffff !important;
+  font-size: 42px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+}
+
+.erp-intro-content h1 span {
+  color: #a9d4ff !important;
+}
+
+.erp-intro-content p {
+  max-width: 650px;
+  margin: 0 auto 14px !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 16px !important;
+  line-height: 1.85 !important;
+}
+
+.erp-intro-content p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+  .erp-main-image {
+    height: 320px;
+  }
+
+  .erp-intro-content {
+    padding: 45px 35px;
+  }
+
+  .erp-intro-content h1 {
+    font-size: 34px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .erp-intro {
+    margin-bottom: 40px !important;
+  }
+
+  .erp-main-image {
+    height: 220px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+  }
+
+  .erp-intro-content {
+    padding: 32px 20px;
+    border-radius: 15px;
+  }
+
+  .erp-intro-content h1 {
+    font-size: 27px !important;
+    line-height: 1.25 !important;
+  }
+
+  .erp-intro-content p {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .erp-main-image {
+    height: 180px;
+  }
+
+  .erp-intro-content h1 {
+    font-size: 24px !important;
+  }
+}
+
 
 .erp-intro {
   position: relative;
@@ -8263,13 +8411,7 @@ a.header__search.header-search-btn p {
   overflow: hidden;
   border-radius: 24px;
 
-  background: linear-gradient(
-    135deg,
-    #0b1f4d 0%,
-    #123c9e 45%,
-    #1769d5 75%,
-    #2b8cff 100%
-  );
+ 
 }
 
 .erp-intro::before {
@@ -13920,6 +14062,7 @@ body,
   line-height: var(--f-fs-font-fs74);
   font-weight: var(--f-fw-blod);
   color: var(--ztc-text-text-1);
+   white-space: nowrap;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .common-hero .main-heading h1 {
@@ -29998,7 +30141,13 @@ background-color: unset;
   border-color: #e50019;
   transform: translateY(-3px);
 }
+.contact-box.address-box:hover .icon i {
+  color: #fff !important;
+}
 
+.contact-box.address-box:hover .icon {
+  color: #fff !important;
+}
 /* ===== Section Titles ===== */
 .single-footer-items h3 {
   color: #fff;
@@ -30255,7 +30404,7 @@ background-color: unset;
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    background: #f3f5f8;
+    /* background: #f3f5f8; */
     margin-bottom: 50px;
 }
 
@@ -30416,7 +30565,7 @@ background-color: unset;
   padding: 70px 70px;
   margin-bottom: 35px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(11, 47, 138, 0.18);
+  /* box-shadow: 0 20px 50px rgba(11, 47, 138, 0.18); */
 }
 
 .erp-intro::before {
