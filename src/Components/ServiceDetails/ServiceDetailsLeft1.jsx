@@ -225,7 +225,7 @@ const ServiceDetailsLeft1 = () => {
                     </div>
 
                     <Link
-                      to="/service/service-it-networking"
+                      to="/IT-Networking"
                       className="service-arrow"
                     >
                       <i className="bi bi-arrow-right"></i>
@@ -233,7 +233,7 @@ const ServiceDetailsLeft1 = () => {
                   </div>
 
                   <h4>
-                    <Link to="/service/service-it-networking">
+                    <Link to="/IT-Networking">
                       Network Solutions
                     </Link>
                   </h4>
@@ -255,7 +255,7 @@ const ServiceDetailsLeft1 = () => {
                     </div>
 
                     <Link
-                      to="/service/service-details-center"
+                      to="/Website-Development"
                       className="service-arrow"
                     >
                       <i className="bi bi-arrow-right"></i>
@@ -263,7 +263,7 @@ const ServiceDetailsLeft1 = () => {
                   </div>
 
                   <h4>
-                    <Link to="/service/service-details-center">
+                    <Link to="/Website-Development">
                       Website Development
                     </Link>
                   </h4>

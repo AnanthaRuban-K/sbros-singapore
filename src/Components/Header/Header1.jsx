@@ -58,7 +58,7 @@ export default function Header1({ variant }) {
              <div className="cs_main_header_right header_right_one">
   <div className="header1-buttons desktop-contact">
     <div className="button">
-      <Link to="/contact" className="theme-btn1">
+      <Link to="/contact-us" className="theme-btn1">
         Contact us
         <span>
           <i className="bi bi-arrow-right"></i>

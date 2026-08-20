@@ -152,7 +152,7 @@ const ProjectDetailsCenter1 = () => {
                   <div className="erp-buttons">
 
                     <Link
-                      to="/contact"
+                      to="/contact-us"
                       className="erp-btn erp-btn-primary"
                     >
                       Request a Demo
@@ -389,7 +389,7 @@ const ProjectDetailsCenter1 = () => {
                    
 
                     <Link
-                      to="/contact"
+                      to="/contact-us"
                       className="erp-btn erp-btn-transparent"
                     >
                       Talk to Our ERP Team

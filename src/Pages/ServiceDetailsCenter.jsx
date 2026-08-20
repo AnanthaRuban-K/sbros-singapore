@@ -8,7 +8,7 @@ const ServiceDetailsCenter = () => {
         <div>
             <BreadCumb
   Title="Website Development"
-  ParentTitle="Services"
+  ParentTitle="services"
   ParentLink="/service"
 />
           

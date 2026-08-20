@@ -663,7 +663,7 @@ const ServiceTrading = () => {
                 </p>
 
                 <Link
-                  to="/contact"
+                  to="/contact-us"
                   className="trading-cta-btn"
                 >
                   Contact Our Team
