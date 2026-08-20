@@ -23,9 +23,9 @@ const Home = () => {
             ></HeroBanner1>
             <Award1></Award1>
             <About1
-                image1="/assets/img/about/about2img.pn"
-                image2="/assets/img/about/about1img1.jpeg"
                
+                image1="/assets/img/about/about1img1.jpeg"
+                image2="/assets/img/about/girl.jpg"
                
                 
                 Title="From Vision to Innovation - Technology Solutions That Move Your Business Forward."
