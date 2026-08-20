@@ -23,21 +23,19 @@ const Home = () => {
             ></HeroBanner1>
             <Award1></Award1>
             <About1
-                image1="/assets/img/about/about2img.pn"
-                image2="/assets/img/about/about1img1.jpeg"
-               
-               
-                
-                Title="From Vision to Innovation - Technology Solutions That Move Your Business Forward."
-                content="SBros transforms business challenges into smarter digital opportunities through innovative, secure, and scalable technology solutions. From software and web development to IT infrastructure and cybersecurity, we help businesses streamline operations, strengthen performance, and build a future-ready digital presence."
-                featurelist={[
-                    "Dramatically re-engineer value added IT system.",
-                    "Highlight any unique selling points or differentiators.",
-                    "Incorporate visuals such as team photos shots.",
-                ]}
-                btnName="Discover More"
-                btnUrl="/about"
-            ></About1>
+  image1="/assets/img/about/about3.jpg"
+  image2="/assets/img/about/about1img1.jpeg"
+
+  Title="From Vision to Innovation - Technology Solutions That Move Your Business Forward."
+
+  content="SBros transforms business challenges into smarter digital opportunities through innovative, secure, and scalable technology solutions. From software and web development to IT infrastructure and cybersecurity, we help businesses streamline operations, strengthen performance, and build a future-ready digital presence."
+
+  featurelist={[
+    "Dramatically re-engineer value added IT system.",
+    "Highlight any unique selling points or differentiators.",
+    "Incorporate visuals such as team photos shots.",
+  ]}
+/>
             <Services1></Services1>
             <Choose1></Choose1>
             <Project1></Project1>

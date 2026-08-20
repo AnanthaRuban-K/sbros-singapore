@@ -1,41 +1,75 @@
-import { Link } from "react-router-dom";
+const About1 = ({
+  image1,
+  image2,
+  Title,
+  content,
+  featurelist,
+}) => {
+  return (
+    <section className="sbros-about">
+      <div className="container">
+        <div className="row align-items-center">
 
-const About1 = ({image1,image2,supIcon,supTitle,supCon,subTitle,Title,content,featurelist,btnName,btnUrl}) => {
-    return (
-        <div className="about1 sp">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-6">
-                <div className="about-image">
-                  <div className="image1">
-                    <img src={image1} alt="" />
-                  </div>
-                  <div className="image2 image-anime">
-                    <img src={image2} alt="" />
-                  </div>
-                 
-                </div>
+          {/* ================= IMAGE ================= */}
+          <div className="col-lg-6 sbros-about-image-col">
+
+            <div className="sbros-about-images">
+
+              {/* Main Image */}
+              <div className="sbros-about-main-image">
+                <img
+                  src={image2}
+                  alt="SBros Technology"
+                />
               </div>
 
-              <div className="col-lg-6">
-                <div className="heading1">
-                  <h2 className="title tg-element-title">{Title}</h2>
-                  <div className="space16"></div>
-                  <p data-aos="fade-left" data-aos-duration="800">{content}</p>
-
-                    <ul className="list" data-aos="fade-left" data-aos-duration="1100">
-                    {featurelist?.map((item, index) => (
-                      <li key={index}><span><i className="bi bi-check-lg"></i></span> {item}</li>
-                    ))}
-                    </ul>
-                    <div className="space30"></div>
-                    
-                </div>
+              {/* Second Image - Laptop only */}
+              <div className="sbros-about-small-image">
+                <img
+                  src={image1}
+                  alt="SBros Technology"
+                />
               </div>
+
             </div>
+
           </div>
+
+
+          {/* ================= CONTENT ================= */}
+          <div className="col-lg-6 sbros-about-content-col">
+
+            <div className="sbros-about-content">
+
+              <h2>
+                {Title}
+              </h2>
+
+              <p>
+                {content}
+              </p>
+
+              {featurelist && (
+                <ul>
+                  {featurelist.map((item, index) => (
+                    <li key={index}>
+                      <span>
+                        <i className="bi bi-check-lg"></i>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+            </div>
+
+          </div>
+
         </div>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default About1;
