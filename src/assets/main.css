@@ -5358,6 +5358,7 @@ a.header__search.header-search-btn p {
  ABOUT AREA CSS
 ::::::::::::::::::::::::::
 */
+
 .about1 .about-image {
   position: relative;
 }
@@ -32226,6 +32227,10 @@ background-color: unset;
    ABOUT SECTION - TABLET VIEW ONLY
    Move About Image from Right Side to Left Side
    ========================================================= */
+/* =========================================================
+   ABOUT SECTION - TABLET VIEW
+   Professional & Balanced Layout
+   ========================================================= */
 
 @media (min-width: 768px) and (max-width: 991px) {
 
@@ -32233,46 +32238,113 @@ background-color: unset;
     display: flex !important;
     flex-wrap: wrap;
     align-items: center;
+    row-gap: 35px;
   }
 
-  /* About image */
+  /* About Image Section */
   .about1 .row > .col-lg-6:first-child {
     order: 1 !important;
+    width: 100%;
   }
 
-  /* About content */
+  /* About Content Section */
   .about1 .row > .col-lg-6:last-child {
     order: 2 !important;
+    width: 100%;
   }
 
+  /* Image Wrapper */
   .about1 .about-image {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto 35px 0 !important;
+    max-width: 600px;
+    margin: 0 auto !important;
     position: relative;
+    padding: 0 25px;
   }
 
-  .about1 .about-image .image1,
-  .about1 .about-image .image2 {
+  /* Main Image */
+  .about1 .about-image .image1 {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     position: relative;
+    z-index: 1;
   }
 
-  .about1 .about-image img {
-    max-width: 100%;
-    height: auto;
+  .about1 .about-image .image1 img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
     display: block;
+    border-radius: 18px;
   }
 
+  /* Second Image */
+  .about1 .about-image .image2 {
+    width: 230px;
+    position: absolute;
+    right: 10px;
+    bottom: -35px;
+    z-index: 2;
+  }
+
+  .about1 .about-image .image2 img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    border: 6px solid #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Content */
   .about1 .heading1 {
     width: 100%;
+    max-width: 700px;
+    margin: 15px auto 0;
     text-align: left;
+    padding: 0 25px;
   }
+
+  /* Heading */
+  .about1 .heading1 h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  /* Description */
+  .about1 .heading1 p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  /* Feature List */
+  .about1 .heading1 .list {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .about1 .heading1 .list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Check Icon */
+  .about1 .heading1 .list li span {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
-
-
-
-
-
 
 /* =========================================================
    MOBILE
