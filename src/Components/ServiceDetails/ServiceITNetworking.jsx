@@ -187,8 +187,8 @@ const ServiceITNetworking = () => {
                     <ul className="expart-list">
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -197,8 +197,8 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -207,18 +207,17 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
-
                         <span className="text">
                           Wi-Fi Infrastructure
                         </span>
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -227,8 +226,8 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -237,8 +236,8 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -247,8 +246,8 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -257,8 +256,8 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
 
                         <span className="text">
@@ -267,10 +266,9 @@ const ServiceITNetworking = () => {
                       </li>
 
                       <li>
-                        <span className="check">
-                          <i className="bi bi-check-lg"></i>
+                        <span className="erp-check">
+                          <i className="bi bi-star-fill"></i>
                         </span>
-
                         <span className="text">
                           IT Infrastructure Consulting
                         </span>
@@ -409,9 +407,8 @@ const ServiceITNetworking = () => {
 
                     <div
                       key={index}
-                      className={`accordion-item ${
-                        index === openItemIndex ? "active" : ""
-                      }`}
+                      className={`accordion-item ${index === openItemIndex ? "active" : ""
+                        }`}
                     >
 
                       <h2

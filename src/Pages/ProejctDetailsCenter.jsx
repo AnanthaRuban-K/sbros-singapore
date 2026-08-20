@@ -6,7 +6,11 @@ import ProjectDetailsCenter1 from "../Components/ProjectDetails/ProjectDetailsCe
 const ProejctDetailsCenter = () => {
     return (
         <div>
-            <BreadCumb Title="Products"></BreadCumb>
+           <BreadCumb
+  Title="One Solution ERP"
+  ParentTitle="Products"
+  ParentLink="/Products"
+/>
             <ProjectDetailsCenter1></ProjectDetailsCenter1>
            
             

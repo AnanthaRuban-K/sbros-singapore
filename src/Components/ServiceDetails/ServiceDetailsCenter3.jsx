@@ -270,9 +270,9 @@ const ServiceDetailsCenter3 = () => {
                             <div className="website-services-list">
 
                                 <div className="website-service-item">
-                                    <div className="service-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </div>
+                                    <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
                                         <strong>Corporate Websites</strong>
@@ -285,9 +285,9 @@ const ServiceDetailsCenter3 = () => {
 
 
                                 <div className="website-service-item">
-                                    <div className="service-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </div>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
                                         <strong>Business Websites</strong>
@@ -300,9 +300,9 @@ const ServiceDetailsCenter3 = () => {
 
 
                                 <div className="website-service-item">
-                                    <div className="service-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </div>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
                                         <strong>E-Commerce</strong>
@@ -315,10 +315,9 @@ const ServiceDetailsCenter3 = () => {
 
 
                                 <div className="website-service-item">
-                                    <div className="service-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </div>
-
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
                                     <div>
                                         <strong>CMS Websites</strong>
                                         <p>
@@ -330,9 +329,9 @@ const ServiceDetailsCenter3 = () => {
 
 
                                 <div className="website-service-item">
-                                    <div className="service-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </div>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
                                         <strong>Landing Pages</strong>
@@ -345,9 +344,9 @@ const ServiceDetailsCenter3 = () => {
 
 
                                 <div className="website-service-item">
-                                    <div className="service-check">
-                                        <i className="bi bi-check-lg"></i>
-                                    </div>
+                                     <span className="erp-check">
+    <i className="bi bi-star-fill"></i>
+</span>
 
                                     <div>
                                         <strong>Website Maintenance</strong>

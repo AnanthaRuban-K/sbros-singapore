@@ -6,7 +6,11 @@ import ServiceDetailsLeft1 from "../Components/ServiceDetails/ServiceDetailsLeft
 const ServiceDetailsLeft = () => {
     return (
         <div>
-            <BreadCumb Title="Software Developement"></BreadCumb>
+            <BreadCumb
+  Title="Software Development"
+  ParentTitle="Services"
+  ParentLink="/services"
+/>
         
             <ServiceDetailsLeft1></ServiceDetailsLeft1>
             
