@@ -49,7 +49,7 @@ const ServiceITNetworking = () => {
 
                   <div className="image">
                     <img
-                      src="/assets/img/service/networking.jpg"
+                      src="/assets/img/service/aii.jpg"
                       alt="IT Networking"
                     />
                   </div>

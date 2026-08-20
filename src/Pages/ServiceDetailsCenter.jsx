@@ -9,7 +9,7 @@ const ServiceDetailsCenter = () => {
             <BreadCumb
   Title="Website Development"
   ParentTitle="Services"
-  ParentLink="/services"
+  ParentLink="/service"
 />
           
             <ServiceDetailsCenter3></ServiceDetailsCenter3>
