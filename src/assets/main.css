@@ -6365,6 +6365,34 @@ a.header__search.header-search-btn p {
    768px - 991px
    Keep image smaller and inside hero
 ========================================================= */
+/* =========================================
+   HERO SECTION - REMOVE EXTRA GAP
+========================================= */
+
+.hero_main_area1 {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+.hero_main_area1 .hero1 {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-bottom: 40px !important;
+}
+
+.hero_main_area1 .main-headding {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.hero_main_area1 .buttons {
+    margin-bottom: 0 !important;
+}
+
+.hero_main_area1 .hero1-all-images {
+    margin-bottom: 0 !important;
+}
+
 
 @media (min-width: 768px) and (max-width: 991px) {
 
@@ -7571,7 +7599,31 @@ a.header__search.header-search-btn p {
     }
 }
 
+/* =========================================================
+   FOOTER CONTACT - EMAIL ONE LINE FIX
+========================================================= */
 
+.footer1 .contact-box .pera a {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.footer1 .contact-box {
+  overflow: visible;
+}
+
+@media (max-width: 1200px) {
+  .footer1 .contact-box .pera a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer1 .contact-box .pera a {
+    white-space: normal;
+    font-size: 14px;
+  }
+}
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -8187,6 +8239,7 @@ a.header__search.header-search-btn p {
  SERVICE AREA CSS
 ::::::::::::::::::::::::::
 */
+
 .service {
   background-color: var(--ztc-bg-bg-1);
 }
@@ -41591,8 +41644,8 @@ background-color: unset;
 
 .whatsapp-float {
     position: fixed;
-    left: 25px;
-    bottom: 25px;
+    left: 35px;
+    bottom: 80px;
 
     width: 55px;
     height: 55px;
@@ -41627,7 +41680,7 @@ background-color: unset;
 .scroll-to-top {
     position: fixed;
     right: 25px;
-    bottom: 25px;
+    bottom: 80px;
 
     width: 50px;
     height: 50px;

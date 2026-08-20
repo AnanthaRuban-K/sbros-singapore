@@ -87,7 +87,7 @@ const ContactInfo1 = () => {
                                         <div className="sbros-arrow">↗</div>
                                     </a>
 
-                                    <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="sbros-contact-item">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=SBROS+Tech+Singapore" target="_blank" rel="noopener noreferrer" className="sbros-contact-item">
                                         <div className="sbros-contact-icon">
                                             <img src="/assets/img/icons/contact-page-icon3.png" alt="Location" />
                                         </div>
@@ -123,14 +123,14 @@ const ContactInfo1 = () => {
 
                                         <div className="col-md-6">
                                             <div className="sbros-input">
-                                                <label>First Name</label>
+                                                <label>First Name *</label>
                                                 <input type="text" name="first_name" placeholder="Enter your first name" required />
                                             </div>
                                         </div>
 
                                         <div className="col-md-6">
                                             <div className="sbros-input">
-                                                <label>Last Name</label>
+                                                <label>Last Name *</label>
                                                 <input type="text" name="last_name" placeholder="Enter your last name" required />
                                             </div>
                                         </div>
@@ -144,21 +144,21 @@ const ContactInfo1 = () => {
 
                                         <div className="col-md-6">
                                             <div className="sbros-input">
-                                                <label>Phone Number</label>
+                                                <label>Phone Number *</label>
                                                 <input type="tel" name="phone" required />
                                             </div>
                                         </div>
 
                                         <div className="col-12">
                                             <div className="sbros-input">
-                                                <label>Subject</label>
+                                                <label>Subject *</label>
                                                 <input type="text" name="subject" placeholder="What can we help you with?" required />
                                             </div>
                                         </div>
 
                                         <div className="col-12">
                                             <div className="sbros-input">
-                                                <label>Your Message</label>
+                                                <label>Your Message *</label>
                                                 <textarea name="message" rows="5" placeholder="Tell us a little about your requirements..." required></textarea>
                                             </div>
                                         </div>
