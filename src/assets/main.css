@@ -6746,9 +6746,599 @@ a.header__search.header-search-btn p {
     max-width: 220px !important;
     max-height: 200px !important;
   }
+}/* =========================================================
+   MOBILE ONLY
+   Hide description and place image in its position
+   0px - 767px
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+  /* Keep hero positioning controlled */
+  .hero1 {
+    position: relative !important;
+    padding-top: 75px !important;
+    padding-bottom: 30px !important;
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     HIDE DESCRIPTION
+  ===================================================== */
+
+  .hero1 .main-headding > p {
+    display: none !important;
+  }
+
+
+  /* Remove the spacing after description */
+  .hero1 .main-headding .space16 {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     IMAGE CONTAINER
+  ===================================================== */
+
+  .hero1 .col-lg-7 {
+    width: 100% !important;
+
+    display: flex !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  .hero1 .hero1-all-images {
+
+    width: 100% !important;
+
+    height: 240px !important;
+
+    position: relative !important;
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    margin: 0 auto !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =====================================================
+     HEADIMG5
+  ===================================================== */
+
+  .hero1 .hero1-all-images .image2 {
+
+    display: block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    position: relative !important;
+
+    width: 250px !important;
+
+    max-width: 250px !important;
+
+    height: auto !important;
+
+    margin: -10px auto 0 auto !important;
+
+    top: auto !important;
+
+    right: auto !important;
+
+    bottom: auto !important;
+
+    left: auto !important;
+
+    transform: none !important;
+
+    z-index: 10 !important;
+  }
+
+
+  .hero1 .hero1-all-images .image2 img {
+
+    display: block !important;
+
+    width: 250px !important;
+
+    max-width: 250px !important;
+
+    height: auto !important;
+
+    max-height: 225px !important;
+
+    margin: 0 auto !important;
+
+    object-fit: contain !important;
+
+    object-position: center !important;
+  }
+
+
+  /* Hide other images */
+  .hero1 .hero1-all-images .image1,
+  .hero1 .hero1-all-images .image3,
+  .hero1 .hero1-all-images .image4 {
+
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     BUTTON
+  ===================================================== */
+
+  .hero1 .buttons {
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    margin-top: 5px !important;
+
+    position: relative !important;
+
+    z-index: 20 !important;
+  }
+
+
+  .hero1 .theme-btn1 {
+
+    min-width: 125px !important;
+
+    height: 44px !important;
+
+    display: inline-flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+  }
+
 }
 
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .hero1 .hero1-all-images {
+
+    height: 210px !important;
+  }
+
+  .hero1 .hero1-all-images .image2 {
+
+    width: 220px !important;
+
+    max-width: 220px !important;
+  }
+
+  .hero1 .hero1-all-images .image2 img {
+
+    width: 220px !important;
+
+    max-width: 220px !important;
+
+    max-height: 200px !important;
+  }
+
+}/* =========================================================
+   MOBILE ONLY - IMAGE ABOVE BUTTON
+   0px - 767px
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+  /* Hero row */
+  .hero1 .container > .row {
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* =====================================================
+     LEFT CONTENT
+  ===================================================== */
+
+  .hero1 .container > .row > .col-lg-5 {
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    padding: 0 15px !important;
+
+    margin: 0 !important;
+  }
+
+
+  .hero1 .main-headding {
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* Heading */
+  .hero1 .main-headding .title {
+    order: 1 !important;
+
+    font-size: 25px !important;
+
+    line-height: 1.25 !important;
+
+    max-width: 350px !important;
+
+    margin: 0 auto !important;
+  }
+
+
+  /* Hide description */
+  .hero1 .main-headding > p {
+    display: none !important;
+  }
+
+
+  .hero1 .main-headding > .space16 {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     IMAGE
+  ===================================================== */
+
+  .hero1 .container > .row > .col-lg-7 {
+    width: 100% !important;
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+  }
+
+
+  .hero1 .hero1-all-images {
+    width: 100% !important;
+
+    height: 220px !important;
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    position: relative !important;
+
+    margin: 0 auto !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* HEADIMG5 */
+  .hero1 .hero1-all-images .image2 {
+    display: block !important;
+
+    width: 220px !important;
+
+    max-width: 220px !important;
+
+    height: auto !important;
+
+    position: relative !important;
+
+    margin: 0 auto !important;
+
+    top: auto !important;
+
+    right: auto !important;
+
+    bottom: auto !important;
+
+    left: auto !important;
+
+    transform: none !important;
+
+    z-index: 5 !important;
+  }
+
+
+  .hero1 .hero1-all-images .image2 img {
+    display: block !important;
+
+    width: 220px !important;
+
+    max-width: 220px !important;
+
+    height: auto !important;
+
+    max-height: 210px !important;
+
+    object-fit: contain !important;
+
+    margin: 0 auto !important;
+  }
+
+
+  /* Hide other images */
+  .hero1 .hero1-all-images .image1,
+  .hero1 .hero1-all-images .image3,
+  .hero1 .hero1-all-images .image4 {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     BUTTON
+  ===================================================== */
+
+  .hero1 .buttons {
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    width: 100% !important;
+
+    margin-top: 10px !important;
+
+    margin-bottom: 0 !important;
+
+    padding: 0 !important;
+
+    position: relative !important;
+
+    z-index: 20 !important;
+  }
+
+
+  .hero1 .theme-btn1 {
+    display: inline-flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    width: auto !important;
+
+    min-width: 105px !important;
+
+    height: 40px !important;
+
+    padding: 0 16px !important;
+
+    margin: 0 auto !important;
+
+    font-size: 13px !important;
+
+    line-height: normal !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .hero1 .main-headding .title {
+    font-size: 22px !important;
+
+    max-width: 330px !important;
+  }
+
+  .hero1 .hero1-all-images {
+    height: 205px !important;
+  }
+
+  .hero1 .hero1-all-images .image2,
+  .hero1 .hero1-all-images .image2 img {
+    width: 200px !important;
+
+    max-width: 200px !important;
+  }
+
+  .hero1 .buttons {
+    margin-top: 10px !important;
+  }
+
+}/* MOBILE ONLY - MOVE BUTTON DOWN */
+
+@media screen and (max-width: 767px) {
+
+  .hero1 .buttons {
+    position: relative !important;
+
+    top: 330px !important;
+
+    margin-top: 0 !important;
+
+    z-index: 50 !important;
+  }
+
+}
+/* =========================================================
+   MOBILE ONLY - SHOW DESCRIPTION
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+  .hero1 .main-headding > p {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 350px !important;
+
+    margin: 12px auto 0 auto !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.6 !important;
+
+    text-align: center !important;
+  }
+
+  /* Show the spacing after heading */
+  .hero1 .main-headding .space16 {
+    display: block !important;
+
+    height: 10px !important;
+  }
+
+}/* =========================================================
+   MOBILE ONLY
+   Heading → Description → Image → Button
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+  /* Main heading area */
+  .hero1 .main-headding {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
+  }
+
+
+  /* Heading */
+  .hero1 .main-headding .title {
+    order: 1 !important;
+
+    font-size: 25px !important;
+
+    line-height: 1.25 !important;
+
+    margin: 0 0 10px 0 !important;
+  }
+
+
+  /* Description directly below heading */
+  .hero1 .main-headding > p {
+    display: block !important;
+
+    order: 2 !important;
+
+    width: 100% !important;
+
+    max-width: 350px !important;
+
+    margin: 0 auto 15px auto !important;
+
+    padding: 0 !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.6 !important;
+
+    text-align: center !important;
+  }
+
+
+  /* Remove unnecessary spacing */
+  .hero1 .main-headding .space16 {
+    display: none !important;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+@media screen and (max-width: 480px) {
+
+  .hero1 .main-headding .title {
+    font-size: 22px !important;
+
+    margin-bottom: 8px !important;
+  }
+
+  .hero1 .main-headding > p {
+    font-size: 12.5px !important;
+
+    line-height: 1.55 !important;
+
+    max-width: 320px !important;
+
+    margin-bottom: 12px !important;
+  }
+
+}/* MOBILE ONLY - MOVE HEADING UP */
+
+@media screen and (max-width: 767px) {
+
+  .hero1 .main-headding .title {
+    position: relative !important;
+
+    top: -15px !important;
+  }
+
+}/* MOBILE ONLY - BUTTON SLIGHTLY DOWN */
+
+@media screen and (max-width: 767px) {
+  .hero1 .buttons {
+    position: relative !important;
+    top: 390px !important;
+  }
+}
+/* MOBILE ONLY - MOVE IMAGE UP */
+
+@media screen and (max-width: 767px) {
+  .hero1 .hero1-all-images {
+    position: relative !important;
+    top: -20px !important;
+  }
+}
 
 
 

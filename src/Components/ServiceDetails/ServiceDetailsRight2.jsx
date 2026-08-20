@@ -60,7 +60,7 @@ const ServiceERP = () => {
                             <div className="erp-main-image">
 
                                 <img
-                                    src="/assets/img/service/erp.jpg"
+                                    src="/assets/img/service/websites.jpg"
                                     alt="ERP Solutions"
                                 />
 
