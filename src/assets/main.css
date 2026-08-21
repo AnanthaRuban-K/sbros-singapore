@@ -2253,6 +2253,246 @@ body.body {
     line-height: 38px;
   }
 }
+/* =========================================================
+   HERO BANNER - EXPLORE BUTTON RESPONSIVE FIX
+========================================================= */
+
+/* Desktop */
+.hero_main_area1 .buttons {
+    position: relative;
+    margin-top: 30px;
+}
+
+.hero_main_area1 .buttons .theme-btn1 {
+    position: relative;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   TABLET - 768px to 991px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .hero_main_area1 .hero1 {
+        padding: 70px 0 60px;
+    }
+
+    .hero_main_area1 .main-headding {
+        text-align: center;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .hero_main_area1 .main-headding .title {
+        font-size: 42px;
+        line-height: 1.15;
+        margin-bottom: 0;
+    }
+
+    .hero_main_area1 .main-headding p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin: 0 auto;
+        max-width: 680px;
+    }
+
+    /* Explore button */
+    .hero_main_area1 .buttons {
+        margin-top: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero_main_area1 .buttons .theme-btn1 {
+        position: relative;
+        top: 0 !important;
+        margin: 0 auto;
+        padding: 15px 24px;
+    }
+
+    /* Image below content */
+    .hero_main_area1 .col-lg-7 {
+        width: 100%;
+    }
+
+    .hero_main_area1 .hero1-all-images {
+        margin-top: 45px;
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - Below 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .hero_main_area1 .hero1 {
+        padding: 45px 0 40px;
+    }
+
+    .hero_main_area1 .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero_main_area1 .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero_main_area1 .col-lg-5,
+    .hero_main_area1 .col-lg-7 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .hero_main_area1 .main-headding {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /* Title */
+    .hero_main_area1 .main-headding .title {
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    /* Description */
+    .hero_main_area1 .main-headding p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    /* Explore button */
+    .hero_main_area1 .buttons {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .hero_main_area1 .buttons .theme-btn1 {
+        position: relative;
+        top: 0 !important;
+        left: auto !important;
+        right: auto !important;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 auto;
+        padding: 13px 22px;
+        min-width: 135px;
+
+        font-size: 15px;
+    }
+
+    /* Arrow alignment */
+    .hero_main_area1 .buttons .theme-btn1 span {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 7px;
+    }
+
+    /* Hero image */
+    .hero_main_area1 .hero1-all-images {
+        width: 100%;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .hero_main_area1 .hero1-all-images img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE - Below 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero_main_area1 .hero1 {
+        padding: 35px 0 30px;
+    }
+
+    .hero_main_area1 .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero_main_area1 .main-headding .title {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .hero_main_area1 .main-headding p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .hero_main_area1 .buttons {
+        margin-top: 22px;
+    }
+
+    .hero_main_area1 .buttons .theme-btn1 {
+        padding: 12px 20px;
+        min-width: 125px;
+        font-size: 14px;
+    }
+
+    .hero_main_area1 .hero1-all-images {
+        margin-top: 30px;
+    }
+}
+/* =========================================================
+   ONLY 425px - EXPLORE BUTTON POSITION FIX
+========================================================= */
+
+@media (min-width: 421px) and (max-width: 425px) {
+
+    .hero_main_area1 .buttons {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 25px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .hero_main_area1 .buttons .theme-btn1 {
+        position: relative !important;
+        top: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+
+        margin: 0 auto !important;
+    }
+}
+
 .heading5 p {
   color: var(--Home-Page-4-paragraph, #5A5D73);
   font-size: 16px;
@@ -6375,7 +6615,7 @@ a.header__search.header-search-btn p {
 }
 
 .hero_main_area1 .hero1 {
-    height: auto !important;
+    /* height: auto !important; */
     min-height: 0 !important;
     padding-bottom: 40px !important;
 }
