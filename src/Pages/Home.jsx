@@ -1,5 +1,5 @@
 import About1 from "../Components/About/About1";
-import Award1 from "../Components/Award/Award1";
+// import Award1 from "../Components/Award/Award1";
 import Choose1 from "../Components/Choose/Choose1";
 
 import HeroBanner1 from "../Components/HeroBanner/HeroBanner1";
@@ -21,7 +21,7 @@ const Home = () => {
 
                 image2="/assets/img/hero/headimg5.png"
             ></HeroBanner1>
-            <Award1></Award1>
+            {/* <Award1></Award1> */}
             <About1
   image1="/assets/img/about/about5.jpg"
   image2="/assets/img/about/about1img1.jpeg"
