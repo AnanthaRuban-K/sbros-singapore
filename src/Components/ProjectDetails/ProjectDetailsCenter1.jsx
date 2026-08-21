@@ -392,7 +392,7 @@ const ProjectDetailsCenter1 = () => {
                       to="/contact-us"
                       className="erp-btn erp-btn-transparent"
                     >
-                      Talk to Our ERP Team
+                      Get in Touch With Us
                     </Link>
 
                   </div>

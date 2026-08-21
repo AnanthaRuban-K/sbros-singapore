@@ -3,30 +3,30 @@
     "icon": "/assets/img/icons/service-page-icon1.png",
     "title": "ERP Solutions",
     "desc": "Smart ERP solutions that simplify business operations, streamline workflows, improve productivity, and support better business decisions.",
-    "btnLink": "/service/service-details-right"
+    "btnLink": "/ERP-Solutions"
   },
   {
     "icon": "/assets/img/icons/service-page-icon2.png",
     "title": "Software Development",
     "desc": "Custom software solutions that simplify business processes, improve operational efficiency, enhance productivity, and support business growth.",
-    "btnLink": "/service/service-details"
+    "btnLink": "/Software-Development"
   },
   {
     "icon": "/assets/img/icons/service-page-icon3.png",
     "title": "Website Development",
     "desc": "Professional websites that strengthen your online presence, improve customer engagement, enhance user experience, and support business growth.",
-    "btnLink": "/service/service-details-center"
+    "btnLink": "/Website-Development"
   },
   {
     "icon": "/assets/img/icons/service-page-icon4.png",
     "title": "IT Networking",
     "desc": "Reliable IT networking solutions that ensure secure connectivity, smooth performance, efficient communication, and seamless business operations.",
-    "btnLink": "/service/service-it-networking"
+    "btnLink": "/IT-Networking"
   },
   {
     "icon": "/assets/img/icons/service-page-icon5.png",
     "title": "Trading",
     "desc": "Smart trading solutions that connect businesses with reliable opportunities, efficient processes, secure operations, and sustainable business growth.",
-    "btnLink": "/service/service-trading"
+    "btnLink": "/Trading"
   }
 ]
