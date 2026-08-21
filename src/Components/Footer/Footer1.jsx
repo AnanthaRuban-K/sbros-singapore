@@ -88,31 +88,31 @@ const Footer1 = () => {
               <ul className="menu-list">
 
                 <li>
-                  <Link to="/service/service-details-right">
+                  <Link to="/ERP-Solutions">
                     ERP Solutions
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/service/service-details">
+                  <Link to="/Software-Development">
                     Software Development
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/service/service-details-center">
+                  <Link to="/Website-Development">
                     Website Development
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/service/service-it-networking">
+                  <Link to="/IT-Networking">
                     IT Networking
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/service/service-trading">
+                  <Link to="/Trading">
                     Trading
                   </Link>
                 </li>
@@ -136,25 +136,25 @@ const Footer1 = () => {
               <ul className="menu-list">
 
                 <li>
-                  <Link to="/about">
+                  <Link to="/About-us">
                     About us
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/service">
+                  <Link to="/services">
                     Services
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/project/project-details-center">
+                  <Link to="/Products">
                     Products
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/contact">
+                  <Link to="/contact-us">
                     Contact us
                   </Link>
                 </li>
