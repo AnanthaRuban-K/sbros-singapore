@@ -24094,6 +24094,11 @@ body,
     flex: 1;
   }
 
+
+
+
+  
+
   /* Email - one line */
   .footer1 .contact-box .pera a {
     white-space: nowrap !important;
@@ -41581,7 +41586,7 @@ background-color: unset;
     font-size: 12px;
     font-weight: 600;
     text-decoration: none;
-    word-break: break-word;
+    white-space: nowrap;
 }
 
 
