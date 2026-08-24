@@ -15,6 +15,11 @@ import AboutLight from "../Pages/AboutLight";
 import ServicePage from "../Pages/ServicePage";
 import ProjectPage from "../Pages/ProjectPage";
 import ContactPage from "../Pages/ContactPage";
+import Pricing from "../Pages/Pricing";
+import PricingCard1 from "../Pages/PricingCard1";
+import Payment from "../Pages/Payment";
+import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
 import TeamPage from "../Pages/TeamPage";
 import TestimonialPage from "../Pages/TestimonialPage";
 import ServiceDetailsLeft from "../Pages/ServiceDetailsLeft";
@@ -129,7 +134,27 @@ export const router = createBrowserRouter([
         {
           path: "/blog/blog-details-center",
           element:<BlogDetailsCenter></BlogDetailsCenter>,
-        },                                                
+        },    
+        {
+          path: "/Pricing",
+          element:<Pricing></Pricing> ,
+        },  
+        {
+  path: "/PricingCard1",
+  element: <PricingCard1 />,
+},        
+ {
+  path: "/payment",
+  element: <Payment />,
+},   
+{
+  path: "/login",
+  element: <Login />,
+},
+{
+  path: "/signup",
+  element: <Signup />,
+},                                      
         {
           path: "/contact-us",
           element:<ContactPage></ContactPage> ,
