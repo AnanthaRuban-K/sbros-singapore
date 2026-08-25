@@ -422,7 +422,7 @@ const TermsAndConditions = () => {
                                             contact SBROS Tech Pvt Ltd.
                                         </p>
 
-                                        <div className="sbros-legal-contact">
+                                        {/* <div className="sbros-legal-contact">
 
                                             <div>
                                                 <span>Email</span>
@@ -445,7 +445,7 @@ const TermsAndConditions = () => {
                                                 </strong>
                                             </div>
 
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 

@@ -33,7 +33,7 @@ const Home = () => {
   featurelist={[
     "Turning challenges into smarter digital solutions.",
     "Innovating technology to accelerate business growth.",
-    "Technology that moves your business forward.F",
+    "Technology that moves your business forward.",
   ]}
 />
             <Services1></Services1>
