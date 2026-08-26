@@ -496,7 +496,7 @@ const ServiceERP = () => {
                                         </p>
 
                                         <Link
-                                            to="/service/service-details"
+                                            to="/Software-Development"
                                             className="erp-related-link"
                                         >
                                             Explore Service
@@ -536,7 +536,7 @@ const ServiceERP = () => {
                                         </p>
 
                                         <Link
-                                            to="/service/service-trading"
+                                            to="/Trading"
                                             className="erp-related-link"
                                         >
                                             Explore Service

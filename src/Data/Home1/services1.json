@@ -4,7 +4,7 @@
     "title": "ERP Solutions",
     "desc": "Smart ERP solutions designed to simplify operations, boost productivity, streamline workflows, and support better business decisions.",   
     "btnText": "Learn More",
-    "btnLink": "/service/service-details-right",
+    "btnLink": "/ERP-Solutions",
     "addClass": "col-lg-4"
   },
   {
@@ -14,7 +14,7 @@
     "title": "Software Development",
     "desc": "Custom software designed to simplify work and improve performance. Built to support your business growth with smart solutions.",   
     "btnText": "Learn More",
-    "btnLink": "/service/service-details",
+    "btnLink": "/Software-Development",
     "addClass": "col-lg-6"
   },
   {
@@ -22,7 +22,7 @@
     "title": "Website Development",
     "desc": "Build a strong online presence with responsive websites designed to attract visitors, improve engagement, and support business growth.",   
     "btnText": "Learn More",
-    "btnLink": "/service/service-details-center",
+    "btnLink": "/Website-Development",
     "addClass": "col-lg-6"
   },
   {
@@ -30,7 +30,7 @@
     "title": "IT Networking",
     "desc": "Reliable network solutions that ensure secure connectivity, smooth performance, and seamless business communication.",   
     "btnText": "Learn More",
-    "btnLink": "/service/service-it-networking",
+    "btnLink": "/IT-Networking",
     "addClass": "col-lg-4"
   },
   
@@ -39,7 +39,7 @@
     "title": "Trading",
     "desc": "Trading services that connect businesses to reliable markets, suppliers, and opportunities through efficient and secure solutions.",   
     "btnText": "Learn More",
-    "btnLink": "/service/service-trading",
+    "btnLink": "/Trading",
     "addClass": "col-lg-4"
   }  
    

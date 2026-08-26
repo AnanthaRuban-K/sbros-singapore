@@ -183,7 +183,7 @@ const Testimonial5 = () => {
           </div>
 
           <Link
-            to="/contact"
+            to="/contact-us"
             className="portfolio-cta-btn"
           >
             Start a Project

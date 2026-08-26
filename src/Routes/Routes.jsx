@@ -15,6 +15,11 @@ import AboutLight from "../Pages/AboutLight";
 import ServicePage from "../Pages/ServicePage";
 import ProjectPage from "../Pages/ProjectPage";
 import ContactPage from "../Pages/ContactPage";
+import Pricing from "../Pages/Pricing";
+import PricingCard1 from "../Pages/PricingCard1";
+import Payment from "../Pages/Payment";
+import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
 import TeamPage from "../Pages/TeamPage";
 import TestimonialPage from "../Pages/TestimonialPage";
 import ServiceDetailsLeft from "../Pages/ServiceDetailsLeft";
@@ -63,31 +68,31 @@ export const router = createBrowserRouter([
           element: <Home></Home>,
         },
         {
-            path: "/about",
+            path: "/About-us",
             element:<AboutLight></AboutLight> ,
         }, 
         {
-          path: "/service",
+          path: "/services",
           element:<ServicePage></ServicePage> ,
         }, 
         {
-          path: "/service/service-details",
+          path: "/Software-Development",
           element:<ServiceDetailsLeft></ServiceDetailsLeft> ,
         }, 
         {
-          path: "/service/service-it-networking",
+          path: "/IT-Networking",
           element:<ServiceITNetworking></ServiceITNetworking>,
         },
         {
-          path: "/service/service-trading",
+          path: "/Trading",
           element:<ServiceTrading></ServiceTrading>,
         }, 
         {
-          path: "/service/service-details-right",
+          path: "/ERP-Solutions",
           element:<ServiceDetailsRight></ServiceDetailsRight> ,
         },
         {
-          path: "/service/service-details-center",
+          path: "/Website-Development",
           element:<ServiceDetailsCenter></ServiceDetailsCenter>,
         },                                  
         {
@@ -103,7 +108,7 @@ export const router = createBrowserRouter([
           element:<ProjectDetailsRight></ProjectDetailsRight>,
         }, 
         {
-          path: "/project/project-details-center",
+          path: "/Products",
           element:<ProejctDetailsCenter></ProejctDetailsCenter>,
         },                       
         {
@@ -111,7 +116,7 @@ export const router = createBrowserRouter([
           element:<TeamPage></TeamPage> ,
         }, 
         {
-          path: "/testimonial",
+          path: "/Projects",
           element:<TestimonialPage></TestimonialPage>,
         }, 
         {
@@ -129,9 +134,29 @@ export const router = createBrowserRouter([
         {
           path: "/blog/blog-details-center",
           element:<BlogDetailsCenter></BlogDetailsCenter>,
-        },                                                
+        },    
         {
-          path: "/contact",
+          path: "/Pricing",
+          element:<Pricing></Pricing> ,
+        },  
+        {
+  path: "/PricingCard1",
+  element: <PricingCard1 />,
+},        
+ {
+  path: "/payment",
+  element: <Payment />,
+},   
+{
+  path: "/login",
+  element: <Login />,
+},
+{
+  path: "/signup",
+  element: <Signup />,
+},                                      
+        {
+          path: "/contact-us",
           element:<ContactPage></ContactPage> ,
         }, 
         {

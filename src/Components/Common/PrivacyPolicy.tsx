@@ -547,7 +547,7 @@ const PrivacyPolicy = () => {
                                             information, please contact us.
                                         </p>
 
-                                        <div className="sbros-legal-contact">
+                                        {/* <div className="sbros-legal-contact">
 
                                             <div>
                                                 <span>Email</span>
@@ -575,7 +575,7 @@ const PrivacyPolicy = () => {
                                                 </strong>
                                             </div>
 
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>

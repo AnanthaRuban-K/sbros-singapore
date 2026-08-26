@@ -20,6 +20,7 @@
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.7.0",
     "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
@@ -38,5 +39,18 @@
     "globals": "^15.9.0",
     "react-refresh": "^0.18.0",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnanthaRuban-K/sbros-singapore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnanthaRuban-K/sbros-singapore/issues"
+  },
+  "homepage": "https://github.com/AnanthaRuban-K/sbros-singapore#readme"
 }
