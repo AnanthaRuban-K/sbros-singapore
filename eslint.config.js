@@ -6,6 +6,23 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
   { ignores: ['dist'] },
+
+  // Node.js server
+  {
+    files: ['server.js'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      parserOptions: {
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      ...js.configs.recommended.rules,
+    },
+  },
+
+  // React / Vite frontend
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -17,7 +34,11 @@ export default [
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: {
+      react: {
+        version: '18.3',
+      },
+    },
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -29,7 +50,7 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
-      "react/prop-types": 0,
+      'react/prop-types': 0,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
