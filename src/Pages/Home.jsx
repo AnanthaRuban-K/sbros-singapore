@@ -17,7 +17,7 @@ const Home = () => {
                 title="Driving Digital Excellence   <span class='after'> for Modern Businesses </span>"
                 content=" We deliver innovative, secure, and scalable IT solutions that simplify operations, enhance efficiency, and empower businesses to achieve sustainable growth."
                 btnName="Explore"
-                btnUrl="/service"
+                btnUrl="/contact-us"
 
                 image2="/assets/img/hero/headimg5.png"
             ></HeroBanner1>
