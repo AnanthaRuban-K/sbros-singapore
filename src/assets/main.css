@@ -17017,7 +17017,7 @@ body,
 }
 @media (max-width: 767px) {
   .common-hero .main-heading h1 {
-    font-size: var(--f-fs-font-fs40);
+    font-size: var(--f-fs-font-fs29);
     line-height: var(--f-fs-font-fs48);
   }
 }
