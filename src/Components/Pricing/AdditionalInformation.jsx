@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const AdditionalInformation = () => {
   const navigate = useNavigate();
 
@@ -15,6 +14,8 @@ const AdditionalInformation = () => {
     notes: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -22,9 +23,46 @@ const AdditionalInformation = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Remove error when user fills the field
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   };
 
   const handleContinue = () => {
+    const newErrors = {};
+
+    // Required field validation
+    if (!formData.employees.trim()) {
+      newErrors.employees = "Please select number of employees";
+    }
+
+    if (!formData.budget.trim()) {
+      newErrors.budget = "Please select your annual budget range";
+    }
+
+    // If errors exist, don't navigate
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+
+      // Scroll to first error
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      return;
+    }
+
+    // Save data temporarily
+    localStorage.setItem(
+      "additionalInformation",
+      JSON.stringify(formData)
+    );
+
+    // Go to review page
     navigate("/review");
   };
 
@@ -122,14 +160,36 @@ const AdditionalInformation = () => {
                   name="employees"
                   value={formData.employees}
                   onChange={handleChange}
+                  className={errors.employees ? "input-error" : ""}
                 >
                   <option value="">Select range</option>
-                  <option value="1-10">1 - 10</option>
-                  <option value="11-50">11 - 50</option>
-                  <option value="51-100">51 - 100</option>
-                  <option value="101-500">101 - 500</option>
-                  <option value="500+">500+</option>
+
+                  <option value="1-10">
+                    1 - 10
+                  </option>
+
+                  <option value="11-50">
+                    11 - 50
+                  </option>
+
+                  <option value="51-100">
+                    51 - 100
+                  </option>
+
+                  <option value="101-500">
+                    101 - 500
+                  </option>
+
+                  <option value="500+">
+                    500+
+                  </option>
                 </select>
+
+                {errors.employees && (
+                  <small className="field-error">
+                    {errors.employees}
+                  </small>
+                )}
 
               </div>
 
@@ -146,24 +206,38 @@ const AdditionalInformation = () => {
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
+                  className={errors.budget ? "input-error" : ""}
                 >
-                  <option value="">Select range</option>
+                  <option value="">
+                    Select range
+                  </option>
+
                   <option value="under-10000">
                     Under $10,000
                   </option>
+
                   <option value="10000-25000">
                     $10,000 - $25,000
                   </option>
+
                   <option value="25000-50000">
                     $25,000 - $50,000
                   </option>
+
                   <option value="50000-100000">
                     $50,000 - $100,000
                   </option>
+
                   <option value="100000+">
                     $100,000+
                   </option>
                 </select>
+
+                {errors.budget && (
+                  <small className="field-error">
+                    {errors.budget}
+                  </small>
+                )}
 
               </div>
 
@@ -184,13 +258,34 @@ const AdditionalInformation = () => {
                   <option value="">
                     Select your current system
                   </option>
-                  <option value="sap">SAP</option>
-                  <option value="oracle">Oracle</option>
-                  <option value="odoo">Odoo</option>
-                  <option value="tally">Tally</option>
-                  <option value="zoho">Zoho</option>
-                  <option value="other">Other</option>
-                  <option value="none">No ERP</option>
+
+                  <option value="sap">
+                    SAP
+                  </option>
+
+                  <option value="oracle">
+                    Oracle
+                  </option>
+
+                  <option value="odoo">
+                    Odoo
+                  </option>
+
+                  <option value="tally">
+                    Tally
+                  </option>
+
+                  <option value="zoho">
+                    Zoho
+                  </option>
+
+                  <option value="other">
+                    Other
+                  </option>
+
+                  <option value="none">
+                    No ERP
+                  </option>
                 </select>
 
               </div>
@@ -347,6 +442,7 @@ const AdditionalInformation = () => {
               </div>
 
               <div>
+
                 <strong>
                   We will review your requirements
                 </strong>
@@ -354,6 +450,7 @@ const AdditionalInformation = () => {
                 <p>
                   Our team will analyze your needs
                 </p>
+
               </div>
 
             </div>
@@ -368,6 +465,7 @@ const AdditionalInformation = () => {
               </div>
 
               <div>
+
                 <strong>
                   We will contact you
                 </strong>
@@ -375,6 +473,7 @@ const AdditionalInformation = () => {
                 <p>
                   Our experts will reach out to discuss in detail
                 </p>
+
               </div>
 
             </div>
@@ -389,6 +488,7 @@ const AdditionalInformation = () => {
               </div>
 
               <div>
+
                 <strong>
                   We will prepare your custom proposal
                 </strong>
@@ -396,6 +496,7 @@ const AdditionalInformation = () => {
                 <p>
                   Tailored solution with best pricing
                 </p>
+
               </div>
 
             </div>
@@ -410,6 +511,7 @@ const AdditionalInformation = () => {
               </div>
 
               <div>
+
                 <strong>
                   You make the best decision
                 </strong>
@@ -417,6 +519,7 @@ const AdditionalInformation = () => {
                 <p>
                   Choose the plan that helps your business grow
                 </p>
+
               </div>
 
             </div>
