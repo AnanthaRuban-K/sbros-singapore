@@ -80,7 +80,7 @@ const Requirements = () => {
   };
 
   const handleBack = () => {
-    navigate("/custom-plan");
+    navigate("/custom-plan-proposal");
   };
 
   return (

@@ -49771,6 +49771,7 @@ body,
 ========================================================= */
 
 .submitted-side-card {
+  width:380px;
   background: #ffffff;
 
   border: 1px solid #dce5ef;
@@ -50238,7 +50239,7 @@ body,
 }
 
 .submitted-next-item strong {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -50274,12 +50275,12 @@ body,
 /* ================= SIDE STEPS ================= */
 
 .submitted-step strong {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
 .submitted-step p {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
 }
 

@@ -29,7 +29,7 @@ const AdditionalInformation = () => {
   };
 
   const handleBack = () => {
-    navigate("/custom-plan-proposal/requirements");
+    navigate("/requirements");
   };
 
   return (
