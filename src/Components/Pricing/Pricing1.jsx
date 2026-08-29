@@ -1,140 +1,355 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 
 const plans = [
   {
+    id: "basic",
+    icon: "leaf",
     name: "Basic",
-    billing: "Monthly",
-    price: "SGD 49",
-    tagline: "Entry-level plan for small teams.",
-    meta: ["Up to 10 users", "10 GB storage"],
-    features: ["Up to 10 users", "10 GB storage", "Email support"],
-    popular: false,
-  },
-  {
-    name: "Enterprise",
-    billing: "Monthly",
-    price: "SGD 499",
-    tagline: "For large multi-department organizations.",
-    meta: ["Up to 500 users", "1 TB storage"],
+    description: "Perfect for startups and small teams",
+    buttonText: "Request Pricing",
     features: [
-      "Up to 500 users",
-      "1 TB storage",
-      "Dedicated support",
-      "SSO",
-      "Custom SLA",
+      "HRM",
+      "Employee Management",
+      "Attendance",
+      "Leave Management",
+      "Employee Directory",
+      "Basic Reports",
+      "Email Support",
     ],
-    popular: true,
   },
+
   {
-    name: "Pro",
-    billing: "Monthly",
-    price: "SGD 149",
-    tagline: "For growing companies.",
-    meta: ["Up to 50 users", "100 GB storage"],
+    id: "intermediate",
+    icon: "chart",
+    name: "Intermediate",
+    description: "Ideal for growing businesses",
+    buttonText: "Request Pricing",
     features: [
-      "Up to 50 users",
-      "100 GB storage",
-      "Priority support",
-      "API access",
+      "Everything in Basic",
+      "Payroll",
+      "Recruitment",
+      "Advanced Reports",
+      "Workflow Approvals",
+      "Custom Roles & Permissions",
+      "Priority Email Support",
     ],
-    popular: false,
   },
+
   {
-    name: "Pro Max",
-    billing: "Monthly",
-    price: "SGD 499",
-    tagline: "fdsdddfdfdssvsfff",
-    meta: ["Up to 99 users", "55 GB storage"],
-    features: ["Up to 99 users"],
-    popular: false,
+    id: "advanced",
+    icon: "rocket",
+    name: "Advanced",
+    description: "For established and expanding teams",
+    buttonText: "Request Pricing",
+    features: [
+      "Everything in Intermediate",
+      "Sales / CRM",
+      "Finance",
+      "Procurement",
+      "Project Management",
+      "Custom Workflows",
+      "API Access",
+      "Phone Support",
+    ],
+  },
+
+  {
+    id: "custom",
+    icon: "settings",
+    name: "Custom",
+    description: "Tailored to your unique requirements",
+    buttonText: "Request Proposal",
+    features: [
+      "All Modules",
+      "Custom Modules",
+      "Custom Integrations",
+      "Advanced Permissions",
+      "Dedicated Support",
+      "SLA & Priority Support",
+      "On-Premise Option (Optional)",
+    ],
   },
 ];
 
-function PlanCard({ plan, onSubscribe }) {
+// =====================================================
+// ICON
+// =====================================================
+
+const Icon = ({ type }) => {
+  if (type === "leaf") {
+    return (
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4C11 4 5 8 5 14c0 3.3 2.7 6 6 6 6 0 9-6 9-16Z" />
+        <path d="M4 20c3-5 7-8 13-10" />
+      </svg>
+    );
+  }
+
+  if (type === "chart") {
+    return (
+      <svg viewBox="0 0 24 24">
+        <path d="M4 19V9" />
+        <path d="M10 19V5" />
+        <path d="M16 19v-7" />
+        <path d="M3 19h18" />
+        <path d="m4 7 5-3 4 3 7-5" />
+        <path d="M17 2h3v3" />
+      </svg>
+    );
+  }
+
+  if (type === "rocket") {
+    return (
+      <svg viewBox="0 0 24 24">
+        <path d="M14 4c2.8-2.8 6-2 6-2s.8 3.2-2 6l-7 7-4-4 7-7Z" />
+        <path d="m8 11-4 1-2 4 5-1" />
+        <path d="m13 16-1 5 4-2 1-4" />
+        <path d="M7 18c-1.5.3-2.5 1-3 2 1.3.1 2.5-.2 3.3-1.1" />
+        <circle cx="16.5" cy="7.5" r="1.2" />
+      </svg>
+    );
+  }
+
   return (
-    <div
-      className={`plan-card${
-        plan.popular ? " plan-card--popular" : ""
-      }`}
-    >
-      {plan.popular && (
-        <span className="plan-card__badge">
-          <span className="plan-card__badge-icon">&#9813;</span>
-          Most Popular
-        </span>
-      )}
+    <svg viewBox="0 0 24 24">
+      <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
 
-      <div className="plan-card__header">
-        <h3 className="plan-card__name">{plan.name}</h3>
-        <span className="plan-card__billing">{plan.billing}</span>
-      </div>
-
-      <div className="plan-card__price">
-        {plan.price}
-        <span className="plan-card__price-suffix">/mo</span>
-      </div>
-
-      <p className="plan-card__tagline">{plan.tagline}</p>
-
-      <div className="plan-card__meta">
-        {plan.meta.map((line, index) => (
-          <div key={`${line}-${index}`}>{line}</div>
-        ))}
-      </div>
-
-      <ul className="plan-card__features">
-        {plan.features.map((feature, index) => (
-          <li key={`${feature}-${index}`}>
-            <span className="plan-card__check">&#10003;</span>
-            {feature}
-          </li>
-        ))}
-      </ul>
-
-      <button
-        type="button"
-        className={`plan-card__cta${
-          plan.popular ? " plan-card__cta--popular" : ""
-        }`}
-        onClick={() => onSubscribe(plan)}
-      >
-        Subscribe
-      </button>
-    </div>
+      <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-2.6V20a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1A1.7 1.7 0 0 0 8 15a1.7 1.7 0 0 0-1.6-1H6v-2.6h.2A1.7 1.7 0 0 0 8 10a1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1 1.6v.2h2.6V5a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v2.6H21a1.7 1.7 0 0 0-1.6 1Z" />
+    </svg>
   );
-}
-
-const Pricing = () => {
-  const navigate = useNavigate();
-
- const handleSubscribe = (plan) => {
-  navigate("/PricingCard1", {
-    state: {
-      plan,
-    },
-  });
 };
 
+// =====================================================
+// MAIN
+// =====================================================
+
+const Pricing1 = () => {
+  const [billing, setBilling] = useState("annual");
+
+  const navigate = useNavigate();
+
+  // Custom Proposal page
+  const handlePlanClick = (plan) => {
+    if (plan.id === "custom") {
+      navigate("/custom-plan-proposal");
+      return;
+    }
+
+    // Other plans
+    console.log(`${plan.name} pricing requested`);
+  };
+
   return (
-    <section className="pricing">
-      <div className="pricing__eyebrow">PRICING</div>
+    <section className="pricing1-section">
+      <div className="pricing1-container">
 
-      <h2 className="pricing__title">
-        Choose your plan
-      </h2>
+        {/* ================= HEADER ================= */}
 
-      <div className="pricing__grid">
-        {plans.map((plan) => (
-          <PlanCard
-            key={plan.name}
-            plan={plan}
-            onSubscribe={handleSubscribe}
-          />
-        ))}
+        <div className="pricing1-header">
+
+          <span className="pricing1-badge">
+            Flexible Plans for Every Business
+          </span>
+
+          <h1>
+            Choose the Right <span>Plan</span>
+          </h1>
+
+          <p>
+            SBROS ERP offers flexible plans designed to scale with your business.
+            <br />
+            All plans include core features. Select a plan that matches your
+            current needs.
+          </p>
+
+          {/* ================= BILLING ================= */}
+
+          <div className="pricing1-toggle-wrapper">
+
+            <button
+              type="button"
+              className={`pricing1-toggle-option ${
+                billing === "monthly" ? "active" : ""
+              }`}
+              onClick={() => setBilling("monthly")}
+            >
+              Monthly
+            </button>
+
+            <button
+              type="button"
+              className={`pricing1-toggle-option annual ${
+                billing === "annual" ? "active" : ""
+              }`}
+              onClick={() => setBilling("annual")}
+            >
+              <span className="toggle-circle"></span>
+              Annual (Save 15%)
+            </button>
+
+          </div>
+
+        </div>
+
+        {/* ================= PRICING CARDS ================= */}
+
+        <div className="pricing1-grid">
+
+          {plans.map((plan) => (
+
+            <div
+              className={`pricing1-card pricing1-${plan.id}`}
+              key={plan.id}
+            >
+
+              {/* CARD HEADER */}
+
+              <div className="pricing1-card-top">
+
+                <div className="pricing1-icon">
+                  <Icon type={plan.icon} />
+                </div>
+
+                <div className="pricing1-card-heading">
+
+                  <h2>
+                    {plan.name}
+                  </h2>
+
+                  <p>
+                    {plan.description}
+                  </p>
+
+                </div>
+
+              </div>
+
+              {/* FEATURES */}
+
+              <ul className="pricing1-features">
+
+                {plan.features.map((feature, index) => (
+
+                  <li key={index}>
+
+                    <span className="pricing1-check">
+                      ✓
+                    </span>
+
+                    <span>
+                      {feature}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ul>
+
+              {/* BUTTON */}
+
+              <button
+                type="button"
+                className="pricing1-card-button"
+                onClick={() => handlePlanClick(plan)}
+              >
+                {plan.buttonText}
+              </button>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        {/* ================= CUSTOM QUOTE ================= */}
+
+        <div className="pricing1-custom-box">
+
+          <div className="pricing1-custom-icon">
+
+            <svg viewBox="0 0 24 24">
+              <circle
+                cx="12"
+                cy="8"
+                r="3.5"
+              />
+
+              <path
+                d="M5 20c.5-3.2 3.2-5.5 7-5.5s6.5 2.3 7 5.5"
+              />
+            </svg>
+
+          </div>
+
+          <div className="pricing1-custom-content">
+
+            <h3>
+              Need something specific?
+            </h3>
+
+            <p>
+              We understand that every business is unique.
+              <br />
+              Tell us what you need and we'll create a custom plan
+              <br />
+              that fits your requirements and budget.
+            </p>
+
+          </div>
+
+          <div className="pricing1-custom-action">
+
+            <button
+              type="button"
+              onClick={() => navigate("/custom-plan-proposal")}
+            >
+              Request a Custom Quote
+            </button>
+
+            <span>
+              Or contact our{" "}
+              <a href="#sales">
+                sales team
+              </a>{" "}
+              directly
+            </span>
+
+          </div>
+
+        </div>
+
+        {/* ================= SECURITY ================= */}
+
+        <div className="pricing1-security">
+
+          <span className="pricing1-security-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="M12 3 19 6v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3Z"
+              />
+
+              <path
+                d="m9.5 12 1.7 1.7 3.5-3.8"
+              />
+
+            </svg>
+
+          </span>
+
+          <p>
+            All plans include secure, enterprise-grade security and
+            24/7 data protection.
+          </p>
+
+        </div>
+
       </div>
     </section>
   );
 };
 
-export default Pricing;
+export default Pricing1;

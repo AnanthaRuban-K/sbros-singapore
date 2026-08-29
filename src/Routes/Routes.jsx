@@ -17,6 +17,11 @@ import ProjectPage from "../Pages/ProjectPage";
 import ContactPage from "../Pages/ContactPage";
 import Pricing from "../Pages/Pricing";
 import PricingCard1 from "../Pages/PricingCard1";
+import CustomPlanProposal from "../Pages/CustomPlanProposal";
+import Requirements from "../Pages/Requirements";
+import AdditionalInformation from "../Pages/AdditionalInformation";
+import Review from "../Pages/Review";
+import Submitted from "../Pages/Submitted";
 import Payment from "../Pages/Payment";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
@@ -142,11 +147,31 @@ export const router = createBrowserRouter([
         {
   path: "/PricingCard1",
   element: <PricingCard1 />,
-},        
+},  
+{
+  path: "/custom-plan-proposal",
+  element: <CustomPlanProposal />,
+},      
  {
   path: "/payment",
   element: <Payment />,
 },   
+{
+  path: "/requirements",
+  element: <Requirements />,
+},
+{
+  path: "/additional-information",
+  element: <AdditionalInformation />,
+},
+{
+  path: "/review",
+  element: <Review />,
+},
+{
+  path: "/submitted",
+  element: <Submitted />,
+},
 {
   path: "/login",
   element: <Login />,
