@@ -22,6 +22,7 @@ import Requirements from "../Pages/Requirements";
 import AdditionalInformation from "../Pages/AdditionalInformation";
 import Review from "../Pages/Review";
 import Submitted from "../Pages/Submitted";
+import RequestPricing from "../Pages/RequestPricing";
 import Payment from "../Pages/Payment";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
@@ -171,6 +172,10 @@ export const router = createBrowserRouter([
 {
   path: "/submitted",
   element: <Submitted />,
+},
+{
+  path: "/request-pricing/:planId",
+  element: <RequestPricing />,
 },
 {
   path: "/login",

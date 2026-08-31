@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Requirements = () => {
@@ -8,12 +8,9 @@ const Requirements = () => {
      STATE
   ========================================================= */
 
-  const [selectedModules, setSelectedModules] = useState([]);
-
+const [selectedModules, setSelectedModules] = useState([]);
   const [requirements, setRequirements] = useState("");
-
   const [error, setError] = useState("");
-
 
   /* =========================================================
      MODULE DATA
@@ -70,6 +67,38 @@ const Requirements = () => {
     },
   ];
 
+  /* =========================================================
+     LOAD PLAN DATA
+  ========================================================= */
+
+  useEffect(() => {
+    const savedData = JSON.parse(
+      localStorage.getItem("customPlanProposal") || "{}"
+    );
+
+    /*
+      Get automatically selected modules
+      from Pricing page.
+    */
+
+    if (
+      Array.isArray(savedData.selectedModules) &&
+      savedData.selectedModules.length > 0
+    ) {
+      setSelectedModules(savedData.selectedModules);
+    } else {
+      setSelectedModules([]);
+    }
+
+    /*
+      Load previous specific requirements
+      if available.
+    */
+
+    if (savedData.specificRequirements) {
+      setRequirements(savedData.specificRequirements);
+    }
+  }, []);
 
   /* =========================================================
      TOGGLE MODULE
@@ -79,6 +108,7 @@ const Requirements = () => {
     setError("");
 
     setSelectedModules((prev) => {
+
       if (prev.includes(moduleName)) {
         return prev.filter((item) => item !== moduleName);
       }
@@ -87,16 +117,14 @@ const Requirements = () => {
     });
   };
 
-
   /* =========================================================
      REQUIREMENTS CHANGE
   ========================================================= */
 
-  const handleRequirementsChange = (e) => {
+ const handleRequirementsChange = (e) => {
     setError("");
     setRequirements(e.target.value);
   };
-
 
   /* =========================================================
      CONTINUE
@@ -104,84 +132,52 @@ const Requirements = () => {
 
   const handleContinue = () => {
 
-    /* -----------------------------------------
-       CHECK MODULE
-    ----------------------------------------- */
-
     if (selectedModules.length === 0) {
-      setError("Please select at least one ERP module.");
+      setError(
+        "Please select at least one ERP module."
+      );
+
       return;
     }
-
-
-    /* -----------------------------------------
-       CHECK SPECIFIC REQUIREMENTS
-    ----------------------------------------- */
 
     if (!requirements.trim()) {
       setError(
         "Please enter your specific features, integrations, or custom workflows."
       );
+
       return;
     }
-
-
-    /* -----------------------------------------
-       GET EXISTING DATA
-    ----------------------------------------- */
 
     const existingData = JSON.parse(
       localStorage.getItem("customPlanProposal") || "{}"
     );
-
-
-    /* -----------------------------------------
-       UPDATE DATA
-    ----------------------------------------- */
 
     const updatedData = {
       ...existingData,
 
       selectedModules: selectedModules,
 
-      specificRequirements: requirements.trim(),
+      specificRequirements:
+        requirements.trim(),
     };
-
-
-    /* -----------------------------------------
-       SAVE DATA
-    ----------------------------------------- */
 
     localStorage.setItem(
       "customPlanProposal",
       JSON.stringify(updatedData)
     );
 
-
-    /* -----------------------------------------
-       GO TO NEXT PAGE
-    ----------------------------------------- */
-
     navigate("/additional-information");
   };
 
 
-  /* =========================================================
-     BACK
-  ========================================================= */
-
   const handleBack = () => {
-    navigate("/custom-plan-proposal");
+    navigate("/request-pricing/:planId");
   };
 
-
-  /* =========================================================
-     JSX
-  ========================================================= */
+  
 
   return (
     <section className="requirements-page">
-
 
       {/* =====================================================
           HEADER
@@ -190,7 +186,7 @@ const Requirements = () => {
       <div className="requirements-header">
 
         <h1>
-          Request a Custom Plan Proposal
+          Share Your Requirements
         </h1>
 
         <p>
@@ -202,94 +198,84 @@ const Requirements = () => {
 
 
       {/* =====================================================
-          PROGRESS
+          5 STEP PROGRESS
       ===================================================== */}
 
-      <div className="requirements-progress">
+      <div className="steps">
 
         {/* STEP 1 */}
 
-        <div className="requirements-progress-item completed">
+        <div className="step completed">
 
-          <div className="requirements-progress-icon">
-            ✓
-          </div>
+          <span>✓</span>
 
-          <span>
-            1. Business Details
-          </span>
+          <strong>
+            Your Details
+          </strong>
 
         </div>
 
 
-        <div className="requirements-progress-line active"></div>
+        <div className="step-line active"></div>
 
 
         {/* STEP 2 */}
 
-        <div className="requirements-progress-item active">
+        <div className="step active">
 
-          <div className="requirements-progress-icon">
-            ▦
-          </div>
+          <span>2</span>
 
-          <span>
-            2. Requirements
-          </span>
+          <strong>
+            Requirements
+          </strong>
 
         </div>
 
 
-        <div className="requirements-progress-line"></div>
+        <div className="step-line"></div>
 
 
         {/* STEP 3 */}
 
-        <div className="requirements-progress-item">
+        <div className="step">
 
-          <div className="requirements-progress-icon">
-            ♧
-          </div>
+          <span>3</span>
 
-          <span>
-            3. Additional Information
-          </span>
+          <strong>
+            Additional Information
+          </strong>
 
         </div>
 
 
-        <div className="requirements-progress-line"></div>
+        <div className="step-line"></div>
 
 
         {/* STEP 4 */}
 
-        <div className="requirements-progress-item">
+        <div className="step">
 
-          <div className="requirements-progress-icon">
-            ✓
-          </div>
+          <span>4</span>
 
-          <span>
-            4. Review
-          </span>
+          <strong>
+            Review
+          </strong>
 
         </div>
 
 
-        <div className="requirements-progress-line"></div>
+        <div className="step-line"></div>
 
 
         {/* STEP 5 */}
 
-        <div className="requirements-progress-item">
+        <div className="step">
 
-          <div className="requirements-progress-icon">
-            ✓
-          </div>
+          <span>5</span>
 
-          <span>
-            5. Submitted
-          </span>
+          <strong>
+            Submit
+          </strong>
 
         </div>
 
@@ -302,7 +288,6 @@ const Requirements = () => {
 
       <div className="requirements-layout">
 
-
         {/* ===================================================
             LEFT
         =================================================== */}
@@ -310,9 +295,6 @@ const Requirements = () => {
         <div className="requirements-left">
 
           <div className="requirements-card">
-
-
-            {/* TITLE */}
 
             <h2>
               2. Requirements
@@ -367,7 +349,6 @@ const Requirements = () => {
                         toggleModule(module.name)
                       }
                     />
-
 
                     <div className="module-content">
 
@@ -446,9 +427,6 @@ const Requirements = () => {
 
             <div className="requirements-buttons">
 
-
-              {/* BACK */}
-
               <button
                 type="button"
                 className="requirements-back-btn"
@@ -463,8 +441,6 @@ const Requirements = () => {
 
               </button>
 
-
-              {/* CONTINUE */}
 
               <button
                 type="button"
@@ -494,7 +470,6 @@ const Requirements = () => {
         <div className="requirements-right">
 
           <div className="requirements-side-card">
-
 
             <h3>
               What happens next?

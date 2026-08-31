@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  CheckCircle2,
+  PhoneCall,
+  FileText,
+  CircleCheck,
+  ShieldCheck,
+} from "lucide-react";
 
 const AdditionalInformation = () => {
   const navigate = useNavigate();
 
+  /* =========================================================
+     STATE
+  ========================================================= */
+
   const [formData, setFormData] = useState({
-    employees: "",
     budget: "",
     currentErp: "",
     goLiveDate: "",
@@ -16,6 +27,36 @@ const AdditionalInformation = () => {
 
   const [errors, setErrors] = useState({});
 
+
+  /* =========================================================
+     LOAD SAVED DATA
+  ========================================================= */
+
+  useEffect(() => {
+    try {
+      const savedData = JSON.parse(
+        localStorage.getItem("additionalInformation") || "{}"
+      );
+
+      if (savedData && typeof savedData === "object") {
+        setFormData((prev) => ({
+          ...prev,
+          ...savedData,
+        }));
+      }
+    } catch (error) {
+      console.error(
+        "Unable to load additional information:",
+        error
+      );
+    }
+  }, []);
+
+
+  /* =========================================================
+     HANDLE CHANGE
+  ========================================================= */
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -24,30 +65,37 @@ const AdditionalInformation = () => {
       [name]: value,
     }));
 
-    // Remove error when user fills the field
     setErrors((prev) => ({
       ...prev,
       [name]: "",
     }));
   };
 
+
+  /* =========================================================
+     CONTINUE
+  ========================================================= */
+
   const handleContinue = () => {
     const newErrors = {};
 
-    // Required field validation
-    if (!formData.employees.trim()) {
-      newErrors.employees = "Please select number of employees";
-    }
+    /* =========================================
+       BUDGET REQUIRED
+    ========================================= */
 
     if (!formData.budget.trim()) {
-      newErrors.budget = "Please select your annual budget range";
+      newErrors.budget =
+        "Please select your annual budget range";
     }
 
-    // If errors exist, don't navigate
+
+    /* =========================================
+       VALIDATION ERROR
+    ========================================= */
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
 
-      // Scroll to first error
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -56,158 +104,207 @@ const AdditionalInformation = () => {
       return;
     }
 
-    // Save data temporarily
+
+    /* =========================================
+       SAVE ADDITIONAL INFORMATION
+    ========================================= */
+
     localStorage.setItem(
       "additionalInformation",
       JSON.stringify(formData)
     );
 
-    // Go to review page
+
+    /* =========================================
+       GO TO REVIEW
+    ========================================= */
+
     navigate("/review");
   };
 
+
+  /* =========================================================
+     BACK
+  ========================================================= */
+
   const handleBack = () => {
+    /*
+      Data is already saved in localStorage.
+
+      When the user comes back to this page,
+      useEffect() will automatically load the
+      previously entered values.
+    */
+
     navigate("/requirements");
   };
+
+
+  /* =========================================================
+     JSX
+  ========================================================= */
 
   return (
     <section className="additional-page">
 
-      {/* ================= HEADER ================= */}
+      {/* =====================================================
+          HEADER
+      ===================================================== */}
 
       <div className="additional-header">
 
-        <h1>Request a Custom Plan Proposal</h1>
+        <h1>
+          Additional Business Information
+        </h1>
 
         <p>
-          Tell us about your business and requirements. Our experts will
-          create a tailored ERP solution and proposal for you.
+          Tell us about your business and requirements.
+          Our experts will create a tailored ERP solution
+          and proposal for you.
         </p>
 
       </div>
 
 
-      {/* ================= PROGRESS ================= */}
+      {/* =====================================================
+          5 STEP PROGRESS
+      ===================================================== */}
 
-      <div className="additional-progress">
+      <div className="steps">
 
-        <div className="additional-progress-item completed">
-          <div className="additional-progress-icon">✓</div>
-          <span>1. Business Details</span>
+        {/* STEP 1 */}
+
+        <div className="step completed">
+
+          <span>✓</span>
+
+          <strong>
+            Your Details
+          </strong>
+
         </div>
 
-        <div className="additional-progress-line active"></div>
 
-        <div className="additional-progress-item completed">
-          <div className="additional-progress-icon">✓</div>
-          <span>2. Requirements</span>
+        <div className="step-line active"></div>
+
+
+        {/* STEP 2 */}
+
+        <div className="step completed">
+
+          <span>✓</span>
+
+          <strong>
+            Requirements
+          </strong>
+
         </div>
 
-        <div className="additional-progress-line active"></div>
 
-        <div className="additional-progress-item active">
-          <div className="additional-progress-icon">▣</div>
-          <span>3. Additional Information</span>
+        <div className="step-line active"></div>
+
+
+        {/* STEP 3 */}
+
+        <div className="step active">
+
+          <span>3</span>
+
+          <strong>
+            Additional Information
+          </strong>
+
         </div>
 
-        <div className="additional-progress-line"></div>
 
-        <div className="additional-progress-item">
-          <div className="additional-progress-icon">✓</div>
-          <span>4. Review</span>
+        <div className="step-line"></div>
+
+
+        {/* STEP 4 */}
+
+        <div className="step">
+
+          <span>4</span>
+
+          <strong>
+            Review
+          </strong>
+
         </div>
 
-        <div className="additional-progress-line"></div>
 
-        <div className="additional-progress-item">
-          <div className="additional-progress-icon">✓</div>
-          <span>5. Submitted</span>
+        <div className="step-line"></div>
+
+
+        {/* STEP 5 */}
+
+        <div className="step">
+
+          <span>5</span>
+
+          <strong>
+            Submit
+          </strong>
+
         </div>
 
       </div>
 
 
-      {/* ================= MAIN LAYOUT ================= */}
+      {/* =====================================================
+          MAIN LAYOUT
+      ===================================================== */}
 
       <div className="additional-layout">
 
-        {/* ================= LEFT CARD ================= */}
+
+        {/* ===================================================
+            LEFT CARD
+        =================================================== */}
 
         <div className="additional-left">
 
           <div className="additional-card">
 
-            <h2>3. Additional Information</h2>
+
+            {/* TITLE */}
+
+            <h2>
+              3. Additional Information
+            </h2>
 
             <p className="additional-intro">
               Help us understand your business better.
             </p>
 
 
-            {/* ================= FORM GRID ================= */}
+            {/* =================================================
+                FORM GRID
+            ================================================= */}
 
             <div className="additional-form-grid">
 
-              {/* Employees */}
+
+              {/* ================= BUDGET ================= */}
 
               <div className="additional-field">
 
                 <label>
-                  Number of Employees (Approx.) <span>*</span>
-                </label>
-
-                <select
-                  name="employees"
-                  value={formData.employees}
-                  onChange={handleChange}
-                  className={errors.employees ? "input-error" : ""}
-                >
-                  <option value="">Select range</option>
-
-                  <option value="1-10">
-                    1 - 10
-                  </option>
-
-                  <option value="11-50">
-                    11 - 50
-                  </option>
-
-                  <option value="51-100">
-                    51 - 100
-                  </option>
-
-                  <option value="101-500">
-                    101 - 500
-                  </option>
-
-                  <option value="500+">
-                    500+
-                  </option>
-                </select>
-
-                {errors.employees && (
-                  <small className="field-error">
-                    {errors.employees}
-                  </small>
-                )}
-
-              </div>
-
-
-              {/* Budget */}
-
-              <div className="additional-field">
-
-                <label>
-                  Annual Budget Range (USD) <span>*</span>
+                  Annual Budget Range (USD){" "}
+                  <span>*</span>
                 </label>
 
                 <select
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className={errors.budget ? "input-error" : ""}
+                  className={
+                    errors.budget
+                      ? "input-error"
+                      : ""
+                  }
                 >
+
                   <option value="">
                     Select range
                   </option>
@@ -231,18 +328,22 @@ const AdditionalInformation = () => {
                   <option value="100000+">
                     $100,000+
                   </option>
+
                 </select>
 
+
                 {errors.budget && (
+
                   <small className="field-error">
                     {errors.budget}
                   </small>
+
                 )}
 
               </div>
 
 
-              {/* Current ERP */}
+              {/* ================= CURRENT ERP ================= */}
 
               <div className="additional-field">
 
@@ -255,6 +356,7 @@ const AdditionalInformation = () => {
                   value={formData.currentErp}
                   onChange={handleChange}
                 >
+
                   <option value="">
                     Select your current system
                   </option>
@@ -286,12 +388,13 @@ const AdditionalInformation = () => {
                   <option value="none">
                     No ERP
                   </option>
+
                 </select>
 
               </div>
 
 
-              {/* Go Live Date */}
+              {/* ================= GO LIVE DATE ================= */}
 
               <div className="additional-field">
 
@@ -309,7 +412,7 @@ const AdditionalInformation = () => {
               </div>
 
 
-              {/* Timeline */}
+              {/* ================= TIMELINE ================= */}
 
               <div className="additional-field">
 
@@ -322,6 +425,7 @@ const AdditionalInformation = () => {
                   value={formData.timeline}
                   onChange={handleChange}
                 >
+
                   <option value="">
                     Select timeline
                   </option>
@@ -347,7 +451,7 @@ const AdditionalInformation = () => {
               </div>
 
 
-              {/* Decision Maker */}
+              {/* ================= DECISION MAKER ================= */}
 
               <div className="additional-field">
 
@@ -368,7 +472,9 @@ const AdditionalInformation = () => {
             </div>
 
 
-            {/* ================= ADDITIONAL NOTES ================= */}
+            {/* =================================================
+                ADDITIONAL NOTES
+            ================================================= */}
 
             <div className="additional-notes">
 
@@ -384,7 +490,7 @@ const AdditionalInformation = () => {
                   onChange={handleChange}
                   maxLength={500}
                   placeholder="Any other information that will help us understand your requirements..."
-                ></textarea>
+                />
 
                 <span>
                   {formData.notes.length}/500
@@ -395,26 +501,44 @@ const AdditionalInformation = () => {
             </div>
 
 
-            {/* ================= BUTTONS ================= */}
+            {/* =================================================
+                BUTTONS
+            ================================================= */}
 
             <div className="additional-buttons">
+
+
+              {/* BACK */}
 
               <button
                 type="button"
                 className="additional-back-btn"
                 onClick={handleBack}
               >
-                <span>←</span>
+
+                <span>
+                  ←
+                </span>
+
                 Back
+
               </button>
+
+
+              {/* CONTINUE */}
 
               <button
                 type="button"
                 className="additional-continue-btn"
                 onClick={handleContinue}
               >
+
                 Save & Continue
-                <span>→</span>
+
+                <span>
+                  →
+                </span>
+
               </button>
 
             </div>
@@ -424,24 +548,33 @@ const AdditionalInformation = () => {
         </div>
 
 
-        {/* ================= RIGHT ================= */}
+        {/* ===================================================
+            RIGHT SIDEBAR
+        =================================================== */}
 
         <div className="additional-right">
 
           <div className="additional-side-card">
 
-            <h3>What happens next?</h3>
+            <h3>
+              What happens next?
+            </h3>
 
 
-            {/* Step 1 */}
+            {/* STEP 1 */}
 
             <div className="additional-step">
 
               <div className="additional-step-icon">
-                ✓
+
+                <CheckCircle2
+                  size={22}
+                  strokeWidth={2.2}
+                />
+
               </div>
 
-              <div>
+              <div className="additional-step-content">
 
                 <strong>
                   We will review your requirements
@@ -456,22 +589,28 @@ const AdditionalInformation = () => {
             </div>
 
 
-            {/* Step 2 */}
+            {/* STEP 2 */}
 
             <div className="additional-step">
 
               <div className="additional-step-icon">
-                ☎
+
+                <PhoneCall
+                  size={21}
+                  strokeWidth={2.2}
+                />
+
               </div>
 
-              <div>
+              <div className="additional-step-content">
 
                 <strong>
                   We will contact you
                 </strong>
 
                 <p>
-                  Our experts will reach out to discuss in detail
+                  Our experts will reach out to discuss
+                  in detail
                 </p>
 
               </div>
@@ -479,15 +618,20 @@ const AdditionalInformation = () => {
             </div>
 
 
-            {/* Step 3 */}
+            {/* STEP 3 */}
 
             <div className="additional-step">
 
               <div className="additional-step-icon">
-                ▣
+
+                <FileText
+                  size={21}
+                  strokeWidth={2.2}
+                />
+
               </div>
 
-              <div>
+              <div className="additional-step-content">
 
                 <strong>
                   We will prepare your custom proposal
@@ -502,22 +646,28 @@ const AdditionalInformation = () => {
             </div>
 
 
-            {/* Step 4 */}
+            {/* STEP 4 */}
 
             <div className="additional-step">
 
               <div className="additional-step-icon">
-                ✓
+
+                <CircleCheck
+                  size={22}
+                  strokeWidth={2.2}
+                />
+
               </div>
 
-              <div>
+              <div className="additional-step-content">
 
                 <strong>
                   You make the best decision
                 </strong>
 
                 <p>
-                  Choose the plan that helps your business grow
+                  Choose the plan that helps your
+                  business grow
                 </p>
 
               </div>
@@ -525,15 +675,24 @@ const AdditionalInformation = () => {
             </div>
 
 
-            {/* Security */}
+            {/* =================================================
+                SECURITY
+            ================================================= */}
 
             <div className="additional-security">
 
-              <span>♢</span>
+              <span className="security-icon">
+
+                <ShieldCheck
+                  size={21}
+                  strokeWidth={2.2}
+                />
+
+              </span>
 
               <p>
-                Your information is 100% secure and will
-                never be shared.
+                Your information is 100% secure and
+                will never be shared.
               </p>
 
             </div>
@@ -541,6 +700,7 @@ const AdditionalInformation = () => {
           </div>
 
         </div>
+
 
       </div>
 
