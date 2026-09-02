@@ -51940,9 +51940,10 @@ body,
     box-sizing: border-box;
   }
 
-  /* ===============================
+
+  /* =====================================================
      STEP
-  =============================== */
+  ===================================================== */
 
   .steps .step {
     flex: 0 0 auto;
@@ -51963,9 +51964,10 @@ body,
     padding: 0;
   }
 
-  /* ===============================
-     CIRCLE
-  =============================== */
+
+  /* =====================================================
+     CIRCLE - DEFAULT / UPCOMING
+  ===================================================== */
 
   .steps .step span {
     width: 30px;
@@ -51978,10 +51980,11 @@ body,
 
     border-radius: 50%;
 
-    background: #155eef;
-    border: 2px solid #155eef;
+    /* IMAGE STYLE - LIGHT GREY */
+    background: #eef2f7;
+    border: 1px solid #dce3ec;
 
-    color: #ffffff;
+    color: #667085;
 
     font-size: 12px;
     font-weight: 700;
@@ -51991,9 +51994,10 @@ body,
     box-sizing: border-box;
   }
 
-  /* ===============================
+
+  /* =====================================================
      TEXT
-  =============================== */
+  ===================================================== */
 
   .steps .step strong {
     display: block;
@@ -52003,7 +52007,7 @@ body,
 
     margin-top: 7px;
 
-    color: #101828;
+    color: #475467;
 
     font-size: 9px;
     line-height: 1.3;
@@ -52016,9 +52020,10 @@ body,
     overflow-wrap: break-word;
   }
 
-  /* ===============================
-     CONNECTING LINE
-  =============================== */
+
+  /* =====================================================
+     CONNECTING LINE - DEFAULT
+  ===================================================== */
 
   .steps .step-line {
     flex: 1 1 auto;
@@ -52032,38 +52037,63 @@ body,
 
     padding: 0;
 
-    background: #155eef;
+    /* IMAGE STYLE - LIGHT GREY */
+    background: #d9e0ea;
 
     position: relative;
     z-index: 1;
   }
 
-  /* ===============================
+
+  /* =====================================================
      ACTIVE STEP
-  =============================== */
+  ===================================================== */
 
   .steps .step.active span {
-    background: #e31b23;
-    border-color: #e31b23;
+    background: #155eef;
+    border-color: #155eef;
+
+    color: #ffffff;
 
     box-shadow:
-      0 0 0 4px rgba(227, 27, 35, 0.10);
+      0 0 0 4px rgba(21, 94, 239, 0.10);
   }
 
   .steps .step.active strong {
-    color: #e31b23;
+    color: #155eef;
     font-weight: 700;
   }
 
-  /* ===============================
-     COMPLETED STEPS
-  =============================== */
+
+  /* =====================================================
+     COMPLETED STEP
+  ===================================================== */
 
   .steps .step.completed span {
-    background: #155eef;
-    border-color: #155eef;
-    color: #ffffff;
+    /* LIGHT BLUE CIRCLE LIKE IMAGE */
+    background: #edf4ff;
+    border: 1px solid #b8d2ff;
+
+    color: #155eef;
   }
+
+  .steps .step.completed strong {
+    color: #174276;
+    font-weight: 600;
+  }
+
+
+  /* =====================================================
+     COMPLETED / ACTIVE CONNECTING LINE
+     If your JSX adds active/completed class to line,
+     these will make it blue.
+  ===================================================== */
+
+  .steps .step-line.completed,
+  .steps .step-line.active {
+    background: #8fb4ff;
+  }
+
 }
 
 
@@ -52078,10 +52108,14 @@ body,
     width: 100%;
   }
 
+
   .steps .step {
     width: 42px;
     min-width: 42px;
   }
+
+
+  /* CIRCLE */
 
   .steps .step span {
     width: 26px;
@@ -52090,6 +52124,9 @@ body,
 
     font-size: 10px;
   }
+
+
+  /* TEXT */
 
   .steps .step strong {
     width: 42px;
@@ -52101,11 +52138,17 @@ body,
     margin-top: 6px;
   }
 
+
+  /* LINE */
+
   .steps .step-line {
     margin: 12px 2px 0;
 
     height: 2px;
+
+    background: #d9e0ea;
   }
+
 }
 
 
@@ -52120,6 +52163,9 @@ body,
     min-width: 38px;
   }
 
+
+  /* CIRCLE */
+
   .steps .step span {
     width: 24px;
     height: 24px;
@@ -52127,6 +52173,9 @@ body,
 
     font-size: 9px;
   }
+
+
+  /* TEXT */
 
   .steps .step strong {
     width: 38px;
@@ -52136,7 +52185,314 @@ body,
     line-height: 1.2;
   }
 
+
+  /* LINE */
+
   .steps .step-line {
     margin: 11px 1px 0;
+
+    background: #d9e0ea;
   }
+
+}
+/* =========================================================
+   MOBILE ONLY - 5 STEP RESPONSIVE DESIGN
+   Desktop & Tablet remain unchanged
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .steps {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+
+  /* =====================================================
+     STEP
+  ===================================================== */
+
+  .steps .step {
+    flex: 0 0 48px;
+
+    width: 48px;
+    min-width: 48px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /* =====================================================
+     CIRCLE
+  ===================================================== */
+
+  .steps .step span {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef2f7;
+    border: 1px solid #dce3ec;
+
+    color: #667085;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =====================================================
+     STEP TEXT
+     IMPORTANT:
+     Text stays directly below its own circle
+  ===================================================== */
+
+  .steps .step strong {
+    display: block;
+
+    width: 58px;
+    max-width: 58px;
+
+    min-height: 30px;
+
+    margin-top: 7px;
+
+    color: #475467;
+
+    font-size: 9px;
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+
+    position: relative;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =====================================================
+     CONNECTING LINE
+  ===================================================== */
+
+  .steps .step-line {
+    flex: 1 1 auto;
+
+    width: auto;
+    min-width: 8px;
+
+    height: 2px;
+
+    margin: 14px 4px 0;
+
+    padding: 0;
+
+    background: #d9e0ea;
+
+    position: relative;
+    z-index: 1;
+
+    flex-shrink: 1;
+  }
+
+
+  /* =====================================================
+     ACTIVE STEP
+  ===================================================== */
+
+  .steps .step.active span {
+    background: #155eef;
+    border-color: #155eef;
+
+    color: #ffffff;
+
+    box-shadow:
+      0 0 0 4px rgba(21, 94, 239, 0.10);
+  }
+
+  .steps .step.active strong {
+    color: #155eef;
+    font-weight: 700;
+  }
+
+
+  /* =====================================================
+     COMPLETED STEP
+  ===================================================== */
+
+  .steps .step.completed span {
+    background: #edf4ff;
+    border: 1px solid #b8d2ff;
+
+    color: #155eef;
+  }
+
+  .steps .step.completed strong {
+    color: #174276;
+    font-weight: 600;
+  }
+
+
+  /* =====================================================
+     COMPLETED / ACTIVE LINE
+  ===================================================== */
+
+  .steps .step-line.completed,
+  .steps .step-line.active {
+    background: #8fb4ff;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   375px - 374px
+========================================================= */
+
+@media (max-width: 374px) {
+
+  .steps .step {
+    flex: 0 0 42px;
+
+    width: 42px;
+    min-width: 42px;
+  }
+
+
+  /* Circle */
+
+  .steps .step span {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+
+    font-size: 10px;
+  }
+
+
+  /* Text */
+
+  .steps .step strong {
+    width: 52px;
+    max-width: 52px;
+
+    min-height: 28px;
+
+    margin-top: 6px;
+
+    font-size: 8px;
+    line-height: 1.25;
+
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+
+  /* Line */
+
+  .steps .step-line {
+    min-width: 5px;
+
+    margin: 12px 2px 0;
+
+    height: 2px;
+  }
+
+}
+
+
+/* =========================================================
+   320px MOBILE
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .steps .step {
+    flex: 0 0 38px;
+
+    width: 38px;
+    min-width: 38px;
+  }
+
+
+  /* Circle */
+
+  .steps .step span {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+
+    font-size: 9px;
+  }
+
+
+  /* Text */
+
+  .steps .step strong {
+    width: 48px;
+    max-width: 48px;
+
+    min-height: 26px;
+
+    margin-top: 5px;
+
+    font-size: 7.5px;
+    line-height: 1.2;
+
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+
+  /* Line */
+
+  .steps .step-line {
+    min-width: 4px;
+
+    margin: 11px 1px 0;
+
+    height: 2px;
+  }
+
 }

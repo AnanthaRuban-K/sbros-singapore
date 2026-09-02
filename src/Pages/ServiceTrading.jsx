@@ -8,7 +8,7 @@ const ServiceDetailsLeftDark = () => {
            <BreadCumb
   Title="Trading"
   ParentTitle="Services"
-  ParentLink="/service"
+  ParentLink="/services"
 />
          
             <ServiceTrading></ServiceTrading>

@@ -174,7 +174,7 @@ export const router = createBrowserRouter([
   element: <Submitted />,
 },
 {
-  path: "/request-pricing/:planId",
+  path: "/pricing/:planId",
   element: <RequestPricing />,
 },
 {

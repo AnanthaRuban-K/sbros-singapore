@@ -18,7 +18,9 @@ export default function Nav({ setMobileToggle }) {
       </li>
 
       <li className="menu-item-has-children">
-        <a href="#" onClick={(e) => e.preventDefault()}>Services</a>
+         <Link to="/Services" onClick={() => setMobileToggle(false)}>
+          Services
+        </Link>
         <DropDown>
           <ul>
             <li>

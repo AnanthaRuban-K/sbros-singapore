@@ -208,7 +208,7 @@ const Pricing1 = () => {
     );
 
     // Go to pricing request page
-    navigate(`/request-pricing/${plan.id}`);
+    navigate(`/pricing/${plan.id}`);
   };
 
   return (
@@ -425,7 +425,7 @@ const Pricing1 = () => {
                   JSON.stringify(updatedData)
                 );
 
-                navigate("/request-pricing/custom");
+                navigate("/pricing/custom");
               }}
             >
               Request a Custom Quote
@@ -434,9 +434,9 @@ const Pricing1 = () => {
             <span>
               Or contact our{" "}
 
-              <a href="#sales">
+             
                 sales team
-              </a>{" "}
+             {" "}
 
               directly
             </span>
