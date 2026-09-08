@@ -21,9 +21,7 @@ const Vission1 = () => {
                   <h3>Our Mission</h3>
 
                   <p>
-                    We use modern technology and innovative thinking to create
-                    smart, scalable solutions that improve business efficiency,
-                    strengthen digital capabilities, and support sustainable growth.
+                   Educate and Develop Peoples Talents to Empower & Achieve beyond their imagination.
                   </p>
                 </div>
               </div>
@@ -39,9 +37,7 @@ const Vission1 = () => {
                   <h3>Our Vision</h3>
 
                   <p>
-                    To become a trusted technology partner by delivering
-                    reliable, future-ready digital solutions that create
-                    meaningful and lasting value for businesses.
+                    To make people and businesses realize and expand their potential mission
                   </p>
                 </div>
               </div>
