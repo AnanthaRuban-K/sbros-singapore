@@ -26,14 +26,15 @@ const Home = () => {
   image1="/assets/img/about/about5.jpg"
   image2="/assets/img/about/about1img1.jpeg"
 
-  Title="From Vision to Innovation - Technology Solutions That Move Your Business Forward."
+  Title="Empowering Businesses with Smarter Software Solutions"
 
-  content="SBros transforms business challenges into smarter digital opportunities through innovative, secure, and scalable technology solutions. From software and web development to IT infrastructure and cybersecurity, we help businesses streamline operations, strengthen performance, and build a future-ready digital presence."
+  content="SBros empowers businesses with innovative, secure, and scalable software solutions designed to simplify operations and accelerate growth. From customized software and web development to business applications and digital solutions, we help organizations improve efficiency, make smarter decisions, and unlock their full potential.
+"
 
   featurelist={[
-    "Turning challenges into smarter digital solutions.",
-    "Innovating technology to accelerate business growth.",
-    "Technology that moves your business forward.",
+    "Turning business challenges into smarter software solutions.",
+    "Driving business growth through innovative digital solutions.",
+    "Empowering businesses with technology built for the future.",
   ]}
 />
             <Services1></Services1>

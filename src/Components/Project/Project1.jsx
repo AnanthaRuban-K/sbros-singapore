@@ -1,105 +1,169 @@
-import Slider from "react-slick";
+"use client";
+
+import { useEffect, useRef } from "react";
 import data from "../../Data/Home1/project1.json";
-import SectionTitle from "../Common/SectionTitle";
 
 const Project1 = () => {
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
+  const trackRef = useRef(null);
+  const positionRef = useRef(0);
+  const animationRef = useRef(null);
 
-    slidesToShow: 4,
-    slidesToScroll: 1,
+  const draggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const startPositionRef = useRef(0);
 
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 5000,
-    cssEase: "linear",
+  if (!data?.length) return null;
 
-    pauseOnHover: true,
-    pauseOnFocus: true,
+  // Duplicate logos for infinite scrolling
+  const logos = [...data, ...data, ...data];
 
-    swipe: true,
-    draggable: true,
-    swipeToSlide: true,
-    touchMove: true,
+  const getWidth = () => {
+    if (!trackRef.current) return 0;
 
-    responsive: [
-      /* Laptop / Medium screens */
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          speed: 5000,
-          autoplaySpeed: 0,
-        },
-      },
+    return trackRef.current.scrollWidth / 3;
+  };
 
-      /* Tablet */
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          speed: 5500,
-          autoplaySpeed: 0,
-        },
-      },
+  const normalize = (position) => {
+    const width = getWidth();
 
-      /* Mobile */
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          speed: 6000,
-          autoplaySpeed: 0,
-        },
-      },
+    if (!width) return position;
 
-      /* Small Mobile */
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          speed: 5500,
-          autoplaySpeed: 0,
-        },
-      },
-    ],
+    while (position <= -width) {
+      position += width;
+    }
+
+    while (position >= 0) {
+      position -= width;
+    }
+
+    return position;
+  };
+
+  const updatePosition = () => {
+    if (!trackRef.current) return;
+
+    trackRef.current.style.transform =
+      `translate3d(${positionRef.current}px, 0, 0)`;
+  };
+
+  // Continuous movement
+  useEffect(() => {
+    let lastTime = performance.now();
+
+    const animate = (time) => {
+      const delta = time - lastTime;
+
+      lastTime = time;
+
+      if (!draggingRef.current) {
+        positionRef.current -= (150 * delta) / 1000;
+
+        positionRef.current =
+          normalize(positionRef.current);
+
+        updatePosition();
+      }
+
+      animationRef.current =
+        requestAnimationFrame(animate);
+    };
+
+    animationRef.current =
+      requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+    };
+  }, []);
+
+  // Drag start
+  const handlePointerDown = (e) => {
+    draggingRef.current = true;
+
+    startXRef.current = e.clientX;
+
+    startPositionRef.current =
+      positionRef.current;
+
+    e.currentTarget.setPointerCapture(
+      e.pointerId
+    );
+  };
+
+  // Drag movement
+  const handlePointerMove = (e) => {
+    if (!draggingRef.current) return;
+
+    const distance =
+      e.clientX - startXRef.current;
+
+    positionRef.current =
+      normalize(
+        startPositionRef.current + distance
+      );
+
+    updatePosition();
+  };
+
+  // Drag end
+  const handlePointerUp = (e) => {
+    draggingRef.current = false;
+
+    positionRef.current =
+      normalize(positionRef.current);
+
+    updatePosition();
+
+    try {
+      e.currentTarget.releasePointerCapture(
+        e.pointerId
+      );
+    } catch {}
   };
 
   return (
-    <section className="sbros-clients">
-      <div className="container">
+    <section className="clients-section">
 
-        {/* Our Clients Heading */}
-        <div className="sbros-clients-title-box">
-          <SectionTitle
-            SubTitle=""
-            Title="Our Clients"
-          />
-        </div>
+      {/* Heading */}
 
-        {/* Client Logo Slider */}
-        <div className="sbros-clients-slider">
-          <Slider {...settings}>
-            {data.map((item, index) => (
-              <div className="sbros-client-slide" key={index}>
-                <div className="sbros-client-image">
-                  <img
-                    src={item.img}
-                    alt={`Client ${index + 1}`}
-                  />
-                </div>
-              </div>
-            ))}
-          </Slider>
+      <div className="clients-heading">
+        <span className="clients-line"></span>
+
+        <h2>Our Clients</h2>
+
+        <span className="clients-line"></span>
+      </div>
+
+      {/* Logo Slider */}
+
+      <div className="clients-marquee">
+
+        <div
+          ref={trackRef}
+          className="clients-track"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+        >
+
+          {logos.map((item, index) => (
+            <div
+              className="client-logo"
+              key={`${item.img}-${index}`}
+            >
+              <img
+                src={item.img}
+                alt={`Client ${index + 1}`}
+                draggable="false"
+              />
+            </div>
+          ))}
+
         </div>
 
       </div>
+
     </section>
   );
 };
