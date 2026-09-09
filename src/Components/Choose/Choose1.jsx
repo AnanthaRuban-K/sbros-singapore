@@ -214,9 +214,7 @@ const Choose1 = () => {
         <span className="title-line"></span>
 
         <div>
-          <span className="title-small">
-            OUR SOLUTIONS
-          </span>
+         
 
           <h2>
             Solutions Designed Around
