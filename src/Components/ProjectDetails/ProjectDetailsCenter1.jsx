@@ -131,7 +131,7 @@ const ProjectDetailsCenter1 = () => {
               ===================================================== */}
               <section className="erp-intro">
 
-                <div className="erp-intro-content">
+                {/* <div className="erp-intro-content">
 
                   <span className="erp-tag">
                     ONE SOLUTION ERP
@@ -163,7 +163,7 @@ const ProjectDetailsCenter1 = () => {
 
                   </div>
 
-                </div>
+                </div> */}
 
               </section>
 
@@ -171,20 +171,20 @@ const ProjectDetailsCenter1 = () => {
               {/* =====================================================
                   ERP IMAGE
               ===================================================== */}
-              <div className="erp-image">
+              {/* <div className="erp-image">
 
                 <img
                   src="/assets/img/others/erpimage2.jpg"
                   alt="One Solution ERP"
                 />
 
-              </div>
+              </div> */}
 
 
               {/* =====================================================
                   KEY BENEFITS
               ===================================================== */}
-              <section className="erp-benefits">
+              {/* <section className="erp-benefits">
 
                 <div className="erp-section-heading">
 
@@ -225,7 +225,7 @@ const ProjectDetailsCenter1 = () => {
 
                 </div>
 
-              </section>
+              </section> */}
 
 
               {/* =====================================================
@@ -367,7 +367,7 @@ const ProjectDetailsCenter1 = () => {
               {/* =====================================================
                   FINAL CTA
               ===================================================== */}
-              <section className="erp-cta">
+              {/* <section className="erp-cta">
 
                 <div className="erp-cta-content">
 
@@ -399,7 +399,7 @@ const ProjectDetailsCenter1 = () => {
 
                 </div>
 
-              </section>
+              </section> */}
 
             </div>
           </div>

@@ -19,7 +19,7 @@ const AboutLight = () => {
                 experienceNum="5"
                 experienceTitle="Years Of <br> Experience"
                 
-                title="Empower Your Business With Our Comprehensive IT Solutions"
+                title="Leading Digital Solutions for Modern Businesses"
                 content="SBROS TECH (S) PTE LTD is a premier Singapore-based IT solutions provider with roots in India, dedicated to driving digital transformation for businesses worldwide. We specialize in software development, web design, networking solutions, and business technology services that enhance operational efficiency and sustainable growth."
                 
             ></About6>
