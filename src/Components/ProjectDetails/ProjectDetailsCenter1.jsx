@@ -1,122 +1,116 @@
 import { Link } from "react-router-dom";
 
 const ProjectDetailsCenter1 = () => {
-  const benefits = [
-    {
-      icon: "bi bi-grid-1x2",
-      title: "One Platform",
-      text: "Manage essential business functions from one connected system.",
-    },
-    {
-      icon: "bi bi-diagram-3",
-      title: "Connected Data",
-      text: "Keep information connected across departments and operations.",
-    },
-    {
-      icon: "bi bi-bar-chart-line",
-      title: "Better Visibility",
-      text: "Get clearer insights through dashboards and business reports.",
-    },
-    {
-      icon: "bi bi-arrow-up-right-circle",
-      title: "Scalable",
-      text: "Expand your ERP capabilities as your business grows.",
-    },
-  ];
+  // ============================================================
+  // ERP MODULES
+  // ============================================================
 
   const modules = [
     {
       icon: "bi bi-people",
+      number: "01",
       title: "Human Resource Management",
-      text: "Manage employees and workforce information from one centralized platform.",
+      shortTitle: "HRM",
+      text: "Manage employees, workforce information and HR activities from one centralized platform.",
       features: [
         "Employee Profiles",
         "Employee Documents",
         "Departments & Roles",
         "Salary Structures",
       ],
+      video: "/assets/videos/hrm.mp4",
     },
-    {
-      icon: "bi bi-calendar-check",
-      title: "Attendance Management",
-      text: "Track attendance, working hours, shifts and holidays with ease.",
-      features: [
-        "Biometric Integration",
-        "Punch Logs",
-        "Attendance Reports",
-        "Shift Management",
-      ],
-    },
-    {
-      icon: "bi bi-calendar2-check",
-      title: "Leave Management",
-      text: "Manage leave requests, approvals and employee balances.",
-      features: [
-        "Leave Types",
-        "Leave Applications",
-        "Leave Approvals",
-        "Leave Balances",
-      ],
-    },
-    {
-      icon: "bi bi-cash-stack",
-      title: "Payroll",
-      text: "Simplify payroll using connected employee and attendance data.",
-      features: [
-        "Payroll Processing",
-        "Attendance Integration",
-        "Payslip Generation",
-        "Payroll Reports",
-      ],
-    },
+
     {
       icon: "bi bi-person-lines-fill",
+      number: "02",
       title: "CRM",
-      text: "Manage leads, follow-ups and customer relationships.",
+      shortTitle: "CRM",
+      text: "Manage leads, customer information, follow-ups and customer relationships efficiently.",
       features: [
         "Lead Management",
         "Lead Assignment",
+        "Customer Management",
         "Follow-ups",
-        "Customer Conversion",
       ],
+      video: "/assets/videos/crm.mp4",
     },
+
     {
       icon: "bi bi-cart-check",
+      number: "03",
       title: "Procurement",
-      text: "Manage purchasing from requests to purchase orders.",
+      shortTitle: "PROCUREMENT",
+      text: "Manage purchasing activities from purchase requests to supplier quotations and purchase orders.",
       features: [
         "Material Master",
         "Purchase Requests",
         "Supplier Quotations",
         "Purchase Orders",
       ],
+      video: "/assets/videos/procurement.mp4",
     },
+
     {
-      icon: "bi bi-box-seam",
-      title: "Inventory Management",
-      text: "Track materials, stock levels and inventory movements.",
+      icon: "bi bi-wallet2",
+      number: "04",
+      title: "Finance",
+      shortTitle: "FINANCE",
+      text: "Manage financial transactions, expenses, invoices, payments and business accounts from one system.",
       features: [
-        "Stock Management",
-        "Goods Receipt",
-        "Goods Inward",
-        "Stock Tracking",
+        "Accounts Management",
+        "Income & Expense Tracking",
+        "Invoice & Payment Management",
+        "Financial Reports",
       ],
+      video: "/assets/videos/finance.mp4",
     },
 
     {
-  icon: "bi bi-wallet2",
-  title: "Finance Management",
-  text: "Manage financial transactions, expenses, payments and business accounts from one centralized system.",
-  features: [
-    "Accounts Management",
-    "Income & Expense Tracking",
-    "Invoice & Payment Management",
-    "Financial Reports",
-  ],
-},
-  ];
+      icon: "bi bi-person-plus",
+      number: "05",
+      title: "Recruitment",
+      shortTitle: "RECRUITMENT",
+      text: "Simplify the recruitment process by managing job openings, candidates and hiring activities.",
+      features: [
+        "Job Openings",
+        "Candidate Management",
+        "Interview Scheduling",
+        "Recruitment Tracking",
+      ],
+      video: "/assets/videos/recruitment.mp4",
+    },
 
- 
+    {
+      icon: "bi bi-bag-check",
+      number: "06",
+      title: "Product Sales",
+      shortTitle: "PRODUCT SALES",
+      text: "Manage product sales, customers, orders and sales transactions through one connected platform.",
+      features: [
+        "Product Management",
+        "Sales Orders",
+        "Customer Management",
+        "Sales Reports",
+      ],
+      video: "/assets/videos/product-sales.mp4",
+    },
+
+    {
+      icon: "bi bi-briefcase",
+      number: "07",
+      title: "Services Sales",
+      shortTitle: "SERVICES SALES",
+      text: "Manage service-based sales, customer requirements, quotations and service orders efficiently.",
+      features: [
+        "Service Management",
+        "Service Quotations",
+        "Service Orders",
+        "Sales Tracking",
+      ],
+      video: "/assets/videos/services-sales.mp4",
+    },
+  ];
 
   return (
     <div className="service-details-area-all sp erp-page">
@@ -127,111 +121,12 @@ const ProjectDetailsCenter1 = () => {
             <div className="service-details-post">
 
               {/* =====================================================
-                  HERO
+                  CORE ERP MODULES
               ===================================================== */}
-              <section className="erp-intro">
 
-                {/* <div className="erp-intro-content">
-
-                  <span className="erp-tag">
-                    ONE SOLUTION ERP
-                  </span>
-
-                  <h1>
-                    One Platform.
-                    <br />
-                    <span>Complete Business Management.</span>
-                  </h1>
-
-                  <p>
-                    Manage HR, attendance, leave, payroll, CRM,
-                    procurement and inventory from one integrated
-                    business platform.
-                  </p>
-
-                  <div className="erp-buttons">
-
-                    <Link
-                      to="/contact-us"
-                      className="erp-btn erp-btn-primary"
-                    >
-                      Request a Demo
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
-
-                   
-
-                  </div>
-
-                </div> */}
-
-              </section>
-
-
-              {/* =====================================================
-                  ERP IMAGE
-              ===================================================== */}
-              {/* <div className="erp-image">
-
-                <img
-                  src="/assets/img/others/erpimage2.jpg"
-                  alt="One Solution ERP"
-                />
-
-              </div> */}
-
-
-              {/* =====================================================
-                  KEY BENEFITS
-              ===================================================== */}
-              {/* <section className="erp-benefits">
-
-                <div className="erp-section-heading">
-
-                  <span>WHY ONE SOLUTION ERP</span>
-
-                  <h2>
-                    Run Your Business From One Place
-                  </h2>
-
-                  <p>
-                    Bring your core business operations together
-                    and reduce disconnected processes.
-                  </p>
-
-                </div>
-
-
-                <div className="erp-benefit-grid">
-
-                  {benefits.map((item, index) => (
-                    <div
-                      className="erp-benefit-card"
-                      key={index}
-                    >
-
-                      <div className="erp-benefit-icon">
-                        <i className={item.icon}></i>
-                      </div>
-
-                      <div>
-                        <h3>{item.title}</h3>
-
-                        <p>{item.text}</p>
-                      </div>
-
-                    </div>
-                  ))}
-
-                </div>
-
-              </section> */}
-
-
-              {/* =====================================================
-                  CORE MODULES
-              ===================================================== */}
               <section className="erp-business">
+
+                {/* SECTION HEADING */}
 
                 <div className="erp-section-heading">
 
@@ -249,13 +144,22 @@ const ProjectDetailsCenter1 = () => {
                 </div>
 
 
+                {/* =====================================================
+                    MODULE GRID
+                ===================================================== */}
+
                 <div className="erp-module-grid">
 
                   {modules.map((module, index) => (
+
                     <div
-                      className="erp-module-card"
+                      className="erp-module-card erp-creative-card"
                       key={index}
                     >
+
+                      {/* =================================================
+                          CARD TOP
+                      ================================================= */}
 
                       <div className="erp-card-header">
 
@@ -264,31 +168,107 @@ const ProjectDetailsCenter1 = () => {
                         </div>
 
                         <span>
-                          {String(index + 1).padStart(2, "0")}
+                          {module.number}
                         </span>
 
                       </div>
 
-                      <h3>
-                        {module.title}
-                      </h3>
 
-                      <p className="erp-card-text">
-                        {module.text}
-                      </p>
+                      {/* =================================================
+                          VIDEO
+                      ================================================= */}
 
-                      <ul>
-                        {module.features.map(
-                          (feature, featureIndex) => (
-                            <li key={featureIndex}>
-                              <i className="bi bi-check2"></i>
-                              <span>{feature}</span>
-                            </li>
-                          )
-                        )}
-                      </ul>
+                      <div className="erp-card-video">
+
+                        <video
+                          src={module.video}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+
+                        {/* VIDEO OVERLAY */}
+
+                        <div className="erp-video-overlay">
+
+                          <div className="erp-video-play">
+                            <i className="bi bi-play-fill"></i>
+                          </div>
+
+                          <span>
+                            {module.shortTitle}
+                          </span>
+
+                        </div>
+
+                      </div>
+
+
+                      {/* =================================================
+                          CARD CONTENT
+                      ================================================= */}
+
+                      <div className="erp-card-content">
+
+                        <h3>
+                          {module.title}
+                        </h3>
+
+
+                        <p className="erp-card-text">
+                          {module.text}
+                        </p>
+
+
+                        {/* FEATURES */}
+
+                        <ul>
+
+                          {module.features.map(
+                            (feature, featureIndex) => (
+
+                              <li key={featureIndex}>
+
+                                <i className="bi bi-check2-circle"></i>
+
+                                <span>
+                                  {feature}
+                                </span>
+
+                              </li>
+
+                            )
+                          )}
+
+                        </ul>
+
+
+                        {/* =================================================
+                            PRICING BUTTON
+                        ================================================= */}
+
+                        <div className="erp-card-action">
+
+                          <Link
+                            to="/pricing"
+                            className="erp-pricing-btn"
+                          >
+
+                            <span>
+                              View Pricing
+                            </span>
+
+                            <i className="bi bi-arrow-up-right"></i>
+
+                          </Link>
+
+                        </div>
+
+                      </div>
 
                     </div>
+
                   ))}
 
                 </div>
@@ -296,12 +276,10 @@ const ProjectDetailsCenter1 = () => {
               </section>
 
 
-             
-
-
               {/* =====================================================
                   GROWTH SECTION
               ===================================================== */}
+
               <section className="erp-growth">
 
                 <div className="erp-growth-content">
@@ -329,17 +307,7 @@ const ProjectDetailsCenter1 = () => {
 
                     <div>
                       <i className="bi bi-check-circle-fill"></i>
-                      HR & Workforce
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      Attendance & Leave
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      Payroll
+                      HRM
                     </div>
 
                     <div>
@@ -354,7 +322,22 @@ const ProjectDetailsCenter1 = () => {
 
                     <div>
                       <i className="bi bi-check-circle-fill"></i>
-                      Inventory
+                      Finance
+                    </div>
+
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Recruitment
+                    </div>
+
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Product Sales
+                    </div>
+
+                    <div>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Services Sales
                     </div>
 
                   </div>
@@ -363,45 +346,8 @@ const ProjectDetailsCenter1 = () => {
 
               </section>
 
-
-              {/* =====================================================
-                  FINAL CTA
-              ===================================================== */}
-              {/* <section className="erp-cta">
-
-                <div className="erp-cta-content">
-
-                  <span>
-                    ONE SOLUTION ERP
-                  </span>
-
-                  <h2>
-                    Ready to Simplify Your Business?
-                  </h2>
-
-                  <p>
-                    Connect your teams, processes and business
-                    information with one powerful ERP platform.
-                  </p>
-
-                  <div className="erp-buttons">
-
-                   
-
-                    <Link
-                      to="/contact-us"
-                      className="erp-btn erp-btn-transparent"
-                    >
-                      Get in Touch With Us
-                    </Link>
-
-                  </div>
-
-                </div>
-
-              </section> */}
-
             </div>
+
           </div>
         </div>
       </div>

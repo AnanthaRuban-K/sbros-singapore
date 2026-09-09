@@ -53343,3 +53343,333 @@ body,
   }
 
 }
+/* ============================================================
+   CREATIVE ERP MODULE CARDS
+============================================================ */
+
+.erp-creative-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+
+.erp-creative-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ============================================================
+   CARD HEADER
+============================================================ */
+
+.erp-creative-card .erp-card-header {
+  padding: 22px 22px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.erp-creative-card .erp-card-header > span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+
+/* ============================================================
+   ICON
+============================================================ */
+
+.erp-creative-card .erp-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.4s ease;
+}
+
+.erp-creative-card:hover .erp-card-icon {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+
+/* ============================================================
+   VIDEO
+============================================================ */
+
+.erp-card-video {
+  position: relative;
+  margin: 0 18px;
+  height: 190px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+}
+
+.erp-card-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   VIDEO OVERLAY
+============================================================ */
+
+.erp-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 18px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.erp-video-overlay span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+
+/* ============================================================
+   PLAY ICON
+============================================================ */
+
+.erp-video-play {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.erp-creative-card:hover .erp-video-play {
+  transform: scale(1.12);
+}
+
+
+/* ============================================================
+   CARD CONTENT
+============================================================ */
+
+.erp-card-content {
+  padding: 24px 22px 25px;
+}
+
+.erp-card-content h3 {
+  font-size: 22px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.erp-card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #777;
+  margin-bottom: 18px;
+}
+
+
+/* ============================================================
+   FEATURES
+============================================================ */
+
+.erp-card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+}
+
+.erp-card-content ul li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.erp-card-content ul li i {
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   PRICING BUTTON
+============================================================ */
+
+.erp-card-action {
+  margin-top: 20px;
+}
+
+.erp-pricing-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.erp-pricing-btn span {
+  transition: transform 0.3s ease;
+}
+
+.erp-pricing-btn i {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: all 0.35s ease;
+}
+
+.erp-pricing-btn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.erp-pricing-btn:hover span {
+  transform: translateX(3px);
+}
+
+.erp-pricing-btn:hover i {
+  transform: rotate(45deg);
+}
+
+
+/* ============================================================
+   CARD ANIMATION
+============================================================ */
+
+.erp-creative-card {
+  animation: erpCardFade 0.7s ease both;
+}
+
+.erp-creative-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.erp-creative-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.erp-creative-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.erp-creative-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.erp-creative-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.erp-creative-card:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.erp-creative-card:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+@keyframes erpCardFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 991px) {
+  .erp-card-video {
+    height: 210px;
+  }
+
+  .erp-card-content h3 {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .erp-card-video {
+    height: 200px;
+  }
+
+  .erp-card-content {
+    padding: 22px 20px;
+  }
+
+  .erp-card-content h3 {
+    font-size: 19px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .erp-card-video {
+    height: 180px;
+    margin: 0 14px;
+  }
+
+  .erp-creative-card .erp-card-header {
+    padding: 18px 16px 14px;
+  }
+
+  .erp-card-content {
+    padding: 20px 16px 22px;
+  }
+
+  .erp-card-content h3 {
+    font-size: 18px;
+  }
+
+  .erp-pricing-btn {
+    padding: 12px 14px;
+  }
+}
