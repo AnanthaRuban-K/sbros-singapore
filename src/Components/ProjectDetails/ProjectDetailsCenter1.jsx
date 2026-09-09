@@ -1,410 +1,555 @@
+
 import { Link } from "react-router-dom";
 
 const ProjectDetailsCenter1 = () => {
-  const benefits = [
-    {
-      icon: "bi bi-grid-1x2",
-      title: "One Platform",
-      text: "Manage essential business functions from one connected system.",
-    },
-    {
-      icon: "bi bi-diagram-3",
-      title: "Connected Data",
-      text: "Keep information connected across departments and operations.",
-    },
-    {
-      icon: "bi bi-bar-chart-line",
-      title: "Better Visibility",
-      text: "Get clearer insights through dashboards and business reports.",
-    },
-    {
-      icon: "bi bi-arrow-up-right-circle",
-      title: "Scalable",
-      text: "Expand your ERP capabilities as your business grows.",
-    },
-  ];
+   const modules = [
+  // 01 - HRM
+  {
+    number: "01",
+    icon: "bi bi-people-fill",
+    title: "Human Resource Management",
+    shortTitle: "HRM",
+    text: "Build a smarter workforce with centralized employee management and streamlined HR operations.",
+    features: [
+      "Employee Profiles",
+      "Employee Documents",
+      "Departments & Roles",
+      "Salary Structures",
+    ],
+    video: "/assets/videos/hrm.mp4",
+    tag: "PEOPLE",
+  },
 
-  const modules = [
-    {
-      icon: "bi bi-people",
-      title: "Human Resource Management",
-      text: "Manage employees and workforce information from one centralized platform.",
-      features: [
-        "Employee Profiles",
-        "Employee Documents",
-        "Departments & Roles",
-        "Salary Structures",
-      ],
-    },
-    {
-      icon: "bi bi-calendar-check",
-      title: "Attendance Management",
-      text: "Track attendance, working hours, shifts and holidays with ease.",
-      features: [
-        "Biometric Integration",
-        "Punch Logs",
-        "Attendance Reports",
-        "Shift Management",
-      ],
-    },
-    {
-      icon: "bi bi-calendar2-check",
-      title: "Leave Management",
-      text: "Manage leave requests, approvals and employee balances.",
-      features: [
-        "Leave Types",
-        "Leave Applications",
-        "Leave Approvals",
-        "Leave Balances",
-      ],
-    },
-    {
-      icon: "bi bi-cash-stack",
-      title: "Payroll",
-      text: "Simplify payroll using connected employee and attendance data.",
-      features: [
-        "Payroll Processing",
-        "Attendance Integration",
-        "Payslip Generation",
-        "Payroll Reports",
-      ],
-    },
-    {
-      icon: "bi bi-person-lines-fill",
-      title: "CRM",
-      text: "Manage leads, follow-ups and customer relationships.",
-      features: [
-        "Lead Management",
-        "Lead Assignment",
-        "Follow-ups",
-        "Customer Conversion",
-      ],
-    },
-    {
-      icon: "bi bi-cart-check",
-      title: "Procurement",
-      text: "Manage purchasing from requests to purchase orders.",
-      features: [
-        "Material Master",
-        "Purchase Requests",
-        "Supplier Quotations",
-        "Purchase Orders",
-      ],
-    },
-    {
-      icon: "bi bi-box-seam",
-      title: "Inventory Management",
-      text: "Track materials, stock levels and inventory movements.",
-      features: [
-        "Stock Management",
-        "Goods Receipt",
-        "Goods Inward",
-        "Stock Tracking",
-      ],
-    },
+  // 02 - CRM
+  {
+    number: "02",
+    icon: "bi bi-person-lines-fill",
+    title: "Customer Relationship Management",
+    shortTitle: "CRM",
+    text: "Turn every lead into an opportunity with powerful customer tracking and follow-up management.",
+    features: [
+      "Lead Management",
+      "Lead Assignment",
+      "Customer Management",
+      "Follow-ups",
+    ],
+    video: "/assets/videos/crm.mp4",
+    tag: "CUSTOMERS",
+  },
 
-    {
-  icon: "bi bi-wallet2",
-  title: "Finance Management",
-  text: "Manage financial transactions, expenses, payments and business accounts from one centralized system.",
-  features: [
-    "Accounts Management",
-    "Income & Expense Tracking",
-    "Invoice & Payment Management",
-    "Financial Reports",
-  ],
-},
-  ];
+  // 03 - Finance
+  {
+    number: "03",
+    icon: "bi bi-wallet-fill",
+    title: "Finance",
+    shortTitle: "FINANCE",
+    text: "Keep your business financially organized with powerful transaction, invoice and reporting tools.",
+    features: [
+      "Accounts Management",
+      "Income & Expense Tracking",
+      "Invoice & Payments",
+      "Financial Reports",
+    ],
+    video: "/assets/videos/finance.mp4",
+    tag: "FINANCE",
+  },
 
- 
+  // 04 - Procurement
+  {
+    number: "04",
+    icon: "bi bi-cart-check-fill",
+    title: "Procurement",
+    shortTitle: "PROCUREMENT",
+    text: "Simplify purchasing from material requests to supplier quotations and purchase orders.",
+    features: [
+      "Material Master",
+      "Purchase Requests",
+      "Supplier Quotations",
+      "Purchase Orders",
+    ],
+    video: "/assets/videos/procurement.mp4",
+    tag: "PURCHASING",
+  },
+
+  // 05 - Product Sales
+  {
+    number: "05",
+    icon: "bi bi-bag-check-fill",
+    title: "Product Sales",
+    shortTitle: "PRODUCT SALES",
+    text: "Manage your complete product sales journey from products and customers to orders and reports.",
+    features: [
+      "Product Management",
+      "Sales Orders",
+      "Customer Management",
+      "Sales Reports",
+    ],
+    video: "/assets/videos/product-sales.mp4",
+    tag: "SALES",
+  },
+
+  // 06 - Service Sales
+  {
+    number: "06",
+    icon: "bi bi-briefcase-fill",
+    title: "Services Sales",
+    shortTitle: "SERVICES SALES",
+    text: "Manage service-based businesses with streamlined quotations, orders and customer operations.",
+    features: [
+      "Service Management",
+      "Service Quotations",
+      "Service Orders",
+      "Sales Tracking",
+    ],
+    video: "/assets/videos/services-sales.mp4",
+    tag: "SERVICES",
+  },
+
+  // 07 - Recruitment
+  {
+    number: "07",
+    icon: "bi bi-person-plus-fill",
+    title: "Recruitment",
+    shortTitle: "RECRUITMENT",
+    text: "Find the right talent faster by managing jobs, candidates and interviews from one place.",
+    features: [
+      "Job Openings",
+      "Candidate Management",
+      "Interview Scheduling",
+      "Recruitment Tracking",
+    ],
+    video: "/assets/videos/recruitment.mp4",
+    tag: "TALENT",
+  },
+];
 
   return (
-    <div className="service-details-area-all sp erp-page">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-11 m-auto">
+    <div className="erp-modern-page">
 
-            <div className="service-details-post">
+      {/* =====================================================
+          MODULE SHOWCASE
+      ====================================================== */}
+ <section className="erp-connected">
 
-              {/* =====================================================
-                  HERO
-              ===================================================== */}
-              <section className="erp-intro">
+        <div className="erp-connected-glow"></div>
 
-                {/* <div className="erp-intro-content">
+        <div className="erp-connected-inner">
 
-                  <span className="erp-tag">
-                    ONE SOLUTION ERP
-                  </span>
+          <div className="erp-connected-copy">
 
-                  <h1>
-                    One Platform.
-                    <br />
-                    <span>Complete Business Management.</span>
-                  </h1>
+            <span className="erp-connected-label">
+              THE POWER OF ONE
+            </span>
 
-                  <p>
-                    Manage HR, attendance, leave, payroll, CRM,
-                    procurement and inventory from one integrated
-                    business platform.
-                  </p>
+            <h2>
+              Different Modules.
+              <br />
+              <span>
+                One Connected Business.
+              </span>
+            </h2>
 
-                  <div className="erp-buttons">
+            <p>
+              Stop switching between disconnected systems.
+              Bring your entire business into one intelligent
+              platform where every operation works together.
+            </p>
 
-                    <Link
-                      to="/contact-us"
-                      className="erp-btn erp-btn-primary"
-                    >
-                      Request a Demo
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
+            {/* <Link
+              to="/pricing"
+              className="erp-main-cta"
+            >
 
-                   
+              <span>
+                View ERP Plans
+              </span>
 
-                  </div>
+              <i className="bi bi-arrow-right"></i>
 
-                </div> */}
+            </Link> */}
 
-              </section>
+          </div>
 
 
-              {/* =====================================================
-                  ERP IMAGE
-              ===================================================== */}
-              {/* <div className="erp-image">
+          {/* ORBIT */}
+          {/* =====================================================
+    CREATIVE ERP NEURAL ORBIT
+===================================================== */}
 
-                <img
-                  src="/assets/img/others/erpimage2.jpg"
-                  alt="One Solution ERP"
+          <div className="erp-neural-orbit">
+
+            {/* Animated background rings */}
+            <div className="neural-ring neural-ring-outer"></div>
+            <div className="neural-ring neural-ring-middle"></div>
+            <div className="neural-ring neural-ring-inner"></div>
+
+            {/* Connection lines */}
+            <div className="neural-lines">
+              <span className="neural-line line-1"></span>
+              <span className="neural-line line-2"></span>
+              <span className="neural-line line-3"></span>
+              <span className="neural-line line-4"></span>
+              <span className="neural-line line-5"></span>
+              <span className="neural-line line-6"></span>
+              <span className="neural-line line-7"></span>
+            </div>
+
+            {/* Moving light particles */}
+            <span className="neural-particle particle-1"></span>
+            <span className="neural-particle particle-2"></span>
+            <span className="neural-particle particle-3"></span>
+            <span className="neural-particle particle-4"></span>
+            <span className="neural-particle particle-5"></span>
+
+            {/* =================================================
+      CENTER ERP CORE
+  ================================================== */}
+
+            <div className="erp-neural-core">
+
+              <div className="core-wave wave-one"></div>
+              <div className="core-wave wave-two"></div>
+
+              <div className="core-content">
+
+                <span className="core-small">
+                  POWERED BY
+                </span>
+
+                <strong>ERP</strong>
+
+                <span className="core-bottom">
+                  ONE PLATFORM
+                </span>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 01
+  ================================================== */}
+
+            <div className="neural-module neural-1">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-people-fill"></i>
+                </div>
+
+                <div>
+                  <small>01</small>
+                  <span>HRM</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 02
+  ================================================== */}
+
+            <div className="neural-module neural-2">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-person-lines-fill"></i>
+                </div>
+
+                <div>
+                  <small>02</small>
+                  <span>CRM</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 03
+  ================================================== */}
+
+            <div className="neural-module neural-3">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-cart-check-fill"></i>
+                </div>
+
+                <div>
+                  <small>03</small>
+                  <span>Finance</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 04
+  ================================================== */}
+
+            <div className="neural-module neural-4">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-wallet-fill"></i>
+                </div>
+
+                <div>
+                  <small>04</small>
+                  <span>Procurement</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 05
+  ================================================== */}
+
+            <div className="neural-module neural-5">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-person-plus-fill"></i>
+                </div>
+
+                <div>
+                  <small>05</small>
+                  <span>Product</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 06
+  ================================================== */}
+
+            <div className="neural-module neural-6">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-bag-check-fill"></i>
+                </div>
+
+                <div>
+                  <small>06</small>
+                  <span>Services</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+      MODULE 07
+  ================================================== */}
+
+            <div className="neural-module neural-7">
+
+              <div className="neural-module-card">
+
+                <div className="neural-icon">
+                  <i className="bi bi-briefcase-fill"></i>
+                </div>
+
+                <div>
+                  <small>07</small>
+                  <span>Recruitment</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+      <section className="erp-showcase">
+
+        <div className="erp-showcase-heading">
+
+          <div>
+            <span>EXPLORE THE ECOSYSTEM</span>
+
+            <h2>
+              One Platform.
+              <br />
+              <em>Every Operation.</em>
+            </h2>
+          </div>
+
+          {/* <p>
+            Powerful business modules that work independently
+            or together as one connected ERP ecosystem.
+          </p> */}
+
+        </div>
+
+
+        {/* =====================================================
+            MODULE GRID
+        ====================================================== */}
+
+        <div className="erp-creative-grid">
+
+          {modules.map((module, index) => (
+
+            <article
+              className="erp-creative-module"
+              key={index}
+            >
+
+              {/* CARD HEADER */}
+
+              <div className="erp-module-top">
+
+                <div className="erp-module-number">
+                  {module.number}
+                </div>
+
+                <div className="erp-module-icon">
+                  <i className={module.icon}></i>
+                </div>
+
+                <span className="erp-module-tag">
+                  {module.tag}
+                </span>
+
+              </div>
+
+
+              {/* VIDEO */}
+
+              <div className="erp-module-media">
+
+                <video
+                  src={module.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                 />
 
-              </div> */}
+                <div className="erp-media-gradient"></div>
 
+                <div className="erp-media-label">
 
-              {/* =====================================================
-                  KEY BENEFITS
-              ===================================================== */}
-              {/* <section className="erp-benefits">
+                  <i className="bi bi-play-fill"></i>
 
-                <div className="erp-section-heading">
-
-                  <span>WHY ONE SOLUTION ERP</span>
-
-                  <h2>
-                    Run Your Business From One Place
-                  </h2>
-
-                  <p>
-                    Bring your core business operations together
-                    and reduce disconnected processes.
-                  </p>
+                  <span>
+                    {module.shortTitle}
+                  </span>
 
                 </div>
 
+                <div className="erp-video-corner">
 
-                <div className="erp-benefit-grid">
-
-                  {benefits.map((item, index) => (
-                    <div
-                      className="erp-benefit-card"
-                      key={index}
-                    >
-
-                      <div className="erp-benefit-icon">
-                        <i className={item.icon}></i>
-                      </div>
-
-                      <div>
-                        <h3>{item.title}</h3>
-
-                        <p>{item.text}</p>
-                      </div>
-
-                    </div>
-                  ))}
+                  <i className="bi bi-arrow-up-right"></i>
 
                 </div>
 
-              </section> */}
+              </div>
 
 
-              {/* =====================================================
-                  CORE MODULES
-              ===================================================== */}
-              <section className="erp-business">
+              {/* CARD CONTENT */}
 
-                <div className="erp-section-heading">
+              <div className="erp-module-body">
 
-                  <span>CORE ERP MODULES</span>
+                <h3>
+                  {module.title}
+                </h3>
 
-                  <h2>
-                    Complete Business Management
-                  </h2>
-
-                  <p>
-                    Powerful modules designed to simplify
-                    everyday business operations.
-                  </p>
-
-                </div>
+                <p>
+                  {module.text}
+                </p>
 
 
-                <div className="erp-module-grid">
+                {/* FEATURES */}
 
-                  {modules.map((module, index) => (
-                    <div
-                      className="erp-module-card"
-                      key={index}
-                    >
+                <div className="erp-feature-list">
 
-                      <div className="erp-card-header">
+                  {module.features.map(
+                    (feature, featureIndex) => (
 
-                        <div className="erp-card-icon">
-                          <i className={module.icon}></i>
-                        </div>
+                      <div
+                        className="erp-feature-pill"
+                        key={featureIndex}
+                      >
+
+                        <i className="bi bi-check-lg"></i>
 
                         <span>
-                          {String(index + 1).padStart(2, "0")}
+                          {feature}
                         </span>
 
                       </div>
 
-                      <h3>
-                        {module.title}
-                      </h3>
-
-                      <p className="erp-card-text">
-                        {module.text}
-                      </p>
-
-                      <ul>
-                        {module.features.map(
-                          (feature, featureIndex) => (
-                            <li key={featureIndex}>
-                              <i className="bi bi-check2"></i>
-                              <span>{feature}</span>
-                            </li>
-                          )
-                        )}
-                      </ul>
-
-                    </div>
-                  ))}
+                    )
+                  )}
 
                 </div>
 
-              </section>
 
+                {/* BUTTON */}
 
-             
-
-
-              {/* =====================================================
-                  GROWTH SECTION
-              ===================================================== */}
-              <section className="erp-growth">
-
-                <div className="erp-growth-content">
-
-                  <div className="erp-growth-text">
-
-                    <span>
-                      BUILT FOR GROWING BUSINESSES
-                    </span>
-
-                    <h2>
-                      A Platform That Grows With You
-                    </h2>
-
-                    <p>
-                      Start with the modules your business needs
-                      today and expand your platform as your
-                      operational requirements grow.
-                    </p>
-
-                  </div>
-
-
-                  <div className="erp-growth-list">
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      HR & Workforce
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      Attendance & Leave
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      Payroll
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      CRM
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      Procurement
-                    </div>
-
-                    <div>
-                      <i className="bi bi-check-circle-fill"></i>
-                      Inventory
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              {/* =====================================================
-                  FINAL CTA
-              ===================================================== */}
-              {/* <section className="erp-cta">
-
-                <div className="erp-cta-content">
+                <Link
+                  to="/pricing"
+                  className="erp-explore-btn"
+                >
 
                   <span>
-                    ONE SOLUTION ERP
+                    Explore Module
                   </span>
 
-                  <h2>
-                    Ready to Simplify Your Business?
-                  </h2>
+                  <div className="erp-btn-icon">
 
-                  <p>
-                    Connect your teams, processes and business
-                    information with one powerful ERP platform.
-                  </p>
-
-                  <div className="erp-buttons">
-
-                   
-
-                    <Link
-                      to="/contact-us"
-                      className="erp-btn erp-btn-transparent"
-                    >
-                      Get in Touch With Us
-                    </Link>
+                    <i className="bi bi-arrow-up-right"></i>
 
                   </div>
 
-                </div>
+                </Link>
 
-              </section> */}
+              </div>
 
-            </div>
-          </div>
+            </article>
+
+          ))}
+
         </div>
-      </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CONNECTED ERP
+      ====================================================== */}
+
+     
+
+
+
+
     </div>
   );
 };
