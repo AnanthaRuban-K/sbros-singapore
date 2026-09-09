@@ -5624,6 +5624,853 @@ a.header__search.header-search-btn p {
 
 
 
+/* =========================================================
+   SBROS SOLUTIONS
+   Clean / Modern / Blue
+========================================================= */
+
+.solutions-section {
+  position: relative;
+  width: 100%;
+
+  padding: 90px 0 100px;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   MAIN CENTER HEADING
+========================================================= */
+
+.solutions-heading {
+  width: 100%;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.solutions-heading h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: clamp(34px, 4vw, 54px);
+
+  line-height: 1.12;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   MAIN SCROLL AREA
+========================================================= */
+
+.solutions-scroll-area {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 42% 58%;
+
+  align-items: start;
+
+  width: 100%;
+
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   LEFT SCROLL AREA
+========================================================= */
+
+.solutions-left {
+  position: relative;
+
+  height: 4200px;
+}
+
+
+/* =========================================================
+   LEFT STICKY AREA
+========================================================= */
+
+.solutions-left-sticky {
+  position: sticky;
+
+  top: 100px;
+
+  height: 500px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding-right: 60px;
+}
+
+
+/* =========================================================
+   EACH SOLUTION ITEM
+========================================================= */
+
+.solution-item {
+  position: relative;
+
+  width: 100%;
+
+  padding: 17px 0;
+
+  opacity: 0.35;
+
+  transform: translateX(0);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.solution-item h3 {
+  position: relative;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: clamp(22px, 2.2vw, 32px);
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* =========================================================
+   INACTIVE
+========================================================= */
+
+.solution-item:not(.solution-item-active) h3 {
+  color: #172033;
+}
+
+
+/* =========================================================
+   ACTIVE ITEM
+========================================================= */
+
+.solution-item-active {
+  opacity: 1;
+
+  transform: translateX(8px);
+}
+
+
+/* =========================================================
+   ACTIVE BLUE LINE
+========================================================= */
+
+.solution-item-active::before {
+  content: "";
+
+  position: absolute;
+
+  left: -20px;
+
+  top: 25px;
+
+  width: 4px;
+
+  height: 42px;
+
+  background: #1769e0;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 5px 20px rgba(23, 105, 224, 0.25);
+}
+
+
+/* =========================================================
+   ACTIVE HEADING TEXT
+========================================================= */
+
+.solution-item-active h3 {
+  color: #1769e0;
+
+  font-weight: 700;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.solution-description {
+  max-width: 520px;
+
+  margin: 14px 0 0;
+
+  padding-left: 3px;
+
+  color: #687386;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  font-weight: 400;
+
+  animation:
+    solutionDescriptionReveal
+    0.5s
+    cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================================
+   DESCRIPTION ANIMATION
+========================================================= */
+
+@keyframes solutionDescriptionReveal {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   RIGHT SCROLL AREA
+========================================================= */
+
+.solutions-right {
+  position: relative;
+
+  height: 4200px;
+}
+
+
+/* =========================================================
+   RIGHT STICKY AREA
+========================================================= */
+
+.solutions-right-sticky {
+  position: sticky;
+
+  top: 100px;
+
+  height: 500px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding-left: 20px;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+
+.solution-image-card {
+  position: relative;
+
+  width: 100%;
+
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #eef3fb;
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.12);
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.solution-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  animation:
+    solutionImageReveal
+    0.7s
+    cubic-bezier(.22, 1, .36, 1);
+
+  transition:
+    transform 0.8s ease;
+}
+
+
+/* =========================================================
+   IMAGE REVEAL
+========================================================= */
+
+@keyframes solutionImageReveal {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(1.06)
+      translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.solution-image-card:hover .solution-image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .solutions-section {
+    padding: 80px 0 90px;
+  }
+
+
+  .solutions-heading {
+    margin-bottom: 60px;
+  }
+
+
+  .solutions-heading h2 {
+    font-size: 46px;
+  }
+
+
+  .solutions-scroll-area {
+    grid-template-columns: 42% 58%;
+  }
+
+
+  .solutions-left {
+    height: 4200px;
+  }
+
+
+  .solutions-left-sticky {
+    top: 90px;
+
+    height: 480px;
+
+    padding-right: 35px;
+  }
+
+
+  .solution-item {
+    padding: 15px 0;
+  }
+
+
+  .solution-item h3 {
+    font-size: 27px;
+  }
+
+
+  .solution-description {
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+
+
+  .solutions-right {
+    height: 4200px;
+  }
+
+
+  .solutions-right-sticky {
+    top: 90px;
+
+    height: 480px;
+
+    padding-left: 15px;
+  }
+
+
+  .solution-image-card {
+    height: 410px;
+
+    border-radius: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .solutions-section {
+    padding: 70px 0 85px;
+  }
+
+
+  /* =============================================
+     MAIN HEADING
+  ============================================= */
+
+  .solutions-heading {
+    margin-bottom: 45px;
+  }
+
+
+  .solutions-heading h2 {
+    font-size: 39px;
+
+    line-height: 1.15;
+  }
+
+
+  /* =============================================
+     ONE COLUMN
+  ============================================= */
+
+  .solutions-scroll-area {
+    display: block;
+  }
+
+
+  /* =============================================
+     LEFT
+  ============================================= */
+
+  .solutions-left {
+    height: auto;
+  }
+
+
+  .solutions-left-sticky {
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    overflow: visible;
+
+    padding: 0;
+  }
+
+
+  /* =============================================
+     SOLUTION ITEMS
+  ============================================= */
+
+  .solution-item {
+    width: 100%;
+
+    padding: 17px 10px;
+
+    opacity: 0.35;
+
+    transform: none;
+
+    border-bottom:
+      1px solid rgba(23, 32, 51, 0.08);
+  }
+
+
+  .solution-item h3 {
+    font-size: 25px;
+
+    line-height: 1.25;
+  }
+
+
+  /* =============================================
+     ACTIVE
+  ============================================= */
+
+  .solution-item-active {
+    opacity: 1;
+
+    transform: none;
+  }
+
+
+  .solution-item-active h3 {
+    color: #1769e0;
+
+    transform: none;
+  }
+
+
+  .solution-item-active::before {
+    left: 0;
+
+    top: 18px;
+
+    width: 3px;
+
+    height: 34px;
+  }
+
+
+  /* =============================================
+     DESCRIPTION
+  ============================================= */
+
+  .solution-description {
+    max-width: 100%;
+
+    margin-top: 10px;
+
+    padding-left: 0;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+
+
+  /* =============================================
+     RIGHT IMAGE
+  ============================================= */
+
+  .solutions-right {
+    height: auto;
+
+    margin-top: 35px;
+  }
+
+
+  .solutions-right-sticky {
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    padding: 0;
+  }
+
+
+  .solution-image-card {
+    width: 100%;
+
+    height: 380px;
+
+    border-radius: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .solutions-section {
+    padding: 60px 0 75px;
+  }
+
+
+  /* =============================================
+     MAIN HEADING
+  ============================================= */
+
+  .solutions-heading {
+    margin-bottom: 38px;
+  }
+
+
+  .solutions-heading h2 {
+    font-size: 33px;
+
+    line-height: 1.18;
+
+    letter-spacing: -0.8px;
+  }
+
+
+  /* =============================================
+     SOLUTION ITEMS
+  ============================================= */
+
+  .solution-item {
+    padding: 15px 7px;
+  }
+
+
+  .solution-item h3 {
+    font-size: 21px;
+
+    line-height: 1.3;
+  }
+
+
+  .solution-item-active {
+    transform: none;
+  }
+
+
+  .solution-item-active::before {
+    left: 0;
+
+    top: 16px;
+
+    width: 3px;
+
+    height: 30px;
+  }
+
+
+  /* =============================================
+     DESCRIPTION
+  ============================================= */
+
+  .solution-description {
+    margin-top: 9px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =============================================
+     IMAGE
+  ============================================= */
+
+  .solutions-right {
+    margin-top: 28px;
+  }
+
+
+  .solution-image-card {
+    height: 320px;
+
+    border-radius: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .solutions-section {
+    padding: 50px 0 65px;
+  }
+
+
+  /* Heading */
+
+  .solutions-heading {
+    margin-bottom: 32px;
+  }
+
+
+  .solutions-heading h2 {
+    font-size: 28px;
+
+    line-height: 1.2;
+  }
+
+
+  /* Items */
+
+  .solution-item {
+    padding: 14px 6px;
+  }
+
+
+  .solution-item h3 {
+    font-size: 18px;
+
+    line-height: 1.3;
+  }
+
+
+  .solution-item-active::before {
+    width: 3px;
+
+    height: 27px;
+
+    top: 14px;
+  }
+
+
+  /* Description */
+
+  .solution-description {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-top: 8px;
+  }
+
+
+  /* Image */
+
+  .solutions-right {
+    margin-top: 24px;
+  }
+
+
+  .solution-image-card {
+    height: 285px;
+
+    border-radius: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .solutions-section {
+    padding: 45px 0 60px;
+  }
+
+
+  .solutions-heading h2 {
+    font-size: 26px;
+  }
+
+
+  .solution-item {
+    padding: 13px 5px;
+  }
+
+
+  .solution-item h3 {
+    font-size: 17px;
+  }
+
+
+  .solution-description {
+    font-size: 12px;
+
+    line-height: 1.45;
+  }
+
+
+  .solution-image-card {
+    height: 260px;
+
+    border-radius: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+.solutions-section,
+.solutions-scroll-area {
+  max-width: 100%;
+}
+
+.solutions-section img {
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Increase background circle for all 3 icons */
@@ -16106,7 +16953,7 @@ a.header__search.header-search-btn p {
   margin-right: 2px;
 }
 .hero1 .main-headding h1 {
-  font-size: var(--f-fs-font-fs64);
+  font-size: var(--f-fs-font-fs50);
   font-weight: var(--f-fw-blod);
   line-height: var(--f-fs-font-fs70);
   color: var(--ztc-text-text-1);

@@ -14,7 +14,7 @@ const Home = () => {
             <HeroBanner1
                 bgImg="/assets/img/bg/blueshine.png"
                 subTitle="SBros"
-                title="Driving Digital Excellence   <span class='after'> for Modern Businesses </span>"
+                title="Powering Businesses With   <span class='after'> Software Built for Growth</span>"
                 content=" We deliver innovative, secure, and scalable IT solutions that simplify operations, enhance efficiency, and empower businesses to achieve sustainable growth."
                 btnName="Explore"
                 btnUrl="/contact-us"
