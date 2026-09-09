@@ -5624,42 +5624,27 @@ a.header__search.header-search-btn p {
 
 
 
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-
-/* =========================================================
-   CHOOSE 1 - SOLUTIONS SECTION
-   IMAGE LEFT / CONTENT RIGHT
-=======
 /* =========================================================
    SBROS SOLUTIONS
    Clean / Modern / Blue
->>>>>>> 4aaa54ed5360ffa78b4e0835368d01622f5ef72b
+
 ========================================================= */
 
 .solutions-section {
   position: relative;
   width: 100%;
-<<<<<<< HEAD
-  background: #ffffff;
-=======
+
 
   padding: 90px 0 100px;
 
   overflow: visible;
->>>>>>> 4aaa54ed5360ffa78b4e0835368d01622f5ef72b
+
 }
 
 
 /* =========================================================
-<<<<<<< HEAD
+
    SECTION TITLE
 ========================================================= */
 
@@ -5668,9 +5653,8 @@ a.header__search.header-search-btn p {
   z-index: 50;
 
   width: 100%;
-=======
-   MAIN CENTER HEADING
-========================================================= */
+
+}
 
 .solutions-heading {
   width: 100%;
