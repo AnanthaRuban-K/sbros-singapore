@@ -5,43 +5,43 @@ const solutions = [
     title: "Human Resource Management",
     description:
       "Manage employees, attendance, payroll, performance, and HR processes in one simple and efficient platform.",
-    image: "/assets/img/bg/hrm.jpeg",
+    image: "/assets/img/bg/hrm1.png",
   },
   {
     title: "CRM",
     description:
       "Build stronger customer relationships, manage leads, track opportunities, and improve your complete sales process.",
-    image: "/assets/img/solutions/crm.jpg",
+    image: "/assets/img/bg/crm.png",
   },
   {
     title: "Finance",
     description:
       "Simplify accounting, financial management, reporting, and business transactions with complete financial visibility.",
-    image: "/assets/img/solutions/finance.jpg",
+    image: "/assets/img/bg/finance.png",
   },
   {
     title: "Procurement",
     description:
       "Streamline purchasing, supplier management, purchase orders, and procurement workflows from one centralized system.",
-    image: "/assets/img/solutions/procurement.jpg",
+    image: "/assets/img/bg/procurement.png",
   },
   {
     title: "Product Sales",
     description:
       "Manage products, quotations, orders, customers, and sales activities from one centralized and easy-to-use system.",
-    image: "/assets/img/solutions/product-sales.jpg",
+    image: "/assets/img/bg/product.png",
   },
   {
     title: "Service Sales",
     description:
       "Manage service-based sales, customer requests, quotations, contracts, and recurring services efficiently.",
-    image: "/assets/img/solutions/service-sales.jpg",
+    image: "/assets/img/bg/service.png",
   },
   {
     title: "Recruitment",
     description:
       "Simplify hiring with candidate management, job postings, interviews, evaluations, and complete recruitment workflows.",
-    image: "/assets/img/solutions/recruitment.jpg",
+    image: "/assets/img/bg/recruit.png",
   },
 ];
 
@@ -50,6 +50,7 @@ const Choose1 = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Desktop/laptop only
       if (window.innerWidth <= 991) {
         return;
       }
@@ -60,15 +61,7 @@ const Choose1 = () => {
 
       const rect = section.getBoundingClientRect();
 
-      /*
-       * Each solution gets 600px of scroll space.
-       */
       const stepHeight = 600;
-
-      /*
-       * Active solution changes when the scroll
-       * reaches 35% of the viewport.
-       */
       const triggerPoint = window.innerHeight * 0.35;
 
       const scrollInsideSection =
@@ -86,29 +79,17 @@ const Choose1 = () => {
       setActiveIndex(index);
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      { passive: true }
-    );
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
-    window.addEventListener(
-      "resize",
-      handleScroll
-    );
+    window.addEventListener("resize", handleScroll);
 
     handleScroll();
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-
-      window.removeEventListener(
-        "resize",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -116,13 +97,9 @@ const Choose1 = () => {
 
   return (
     <section className="solutions-section">
-
       <div className="container">
 
-        {/* =========================================
-            MAIN HEADING
-        ========================================= */}
-
+        {/* Heading */}
         <div className="solutions-heading">
           <h2>
             Solutions designed around
@@ -131,24 +108,14 @@ const Choose1 = () => {
           </h2>
         </div>
 
-
-        {/* =========================================
-            MAIN SCROLL AREA
-        ========================================= */}
-
+        {/* Scroll Area */}
         <div className="solutions-scroll-area">
 
-
-          {/* =========================================
-              LEFT SIDE
-          ========================================= */}
-
+          {/* LEFT */}
           <div className="solutions-left">
-
             <div className="solutions-left-sticky">
 
               {solutions.map((solution, index) => (
-
                 <div
                   key={solution.title}
                   className={`solution-item ${
@@ -157,34 +124,21 @@ const Choose1 = () => {
                       : ""
                   }`}
                 >
-
-                  <h3>
-                    {solution.title}
-                  </h3>
-
-                  {/* Description only for active item */}
+                  <h3>{solution.title}</h3>
 
                   {activeIndex === index && (
                     <p className="solution-description">
                       {solution.description}
                     </p>
                   )}
-
                 </div>
-
               ))}
 
             </div>
-
           </div>
 
-
-          {/* =========================================
-              RIGHT SIDE
-          ========================================= */}
-
+          {/* RIGHT */}
           <div className="solutions-right">
-
             <div className="solutions-right-sticky">
 
               <div className="solution-image-card">
@@ -199,13 +153,10 @@ const Choose1 = () => {
               </div>
 
             </div>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 };
