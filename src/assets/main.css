@@ -5632,19 +5632,38 @@ a.header__search.header-search-btn p {
 
 
 
+
 /* =========================================================
    CHOOSE 1 - SOLUTIONS SECTION
    IMAGE LEFT / CONTENT RIGHT
+=======
+/* =========================================================
+   SBROS SOLUTIONS
+   Clean / Modern / Blue
+
+
 ========================================================= */
 
 .solutions-section {
   position: relative;
   width: 100%;
+
   background: #ffffff;
+
+
+
+  padding: 90px 0 100px;
+
+  overflow: visible;
+
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
+=======
+
+
    SECTION TITLE
 ========================================================= */
 
@@ -5653,6 +5672,73 @@ a.header__search.header-search-btn p {
   z-index: 50;
 
   width: 100%;
+
+
+}
+
+.solutions-heading {
+  width: 100%;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.solutions-heading h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: clamp(34px, 4vw, 54px);
+
+  line-height: 1.12;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   MAIN SCROLL AREA
+========================================================= */
+
+.solutions-scroll-area {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 42% 58%;
+
+  align-items: start;
+
+  width: 100%;
+
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   LEFT SCROLL AREA
+========================================================= */
+
+.solutions-left {
+  position: relative;
+
+  height: 4200px;
+}
+
+
+/* =========================================================
+   LEFT STICKY AREA
+========================================================= */
+
+.solutions-left-sticky {
+  position: sticky;
+
+  top: 100px;
+
+  height: 500px;
 
   display: flex;
   align-items: center;
@@ -53890,21 +53976,7 @@ body,
   }
 
 }
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 /* =========================================================
    ERP MODERN PAGE
 ========================================================= */
