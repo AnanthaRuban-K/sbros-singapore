@@ -1,326 +1,212 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 
 const solutions = [
   {
-    number: "01",
+    id: "01",
     title: "Human Resource Management",
-    description:
-      "Manage employees, attendance, payroll, performance, and HR processes in one simple and efficient platform.",
     image: "/assets/img/bg/hrm1.png",
   },
   {
-    number: "02",
+    id: "02",
     title: "CRM",
-    description:
-      "Build stronger customer relationships, manage leads, track opportunities, and improve your complete sales process.",
     image: "/assets/img/bg/crm.png",
   },
   {
-    number: "03",
+    id: "03",
     title: "Finance",
-    description:
-      "Simplify accounting, financial management, reporting, and business transactions with complete financial visibility.",
     image: "/assets/img/bg/finance.png",
   },
   {
-    number: "04",
+    id: "04",
     title: "Procurement",
-    description:
-      "Streamline purchasing, supplier management, purchase orders, and procurement workflows from one centralized system.",
     image: "/assets/img/bg/procurement.png",
   },
   {
-    number: "05",
+    id: "05",
     title: "Product Sales",
-    description:
-      "Manage products, quotations, orders, customers, and sales activities from one centralized and easy-to-use system.",
     image: "/assets/img/bg/product.png",
   },
   {
-    number: "06",
+    id: "06",
     title: "Service Sales",
-    description:
-      "Manage service-based sales, customer requests, quotations, contracts, and recurring services efficiently.",
     image: "/assets/img/bg/service.png",
   },
   {
-    number: "07",
+    id: "07",
     title: "Recruitment",
-    description:
-      "Simplify hiring with candidate management, job postings, interviews, evaluations, and complete recruitment workflows.",
     image: "/assets/img/bg/recruit.png",
   },
 ];
 
 const Choose1 = () => {
   const sectionRef = useRef(null);
-
-  const imageRefs = useRef([]);
-  const contentRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     let ticking = false;
 
-    const updateAnimation = () => {
-      if (!sectionRef.current) return;
-
+    const updateActiveItem = () => {
       const section = sectionRef.current;
+
+      if (!section) {
+        ticking = false;
+        return;
+      }
+
       const rect = section.getBoundingClientRect();
 
-      /*
-        The whole scroll section contains 7 steps.
+      const sectionHeight = section.offsetHeight;
+      const viewportHeight = window.innerHeight;
 
-        Step 0 = 01
-        Step 1 = 02
-        Step 2 = 03
-        Step 3 = 04
-        Step 4 = 05
-        Step 5 = 06
-        Step 6 = 07
-      */
+      const scrollDistance = sectionHeight - viewportHeight;
 
-      const scrollDistance =
-        section.offsetHeight - window.innerHeight;
-
-      if (scrollDistance <= 0) return;
+      if (scrollDistance <= 0) {
+        ticking = false;
+        return;
+      }
 
       let progress = -rect.top / scrollDistance;
 
       progress = Math.max(0, Math.min(1, progress));
 
-      /*
-        Convert section progress into
-        0 → 6.
+      const index = Math.min(
+        solutions.length - 1,
+        Math.floor(progress * solutions.length)
+      );
 
-        Example:
-
-        0.0 = 01
-        0.5 = halfway 01 → 02
-        1.0 = 02
-        1.5 = halfway 02 → 03
-        2.0 = 03
-        ...
-        6.0 = 07
-      */
-
-      const position = progress * (solutions.length - 1);
-
-      /*
-        Every card gets an individual position.
-
-        For card 02 while moving 01 → 02:
-
-        position = 0
-        card index = 1
-
-        difference = -1
-
-        So card 02 starts at:
-        translateY(100%)
-
-        and ends at:
-        translateY(0)
-      */
-
-      const updateCards = (refs) => {
-        refs.current.forEach((card, index) => {
-          if (!card) return;
-
-          const difference = position - index;
-
-          let translateY;
-
-          if (index === 0) {
-            /*
-              01 is the base card.
-            */
-            translateY = 0;
-          } else if (difference >= 0) {
-            /*
-              This card has already moved into place.
-              It stays on top.
-            */
-            translateY = 0;
-          } else if (difference > -1) {
-            /*
-              THIS creates the real overlap.
-
-              -1 = 100% below
-               0 = completely on top
-            */
-            translateY = Math.abs(difference) * 100;
-          } else {
-            /*
-              Future cards stay below.
-            */
-            translateY = 100;
-          }
-
-          card.style.transform =
-            `translate3d(0, ${translateY}%, 0)`;
-        });
-      };
-
-      /*
-        EXACT SAME calculation for:
-
-        LEFT  = IMAGE
-        RIGHT = HEADING
-      */
-
-      updateCards(imageRefs);
-      updateCards(contentRefs);
+      setActiveIndex(index);
 
       ticking = false;
     };
 
     const handleScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(updateAnimation);
+        window.requestAnimationFrame(updateActiveItem);
         ticking = true;
       }
     };
 
-    updateAnimation();
+    const handleResize = () => {
+      updateActiveItem();
+    };
+
+    updateActiveItem();
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
-    window.addEventListener("resize", updateAnimation);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateAnimation);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleHeadingClick = (index) => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const sectionTop =
+      window.scrollY + section.getBoundingClientRect().top;
+
+    const scrollDistance =
+      section.offsetHeight - window.innerHeight;
+
+    const progress =
+      index / (solutions.length - 1);
+
+    const targetPosition =
+      sectionTop + progress * scrollDistance;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const activeSolution = solutions[activeIndex];
 
   return (
     <section
       ref={sectionRef}
-      className="solutions-section"
-      style={{
-        height: `${solutions.length * 100}vh`,
-      }}
+      className="choose-section"
     >
-      {/* =====================================
-          SECTION HEADING
-      ====================================== */}
+      <div className="choose-sticky">
 
-      <div className="solutions-title">
-        <span className="title-line"></span>
+        <div className="choose-container">
 
-        <div>
-         
+          {/* LEFT IMAGE */}
+          <div className="choose-image-side">
 
-          <h2>
-            Solutions Designed Around
-            <br />
-            <span>Your Business</span>
-          </h2>
-        </div>
+            <div className="choose-image-box">
 
-        <span className="title-line"></span>
-      </div>
+              <div className="choose-image-glow"></div>
 
-      {/* =====================================
-          STICKY SCROLL AREA
-      ====================================== */}
+              <img
+                key={activeSolution.id}
+                src={activeSolution.image}
+                alt={activeSolution.title}
+                className="choose-main-image"
+              />
 
-      <div className="solutions-sticky">
+              <div className="choose-image-number">
+                {activeSolution.id}
+              </div>
 
-        <div className="solutions-layout">
-
-          {/* =================================
-              LEFT SIDE — IMAGES
-          ================================= */}
-
-          <div className="solutions-images">
-
-            <div className="image-stack">
-
-              {solutions.map((solution, index) => (
-                <div
-                  key={solution.number}
-                  ref={(element) => {
-                    imageRefs.current[index] = element;
-                  }}
-                  className="solution-image-card"
-                  style={{
-                    zIndex: index + 1,
-                  }}
-                >
-                  <img
-                    src={solution.image}
-                    alt={solution.title}
-                    draggable="false"
-                  />
-
-                  <div className="image-dark"></div>
-
-                  <div className="image-bottom">
-                    <span>
-                      {solution.number}
-                    </span>
-
-                    <p>
-                      {solution.title}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <div className="choose-image-title">
+                {activeSolution.title}
+              </div>
 
             </div>
 
           </div>
 
+          {/* RIGHT HEADINGS */}
+          <div className="choose-content-side">
 
-          {/* =================================
-              RIGHT SIDE — HEADINGS
-          ================================= */}
+            <div className="choose-top-label">
+              OUR SOLUTIONS
+            </div>
 
-          <div className="solutions-content">
+            <h2 className="choose-heading">
+              Empower Your Business with Intelligent ERP
+            </h2>
 
-            <div className="content-stack">
+            <div className="choose-list">
 
               {solutions.map((solution, index) => (
-                <div
-                  key={solution.number}
-                  ref={(element) => {
-                    contentRefs.current[index] = element;
-                  }}
-                  className="solution-content-card"
-                  style={{
-                    zIndex: index + 1,
-                  }}
+                <button
+                  key={solution.id}
+                  type="button"
+                  className={`choose-item ${
+                    activeIndex === index
+                      ? "choose-item-active"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleHeadingClick(index)
+                  }
                 >
 
-                  <div className="content-number">
-                    {solution.number}
-                  </div>
+                  <span className="choose-number">
+                    {solution.id}
+                  </span>
 
-                  <div className="content-details">
+                  <span className="choose-name">
+                    {solution.title}
+                  </span>
 
-                    <span className="content-label">
-                      BUSINESS SOLUTION
-                    </span>
+                  <span className="choose-arrow">
+                    →
+                  </span>
 
-                    <h3>
-                      {solution.title}
-                    </h3>
-
-                    <p>
-                      {solution.description}
-                    </p>
-
-                    <div className="content-line"></div>
-
-                  </div>
-
-                </div>
+                </button>
               ))}
 
             </div>
