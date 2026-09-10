@@ -5631,36 +5631,44 @@ a.header__search.header-search-btn p {
 
 
 
-/* =========================================================
-   CHOOSE SECTION
-========================================================= */
+/* =====================================================
+   TECHNOLOGY DOMAINS SECTION
+===================================================== */
 
 .choose-section {
   position: relative;
   width: 100%;
+
+  /*
+    7 images = 7 scroll stages
+  */
   height: 700vh;
+
   background:
     radial-gradient(
-      circle at 15% 50%,
-      rgba(59, 130, 246, 0.10),
-      transparent 30%
+      circle at 10% 20%,
+      rgba(14, 165, 233, 0.08),
+      transparent 28%
     ),
     radial-gradient(
-      circle at 90% 20%,
-      rgba(168, 85, 247, 0.10),
-      transparent 30%
+      circle at 90% 80%,
+      rgba(124, 58, 237, 0.08),
+      transparent 28%
     ),
     #ffffff;
+
+  overflow: visible;
 }
 
 
-/* =========================================================
-   STICKY AREA
-========================================================= */
+/* =====================================================
+   STICKY CONTAINER
+===================================================== */
 
 .choose-sticky {
   position: sticky;
   top: 0;
+
   width: 100%;
   height: 100vh;
 
@@ -5671,69 +5679,173 @@ a.header__search.header-search-btn p {
 }
 
 
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
+/* =====================================================
+   MAIN WRAPPER
+===================================================== */
 
-.choose-container {
-  width: min(1250px, 92%);
+.choose-wrapper {
+  width: min(1400px, 92%);
+
   margin: 0 auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.choose-header {
+  width: 100%;
+
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.choose-heading {
+  margin: 0;
+
+  font-size: 40px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0284c7,
+      #2563eb,
+      #7c3aed
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.choose-heading-line {
+  display: block;
+
+  width: 70px;
+  height: 4px;
+
+  margin: 12px auto 0;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4,
+      #2563eb,
+      #7c3aed
+    );
+}
+
+
+/* =====================================================
+   MAIN GRID
+===================================================== */
+
+.choose-main {
+  width: 100%;
 
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 80px;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(340px, 0.85fr);
 
   align-items: center;
+
+  gap: 65px;
 }
 
 
-/* =========================================================
-   LEFT IMAGE SIDE
-========================================================= */
+/* =====================================================
+   IMAGE SIDE
+===================================================== */
 
 .choose-image-side {
-  position: relative;
   width: 100%;
-  height: 560px;
 
   display: flex;
-  align-items: center;
+
   justify-content: center;
+  align-items: center;
 }
 
+
+/* =====================================================
+   IMAGE BOX
+===================================================== */
 
 .choose-image-box {
   position: relative;
 
-  width: 500px;
-  height: 500px;
+  width: 100%;
 
-  border-radius: 35px;
+  max-width: 760px;
+
+  height: 360px;
 
   overflow: hidden;
 
+  border-radius: 26px;
+
   background:
     linear-gradient(
-      145deg,
-      #e0f2fe,
+      135deg,
       #dbeafe,
-      #ede9fe
+      #e0e7ff,
+      #f3e8ff
     );
 
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border:
+    1px solid
+    rgba(99, 102, 241, 0.20);
 
   box-shadow:
-    0 30px 80px rgba(37, 99, 235, 0.15),
-    0 10px 30px rgba(124, 58, 237, 0.10);
+    0 25px 60px
+      rgba(37, 99, 235, 0.15),
+    0 10px 30px
+      rgba(124, 58, 237, 0.08);
 }
 
 
-/* =========================================================
-   IMAGE
-========================================================= */
+/* =====================================================
+   IMAGE STACK
 
-.choose-main-image {
-  position: relative;
+   VERY IMPORTANT
+
+   All images occupy exactly the same area.
+===================================================== */
+
+.choose-image-stack {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   IMAGES
+
+   Images are stacked on top of each other.
+===================================================== */
+
+.choose-stack-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
 
   width: 100%;
   height: 100%;
@@ -5742,338 +5854,275 @@ a.header__search.header-search-btn p {
 
   display: block;
 
-  animation: chooseImageReveal 0.55s ease;
+  /*
+    IMPORTANT:
+    No CSS animation here.
+    React scroll position controls
+    the exact overlap.
+  */
+
+  transition:
+    transform 0.05s linear,
+    opacity 0.05s linear;
+
+  will-change:
+    transform,
+    opacity;
+
+  pointer-events: none;
 }
 
 
-@keyframes chooseImageReveal {
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
 
-  0% {
-    opacity: 0;
-    transform: scale(1.06);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-}
-
-
-/* =========================================================
-   IMAGE GLOW
-========================================================= */
-
-.choose-image-glow {
+.choose-image-overlay {
   position: absolute;
 
-  width: 220px;
-  height: 220px;
+  inset: 0;
 
-  top: -90px;
-  right: -70px;
+  z-index: 70;
 
-  border-radius: 50%;
+  pointer-events: none;
 
   background:
     linear-gradient(
-      135deg,
-      #38bdf8,
-      #6366f1,
-      #a855f7
+      to bottom,
+      rgba(15, 23, 42, 0.00) 20%,
+      rgba(15, 23, 42, 0.10) 50%,
+      rgba(15, 23, 42, 0.88) 100%
     );
-
-  filter: blur(65px);
-
-  opacity: 0.35;
-
-  z-index: 0;
 }
 
 
-/* =========================================================
+/* =====================================================
    IMAGE NUMBER
-========================================================= */
+===================================================== */
 
 .choose-image-number {
   position: absolute;
 
-  top: 25px;
-  left: 25px;
+  top: 20px;
+  left: 20px;
 
-  min-width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  border-radius: 16px;
+  border-radius: 14px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 800;
 
   background:
     linear-gradient(
       135deg,
+      #0284c7,
       #2563eb,
       #7c3aed
     );
 
-  color: #ffffff;
-
-  font-size: 16px;
-  font-weight: 800;
-
-  letter-spacing: 1px;
-
-  z-index: 5;
+  z-index: 90;
 
   box-shadow:
-    0 10px 25px rgba(37, 99, 235, 0.30);
+    0 10px 25px
+      rgba(79, 70, 229, 0.30);
 }
 
 
-/* =========================================================
-   IMAGE TITLE
-========================================================= */
+/* =====================================================
+   IMAGE CONTENT
+===================================================== */
 
-.choose-image-title {
+.choose-image-content {
   position: absolute;
 
   left: 25px;
   right: 25px;
-  bottom: 25px;
 
-  padding: 18px 22px;
+  bottom: 23px;
 
-  border-radius: 18px;
+  z-index: 90;
+}
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.90),
-      rgba(30, 41, 59, 0.82)
-    );
+.choose-image-content span {
+  display: block;
 
-  backdrop-filter: blur(12px);
+  margin-bottom: 6px;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.choose-image-content h3 {
+  margin: 0;
 
   color: #ffffff;
 
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 23px;
 
-  z-index: 5;
+  line-height: 1.2;
+
+  font-weight: 800;
 }
 
 
-/* =========================================================
-   RIGHT CONTENT
-========================================================= */
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
 
 .choose-content-side {
   width: 100%;
 }
 
 
-.choose-top-label {
-  display: inline-flex;
-
-  align-items: center;
-
-  padding: 8px 16px;
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #dbeafe,
-      #ede9fe
-    );
-
-  color: #4f46e5;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 18px;
-}
-
-
-.choose-heading {
-  margin: 0 0 35px;
-
-  color: #111827;
-
-  font-size: clamp(
-    34px,
-    4vw,
-    55px
-  );
-
-  line-height: 1.08;
-
-  font-weight: 800;
-
-  letter-spacing: -1.5px;
-}
-
-
-/* =========================================================
-   HEADING LIST
-========================================================= */
+/* =====================================================
+   LIST
+===================================================== */
 
 .choose-list {
+  width: 100%;
+
   display: flex;
 
   flex-direction: column;
 
-  gap: 10px;
+  gap: 8px;
 }
 
 
-/* =========================================================
-   EACH HEADING
-========================================================= */
+/* =====================================================
+   HEADING ITEM
+===================================================== */
 
 .choose-item {
   position: relative;
 
   width: 100%;
 
-  min-height: 68px;
+  height: 54px;
 
   display: grid;
 
-  grid-template-columns: 55px 1fr 35px;
+  grid-template-columns:
+    48px 1fr 38px;
 
   align-items: center;
 
   gap: 10px;
 
-  padding: 0 20px;
+  padding:
+    0 10px 0 13px;
 
-  border: 1px solid transparent;
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.20);
 
-  border-radius: 18px;
+  border-radius: 14px;
 
-  background: transparent;
+  background: #ffffff;
 
   cursor: pointer;
 
   text-align: left;
 
   transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    all 0.28s ease;
 }
 
 
-/* =========================================================
+/* =====================================================
    NUMBER
-========================================================= */
+===================================================== */
 
 .choose-number {
-  color: #94a3b8;
+  width: 33px;
+  height: 33px;
 
-  font-size: 14px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-
-  transition: color 0.3s ease;
-}
-
-
-/* =========================================================
-   NAME
-========================================================= */
-
-.choose-name {
-  color: #475569;
-
-  font-size: 18px;
-
-  font-weight: 650;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-
-/* =========================================================
-   ARROW
-========================================================= */
-
-.choose-arrow {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  width: 34px;
-  height: 34px;
+  border-radius: 9px;
+
+  color: #94a3b8;
+
+  background: #f1f5f9;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  transition:
+    all 0.28s ease;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.choose-name {
+  color: #475569;
+
+  font-size: 15px;
+
+  font-weight: 650;
+
+  line-height: 1.2;
+
+  transition:
+    all 0.28s ease;
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.choose-arrow {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 
   border-radius: 50%;
 
   color: #94a3b8;
 
-  font-size: 18px;
+  font-size: 17px;
 
   transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s ease;
+    all 0.28s ease;
 }
 
 
-/* =========================================================
+/* =====================================================
    HOVER
-========================================================= */
+===================================================== */
 
 .choose-item:hover {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(239, 246, 255, 0.9),
-      rgba(245, 243, 255, 0.9)
-    );
+  transform:
+    translateX(6px);
 
-  border-color: rgba(99, 102, 241, 0.10);
-
-  transform: translateX(6px);
-}
-
-
-.choose-item:hover .choose-number {
-  color: #6366f1;
-}
-
-
-.choose-item:hover .choose-name {
-  color: #312e81;
-
-  transform: translateX(3px);
-}
-
-
-.choose-item:hover .choose-arrow {
-  color: #6366f1;
-
-  transform: translateX(4px);
-}
-
-
-/* =========================================================
-   ACTIVE ITEM
-========================================================= */
-
-.choose-item-active {
   background:
     linear-gradient(
       100deg,
@@ -6082,22 +6131,51 @@ a.header__search.header-search-btn p {
     );
 
   border-color:
-    rgba(99, 102, 241, 0.18);
+    rgba(99, 102, 241, 0.30);
+
+  box-shadow:
+    0 10px 25px
+      rgba(79, 70, 229, 0.10);
+}
+
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.choose-item-active {
+  transform:
+    translateX(7px);
+
+  background:
+    linear-gradient(
+      100deg,
+      #eff6ff,
+      #f5f3ff
+    );
+
+  border-color:
+    rgba(99, 102, 241, 0.30);
 
   box-shadow:
     0 12px 30px
-    rgba(79, 70, 229, 0.08);
+      rgba(79, 70, 229, 0.12);
 }
 
+
+/* =====================================================
+   ACTIVE LEFT LINE
+===================================================== */
 
 .choose-item-active::before {
   content: "";
 
   position: absolute;
 
-  left: 0;
-  top: 12px;
-  bottom: 12px;
+  left: -1px;
+
+  top: 7px;
+  bottom: 7px;
 
   width: 4px;
 
@@ -6107,23 +6185,47 @@ a.header__search.header-search-btn p {
     linear-gradient(
       180deg,
       #06b6d4,
-      #6366f1,
-      #a855f7
+      #2563eb,
+      #7c3aed
     );
 }
 
 
+/* =====================================================
+   ACTIVE NUMBER
+===================================================== */
+
 .choose-item-active .choose-number {
-  color: #6366f1;
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0284c7,
+      #2563eb,
+      #7c3aed
+    );
+
+  box-shadow:
+    0 6px 16px
+      rgba(79, 70, 229, 0.22);
 }
 
 
+/* =====================================================
+   ACTIVE NAME
+===================================================== */
+
 .choose-item-active .choose-name {
-  color: #312e81;
+  color: #1e1b4b;
 
   font-weight: 800;
 }
 
+
+/* =====================================================
+   ACTIVE ARROW
+===================================================== */
 
 .choose-item-active .choose-arrow {
   color: #ffffff;
@@ -6134,97 +6236,102 @@ a.header__search.header-search-btn p {
       #2563eb,
       #7c3aed
     );
-
-  transform: translateX(3px);
 }
 
 
-/* =========================================================
-   LARGE LAPTOP
-========================================================= */
+/* =====================================================
+   LAPTOP
+===================================================== */
 
 @media (max-width: 1200px) {
 
-  .choose-container {
-    gap: 50px;
+  .choose-wrapper {
+    width: 94%;
+  }
+
+  .choose-main {
+    gap: 40px;
   }
 
   .choose-image-box {
-    width: 430px;
-    height: 430px;
-  }
+    max-width: 650px;
 
-  .choose-image-side {
-    height: 500px;
-  }
-
-  .choose-name {
-    font-size: 17px;
-  }
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .choose-container {
-    width: 90%;
-
-    grid-template-columns: 0.9fr 1.1fr;
-
-    gap: 35px;
-  }
-
-  .choose-image-box {
-    width: 350px;
-    height: 350px;
-
-    border-radius: 28px;
-  }
-
-  .choose-image-side {
-    height: 420px;
+    height: 330px;
   }
 
   .choose-heading {
-    font-size: 38px;
-
-    margin-bottom: 25px;
+    font-size: 36px;
   }
 
   .choose-item {
-    min-height: 60px;
-
-    grid-template-columns:
-      45px 1fr 32px;
-
-    padding: 0 15px;
+    height: 50px;
   }
 
   .choose-name {
-    font-size: 15px;
+    font-size: 14px;
   }
-
 }
 
 
-/* =========================================================
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+  .choose-main {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 25px;
+  }
+
+  .choose-image-box {
+    max-width: 480px;
+
+    height: 285px;
+  }
+
+  .choose-heading {
+    font-size: 32px;
+  }
+
+  .choose-item {
+    height: 47px;
+
+    grid-template-columns:
+      38px 1fr 30px;
+
+    gap: 5px;
+
+    padding-left: 9px;
+  }
+
+  .choose-number {
+    width: 29px;
+    height: 29px;
+  }
+
+  .choose-name {
+    font-size: 13px;
+  }
+}
+
+
+/* =====================================================
    MOBILE
-   ONLY HEADINGS DISPLAY
-========================================================= */
+===================================================== */
 
 @media (max-width: 767px) {
 
   .choose-section {
     height: auto;
 
-    padding: 70px 0;
-  }
+    padding:
+      55px 0;
 
+    overflow: visible;
+  }
 
   .choose-sticky {
     position: relative;
@@ -6234,115 +6341,104 @@ a.header__search.header-search-btn p {
     overflow: visible;
   }
 
-
-  .choose-container {
+  .choose-wrapper {
     width: 92%;
-
-    display: block;
   }
 
-
-  /* HIDE IMAGE ON MOBILE */
+  /*
+    Hide image completely on mobile
+  */
 
   .choose-image-side {
     display: none;
   }
 
-
-  .choose-content-side {
-    width: 100%;
+  .choose-main {
+    display: block;
   }
 
-
-  .choose-top-label {
-    margin-bottom: 14px;
+  .choose-header {
+    margin-bottom: 27px;
   }
-
-
-  .choose-heading {
-    font-size: 34px;
-
-    margin-bottom: 28px;
-  }
-
-
-  .choose-list {
-    gap: 8px;
-  }
-
-
-  .choose-item {
-    min-height: 62px;
-
-    padding: 0 16px;
-
-    border-radius: 15px;
-
-    grid-template-columns:
-      45px 1fr 32px;
-  }
-
-
-  .choose-name {
-    font-size: 16px;
-  }
-
-
-  .choose-number {
-    font-size: 12px;
-  }
-
-
-  .choose-item:hover {
-    transform: none;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .choose-section {
-    padding: 55px 0;
-  }
-
-
-  .choose-container {
-    width: 90%;
-  }
-
 
   .choose-heading {
     font-size: 30px;
   }
 
-
   .choose-item {
+    height: 58px;
+
     min-height: 58px;
 
-    padding: 0 13px;
-
     grid-template-columns:
-      38px 1fr 30px;
+      42px 1fr 31px;
+
+    padding:
+      0 10px;
   }
 
+  .choose-item:hover,
+  .choose-item-active {
+    transform: none;
+  }
+
+  .choose-number {
+    width: 31px;
+    height: 31px;
+  }
 
   .choose-name {
     font-size: 14px;
   }
+}
 
 
-  .choose-arrow {
-    width: 30px;
-    height: 30px;
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-    font-size: 15px;
+@media (max-width: 480px) {
+
+  .choose-section {
+    padding:
+      48px 0;
   }
 
+  .choose-wrapper {
+    width: 90%;
+  }
+
+  .choose-heading {
+    font-size: 27px;
+  }
+
+  .choose-item {
+    height: 54px;
+
+    min-height: 54px;
+
+    grid-template-columns:
+      37px 1fr 28px;
+
+    padding:
+      0 8px;
+  }
+
+  .choose-number {
+    width: 28px;
+    height: 28px;
+
+    font-size: 8px;
+  }
+
+  .choose-name {
+    font-size: 13px;
+  }
+
+  .choose-arrow {
+    width: 27px;
+    height: 27px;
+  }
 }
 
 
