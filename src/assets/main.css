@@ -5713,13 +5713,7 @@ a.header__search.header-search-btn p {
 
   letter-spacing: -1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #0284c7,
-      #2563eb,
-      #7c3aed
-    );
+  background:black;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

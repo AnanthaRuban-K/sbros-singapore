@@ -297,8 +297,7 @@ const Choose1 = () => {
           <div className="choose-header">
 
             <h2 className="choose-heading">
-              Technology Domains
-            </h2>
+Our Software Solutions            </h2>
 
             <span className="choose-heading-line"></span>
 
