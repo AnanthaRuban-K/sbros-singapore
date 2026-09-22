@@ -6,7 +6,7 @@ import HeroBanner1 from "../Components/HeroBanner/HeroBanner1";
 
 import Project1 from "../Components/Project/Project1";
 import Services1 from "../Components/Services/Services1";
-
+import HeroVideo from "../Components/HeroVideo/HeroVideo";
 
 const Home = () => {
     return (
@@ -21,6 +21,8 @@ const Home = () => {
 
                 image2="/assets/img/hero/headimg5.png"
             ></HeroBanner1>
+            <HeroVideo src="/assets/img/Background.mp4" />
+
             {/* <Award1></Award1> */}
             <About1
   image1="/assets/img/about/about5.jpg"

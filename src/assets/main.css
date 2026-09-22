@@ -56106,3 +56106,33 @@ body,
     animation: none !important;
   }
 }
+
+
+
+.hero-video {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-video__frame {
+  --p: 0; /* scroll progress (0 -> 1), set from JS */
+
+  width: 100%;
+  opacity: var(--p);
+  will-change: opacity;
+}
+
+.hero-video__media {
+  width: 100%;
+  height: auto; /* ratio-ku ettha height, ethuvum cut aagaadhu */
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video__frame {
+    opacity: 1;
+  }
+}

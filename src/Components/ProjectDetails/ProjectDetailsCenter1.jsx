@@ -16,7 +16,7 @@ const ProjectDetailsCenter1 = () => {
       "Departments & Roles",
       "Salary Structures",
     ],
-    video: "/assets/videos/hrm.mp4",
+    video: "/assets/img/Video1.mp4",
     tag: "PEOPLE",
   },
 
@@ -33,7 +33,7 @@ const ProjectDetailsCenter1 = () => {
       "Customer Management",
       "Follow-ups",
     ],
-    video: "/assets/videos/crm.mp4",
+    video: "/assets/img/Video2.mp4",
     tag: "CUSTOMERS",
   },
 
@@ -50,7 +50,7 @@ const ProjectDetailsCenter1 = () => {
       "Invoice & Payments",
       "Financial Reports",
     ],
-    video: "/assets/videos/finance.mp4",
+    video: "/assets/img/Video3.mp4",
     tag: "FINANCE",
   },
 

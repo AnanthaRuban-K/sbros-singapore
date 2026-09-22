@@ -10,7 +10,24 @@ const Vission1 = () => {
           <div className="col-lg-6">
             <div className="overview-left">
 
-              {/* Mission */}
+             
+
+              {/* Vision */}
+              <div className="overview-row vision-card">
+                <div className="overview-number">02</div>
+
+                
+
+                <div className="overview-content">
+                  <span>WHERE WE ARE HEADED</span>
+                  <h3>Our Vision</h3>
+
+                  <p>
+                    To make people and businesses realize and expand their potential 
+                  </p>
+                </div>
+              </div>
+ {/* Mission */}
               <div className="overview-row mission-card">
                 <div className="overview-number">01</div>
 
@@ -25,23 +42,6 @@ const Vission1 = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Vision */}
-              <div className="overview-row vision-card">
-                <div className="overview-number">02</div>
-
-                
-
-                <div className="overview-content">
-                  <span>WHERE WE ARE HEADED</span>
-                  <h3>Our Vision</h3>
-
-                  <p>
-                    To make people and businesses realize and expand their potential mission
-                  </p>
-                </div>
-              </div>
-
             </div>
           </div>
 
