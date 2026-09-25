@@ -16,11 +16,11 @@ const AboutLight = () => {
                 // image1="/assets/img/about/about1.jpg"
                 image2="/assets/img/about/about11.jpg"
                
-                experienceNum="5"
+                experienceNum="4"
                 experienceTitle="Years Of <br> Experience"
                 
                 title="Leading Digital Solutions for Modern Businesses"
-                content="SBROS TECH (S) PTE LTD is a premier Singapore-based IT solutions provider with roots in India, dedicated to driving digital transformation for businesses worldwide. We specialize in software development, web design, networking solutions, and business technology services that enhance operational efficiency and sustainable growth."
+                content="SBROS TECH (S) PTE LTD is a premier Singapore-based IT solutions provider with roots in India, dedicated to driving digital transformation for businesses worldwide. We specialize in software development, web design, digital marketing, networking solutions, and business technology services that enhance operational efficiency and sustainable growth."
                 
             ></About6>
          

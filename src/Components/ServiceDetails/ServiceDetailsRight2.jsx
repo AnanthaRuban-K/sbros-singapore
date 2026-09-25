@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import BreadCumb from "../Common/BreadCumb";
+import data from "../../Data/home3/faq1.json";
 
-const ServiceERP = () => {
-    // -1 means all FAQ items are closed initially
-    const [openItemIndex, setOpenItemIndex] = useState(-1);
+const ServiceDetailsCenterERP = () => {
+    const [openItemIndex, setOpenItemIndex] = useState(0);
 
     const handleItemClick = (index) => {
         setOpenItemIndex(
@@ -12,60 +11,135 @@ const ServiceERP = () => {
         );
     };
 
-    // ================= FAQ DATA =================
-    const faqData = [
+    /* =====================================================
+       ERP MODULES
+    ===================================================== */
+
+    const erpModules = [
         {
-            title: "What does SBROS Tech (S) Pte Ltd do?",
-            desc:
-                "SBROS Tech (S) Pte Ltd provides technology solutions that help businesses improve their operations, productivity, and digital processes through reliable and scalable software solutions."
+            number: "01",
+            icon: "bi bi-people",
+            title: "Human Resource Management",
+            description:
+                "Manage employees, attendance, leave, payroll and workforce operations from one centralized system.",
         },
         {
-            title: "How can SBROS Tech help my business?",
-            desc:
-                "We help businesses streamline their operations through software development, ERP solutions, process automation, system integration, and technology consulting tailored to their specific business requirements."
+            number: "02",
+            icon: "bi bi-person-lines-fill",
+            title: "Customer Relationship Management",
+            description:
+                "Track leads, customers, follow-ups and sales activities while building stronger customer relationships.",
         },
         {
-            title: "What industries does SBROS Tech serve?",
-            desc:
-                "We work across a wide range of industries including retail, healthcare, finance, education, logistics, and manufacturing, adapting our solutions to fit each industry's specific needs and compliance requirements."
+            number: "03",
+            icon: "bi bi-wallet2",
+            title: "Finance & Accounting",
+            description:
+                "Manage financial transactions, invoices, expenses, payments and accounting activities efficiently.",
         },
         {
-            title: "How experienced is the team at SBROS Tech?",
-            desc:
-                "Our team brings experience across software development, ERP implementation, system integration, process automation, and business technology solutions. We focus on delivering practical and scalable solutions based on each client's requirements."
-        }
+            number: "04",
+            icon: "bi bi-box-seam",
+            title: "Procurement Management",
+            description:
+                "Streamline purchasing, supplier management, purchase orders and procurement workflows.",
+        },
+        {
+    number: "05",
+    icon: "bi bi-cart-check",
+    title: "Sales",
+    description:
+        "Manage products, services, quotations, sales orders, customers, contracts and complete sales operations in one platform.",
+},
+        
+    ];
+
+    /* =====================================================
+       ERP FEATURES
+    ===================================================== */
+
+    const features = [
+        {
+            number: "01",
+            icon: "bi bi-grid-1x2",
+            title: "All-in-One Platform",
+            description:
+                "Connect multiple business operations through one centralized ERP platform.",
+        },
+        {
+            number: "02",
+            icon: "bi bi-bar-chart-line",
+            title: "Real-Time Insights",
+            description:
+                "Get clear business visibility with dashboards, reports and real-time operational data.",
+        },
+        {
+            number: "03",
+            icon: "bi bi-shield-check",
+            title: "Secure & Scalable",
+            description:
+                "Built with secure architecture and flexible modules that can grow with your business.",
+        },
+    ];
+
+    /* =====================================================
+       ERP BENEFITS
+    ===================================================== */
+
+    const benefits = [
+        "Centralized Business Management",
+        "Improved Operational Efficiency",
+        "Real-Time Business Reports",
+        "Reduced Manual Work",
+        "Better Customer Management",
+        "Improved Team Collaboration",
+    ];
+
+    /* =====================================================
+       IMPLEMENTATION PROCESS
+    ===================================================== */
+
+    const process = [
+        {
+            number: "01",
+            title: "Business Analysis",
+            description:
+                "We understand your business processes, challenges and operational requirements.",
+        },
+        {
+            number: "02",
+            title: "ERP Planning",
+            description:
+                "Our team plans the required ERP modules, workflows and system structure.",
+        },
+        {
+            number: "03",
+            title: "Development",
+            description:
+                "We configure and develop ERP features based on your business requirements.",
+        },
+        {
+            number: "04",
+            title: "Testing & Launch",
+            description:
+                "The system is tested, optimized and prepared for a smooth business launch.",
+        },
     ];
 
     return (
         <div className="erp-service-page">
 
-            {/* ================= BREADCRUMB ================= */}
-            {/* <BreadCumb Title="ERP Solutions" /> */}
-
-
-            {/* ================= SERVICE AREA ================= */}
             <div className="service-details-area-all sp">
 
                 <div className="container">
 
-                    <div className="erp-content">
+                    <div className="erp-service-content">
 
+                        {/* =================================================
+                            HERO / INTRO
+                        ================================================= */}
 
-                        {/* =====================================================
-                            INTRO
-                        ===================================================== */}
-
-                        <section className="erp-intro">
-
-                            <div className="erp-main-image">
-
-                                <img
-                                    src="/assets/img/service/websites.jpg"
-                                    alt="ERP Solutions"
-                                />
-
-                            </div>
-
+                        <section className="erp-intro-section">
 
                             <div className="erp-intro-content">
 
@@ -74,389 +148,341 @@ const ServiceERP = () => {
                                 </span>
 
                                 <h1>
-                                    Smart ERP Solutions For
-                                    <span> Better Business</span>
+                                    Everything Your Business Needs.
+                                    <span> In One ERP.</span>
                                 </h1>
 
                                 <p>
-                                    We implement smart ERP systems that unify
-                                    your business operations, giving you
-                                    real-time visibility and control across
-                                    departments.
+                                    Manage your entire business from one
+                                    powerful platform. Our ERP solutions
+                                    connect HR, CRM, Finance, Procurement,
+                                    Sales and Recruitment to help businesses
+                                    work smarter and grow faster.
                                 </p>
 
-                                <p>
-                                    Our ERP solutions help you streamline
-                                    workflows, reduce manual errors, improve
-                                    productivity, and make faster,
-                                    data-driven decisions.
-                                </p>
+                                {/* <div className="erp-intro-points">
 
-                            </div>
-
-                        </section>
-
-
-                        {/* =====================================================
-                            HOW WE WORK
-                        ===================================================== */}
-
-                        <section className="erp-how-work">
-
-                            <div className="erp-section-heading">
-
-                                <span className="erp-label">
-                                    OUR PROCESS
-                                </span>
-
-                                <h2>
-                                    How We Work
-                                </h2>
-
-                                <p>
-                                    A simple and structured process to deliver
-                                    reliable ERP solutions for your business.
-                                </p>
-
-                            </div>
-
-
-                            <div className="erp-work-flow">
-
-                                {/* DESIGN */}
-                                <div className="erp-work-card">
-
-                                    <div className="erp-work-number">
-                                        01
-                                    </div>
-
-                                    <div className="erp-work-icon">
-                                        <i className="bi bi-pencil-square"></i>
-                                    </div>
-
-                                    <h3>Design</h3>
-
-                                    <p>
-                                        We understand your business
-                                        requirements and design an ERP
-                                        workflow that fits your processes.
-                                    </p>
-
-                                </div>
-
-
-                                {/* DEVELOP */}
-                                <div className="erp-work-card">
-
-                                    <div className="erp-work-number">
-                                        02
-                                    </div>
-
-                                    <div className="erp-work-icon">
-                                        <i className="bi bi-code-slash"></i>
-                                    </div>
-
-                                    <h3>Develop</h3>
-
-                                    <p>
-                                        We configure and customize ERP
-                                        modules to create efficient and
-                                        scalable business solutions.
-                                    </p>
-
-                                </div>
-
-
-                                {/* DEPLOY */}
-                                <div className="erp-work-card">
-
-                                    <div className="erp-work-number">
-                                        03
-                                    </div>
-
-                                    <div className="erp-work-icon">
-                                        <i className="bi bi-cloud-arrow-up-fill"></i>
-                                    </div>
-
-                                    <h3>Deploy</h3>
-
-                                    <p>
-                                        We migrate data, integrate systems
-                                        and deploy your ERP solution with
-                                        minimum business disruption.
-                                    </p>
-
-                                </div>
-
-
-                                {/* SUPPORT */}
-                                <div className="erp-work-card">
-
-                                    <div className="erp-work-number">
-                                        04
-                                    </div>
-
-                                    <div className="erp-work-icon">
-                                        <i className="bi bi-headset"></i>
-                                    </div>
-
-                                    <h3>Support</h3>
-
-                                    <p>
-                                        We provide training, monitoring,
-                                        maintenance and continuous support
-                                        after implementation.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-
-                        {/* =====================================================
-                            OUR APPROACH
-                        ===================================================== */}
-
-                        <section className="erp-approach">
-
-                            <div className="erp-section-heading">
-
-                                <span className="erp-label">
-                                    OUR APPROACH
-                                </span>
-
-                                <h2>
-                                    Built Around Your Business
-                                </h2>
-
-                                <p>
-                                    We start by mapping your existing
-                                    workflows, then configure and deploy
-                                    an ERP system tailored to your processes
-                                    — with training and ongoing support to
-                                    ensure smooth adoption across your team.
-                                </p>
-
-                            </div>
-
-
-                            <div className="erp-approach-grid">
-
-                                {/* SYSTEM IMPLEMENTATION */}
-                                <div className="erp-approach-card">
-
-                                    <div className="erp-approach-icon">
-                                        <i className="bi bi-gear-wide-connected"></i>
+                                    <div>
+                                        <i className="bi bi-check-circle-fill"></i>
+                                        <span>Centralized Management</span>
                                     </div>
 
                                     <div>
+                                        <i className="bi bi-check-circle-fill"></i>
+                                        <span>Real-Time Reports</span>
+                                    </div>
+
+                                    <div>
+                                        <i className="bi bi-check-circle-fill"></i>
+                                        <span>Scalable Platform</span>
+                                    </div>
+
+                                </div> */}
+
+                            </div>
+
+                            <div className="erp-intro-image">
+
+                                <img
+                                    src="/assets/img/service/erp.jpg"
+                                    alt="ERP Solutions"
+                                />
+
+                                <div className="erp-floating-card">
+
+                                    <i className="bi bi-grid-1x2-fill"></i>
+
+                                    <div>
+                                        <strong>Complete ERP</strong>
+                                        <span>One Platform. One Solution.</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            FEATURES
+                        ================================================= */}
+
+                        <section className="erp-feature-section">
+
+                            <div className="erp-section-title">
+
+                                <span>WHY ERP</span>
+
+                                <h2>
+                                    One Platform.
+                                    <br />
+                                    Complete Business Control.
+                                </h2>
+
+                                <p>
+                                    Bring your departments, data and
+                                    business processes together with a
+                                    centralized ERP platform.
+                                </p>
+
+                            </div>
+
+
+                            <div className="erp-feature-grid">
+
+                                {features.map((feature, index) => (
+
+                                    <div
+                                        className="erp-feature-card"
+                                        key={index}
+                                    >
+
+                                        <div className="erp-feature-icon">
+                                            <i className={feature.icon}></i>
+                                        </div>
+
+                                        <span className="erp-feature-number">
+                                            {feature.number}
+                                        </span>
 
                                         <h3>
-                                            System Implementation
+                                            {feature.title}
                                         </h3>
 
                                         <p>
-                                            We handle end-to-end ERP
-                                            implementation — from requirement
-                                            analysis and module selection to
-                                            configuration, data migration,
-                                            and go-live support tailored to
-                                            your business.
+                                            {feature.description}
                                         </p>
 
                                     </div>
 
-                                </div>
-
-
-                                {/* PROCESS AUTOMATION */}
-                                <div className="erp-approach-card">
-
-                                    <div className="erp-approach-icon">
-                                        <i className="bi bi-arrow-repeat"></i>
-                                    </div>
-
-                                    <div>
-
-                                        <h3>
-                                            Process Automation
-                                        </h3>
-
-                                        <p>
-                                            We automate repetitive business
-                                            processes — inventory tracking,
-                                            order management, and financial
-                                            workflows — so your team can
-                                            focus on higher-value work.
-                                        </p>
-
-                                    </div>
-
-                                </div>
+                                ))}
 
                             </div>
 
                         </section>
 
 
-                        {/* =====================================================
-                            OUR EXPERTISE
-                        ===================================================== */}
+                        {/* =================================================
+                            ERP MODULES
+                        ================================================= */}
 
-                        <section className="erp-expertise">
+                        <section className="erp-modules-section">
 
-                            <div className="erp-section-heading">
+                            <div className="erp-section-title">
 
-                                <span className="erp-label">
-                                    OUR EXPERTISE
-                                </span>
+                                <span>ERP MODULES</span>
 
                                 <h2>
-                                    Complete ERP Expertise
+                                    Everything Your Business Needs
                                 </h2>
 
                                 <p>
-                                    Our team helps businesses manage
-                                    operations efficiently through
-                                    integrated ERP solutions and continuous
-                                    support.
+                                    Our ERP platform connects essential
+                                    business functions into one integrated
+                                    system.
                                 </p>
 
                             </div>
 
 
-                            <div className="erp-expertise-list">
+                            <div className="erp-module-grid">
 
-                                {/* IMPLEMENTATION */}
-                                <div className="erp-expertise-item">
+                                {erpModules.map((module, index) => (
 
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                    <div
+                                        className="erp-module-card"
+                                        key={index}
+                                    >
 
-                                    <div>
+                                        <div className="erp-module-top">
 
-                                        <strong>
-                                            Implementation
-                                        </strong>
+                                            <div className="erp-module-icon">
+                                                <i className={module.icon}></i>
+                                            </div>
+
+                                            <span>
+                                                {module.number}
+                                            </span>
+
+                                        </div>
+
+                                        <h3>
+                                            {module.title}
+                                        </h3>
 
                                         <p>
-                                            ERP setup, configuration, and
-                                            module customization
+                                            {module.description}
                                         </p>
+
+                                        {/* <div className="erp-module-arrow">
+                                            <i className="bi bi-arrow-up-right"></i>
+                                        </div> */}
 
                                     </div>
 
-                                </div>
-
-
-                                {/* INVENTORY */}
-                                <div className="erp-expertise-item">
- <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
-
-                                    <div>
-
-                                        <strong>
-                                            Inventory
-                                        </strong>
-
-                                        <p>
-                                            Stock control, supply chain,
-                                            and warehouse management
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-                                {/* FINANCE */}
-                                <div className="erp-expertise-item">
-
-                                   <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
-                                    <div>
-
-                                        <strong>
-                                            Finance
-                                        </strong>
-
-                                        <p>
-                                            Financial reporting, accounting,
-                                            and budgeting modules
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-                                {/* INTEGRATION */}
-                                <div className="erp-expertise-item">
-
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
-
-                                    <div>
-
-                                        <strong>
-                                            Integration
-                                        </strong>
-
-                                        <p>
-                                            Connecting ERP with existing
-                                            tools and third-party systems
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-                                {/* SUPPORT */}
-                                <div className="erp-expertise-item">
-
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
-
-                                    <div>
-
-                                        <strong>
-                                            Support
-                                        </strong>
-
-                                        <p>
-                                            User training, system maintenance,
-                                            and ongoing upgrades
-                                        </p>
-
-                                    </div>
-
-                                </div>
+                                ))}
 
                             </div>
 
                         </section>
 
 
-                        {/* =====================================================
+                        {/* =================================================
+                            ERP BENEFITS
+                        ================================================= */}
+
+                        <section className="erp-benefits-section">
+
+                            <div className="erp-benefits-content">
+
+                                <span>
+                                    BUSINESS BENEFITS
+                                </span>
+
+                                <h2>
+                                    Transform The Way
+                                    <br />
+                                    Your Business Works.
+                                </h2>
+
+                                <p>
+                                    An integrated ERP system reduces
+                                    complexity, improves productivity and
+                                    gives your team better visibility into
+                                    daily business operations.
+                                </p>
+
+                            </div>
+
+
+                            <div className="erp-benefits-list">
+
+                                {benefits.map((benefit, index) => (
+
+                                    <div
+                                        className="erp-benefit-item"
+                                        key={index}
+                                    >
+
+                                        <span className="erp-check">
+                                            <i className="bi bi-check-lg"></i>
+                                        </span>
+
+                                        <span>
+                                            {benefit}
+                                        </span>
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            IMPLEMENTATION
+                        ================================================= */}
+
+                        <section className="erp-process-section">
+
+                            <div className="erp-section-title">
+
+                                <span>OUR PROCESS</span>
+
+                                <h2>
+                                    From Planning To Implementation
+                                </h2>
+
+                                <p>
+                                    We follow a structured approach to
+                                    deliver ERP solutions that fit your
+                                    business workflow.
+                                </p>
+
+                            </div>
+
+
+                            <div className="erp-process-grid">
+
+                                {process.map((item, index) => (
+
+                                    <div
+                                        className="erp-process-card"
+                                        key={index}
+                                    >
+
+                                        <span className="erp-process-number">
+                                            {item.number}
+                                        </span>
+
+                                        <div className="erp-process-line"></div>
+
+                                        <h3>
+                                            {item.title}
+                                        </h3>
+
+                                        <p>
+                                            {item.description}
+                                        </p>
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        </section>
+
+
+                        {/* =================================================
+                            CTA
+                        ================================================= */}
+
+                        <section className="erp-cta-section">
+
+                            <div>
+
+                                <span>
+                                    READY TO GO DIGITAL?
+                                </span>
+
+                                <h2>
+                                    Bring Your Business
+                                    <br />
+                                    Together With ERP.
+                                </h2>
+
+                                <p>
+                                    Connect your teams, processes and
+                                    business data with one powerful ERP
+                                    platform.
+                                </p>
+
+                            </div>
+
+                            <Link
+                                to="/contact-us"
+                                className="erp-cta-button"
+                            >
+                                Talk To Our Experts
+                                <i className="bi bi-arrow-right"></i>
+                            </Link>
+
+                        </section>
+
+
+                        {/* =================================================
                             RELATED SERVICES
-                        ===================================================== */}
+                        ================================================= */}
 
-                        <section className="erp-related-services">
+                        <section className="erp-related-section">
 
-                            <div className="erp-section-heading">
+                            <div className="erp-section-title">
 
-                                <span className="erp-label">
-                                    EXPLORE MORE
-                                </span>
+                                <span>EXPLORE MORE</span>
 
                                 <h2>
                                     Related Services
@@ -467,32 +493,23 @@ const ServiceERP = () => {
 
                             <div className="erp-related-grid">
 
-                                {/* SOFTWARE DEVELOPMENT */}
                                 <div className="erp-related-card">
 
                                     <div className="erp-related-icon">
-
-                                        <img
-                                            src="/assets/img/icons/service-page-icon1.png"
-                                            alt="Software Development"
-                                        />
-
+                                        <i className="bi bi-code-slash"></i>
                                     </div>
 
-
-                                    <div className="erp-related-content">
+                                    <div>
 
                                         <h3>
-                                            <Link to="/service/service-details">
+                                            <Link to="/Software-Development">
                                                 Software Development
                                             </Link>
                                         </h3>
 
                                         <p>
                                             Custom software solutions
-                                            tailored to your business needs,
-                                            from web apps to enterprise
-                                            systems.
+                                            designed around your business.
                                         </p>
 
                                         <Link
@@ -508,35 +525,27 @@ const ServiceERP = () => {
                                 </div>
 
 
-                                {/* TRADING */}
                                 <div className="erp-related-card">
 
                                     <div className="erp-related-icon">
-
-                                        <img
-                                            src="/assets/img/icons/service-page-icon2.png"
-                                            alt="Trading"
-                                        />
-
+                                        <i className="bi bi-diagram-3"></i>
                                     </div>
 
-
-                                    <div className="erp-related-content">
+                                    <div>
 
                                         <h3>
-                                            <Link to="/service/service-trading">
-                                                Trading
+                                            <Link to="/IT-Networking">
+                                                IT Networking
                                             </Link>
                                         </h3>
 
                                         <p>
-                                            Smart trading solutions that
-                                            simplify operations and support
-                                            better business decisions.
+                                            Secure networking infrastructure
+                                            for connected businesses.
                                         </p>
 
                                         <Link
-                                            to="/Trading"
+                                            to="/IT-Networking"
                                             className="erp-related-link"
                                         >
                                             Explore Service
@@ -552,86 +561,83 @@ const ServiceERP = () => {
                         </section>
 
 
-                        {/* =====================================================
-                            FAQ
-                        ===================================================== */}
-
-                        <section className="service-common-faq">
-
-                            {/* FAQ TITLE */}
-
-                            <div className="faq-title-area">
-
-                                <h2>
-                                    Frequently Asked Question
-                                </h2>
-
+                          {/* =====================================================
+                              FAQ
+                          ===================================================== */}
+                          <section className="trading-faq-section">
+              
+                            <div className="trading-section-heading">
+              
+                              <span className="trading-small-label">
+                                FAQ
+                              </span>
+              
+                              <h2>
+                                Frequently Asked
+                                <span> Questions</span>
+                              </h2>
+              
+                              <p>
+                                Find answers to common questions about our IT trading
+                                and technology supply services.
+                              </p>
+              
                             </div>
-
-
-                            {/* FAQ LIST */}
-
-                            <div className="service-faq-list">
-
-                                {faqData.map((item, index) => (
-
-                                    <div
-                                        key={index}
-                                        className={`service-faq-item ${
-                                            openItemIndex === index
-                                                ? "active"
-                                                : ""
+              
+              
+                            <div className="trading-faq-list">
+              
+                              {data.slice(0, 4).map((item, index) => (
+              
+                                <div
+                                  key={index}
+                                  className={`trading-faq-item ${
+                                    openItemIndex === index ? "active" : ""
+                                  }`}
+                                >
+              
+                                  <button
+                                    type="button"
+                                    className="trading-faq-question"
+                                    onClick={() => handleItemClick(index)}
+                                  >
+              
+                                    <span className="faq-count">
+                                      {String(index + 1).padStart(2, "0")}
+                                    </span>
+              
+                                    <span className="faq-question-text">
+                                      {item.title}
+                                    </span>
+              
+                                    <span className="faq-toggle">
+                                      <i
+                                        className={`bi ${
+                                          openItemIndex === index
+                                            ? "bi-dash"
+                                            : "bi-plus"
                                         }`}
-                                    >
-
-                                        <button
-                                            type="button"
-                                            className="service-faq-question"
-                                            onClick={() =>
-                                                handleItemClick(index)
-                                            }
-                                        >
-
-                                            <span>
-                                                {item.title}
-                                            </span>
-
-                                            <span className="service-faq-icon">
-
-                                                <i
-                                                    className={`bi ${
-                                                        openItemIndex === index
-                                                            ? "bi-chevron-up"
-                                                            : "bi-chevron-up"
-                                                    }`}
-                                                ></i>
-
-                                            </span>
-
-                                        </button>
-
-
-                                        {/* ANSWER */}
-
-                                        {openItemIndex === index && (
-
-                                            <div className="service-faq-answer">
-
-                                                <p>
-                                                    {item.desc}
-                                                </p>
-
-                                            </div>
-
-                                        )}
-
+                                      ></i>
+                                    </span>
+              
+                                  </button>
+              
+              
+                                  {openItemIndex === index && (
+              
+                                    <div className="trading-faq-answer">
+                                      <p>{item.desc}</p>
                                     </div>
-
-                                ))}
-
+              
+                                  )}
+              
+                                </div>
+              
+                              ))}
+              
                             </div>
-
-                        </section>
+              
+                          </section>
 
                     </div>
 
@@ -643,4 +649,4 @@ const ServiceERP = () => {
     );
 };
 
-export default ServiceERP;
+export default ServiceDetailsCenterERP;
