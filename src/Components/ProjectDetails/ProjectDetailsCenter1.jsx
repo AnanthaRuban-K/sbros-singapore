@@ -5,7 +5,7 @@ const ProjectDetailsCenter1 = () => {
   const [activeVideo, setActiveVideo] = useState(null);
 
   // =====================================================
-  // ERP MODULES
+  // ERP MODULES - 5 MODULES
   // =====================================================
   const modules = [
     // =====================================================
@@ -24,10 +24,7 @@ const ProjectDetailsCenter1 = () => {
         "Salary Structures",
       ],
       video: "/assets/img/Video1.mp4",
-
-      // HRM Thumbnail
       thumbnail: "/assets/img/thumb/image.png",
-
       tag: "PEOPLE",
     },
 
@@ -47,10 +44,7 @@ const ProjectDetailsCenter1 = () => {
         "Follow-ups",
       ],
       video: "/assets/img/Video2.mp4",
-
-      // CRM Thumbnail
       thumbnail: "/assets/img/thumb/crm.png",
-
       tag: "CUSTOMERS",
     },
 
@@ -70,10 +64,7 @@ const ProjectDetailsCenter1 = () => {
         "Financial Reports",
       ],
       video: "/assets/img/Video3.mp4",
-
-      // Finance Thumbnail
       thumbnail: "/assets/img/thumb/finance.png",
-
       tag: "FINANCE",
     },
 
@@ -93,80 +84,28 @@ const ProjectDetailsCenter1 = () => {
         "Purchase Orders",
       ],
       video: "/assets/videos/procurement.mp4",
-
-      // Procurement Thumbnail
       thumbnail: "/assets/img/thumb/procurement.png",
-
       tag: "PURCHASING",
     },
 
     // =====================================================
-    // 05 - PRODUCT SALES
+    // 05 - SALES
     // =====================================================
     {
       number: "05",
       icon: "bi bi-bag-check-fill",
-      title: "Product Sales",
-      shortTitle: "PRODUCT SALES",
-      text: "Manage your complete product sales journey from products and customers to orders and reports.",
+      title: "Sales",
+      shortTitle: "SALES",
+      text: "Manage products, services, quotations, sales orders and customers through one connected sales platform.",
       features: [
-        "Product Management",
+        "Product & Service Management",
+        "Quotation Management",
         "Sales Orders",
         "Customer Management",
-        "Sales Reports",
       ],
-      video: "/assets/videos/product-sales.mp4",
-
-      // Product Sales Thumbnail
-      thumbnail: "/assets/img/thumb/product-sales.png",
-
+      video: "/assets/videos/sales.mp4",
+      thumbnail: "/assets/img/thumb/sales.png",
       tag: "SALES",
-    },
-
-    // =====================================================
-    // 06 - SERVICES SALES
-    // =====================================================
-    {
-      number: "06",
-      icon: "bi bi-briefcase-fill",
-      title: "Services Sales",
-      shortTitle: "SERVICES SALES",
-      text: "Manage service-based businesses with streamlined quotations, orders and customer operations.",
-      features: [
-        "Service Management",
-        "Service Quotations",
-        "Service Orders",
-        "Sales Tracking",
-      ],
-      video: "/assets/videos/services-sales.mp4",
-
-      // Services Sales Thumbnail
-      thumbnail: "/assets/img/thumb/services-sales.png",
-
-      tag: "SERVICES",
-    },
-
-    // =====================================================
-    // 07 - RECRUITMENT
-    // =====================================================
-    {
-      number: "07",
-      icon: "bi bi-person-plus-fill",
-      title: "Recruitment",
-      shortTitle: "RECRUITMENT",
-      text: "Find the right talent faster by managing jobs, candidates and interviews from one place.",
-      features: [
-        "Job Openings",
-        "Candidate Management",
-        "Interview Scheduling",
-        "Recruitment Tracking",
-      ],
-      video: "/assets/videos/recruitment.mp4",
-
-      // Recruitment Thumbnail
-      thumbnail: "/assets/img/thumb/recruitment.png",
-
-      tag: "TALENT",
     },
   ];
 
@@ -174,7 +113,7 @@ const ProjectDetailsCenter1 = () => {
     <div className="erp-modern-page">
 
       {/* =====================================================
-          MODULE SHOWCASE
+          CONNECTED ERP
       ====================================================== */}
       <section className="erp-connected">
 
@@ -192,9 +131,7 @@ const ProjectDetailsCenter1 = () => {
             <h2>
               Different Modules.
               <br />
-              <span>
-                One Connected Business.
-              </span>
+              <span>One Connected Business.</span>
             </h2>
 
             <p>
@@ -206,15 +143,16 @@ const ProjectDetailsCenter1 = () => {
           </div>
 
 
-          {/* ================= ORBIT ================= */}
+          {/* ================= NEURAL ORBIT ================= */}
           <div className="erp-neural-orbit">
 
+            {/* RINGS */}
             <div className="neural-ring neural-ring-outer"></div>
             <div className="neural-ring neural-ring-middle"></div>
             <div className="neural-ring neural-ring-inner"></div>
 
 
-            {/* ================= NEURAL LINES ================= */}
+            {/* ================= CONNECTION LINES ================= */}
             <div className="neural-lines">
 
               <span className="neural-line line-1"></span>
@@ -222,8 +160,6 @@ const ProjectDetailsCenter1 = () => {
               <span className="neural-line line-3"></span>
               <span className="neural-line line-4"></span>
               <span className="neural-line line-5"></span>
-              <span className="neural-line line-6"></span>
-              <span className="neural-line line-7"></span>
 
             </div>
 
@@ -236,9 +172,7 @@ const ProjectDetailsCenter1 = () => {
             <span className="neural-particle particle-5"></span>
 
 
-            {/* =================================================
-                ERP CORE
-            ================================================== */}
+            {/* ================= ERP CORE ================= */}
             <div className="erp-neural-core">
 
               <div className="core-wave wave-one"></div>
@@ -262,7 +196,7 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-                MODULE 01 - HRM
+                01 - HRM
             ================================================== */}
             <div className="neural-module neural-1">
 
@@ -283,7 +217,7 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-                MODULE 02 - CRM
+                02 - CRM
             ================================================== */}
             <div className="neural-module neural-2">
 
@@ -304,14 +238,14 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-                MODULE 03 - FINANCE
+                03 - FINANCE
             ================================================== */}
             <div className="neural-module neural-3">
 
               <div className="neural-module-card">
 
                 <div className="neural-icon">
-                  <i className="bi bi-cart-check-fill"></i>
+                  <i className="bi bi-wallet-fill"></i>
                 </div>
 
                 <div>
@@ -325,14 +259,14 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-                MODULE 04 - PROCUREMENT
+                04 - PROCUREMENT
             ================================================== */}
             <div className="neural-module neural-4">
 
               <div className="neural-module-card">
 
                 <div className="neural-icon">
-                  <i className="bi bi-wallet-fill"></i>
+                  <i className="bi bi-cart-check-fill"></i>
                 </div>
 
                 <div>
@@ -346,30 +280,9 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-                MODULE 05 - PRODUCT SALES
+                05 - SALES
             ================================================== */}
             <div className="neural-module neural-5">
-
-              <div className="neural-module-card">
-
-                <div className="neural-icon">
-                  <i className="bi bi-person-plus-fill"></i>
-                </div>
-
-                <div>
-                  <small>05</small>
-                  <span>Product</span>
-                </div>
-
-              </div>
-
-            </div>
-
-
-            {/* =================================================
-                MODULE 06 - SERVICES SALES
-            ================================================== */}
-            <div className="neural-module neural-6">
 
               <div className="neural-module-card">
 
@@ -378,29 +291,8 @@ const ProjectDetailsCenter1 = () => {
                 </div>
 
                 <div>
-                  <small>06</small>
-                  <span>Services</span>
-                </div>
-
-              </div>
-
-            </div>
-
-
-            {/* =================================================
-                MODULE 07 - RECRUITMENT
-            ================================================== */}
-            <div className="neural-module neural-7">
-
-              <div className="neural-module-card">
-
-                <div className="neural-icon">
-                  <i className="bi bi-briefcase-fill"></i>
-                </div>
-
-                <div>
-                  <small>07</small>
-                  <span>Recruitment</span>
+                  <small>05</small>
+                  <span>Sales</span>
                 </div>
 
               </div>
@@ -419,7 +311,6 @@ const ProjectDetailsCenter1 = () => {
       ====================================================== */}
       <section className="erp-showcase">
 
-        {/* ================= SHOWCASE HEADING ================= */}
         <div className="erp-showcase-heading">
 
           <div>
@@ -439,9 +330,7 @@ const ProjectDetailsCenter1 = () => {
         </div>
 
 
-        {/* =====================================================
-            MODULE GRID
-        ====================================================== */}
+        {/* ================= MODULE GRID ================= */}
         <div className="erp-creative-grid">
 
           {modules.map((module, index) => (
@@ -451,9 +340,7 @@ const ProjectDetailsCenter1 = () => {
               key={index}
             >
 
-              {/* =================================================
-                  CARD HEADER
-              ================================================== */}
+              {/* ================= CARD HEADER ================= */}
               <div className="erp-module-top">
 
                 <div className="erp-module-number">
@@ -471,14 +358,7 @@ const ProjectDetailsCenter1 = () => {
               </div>
 
 
-              {/* =================================================
-                  VIDEO THUMBNAIL
-
-                  IMPORTANT:
-                  Video will NOT autoplay here.
-                  Only thumbnail image is shown.
-                  Click = open actual video.
-              ================================================== */}
+              {/* ================= VIDEO ================= */}
               <div
                 className="erp-module-media"
                 role="button"
@@ -497,21 +377,14 @@ const ProjectDetailsCenter1 = () => {
                 }}
               >
 
-                {/* =================================================
-                    INDIVIDUAL THUMBNAIL
-                ================================================== */}
                 <img
                   src={module.thumbnail}
                   alt={`${module.title} video thumbnail`}
                   className="erp-module-thumbnail"
                 />
 
-
-                {/* ================= GRADIENT ================= */}
                 <div className="erp-media-gradient"></div>
 
-
-                {/* ================= PLAY LABEL ================= */}
                 <div className="erp-media-label">
 
                   <i className="bi bi-play-fill"></i>
@@ -522,10 +395,6 @@ const ProjectDetailsCenter1 = () => {
 
                 </div>
 
-
-                {/* =================================================
-                    CORNER OPEN BUTTON
-                ================================================== */}
                 <div
                   className="erp-video-corner"
                   onClick={(e) => {
@@ -537,16 +406,14 @@ const ProjectDetailsCenter1 = () => {
                   }}
                 >
 
-                  <i className="bi bi-arrow-up-right"></i>
+                  {/* <i className="bi bi-arrow-up-right"></i> */}
 
                 </div>
 
               </div>
 
 
-              {/* =================================================
-                  CARD CONTENT
-              ================================================== */}
+              {/* ================= CARD BODY ================= */}
               <div className="erp-module-body">
 
                 <h3>
@@ -558,9 +425,7 @@ const ProjectDetailsCenter1 = () => {
                 </p>
 
 
-                {/* =================================================
-                    FEATURES
-                ================================================== */}
+                {/* ================= FEATURES ================= */}
                 <div className="erp-feature-list">
 
                   {module.features.map(
@@ -585,9 +450,7 @@ const ProjectDetailsCenter1 = () => {
                 </div>
 
 
-                {/* =================================================
-                    EXPLORE BUTTON
-                ================================================== */}
+                {/* ================= BUTTON ================= */}
                 <Link
                   to="/pricing"
                   className="erp-explore-btn"
@@ -598,9 +461,7 @@ const ProjectDetailsCenter1 = () => {
                   </span>
 
                   <div className="erp-btn-icon">
-
                     <i className="bi bi-arrow-up-right"></i>
-
                   </div>
 
                 </Link>
@@ -631,7 +492,6 @@ const ProjectDetailsCenter1 = () => {
             onClick={(e) => e.stopPropagation()}
           >
 
-            {/* ================= CLOSE BUTTON ================= */}
             <button
               className="erp-video-modal-close"
               onClick={() => setActiveVideo(null)}
@@ -642,11 +502,6 @@ const ProjectDetailsCenter1 = () => {
 
             </button>
 
-
-            {/* =================================================
-                ACTUAL VIDEO
-                This video plays ONLY after thumbnail click.
-            ================================================== */}
             <video
               src={activeVideo}
               autoPlay

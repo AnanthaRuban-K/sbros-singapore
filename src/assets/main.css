@@ -7442,7 +7442,7 @@ a.header__search.header-search-btn p {
 .hero_main_area1 .hero1 {
     /* height: auto !important; */
     min-height: 0 ;
-    padding-bottom: 40px ;
+    /* padding-bottom: 40px ; */
 }
 
 .hero_main_area1 .main-headding {
@@ -55954,6 +55954,13 @@ body,
 
 }
 
+
+
+
+
+
+
+
 /* =========================================================
    ERP MODERN PAGE
 ========================================================= */
@@ -55967,510 +55974,40 @@ body,
 
 
 /* =========================================================
-   SHOWCASE SECTION
-========================================================= */
-
-.erp-showcase {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 90px 30px 100px;
-}
-
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
-.erp-showcase-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 50px;
-  margin-bottom: 55px;
-}
-
-.erp-showcase-heading > div > span {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: #2563eb;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.erp-showcase-heading h2 {
-  margin: 0;
-  color: #111827;
-  font-size: 58px;
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -2.5px;
-}
-
-.erp-showcase-heading h2 em {
-  color: #667085;
-  font-style: normal;
-  font-weight: 500;
-}
-
-.erp-showcase-heading > p {
-  max-width: 410px;
-  margin: 0;
-  color: #667085;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   GRID
-========================================================= */
-
-.erp-creative-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
-  align-items: stretch;
-}
-
-
-/* =========================================================
-   CARD
-========================================================= */
-
-.erp-creative-module {
-  width: 100%;
-  height: 680px;
-  min-height: 680px;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 24px;
-
-  box-sizing: border-box;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-.erp-creative-module:hover {
-  transform: translateY(-8px);
-
-  border-color: #dbe5f5;
-
-  box-shadow:
-    0 25px 60px rgba(15, 23, 42, 0.1);
-}
-
-
-/* =========================================================
-   CARD HEADER
-========================================================= */
-
-.erp-module-top {
-  flex: 0 0 82px;
-  height: 82px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
-
-  padding: 18px 22px;
-
-  box-sizing: border-box;
-}
-
-
-/* NUMBER */
-
-.erp-module-number {
-  width: 30px;
-
-  color: #98a2b3;
-
-  font-size: 13px;
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   ICON
-========================================================= */
-
-.erp-module-icon {
-  width: 45px;
-  height: 45px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  border-radius: 13px;
-
-  background: #eff6ff;
-  color: #2563eb;
-
-  font-size: 18px;
-}
-
-
-/* TAG */
-
-.erp-module-tag {
-  margin-left: auto;
-
-  color: #98a2b3;
-
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.4px;
-}
-
-
-/* =========================================================
-   VIDEO
-========================================================= */
-
-.erp-module-media {
-  position: relative;
-
-  flex: 0 0 275px;
-  height: 275px;
-
-  margin: 0 10px;
-
-  overflow: hidden;
-
-  border-radius: 18px;
-
-  background: #111827;
-}
-
-.erp-module-media video {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: transform 0.7s ease;
-}
-
-.erp-creative-module:hover .erp-module-media video {
-  transform: scale(1.06);
-}
-
-
-/* =========================================================
-   VIDEO OVERLAY
-========================================================= */
-
-.erp-media-gradient {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.02) 20%,
-      rgba(0, 0, 0, 0.45) 100%
-    );
-
-  pointer-events: none;
-}
-
-
-/* VIDEO LABEL */
-
-.erp-media-label {
-  position: absolute;
-
-  left: 17px;
-  bottom: 16px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 8px 13px;
-
-  border-radius: 50px;
-
-  color: #ffffff;
-  background: rgba(15, 23, 42, 0.6);
-
-  backdrop-filter: blur(10px);
-
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.erp-media-label i {
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   VIDEO CORNER BUTTON
-========================================================= */
-
-.erp-video-corner {
-  /* position: absolute; */
-
-  right: 16px;
-  bottom: 16px;
-
-  width: 40px;
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #ffffff;
-  color: #172033;
-
-  transition: transform 0.3s ease;
-}
-
-.erp-creative-module:hover .erp-video-corner {
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   CARD BODY
-========================================================= */
-
-.erp-module-body {
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-
-  min-height: 0;
-
-  padding: 23px 24px 22px;
-
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   TITLE
-========================================================= */
-
-.erp-module-body h3 {
-  min-height: 58px;
-
-  margin: 0 0 10px;
-
-  display: flex;
-  align-items: flex-start;
-
-  color: #172033;
-
-  font-size: 23px;
-  font-weight: 750;
-  line-height: 1.25;
-
-  letter-spacing: -0.5px;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.erp-module-body > p {
-  height: 58px;
-  min-height: 58px;
-
-  margin: 0 0 15px;
-
-  overflow: hidden;
-
-  color: #667085;
-
-  font-size: 13px;
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   FEATURES
-========================================================= */
-
-.erp-feature-list {
-  min-height: 76px;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-
-  gap: 7px;
-}
-
-.erp-feature-pill {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 6px;
-
-  padding: 7px 9px;
-
-  border: 1px solid #eef0f3;
-  border-radius: 7px;
-
-  background: #f8fafc;
-
-  color: #475467;
-
-  font-size: 10px;
-  font-weight: 600;
-
-  white-space: nowrap;
-}
-
-.erp-feature-pill i {
-  color: #2563eb;
-  font-size: 11px;
-}
-
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
-.erp-explore-btn {
-  width: 200px;
-  height: 48px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-top: auto;
-
-  padding: 5px 5px 5px 17px;
-
-  box-sizing: border-box;
-
-  border-radius: 50px;
-
-  background: #172033;
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.erp-explore-btn:hover {
-  color: #ffffff;
-
-  background: #2563eb;
-
-  transform: translateY(-2px);
-}
-
-
-/* BUTTON ICON */
-
-.erp-btn-icon {
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background: #ffffff;
-  color: #172033;
-
-  transition: transform 0.3s ease;
-}
-
-.erp-explore-btn:hover .erp-btn-icon {
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
    CONNECTED ERP
 ========================================================= */
 
 .erp-connected {
   position: relative;
-
   width: 100%;
-
   padding: 110px 30px;
-
   overflow: hidden;
-
   background: #111827;
   color: #ffffff;
 }
 
 .erp-connected-glow {
   position: absolute;
-
   width: 600px;
   height: 600px;
-
   right: -200px;
   top: -250px;
-
   border-radius: 50%;
-
   background: rgba(37, 99, 235, 0.13);
-
   filter: blur(100px);
-
   pointer-events: none;
 }
 
 .erp-connected-inner {
   position: relative;
-
   z-index: 2;
-
   max-width: 1250px;
-
   margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: 0.9fr 1.1fr;
 
   align-items: center;
-
   gap: 80px;
 }
 
@@ -56481,23 +56018,18 @@ body,
 
 .erp-connected-label {
   color: #60a5fa;
-
   font-size: 10px;
   font-weight: 800;
-
   letter-spacing: 2px;
 }
 
 .erp-connected-copy h2 {
   margin: 18px 0;
-
   color: #ffffff;
 
   font-size: 55px;
   font-weight: 800;
-
   line-height: 1.05;
-
   letter-spacing: -2px;
 }
 
@@ -56507,7 +56039,6 @@ body,
 
 .erp-connected-copy p {
   max-width: 500px;
-
   margin: 0;
 
   color: #98a2b3;
@@ -56518,292 +56049,7 @@ body,
 
 
 /* =========================================================
-   MAIN CTA
-========================================================= */
-
-.erp-main-cta {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 14px;
-
-  margin-top: 26px;
-
-  padding: 6px 7px 6px 20px;
-
-  border-radius: 50px;
-
-  background: #ffffff;
-  color: #172033;
-
-  text-decoration: none;
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.erp-main-cta:hover {
-  color: #172033;
-}
-
-.erp-main-cta i {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #2563eb;
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   OLD ORBIT - OPTIONAL
-========================================================= */
-
-.erp-connected-orbit {
-  position: relative;
-
-  width: 500px;
-  height: 500px;
-
-  margin: 0 auto;
-
-  border: 1px dashed rgba(255, 255, 255, 0.13);
-
-  border-radius: 50%;
-}
-
-.erp-connected-orbit::before,
-.erp-connected-orbit::after {
-  content: "";
-
-  position: absolute;
-
-  border: 1px dashed rgba(255, 255, 255, 0.09);
-
-  border-radius: 50%;
-}
-
-.erp-connected-orbit::before {
-  inset: 65px;
-}
-
-.erp-connected-orbit::after {
-  inset: 135px;
-}
-
-
-/* =========================================================
-   OLD ORBIT CENTER
-========================================================= */
-
-.erp-orbit-center {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  width: 125px;
-  height: 125px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-direction: column;
-
-  border-radius: 50%;
-
-  background: #2563eb;
-
-  box-shadow:
-    0 0 70px rgba(37, 99, 235, 0.35);
-}
-
-.erp-orbit-center span {
-  font-size: 32px;
-  font-weight: 900;
-}
-
-.erp-orbit-center small {
-  margin-top: 2px;
-
-  color: rgba(255, 255, 255, 0.75);
-
-  font-size: 7px;
-
-  letter-spacing: 1.2px;
-}
-
-
-/* =========================================================
-   OLD ORBIT ITEMS
-========================================================= */
-
-.erp-orbit-item {
-  position: absolute;
-
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-
-  padding: 9px 12px;
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  border-radius: 50px;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  backdrop-filter: blur(10px);
-
-  color: #e5e7eb;
-
-  font-size: 9px;
-  font-weight: 700;
-
-  white-space: nowrap;
-}
-
-.erp-orbit-item i {
-  color: #60a5fa;
-}
-
-.orbit-1 {
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.orbit-2 {
-  top: 95px;
-  right: -25px;
-}
-
-.orbit-3 {
-  right: -35px;
-  bottom: 95px;
-}
-
-.orbit-4 {
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.orbit-5 {
-  left: -35px;
-  bottom: 95px;
-}
-
-.orbit-6 {
-  left: -25px;
-  top: 95px;
-}
-
-.orbit-7 {
-  right: -45px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-
-/* =========================================================
-   FINAL CTA
-========================================================= */
-
-.erp-final-cta {
-  padding: 110px 20px;
-
-  text-align: center;
-
-  background: #ffffff;
-}
-
-.erp-final-cta > span {
-  color: #2563eb;
-
-  font-size: 10px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
-}
-
-.erp-final-cta h2 {
-  margin: 18px 0;
-
-  color: #111827;
-
-  font-size: 62px;
-  font-weight: 800;
-
-  line-height: 1;
-
-  letter-spacing: -2.5px;
-}
-
-.erp-final-cta h2 strong {
-  color: #2563eb;
-  font-weight: 800;
-}
-
-.erp-final-cta p {
-  max-width: 550px;
-
-  margin: 0 auto 30px;
-
-  color: #667085;
-
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.erp-final-button {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 14px 18px 14px 23px;
-
-  border-radius: 50px;
-
-  background: #172033;
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  transition: 0.3s ease;
-}
-
-.erp-final-button:hover {
-  color: #ffffff;
-
-  background: #2563eb;
-
-  transform: translateY(-3px);
-}
-
-.erp-final-button i {
-  font-size: 15px;
-}
-
-
-/* =========================================================
-   CREATIVE ERP NEURAL ORBIT
+   NEURAL ORBIT
 ========================================================= */
 
 .erp-neural-orbit {
@@ -56828,7 +56074,6 @@ body,
   content: "";
 
   position: absolute;
-
   inset: 35px;
 
   border-radius: 50%;
@@ -56870,21 +56115,14 @@ body,
 
 .neural-ring {
   position: absolute;
-
   border-radius: 50%;
-
   pointer-events: none;
 }
-
-
-/* OUTER */
 
 .neural-ring-outer {
   inset: 20px;
 
-  border:
-    1px solid
-    rgba(96, 165, 250, 0.13);
+  border: 1px solid rgba(96, 165, 250, 0.13);
 
   animation:
     neuralRotate
@@ -56893,15 +56131,10 @@ body,
     infinite;
 }
 
-
-/* MIDDLE */
-
 .neural-ring-middle {
   inset: 75px;
 
-  border:
-    1px dashed
-    rgba(96, 165, 250, 0.14);
+  border: 1px dashed rgba(96, 165, 250, 0.14);
 
   animation:
     neuralRotateReverse
@@ -56910,15 +56143,10 @@ body,
     infinite;
 }
 
-
-/* INNER */
-
 .neural-ring-inner {
   inset: 135px;
 
-  border:
-    1px solid
-    rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.08);
 
   animation:
     neuralRotate
@@ -56926,7 +56154,6 @@ body,
     linear
     infinite;
 }
-
 
 @keyframes neuralRotate {
   from {
@@ -56951,22 +56178,15 @@ body,
 
 /* =========================================================
    CONNECTION SYSTEM
+   5 MODULES
 ========================================================= */
 
 .neural-lines {
   position: absolute;
-
   inset: 0;
-
   z-index: 2;
-
   pointer-events: none;
 }
-
-
-/* =========================================================
-   CONNECTION LINE
-========================================================= */
 
 .neural-line {
   position: absolute;
@@ -56988,66 +56208,43 @@ body,
 }
 
 
-/* HRM */
+/* HRM - TOP */
 
 .line-1 {
   width: 205px;
-
   transform: rotate(-90deg);
 }
 
 
-/* CRM */
+/* CRM - TOP RIGHT */
 
 .line-2 {
   width: 220px;
-
-  transform: rotate(-38deg);
+  transform: rotate(-35deg);
 }
 
 
-/* PROCUREMENT */
+/* FINANCE - BOTTOM RIGHT */
 
 .line-3 {
   width: 220px;
-
-  transform: rotate(38deg);
+  transform: rotate(35deg);
 }
 
 
-/* FINANCE */
+/* PROCUREMENT - BOTTOM LEFT */
 
 .line-4 {
-  width: 205px;
-
-  transform: rotate(90deg);
+  width: 220px;
+  transform: rotate(145deg);
 }
 
 
-/* RECRUITMENT */
+/* SALES - TOP LEFT */
 
 .line-5 {
   width: 220px;
-
-  transform: rotate(142deg);
-}
-
-
-/* PRODUCT SALES */
-
-.line-6 {
-  width: 220px;
-
-  transform: rotate(218deg);
-}
-
-
-/* SERVICES - BOTTOM RIGHT */
-
-.line-7 {
-  width: 205px;
-
-  transform: rotate(55deg);
+  transform: rotate(215deg);
 }
 
 
@@ -57097,15 +56294,6 @@ body,
   animation-delay: 1.6s;
 }
 
-.line-6::after {
-  animation-delay: 2s;
-}
-
-.line-7::after {
-  animation-delay: 2.4s;
-}
-
-
 @keyframes neuralDataFlow {
   from {
     left: 0;
@@ -57142,8 +56330,7 @@ body,
   width: 145px;
   height: 145px;
 
-  transform:
-    translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
@@ -57159,9 +56346,7 @@ body,
       #1d4ed8 75%
     );
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 
   box-shadow:
     0 0 0 10px rgba(37, 99, 235, 0.06),
@@ -57174,7 +56359,6 @@ body,
     ease-in-out
     infinite;
 }
-
 
 @keyframes corePulse {
   0%,
@@ -57195,16 +56379,14 @@ body,
 
 
 /* =========================================================
-   CENTER CONTENT
+   CORE CONTENT
 ========================================================= */
 
 .core-content {
   position: relative;
-
   z-index: 5;
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
@@ -57215,9 +56397,7 @@ body,
   color: rgba(255, 255, 255, 0.65);
 
   font-size: 7px;
-
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
@@ -57227,11 +56407,9 @@ body,
   color: #ffffff;
 
   font-size: 38px;
-
   font-weight: 900;
 
   letter-spacing: -2px;
-
   line-height: 1;
 }
 
@@ -57239,7 +56417,6 @@ body,
   color: rgba(255, 255, 255, 0.75);
 
   font-size: 6px;
-
   font-weight: 700;
 
   letter-spacing: 1.5px;
@@ -57247,19 +56424,16 @@ body,
 
 
 /* =========================================================
-   CORE RADAR WAVES
+   CORE WAVES
 ========================================================= */
 
 .core-wave {
   position: absolute;
-
   inset: 0;
 
   border-radius: 50%;
 
-  border:
-    1px solid
-    rgba(96, 165, 250, 0.5);
+  border: 1px solid rgba(96, 165, 250, 0.5);
 
   animation:
     coreWave
@@ -57271,7 +56445,6 @@ body,
 .wave-two {
   animation-delay: 1.5s;
 }
-
 
 @keyframes coreWave {
   0% {
@@ -57287,50 +56460,16 @@ body,
 
 
 /* =========================================================
-   MODULE BASE
+   MODULE
 ========================================================= */
 
 .neural-module {
   position: absolute;
-
   z-index: 30;
 }
 
-
-/* IMPORTANT:
-   Animation is on CARD instead of MODULE.
-   This prevents transform conflict with
-   translateX(-50%) positioning.
-*/
-
-.neural-module-card {
-  animation:
-    moduleFloat
-    4s
-    ease-in-out
-    infinite;
-}
-
-
-@keyframes moduleFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-
-/* =========================================================
-   MODULE CARD
-========================================================= */
-
 .neural-module-card {
   display: flex;
-
   align-items: center;
 
   gap: 10px;
@@ -57341,9 +56480,7 @@ body,
 
   border-radius: 16px;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   background:
     linear-gradient(
@@ -57353,11 +56490,16 @@ body,
     );
 
   backdrop-filter: blur(15px);
-
   -webkit-backdrop-filter: blur(15px);
 
   box-shadow:
     0 12px 35px rgba(0, 0, 0, 0.25);
+
+  animation:
+    moduleFloat
+    4s
+    ease-in-out
+    infinite;
 
   transition:
     transform 0.35s ease,
@@ -57365,11 +56507,6 @@ body,
     background 0.35s ease,
     box-shadow 0.35s ease;
 }
-
-
-/* =========================================================
-   MODULE HOVER
-========================================================= */
 
 .neural-module-card:hover {
   transform:
@@ -57389,6 +56526,17 @@ body,
   box-shadow:
     0 0 35px
     rgba(37, 99, 235, 0.35);
+}
+
+@keyframes moduleFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -8px;
+  }
 }
 
 
@@ -57430,7 +56578,6 @@ body,
     rgba(255, 255, 255, 0.35);
 
   font-size: 7px;
-
   font-weight: 700;
 
   letter-spacing: 1px;
@@ -57442,7 +56589,6 @@ body,
   color: #ffffff;
 
   font-size: 10px;
-
   font-weight: 700;
 
   white-space: nowrap;
@@ -57450,61 +56596,46 @@ body,
 
 
 /* =========================================================
-   MODULE POSITIONS - DESKTOP
-========================================================= */
-/* =========================================================
-   MODULE POSITIONS - DESKTOP
+   5 MODULE POSITIONS - DESKTOP
 ========================================================= */
 
-/* 01 HRM - TOP CENTER */
+/* 01 - HRM */
 .neural-1 {
   top: 35px;
   left: 50%;
+
   transform: translateX(-50%);
 }
 
 
-/* 02 CRM - TOP RIGHT */
+/* 02 - CRM */
 .neural-2 {
-  top: 105px;
-  right: 10px;
+  top: 185px;
+  right: 5px;
 }
 
 
-/* 03 FINANCE - RIGHT CENTER */
+/* 03 - FINANCE */
 .neural-3 {
-  top: 275px;
-  right: -5px;
+  bottom: 95px;
+  right: 25px;
 }
 
 
-/* 04 PROCUREMENT - BOTTOM CENTER */
+/* 04 - PROCUREMENT */
 .neural-4 {
-  bottom: 70px;
-  left: 80%;
-  transform: translateX(-50%);
+  bottom: 95px;
+  left: 25px;
 }
 
 
-/* 05 PRODUCT SALES - LOWER LEFT */
+/* 05 - SALES */
 .neural-5 {
-  top: 475px;
-  left: 50px;
+  top: 185px;
+  left: 5px;
 }
 
 
-/* 06 SERVICE SALES - LEFT CENTER */
-.neural-6 {
-  top: 280px;
-  left: -5px;
-}
-
-
-/* 07 RECRUITMENT - TOP LEFT */
-.neural-7 {
-  top: 105px;
-  left: 10px;
-}
 /* =========================================================
    PARTICLES
 ========================================================= */
@@ -57526,9 +56657,6 @@ body,
     0 0 20px rgba(96, 165, 250, 0.7);
 }
 
-
-/* PARTICLE 1 */
-
 .particle-1 {
   top: 22%;
   left: 42%;
@@ -57539,9 +56667,6 @@ body,
     ease-in-out
     infinite;
 }
-
-
-/* PARTICLE 2 */
 
 .particle-2 {
   top: 40%;
@@ -57554,9 +56679,6 @@ body,
     infinite;
 }
 
-
-/* PARTICLE 3 */
-
 .particle-3 {
   bottom: 20%;
   left: 40%;
@@ -57567,9 +56689,6 @@ body,
     ease-in-out
     infinite;
 }
-
-
-/* PARTICLE 4 */
 
 .particle-4 {
   top: 45%;
@@ -57582,9 +56701,6 @@ body,
     infinite;
 }
 
-
-/* PARTICLE 5 */
-
 .particle-5 {
   top: 18%;
   right: 32%;
@@ -57595,11 +56711,6 @@ body,
     ease-in-out
     infinite;
 }
-
-
-/* =========================================================
-   PARTICLE ANIMATIONS
-========================================================= */
 
 @keyframes particleMove1 {
   0%,
@@ -57668,6 +56779,609 @@ body,
 
 
 /* =========================================================
+   ERP SHOWCASE
+========================================================= */
+
+.erp-showcase {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 90px 30px 100px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.erp-showcase-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 50px;
+
+  margin-bottom: 55px;
+}
+
+.erp-showcase-heading > div > span {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.erp-showcase-heading h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 58px;
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2.5px;
+}
+
+.erp-showcase-heading h2 em {
+  color: #667085;
+
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.erp-creative-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 26px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.erp-creative-module {
+  width: 100%;
+  height: 680px;
+  min-height: 680px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.erp-creative-module:hover {
+  transform: translateY(-8px);
+
+  border-color: #dbe5f5;
+
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.erp-module-top {
+  flex: 0 0 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+}
+
+.erp-module-number {
+  width: 30px;
+
+  color: #98a2b3;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.erp-module-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 18px;
+}
+
+.erp-module-tag {
+  margin-left: auto;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.erp-module-media {
+  position: relative;
+
+  flex: 0 0 275px;
+  height: 275px;
+
+  margin: 0 10px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #111827;
+
+  cursor: pointer;
+}
+
+.erp-module-thumbnail {
+  width: 100%;
+  /* height: 100%; */
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.erp-creative-module:hover
+.erp-module-thumbnail {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   MEDIA GRADIENT
+========================================================= */
+
+.erp-media-gradient {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 20%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MEDIA LABEL
+========================================================= */
+
+.erp-media-label {
+  position: absolute;
+
+  left: 17px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  background:
+    rgba(15, 23, 42, 0.6);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.erp-media-label i {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   VIDEO CORNER
+========================================================= */
+
+.erp-video-corner {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  /* background: #ffffff; */
+  color: #172033;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.erp-creative-module:hover
+.erp-video-corner {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.erp-module-body {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+
+  padding: 23px 24px 22px;
+
+  box-sizing: border-box;
+}
+
+.erp-module-body h3 {
+  min-height: 58px;
+
+  margin: 0 0 10px;
+
+  display: flex;
+  align-items: flex-start;
+
+  color: #172033;
+
+  font-size: 23px;
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.5px;
+}
+
+.erp-module-body > p {
+  height: 58px;
+  min-height: 58px;
+
+  margin: 0 0 15px;
+
+  overflow: hidden;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.erp-feature-list {
+  min-height: 76px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-content: flex-start;
+
+  gap: 7px;
+}
+
+.erp-feature-pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  border: 1px solid #eef0f3;
+
+  border-radius: 7px;
+
+  background: #f8fafc;
+
+  color: #475467;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.erp-feature-pill i {
+  color: #2563eb;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.erp-explore-btn {
+  width: 200px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  padding: 5px 5px 5px 17px;
+
+  box-sizing: border-box;
+
+  border-radius: 50px;
+
+  background: #172033;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.erp-explore-btn:hover {
+  color: #ffffff;
+
+  background: #2563eb;
+
+  transform: translateY(-2px);
+}
+
+.erp-btn-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #172033;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.erp-explore-btn:hover
+.erp-btn-icon {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   VIDEO MODAL
+========================================================= */
+
+.erp-video-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  z-index: 999999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  animation:
+    erpFadeIn
+    0.2s
+    ease-out;
+}
+
+.erp-video-modal-content {
+  position: relative;
+
+  width: min(900px, 92vw);
+
+  max-height: 86vh;
+
+  animation:
+    erpScaleIn
+    0.25s
+    ease-out;
+}
+
+.erp-video-modal-close {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  z-index: 10;
+
+  background: #111;
+
+  border: 2px solid #fff;
+
+  border-radius: 50%;
+
+  width: 38px;
+  height: 38px;
+
+  color: #fff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.erp-video-modal-player {
+  width: 100%;
+
+  max-height: 86vh;
+
+  border-radius: 12px;
+
+  background: #000;
+
+  display: block;
+}
+
+@keyframes erpFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes erpScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   HERO VIDEO
+========================================================= */
+
+.hero-video {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  line-height: 0;
+}
+
+.hero-video__frame {
+  --p: 0;
+
+  width: 100%;
+
+  opacity: var(--p);
+
+  will-change: opacity;
+}
+
+.hero-video__media {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
    LARGE TABLET
 ========================================================= */
 
@@ -57727,12 +57441,6 @@ body,
     font-size: 45px;
   }
 
-  .erp-showcase-heading > p {
-    max-width: 600px;
-
-    margin-top: 20px;
-  }
-
 
   /* ONE COLUMN */
 
@@ -57741,7 +57449,6 @@ body,
 
     gap: 20px;
   }
-
 
   .erp-creative-module {
     height: 650px;
@@ -57765,21 +57472,12 @@ body,
   }
 
 
-  /* OLD ORBIT */
-
-  .erp-connected-orbit {
-    width: 420px;
-    height: 420px;
-  }
-
-
-  /* NEURAL ORBIT */
+  /* ORBIT */
 
   .erp-neural-orbit {
     width: 450px;
     height: 450px;
   }
-
 
   .neural-ring-outer {
     inset: 15px;
@@ -57828,8 +57526,11 @@ body,
   }
 
 
-  /* MODULE POSITIONS */
+  /* =====================================================
+     TABLET POSITIONS - 5 MODULES
+  ====================================================== */
 
+  /* HRM */
   .neural-1 {
     top: 20px;
     left: 50%;
@@ -57838,50 +57539,32 @@ body,
       translateX(-50%);
   }
 
+
+  /* CRM */
   .neural-2 {
-    top: 75px;
+    top: 155px;
     right: 0;
   }
 
+
+  /* FINANCE */
   .neural-3 {
-    top: 210px;
-    right: -5px;
+    bottom: 45px;
+    right: 15px;
   }
 
+
+  /* PROCUREMENT */
   .neural-4 {
-    bottom: 18px;
-    left: 50%;
-
-    transform:
-      translateX(-50%);
+    bottom: 45px;
+    left: 15px;
   }
 
+
+  /* SALES */
   .neural-5 {
-    top: 210px;
+    top: 155px;
     left: 0;
-  }
-
-  .neural-6 {
-    top: 75px;
-    left: 0;
-  }
-
-  /* SERVICES */
-
-  .neural-7 {
-    right: -3px;
-    bottom: 68px;
-  }
-
-
-  /* FINAL CTA */
-
-  .erp-final-cta {
-    padding: 80px 20px;
-  }
-
-  .erp-final-cta h2 {
-    font-size: 48px;
   }
 }
 
@@ -57896,7 +57579,6 @@ body,
     padding: 55px 14px 65px;
   }
 
-
   .erp-showcase-heading > div > span {
     font-size: 9px;
   }
@@ -57907,13 +57589,9 @@ body,
     letter-spacing: -1.5px;
   }
 
-  .erp-showcase-heading > p {
-    font-size: 13px;
-  }
-
 
   /* =====================================================
-     MOBILE CARD
+     CARD
   ====================================================== */
 
   .erp-creative-module {
@@ -57941,7 +57619,6 @@ body,
     font-size: 8px;
   }
 
-
   .erp-module-media {
     flex-basis: 225px;
     height: 225px;
@@ -57950,7 +57627,6 @@ body,
 
     border-radius: 15px;
   }
-
 
   .erp-module-body {
     padding: 20px 18px 18px;
@@ -57969,7 +57645,6 @@ body,
     font-size: 12px;
   }
 
-
   .erp-feature-list {
     min-height: 78px;
 
@@ -57981,7 +57656,6 @@ body,
 
     font-size: 9px;
   }
-
 
   .erp-explore-btn {
     height: 45px;
@@ -58015,7 +57689,7 @@ body,
 
 
   /* =====================================================
-     NEURAL ORBIT MOBILE
+     MOBILE ORBIT
   ====================================================== */
 
   .erp-neural-orbit {
@@ -58025,7 +57699,6 @@ body,
     margin-left: auto;
     margin-right: auto;
   }
-
 
   .neural-ring-outer {
     inset: 8px;
@@ -58093,11 +57766,10 @@ body,
 
 
   /* =====================================================
-     MOBILE MODULE POSITIONS
+     MOBILE POSITIONS - 5 MODULES
   ====================================================== */
 
-  /* HRM */
-
+  /* HRM - TOP */
   .neural-1 {
     top: 5px;
     left: 50%;
@@ -58107,75 +57779,31 @@ body,
   }
 
 
-  /* CRM */
-
+  /* CRM - TOP RIGHT */
   .neural-2 {
-    top: 45px;
+    top: 108px;
     right: -2px;
   }
 
 
-  /* PROCUREMENT */
-
+  /* FINANCE - BOTTOM RIGHT */
   .neural-3 {
-    top: 150px;
-    right: -8px;
+    bottom: 25px;
+    right: -3px;
   }
 
 
-  /* FINANCE
-     Bottom center */
-
+  /* PROCUREMENT - BOTTOM LEFT */
   .neural-4 {
-    bottom: 5px;
-    left: 50%;
-
-    transform:
-      translateX(-50%);
+    bottom: 25px;
+    left: -3px;
   }
 
 
-  /* RECRUITMENT */
-
+  /* SALES - TOP LEFT */
   .neural-5 {
-    top: 150px;
-    left: -8px;
-  }
-
-
-  /* PRODUCT SALES */
-
-  .neural-6 {
-    top: 45px;
+    top: 108px;
     left: -2px;
-  }
-
-
-  /* SERVICES
-     Bottom-right with gap */
-
-  .neural-7 {
-    right: -2px;
-    bottom: 48px;
-  }
-
-
-  /* =====================================================
-     FINAL CTA
-  ====================================================== */
-
-  .erp-final-cta {
-    padding: 70px 18px;
-  }
-
-  .erp-final-cta h2 {
-    font-size: 39px;
-
-    letter-spacing: -1.5px;
-  }
-
-  .erp-final-cta p {
-    font-size: 13px;
   }
 }
 
@@ -58205,45 +57833,50 @@ body,
   }
 
 
+  /* ORBIT */
+
   .erp-neural-orbit {
     width: 270px;
     height: 270px;
   }
 
 
-  /* Smaller module positions */
+  /* HRM */
 
   .neural-1 {
     top: 3px;
   }
 
+
+  /* CRM */
+
   .neural-2 {
-    top: 38px;
+    top: 98px;
     right: -5px;
   }
 
+
+  /* FINANCE */
+
   .neural-3 {
-    top: 126px;
-    right: -8px;
+    bottom: 18px;
+    right: -5px;
   }
+
+
+  /* PROCUREMENT */
 
   .neural-4 {
-    bottom: 3px;
-  }
-
-  .neural-5 {
-    top: 126px;
-    left: -8px;
-  }
-
-  .neural-6 {
-    top: 38px;
+    bottom: 18px;
     left: -5px;
   }
 
-  .neural-7 {
-    right: -5px;
-    bottom: 40px;
+
+  /* SALES */
+
+  .neural-5 {
+    top: 98px;
+    left: -5px;
   }
 }
 
@@ -58258,110 +57891,21 @@ body,
   .erp-neural-orbit::before {
     animation: none !important;
   }
-}
 
-
-
-.hero-video {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.hero-video__frame {
-  --p: 0; /* scroll progress (0 -> 1), set from JS */
-
-  width: 100%;
-  opacity: var(--p);
-  will-change: opacity;
-}
-
-.hero-video__media {
-  width: 100%;
-  height: auto; /* ratio-ku ettha height, ethuvum cut aagaadhu */
-  display: block;
-}
-
-@media (prefers-reduced-motion: reduce) {
   .hero-video__frame {
     opacity: 1;
   }
 }
-/* =====================================================
-   VIDEO MODAL — click on a module video to view it large
-===================================================== */
 
-.erp-module-media {
-  cursor: pointer;
-}
 
-.erp-video-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 999999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  animation: erpFadeIn 0.2s ease-out;
-}
 
-.erp-video-modal-content {
-  position: relative;
-  width: min(900px, 92vw);
-  max-height: 86vh;
-  animation: erpScaleIn 0.25s ease-out;
-}
 
-.erp-video-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 10;
-  background: #111;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
 
-.erp-video-modal-player {
-  width: 100%;
-  max-height: 86vh;
-  border-radius: 12px;
-  background: #000;
-  display: block;
-}
 
-@keyframes erpFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-@keyframes erpScaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+
+
+
 
 
 
@@ -58940,3 +58484,1362 @@ body,
 
 
 
+
+
+
+
+/* =========================================================
+   SBROS — INSIDE TECHNOLOGY SHOWCASE
+   ========================================================= */
+
+.sbros-showcase {
+    position: relative;
+
+    width: 100%;
+
+    /* padding: 85px 0 80px; */
+
+    /* background:
+        linear-gradient(
+            180deg,
+            #f7faff 0%,
+            #ffffff 42%,
+            #f5f8fc 100%
+        ); */
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+   ========================================================= */
+
+.sbros-showcase::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: -250px;
+    right: -280px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.10),
+            rgba(37, 99, 235, 0.03) 40%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+}
+
+
+.sbros-showcase::after {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: -350px;
+    bottom: -300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(43, 112, 230, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INTRO HEADER
+   ========================================================= */
+
+.sbros-showcase-header {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1280px, calc(100% - 100px));
+
+    margin: 0 auto 55px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 60px;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.sbros-showcase-label {
+    min-width: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 8px;
+
+    color: #2459b8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.8px;
+
+    white-space: nowrap;
+}
+
+
+.sbros-showcase-label span {
+    position: relative;
+
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #2563d8;
+
+    box-shadow:
+        0 0 0 6px rgba(37, 99, 216, 0.09),
+        0 0 20px rgba(37, 99, 216, 0.45);
+
+    animation:
+        sbrosLabelPulse 2.2s ease-in-out infinite;
+}
+
+
+@keyframes sbrosLabelPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 5px rgba(37, 99, 216, 0.08),
+            0 0 16px rgba(37, 99, 216, 0.35);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 10px rgba(37, 99, 216, 0.02),
+            0 0 28px rgba(37, 99, 216, 0.60);
+    }
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.sbros-showcase-heading {
+    flex: 1;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 80px;
+}
+
+
+.sbros-showcase-heading h2 {
+    margin: 0;
+
+    color: #101722;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3.2px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+.sbros-showcase-heading h2 strong {
+    color: #2057bf;
+
+    font-weight: 700;
+}
+
+
+.sbros-showcase-heading p {
+    max-width: 430px;
+
+    margin: 0 0 4px;
+
+    color: #697487;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   FULL WIDTH VIDEO WRAPPER
+   ========================================================= */
+
+.sbros-showcase-video-wrap {
+    position: relative;
+
+    z-index: 4;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   VIDEO CONTAINER
+   ========================================================= */
+
+.sbros-showcase-video {
+    position: relative;
+
+    width: 100%;
+
+    /*
+       IMPORTANT:
+       Keep this height fixed on desktop.
+       Video becomes FULL WIDTH without changing height.
+    */
+
+    height: 610px;
+
+    overflow: hidden;
+
+    border-radius: 0;
+
+    background: #07111e;
+
+    box-shadow:
+        0 35px 90px rgba(11, 32, 65, 0.20);
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.sbros-showcase-video video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       This is important.
+       It fills the entire width AND height.
+    */
+
+    object-position: center;
+
+    transform: scale(1.035);
+
+    animation:
+        sbrosVideoZoom 18s ease-in-out infinite alternate;
+}
+
+
+@keyframes sbrosVideoZoom {
+
+    0% {
+        transform: scale(1.035);
+    }
+
+    100% {
+        transform: scale(1.075);
+    }
+}
+
+
+/* =========================================================
+   PREMIUM VIDEO SHADE
+   ========================================================= */
+
+.sbros-video-shade {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+
+        /* LEFT CONTENT SHADOW */
+        linear-gradient(
+            90deg,
+            rgba(4, 10, 20, 0.88) 0%,
+            rgba(4, 10, 20, 0.62) 24%,
+            rgba(4, 10, 20, 0.28) 52%,
+            rgba(4, 10, 20, 0.12) 100%
+        ),
+
+        /* BOTTOM SHADOW */
+        linear-gradient(
+            0deg,
+            rgba(3, 9, 18, 0.88) 0%,
+            rgba(3, 9, 18, 0.35) 35%,
+            rgba(3, 9, 18, 0.02) 72%
+        ),
+
+        /* TOP */
+        linear-gradient(
+            180deg,
+            rgba(3, 8, 16, 0.32),
+            transparent 35%
+        );
+}
+
+
+/* =========================================================
+   MOVING LIGHT
+   ========================================================= */
+
+.sbros-video-light {
+    position: absolute;
+
+    z-index: 2;
+
+    top: -70%;
+
+    left: -40%;
+
+    width: 32%;
+
+    height: 240%;
+
+    transform: rotate(20deg);
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(88, 173, 255, 0.10),
+            rgba(88, 173, 255, 0.18),
+            transparent
+        );
+
+    filter: blur(28px);
+
+    animation:
+        sbrosLightMove 10s ease-in-out infinite;
+}
+
+
+@keyframes sbrosLightMove {
+
+    0% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    55% {
+        left: 65%;
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.3;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   DIGITAL GRID
+   ========================================================= */
+
+.sbros-video-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 0.10;
+
+    background-image:
+
+        linear-gradient(
+            rgba(120, 190, 255, 0.22) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(120, 190, 255, 0.22) 1px,
+            transparent 1px
+        );
+
+    background-size: 85px 85px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            black 35%,
+            black 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            black 35%,
+            black 100%
+        );
+
+    animation:
+        sbrosGridMove 22s linear infinite;
+}
+
+
+@keyframes sbrosGridMove {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 85px 85px;
+    }
+}
+
+
+/* =========================================================
+   TOP LEFT LABEL
+   ========================================================= */
+
+.sbros-video-top-label {
+    position: absolute;
+
+    top: 34px;
+    left: 50px;
+
+    z-index: 8;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 100px;
+
+    background:
+        rgba(7, 17, 30, 0.42);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    color:
+        rgba(255, 255, 255, 0.88);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.1px;
+}
+
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #5eb5ff;
+
+    box-shadow:
+        0 0 0 5px rgba(94, 181, 255, 0.08),
+        0 0 18px rgba(94, 181, 255, 0.95);
+
+    animation:
+        sbrosLivePulse 1.8s ease-in-out infinite;
+}
+
+
+@keyframes sbrosLivePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: scale(0.72);
+    }
+}
+
+
+/* =========================================================
+   TOP RIGHT LABEL
+   ========================================================= */
+
+.sbros-video-corner {
+    position: absolute;
+
+    top: 38px;
+    right: 50px;
+
+    z-index: 8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 4px;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.4px;
+}
+
+
+/* =========================================================
+   CENTER DECORATION
+   ========================================================= */
+
+.sbros-video-center-line {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 4;
+
+    width: 150px;
+    height: 1px;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(112, 190, 255, 0.35),
+            transparent
+        );
+
+    opacity: 0.7;
+
+    pointer-events: none;
+}
+
+
+.sbros-video-center-line span {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #77c5ff;
+
+    box-shadow:
+        0 0 18px rgba(119, 197, 255, 0.95);
+}
+
+
+/* =========================================================
+   BOTTOM CONTENT
+   ========================================================= */
+
+.sbros-video-bottom-content {
+    position: absolute;
+
+    left: 70px;
+    right: 70px;
+    bottom: 62px;
+
+    z-index: 8;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.sbros-video-title > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.8px;
+}
+
+
+.sbros-video-title h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(36px, 4.5vw, 64px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    font-weight: 400;
+}
+
+
+.sbros-video-title h3 strong {
+    color: #8ccaff;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.sbros-video-description {
+    width: 340px;
+
+    display: flex;
+
+    gap: 18px;
+}
+
+
+.description-line {
+    width: 2px;
+
+    flex-shrink: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #62b8ff,
+            rgba(98, 184, 255, 0)
+        );
+}
+
+
+.sbros-video-description p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+   ========================================================= */
+
+.sbros-video-status {
+    position: absolute;
+
+    right: 55px;
+    bottom: 30px;
+
+    z-index: 9;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        rgba(255, 255, 255, 0.42);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #54df9a;
+
+    box-shadow:
+        0 0 12px rgba(84, 223, 154, 0.8);
+
+    animation:
+        statusPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+/* =========================================================
+   DECORATIVE CORNER LINES
+   ========================================================= */
+
+.sbros-video-corner-line {
+    position: absolute;
+
+    z-index: 7;
+
+    width: 65px;
+    height: 65px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+.corner-top {
+    top: 24px;
+    right: 24px;
+
+    border-top:
+        1px solid rgba(123, 192, 255, 0.6);
+
+    border-right:
+        1px solid rgba(123, 192, 255, 0.6);
+}
+
+
+.corner-bottom {
+    left: 24px;
+    bottom: 24px;
+
+    border-left:
+        1px solid rgba(123, 192, 255, 0.6);
+
+    border-bottom:
+        1px solid rgba(123, 192, 255, 0.6);
+}
+
+
+/* =========================================================
+   VIDEO GLOW
+   ========================================================= */
+
+.sbros-video-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(45px);
+
+    z-index: -1;
+}
+
+
+.glow-one {
+    width: 380px;
+    height: 380px;
+
+    top: 15%;
+    left: -170px;
+
+    background:
+        rgba(39, 103, 224, 0.15);
+
+    animation:
+        sbrosGlowOne 7s ease-in-out infinite alternate;
+}
+
+
+.glow-two {
+    width: 420px;
+    height: 420px;
+
+    right: -170px;
+    bottom: -180px;
+
+    background:
+        rgba(48, 145, 255, 0.14);
+
+    animation:
+        sbrosGlowTwo 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes sbrosGlowOne {
+
+    from {
+        transform: translateY(-25px);
+    }
+
+    to {
+        transform: translateY(35px);
+    }
+}
+
+
+@keyframes sbrosGlowTwo {
+
+    from {
+        transform: translateY(25px);
+    }
+
+    to {
+        transform: translateY(-35px);
+    }
+}
+
+
+/* =========================================================
+   BOTTOM STATS
+   ========================================================= */
+
+.sbros-showcase-stats {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1280px, calc(100% - 100px));
+
+    margin: 70px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid #dfe5ed;
+}
+
+
+.sbros-stat {
+    display: flex;
+
+    gap: 18px;
+
+    padding: 30px 35px 0 0;
+
+    border-right:
+        1px solid #dfe5ed;
+}
+
+
+.sbros-stat:not(:first-child) {
+    padding-left: 35px;
+}
+
+
+.sbros-stat:last-child {
+    border-right: 0;
+}
+
+
+.sbros-stat-number {
+    color: #245bc0;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.sbros-stat strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.sbros-stat p {
+    margin: 0;
+
+    color: #788394;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+    .sbros-showcase-video {
+        height: 610px;
+    }
+
+
+    .sbros-video-bottom-content {
+        left: 100px;
+        right: 100px;
+    }
+
+
+    .sbros-video-top-label {
+        left: 80px;
+    }
+
+
+    .sbros-video-corner {
+        right: 80px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    /* .sbros-showcase {
+        padding: 75px 0 70px;
+    } */
+
+
+    .sbros-showcase-header {
+        width: calc(100% - 60px);
+
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+
+    .sbros-showcase-label {
+        margin-bottom: 24px;
+    }
+
+
+    .sbros-showcase-heading {
+        gap: 40px;
+    }
+
+
+    .sbros-showcase-heading h2 {
+        font-size: 52px;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .sbros-showcase-heading p {
+        max-width: 360px;
+    }
+
+
+    .sbros-showcase-video {
+        height: 540px;
+    }
+
+
+    .sbros-video-bottom-content {
+        left: 45px;
+        right: 45px;
+        bottom: 45px;
+    }
+
+
+    .sbros-video-title h3 {
+        font-size: 46px;
+    }
+
+
+    .sbros-video-description {
+        width: 280px;
+    }
+
+
+    .sbros-video-top-label {
+        left: 35px;
+    }
+
+
+    .sbros-video-corner {
+        right: 35px;
+    }
+
+
+    .sbros-video-status {
+        right: 35px;
+    }
+
+
+    .sbros-showcase-stats {
+        width: calc(100% - 60px);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* .sbros-showcase {
+        padding: 65px 0 60px;
+    } */
+
+
+    .sbros-showcase-header {
+        width: calc(100% - 40px);
+
+        margin-bottom: 35px;
+    }
+
+
+    .sbros-showcase-label {
+        margin-bottom: 20px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .sbros-showcase-heading {
+        display: block;
+    }
+
+
+    .sbros-showcase-heading h2 {
+        font-size: 39px;
+
+        line-height: 1.04;
+
+        letter-spacing: -1.8px;
+
+        white-space: normal;
+    }
+
+
+    .sbros-showcase-heading p {
+        max-width: 100%;
+
+        margin-top: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    /* ================================
+       FULL WIDTH MOBILE VIDEO
+       ================================ */
+
+    .sbros-showcase-video-wrap {
+        width: 100%;
+    }
+
+
+    .sbros-showcase-video {
+        height: 500px;
+
+        border-radius: 0;
+    }
+
+
+    .sbros-showcase-video video {
+        transform: scale(1.04);
+
+        object-position: center;
+    }
+
+
+    .sbros-video-top-label {
+        top: 20px;
+        left: 20px;
+
+        padding: 8px 12px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .sbros-video-corner {
+        top: 22px;
+        right: 20px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .sbros-video-bottom-content {
+        left: 24px;
+        right: 24px;
+        bottom: 35px;
+
+        display: block;
+    }
+
+
+    .sbros-video-title > span {
+        margin-bottom: 10px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .sbros-video-title h3 {
+        font-size: 34px;
+
+        line-height: 1.05;
+
+        letter-spacing: -1.3px;
+    }
+
+
+    .sbros-video-description {
+        width: 100%;
+
+        margin-top: 20px;
+
+        gap: 12px;
+    }
+
+
+    .sbros-video-description p {
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+    .sbros-video-status {
+        right: 22px;
+        bottom: 17px;
+
+        font-size: 7px;
+    }
+
+
+    .sbros-video-grid {
+        background-size: 55px 55px;
+    }
+
+
+    .sbros-video-center-line {
+        width: 90px;
+    }
+
+
+    .sbros-video-corner-line {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .corner-top {
+        top: 15px;
+        right: 15px;
+    }
+
+
+    .corner-bottom {
+        left: 15px;
+        bottom: 15px;
+    }
+
+
+    /* ================================
+       STATS
+       ================================ */
+
+    .sbros-showcase-stats {
+        width: calc(100% - 40px);
+
+        margin-top: 50px;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .sbros-stat,
+    .sbros-stat:not(:first-child) {
+
+        padding: 22px 0;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid #dfe4eb;
+    }
+
+
+    .sbros-stat:last-child {
+        border-bottom: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .sbros-showcase {
+        padding-top: 55px;
+    }
+
+
+    .sbros-showcase-heading h2 {
+        font-size: 34px;
+    }
+
+
+    .sbros-showcase-video {
+        height: 455px;
+    }
+
+
+    .sbros-video-title h3 {
+        font-size: 29px;
+    }
+
+
+    .sbros-video-description p {
+        font-size: 11px;
+    }
+
+
+    .sbros-video-status {
+        display: none;
+    }
+
+
+    .sbros-video-center-line {
+        display: none;
+    }
+
+}

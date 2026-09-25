@@ -1,51 +1,153 @@
 import { useEffect, useRef } from "react";
 
-
 const HeroVideo = ({ src, poster }) => {
-  const videoRef = useRef(null);
+    const videoRef = useRef(null);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    useEffect(() => {
+        const video = videoRef.current;
 
-    video.muted = true;
-    video.playsInline = true;
+        if (!video) return;
 
-    const startVideo = async () => {
-      try {
-        await video.play();
-      } catch (error) {
-        console.log("Video autoplay blocked:", error);
-      }
-    };
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
 
-    video.addEventListener("loadeddata", startVideo);
-    startVideo();
+        const playVideo = async () => {
+            try {
+                await video.play();
+            } catch (error) {
+                console.log("Video autoplay waiting:", error);
+            }
+        };
 
-    return () => {
-      video.removeEventListener("loadeddata", startVideo);
-      video.pause();
-    };
-  }, [src]);
+        playVideo();
 
-  return (
-    <section className="hero-video">
-      <video
-        ref={videoRef}
-        className="hero-video__media"
-        src={src}
-        poster={poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      />
+        const handleLoadedData = () => {
+            playVideo();
+        };
 
-      <div className="hero-video__overlay"></div>
-      <div className="hero-video__bottom-fade"></div>
-    </section>
-  );
+        video.addEventListener("loadeddata", handleLoadedData);
+
+        return () => {
+            video.removeEventListener(
+                "loadeddata",
+                handleLoadedData
+            );
+
+            video.pause();
+        };
+    }, [src]);
+
+    return (
+        <section className="sbros-showcase">
+
+            {/* =====================================================
+                CINEMATIC VIDEO
+            ===================================================== */}
+
+            <div className="sbros-showcase-video-wrap">
+
+                {/* Decorative glow */}
+                <div className="sbros-video-glow glow-one"></div>
+                <div className="sbros-video-glow glow-two"></div>
+
+
+                <div className="sbros-showcase-video">
+
+                    {/* ================= VIDEO ================= */}
+
+                    <video
+                        ref={videoRef}
+                        src={src}
+                        poster={poster}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                    />
+
+
+                    {/* ================= DARK CINEMATIC OVERLAY ================= */}
+
+                    <div className="sbros-video-shade"></div>
+
+
+                    {/* ================= MOVING LIGHT ================= */}
+
+                    <div className="sbros-video-light"></div>
+
+
+                    {/* ================= DIGITAL GRID ================= */}
+
+                    <div className="sbros-video-grid"></div>
+
+
+                    {/* ================= TOP LABEL ================= */}
+
+                    {/* <div className="sbros-video-top-label">
+
+                        <span className="live-dot"></span>
+
+                        <span>
+                            SBROS TECHNOLOGY
+                        </span>
+
+                    </div> */}
+
+
+                    {/* ================= TOP RIGHT ================= */}
+
+                    {/* <div className="sbros-video-corner">
+
+                        <span>DIGITAL</span>
+                        <span>ECOSYSTEM</span>
+
+                    </div> */}
+
+
+                    {/* ================= BOTTOM CONTENT ================= */}
+
+                    <div className="sbros-video-bottom-content">
+
+                        {/* <div className="sbros-video-title">
+
+                            <span>
+                                INTELLIGENT TECHNOLOGY
+                            </span>
+
+                            <h3>
+                                Connecting
+                                <br />
+
+                                <strong>
+                                    business & technology.
+                                </strong>
+                            </h3>
+
+                        </div> */}
+
+
+                        <div className="sbros-video-description">
+
+                            <div className="description-line"></div>
+
+                            {/* <p>
+                                Powerful digital experiences,
+                                connected systems and smarter
+                                business operations.
+                            </p> */}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    );
 };
 
 export default HeroVideo;
