@@ -1,127 +1,174 @@
-
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ProjectDetailsCenter1 = () => {
-   const modules = [
-  // 01 - HRM
-  {
-    number: "01",
-    icon: "bi bi-people-fill",
-    title: "Human Resource Management",
-    shortTitle: "HRM",
-    text: "Build a smarter workforce with centralized employee management and streamlined HR operations.",
-    features: [
-      "Employee Profiles",
-      "Employee Documents",
-      "Departments & Roles",
-      "Salary Structures",
-    ],
-    video: "/assets/img/Video1.mp4",
-    tag: "PEOPLE",
-  },
+  const [activeVideo, setActiveVideo] = useState(null);
 
-  // 02 - CRM
-  {
-    number: "02",
-    icon: "bi bi-person-lines-fill",
-    title: "Customer Relationship Management",
-    shortTitle: "CRM",
-    text: "Turn every lead into an opportunity with powerful customer tracking and follow-up management.",
-    features: [
-      "Lead Management",
-      "Lead Assignment",
-      "Customer Management",
-      "Follow-ups",
-    ],
-    video: "/assets/img/Video2.mp4",
-    tag: "CUSTOMERS",
-  },
+  // =====================================================
+  // ERP MODULES
+  // =====================================================
+  const modules = [
+    // =====================================================
+    // 01 - HRM
+    // =====================================================
+    {
+      number: "01",
+      icon: "bi bi-people-fill",
+      title: "Human Resource Management",
+      shortTitle: "HRM",
+      text: "Build a smarter workforce with centralized employee management and streamlined HR operations.",
+      features: [
+        "Employee Profiles",
+        "Employee Documents",
+        "Departments & Roles",
+        "Salary Structures",
+      ],
+      video: "/assets/img/Video1.mp4",
 
-  // 03 - Finance
-  {
-    number: "03",
-    icon: "bi bi-wallet-fill",
-    title: "Finance",
-    shortTitle: "FINANCE",
-    text: "Keep your business financially organized with powerful transaction, invoice and reporting tools.",
-    features: [
-      "Accounts Management",
-      "Income & Expense Tracking",
-      "Invoice & Payments",
-      "Financial Reports",
-    ],
-    video: "/assets/img/Video3.mp4",
-    tag: "FINANCE",
-  },
+      // HRM Thumbnail
+      thumbnail: "/assets/img/thumb/image.png",
 
-  // 04 - Procurement
-  {
-    number: "04",
-    icon: "bi bi-cart-check-fill",
-    title: "Procurement",
-    shortTitle: "PROCUREMENT",
-    text: "Simplify purchasing from material requests to supplier quotations and purchase orders.",
-    features: [
-      "Material Master",
-      "Purchase Requests",
-      "Supplier Quotations",
-      "Purchase Orders",
-    ],
-    video: "/assets/videos/procurement.mp4",
-    tag: "PURCHASING",
-  },
+      tag: "PEOPLE",
+    },
 
-  // 05 - Product Sales
-  {
-    number: "05",
-    icon: "bi bi-bag-check-fill",
-    title: "Product Sales",
-    shortTitle: "PRODUCT SALES",
-    text: "Manage your complete product sales journey from products and customers to orders and reports.",
-    features: [
-      "Product Management",
-      "Sales Orders",
-      "Customer Management",
-      "Sales Reports",
-    ],
-    video: "/assets/videos/product-sales.mp4",
-    tag: "SALES",
-  },
+    // =====================================================
+    // 02 - CRM
+    // =====================================================
+    {
+      number: "02",
+      icon: "bi bi-person-lines-fill",
+      title: "Customer Relationship Management",
+      shortTitle: "CRM",
+      text: "Turn every lead into an opportunity with powerful customer tracking and follow-up management.",
+      features: [
+        "Lead Management",
+        "Lead Assignment",
+        "Customer Management",
+        "Follow-ups",
+      ],
+      video: "/assets/img/Video2.mp4",
 
-  // 06 - Service Sales
-  {
-    number: "06",
-    icon: "bi bi-briefcase-fill",
-    title: "Services Sales",
-    shortTitle: "SERVICES SALES",
-    text: "Manage service-based businesses with streamlined quotations, orders and customer operations.",
-    features: [
-      "Service Management",
-      "Service Quotations",
-      "Service Orders",
-      "Sales Tracking",
-    ],
-    video: "/assets/videos/services-sales.mp4",
-    tag: "SERVICES",
-  },
+      // CRM Thumbnail
+      thumbnail: "/assets/img/thumb/crm.png",
 
-  // 07 - Recruitment
-  {
-    number: "07",
-    icon: "bi bi-person-plus-fill",
-    title: "Recruitment",
-    shortTitle: "RECRUITMENT",
-    text: "Find the right talent faster by managing jobs, candidates and interviews from one place.",
-    features: [
-      "Job Openings",
-      "Candidate Management",
-      "Interview Scheduling",
-      "Recruitment Tracking",
-    ],
-    video: "/assets/videos/recruitment.mp4",
-    tag: "TALENT",
-  },
-];
+      tag: "CUSTOMERS",
+    },
+
+    // =====================================================
+    // 03 - FINANCE
+    // =====================================================
+    {
+      number: "03",
+      icon: "bi bi-wallet-fill",
+      title: "Finance",
+      shortTitle: "FINANCE",
+      text: "Keep your business financially organized with powerful transaction, invoice and reporting tools.",
+      features: [
+        "Accounts Management",
+        "Income & Expense Tracking",
+        "Invoice & Payments",
+        "Financial Reports",
+      ],
+      video: "/assets/img/Video3.mp4",
+
+      // Finance Thumbnail
+      thumbnail: "/assets/img/thumb/finance.png",
+
+      tag: "FINANCE",
+    },
+
+    // =====================================================
+    // 04 - PROCUREMENT
+    // =====================================================
+    {
+      number: "04",
+      icon: "bi bi-cart-check-fill",
+      title: "Procurement",
+      shortTitle: "PROCUREMENT",
+      text: "Simplify purchasing from material requests to supplier quotations and purchase orders.",
+      features: [
+        "Material Master",
+        "Purchase Requests",
+        "Supplier Quotations",
+        "Purchase Orders",
+      ],
+      video: "/assets/videos/procurement.mp4",
+
+      // Procurement Thumbnail
+      thumbnail: "/assets/img/thumb/procurement.png",
+
+      tag: "PURCHASING",
+    },
+
+    // =====================================================
+    // 05 - PRODUCT SALES
+    // =====================================================
+    {
+      number: "05",
+      icon: "bi bi-bag-check-fill",
+      title: "Product Sales",
+      shortTitle: "PRODUCT SALES",
+      text: "Manage your complete product sales journey from products and customers to orders and reports.",
+      features: [
+        "Product Management",
+        "Sales Orders",
+        "Customer Management",
+        "Sales Reports",
+      ],
+      video: "/assets/videos/product-sales.mp4",
+
+      // Product Sales Thumbnail
+      thumbnail: "/assets/img/thumb/product-sales.png",
+
+      tag: "SALES",
+    },
+
+    // =====================================================
+    // 06 - SERVICES SALES
+    // =====================================================
+    {
+      number: "06",
+      icon: "bi bi-briefcase-fill",
+      title: "Services Sales",
+      shortTitle: "SERVICES SALES",
+      text: "Manage service-based businesses with streamlined quotations, orders and customer operations.",
+      features: [
+        "Service Management",
+        "Service Quotations",
+        "Service Orders",
+        "Sales Tracking",
+      ],
+      video: "/assets/videos/services-sales.mp4",
+
+      // Services Sales Thumbnail
+      thumbnail: "/assets/img/thumb/services-sales.png",
+
+      tag: "SERVICES",
+    },
+
+    // =====================================================
+    // 07 - RECRUITMENT
+    // =====================================================
+    {
+      number: "07",
+      icon: "bi bi-person-plus-fill",
+      title: "Recruitment",
+      shortTitle: "RECRUITMENT",
+      text: "Find the right talent faster by managing jobs, candidates and interviews from one place.",
+      features: [
+        "Job Openings",
+        "Candidate Management",
+        "Interview Scheduling",
+        "Recruitment Tracking",
+      ],
+      video: "/assets/videos/recruitment.mp4",
+
+      // Recruitment Thumbnail
+      thumbnail: "/assets/img/thumb/recruitment.png",
+
+      tag: "TALENT",
+    },
+  ];
 
   return (
     <div className="erp-modern-page">
@@ -129,12 +176,13 @@ const ProjectDetailsCenter1 = () => {
       {/* =====================================================
           MODULE SHOWCASE
       ====================================================== */}
- <section className="erp-connected">
+      <section className="erp-connected">
 
         <div className="erp-connected-glow"></div>
 
         <div className="erp-connected-inner">
 
+          {/* ================= LEFT CONTENT ================= */}
           <div className="erp-connected-copy">
 
             <span className="erp-connected-label">
@@ -155,36 +203,20 @@ const ProjectDetailsCenter1 = () => {
               platform where every operation works together.
             </p>
 
-            {/* <Link
-              to="/pricing"
-              className="erp-main-cta"
-            >
-
-              <span>
-                View ERP Plans
-              </span>
-
-              <i className="bi bi-arrow-right"></i>
-
-            </Link> */}
-
           </div>
 
 
-          {/* ORBIT */}
-          {/* =====================================================
-    CREATIVE ERP NEURAL ORBIT
-===================================================== */}
-
+          {/* ================= ORBIT ================= */}
           <div className="erp-neural-orbit">
 
-            {/* Animated background rings */}
             <div className="neural-ring neural-ring-outer"></div>
             <div className="neural-ring neural-ring-middle"></div>
             <div className="neural-ring neural-ring-inner"></div>
 
-            {/* Connection lines */}
+
+            {/* ================= NEURAL LINES ================= */}
             <div className="neural-lines">
+
               <span className="neural-line line-1"></span>
               <span className="neural-line line-2"></span>
               <span className="neural-line line-3"></span>
@@ -192,19 +224,21 @@ const ProjectDetailsCenter1 = () => {
               <span className="neural-line line-5"></span>
               <span className="neural-line line-6"></span>
               <span className="neural-line line-7"></span>
+
             </div>
 
-            {/* Moving light particles */}
+
+            {/* ================= PARTICLES ================= */}
             <span className="neural-particle particle-1"></span>
             <span className="neural-particle particle-2"></span>
             <span className="neural-particle particle-3"></span>
             <span className="neural-particle particle-4"></span>
             <span className="neural-particle particle-5"></span>
 
-            {/* =================================================
-      CENTER ERP CORE
-  ================================================== */}
 
+            {/* =================================================
+                ERP CORE
+            ================================================== */}
             <div className="erp-neural-core">
 
               <div className="core-wave wave-one"></div>
@@ -228,9 +262,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 01
-  ================================================== */}
-
+                MODULE 01 - HRM
+            ================================================== */}
             <div className="neural-module neural-1">
 
               <div className="neural-module-card">
@@ -250,9 +283,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 02
-  ================================================== */}
-
+                MODULE 02 - CRM
+            ================================================== */}
             <div className="neural-module neural-2">
 
               <div className="neural-module-card">
@@ -272,9 +304,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 03
-  ================================================== */}
-
+                MODULE 03 - FINANCE
+            ================================================== */}
             <div className="neural-module neural-3">
 
               <div className="neural-module-card">
@@ -294,9 +325,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 04
-  ================================================== */}
-
+                MODULE 04 - PROCUREMENT
+            ================================================== */}
             <div className="neural-module neural-4">
 
               <div className="neural-module-card">
@@ -316,9 +346,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 05
-  ================================================== */}
-
+                MODULE 05 - PRODUCT SALES
+            ================================================== */}
             <div className="neural-module neural-5">
 
               <div className="neural-module-card">
@@ -338,9 +367,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 06
-  ================================================== */}
-
+                MODULE 06 - SERVICES SALES
+            ================================================== */}
             <div className="neural-module neural-6">
 
               <div className="neural-module-card">
@@ -360,9 +388,8 @@ const ProjectDetailsCenter1 = () => {
 
 
             {/* =================================================
-      MODULE 07
-  ================================================== */}
-
+                MODULE 07 - RECRUITMENT
+            ================================================== */}
             <div className="neural-module neural-7">
 
               <div className="neural-module-card">
@@ -385,24 +412,29 @@ const ProjectDetailsCenter1 = () => {
         </div>
 
       </section>
+
+
+      {/* =====================================================
+          ERP SHOWCASE
+      ====================================================== */}
       <section className="erp-showcase">
 
+        {/* ================= SHOWCASE HEADING ================= */}
         <div className="erp-showcase-heading">
 
           <div>
-            <span>EXPLORE THE ECOSYSTEM</span>
+
+            <span>
+              EXPLORE THE ECOSYSTEM
+            </span>
 
             <h2>
               One Platform.
               <br />
               <em>Every Operation.</em>
             </h2>
-          </div>
 
-          {/* <p>
-            Powerful business modules that work independently
-            or together as one connected ERP ecosystem.
-          </p> */}
+          </div>
 
         </div>
 
@@ -410,7 +442,6 @@ const ProjectDetailsCenter1 = () => {
         {/* =====================================================
             MODULE GRID
         ====================================================== */}
-
         <div className="erp-creative-grid">
 
           {modules.map((module, index) => (
@@ -420,8 +451,9 @@ const ProjectDetailsCenter1 = () => {
               key={index}
             >
 
-              {/* CARD HEADER */}
-
+              {/* =================================================
+                  CARD HEADER
+              ================================================== */}
               <div className="erp-module-top">
 
                 <div className="erp-module-number">
@@ -439,20 +471,47 @@ const ProjectDetailsCenter1 = () => {
               </div>
 
 
-              {/* VIDEO */}
+              {/* =================================================
+                  VIDEO THUMBNAIL
 
-              <div className="erp-module-media">
+                  IMPORTANT:
+                  Video will NOT autoplay here.
+                  Only thumbnail image is shown.
+                  Click = open actual video.
+              ================================================== */}
+              <div
+                className="erp-module-media"
+                role="button"
+                tabIndex={0}
+                onClick={() => setActiveVideo(module.video)}
+                onKeyDown={(e) => {
 
-                <video
-                  src={module.video}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+                  if (e.key === "Enter" || e.key === " ") {
+
+                    e.preventDefault();
+
+                    setActiveVideo(module.video);
+
+                  }
+
+                }}
+              >
+
+                {/* =================================================
+                    INDIVIDUAL THUMBNAIL
+                ================================================== */}
+                <img
+                  src={module.thumbnail}
+                  alt={`${module.title} video thumbnail`}
+                  className="erp-module-thumbnail"
                 />
 
+
+                {/* ================= GRADIENT ================= */}
                 <div className="erp-media-gradient"></div>
 
+
+                {/* ================= PLAY LABEL ================= */}
                 <div className="erp-media-label">
 
                   <i className="bi bi-play-fill"></i>
@@ -463,7 +522,20 @@ const ProjectDetailsCenter1 = () => {
 
                 </div>
 
-                <div className="erp-video-corner">
+
+                {/* =================================================
+                    CORNER OPEN BUTTON
+                ================================================== */}
+                <div
+                  className="erp-video-corner"
+                  onClick={(e) => {
+
+                    e.stopPropagation();
+
+                    setActiveVideo(module.video);
+
+                  }}
+                >
 
                   <i className="bi bi-arrow-up-right"></i>
 
@@ -472,8 +544,9 @@ const ProjectDetailsCenter1 = () => {
               </div>
 
 
-              {/* CARD CONTENT */}
-
+              {/* =================================================
+                  CARD CONTENT
+              ================================================== */}
               <div className="erp-module-body">
 
                 <h3>
@@ -485,8 +558,9 @@ const ProjectDetailsCenter1 = () => {
                 </p>
 
 
-                {/* FEATURES */}
-
+                {/* =================================================
+                    FEATURES
+                ================================================== */}
                 <div className="erp-feature-list">
 
                   {module.features.map(
@@ -511,8 +585,9 @@ const ProjectDetailsCenter1 = () => {
                 </div>
 
 
-                {/* BUTTON */}
-
+                {/* =================================================
+                    EXPLORE BUTTON
+                ================================================== */}
                 <Link
                   to="/pricing"
                   className="erp-explore-btn"
@@ -542,13 +617,49 @@ const ProjectDetailsCenter1 = () => {
 
 
       {/* =====================================================
-          CONNECTED ERP
+          VIDEO MODAL
       ====================================================== */}
+      {activeVideo && (
 
-     
+        <div
+          className="erp-video-modal-overlay"
+          onClick={() => setActiveVideo(null)}
+        >
+
+          <div
+            className="erp-video-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            {/* ================= CLOSE BUTTON ================= */}
+            <button
+              className="erp-video-modal-close"
+              onClick={() => setActiveVideo(null)}
+              aria-label="Close video"
+            >
+
+              <i className="bi bi-x-lg"></i>
+
+            </button>
 
 
+            {/* =================================================
+                ACTUAL VIDEO
+                This video plays ONLY after thumbnail click.
+            ================================================== */}
+            <video
+              src={activeVideo}
+              autoPlay
+              controls
+              playsInline
+              className="erp-video-modal-player"
+            />
 
+          </div>
+
+        </div>
+
+      )}
 
     </div>
   );
