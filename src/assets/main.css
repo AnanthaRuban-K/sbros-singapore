@@ -27657,7 +27657,7 @@ background: black;
 
 .footer1 .single-footer-items .contact-box .pera a {
   display: inline-block;
-  color: #ffffff;
+  color: white;
   font-size: var(--f-fs-font-fs16);
   line-height: var(--f-fs-font-fs16);
   font-weight: var(--f-fw-regular);
@@ -28952,10 +28952,7 @@ background: black;
   transition: all 0.3s ease;
 }
 
-/* Hover */
-.footer1 .contact-box .pera a:hover {
-  color: #e5202d !important;
-}
+
 
 /* Address */
 .footer1 .contact-box.address-box {
