@@ -25,13 +25,8 @@ const solutions = [
   },
   {
     id: "05",
-    title: "Product Sales",
+    title: "Sales",
     image: "/assets/img/bg/product.png",
-  },
-  {
-    id: "06",
-    title: "Service Sales",
-    image: "/assets/img/bg/service.png",
   },
   
 ];
