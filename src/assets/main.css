@@ -27540,6 +27540,7 @@ body,
 
 .footer1 {
   padding-top: 100px;
+ margin-right: -30px;
 
   /* Black → White → Cherry Red */
 background: black;
