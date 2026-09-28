@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
                         <h1>Privacy Policy</h1>
 
                         <p>
-                            Your privacy matters to us. Learn how SBROS Tech
+                            Your privacy matters to us. Learn how SBROS Tech (S)
                             Pvt Ltd collects, uses and protects your information.
                         </p>
 
@@ -117,7 +117,7 @@ const PrivacyPolicy = () => {
                                         <h2>Introduction</h2>
 
                                         <p>
-                                            SBROS Tech Pvt Ltd respects your
+                                            SBROS Tech (S) Pvt Ltd respects your
                                             privacy and is committed to protecting
                                             the personal information you provide
                                             while using our website, products
@@ -296,7 +296,7 @@ const PrivacyPolicy = () => {
                                         <h2>Data Security</h2>
 
                                         <p>
-                                            SBROS Tech Pvt Ltd takes reasonable
+                                            SBROS Tech (S) Pvt Ltd takes reasonable
                                             technical and organizational measures
                                             to protect personal information from
                                             unauthorized access, misuse,
@@ -511,7 +511,7 @@ const PrivacyPolicy = () => {
                                         <h2>Changes to This Privacy Policy</h2>
 
                                         <p>
-                                            SBROS Tech Pvt Ltd may update this
+                                            SBROS Tech (S) Pvt Ltd may update this
                                             Privacy Policy from time to time
                                             to reflect changes in our services,
                                             technology, legal requirements or

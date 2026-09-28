@@ -14,7 +14,7 @@ const TermsAndConditions = () => {
 
                         <p>
                             Please read these terms carefully before using
-                            the SBROS Tech Pvt Ltd website and services.
+                            the SBROS Tech (S) Pvt Ltd website and services.
                         </p>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const TermsAndConditions = () => {
                                         <h2>Introduction</h2>
 
                                         <p>
-                                            Welcome to SBROS Tech Pvt Ltd.
+                                            Welcome to SBROS Tech (S) Pvt Ltd.
                                             These Terms & Conditions govern
                                             your use of our website, products,
                                             services and related digital
@@ -162,7 +162,7 @@ const TermsAndConditions = () => {
                                         <h2>Our Services</h2>
 
                                         <p>
-                                            SBROS Tech Pvt Ltd provides
+                                            SBROS Tech (S) Pvt Ltd provides
                                             technology and digital solutions
                                             designed to support businesses in
                                             their digital transformation.
@@ -302,7 +302,7 @@ const TermsAndConditions = () => {
                                         </p>
 
                                         <p>
-                                            SBROS Tech Pvt Ltd does not control
+                                            SBROS Tech (S) Pvt Ltd does not control
                                             or guarantee the content,
                                             availability or practices of
                                             third-party websites.
@@ -365,7 +365,7 @@ const TermsAndConditions = () => {
 
                                         <p>
                                             To the extent permitted by
-                                            applicable law, SBROS Tech Pvt Ltd
+                                            applicable law, SBROS Tech (S) Pvt Ltd
                                             shall not be liable for indirect,
                                             incidental or consequential losses
                                             arising from the use of our website
@@ -388,7 +388,7 @@ const TermsAndConditions = () => {
                                         <h2>Changes to These Terms</h2>
 
                                         <p>
-                                            SBROS Tech Pvt Ltd reserves the
+                                            SBROS Tech(S) Pvt Ltd reserves the
                                             right to update or modify these
                                             Terms & Conditions when necessary.
                                         </p>
@@ -419,7 +419,7 @@ const TermsAndConditions = () => {
                                         <p>
                                             If you have any questions regarding
                                             these Terms & Conditions, please
-                                            contact SBROS Tech Pvt Ltd.
+                                            contact SBROS Tech (S) Pvt Ltd.
                                         </p>
 
                                         {/* <div className="sbros-legal-contact">
