@@ -128,17 +128,17 @@ const HeroVideo = ({ src, poster }) => {
                         </div> */}
 
 
-                        <div className="sbros-video-description">
+                        {/* <div className="sbros-video-description">
 
                             <div className="description-line"></div>
 
-                            {/* <p>
+                            <p>
                                 Powerful digital experiences,
                                 connected systems and smarter
                                 business operations.
-                            </p> */}
+                            </p>
 
-                        </div>
+                        </div> */}
 
                     </div>
 

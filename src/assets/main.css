@@ -55424,7 +55424,7 @@ body,
 .erp-connected {
   position: relative;
   width: 100%;
-  padding: 110px 30px;
+  /* padding: 110px 30px; */
   overflow: hidden;
   background: #111827;
   color: #ffffff;
@@ -57349,363 +57349,275 @@ body,
 
 
 
-
-
-
-
-
-/* =========================================================
-   HERO VIDEO - FULL SCREEN WIDTH / NO CROP
-   ========================================================= */
-
-.hero-video {
-  position: relative;
-
-  /* FORCE FULL BROWSER WIDTH */
-  width: 100vw;
-  max-width: 100vw;
-
-  /* If hero is inside .container */
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-
-  padding: 0;
-
-  overflow: hidden;
-
-  background: #f5f7f9;
-
-  line-height: 0;
-
-  isolation: isolate;
-}
-
-
-/* =========================================================
-   VIDEO
-   ========================================================= */
-
-.hero-video__media {
-  display: block;
-
-  width: 100vw;
-  max-width: 100vw;
-
-  /* IMPORTANT:
-     Auto height keeps the COMPLETE video visible
-     without cropping */
-  height: auto;
-
-  min-width: 100%;
-
-  margin: 0;
-  padding: 0;
-
-  object-fit: contain;
-  object-position: center center;
-
-  background: #f5f7f9;
-}
-
-
-/* =========================================================
-   LIGHT PROFESSIONAL OVERLAY
-   ========================================================= */
-
-.hero-video__overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.03) 0%,
-    rgba(255, 255, 255, 0) 45%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-
-  pointer-events: none;
-
-  z-index: 2;
-}
-
-
-/* =========================================================
-   VERY SMALL BOTTOM FADE
-   ========================================================= */
-
-.hero-video__bottom-fade {
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 18px;
-
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
-
-  pointer-events: none;
-
-  z-index: 3;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 991px) {
-
-  .hero-video {
-    width: 100vw;
-    max-width: 100vw;
-
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-
-  .hero-video__media {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 767px) {
-
-  .hero-video {
-    width: 100vw;
-    max-width: 100vw;
-
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-
-  .hero-video__media {
-    width: 100vw;
-    max-width: 100vw;
-
-    height: auto;
-
-    object-fit: contain;
-  }
-
-  .hero-video__bottom-fade {
-    height: 8px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    WHY CHOOSE SBROS TECH
+   PREMIUM TECHNOLOGY / SAAS STYLE
 ========================================================= */
 
 .why-sbros-section {
-  position: relative;
-  padding: 110px 0;
-  background: #f7f9fd;
-  overflow: hidden;
-}
-
-
-/* Background Shapes */
-
-.why-sbros-section::before {
-  content: "";
-  position: absolute;
-
-  width: 420px;
-  height: 420px;
-
-  border-radius: 50%;
-
-  background: rgba(29, 75, 180, 0.05);
-
-  top: -180px;
-  right: -120px;
-
-  pointer-events: none;
-}
-
-
-.why-sbros-section::after {
-  content: "";
-  position: absolute;
-
-  width: 300px;
-  height: 300px;
-
-  border-radius: 50%;
-
-  background: rgba(215, 25, 32, 0.035);
-
-  bottom: -150px;
-  left: -100px;
-
-  pointer-events: none;
+    position: relative;
+    padding: 115px 0 120px;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(29, 78, 216, 0.07),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7faff 100%
+        );
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   HEADING
+   BACKGROUND DECORATION
+========================================================= */
+
+.why-sbros-section::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -220px;
+    top: -180px;
+    border-radius: 50%;
+    background: rgba(30, 79, 216, 0.055);
+    pointer-events: none;
+}
+
+.why-sbros-section::after {
+    content: "";
+    position: absolute;
+    left: -180px;
+    bottom: -220px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(30, 79, 216, 0.035);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.why-sbros-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SECTION HEADING
 ========================================================= */
 
 .why-sbros-heading {
-  position: relative;
-  z-index: 2;
-
-  max-width: 760px;
-
-  margin: 0 auto 55px;
-
-  text-align: center;
+    max-width: 850px;
+    margin-bottom: 58px;
 }
-
 
 .why-sbros-label {
-  display: inline-flex;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-  align-items: center;
-  gap: 12px;
+    margin-bottom: 17px;
 
-  margin-bottom: 18px;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-
-  color: #1d4bb4;
-
-  text-transform: uppercase;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
 }
 
-
 .why-sbros-label span {
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 
-  width: 32px;
-  height: 3px;
+    width: 38px;
+    height: 2px;
 
-  border-radius: 10px;
+    background: #1d4ed8;
+}
 
-  background: #1d4bb4;
+.why-sbros-label span::after {
+    content: "";
+
+    position: absolute;
+    right: -5px;
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: #1d4ed8;
+
+    transform: translateY(-50%);
 }
 
 
 .why-sbros-heading h2 {
-  margin: 0 0 18px;
+    margin: 0;
 
-  font-size: 48px;
-  line-height: 1.15;
+    color: #0b1f3a;
 
-  font-weight: 700;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 400;
 
-  color: #123b68;
+    line-height: 1.08;
+    letter-spacing: -2.5px;
 }
 
-
 .why-sbros-heading h2 strong {
-  color: #1d4bb4;
+    font-weight: 800;
 
-  font-weight: 700;
+    background:
+        linear-gradient(
+            90deg,
+            #0d3fa7 0%,
+            #1d4ed8 55%,
+            #2479d8 100%
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 
 .why-sbros-heading p {
-  max-width: 650px;
+    max-width: 720px;
 
-  margin: 0 auto;
+    margin: 18px 0 0;
 
-  font-size: 16px;
-  line-height: 1.8;
+    color: #64748b;
 
-  color: #65748b;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   CARDS
+   CARD GRID
 ========================================================= */
 
 .why-sbros-cards {
-  position: relative;
-  z-index: 2;
+    position: relative;
 }
 
+
+/* =========================================================
+   CARD
+========================================================= */
 
 .why-sbros-card {
-  position: relative;
+    position: relative;
 
-  height: 100%;
-  min-height: 345px;
+    height: 100%;
+    min-height: 335px;
 
-  padding: 30px;
+    padding: 30px 30px 32px;
 
-  background: #ffffff;
+    border: 1px solid #e3eaf4;
+    border-radius: 18px;
 
-  border: 1px solid #e5ebf5;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f9fbff 100%
+        );
 
-  border-radius: 20px;
+    box-shadow:
+        0 10px 35px rgba(15, 47, 87, 0.055);
 
-  overflow: hidden;
+    overflow: hidden;
 
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
 
-/* Top Line */
+/* top blue line */
 
 .why-sbros-card::before {
-  content: "";
+    content: "";
 
-  position: absolute;
+    position: absolute;
 
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 
-  width: 0;
-  height: 4px;
+    width: 0;
+    height: 3px;
 
-  background: #1d4bb4;
+    background:
+        linear-gradient(
+            90deg,
+            #123b82,
+            #2879df
+        );
 
-  transition: width 0.4s ease;
+    transition: width 0.45s ease;
 }
 
 
-.why-sbros-card:hover::before {
-  width: 100%;
+/* background glow */
+
+.why-sbros-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    right: -80px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.09),
+            transparent 70%
+        );
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+
+    opacity: 0;
 }
 
+
+/* hover */
 
 .why-sbros-card:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 
-  border-color: rgba(29, 75, 180, 0.2);
+    border-color:
+        rgba(37, 99, 235, 0.22);
 
-  box-shadow: 0 22px 50px rgba(24, 57, 105, 0.12);
+    box-shadow:
+        0 22px 55px rgba(15, 47, 87, 0.12);
+}
+
+.why-sbros-card:hover::before {
+    width: 100%;
+}
+
+.why-sbros-card:hover::after {
+    transform: scale(1.5);
+    opacity: 1;
 }
 
 
@@ -57714,23 +57626,29 @@ body,
 ========================================================= */
 
 .why-card-top {
-  display: flex;
+    position: relative;
 
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  margin-bottom: 38px;
+    margin-bottom: 48px;
 }
 
 
+/* number */
+
 .why-card-number {
-  font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  font-weight: 700;
+    color: #94a3b8;
 
-  color: #a5b5d1;
+    font-size: 12px;
+    font-weight: 700;
 
-  letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 
@@ -57739,1298 +57657,223 @@ body,
 ========================================================= */
 
 .why-card-icon {
-  width: 58px;
-  height: 58px;
+    position: relative;
 
-  display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  align-items: center;
-  justify-content: center;
+    width: 58px;
+    height: 58px;
 
-  border-radius: 15px;
+    border: 1px solid rgba(37, 99, 235, 0.13);
+    border-radius: 14px;
 
-  background: #edf3ff;
+    background:
+        linear-gradient(
+            145deg,
+            #eef5ff,
+            #e4efff
+        );
 
-  color: #1d4bb4;
+    color: #1749b7;
 
-  font-size: 24px;
+    box-shadow:
+        0 8px 25px rgba(30, 78, 216, 0.08);
 
-  transition:
-    background 0.35s ease,
-    color 0.35s ease,
-    transform 0.35s ease;
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease;
 }
 
+.why-card-icon::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    border-radius: 10px;
+}
+
+.why-card-icon i {
+    position: relative;
+    z-index: 2;
+
+    font-size: 22px;
+}
 
 .why-sbros-card:hover .why-card-icon {
-  background: #1d4bb4;
+    transform: rotate(-5deg) scale(1.08);
 
-  color: #ffffff;
+    background:
+        linear-gradient(
+            145deg,
+            #1749b7,
+            #246dd8
+        );
 
-  transform: rotate(-5deg) scale(1.05);
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(30, 78, 216, 0.25);
 }
 
 
 /* =========================================================
-   CARD CONTENT
+   CONTENT
 ========================================================= */
 
+.why-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+
 .why-card-content h3 {
-  margin: 0 0 15px;
+    margin: 0 0 15px;
 
-  font-size: 21px;
+    color: #0b1f3a;
 
-  line-height: 1.3;
+    font-size: 25px;
+    font-weight: 700;
 
-  font-weight: 700;
+    line-height: 1.25;
 
-  color: #123b68;
+    letter-spacing: -0.6px;
+
+    transition: color 0.3s ease;
+}
+
+
+.why-sbros-card:hover .why-card-content h3 {
+    color: #1749b7;
 }
 
 
 .why-card-content p {
-  margin: 0;
+    max-width: 290px;
 
-  font-size: 15px;
+    margin: 0;
 
-  line-height: 1.75;
+    color: #64748b;
 
-  color: #718096;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   ARROW
+   SMALL CARD BOTTOM DETAIL
+========================================================= */
+
+.why-sbros-card .why-card-content::after {
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    margin-top: 27px;
+
+    /* background: #d8e4f7; */
+
+    transition:
+        width 0.4s ease,
+        background 0.4s ease;
+}
+
+.why-sbros-card:hover
+.why-card-content::after {
+    width: 65px;
+    /* background: #1d4ed8; */
+}
+
+
+/* =========================================================
+   OPTIONAL ARROW
+   Works automatically if you uncomment JSX arrow
 ========================================================= */
 
 .why-card-arrow {
-  position: absolute;
+    position: absolute;
 
-  right: 28px;
-  bottom: 26px;
+    right: 28px;
+    bottom: 28px;
 
-  width: 36px;
-  height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  display: flex;
+    width: 38px;
+    height: 38px;
 
-  align-items: center;
-  justify-content: center;
+    border: 1px solid #e2eaf5;
+    border-radius: 50%;
 
-  border-radius: 50%;
+    color: #1749b7;
 
-  background: #f1f5fb;
+    background: #ffffff;
 
-  color: #1d4bb4;
-
-  font-size: 15px;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
+.why-card-arrow i {
+    font-size: 15px;
+}
 
 .why-sbros-card:hover .why-card-arrow {
-  background: #1d4bb4;
+    color: #ffffff;
+    background: #1749b7;
 
-  color: #ffffff;
-
-  transform: translate(3px, -3px);
+    transform: translate(3px, -3px);
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   COLUMN HEIGHT FIX
 ========================================================= */
 
-@media (max-width: 1199px) {
-
-  .why-sbros-heading h2 {
-    font-size: 42px;
-  }
-
-  .why-sbros-card {
-    padding: 26px;
-  }
-
+.why-sbros-cards > [class*="col-"] {
+    display: flex;
 }
 
-
-@media (max-width: 991px) {
-
-  .why-sbros-section {
-    padding: 85px 0;
-  }
-
-  .why-sbros-heading {
-    margin-bottom: 40px;
-  }
-
-  .why-sbros-heading h2 {
-    font-size: 38px;
-  }
-
-  .why-sbros-card {
-    min-height: 320px;
-  }
-
-}
-
-
-@media (max-width: 767px) {
-
-  .why-sbros-section {
-    padding: 70px 0;
-  }
-
-  .why-sbros-heading {
-    padding: 0 15px;
-  }
-
-  .why-sbros-heading h2 {
-    font-size: 32px;
-  }
-
-  .why-sbros-heading p {
-    font-size: 15px;
-  }
-
-  .why-card-top {
-    margin-bottom: 30px;
-  }
-
-}
-
-
-@media (max-width: 575px) {
-
-  .why-sbros-heading h2 {
-    font-size: 29px;
-  }
-
-  .why-sbros-card {
-    min-height: 300px;
-    padding: 25px;
-  }
-
-  .why-card-content h3 {
-    font-size: 20px;
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   SBROS — INSIDE TECHNOLOGY SHOWCASE
-   ========================================================= */
-
-.sbros-showcase {
-    position: relative;
-
+.why-sbros-cards .why-sbros-card {
     width: 100%;
-
-    /* padding: 85px 0 80px; */
-
-    /* background:
-        linear-gradient(
-            180deg,
-            #f7faff 0%,
-            #ffffff 42%,
-            #f5f8fc 100%
-        ); */
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   BACKGROUND DECORATION
-   ========================================================= */
-
-.sbros-showcase::before {
-    content: "";
-
-    position: absolute;
-
-    width: 700px;
-    height: 700px;
-
-    top: -250px;
-    right: -280px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(37, 99, 235, 0.10),
-            rgba(37, 99, 235, 0.03) 40%,
-            transparent 72%
-        );
-
-    pointer-events: none;
-}
-
-
-.sbros-showcase::after {
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    left: -350px;
-    bottom: -300px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(43, 112, 230, 0.08),
-            transparent 70%
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   INTRO HEADER
-   ========================================================= */
-
-.sbros-showcase-header {
-    position: relative;
-
-    z-index: 5;
-
-    width: min(1280px, calc(100% - 100px));
-
-    margin: 0 auto 55px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 60px;
-}
-
-
-/* =========================================================
-   SECTION LABEL
-   ========================================================= */
-
-.sbros-showcase-label {
-    min-width: 190px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding-bottom: 8px;
-
-    color: #2459b8;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 2.8px;
-
-    white-space: nowrap;
-}
-
-
-.sbros-showcase-label span {
-    position: relative;
-
-    width: 8px;
-    height: 8px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background: #2563d8;
-
-    box-shadow:
-        0 0 0 6px rgba(37, 99, 216, 0.09),
-        0 0 20px rgba(37, 99, 216, 0.45);
-
-    animation:
-        sbrosLabelPulse 2.2s ease-in-out infinite;
-}
-
-
-@keyframes sbrosLabelPulse {
-
-    0%,
-    100% {
-        box-shadow:
-            0 0 0 5px rgba(37, 99, 216, 0.08),
-            0 0 16px rgba(37, 99, 216, 0.35);
-    }
-
-    50% {
-        box-shadow:
-            0 0 0 10px rgba(37, 99, 216, 0.02),
-            0 0 28px rgba(37, 99, 216, 0.60);
-    }
-}
-
-
-/* =========================================================
-   HEADER CONTENT
-   ========================================================= */
-
-.sbros-showcase-heading {
-    flex: 1;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 80px;
-}
-
-
-.sbros-showcase-heading h2 {
-    margin: 0;
-
-    color: #101722;
-
-    font-size: clamp(42px, 5vw, 68px);
-
-    line-height: 1.02;
-
-    letter-spacing: -3.2px;
-
-    font-weight: 500;
-
-    white-space: nowrap;
-}
-
-
-.sbros-showcase-heading h2 strong {
-    color: #2057bf;
-
-    font-weight: 700;
-}
-
-
-.sbros-showcase-heading p {
-    max-width: 430px;
-
-    margin: 0 0 4px;
-
-    color: #697487;
-
-    font-size: 15px;
-
-    line-height: 1.85;
-}
-
-
-/* =========================================================
-   FULL WIDTH VIDEO WRAPPER
-   ========================================================= */
-
-.sbros-showcase-video-wrap {
-    position: relative;
-
-    z-index: 4;
-
-    width: 100%;
-
-    margin: 0;
-
-    padding: 0;
-
-    overflow: visible;
-}
-
-
-/* =========================================================
-   VIDEO CONTAINER
-   ========================================================= */
-
-.sbros-showcase-video {
-    position: relative;
-
-    width: 100%;
-
-    /*
-       IMPORTANT:
-       Keep this height fixed on desktop.
-       Video becomes FULL WIDTH without changing height.
-    */
-
-    height: 610px;
-
-    overflow: hidden;
-
-    border-radius: 0;
-
-    background: #07111e;
-
-    box-shadow:
-        0 35px 90px rgba(11, 32, 65, 0.20);
-}
-
-
-/* =========================================================
-   VIDEO
-   ========================================================= */
-
-.sbros-showcase-video video {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    /*
-       This is important.
-       It fills the entire width AND height.
-    */
-
-    object-position: center;
-
-    transform: scale(1.035);
-
-    animation:
-        sbrosVideoZoom 18s ease-in-out infinite alternate;
-}
-
-
-@keyframes sbrosVideoZoom {
-
-    0% {
-        transform: scale(1.035);
-    }
-
-    100% {
-        transform: scale(1.075);
-    }
-}
-
-
-/* =========================================================
-   PREMIUM VIDEO SHADE
-   ========================================================= */
-
-.sbros-video-shade {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    pointer-events: none;
-
-    background:
-
-        /* LEFT CONTENT SHADOW */
-        linear-gradient(
-            90deg,
-            rgba(4, 10, 20, 0.88) 0%,
-            rgba(4, 10, 20, 0.62) 24%,
-            rgba(4, 10, 20, 0.28) 52%,
-            rgba(4, 10, 20, 0.12) 100%
-        ),
-
-        /* BOTTOM SHADOW */
-        linear-gradient(
-            0deg,
-            rgba(3, 9, 18, 0.88) 0%,
-            rgba(3, 9, 18, 0.35) 35%,
-            rgba(3, 9, 18, 0.02) 72%
-        ),
-
-        /* TOP */
-        linear-gradient(
-            180deg,
-            rgba(3, 8, 16, 0.32),
-            transparent 35%
-        );
-}
-
-
-/* =========================================================
-   MOVING LIGHT
-   ========================================================= */
-
-.sbros-video-light {
-    position: absolute;
-
-    z-index: 2;
-
-    top: -70%;
-
-    left: -40%;
-
-    width: 32%;
-
-    height: 240%;
-
-    transform: rotate(20deg);
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(88, 173, 255, 0.10),
-            rgba(88, 173, 255, 0.18),
-            transparent
-        );
-
-    filter: blur(28px);
-
-    animation:
-        sbrosLightMove 10s ease-in-out infinite;
-}
-
-
-@keyframes sbrosLightMove {
-
-    0% {
-        left: -45%;
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    55% {
-        left: 65%;
-        opacity: 0.7;
-    }
-
-    80% {
-        opacity: 0.3;
-    }
-
-    100% {
-        left: 120%;
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   DIGITAL GRID
-   ========================================================= */
-
-.sbros-video-grid {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    opacity: 0.10;
-
-    background-image:
-
-        linear-gradient(
-            rgba(120, 190, 255, 0.22) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(120, 190, 255, 0.22) 1px,
-            transparent 1px
-        );
-
-    background-size: 85px 85px;
-
-    mask-image:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            black 35%,
-            black 100%
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            black 35%,
-            black 100%
-        );
-
-    animation:
-        sbrosGridMove 22s linear infinite;
-}
-
-
-@keyframes sbrosGridMove {
-
-    0% {
-        background-position: 0 0;
-    }
-
-    100% {
-        background-position: 85px 85px;
-    }
-}
-
-
-/* =========================================================
-   TOP LEFT LABEL
-   ========================================================= */
-
-.sbros-video-top-label {
-    position: absolute;
-
-    top: 34px;
-    left: 50px;
-
-    z-index: 8;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 11px 18px;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.18);
-
-    border-radius: 100px;
-
-    background:
-        rgba(7, 17, 30, 0.42);
-
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
-
-    color:
-        rgba(255, 255, 255, 0.88);
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 2.1px;
-}
-
-
-.live-dot {
-    width: 7px;
-    height: 7px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background: #5eb5ff;
-
-    box-shadow:
-        0 0 0 5px rgba(94, 181, 255, 0.08),
-        0 0 18px rgba(94, 181, 255, 0.95);
-
-    animation:
-        sbrosLivePulse 1.8s ease-in-out infinite;
-}
-
-
-@keyframes sbrosLivePulse {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.45;
-        transform: scale(0.72);
-    }
-}
-
-
-/* =========================================================
-   TOP RIGHT LABEL
-   ========================================================= */
-
-.sbros-video-corner {
-    position: absolute;
-
-    top: 38px;
-    right: 50px;
-
-    z-index: 8;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-end;
-
-    gap: 4px;
-
-    color:
-        rgba(255, 255, 255, 0.48);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 2.4px;
-}
-
-
-/* =========================================================
-   CENTER DECORATION
-   ========================================================= */
-
-.sbros-video-center-line {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    z-index: 4;
-
-    width: 150px;
-    height: 1px;
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(112, 190, 255, 0.35),
-            transparent
-        );
-
-    opacity: 0.7;
-
-    pointer-events: none;
-}
-
-
-.sbros-video-center-line span {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: #77c5ff;
-
-    box-shadow:
-        0 0 18px rgba(119, 197, 255, 0.95);
-}
-
-
-/* =========================================================
-   BOTTOM CONTENT
-   ========================================================= */
-
-.sbros-video-bottom-content {
-    position: absolute;
-
-    left: 70px;
-    right: 70px;
-    bottom: 62px;
-
-    z-index: 8;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 70px;
-}
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.sbros-video-title > span {
-    display: block;
-
-    margin-bottom: 15px;
-
-    color:
-        rgba(255, 255, 255, 0.58);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 2.8px;
-}
-
-
-.sbros-video-title h3 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: clamp(36px, 4.5vw, 64px);
-
-    line-height: 1.02;
-
-    letter-spacing: -3px;
-
-    font-weight: 400;
-}
-
-
-.sbros-video-title h3 strong {
-    color: #8ccaff;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
-.sbros-video-description {
-    width: 340px;
-
-    display: flex;
-
-    gap: 18px;
-}
-
-
-.description-line {
-    width: 2px;
-
-    flex-shrink: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #62b8ff,
-            rgba(98, 184, 255, 0)
-        );
-}
-
-
-.sbros-video-description p {
-    margin: 0;
-
-    color:
-        rgba(255, 255, 255, 0.68);
-
-    font-size: 14px;
-
-    line-height: 1.85;
-}
-
-
-/* =========================================================
-   SYSTEM STATUS
-   ========================================================= */
-
-.sbros-video-status {
-    position: absolute;
-
-    right: 55px;
-    bottom: 30px;
-
-    z-index: 9;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color:
-        rgba(255, 255, 255, 0.42);
-
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.8px;
-}
-
-
-.status-dot {
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #54df9a;
-
-    box-shadow:
-        0 0 12px rgba(84, 223, 154, 0.8);
-
-    animation:
-        statusPulse 2s ease-in-out infinite;
-}
-
-
-@keyframes statusPulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.35;
-    }
-}
-
-
-/* =========================================================
-   DECORATIVE CORNER LINES
-   ========================================================= */
-
-.sbros-video-corner-line {
-    position: absolute;
-
-    z-index: 7;
-
-    width: 65px;
-    height: 65px;
-
-    opacity: 0.35;
-
-    pointer-events: none;
-}
-
-
-.corner-top {
-    top: 24px;
-    right: 24px;
-
-    border-top:
-        1px solid rgba(123, 192, 255, 0.6);
-
-    border-right:
-        1px solid rgba(123, 192, 255, 0.6);
-}
-
-
-.corner-bottom {
-    left: 24px;
-    bottom: 24px;
-
-    border-left:
-        1px solid rgba(123, 192, 255, 0.6);
-
-    border-bottom:
-        1px solid rgba(123, 192, 255, 0.6);
-}
-
-
-/* =========================================================
-   VIDEO GLOW
-   ========================================================= */
-
-.sbros-video-glow {
-    position: absolute;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    filter: blur(45px);
-
-    z-index: -1;
-}
-
-
-.glow-one {
-    width: 380px;
-    height: 380px;
-
-    top: 15%;
-    left: -170px;
-
-    background:
-        rgba(39, 103, 224, 0.15);
-
-    animation:
-        sbrosGlowOne 7s ease-in-out infinite alternate;
-}
-
-
-.glow-two {
-    width: 420px;
-    height: 420px;
-
-    right: -170px;
-    bottom: -180px;
-
-    background:
-        rgba(48, 145, 255, 0.14);
-
-    animation:
-        sbrosGlowTwo 8s ease-in-out infinite alternate;
-}
-
-
-@keyframes sbrosGlowOne {
-
-    from {
-        transform: translateY(-25px);
-    }
-
-    to {
-        transform: translateY(35px);
-    }
-}
-
-
-@keyframes sbrosGlowTwo {
-
-    from {
-        transform: translateY(25px);
-    }
-
-    to {
-        transform: translateY(-35px);
-    }
-}
-
-
-/* =========================================================
-   BOTTOM STATS
-   ========================================================= */
-
-.sbros-showcase-stats {
-    position: relative;
-
-    z-index: 5;
-
-    width: min(1280px, calc(100% - 100px));
-
-    margin: 70px auto 0;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    border-top:
-        1px solid #dfe5ed;
-}
-
-
-.sbros-stat {
-    display: flex;
-
-    gap: 18px;
-
-    padding: 30px 35px 0 0;
-
-    border-right:
-        1px solid #dfe5ed;
-}
-
-
-.sbros-stat:not(:first-child) {
-    padding-left: 35px;
-}
-
-
-.sbros-stat:last-child {
-    border-right: 0;
-}
-
-
-.sbros-stat-number {
-    color: #245bc0;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-}
-
-
-.sbros-stat strong {
-    display: block;
-
-    margin-bottom: 6px;
-
-    color: #172033;
-
-    font-size: 15px;
-
-    font-weight: 700;
-}
-
-
-.sbros-stat p {
-    margin: 0;
-
-    color: #788394;
-
-    font-size: 13px;
-
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   LARGE DESKTOP
-   ========================================================= */
-
-@media (min-width: 1600px) {
-
-    .sbros-showcase-video {
-        height: 610px;
-    }
-
-
-    .sbros-video-bottom-content {
-        left: 100px;
-        right: 100px;
-    }
-
-
-    .sbros-video-top-label {
-        left: 80px;
-    }
-
-
-    .sbros-video-corner {
-        right: 80px;
-    }
-
 }
 
 
 /* =========================================================
    TABLET
-   ========================================================= */
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 991px) {
 
-    /* .sbros-showcase {
-        padding: 75px 0 70px;
-    } */
+    .why-sbros-section {
+        padding: 90px 0 95px;
+    }
 
-
-    .sbros-showcase-header {
-        width: calc(100% - 60px);
-
-        display: block;
-
+    .why-sbros-heading {
         margin-bottom: 45px;
     }
 
-
-    .sbros-showcase-label {
-        margin-bottom: 24px;
+    .why-sbros-heading h2 {
+        font-size: 42px;
     }
 
-
-    .sbros-showcase-heading {
-        gap: 40px;
+    .why-sbros-card {
+        min-height: 310px;
+        padding: 27px;
     }
 
-
-    .sbros-showcase-heading h2 {
-        font-size: 52px;
-
-        letter-spacing: -2.5px;
-    }
-
-
-    .sbros-showcase-heading p {
-        max-width: 360px;
-    }
-
-
-    .sbros-showcase-video {
-        height: 540px;
-    }
-
-
-    .sbros-video-bottom-content {
-        left: 45px;
-        right: 45px;
-        bottom: 45px;
-    }
-
-
-    .sbros-video-title h3 {
-        font-size: 46px;
-    }
-
-
-    .sbros-video-description {
-        width: 280px;
-    }
-
-
-    .sbros-video-top-label {
-        left: 35px;
-    }
-
-
-    .sbros-video-corner {
-        right: 35px;
-    }
-
-
-    .sbros-video-status {
-        right: 35px;
-    }
-
-
-    .sbros-showcase-stats {
-        width: calc(100% - 60px);
+    .why-card-top {
+        margin-bottom: 38px;
     }
 
 }
@@ -59038,209 +57881,61 @@ body,
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 767px) {
 
-    /* .sbros-showcase {
-        padding: 65px 0 60px;
-    } */
+    .why-sbros-section {
+        padding: 75px 0 80px;
+    }
 
-
-    .sbros-showcase-header {
-        width: calc(100% - 40px);
-
+    .why-sbros-heading {
         margin-bottom: 35px;
     }
 
-
-    .sbros-showcase-label {
-        margin-bottom: 20px;
-
-        font-size: 9px;
-
+    .why-sbros-label {
+        font-size: 10px;
         letter-spacing: 2px;
     }
 
-
-    .sbros-showcase-heading {
-        display: block;
+    .why-sbros-heading h2 {
+        font-size: 36px;
+        letter-spacing: -1.5px;
     }
 
-
-    .sbros-showcase-heading h2 {
-        font-size: 39px;
-
-        line-height: 1.04;
-
-        letter-spacing: -1.8px;
-
-        white-space: normal;
-    }
-
-
-    .sbros-showcase-heading p {
-        max-width: 100%;
-
-        margin-top: 20px;
-
+    .why-sbros-heading p {
         font-size: 14px;
-
-        line-height: 1.75;
+        line-height: 1.7;
     }
 
+    .why-sbros-card {
+        min-height: auto;
 
-    /* ================================
-       FULL WIDTH MOBILE VIDEO
-       ================================ */
+        padding: 25px;
 
-    .sbros-showcase-video-wrap {
-        width: 100%;
+        border-radius: 15px;
     }
 
-
-    .sbros-showcase-video {
-        height: 500px;
-
-        border-radius: 0;
+    .why-card-top {
+        margin-bottom: 35px;
     }
 
-
-    .sbros-showcase-video video {
-        transform: scale(1.04);
-
-        object-position: center;
+    .why-card-icon {
+        width: 52px;
+        height: 52px;
     }
 
-
-    .sbros-video-top-label {
-        top: 20px;
-        left: 20px;
-
-        padding: 8px 12px;
-
-        font-size: 8px;
-
-        letter-spacing: 1.5px;
+    .why-card-icon i {
+        font-size: 20px;
     }
 
-
-    .sbros-video-corner {
-        top: 22px;
-        right: 20px;
-
-        font-size: 7px;
-
-        letter-spacing: 1.5px;
+    .why-card-content h3 {
+        font-size: 22px;
     }
 
-
-    .sbros-video-bottom-content {
-        left: 24px;
-        right: 24px;
-        bottom: 35px;
-
-        display: block;
-    }
-
-
-    .sbros-video-title > span {
-        margin-bottom: 10px;
-
-        font-size: 8px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .sbros-video-title h3 {
-        font-size: 34px;
-
-        line-height: 1.05;
-
-        letter-spacing: -1.3px;
-    }
-
-
-    .sbros-video-description {
-        width: 100%;
-
-        margin-top: 20px;
-
-        gap: 12px;
-    }
-
-
-    .sbros-video-description p {
-        font-size: 12px;
-
-        line-height: 1.65;
-    }
-
-
-    .sbros-video-status {
-        right: 22px;
-        bottom: 17px;
-
-        font-size: 7px;
-    }
-
-
-    .sbros-video-grid {
-        background-size: 55px 55px;
-    }
-
-
-    .sbros-video-center-line {
-        width: 90px;
-    }
-
-
-    .sbros-video-corner-line {
-        width: 45px;
-        height: 45px;
-    }
-
-
-    .corner-top {
-        top: 15px;
-        right: 15px;
-    }
-
-
-    .corner-bottom {
-        left: 15px;
-        bottom: 15px;
-    }
-
-
-    /* ================================
-       STATS
-       ================================ */
-
-    .sbros-showcase-stats {
-        width: calc(100% - 40px);
-
-        margin-top: 50px;
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .sbros-stat,
-    .sbros-stat:not(:first-child) {
-
-        padding: 22px 0;
-
-        border-right: 0;
-
-        border-bottom:
-            1px solid #dfe4eb;
-    }
-
-
-    .sbros-stat:last-child {
-        border-bottom: 0;
+    .why-card-content p {
+        max-width: none;
+        font-size: 13px;
     }
 
 }
@@ -59248,42 +57943,396 @@ body,
 
 /* =========================================================
    SMALL MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 480px) {
 
-    .sbros-showcase {
-        padding-top: 55px;
+    .why-sbros-section {
+        padding: 65px 0 70px;
     }
 
-
-    .sbros-showcase-heading h2 {
-        font-size: 34px;
+    .why-sbros-heading h2 {
+        font-size: 31px;
     }
 
-
-    .sbros-showcase-video {
-        height: 455px;
-    }
-
-
-    .sbros-video-title h3 {
-        font-size: 29px;
-    }
-
-
-    .sbros-video-description p {
-        font-size: 11px;
-    }
-
-
-    .sbros-video-status {
-        display: none;
-    }
-
-
-    .sbros-video-center-line {
-        display: none;
+    .why-sbros-card {
+        padding: 23px;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SBROS CINEMATIC VIDEO SECTION
+   Full Width + Original Video Ratio
+========================================================= */
+
+.sbros-showcase {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: #000;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VIDEO WRAPPER
+========================================================= */
+
+.sbros-showcase-video-wrap {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    line-height: 0;
+}
+
+
+/* =========================================================
+   VIDEO CONTAINER
+
+   IMPORTANT:
+   Do NOT use aspect-ratio here.
+   The video itself controls the height.
+========================================================= */
+
+.sbros-showcase-video {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #000;
+
+    line-height: 0;
+}
+
+
+/* =========================================================
+   ACTUAL VIDEO
+
+   This is the most important part.
+========================================================= */
+
+.sbros-showcase-video video {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    /*
+       Keep the ORIGINAL video ratio.
+       Do not use cover.
+       Do not use contain.
+    */
+    object-fit: initial;
+
+    object-position: center;
+
+    background: #000;
+
+    /*
+       No artificial zoom.
+       This ensures nothing gets cropped.
+    */
+    transform: none;
+
+    animation: none;
+}
+
+
+/* =========================================================
+   CINEMATIC DARK OVERLAY
+========================================================= */
+
+.sbros-video-shade {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.30) 0%,
+            rgba(0, 0, 0, 0.05) 45%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.03) 0%,
+            rgba(0, 0, 0, 0.08) 55%,
+            rgba(0, 0, 0, 0.35) 100%
+        );
+}
+
+
+/* =========================================================
+   MOVING LIGHT
+========================================================= */
+
+.sbros-video-light {
+    position: absolute;
+
+    top: -60%;
+    left: -40%;
+
+    width: 30%;
+    height: 220%;
+
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(80, 170, 255, 0.08) 50%,
+            transparent 100%
+        );
+
+    filter: blur(30px);
+
+    transform: rotate(20deg);
+
+    pointer-events: none;
+
+    animation: sbrosLightMove 10s ease-in-out infinite;
+}
+
+
+@keyframes sbrosLightMove {
+
+    0% {
+        left: -40%;
+    }
+
+    50% {
+        left: 65%;
+    }
+
+    100% {
+        left: 115%;
+    }
+
+}
+
+
+/* =========================================================
+   DIGITAL GRID
+========================================================= */
+
+.sbros-video-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    opacity: 0.07;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(120, 190, 255, 0.14) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(120, 190, 255, 0.14) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    animation: sbrosGridMove 20s linear infinite;
+}
+
+
+@keyframes sbrosGridMove {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 80px 80px;
+    }
+
+}
+
+
+/* =========================================================
+   REMOVE OLD GLOW
+========================================================= */
+
+.sbros-video-glow {
+    display: none !important;
+}
+
+
+/* =========================================================
+   BOTTOM CONTENT
+========================================================= */
+
+.sbros-video-bottom-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 10;
+
+    padding: 40px 6%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.sbros-video-description {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.description-line {
+    width: 55px;
+    height: 2px;
+
+    background: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   REMOVE OUTER DECORATION
+========================================================= */
+
+.sbros-showcase::before,
+.sbros-showcase::after {
+    display: none !important;
+}
+
+
+/* =========================================================
+   BOX SIZING
+========================================================= */
+
+.sbros-showcase,
+.sbros-showcase-video-wrap,
+.sbros-showcase-video,
+.sbros-showcase-video video {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .sbros-showcase-video video {
+        width: 100%;
+        height: auto;
+    }
+
+    .sbros-video-grid {
+        background-size: 60px 60px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .sbros-showcase-video video {
+        width: 100%;
+        height: auto;
+    }
+
+    .sbros-video-grid {
+        background-size: 50px 50px;
+    }
+
+    .sbros-video-light {
+        width: 45%;
+    }
+
+    .sbros-video-bottom-content {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sbros-showcase-video video {
+        width: 100%;
+        height: auto;
+    }
+
+    .sbros-video-bottom-content {
+        padding: 20px 15px;
+    }
+
+}
+
+
+
+
+
+
+
