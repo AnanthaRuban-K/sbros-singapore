@@ -217,71 +217,79 @@ const Footer1 = () => {
 
               </div>
 
+{/* =========================
+    SINGAPORE OFFICE
+========================== */}
+<div className="contact-box address-box">
 
-              {/* =========================
-                  SINGAPORE OFFICE
-              ========================== */}
-              <div className="contact-box address-box">
+  <div className="icon">
+    <i className="bi bi-geo-alt-fill"></i>
+  </div>
 
-                <div className="icon">
-                  <i className="bi bi-geo-alt-fill"></i>
-                </div>
+  <div className="pera">
+    <a
+      href="https://www.google.com/maps/place/27+Woodlands+Industrial+Park+E1,+%2303+10+E1,+Singapore+757718/@1.4553029,103.7957439,17z/data=!3m1!4b1!4m5!3m4!1s0x31da1314d2917679:0xcaef219f43ebed43!8m2!3d1.4553029!4d103.7983188?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="address-link"
+    >
+      <p>
+        <strong>Singapore Office</strong>
+        <br />
 
-                <div className="pera">
+        27 Woodlands Industrial Park E1
+        <br />
 
-                  <p>
-                    <strong>Singapore Office</strong>
-                    <br />
+        #03-10, Singapore
+        <br />
 
-                    27 Woodlands Industrial Park E1
-                    <br />
+        757718
+      </p>
+    </a>
+  </div>
 
-                    #03-10, Singapore
-                    <br />
-
-                    757718
-                  </p>
-
-                </div>
-
-              </div>
+</div>
 
 
-              {/* =========================
-                  INDIA BRANCH - CLICKABLE
-              ========================== */}
-              <div className="contact-box address-box india-address">
+             {/* =========================
+    INDIA BRANCH - CLICKABLE
+========================== */}
+<div className="contact-box address-box india-address">
 
-                <div className="icon">
-                  <i className="bi bi-geo-alt-fill"></i>
-                </div>
+  <div className="icon">
+    <i className="bi bi-geo-alt-fill"></i>
+  </div>
 
-                <div className="pera">
+  <div className="pera">
 
-                 <p>
-                    <strong>India Branch</strong>
+    <a
+      href="https://www.google.co.in/maps/place/SBros+Tech+Pvt+Ltd/@8.205644,77.3239503,20.75z/data=!4m10!1m2!2m1!1sNo.+15%2F25,+Madavilagam,+Kandanvilai+Post,+Kanniya+Kumari+District+Pincode:+629810!3m6!1s0x3b04fbaac0db9d55:0xdef8ffd0b62a1f73!8m2!3d8.2056778!4d77.3243475!15sClFOby4gMTUvMjUsIE1hZGF2aWxhZ2FtLCBLYW5kYW52aWxhaSBQb3N0LCBLYW5uaXkgS3VtYXJpIERpc3RyaWN0IFBpbmNvZGU6IDYyOTgxMJIBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11sdxg3g_2?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="address-link"
+    >
 
-                    <br />
+      <p>
+        <strong>India Branch</strong>
+        <br />
 
-                    No. 15/25, Madavilagam,
+        No. 15/25, Madavilagam,
+        <br />
 
-                    <br />
+        Kandanvilai Post,
+        <br />
 
-                    Kandanvilai Post,
+        Kanniya Kumari District
+        <br />
 
-                    <br />
+        Pincode: 629810
+      </p>
 
-                    Kanniya Kumari District
+    </a>
 
-                    <br />
+  </div>
 
-                    Pincode: 629810
-
-                  </p>
-
-                </div>
-
-              </div>
+</div>
 
             </div>
 
