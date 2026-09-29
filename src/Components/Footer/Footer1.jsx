@@ -258,14 +258,7 @@ const Footer1 = () => {
 
                 <div className="pera">
 
-                  <a
-                    href="https://sbrostech.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="india-address-link"
-                    aria-label="SBROS India Branch"
-                  >
-
+                 <p>
                     <strong>India Branch</strong>
 
                     <br />
@@ -284,7 +277,7 @@ const Footer1 = () => {
 
                     Pincode: 629810
 
-                  </a>
+                  </p>
 
                 </div>
 
