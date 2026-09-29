@@ -12309,7 +12309,7 @@ a.header__search.header-search-btn p {
   .sbros-about {
     width: 100%;
 
-    padding-top: 120px !important;
+    padding-top: 40px !important;
     padding-bottom: 60px !important;
 
     position: relative;
@@ -12745,7 +12745,7 @@ a.header__search.header-search-btn p {
 @media (max-width: 480px) {
 
   .sbros-about {
-    padding-top: 90px !important;
+    padding-top: 30px !important;
     padding-bottom: 35px !important;
   }
 
