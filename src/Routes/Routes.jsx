@@ -58,6 +58,7 @@ import TermsAndConditions from "../Components/Common/Terms";
 import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
 import ScrollToTop from "../Components/Common/ScrollToTop";
 import FloatingButtons from "../Components/Common/FloatingButtons";
+
 export const router = createBrowserRouter([
   {
     path: "/",
