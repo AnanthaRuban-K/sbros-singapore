@@ -7,6 +7,7 @@ const projects = [
     image: "/assets/img/about/t2.jpeg",
     description:
       "Corporate Website for Food-Grade Ice Manufacturing & Cold Chain Solutions.",
+    link: "https://tucklee.com",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const projects = [
     image: "/assets/img/about/firstchoice.jpg",
     description:
       "Custom Corporate Website for IT Solutions, Software Development & Digital Services Company.",
+    link: "https://firstchoicehub.com.sg/",
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ const projects = [
     image: "/assets/img/about/ansfresh.jpg",
     description:
       "Custom Business Website for Meat Processing, Wholesale Distribution, and Online Sales.",
+    link: "https://ansfreshmeat.com.sg/",
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ const projects = [
     image: "/assets/img/about/goldsea.jpg",
     description:
       "Custom Corporate Website for Engineering, Maritime, Offshore & Process Plant Solutions Group.",
+    link: "https://goldseagroups.com/",
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ const projects = [
     image: "/assets/img/about/skymoon.jpg",
     description:
       "Custom Corporate Website for Industrial Engineering, Mechanical, Electrical & Structural Services.",
+    link: "https://skymooneng.com.sg/",
   },
 ];
 
@@ -56,7 +61,15 @@ function Testimonial5() {
               </div>
 
               <div className="project-info">
-                <h3>{project.title}</h3>
+                <h3>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.title}
+                  </a>
+                </h3>
               </div>
             </div>
           ))}

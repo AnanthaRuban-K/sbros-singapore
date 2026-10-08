@@ -60865,3 +60865,16 @@ body,
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+
+.project-info h3 a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-info h3 a:hover {
+  text-decoration: underline;
+}
