@@ -8,7 +8,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
    SETTINGS - inga maathina podhum
 ========================================= */
 const LOGO_URL = "/favicon-logo.png"; // unga logo path
-const COMPANY_NAME = "SBROS Tech (S) PTE LTD";
+const COMPANY_NAME = "SBROS TECH (S) PTE LTD";
 const ENTERPRISE_TEXT = "Your Dreams Our Mission";
 const VERSION = "v1.0.0";
 
@@ -206,12 +206,12 @@ const Preloader = ({ onComplete }) => {
 
           {/* LOADING TEXT */}
           <div className="splash-loading-text">
-            <p>Starting workspace</p>
-            <span className="splash-dots">
+            {/* <p>Starting workspace</p>
+            <span className="splash-dots"> */}
               <span className="splash-dot" style={{ animationDelay: "0ms" }} />
               <span className="splash-dot" style={{ animationDelay: "300ms" }} />
               <span className="splash-dot" style={{ animationDelay: "600ms" }} />
-            </span>
+            {/* </span> */}
           </div>
 
           {/* VERSION */}
