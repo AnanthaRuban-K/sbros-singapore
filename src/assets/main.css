@@ -57353,9 +57353,9 @@ body,
 ========================================================= */
 
 .why-sbros-section {
-  left: 30px;
     position: relative;
     padding: 115px 0 120px;
+
     background:
         radial-gradient(
             circle at 90% 10%,
@@ -57367,6 +57367,7 @@ body,
             #ffffff 0%,
             #f7faff 100%
         );
+
     overflow: hidden;
 }
 
@@ -57377,25 +57378,38 @@ body,
 
 .why-sbros-section::before {
     content: "";
+
     position: absolute;
+
     width: 420px;
     height: 420px;
+
     right: -220px;
     top: -180px;
+
     border-radius: 50%;
+
     background: rgba(30, 79, 216, 0.055);
+
     pointer-events: none;
 }
 
+
 .why-sbros-section::after {
     content: "";
+
     position: absolute;
+
     left: -180px;
     bottom: -220px;
+
     width: 420px;
     height: 420px;
+
     border-radius: 50%;
+
     background: rgba(30, 79, 216, 0.035);
+
     pointer-events: none;
 }
 
@@ -57419,6 +57433,9 @@ body,
     margin-bottom: 58px;
 }
 
+
+/* Label */
+
 .why-sbros-label {
     display: flex;
     align-items: center;
@@ -57427,14 +57444,20 @@ body,
     margin-bottom: 17px;
 
     color: #1d4ed8;
+
     font-size: 12px;
     font-weight: 700;
+
     letter-spacing: 2.5px;
     text-transform: uppercase;
 }
 
+
+/* Label line */
+
 .why-sbros-label span {
     position: relative;
+
     display: inline-block;
 
     width: 38px;
@@ -57443,10 +57466,12 @@ body,
     background: #1d4ed8;
 }
 
+
 .why-sbros-label span::after {
     content: "";
 
     position: absolute;
+
     right: -5px;
     top: 50%;
 
@@ -57454,11 +57479,14 @@ body,
     height: 5px;
 
     border-radius: 50%;
+
     background: #1d4ed8;
 
     transform: translateY(-50%);
 }
 
+
+/* Heading */
 
 .why-sbros-heading h2 {
     margin: 0;
@@ -57469,8 +57497,12 @@ body,
     font-weight: 400;
 
     line-height: 1.08;
+
     letter-spacing: -2.5px;
 }
+
+
+/* Heading strong */
 
 .why-sbros-heading h2 strong {
     font-weight: 800;
@@ -57485,9 +57517,12 @@ body,
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     background-clip: text;
 }
 
+
+/* Description */
 
 .why-sbros-heading p {
     max-width: 720px;
@@ -57511,18 +57546,30 @@ body,
 
 
 /* =========================================================
+   CARD COLUMN
+========================================================= */
+
+.why-sbros-cards > [class*="col-"] {
+    display: flex;
+}
+
+
+/* =========================================================
    CARD
 ========================================================= */
 
 .why-sbros-card {
     position: relative;
 
+    width: 100%;
     height: 100%;
+
     min-height: 335px;
 
     padding: 30px 30px 32px;
 
     border: 1px solid #e3eaf4;
+
     border-radius: 18px;
 
     background:
@@ -57544,7 +57591,9 @@ body,
 }
 
 
-/* top blue line */
+/* =========================================================
+   TOP BLUE LINE
+========================================================= */
 
 .why-sbros-card::before {
     content: "";
@@ -57568,7 +57617,9 @@ body,
 }
 
 
-/* background glow */
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
 
 .why-sbros-card::after {
     content: "";
@@ -57590,15 +57641,17 @@ body,
             transparent 70%
         );
 
+    opacity: 0;
+
     transition:
         transform 0.5s ease,
         opacity 0.5s ease;
-
-    opacity: 0;
 }
 
 
-/* hover */
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
 
 .why-sbros-card:hover {
     transform: translateY(-10px);
@@ -57610,12 +57663,15 @@ body,
         0 22px 55px rgba(15, 47, 87, 0.12);
 }
 
+
 .why-sbros-card:hover::before {
     width: 100%;
 }
 
+
 .why-sbros-card:hover::after {
     transform: scale(1.5);
+
     opacity: 1;
 }
 
@@ -57628,6 +57684,7 @@ body,
     position: relative;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -57635,10 +57692,13 @@ body,
 }
 
 
-/* number */
+/* =========================================================
+   CARD NUMBER
+========================================================= */
 
 .why-card-number {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -57659,6 +57719,7 @@ body,
     position: relative;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -57666,6 +57727,7 @@ body,
     height: 58px;
 
     border: 1px solid rgba(37, 99, 235, 0.13);
+
     border-radius: 14px;
 
     background:
@@ -57686,6 +57748,9 @@ body,
         color 0.4s ease;
 }
 
+
+/* Inner icon border */
+
 .why-card-icon::before {
     content: "";
 
@@ -57694,15 +57759,23 @@ body,
     inset: 5px;
 
     border: 1px solid rgba(37, 99, 235, 0.08);
+
     border-radius: 10px;
 }
 
+
+/* Icon */
+
 .why-card-icon i {
     position: relative;
+
     z-index: 2;
 
     font-size: 22px;
 }
+
+
+/* Icon hover */
 
 .why-sbros-card:hover .why-card-icon {
     transform: rotate(-5deg) scale(1.08);
@@ -57722,14 +57795,17 @@ body,
 
 
 /* =========================================================
-   CONTENT
+   CARD CONTENT
 ========================================================= */
 
 .why-card-content {
     position: relative;
+
     z-index: 2;
 }
 
+
+/* Card title */
 
 .why-card-content h3 {
     margin: 0 0 15px;
@@ -57747,10 +57823,14 @@ body,
 }
 
 
+/* Title hover */
+
 .why-sbros-card:hover .why-card-content h3 {
     color: #1749b7;
 }
 
+
+/* Card description */
 
 .why-card-content p {
     max-width: 290px;
@@ -57760,12 +57840,13 @@ body,
     color: #64748b;
 
     font-size: 14px;
+
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   SMALL CARD BOTTOM DETAIL
+   CARD BOTTOM DETAIL
 ========================================================= */
 
 .why-sbros-card .why-card-content::after {
@@ -57778,23 +57859,20 @@ body,
 
     margin-top: 27px;
 
-    /* background: #d8e4f7; */
-
     transition:
         width 0.4s ease,
         background 0.4s ease;
 }
 
+
 .why-sbros-card:hover
 .why-card-content::after {
     width: 65px;
-    /* background: #1d4ed8; */
 }
 
 
 /* =========================================================
    OPTIONAL ARROW
-   Works automatically if you uncomment JSX arrow
 ========================================================= */
 
 .why-card-arrow {
@@ -57804,6 +57882,7 @@ body,
     bottom: 28px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -57811,6 +57890,7 @@ body,
     height: 38px;
 
     border: 1px solid #e2eaf5;
+
     border-radius: 50%;
 
     color: #1749b7;
@@ -57823,12 +57903,15 @@ body,
         transform 0.3s ease;
 }
 
+
 .why-card-arrow i {
     font-size: 15px;
 }
 
+
 .why-sbros-card:hover .why-card-arrow {
     color: #ffffff;
+
     background: #1749b7;
 
     transform: translate(3px, -3px);
@@ -57838,10 +57921,6 @@ body,
 /* =========================================================
    COLUMN HEIGHT FIX
 ========================================================= */
-
-.why-sbros-cards > [class*="col-"] {
-    display: flex;
-}
 
 .why-sbros-cards .why-sbros-card {
     width: 100%;
@@ -57858,18 +57937,23 @@ body,
         padding: 90px 0 95px;
     }
 
+
     .why-sbros-heading {
         margin-bottom: 45px;
     }
+
 
     .why-sbros-heading h2 {
         font-size: 42px;
     }
 
+
     .why-sbros-card {
         min-height: 310px;
+
         padding: 27px;
     }
+
 
     .why-card-top {
         margin-bottom: 38px;
@@ -57885,56 +57969,254 @@ body,
 @media (max-width: 767px) {
 
     .why-sbros-section {
-        padding: 75px 0 80px;
+        position: relative;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 65px 0 70px;
+
+        overflow: hidden;
     }
+
+
+    /* Container */
+
+    .why-sbros-section .container {
+        width: 100%;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* =====================================================
+       MOBILE HEADING
+    ===================================================== */
 
     .why-sbros-heading {
-        margin-bottom: 35px;
+        width: 100%;
+        max-width: 100%;
+
+        margin-bottom: 32px;
     }
 
+
     .why-sbros-label {
+        gap: 10px;
+
+        margin-bottom: 15px;
+
         font-size: 10px;
+
         letter-spacing: 2px;
     }
 
-    .why-sbros-heading h2 {
-        font-size: 36px;
-        letter-spacing: -1.5px;
+
+    .why-sbros-label span {
+        width: 34px;
     }
+
+
+    .why-sbros-heading h2 {
+        margin: 0;
+
+        font-size: 34px;
+
+        line-height: 1.12;
+
+        letter-spacing: -1.2px;
+    }
+
 
     .why-sbros-heading p {
+        max-width: 100%;
+
+        margin-top: 16px;
+
         font-size: 14px;
-        line-height: 1.7;
+
+        line-height: 1.75;
     }
+
+
+    /* =====================================================
+       MOBILE CARD GRID
+    ===================================================== */
+
+    .why-sbros-cards {
+        width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+
+    .why-sbros-cards > [class*="col-"] {
+        display: flex;
+
+        width: 100%;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        margin-bottom: 18px;
+    }
+
+
+    .why-sbros-cards > [class*="col-"]:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE CARD
+    ===================================================== */
 
     .why-sbros-card {
-        min-height: auto;
+        width: 100%;
 
-        padding: 25px;
+        min-height: 0;
 
-        border-radius: 15px;
+        padding: 24px 22px 26px;
+
+        border-radius: 16px;
     }
+
+
+    /* =====================================================
+       MOBILE CARD TOP
+    ===================================================== */
 
     .why-card-top {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
+
+
+    .why-card-number {
+        font-size: 11px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    /* =====================================================
+       MOBILE ICON
+    ===================================================== */
 
     .why-card-icon {
         width: 52px;
         height: 52px;
+
+        border-radius: 13px;
     }
+
 
     .why-card-icon i {
         font-size: 20px;
     }
 
+
+    /* =====================================================
+       MOBILE CONTENT
+    ===================================================== */
+
     .why-card-content h3 {
-        font-size: 22px;
+        margin-bottom: 12px;
+
+        font-size: 21px;
+
+        line-height: 1.3;
+
+        letter-spacing: -0.4px;
     }
+
 
     .why-card-content p {
         max-width: none;
-        font-size: 13px;
+
+        margin: 0;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       MOBILE BACKGROUND
+    ===================================================== */
+
+    .why-sbros-section::before {
+        width: 280px;
+        height: 280px;
+
+        right: -170px;
+        top: -120px;
+    }
+
+
+    .why-sbros-section::after {
+        width: 280px;
+        height: 280px;
+
+        left: -170px;
+        bottom: -150px;
+    }
+
+
+    /* =====================================================
+       REMOVE DESKTOP HOVER EFFECT ON TOUCH
+    ===================================================== */
+
+    .why-sbros-card:hover {
+        transform: none;
+
+        border-color: #e3eaf4;
+
+        box-shadow:
+            0 10px 35px rgba(15, 47, 87, 0.055);
+    }
+
+
+    .why-sbros-card:hover::before {
+        width: 0;
+    }
+
+
+    .why-sbros-card:hover::after {
+        transform: none;
+
+        opacity: 0;
+    }
+
+
+    .why-sbros-card:hover .why-card-icon {
+        transform: none;
+
+        background:
+            linear-gradient(
+                145deg,
+                #eef5ff,
+                #e4efff
+            );
+
+        color: #1749b7;
+
+        box-shadow:
+            0 8px 25px rgba(30, 78, 216, 0.08);
+    }
+
+
+    .why-sbros-card:hover .why-card-content h3 {
+        color: #0b1f3a;
+    }
+
+
+    .why-sbros-card:hover
+    .why-card-content::after {
+        width: 30px;
     }
 
 }
@@ -57942,23 +58224,753 @@ body,
 
 /* =========================================================
    SMALL MOBILE
+   480px AND BELOW
 ========================================================= */
 
 @media (max-width: 480px) {
 
     .why-sbros-section {
-        padding: 65px 0 70px;
+        padding: 55px 0 60px;
     }
+
+
+    .why-sbros-section .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    /* Heading */
+
+    .why-sbros-heading {
+        margin-bottom: 28px;
+    }
+
+
+    .why-sbros-label {
+        font-size: 9px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    .why-sbros-label span {
+        width: 30px;
+    }
+
 
     .why-sbros-heading h2 {
         font-size: 31px;
+
+        line-height: 1.12;
+
+        letter-spacing: -1px;
     }
 
+
+    .why-sbros-heading p {
+        margin-top: 14px;
+
+        font-size: 13.5px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Card */
+
     .why-sbros-card {
-        padding: 23px;
+        padding: 22px 20px 24px;
+
+        border-radius: 15px;
+    }
+
+
+    /* Card top */
+
+    .why-card-top {
+        margin-bottom: 27px;
+    }
+
+
+    .why-card-number {
+        font-size: 10px;
+    }
+
+
+    /* Icon */
+
+    .why-card-icon {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 12px;
+    }
+
+
+    .why-card-icon i {
+        font-size: 19px;
+    }
+
+
+    /* Content */
+
+    .why-card-content h3 {
+        margin-bottom: 10px;
+
+        font-size: 20px;
+
+        line-height: 1.3;
+    }
+
+
+    .why-card-content p {
+        font-size: 13.5px;
+
+        line-height: 1.7;
     }
 
 }
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .why-sbros-section {
+        padding: 50px 0 55px;
+    }
+
+
+    .why-sbros-section .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .why-sbros-heading h2 {
+        font-size: 28px;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .why-sbros-heading p {
+        font-size: 13px;
+    }
+
+
+    .why-sbros-card {
+        padding: 20px 18px 22px;
+    }
+
+
+    .why-card-top {
+        margin-bottom: 24px;
+    }
+
+
+    .why-card-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .why-card-icon i {
+        font-size: 18px;
+    }
+
+
+    .why-card-content h3 {
+        font-size: 19px;
+    }
+
+
+    .why-card-content p {
+        font-size: 13px;
+    }
+
+}
+/* =========================================================
+   WHY CHOOSE SBROS TECH
+   MOBILE PERFECT RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    /* -----------------------------------------
+       SECTION
+    ----------------------------------------- */
+
+    .why-sbros-section {
+        position: relative;
+
+        left: 0 !important;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 60px 0 70px;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       CONTAINER
+    ----------------------------------------- */
+
+    .why-sbros-section .container {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto;
+
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       HEADING
+    ----------------------------------------- */
+
+    .why-sbros-heading {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 0 32px;
+
+        padding: 0;
+    }
+
+
+    /* WHY CHOOSE US */
+
+    .why-sbros-label {
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        margin-bottom: 15px;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+    }
+
+
+    .why-sbros-label span {
+        width: 32px;
+        height: 2px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* -----------------------------------------
+       MAIN HEADING
+    ----------------------------------------- */
+
+    .why-sbros-heading h2 {
+        width: 100%;
+
+        margin: 0;
+
+        font-size: 34px;
+
+        line-height: 1.12;
+
+        letter-spacing: -1.2px;
+
+        word-break: normal;
+    }
+
+
+    .why-sbros-heading h2 strong {
+        font-weight: 800;
+    }
+
+
+    /* -----------------------------------------
+       DESCRIPTION
+    ----------------------------------------- */
+
+    .why-sbros-heading p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 16px 0 0;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+
+        color: #64748b;
+    }
+
+
+    /* =================================================
+       CARD ROW
+    ================================================= */
+
+    .why-sbros-cards {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        gap: 18px;
+    }
+
+
+    /* Remove Bootstrap row negative margin */
+
+    .why-sbros-cards.row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       CARD COLUMN
+    ----------------------------------------- */
+
+    .why-sbros-cards > [class*="col-"] {
+        display: block;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        flex: 0 0 100% !important;
+
+        margin: 0 !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       CARD
+    ----------------------------------------- */
+
+    .why-sbros-card {
+        position: relative;
+
+        display: block;
+
+        width: 100% !important;
+        max-width: 100%;
+
+        min-height: 0;
+
+        margin: 0;
+
+        padding: 24px 22px 28px;
+
+        box-sizing: border-box;
+
+        border-radius: 17px;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                145deg,
+                #ffffff 0%,
+                #f9fbff 100%
+            );
+
+        border: 1px solid #e3eaf4;
+
+        box-shadow:
+            0 8px 30px rgba(15, 47, 87, 0.06);
+    }
+
+
+    /* -----------------------------------------
+       CARD TOP
+    ----------------------------------------- */
+
+    .why-card-top {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        margin-bottom: 38px;
+    }
+
+
+    /* Number */
+
+    .why-card-number {
+        display: inline-flex;
+
+        align-items: center;
+
+        color: #94a3b8;
+
+        font-size: 11px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* -----------------------------------------
+       ICON
+    ----------------------------------------- */
+
+    .why-card-icon {
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 54px;
+        height: 54px;
+
+        flex-shrink: 0;
+
+        border-radius: 14px;
+
+        border: 1px solid rgba(37, 99, 235, 0.14);
+
+        background:
+            linear-gradient(
+                145deg,
+                #eef5ff,
+                #e4efff
+            );
+
+        color: #1749b7;
+
+        box-shadow:
+            0 7px 20px rgba(30, 78, 216, 0.08);
+    }
+
+
+    .why-card-icon::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 5px;
+
+        border: 1px solid rgba(37, 99, 235, 0.08);
+
+        border-radius: 10px;
+    }
+
+
+    .why-card-icon i {
+        position: relative;
+
+        z-index: 2;
+
+        font-size: 21px;
+    }
+
+
+    /* -----------------------------------------
+       CARD CONTENT
+    ----------------------------------------- */
+
+    .why-card-content {
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+    }
+
+
+    .why-card-content h3 {
+        margin: 0 0 13px;
+
+        font-size: 22px;
+        font-weight: 700;
+
+        line-height: 1.3;
+
+        letter-spacing: -0.4px;
+
+        color: #0b1f3a;
+    }
+
+
+    .why-card-content p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+
+        color: #64748b;
+    }
+
+
+    /* -----------------------------------------
+       CARD BOTTOM LINE
+    ----------------------------------------- */
+
+    .why-sbros-card .why-card-content::after {
+        content: "";
+
+        display: block;
+
+        width: 30px;
+        height: 2px;
+
+        margin-top: 22px;
+    }
+
+
+    /* -----------------------------------------
+       MOBILE BACKGROUND CIRCLE
+    ----------------------------------------- */
+
+    .why-sbros-section::before {
+        width: 280px;
+        height: 280px;
+
+        right: -170px;
+        top: -120px;
+    }
+
+
+    .why-sbros-section::after {
+        width: 280px;
+        height: 280px;
+
+        left: -170px;
+        bottom: -150px;
+    }
+
+
+    /* -----------------------------------------
+       REMOVE DESKTOP HOVER EFFECT
+    ----------------------------------------- */
+
+    .why-sbros-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 8px 30px rgba(15, 47, 87, 0.06);
+
+        border-color: #e3eaf4;
+    }
+
+
+    .why-sbros-card:hover::before {
+        width: 0;
+    }
+
+
+    .why-sbros-card:hover::after {
+        opacity: 0;
+        transform: none;
+    }
+
+
+    .why-sbros-card:hover .why-card-icon {
+        transform: none;
+
+        background:
+            linear-gradient(
+                145deg,
+                #eef5ff,
+                #e4efff
+            );
+
+        color: #1749b7;
+
+        box-shadow:
+            0 7px 20px rgba(30, 78, 216, 0.08);
+    }
+
+
+    .why-sbros-card:hover .why-card-content h3 {
+        color: #0b1f3a;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .why-sbros-section {
+        padding: 52px 0 60px;
+    }
+
+
+    .why-sbros-section .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+
+    .why-sbros-heading {
+        margin-bottom: 28px;
+    }
+
+
+    .why-sbros-label {
+        font-size: 9px;
+        letter-spacing: 1.8px;
+    }
+
+
+    .why-sbros-label span {
+        width: 30px;
+    }
+
+
+    .why-sbros-heading h2 {
+        font-size: 30px;
+
+        line-height: 1.12;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .why-sbros-heading p {
+        margin-top: 14px;
+
+        font-size: 13.5px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Card */
+
+    .why-sbros-card {
+        padding: 22px 20px 25px;
+
+        border-radius: 15px;
+    }
+
+
+    .why-card-top {
+        margin-bottom: 32px;
+    }
+
+
+    .why-card-icon {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 13px;
+    }
+
+
+    .why-card-icon i {
+        font-size: 19px;
+    }
+
+
+    .why-card-content h3 {
+        margin-bottom: 11px;
+
+        font-size: 20px;
+    }
+
+
+    .why-card-content p {
+        font-size: 13.5px;
+
+        line-height: 1.7;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .why-sbros-section {
+        padding: 48px 0 55px;
+    }
+
+
+    .why-sbros-section .container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+
+    .why-sbros-heading h2 {
+        font-size: 28px;
+    }
+
+
+    .why-sbros-heading p {
+        font-size: 13px;
+    }
+
+
+    .why-sbros-card {
+        padding: 20px 18px 23px;
+    }
+
+
+    .why-card-top {
+        margin-bottom: 28px;
+    }
+
+
+    .why-card-icon {
+        width: 47px;
+        height: 47px;
+    }
+
+
+    .why-card-content h3 {
+        font-size: 19px;
+    }
+
+
+    .why-card-content p {
+        font-size: 13px;
+    }
+
+}
+
 
 
 
