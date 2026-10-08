@@ -42971,10 +42971,10 @@ background-color: unset;
     .project-showcase-grid {
         grid-template-columns: 1fr;
     }
-
+/* 
     .project-image {
         height: 220px;
-    }
+    } */
 
 
     .project-stats-section {
@@ -43015,7 +43015,40 @@ background-color: unset;
         font-size: 14px;
     }
 }
+/* =========================================================
+   MOBILE PROJECT IMAGE - SHOW FULL IMAGE
+========================================================= */
 
+@media (max-width: 767px) {
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        overflow: hidden;
+
+        background: #f7f9fc;
+
+        border-radius: 0;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+
+        display: block;
+
+        object-fit: contain;
+        object-position: center;
+
+        transform: none !important;
+    }
+
+    .website-project-card:hover .project-image img {
+        transform: none !important;
+    }
+}
 
 /* =========================================================
    TABLET

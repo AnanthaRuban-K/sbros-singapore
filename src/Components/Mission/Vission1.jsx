@@ -91,8 +91,8 @@ const Vission1 = () => {
 
 
                 <p className="overview-description">
-                  SBROS TECH (S) PTE LTD is a technology company based in India
-                  with a branch presence in Singapore, focused on delivering
+                  SBROS TECH (S) PTE LTD is a technology company based in Singapore
+                  with a branch presence in India , focused on delivering
                   practical and innovative digital solutions for modern
                   businesses. We bring together expertise from both locations
                   to provide reliable, scalable, and business-focused

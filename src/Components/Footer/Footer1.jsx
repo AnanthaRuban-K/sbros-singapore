@@ -279,7 +279,7 @@ const Footer1 = () => {
         Kandanvilai Post,
         <br />
 
-        Kanniya Kumari District
+        Kanniyakumari District
         <br />
 
         Pincode: 629810
