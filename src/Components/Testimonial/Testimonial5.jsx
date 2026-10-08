@@ -4,35 +4,35 @@ const projects = [
   {
     id: 1,
     title: "Tucklee",
-    image: "public/assets/img/about/t2.jpeg",
+    image: "/assets/img/about/t2.jpeg",
     description:
       "Corporate Website for Food-Grade Ice Manufacturing & Cold Chain Solutions.",
   },
   {
     id: 2,
     title: "Firstchoice",
-    image: "public/assets/img/about/firstchoice.jpg",
+    image: "/assets/img/about/firstchoice.jpg",
     description:
       "Custom Corporate Website for IT Solutions, Software Development & Digital Services Company.",
   },
   {
     id: 3,
     title: "Ansfreshmeat",
-    image: "public/assets/img/about/ansfresh.jpg",
+    image: "/assets/img/about/ansfresh.jpg",
     description:
       "Custom Business Website for Meat Processing, Wholesale Distribution, and Online Sales.",
   },
   {
     id: 4,
     title: "Goldseagroups",
-    image: "public/assets/img/about/goldsea.jpg",
+    image: "/assets/img/about/goldsea.jpg",
     description:
       "Custom Corporate Website for Engineering, Maritime, Offshore & Process Plant Solutions Group.",
   },
   {
     id: 5,
     title: "Skymoon",
-    image: "public/assets/img/about/skymoon.jpg",
+    image: "/assets/img/about/skymoon.jpg",
     description:
       "Custom Corporate Website for Industrial Engineering, Mechanical, Electrical & Structural Services.",
   },
