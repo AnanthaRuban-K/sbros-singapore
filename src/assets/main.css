@@ -2427,6 +2427,151 @@ body.body {
 }
 
 
+
+
+
+/* =========================================================
+   MOBILE ONLY - CHOOSE SOLUTIONS BOXES
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* All solution boxes - first box style */
+  .choose-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    min-height: 70px;
+    padding: 10px 14px 10px 12px;
+
+    border: 1px solid #c9cfff !important;
+    border-radius: 18px !important;
+
+    background: #ffffff !important;
+
+    box-shadow: 0 6px 18px rgba(49, 70, 180, 0.08) !important;
+
+    margin-bottom: 10px;
+
+    transition: all 0.3s ease;
+  }
+
+
+  /* Blue vertical line - like first box */
+  .choose-item::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+
+    width: 5px;
+
+    background: linear-gradient(
+      180deg,
+      #1976ff,
+      #5b3df5
+    );
+
+    border-radius: 0 5px 5px 0;
+  }
+
+
+  /* Number box - same style for every box */
+  .choose-item .choose-number {
+    width: 38px !important;
+    height: 38px !important;
+
+    min-width: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 14px;
+
+    border-radius: 12px !important;
+
+    background: linear-gradient(
+      135deg,
+      #2378ff,
+      #593de8
+    ) !important;
+
+    color: #ffffff !important;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 12px rgba(57, 75, 220, 0.20);
+  }
+
+
+  /* Text */
+  .choose-item .choose-title,
+  .choose-item h3,
+  .choose-item h4 {
+    color: #17245c !important;
+    font-weight: 600 !important;
+  }
+
+
+  /* REMOVE RIGHT SIDE ARROW */
+  .choose-item .choose-arrow,
+  .choose-item .arrow,
+  .choose-item .choose-icon,
+  .choose-item > a:last-child {
+    display: none !important;
+  }
+
+
+  /* If arrow is a span/icon */
+  .choose-item i,
+  .choose-item svg {
+    display: none !important;
+  }
+
+
+  /* Keep text area properly aligned */
+  .choose-item .choose-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+
+  /* All boxes same hover/active appearance */
+  .choose-item:hover,
+  .choose-item.active,
+  .choose-item:first-child {
+    border-color: #c9cfff !important;
+    background: #ffffff !important;
+
+    transform: none !important;
+    box-shadow: 0 6px 18px rgba(49, 70, 180, 0.08) !important;
+  }
+
+
+  /* Remove old active-only arrow circle */
+  .choose-item.active .choose-arrow,
+  .choose-item:first-child .choose-arrow {
+    display: none !important;
+  }
+
+
+  /* Mobile spacing */
+  .choose-wrapper {
+    gap: 10px !important;
+  }
+
+}
+
+
+
+
+
+
 /* =========================================================
    SMALL MOBILE - Below 480px
 ========================================================= */
