@@ -58983,3 +58983,873 @@ body,
   0%   { opacity: 0; transform: translateY(16px); filter: blur(4px); }
   100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
+/* =========================================================
+   RESPONSIVE PRELOADER
+   Mobile + Tablet + Desktop
+========================================================= */
+
+/* =========================
+   EXTRA LARGE DESKTOP
+========================= */
+@media (min-width: 1200px) {
+  .splash-main {
+    padding: 50px 30px;
+  }
+
+  .splash-logo-pop {
+    width: 210px;
+    height: 210px;
+  }
+
+  .splash-logo-float {
+    width: 162px;
+    height: 162px;
+  }
+
+  .splash-company-name {
+    font-size: 32px;
+  }
+
+  .splash-subtitle {
+    font-size: 18px;
+  }
+
+  .splash-bar-container {
+    max-width: 340px;
+  }
+}
+
+
+/* =========================
+   TABLET
+   768px - 1199px
+========================= */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .splash-main {
+    padding: 40px 24px;
+  }
+
+  .splash-section {
+    max-width: 650px;
+  }
+
+  /* Logo */
+  .splash-logo-pop {
+    width: 185px;
+    height: 185px;
+    border-radius: 30px;
+  }
+
+  .splash-logo-float {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* Rings */
+  .ring-1 {
+    inset: -20px;
+  }
+
+  .ring-2 {
+    inset: -34px;
+  }
+
+  .ring-3 {
+    inset: -48px;
+  }
+
+  .ring-4 {
+    inset: -62px;
+  }
+
+  .splash-ring-static {
+    inset: -14px;
+  }
+
+  /* Company name */
+  .splash-name-wrap {
+    margin-top: 30px;
+  }
+
+  .splash-company-name {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  /* Underline */
+  .splash-underline-reveal {
+    margin-top: 10px;
+  }
+
+  @keyframes splash-underline-reveal {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+
+    100% {
+      width: 240px;
+      opacity: 1;
+    }
+  }
+
+  /* Subtitle */
+  .splash-subtitle {
+    margin-top: 20px;
+    font-size: 15px;
+    letter-spacing: 0.22em;
+  }
+
+  /* Divider */
+  .splash-divider {
+    margin-top: 18px;
+  }
+
+  /* Loading */
+  .splash-bar-container {
+    margin-top: 28px;
+    max-width: 300px;
+    height: 7px;
+  }
+
+  .splash-loading-text {
+    margin-top: 17px;
+  }
+
+  .splash-version {
+    margin-top: 20px;
+  }
+
+  /* Background decorations */
+  .splash-dotfield-top {
+    width: 280px;
+    height: 130px;
+  }
+
+  .splash-dotfield-bottom {
+    width: 200px;
+    height: 210px;
+  }
+
+  .tl-1 {
+    left: -130px;
+    top: -135px;
+    width: 280px;
+    height: 400px;
+  }
+
+  .br-1 {
+    bottom: -135px;
+    right: -115px;
+    width: 390px;
+    height: 430px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   480px - 767px
+========================= */
+@media (max-width: 767px) {
+
+  .splash-main {
+    min-height: 100dvh;
+    padding: 30px 18px 55px;
+  }
+
+  .splash-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* =====================
+     LOGO
+  ===================== */
+
+  .splash-logo-pop {
+    width: 145px;
+    height: 145px;
+    border-radius: 28px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+  }
+
+  .splash-logo-float {
+    width: 108px;
+    height: 108px;
+  }
+
+  /* Smaller rings */
+  .ring-1 {
+    inset: -16px;
+    border-radius: 38px;
+  }
+
+  .ring-2 {
+    inset: -28px;
+    border-radius: 44px;
+  }
+
+  .ring-3 {
+    inset: -40px;
+    border-radius: 50px;
+  }
+
+  .ring-4 {
+    inset: -52px;
+    border-radius: 56px;
+  }
+
+  .splash-ring-static {
+    inset: -11px;
+    border-radius: 36px;
+  }
+
+  .splash-logo-tint {
+    inset: -3px;
+    border-radius: 31px;
+  }
+
+  .splash-rotate-glow {
+    inset: -6px;
+    border-radius: 30px;
+  }
+
+  .splash-shine {
+    border-radius: 28px;
+  }
+
+
+  /* =====================
+     COMPANY NAME
+  ===================== */
+
+  .splash-name-wrap {
+    margin-top: 28px;
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .splash-company-name {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .splash-letter {
+    transform-origin: center;
+  }
+
+
+  /* =====================
+     UNDERLINE
+  ===================== */
+
+  .splash-underline-reveal {
+    margin-top: 10px;
+    height: 2px;
+    max-width: 220px;
+  }
+
+  @keyframes splash-underline-reveal {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+
+    100% {
+      width: 190px;
+      opacity: 1;
+    }
+  }
+
+
+  /* =====================
+     SUBTITLE
+  ===================== */
+
+  .splash-subtitle {
+    width: 100%;
+    margin-top: 19px;
+    padding: 0 8px;
+
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.18em;
+
+    white-space: normal;
+  }
+
+
+  /* =====================
+     DIVIDER
+  ===================== */
+
+  .splash-divider {
+    margin-top: 16px;
+    gap: 9px;
+  }
+
+  .splash-divider .line {
+    width: 28px;
+  }
+
+  .splash-divider .diamond {
+    width: 7px;
+    height: 7px;
+  }
+
+
+  /* =====================
+     LOADING BAR
+  ===================== */
+
+  .splash-bar-container {
+    width: min(82%, 280px);
+    margin-top: 25px;
+    height: 6px;
+  }
+
+
+  /* =====================
+     LOADING DOTS
+  ===================== */
+
+  .splash-loading-text {
+    margin-top: 16px;
+    gap: 5px;
+  }
+
+  .splash-loading-text p {
+    font-size: 12px;
+  }
+
+  .splash-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+
+  /* =====================
+     VERSION
+  ===================== */
+
+  .splash-version {
+    margin-top: 18px;
+    padding: 4px 13px;
+    font-size: 10px;
+  }
+
+
+  /* =====================
+     FOOTER
+  ===================== */
+
+  .splash-footer-wrap {
+    bottom: 9px;
+    padding: 0 15px;
+  }
+
+  .splash-footer {
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+
+  /* =====================
+     BACKGROUND DECORATIONS
+  ===================== */
+
+  .splash-dotfield-top {
+    right: -30px;
+    top: 5px;
+    width: 190px;
+    height: 110px;
+    background-size: 13px 13px;
+    opacity: 0.45;
+  }
+
+  .splash-dotfield-bottom {
+    left: -30px;
+    bottom: 25px;
+    width: 170px;
+    height: 170px;
+    background-size: 13px 13px;
+    opacity: 0.4;
+  }
+
+
+  /* =====================
+     TOP LEFT SHAPES
+  ===================== */
+
+  .tl-1 {
+    left: -155px;
+    top: -145px;
+    width: 250px;
+    height: 360px;
+  }
+
+  .tl-2 {
+    left: -52px;
+    top: 75px;
+    width: 72px;
+    height: 165px;
+  }
+
+  .tl-3 {
+    left: 40px;
+    top: 80px;
+    width: 12px;
+    height: 175px;
+  }
+
+  .tl-4 {
+    left: 25px;
+    top: -40px;
+    height: 360px;
+  }
+
+  .tl-5 {
+    left: 105px;
+    top: -55px;
+    height: 350px;
+  }
+
+  .tl-glow {
+    left: -25px;
+    top: 15px;
+    height: 220px;
+  }
+
+
+  /* =====================
+     BOTTOM RIGHT SHAPES
+  ===================== */
+
+  .br-1 {
+    bottom: -120px;
+    right: -135px;
+    width: 320px;
+    height: 360px;
+  }
+
+  .br-2 {
+    bottom: 120px;
+    right: 35px;
+    width: 12px;
+    height: 120px;
+  }
+
+  .br-3 {
+    bottom: -45px;
+    right: 110px;
+    height: 340px;
+  }
+
+  .br-4 {
+    bottom: 110px;
+    right: 10px;
+    height: 200px;
+  }
+
+  .br-glow {
+    bottom: 18px;
+    right: 32px;
+    height: 220px;
+  }
+
+
+  /* =====================
+     ORBS
+  ===================== */
+
+  .orb-1 {
+    left: 10%;
+    top: 30%;
+    width: 180px;
+    height: 180px;
+    filter: blur(70px);
+  }
+
+  .orb-2 {
+    right: 5%;
+    bottom: 20%;
+    width: 160px;
+    height: 160px;
+    filter: blur(65px);
+  }
+
+  .orb-3 {
+    left: calc(50% - 70px);
+    top: calc(50% - 70px);
+    width: 140px;
+    height: 140px;
+    filter: blur(70px);
+  }
+
+
+  /* =====================
+     PARTICLES
+  ===================== */
+
+  .splash-particle {
+    transform-origin: center;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   320px - 479px
+========================= */
+@media (max-width: 479px) {
+
+  .splash-main {
+    padding: 22px 14px 48px;
+  }
+
+  .splash-logo-pop {
+    width: 118px;
+    height: 118px;
+    border-radius: 24px;
+  }
+
+  .splash-logo-float {
+    width: 88px;
+    height: 88px;
+  }
+
+  .ring-1 {
+    inset: -13px;
+    border-radius: 34px;
+  }
+
+  .ring-2 {
+    inset: -23px;
+    border-radius: 39px;
+  }
+
+  .ring-3 {
+    inset: -33px;
+    border-radius: 44px;
+  }
+
+  .ring-4 {
+    inset: -43px;
+    border-radius: 49px;
+  }
+
+  .splash-ring-static {
+    inset: -9px;
+    border-radius: 31px;
+  }
+
+  .splash-logo-tint {
+    border-radius: 27px;
+  }
+
+  .splash-rotate-glow {
+    border-radius: 26px;
+  }
+
+  .splash-shine {
+    border-radius: 24px;
+  }
+
+
+  /* Company name */
+  .splash-name-wrap {
+    margin-top: 24px;
+    padding: 0 4px;
+  }
+
+  .splash-company-name {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+
+  /* Underline */
+  .splash-underline-reveal {
+    margin-top: 8px;
+  }
+
+  @keyframes splash-underline-reveal {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+
+    100% {
+      width: 155px;
+      opacity: 1;
+    }
+  }
+
+
+  /* Subtitle */
+  .splash-subtitle {
+    margin-top: 16px;
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    line-height: 1.7;
+  }
+
+
+  /* Divider */
+  .splash-divider {
+    margin-top: 13px;
+    gap: 7px;
+  }
+
+  .splash-divider .line {
+    width: 22px;
+  }
+
+  .splash-divider .diamond {
+    width: 6px;
+    height: 6px;
+  }
+
+
+  /* Loading */
+  .splash-bar-container {
+    width: 75%;
+    max-width: 240px;
+    margin-top: 22px;
+    height: 5px;
+  }
+
+  .splash-loading-text {
+    margin-top: 13px;
+  }
+
+  .splash-version {
+    margin-top: 15px;
+    padding: 3px 11px;
+    font-size: 9px;
+  }
+
+
+  /* Footer */
+  .splash-footer-wrap {
+    bottom: 7px;
+    padding: 0 10px;
+  }
+
+  .splash-footer {
+    font-size: 8px;
+  }
+
+
+  /* Background */
+  .splash-dotfield-top {
+    width: 145px;
+    height: 85px;
+    background-size: 11px 11px;
+  }
+
+  .splash-dotfield-bottom {
+    width: 135px;
+    height: 140px;
+    background-size: 11px 11px;
+  }
+
+
+  /* Shapes */
+  .tl-1 {
+    left: -175px;
+    top: -150px;
+    width: 230px;
+    height: 330px;
+  }
+
+  .tl-2 {
+    left: -58px;
+    top: 65px;
+    width: 62px;
+    height: 140px;
+  }
+
+  .tl-3 {
+    left: 30px;
+    top: 70px;
+    width: 10px;
+    height: 150px;
+  }
+
+  .tl-4 {
+    left: 20px;
+    top: -35px;
+    height: 310px;
+  }
+
+  .tl-5 {
+    left: 85px;
+    top: -45px;
+    height: 300px;
+  }
+
+
+  .br-1 {
+    bottom: -110px;
+    right: -145px;
+    width: 290px;
+    height: 330px;
+  }
+
+  .br-2 {
+    bottom: 105px;
+    right: 25px;
+    width: 10px;
+    height: 105px;
+  }
+
+  .br-3 {
+    bottom: -35px;
+    right: 90px;
+    height: 300px;
+  }
+
+  .br-4 {
+    bottom: 95px;
+    right: 7px;
+    height: 180px;
+  }
+
+
+  /* Orbs */
+  .orb-1 {
+    width: 140px;
+    height: 140px;
+    filter: blur(60px);
+  }
+
+  .orb-2 {
+    width: 130px;
+    height: 130px;
+    filter: blur(55px);
+  }
+
+  .orb-3 {
+    width: 110px;
+    height: 110px;
+    left: calc(50% - 55px);
+    top: calc(50% - 55px);
+    filter: blur(55px);
+  }
+}
+
+
+/* =========================
+   VERY SMALL DEVICES
+   320px and below
+========================= */
+@media (max-width: 320px) {
+
+  .splash-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .splash-logo-pop {
+    width: 105px;
+    height: 105px;
+  }
+
+  .splash-logo-float {
+    width: 78px;
+    height: 78px;
+  }
+
+  .splash-company-name {
+    font-size: 16px;
+  }
+
+  .splash-subtitle {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  .splash-bar-container {
+    width: 70%;
+  }
+
+  .splash-footer {
+    font-size: 7px;
+  }
+}
+
+
+/* =========================
+   LANDSCAPE MOBILE
+========================= */
+@media (max-width: 767px) and (orientation: landscape) {
+
+  .splash-main {
+    padding: 15px 20px 35px;
+  }
+
+  .splash-section {
+    transform: scale(0.78);
+    transform-origin: center center;
+  }
+
+  .splash-logo-pop {
+    width: 120px;
+    height: 120px;
+  }
+
+  .splash-logo-float {
+    width: 90px;
+    height: 90px;
+  }
+
+  .splash-name-wrap {
+    margin-top: 18px;
+  }
+
+  .splash-subtitle {
+    margin-top: 12px;
+  }
+
+  .splash-divider {
+    margin-top: 10px;
+  }
+
+  .splash-bar-container {
+    margin-top: 18px;
+  }
+
+  .splash-version {
+    margin-top: 12px;
+  }
+
+  .splash-footer-wrap {
+    bottom: 5px;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+   Accessibility
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+  .splash-root *,
+  .splash-root *::before,
+  .splash-root *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
