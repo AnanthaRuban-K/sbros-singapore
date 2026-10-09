@@ -2,20 +2,99 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../../Data/home3/faq1.json";
 
+const approachServices = [
+  {
+    title: "Custom ERP Development",
+    desc: "Large business projects and long-term clients.",
+  },
+  {
+    title: "HRM & Payroll Solutions",
+    desc: "Employee, attendance, leave and payroll systems.",
+  },
+  {
+    title: "CRM & Workflow Automation",
+    desc: "Lead management, sales and operational automation.",
+  },
+  {
+    title: "Custom Web Application Development",
+    desc: "Business portals and tailored applications.",
+  },
+  {
+    title: "AI & Business Automation",
+    desc: "AI integration and repetitive task automation.",
+  },
+  {
+    title: "Cloud, Integration & Support",
+    desc: "Cloud setup, system integration and ongoing technical support.",
+  },
+  {
+    title: "Mobile App Development",
+    desc: "Android and iOS apps built for your business needs.",
+  },
+  {
+    title: "API & System Integration",
+    
+      desc:"ERP and CRM integration",
+     
+  },
+  {
+    title: "Software Maintenance & Support",
+   
+     desc: "Existing software bug fixes",
+     
+  },
+];
+
+const expertiseList = [
+  {
+    title: "Frontend Development",
+    desc: "HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Angular, Vue.js",
+  },
+  {
+    title: "Backend Development",
+    desc: "Node.js, Python, Ruby on Rails, PHP, .NET",
+  },
+  {
+    title: "Database Technologies",
+    desc: "MySQL, MongoDB, PostgreSQL, Oracle",
+  },
+  {
+    title: "Mobile Development",
+    desc: "iOS, Android, Swift, Java, Kotlin, React Native",
+  },
+  {
+    title: "Cloud Platforms",
+    desc: "AWS, Microsoft Azure, Google Cloud Platform",
+  },
+];
+
+const relatedServices = [
+  {
+    title: "Network Solutions",
+    to: "/IT-Networking",
+    icon: "/assets/img/icons/service-page-icon1.png",
+    desc: "Strategic IT planning, network infrastructure design, and business process analysis to strengthen your technology foundation.",
+  },
+  {
+    title: "Website Development",
+    to: "/Website-Development",
+    icon: "/assets/img/icons/service-page-icon2.png",
+    desc: "Responsive and high-performance websites designed to provide an excellent digital experience across all devices.",
+  },
+];
 
 const ServiceDetailsLeft1 = () => {
   const [openItemIndex, setOpenItemIndex] = useState(0);
 
   const handleItemClick = (index) => {
-  setOpenItemIndex(openItemIndex === index ? -1 : index);
-};
+    setOpenItemIndex(openItemIndex === index ? -1 : index);
+  };
 
   return (
     <div className="professional-service-page">
       <div className="container">
         <div className="service-content-wrapper">
           <div className="service-details-post">
-
             {/* ================= MAIN INTRO ================= */}
             <article className="service-section">
               <div className="service-main-image">
@@ -34,9 +113,9 @@ const ServiceDetailsLeft1 = () => {
                   Welcome to SBROS Tech (S) Pte Ltd, your trusted partner for
                   comprehensive software development services tailored to meet
                   your business needs. Our team of experienced developers is
-                  dedicated to delivering high-quality, scalable, and innovative
-                  software solutions that drive real business growth — because
-                  at SBROS Tech, your dreams are our mission.
+                  dedicated to delivering high-quality, scalable, and
+                  innovative software solutions that drive real business
+                  growth — because at SBROS Tech, your dreams are our mission.
                 </p>
               </div>
             </article>
@@ -70,47 +149,35 @@ const ServiceDetailsLeft1 = () => {
                 </p>
               </div>
 
-              <div className="two-column-content">
+              <div className="two-column-content approach-grid">
+                {approachServices.map((service, index) => (
+                  <div className="content-card" key={service.title}>
+                    <div className="card-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
 
-                <div className="content-card">
-                  <div className="card-number">01</div>
+                    <h4>{service.title}</h4>
 
-                  <h4>Custom Development</h4>
+                    {service.desc && <p>{service.desc}</p>}
 
-                  <p>
-                    Our team specializes in developing custom software
-                    solutions tailored to address your specific business
-                    challenges. Whether you need a web application, mobile
-                    app, or enterprise system, SBROS Tech builds it around
-                    your needs.
-                  </p>
-                </div>
-
-                <div className="content-card">
-                  <div className="card-number">02</div>
-
-                  <h4>Full-Cycle Development</h4>
-
-                  <p>
-                    From initial concept and design to development, testing,
-                    and deployment, we offer comprehensive full-cycle
-                    development services to ensure a seamless and efficient
-                    process from start to finish.
-                  </p>
-                </div>
-
+                    {service.points && (
+                      <ul className="card-points">
+                        {service.points.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
               </div>
             </article>
 
             {/* ================= OUR EXPERTISE ================= */}
             <article className="service-section expertise-section">
-
               <div className="section-heading">
                 <span>02</span>
-
                 <div>
                   <h3>Our Expertise</h3>
-
                   <p>
                     Modern technologies and scalable development practices for
                     growing businesses.
@@ -129,164 +196,60 @@ const ServiceDetailsLeft1 = () => {
               </div>
 
               <ul className="expertise-list">
+                {expertiseList.map((item) => (
+                  <li key={item.title}>
+                    <span className="expertise-check">
+                      <i className="bi bi-check-lg"></i>
+                    </span>
 
-                <li>
-                  <span className="expertise-check">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-
-                  <div>
-                    <strong>Frontend Development</strong>
-                    <p>
-                      HTML, CSS, JavaScript, React, Angular, Vue.js
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <span className="expertise-check">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-
-                  <div>
-                    <strong>Backend Development</strong>
-                    <p>
-                      Node.js, Python, Ruby on Rails, PHP, .NET
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <span className="expertise-check">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-
-                  <div>
-                    <strong>Database Technologies</strong>
-                    <p>
-                      MySQL, MongoDB, PostgreSQL, Oracle
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <span className="expertise-check">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-
-                  <div>
-                    <strong>Mobile Development</strong>
-                    <p>
-                      iOS, Android, Swift, Java, Kotlin, React Native
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <span className="expertise-check">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-
-                  <div>
-                    <strong>Cloud Platforms</strong>
-                    <p>
-                      AWS, Microsoft Azure, Google Cloud Platform
-                    </p>
-                  </div>
-                </li>
-
+                    <div>
+                      <strong>{item.title}</strong>
+                      <p>{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </article>
 
             {/* ================= RELATED SERVICES ================= */}
             <section className="related-services">
-
               <div className="section-heading">
                 <span>03</span>
-
                 <div>
                   <h3>Related Services</h3>
-
-                  <p>
-                    Explore our other technology solutions.
-                  </p>
+                  <p>Explore our other technology solutions.</p>
                 </div>
               </div>
 
               <div className="related-services-grid">
+                {relatedServices.map((service) => (
+                  <div className="service-card" key={service.title}>
+                    <div className="service-card-top">
+                      <div className="service-icon">
+                        <img src={service.icon} alt={service.title} />
+                      </div>
 
-                <div className="service-card">
-                  <div className="service-card-top">
-                    <div className="service-icon">
-                      <img
-                        src="/assets/img/icons/service-page-icon1.png"
-                        alt="Network Solutions"
-                      />
+                      <Link to={service.to} className="service-arrow">
+                        <i className="bi bi-arrow-right"></i>
+                      </Link>
                     </div>
 
-                    <Link
-                      to="/IT-Networking"
-                      className="service-arrow"
-                    >
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
+                    <h4>
+                      <Link to={service.to}>{service.title}</Link>
+                    </h4>
+
+                    <p>{service.desc}</p>
                   </div>
-
-                  <h4>
-                    <Link to="/IT-Networking">
-                      Network Solutions
-                    </Link>
-                  </h4>
-
-                  <p>
-                    Strategic IT planning, network infrastructure design, and
-                    business process analysis to strengthen your technology
-                    foundation.
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <div className="service-card-top">
-                    <div className="service-icon">
-                      <img
-                        src="/assets/img/icons/service-page-icon2.png"
-                        alt="Website Development"
-                      />
-                    </div>
-
-                    <Link
-                      to="/Website-Development"
-                      className="service-arrow"
-                    >
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
-                  </div>
-
-                  <h4>
-                    <Link to="/Website-Development">
-                      Website Development
-                    </Link>
-                  </h4>
-
-                  <p>
-                    Responsive and high-performance websites designed to
-                    provide an excellent digital experience across all
-                    devices.
-                  </p>
-                </div>
-
+                ))}
               </div>
             </section>
 
             {/* ================= FAQ ================= */}
             <section className="faq-section">
-
               <div className="section-heading faq-heading">
                 <span>04</span>
-
                 <div>
                   <h3>Frequently Asked Questions</h3>
-
                   <p>
                     Find answers to common questions about our software
                     development services.
@@ -295,29 +258,23 @@ const ServiceDetailsLeft1 = () => {
               </div>
 
               <div className="professional-faq">
-
                 {data.slice(0, 4).map((item, index) => (
-
                   <div
                     key={index}
                     className={`faq-item ${
                       index === openItemIndex ? "faq-active" : ""
                     }`}
                   >
-
                     <button
                       type="button"
                       className="faq-question"
                       onClick={() => handleItemClick(index)}
                     >
-
                       <span className="faq-number">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
-                      <span className="faq-title">
-                        {item.title}
-                      </span>
+                      <span className="faq-title">{item.title}</span>
 
                       <span className="faq-icon">
                         <i
@@ -328,7 +285,6 @@ const ServiceDetailsLeft1 = () => {
                           }
                         ></i>
                       </span>
-
                     </button>
 
                     {index === openItemIndex && (
@@ -336,15 +292,10 @@ const ServiceDetailsLeft1 = () => {
                         <p>{item.desc}</p>
                       </div>
                     )}
-
                   </div>
-
                 ))}
-
               </div>
-
             </section>
-
           </div>
         </div>
       </div>
