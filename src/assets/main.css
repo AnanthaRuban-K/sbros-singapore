@@ -331,9 +331,9 @@ body.body {
 }
 
 @media (max-width: 768px) {
-  .sp {
+  /* .sp {
     padding: 50px 0px;
-  }
+  } */
   .pt100 {
     padding-top: 50px;
   }
@@ -40865,7 +40865,21 @@ background-color: unset;
     line-height: 1.9;
 }
 
+@media (max-width: 767px) {
+  .it-networking-page .details-post-area .image {
+    height: 180px !important;
+    overflow: hidden;
+    border-radius: 12px;
+  }
 
+  .it-networking-page .details-post-area .image img {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
 /* ============ OUR APPROACH: SERVICE CARDS ============ */
 .approach-section .approach-grid {
   display: grid;
