@@ -44,7 +44,7 @@ const ProjectDetailsCenter1 = () => {
         "Follow-ups",
       ],
       video: "/assets/img/Video2.mp4",
-      thumbnail: "/assets/img/thumb/crm.png",
+      thumbnail: "/assets/img/thumb/image2.jpeg",
       tag: "CUSTOMERS",
     },
 
@@ -64,7 +64,7 @@ const ProjectDetailsCenter1 = () => {
         "Financial Reports",
       ],
       video: "/assets/img/Video3.mp4",
-      thumbnail: "/assets/img/thumb/finance.png",
+      thumbnail: "/assets/img/thumb/image3.jpeg",
       tag: "FINANCE",
     },
 
@@ -84,7 +84,7 @@ const ProjectDetailsCenter1 = () => {
         "Purchase Orders",
       ],
       video: "/assets/videos/procurement.mp4",
-      thumbnail: "/assets/img/thumb/procurement.png",
+      thumbnail: "/assets/img/thumb/image4.jpeg",
       tag: "PURCHASING",
     },
 
@@ -104,7 +104,7 @@ const ProjectDetailsCenter1 = () => {
         "Customer Management",
       ],
       video: "/assets/videos/sales.mp4",
-      thumbnail: "/assets/img/thumb/sales.png",
+      thumbnail: "/assets/img/thumb/image5.jpeg",
       tag: "SALES",
     },
   ];
