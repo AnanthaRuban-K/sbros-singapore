@@ -32,7 +32,7 @@ export default function LoginPage() {
 
     // Login API logic can be added here
 
-    navigate("/pricing");
+    navigate("/enquiry");
   };
 
   const handleSignup = () => {

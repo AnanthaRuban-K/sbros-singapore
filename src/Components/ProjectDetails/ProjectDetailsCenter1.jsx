@@ -6,12 +6,12 @@ const ProjectDetailsCenter1 = () => {
 
   // =====================================================
   // ERP MODULES - 5 MODULES
+  // `id` must match the keys in Pricing/modulePricingData.js
+  // (hrm, crm, finance, procurement, sales)
   // =====================================================
   const modules = [
-    // =====================================================
-    // 01 - HRM
-    // =====================================================
     {
+      id: "hrm",
       number: "01",
       icon: "bi bi-people-fill",
       title: "Human Resource Management",
@@ -27,11 +27,8 @@ const ProjectDetailsCenter1 = () => {
       thumbnail: "/assets/img/thumb/image.png",
       tag: "PEOPLE",
     },
-
-    // =====================================================
-    // 02 - CRM
-    // =====================================================
     {
+      id: "crm",
       number: "02",
       icon: "bi bi-person-lines-fill",
       title: "Customer Relationship Management",
@@ -47,11 +44,8 @@ const ProjectDetailsCenter1 = () => {
       thumbnail: "/assets/img/thumb/image2.jpeg",
       tag: "CUSTOMERS",
     },
-
-    // =====================================================
-    // 03 - FINANCE
-    // =====================================================
     {
+      id: "finance",
       number: "03",
       icon: "bi bi-wallet-fill",
       title: "Finance",
@@ -67,11 +61,8 @@ const ProjectDetailsCenter1 = () => {
       thumbnail: "/assets/img/thumb/image3.jpeg",
       tag: "FINANCE",
     },
-
-    // =====================================================
-    // 04 - PROCUREMENT
-    // =====================================================
     {
+      id: "procurement",
       number: "04",
       icon: "bi bi-cart-check-fill",
       title: "Procurement",
@@ -87,11 +78,8 @@ const ProjectDetailsCenter1 = () => {
       thumbnail: "/assets/img/thumb/image4.jpeg",
       tag: "PURCHASING",
     },
-
-    // =====================================================
-    // 05 - SALES
-    // =====================================================
     {
+      id: "sales",
       number: "05",
       icon: "bi bi-bag-check-fill",
       title: "Sales",
@@ -146,157 +134,98 @@ const ProjectDetailsCenter1 = () => {
           {/* ================= NEURAL ORBIT ================= */}
           <div className="erp-neural-orbit">
 
-            {/* RINGS */}
             <div className="neural-ring neural-ring-outer"></div>
             <div className="neural-ring neural-ring-middle"></div>
             <div className="neural-ring neural-ring-inner"></div>
 
-
-            {/* ================= CONNECTION LINES ================= */}
             <div className="neural-lines">
-
               <span className="neural-line line-1"></span>
               <span className="neural-line line-2"></span>
               <span className="neural-line line-3"></span>
               <span className="neural-line line-4"></span>
               <span className="neural-line line-5"></span>
-
             </div>
 
-
-            {/* ================= PARTICLES ================= */}
             <span className="neural-particle particle-1"></span>
             <span className="neural-particle particle-2"></span>
             <span className="neural-particle particle-3"></span>
             <span className="neural-particle particle-4"></span>
             <span className="neural-particle particle-5"></span>
 
-
-            {/* ================= ERP CORE ================= */}
             <div className="erp-neural-core">
-
               <div className="core-wave wave-one"></div>
               <div className="core-wave wave-two"></div>
 
               <div className="core-content">
-
-                <span className="core-small">
-                  POWERED BY
-                </span>
-
+                <span className="core-small">POWERED BY</span>
                 <strong>ERP</strong>
-
-                <span className="core-bottom">
-                  ONE PLATFORM
-                </span>
-
+                <span className="core-bottom">ONE PLATFORM</span>
               </div>
-
             </div>
 
-
-            {/* =================================================
-                01 - HRM
-            ================================================== */}
+            {/* 01 - HRM */}
             <div className="neural-module neural-1">
-
               <div className="neural-module-card">
-
                 <div className="neural-icon">
                   <i className="bi bi-people-fill"></i>
                 </div>
-
                 <div>
                   <small>01</small>
                   <span>HRM</span>
                 </div>
-
               </div>
-
             </div>
 
-
-            {/* =================================================
-                02 - CRM
-            ================================================== */}
+            {/* 02 - CRM */}
             <div className="neural-module neural-2">
-
               <div className="neural-module-card">
-
                 <div className="neural-icon">
                   <i className="bi bi-person-lines-fill"></i>
                 </div>
-
                 <div>
                   <small>02</small>
                   <span>CRM</span>
                 </div>
-
               </div>
-
             </div>
 
-
-            {/* =================================================
-                03 - FINANCE
-            ================================================== */}
+            {/* 03 - FINANCE */}
             <div className="neural-module neural-3">
-
               <div className="neural-module-card">
-
                 <div className="neural-icon">
                   <i className="bi bi-wallet-fill"></i>
                 </div>
-
                 <div>
                   <small>03</small>
                   <span>Finance</span>
                 </div>
-
               </div>
-
             </div>
 
-
-            {/* =================================================
-                04 - PROCUREMENT
-            ================================================== */}
+            {/* 04 - PROCUREMENT */}
             <div className="neural-module neural-4">
-
               <div className="neural-module-card">
-
                 <div className="neural-icon">
                   <i className="bi bi-cart-check-fill"></i>
                 </div>
-
                 <div>
                   <small>04</small>
                   <span>Procurement</span>
                 </div>
-
               </div>
-
             </div>
 
-
-            {/* =================================================
-                05 - SALES
-            ================================================== */}
+            {/* 05 - SALES */}
             <div className="neural-module neural-5">
-
               <div className="neural-module-card">
-
                 <div className="neural-icon">
                   <i className="bi bi-bag-check-fill"></i>
                 </div>
-
                 <div>
                   <small>05</small>
                   <span>Sales</span>
                 </div>
-
               </div>
-
             </div>
 
           </div>
@@ -312,49 +241,36 @@ const ProjectDetailsCenter1 = () => {
       <section className="erp-showcase">
 
         <div className="erp-showcase-heading">
-
           <div>
-
-            <span>
-              EXPLORE THE ECOSYSTEM
-            </span>
-
+            <span>EXPLORE THE ECOSYSTEM</span>
             <h2>
               One Platform.
               <br />
               <em>Every Operation.</em>
             </h2>
-
           </div>
-
         </div>
 
 
         {/* ================= MODULE GRID ================= */}
         <div className="erp-creative-grid">
 
-          {modules.map((module, index) => (
+          {modules.map((module) => (
 
             <article
               className="erp-creative-module"
-              key={index}
+              key={module.id}
             >
 
               {/* ================= CARD HEADER ================= */}
               <div className="erp-module-top">
-
-                <div className="erp-module-number">
-                  {module.number}
-                </div>
+                <div className="erp-module-number">{module.number}</div>
 
                 <div className="erp-module-icon">
                   <i className={module.icon}></i>
                 </div>
 
-                <span className="erp-module-tag">
-                  {module.tag}
-                </span>
-
+                <span className="erp-module-tag">{module.tag}</span>
               </div>
 
 
@@ -365,18 +281,12 @@ const ProjectDetailsCenter1 = () => {
                 tabIndex={0}
                 onClick={() => setActiveVideo(module.video)}
                 onKeyDown={(e) => {
-
                   if (e.key === "Enter" || e.key === " ") {
-
                     e.preventDefault();
-
                     setActiveVideo(module.video);
-
                   }
-
                 }}
               >
-
                 <img
                   src={module.thumbnail}
                   alt={`${module.title} video thumbnail`}
@@ -386,84 +296,51 @@ const ProjectDetailsCenter1 = () => {
                 <div className="erp-media-gradient"></div>
 
                 <div className="erp-media-label">
-
                   <i className="bi bi-play-fill"></i>
-
-                  <span>
-                    {module.shortTitle}
-                  </span>
-
+                  <span>{module.shortTitle}</span>
                 </div>
 
                 <div
                   className="erp-video-corner"
                   onClick={(e) => {
-
                     e.stopPropagation();
-
                     setActiveVideo(module.video);
-
                   }}
-                >
-
-                  {/* <i className="bi bi-arrow-up-right"></i> */}
-
-                </div>
-
+                ></div>
               </div>
 
 
               {/* ================= CARD BODY ================= */}
               <div className="erp-module-body">
 
-                <h3>
-                  {module.title}
-                </h3>
+                <h3>{module.title}</h3>
 
-                <p>
-                  {module.text}
-                </p>
-
+                <p>{module.text}</p>
 
                 {/* ================= FEATURES ================= */}
                 <div className="erp-feature-list">
-
-                  {module.features.map(
-                    (feature, featureIndex) => (
-
-                      <div
-                        className="erp-feature-pill"
-                        key={featureIndex}
-                      >
-
-                        <i className="bi bi-check-lg"></i>
-
-                        <span>
-                          {feature}
-                        </span>
-
-                      </div>
-
-                    )
-                  )}
-
+                  {module.features.map((feature, featureIndex) => (
+                    <div className="erp-feature-pill" key={featureIndex}>
+                      <i className="bi bi-check-lg"></i>
+                      <span>{feature}</span>
+                    </div>
+                  ))}
                 </div>
 
-
-                {/* ================= BUTTON ================= */}
+                {/* ================= BUTTON =================
+                    Goes to that module's own pricing page.
+                    HRM -> /module-pricing/hrm
+                    CRM -> /module-pricing/crm  ... etc.
+                ============================================ */}
                 <Link
-                  to="/pricing"
+                  to={`/module-pricing/${module.id}`}
                   className="erp-explore-btn"
                 >
-
-                  <span>
-                    Explore Module
-                  </span>
+                  <span>Explore Module</span>
 
                   <div className="erp-btn-icon">
                     <i className="bi bi-arrow-up-right"></i>
                   </div>
-
                 </Link>
 
               </div>
@@ -497,9 +374,7 @@ const ProjectDetailsCenter1 = () => {
               onClick={() => setActiveVideo(null)}
               aria-label="Close video"
             >
-
               <i className="bi bi-x-lg"></i>
-
             </button>
 
             <video

@@ -54,6 +54,9 @@ import BlogPageDark from "../Pages/BlogPageDark";
 import BlogDetailsLeftDark from "../Pages/BlogDetailsLeftDark";
 import BlogDetailsRightDark from "../Pages/BlogDetailsRightDark";
 import BlogDetailsCenterDark from "../Pages/BlogDetailsCenterDark";
+import ModulePricing from "../Components/Pricing/Modulepricing";
+import PlanDetailsPage from "../Pages/Plandetailspage";
+import EnquiryPage from "../Pages/EnquiryPage";
 import TermsAndConditions from "../Components/Common/Terms";
 import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
 import ScrollToTop from "../Components/Common/ScrollToTop";
@@ -150,6 +153,23 @@ export const router = createBrowserRouter([
   path: "/PricingCard1",
   element: <PricingCard1 />,
 },  
+{
+  path: "/module-pricing/:moduleId",
+  element: <ModulePricing />,
+},
+
+{
+  path: "/module-pricing/:moduleId/:planId/details",
+  element: <PlanDetailsPage />,
+},
+{
+  path: "/pricing/:planId",
+  element: <RequestPricing />,
+},
+{
+  path: "/enquiry",
+  element: <EnquiryPage />,
+},
 {
   path: "/custom-plan-proposal",
   element: <CustomPlanProposal />,

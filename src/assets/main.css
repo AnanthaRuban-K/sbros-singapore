@@ -61937,3 +61937,981 @@ body,
   /* text-decoration: underline; */
   color: #1677ff;
 }
+
+
+
+
+
+
+.mp-section { padding: 70px 20px; background: #f6f8fc; min-height: 100vh; }
+.mp-container { max-width: 1150px; margin: 0 auto; }
+.mp-back { display: inline-block; margin-bottom: 24px; color: #3f5aa8; font-weight: 600; text-decoration: none; }
+.mp-back:hover { text-decoration: underline; }
+
+.mp-header { text-align: center; margin-bottom: 44px; }
+.mp-header-icon { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 18px; background: #3f5aa8; color: #fff; display: grid; place-items: center; font-size: 28px; }
+.mp-header h1 { font-size: clamp(26px, 4vw, 38px); color: #1f2937; margin: 0 0 10px; }
+.mp-header p { color: #6b7280; margin: 0; }
+
+.mp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
+.mp-card { background: #fff; border: 1px solid #e3e8f2; border-top: 5px solid #6f84c4; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; box-shadow: 0 6px 20px rgba(31, 41, 55, .05); transition: transform .2s, box-shadow .2s; }
+.mp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(31, 41, 55, .1); }
+.mp-intermediate { border-top-color: #3f5aa8; }
+.mp-advanced { border-top-color: #1f2f66; }
+.mp-card h2 { margin: 0 0 14px; font-size: 22px; color: #1f2937; }
+
+.mp-price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.mp-currency { font-weight: 700; color: #3f5aa8; }
+.mp-amount { font-size: 44px; font-weight: 800; color: #3f5aa8; line-height: 1; }
+.mp-unit { color: #6b7280; font-size: 13px; }
+.mp-min { margin-top: 10px; font-size: 14px; color: #374151; }
+.mp-note { font-size: 13px; color: #6b7280; margin: 8px 0 18px; }
+
+.mp-features { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+.mp-features li { display: flex; gap: 10px; padding: 6px 0; font-size: 14px; color: #374151; }
+.mp-check { color: #16a34a; font-weight: 700; }
+
+.mp-btn { border: 0; cursor: pointer; padding: 13px 18px; border-radius: 10px; background: #3f5aa8; color: #fff; font-weight: 700; font-size: 15px; transition: background .2s; }
+.mp-btn:hover { background: #1f2f66; }
+
+.mp-footnote { margin-top: 28px; text-align: center; font-size: 13px; color: #6b7280; }
+.mp-notfound { text-align: center; padding: 80px 0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PLAN DETAILS PAGE  (readable sizes, neat spacing)
+   ===================================================== */
+
+.pd-section,
+.pd-section * { box-sizing: border-box; }
+
+.pd-section {
+  padding: 60px 20px 100px;
+  background: #f6f8fb;
+  min-height: 100vh;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #334155;
+}
+.pd-container { max-width: 1200px; margin: 0 auto; }
+.pd-center { text-align: center; padding: 100px 0; }
+
+/* ---------- Back button ---------- */
+.pd-back {
+  background: none; border: 0; padding: 0; margin-bottom: 28px;
+  color: #2563eb; font-weight: 600; font-size: 17px; font-family: inherit;
+  cursor: pointer;
+}
+.pd-back:hover { text-decoration: underline; }
+
+/* ---------- Header ---------- */
+.pd-header { display: flex; align-items: center; gap: 20px; margin-bottom: 32px; }
+.pd-header-icon {
+  width: 68px; height: 68px; border-radius: 16px; flex-shrink: 0;
+  background: #e0e9ff; color: #2563eb; font-size: 32px;
+  display: flex; align-items: center; justify-content: center;
+}
+.pd-header h1 { margin: 0; font-size: 36px; line-height: 1.2; font-weight: 700; color: #0f172a; }
+.pd-sub { margin: 6px 0 0; font-size: 18px; color: #64748b; }
+
+/* ---------- Tier tabs ---------- */
+.pd-tabs { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.pd-tab {
+  padding: 12px 28px; border-radius: 999px;
+  border: 1.5px solid #cbd5e1; background: #fff; color: #334155;
+  font-size: 17px; font-weight: 600; font-family: inherit; cursor: pointer;
+  transition: all .15s;
+}
+.pd-tab:hover { border-color: #2563eb; color: #2563eb; }
+.pd-tab.active { background: #2563eb; border-color: #2563eb; color: #fff; }
+
+/* ---------- Summary card ---------- */
+.pd-summary {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 24px;
+  background: #fff; border-radius: 20px; padding: 28px 32px; margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(15,23,42,.07);
+}
+.pd-price-box { flex: 1 1 300px; }
+.pd-cur { font-size: 18px; color: #64748b; margin-right: 6px; font-weight: 600; }
+.pd-amt { font-size: 48px; font-weight: 800; color: #0f172a; line-height: 1.1; }
+.pd-unit { color: #64748b; margin-left: 8px; font-size: 17px; }
+.pd-minpay { font-size: 16px; color: #64748b; margin-top: 8px; }
+.pd-minpay strong { color: #0f172a; }
+
+.pd-stat { text-align: center; padding: 0 24px; border-left: 1px solid #e2e8f0; }
+.pd-stat strong { display: block; font-size: 36px; line-height: 1.2; color: #2563eb; }
+.pd-stat span { font-size: 15px; color: #64748b; }
+
+.pd-cta {
+  background: #2563eb; color: #fff; border: 0; border-radius: 12px;
+  padding: 16px 32px; font-size: 18px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: background .15s;
+}
+.pd-cta:hover { background: #1d4ed8; }
+
+/* ---------- Toggle ---------- */
+.pd-toggle {
+  display: inline-flex; gap: 10px; align-items: center;
+  margin: 6px 0 24px; color: #334155; font-size: 16px; cursor: pointer;
+}
+.pd-toggle input { width: 18px; height: 18px; cursor: pointer; }
+
+/* ---------- Feature groups ---------- */
+.pd-group {
+  background: #fff; border-radius: 20px; padding: 28px 32px; margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(15,23,42,.06);
+}
+.pd-group-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 8px;
+  margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #e2e8f0;
+}
+.pd-group-head h3 { margin: 0; font-size: 24px; font-weight: 700; color: #0f172a; }
+.pd-dep { font-size: 15px; color: #94a3b8; }
+
+.pd-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 6px 32px;
+}
+.pd-item { display: flex; align-items: center; gap: 12px; padding: 9px 0; font-size: 17px; }
+.pd-item .pd-name { flex: 1; }
+.pd-item.yes { color: #1e293b; }
+.pd-item.yes .pd-mark { color: #16a34a; font-weight: 800; font-size: 19px; }
+.pd-item.no { color: #94a3b8; }
+.pd-item.no .pd-mark { font-size: 15px; }
+
+.pd-level {
+  background: #e0e9ff; color: #1d4ed8;
+  font-size: 13px; font-weight: 700; padding: 3px 12px; border-radius: 999px;
+  white-space: nowrap;
+}
+.pd-avail {
+  margin-left: auto; background: #f1f5f9; color: #64748b;
+  font-size: 13px; font-weight: 600; padding: 3px 12px; border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ---------- Terms table ---------- */
+.pd-table-wrap { overflow-x: auto; }
+.pd-table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 780px; }
+.pd-table th, .pd-table td {
+  padding: 16px 18px; border-bottom: 1px solid #e2e8f0;
+  text-align: left; vertical-align: top;
+}
+.pd-table th { color: #475569; font-weight: 700; font-size: 17px; }
+.pd-table tbody tr:last-child td { border-bottom: 0; }
+.pd-table .hl { background: #eff4ff; }
+.pd-rowlabel { font-weight: 600; color: #0f172a; width: 20%; }
+
+.pd-footnote { font-size: 15px; color: #64748b; margin-top: 16px; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .pd-stat { border-left: 0; padding: 0 12px; }
+  .pd-header h1 { font-size: 30px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .pd-section { padding: 36px 14px 70px; font-size: 16px; }
+  .pd-header { align-items: flex-start; }
+  .pd-header-icon { width: 54px; height: 54px; font-size: 26px; }
+  .pd-header h1 { font-size: 26px; }
+  .pd-sub { font-size: 16px; }
+  .pd-tab { padding: 10px 20px; font-size: 16px; }
+  .pd-summary, .pd-group { padding: 20px 18px; }
+  .pd-amt { font-size: 40px; }
+  .pd-group-head h3 { font-size: 21px; }
+  .pd-list { grid-template-columns: 1fr; }
+  .pd-item { font-size: 16px; }
+  .pd-cta { width: 100%; }
+}
+
+/* =====================================================
+   VIEW BUTTON on ModulePricing cards
+   ===================================================== */
+.mp-btn-view {
+  display: block; width: 100%; margin-top: 12px; padding: 13px 18px;
+  border-radius: 12px; border: 1.5px solid #2563eb; background: transparent;
+  color: #2563eb; font-size: 16px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: all .15s;
+}
+.mp-btn-view:hover { background: #2563eb; color: #fff; }
+
+
+
+
+
+
+/* Custom card */
+.mp-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.mp-custom-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.mp-custom-logo {
+  max-height: 80px;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.mp-custom-name {
+  margin: 0;
+}
+
+.mp-custom-mission {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mp-custom .mp-btn {
+  margin-top: 8px;
+}
+/* =========================================================
+   MODULE PRICING PAGE  –  complete stylesheet
+   Replaces ALL older .mp-* CSS (including the trial / custom files).
+   Palette: navy #0f1f4b · brand blue #3b5bdb · green #15803d
+========================================================= */
+
+.mp-section {
+  --mp-navy: #0f1f4b;
+  --mp-blue: #3b5bdb;
+  --mp-blue-dark: #2f4bc4;
+  --mp-blue-soft: #eef2ff;
+  --mp-text: #334155;
+  --mp-muted: #64748b;
+  --mp-line: #e5e9f2;
+  --mp-green: #15803d;
+
+  padding: 170px 20px 90px;   /* top space clears the floating navbar */
+  background: #f6f8fc;
+}
+
+.mp-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.mp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--mp-blue);
+  text-decoration: none;
+}
+
+.mp-back:hover {
+  color: var(--mp-blue-dark);
+  text-decoration: underline;
+}
+
+.mp-back:focus-visible {
+  outline: 3px solid rgba(59, 91, 219, 0.35);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.mp-header {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.mp-header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: var(--mp-blue-soft);
+  font-size: 1.6rem;
+  color: var(--mp-blue);
+}
+
+.mp-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--mp-navy);
+}
+
+.mp-header p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--mp-muted);
+}
+
+/* =========================================================
+   GRID  (3 plan cards, Custom card spans the full row)
+========================================================= */
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .mp-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   PLAN CARD
+========================================================= */
+
+.mp-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px 26px;
+  border: 1px solid var(--mp-line);
+  border-top: 4px solid #cbd5e1;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 31, 75, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.mp-card:hover {
+  box-shadow: 0 12px 32px rgba(15, 31, 75, 0.12);
+}
+
+.mp-basic        { border-top-color: #7b8fdf; }
+.mp-intermediate { border-top-color: #3b5bdb; }
+.mp-advanced     { border-top-color: #1e2a5e; }
+
+/* plan name + free trial chip */
+
+.mp-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 20px;
+}
+
+.mp-card-head h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--mp-navy);
+}
+
+.mp-trial-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #bbe5c8;
+  border-radius: 999px;
+  background: #e7f6ec;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--mp-green);
+  white-space: nowrap;
+}
+
+/* price */
+
+.mp-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.mp-currency {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mp-blue);
+}
+
+.mp-amount {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--mp-blue);
+}
+
+.mp-unit {
+  font-size: 0.92rem;
+  color: var(--mp-muted);
+}
+
+.mp-min {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--mp-text);
+}
+
+.mp-min strong {
+  color: var(--mp-navy);
+}
+
+.mp-note {
+  margin: 0 0 22px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--mp-muted);
+}
+
+/* features (grows so the buttons always sit at the bottom) */
+
+.mp-features {
+  flex: 1;
+  margin: 0 0 24px;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--mp-line);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mp-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--mp-text);
+}
+
+.mp-check {
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 700;
+  color: var(--mp-green);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.mp-actions-row {
+  display: flex;
+  flex-wrap: wrap;            /* stacks automatically on narrow cards */
+  gap: 10px;
+}
+
+.mp-btn,
+.mp-btn-trial {
+  flex: 1 1 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  margin: 0;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* primary: Start Free Trial */
+.mp-btn-trial {
+  border: 1.5px solid var(--mp-blue);
+  background: var(--mp-blue);
+  color: #ffffff;
+}
+
+.mp-btn-trial:hover {
+  border-color: var(--mp-blue-dark);
+  background: var(--mp-blue-dark);
+}
+
+/* secondary: Request Pricing (inside the plan cards) */
+.mp-actions-row .mp-btn {
+  border: 1.5px solid var(--mp-blue);
+  background: #ffffff;
+  color: var(--mp-blue);
+}
+
+.mp-actions-row .mp-btn:hover {
+  background: var(--mp-blue-soft);
+}
+
+/* note under the buttons */
+.mp-trial-note {
+  margin: 12px 0 4px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--mp-muted);
+}
+
+/* tertiary: View all details */
+.mp-btn-view {
+  width: 100%;
+  margin: 4px 0 0;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--mp-blue);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+
+.mp-btn:focus-visible,
+.mp-btn-trial:focus-visible,
+.mp-btn-view:focus-visible {
+  outline: 3px solid rgba(59, 91, 219, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   CUSTOM CARD  (full-width strip under the plans)
+========================================================= */
+
+.mp-custom {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 32px;
+  border-top: 1px solid var(--mp-line);
+  background: #ffffff;
+}
+
+.mp-custom-top {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+}
+
+.mp-custom-logo {
+  max-width: 190px;
+  max-height: 56px;
+  object-fit: contain;
+}
+
+.mp-custom-name {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--mp-navy);
+}
+
+.mp-custom-mission {
+  flex: 1;
+  margin: 0;
+  padding-left: 28px;
+  border-left: 1px solid var(--mp-line);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--mp-navy);
+}
+
+/* Custom card's single button is the main action, so it is solid */
+.mp-custom .mp-btn {
+  flex: 0 0 auto;
+  min-width: 220px;
+  border: 1.5px solid var(--mp-blue);
+  background: var(--mp-blue);
+  color: #ffffff;
+}
+
+.mp-custom .mp-btn:hover {
+  border-color: var(--mp-blue-dark);
+  background: var(--mp-blue-dark);
+}
+
+@media (max-width: 720px) {
+  .mp-custom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+
+  .mp-custom-mission {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .mp-custom .mp-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   FOOTNOTE  /  NOT FOUND
+========================================================= */
+
+.mp-footnote {
+  max-width: 760px;
+  margin: 36px auto 0;
+  text-align: center;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--mp-muted);
+}
+
+.mp-notfound {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.mp-notfound h2 {
+  margin-bottom: 16px;
+  color: var(--mp-navy);
+}
+
+/* =========================================================
+   SMALL SCREENS
+========================================================= */
+
+@media (max-width: 600px) {
+  .mp-section {
+    padding: 130px 16px 60px;
+  }
+
+  .mp-card {
+    padding: 24px 20px 20px;
+  }
+
+  .mp-amount {
+    font-size: 2.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-card,
+  .mp-btn,
+  .mp-btn-trial,
+  .mp-btn-view {
+    transition: none;
+  }
+}
+
+
+
+
+
+
+/* =========================================================
+   ENQUIRY FORM  –  complete stylesheet
+   Palette (same as the pricing page):
+   navy #0f1f4b · brand blue #3b5bdb · error red #dc2626
+========================================================= */
+
+.enq-page {
+  --enq-navy: #0f1f4b;
+  --enq-blue: #3b5bdb;
+  --enq-blue-dark: #2f4bc4;
+  --enq-blue-soft: #eef2ff;
+  --enq-text: #334155;
+  --enq-muted: #64748b;
+  --enq-line: #e5e9f2;
+  --enq-border: #d5dbe8;
+  --enq-red: #dc2626;
+
+  padding: 60px 20px 90px;
+  background: #f6f8fc;
+}
+
+.enq-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.enq-header {
+  margin-bottom: 28px;
+}
+
+.enq-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--enq-navy);
+}
+
+.enq-header p {
+  max-width: 620px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--enq-muted);
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.enq-card {
+  padding: 36px;
+  border: 1px solid var(--enq-line);
+  border-top: 4px solid var(--enq-blue);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(15, 31, 75, 0.07);
+}
+
+.enq-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--enq-navy);
+}
+
+.enq-sub {
+  margin: 0 0 28px;
+  font-size: 0.95rem;
+  color: var(--enq-muted);
+}
+
+/* =========================================================
+   FIELDS
+========================================================= */
+
+.enq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 24px;
+}
+
+.enq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.enq-field.enq-full {
+  grid-column: 1 / -1;
+}
+
+.enq-field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--enq-navy);
+}
+
+.enq-star {
+  color: var(--enq-red);
+}
+
+/* input / select / textarea */
+
+.enq-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid var(--enq-border);
+  border-radius: 10px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--enq-text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.enq-input::placeholder {
+  color: #94a3b8;
+}
+
+.enq-input:hover {
+  border-color: #b8c2d6;
+}
+
+.enq-input:focus {
+  outline: none;
+  border-color: var(--enq-blue);
+  box-shadow: 0 0 0 4px rgba(59, 91, 219, 0.15);
+}
+
+textarea.enq-input {
+  min-height: 110px;
+  padding: 12px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+/* select with custom arrow */
+select.enq-input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 42px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+/* error state */
+
+.enq-input.has-error {
+  border-color: var(--enq-red);
+  background-color: #fffafa;
+}
+
+.enq-input.has-error:focus {
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
+}
+
+.enq-error {
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--enq-red);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.enq-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--enq-line);
+}
+
+.enq-btn-back,
+.enq-btn-next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 28px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.enq-btn-back {
+  border: 1.5px solid var(--enq-border);
+  background: #ffffff;
+  color: var(--enq-text);
+}
+
+.enq-btn-back:hover {
+  border-color: #b8c2d6;
+  background: #f1f5f9;
+}
+
+.enq-btn-next {
+  min-width: 200px;
+  border: 1.5px solid var(--enq-blue);
+  background: var(--enq-blue);
+  color: #ffffff;
+}
+
+.enq-btn-next:hover {
+  border-color: var(--enq-blue-dark);
+  background: var(--enq-blue-dark);
+}
+
+.enq-btn-next:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.enq-btn-back:focus-visible,
+.enq-btn-next:focus-visible {
+  outline: 3px solid rgba(59, 91, 219, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 680px) {
+  .enq-page {
+    padding: 40px 16px 60px;
+  }
+
+  .enq-card {
+    padding: 24px 20px;
+  }
+
+  .enq-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .enq-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .enq-btn-back,
+  .enq-btn-next {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enq-input,
+  .enq-btn-back,
+  .enq-btn-next {
+    transition: none;
+  }
+}
