@@ -1,29 +1,22 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { modulePricing } from "./modulePricingData";
+import PlanLeadForm from "./PlanLeadForm";
 
 
-// Put your logo in /public/logo.png (or change this path)
-const LOGO_SRC = "/logo.png";
+const LOGO_SRC = "/assets/img/logo/sbros-logo1.png";
 
 // Free trial length (days). Change this one number to change it everywhere.
 const TRIAL_DAYS = 15;
-
-const STORAGE_KEY = "customPlanProposal";
-
-const readSaved = () => {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-  } catch {
-    return {};
-  }
-};
 
 const ModulePricing = () => {
   const { moduleId } = useParams();
   const navigate = useNavigate();
   const module = modulePricing[moduleId];
   const [logoFailed, setLogoFailed] = useState(false);
+
+  // Plan shown in the lead form modal (null = closed)
+  const [leadPlan, setLeadPlan] = useState(null);
 
   if (!module) {
     return (
@@ -36,57 +29,40 @@ const ModulePricing = () => {
     );
   }
 
-  /* ---------- Request Pricing (Basic / Intermediate / Advanced) -> Enquiry ---------- */
+  /* ---------- Request Pricing (Basic / Intermediate / Advanced) -> lead form ---------- */
   const handleRequest = (plan) => {
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({
-        ...readSaved(),
-        selectedPlan: plan.id,
-        planName: `${module.requirementName} – ${plan.name}`,
-        selectedModules: [module.requirementName],
-        specificRequirements: "",
-        freeTrial: false,
-      })
-    );
-    navigate("/enquiry");
+    setLeadPlan({
+      kind: "module",
+      planInterest: `${module.id}-${plan.id}`.toUpperCase(),
+      label: `${module.requirementName} – ${plan.name}`,
+      modules: [module.requirementName],
+    });
   };
 
-  /* ---------- Start Free Trial (Basic / Intermediate / Advanced) -> Enquiry ---------- */
+  /* ---------- Start Free Trial (Basic / Intermediate / Advanced) -> lead form ---------- */
   const handleTrial = (plan) => {
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({
-        ...readSaved(),
-        selectedPlan: plan.id,
-        planName: `${module.requirementName} – ${plan.name} (Free Trial)`,
-        selectedModules: [module.requirementName],
-        specificRequirements: "",
-        freeTrial: true,
-        trialDays: TRIAL_DAYS,
-      })
-    );
-    navigate("/login");
+    setLeadPlan({
+      kind: "module",
+      planInterest: `${module.id}-${plan.id}`.toUpperCase(),
+      label: `${module.requirementName} – ${plan.name}`,
+      modules: [module.requirementName],
+      freeTrial: true,
+      trialDays: TRIAL_DAYS,
+    });
   };
 
   const handleView = (plan) => {
     navigate(`/module-pricing/${moduleId}/${plan.id}/details`);
   };
 
-  /* ---------- Custom -> Pricing page ---------- */
+  /* ---------- Custom -> lead form ---------- */
   const handleCustomRequest = () => {
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({
-        ...readSaved(),
-        selectedPlan: "custom",
-        planName: `${module.requirementName} – Custom`,
-        selectedModules: [module.requirementName],
-        specificRequirements: "",
-        freeTrial: false,
-      })
-    );
-    navigate("/pricing/custom");
+    setLeadPlan({
+      kind: "custom",
+      planInterest: "CUSTOM",
+      label: `${module.requirementName} – Custom`,
+      modules: [module.requirementName],
+    });
   };
 
   return (
@@ -183,6 +159,10 @@ const ModulePricing = () => {
 
         {module.footnote && <p className="mp-footnote">{module.footnote}</p>}
       </div>
+
+      {leadPlan && (
+        <PlanLeadForm plan={leadPlan} onClose={() => setLeadPlan(null)} />
+      )}
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -90,15 +90,7 @@ const Requirements = () => {
      STATE  (read from localStorage on first render)
   ========================================================= */
 
-  const [saved] = useState(() => {
-    const data = readSaved();
-
-    // Debug: open browser console to see what the earlier pages saved.
-    // You can delete this line once everything works.
-    console.log("Requirements page -> saved data:", data, "| plan:", detectPlan(data));
-
-    return data;
-  });
+  const [saved] = useState(readSaved);
 
   const selectedPlan = detectPlan(saved);
   const isFixed = FIXED_PLANS.includes(selectedPlan);

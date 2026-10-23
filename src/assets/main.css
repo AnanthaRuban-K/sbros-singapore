@@ -62915,3 +62915,222 @@ select.enq-input {
     transition: none;
   }
 }
+
+/* =========================================================
+   PLAN LEAD FORM (modal)  –  reuses the .enq-* form styles
+========================================================= */
+
+.plf-overlay {
+  --enq-navy: #0f1f4b;
+  --enq-blue: #3b5bdb;
+  --enq-blue-dark: #2f4bc4;
+  --enq-blue-soft: #eef2ff;
+  --enq-text: #334155;
+  --enq-muted: #64748b;
+  --enq-line: #e5e9f2;
+  --enq-border: #d5dbe8;
+  --enq-red: #dc2626;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  overflow-y: auto;
+  background: rgba(15, 31, 75, 0.55);
+}
+
+.plf-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: auto 0;
+  padding: 32px;
+  border-top: 4px solid var(--enq-blue);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(15, 31, 75, 0.25);
+  color: var(--enq-text);
+}
+
+.plf-title {
+  margin: 0 44px 18px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--enq-navy);
+}
+
+.plf-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--enq-muted);
+  cursor: pointer;
+}
+
+.plf-close:hover {
+  background: var(--enq-blue-soft);
+  color: var(--enq-navy);
+}
+
+.plf-close:focus-visible {
+  outline: 3px solid var(--enq-blue);
+  outline-offset: 2px;
+}
+
+/* selected plan summary */
+.plf-plan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--enq-blue-soft);
+}
+
+.plf-plan-label {
+  width: 100%;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--enq-muted);
+}
+
+.plf-plan-name {
+  font-size: 1.05rem;
+  color: var(--enq-navy);
+}
+
+.plf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.plf-chip {
+  padding: 3px 10px;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 0.8rem;
+  color: var(--enq-blue-dark);
+}
+
+.plf-optional {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--enq-muted);
+}
+
+.plf-count {
+  align-self: flex-end;
+  font-size: 0.78rem;
+  color: var(--enq-muted);
+}
+
+/* honeypot: off-screen, not display:none (some bots skip hidden fields) */
+.plf-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.plf-alert {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  font-size: 0.92rem;
+  color: #991b1b;
+}
+
+.plf-legal {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--enq-muted);
+}
+
+.plf-legal a {
+  color: var(--enq-blue);
+  text-decoration: underline;
+}
+
+/* success */
+.plf-success {
+  padding: 24px 8px 8px;
+  text-align: center;
+}
+
+.plf-success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--enq-blue-soft);
+  font-size: 30px;
+  color: var(--enq-blue);
+}
+
+.plf-success h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: var(--enq-navy);
+}
+
+.plf-success p {
+  margin: 0 0 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+  .plf-overlay {
+    padding: 0;
+  }
+
+  .plf-dialog {
+    min-height: 100%;
+    margin: 0;
+    padding: 24px 16px;
+    border-radius: 0;
+  }
+}
+
+/* =========================================================
+   404 PAGE
+========================================================= */
+
+.not-found-section {
+  padding: 80px 0 100px;
+}
+
+.not-found-section h2 {
+  margin-bottom: 12px;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}

@@ -25,11 +25,6 @@ export default function LoginPage() {
       return;
     }
 
-    console.log({
-      email,
-      password,
-    });
-
     // Login API logic can be added here
 
     navigate("/enquiry");
@@ -241,7 +236,7 @@ export default function LoginPage() {
         <div className="signup-link-row">
 
           <span>
-            Don't have an account?
+            Don&apos;t have an account?
           </span>
 
           <button

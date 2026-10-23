@@ -16,14 +16,12 @@ import ServicePage from "../Pages/ServicePage";
 import ProjectPage from "../Pages/ProjectPage";
 import ContactPage from "../Pages/ContactPage";
 import Pricing from "../Pages/Pricing";
-import PricingCard1 from "../Pages/PricingCard1";
 import CustomPlanProposal from "../Pages/CustomPlanProposal";
 import Requirements from "../Pages/Requirements";
 import AdditionalInformation from "../Pages/AdditionalInformation";
 import Review from "../Pages/Review";
 import Submitted from "../Pages/Submitted";
 import RequestPricing from "../Pages/RequestPricing";
-import Payment from "../Pages/Payment";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import TeamPage from "../Pages/TeamPage";
@@ -54,13 +52,14 @@ import BlogPageDark from "../Pages/BlogPageDark";
 import BlogDetailsLeftDark from "../Pages/BlogDetailsLeftDark";
 import BlogDetailsRightDark from "../Pages/BlogDetailsRightDark";
 import BlogDetailsCenterDark from "../Pages/BlogDetailsCenterDark";
-import ModulePricing from "../Components/Pricing/Modulepricing";
+import ModulePricing from "../Components/Pricing/ModulePricing";
 import PlanDetailsPage from "../Pages/Plandetailspage";
 import EnquiryPage from "../Pages/EnquiryPage";
 import TermsAndConditions from "../Components/Common/Terms";
 import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
 import ScrollToTop from "../Components/Common/ScrollToTop";
 import FloatingButtons from "../Components/Common/FloatingButtons";
+import NotFound from "../Pages/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -149,10 +148,6 @@ export const router = createBrowserRouter([
           path: "/Pricing",
           element:<Pricing></Pricing> ,
         },  
-        {
-  path: "/PricingCard1",
-  element: <PricingCard1 />,
-},  
 {
   path: "/module-pricing/:moduleId",
   element: <ModulePricing />,
@@ -174,10 +169,6 @@ export const router = createBrowserRouter([
   path: "/custom-plan-proposal",
   element: <CustomPlanProposal />,
 },      
- {
-  path: "/payment",
-  element: <Payment />,
-},   
 {
   path: "/requirements",
   element: <Requirements />,
@@ -193,10 +184,6 @@ export const router = createBrowserRouter([
 {
   path: "/submitted",
   element: <Submitted />,
-},
-{
-  path: "/pricing/:planId",
-  element: <RequestPricing />,
 },
 {
   path: "/login",
@@ -217,7 +204,11 @@ export const router = createBrowserRouter([
 {
     path: "/privacy-policy",
     element: <PrivacyPolicy />,
-},                                                                       
+},
+{
+  path: "*",
+  element: <NotFound />,
+},
       ],
     },
     {

@@ -52,16 +52,6 @@ export default function SignupDetails() {
       return;
     }
 
-    // Save signup details
-    const signupData = {
-      fullName,
-      phone,
-      company,
-      password,
-    };
-
-    console.log("Signup Data:", signupData);
-
     // Go to Checkout page
     navigate("/pricing");
   };
@@ -90,7 +80,7 @@ export default function SignupDetails() {
         </h1>
 
         <p className="setup-subtitle">
-          Just a few more details and you're ready to pick a plan.
+          Just a few more details and you&apos;re ready to pick a plan.
         </p>
 
         <form onSubmit={handleSubmit} autoComplete="off">

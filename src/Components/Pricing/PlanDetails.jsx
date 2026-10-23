@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { modulePricing } from "./modulePricingData";
 import { planMatrix, commercialExtras, TIERS, TIER_LABELS } from "./planFeatureMatrix";
+import PlanLeadForm from "./PlanLeadForm";
 
 
 const PlanDetails = () => {
@@ -14,6 +15,7 @@ const PlanDetails = () => {
 
   const [activeTier, setActiveTier] = useState(startIdx < 0 ? 0 : startIdx);
   const [showLocked, setShowLocked] = useState(true);
+  const [leadPlan, setLeadPlan] = useState(null);
 
   const groups = useMemo(
     () =>
@@ -42,18 +44,12 @@ const PlanDetails = () => {
   const totalLocked = groups.reduce((n, g) => n + g.locked.length, 0);
 
   const handleRequest = () => {
-    const existing = JSON.parse(localStorage.getItem("customPlanProposal") || "{}");
-    localStorage.setItem(
-      "customPlanProposal",
-      JSON.stringify({
-        ...existing,
-        selectedPlan: tierId,
-        planName: `${moduleInfo.requirementName} – ${TIER_LABELS[activeTier]}`,
-        selectedModules: [moduleInfo.requirementName],
-        specificRequirements: "",
-      })
-    );
-    navigate(`/pricing/${tierId}`);
+    setLeadPlan({
+      kind: "module",
+      planInterest: `${moduleId}-${tierId}`.toUpperCase(),
+      label: `${moduleInfo.requirementName} – ${TIER_LABELS[activeTier]}`,
+      modules: [moduleInfo.requirementName],
+    });
   };
 
   const levelBadge = (f) => {
@@ -185,6 +181,10 @@ const PlanDetails = () => {
           Enterprise includes Advanced capabilities plus enterprise controls, compliance, integrations and analytics.
         </p>
       </div>
+
+      {leadPlan && (
+        <PlanLeadForm plan={leadPlan} onClose={() => setLeadPlan(null)} />
+      )}
     </section>
   );
 };

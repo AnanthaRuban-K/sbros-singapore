@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import BreadCumb2 from "../Components/Common/BreadCumb2";
-import PlanDetails from "../Components/Pricing/Plandetails";
+import PlanDetails from "../Components/Pricing/PlanDetails";
 // import Cta2 from "../Components/Cta/Cta2";
 import { modulePricing } from "../Components/Pricing/modulePricingData";
 import { TIERS, TIER_LABELS } from "../Components/Pricing/planFeatureMatrix";

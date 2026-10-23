@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import PlanLeadForm from "./PlanLeadForm";
 
 // =====================================================
 // PRICING PLANS
@@ -170,45 +171,21 @@ const Icon = ({ type }) => {
 const Pricing1 = () => {
   const [billing, setBilling] = useState("annual");
 
-  const navigate = useNavigate();
+  // Plan shown in the lead form modal (null = closed)
+  const [leadPlan, setLeadPlan] = useState(null);
 
   // =====================================================
-  // PLAN NAVIGATION
+  // PLAN BUTTONS -> LEAD FORM
   // =====================================================
 
   const handlePlanClick = (plan) => {
-    /*
-      Save selected plan information.
-
-      This will be used by Requirements page
-      to automatically tick the required modules.
-    */
-
-    const existingData = JSON.parse(
-      localStorage.getItem("customPlanProposal") || "{}"
-    );
-
-    const updatedData = {
-      ...existingData,
-
-      selectedPlan: plan.id,
-      planName: plan.name,
-
-      // Automatic module selection
-      selectedModules: plan.selectedModules,
-
-      // Clear previous requirements when selecting
-      // a different pricing plan
-      specificRequirements: "",
-    };
-
-    localStorage.setItem(
-      "customPlanProposal",
-      JSON.stringify(updatedData)
-    );
-
-    // Go to pricing request page
-    navigate(`/pricing/${plan.id}`);
+    setLeadPlan({
+      kind: plan.id === "custom" ? "custom" : "complete",
+      planInterest: plan.id.toUpperCase(),
+      label: plan.name,
+      billingCycle: billing === "annual" ? "Annual" : "Monthly",
+      modules: plan.selectedModules,
+    });
   };
 
   return (
@@ -248,6 +225,7 @@ const Pricing1 = () => {
               className={`pricing1-toggle-option ${
                 billing === "monthly" ? "active" : ""
               }`}
+              aria-pressed={billing === "monthly"}
               onClick={() => setBilling("monthly")}
             >
               Monthly
@@ -258,6 +236,7 @@ const Pricing1 = () => {
               className={`pricing1-toggle-option annual ${
                 billing === "annual" ? "active" : ""
               }`}
+              aria-pressed={billing === "annual"}
               onClick={() => setBilling("annual")}
             >
               <span className="toggle-circle"></span>
@@ -391,7 +370,7 @@ const Pricing1 = () => {
               We understand that every business is unique.
               <br />
 
-              Tell us what you need and we'll create a custom
+              Tell us what you need and we&apos;ll create a custom
               plan that fits your requirements and budget.
             </p>
 
@@ -401,32 +380,9 @@ const Pricing1 = () => {
 
             <button
               type="button"
-              onClick={() => {
-
-                // Custom plan = no automatic modules
-                const existingData = JSON.parse(
-                  localStorage.getItem("customPlanProposal") || "{}"
-                );
-
-                const updatedData = {
-                  ...existingData,
-
-                  selectedPlan: "custom",
-                  planName: "Custom",
-
-                  // User must manually select modules
-                  selectedModules: [],
-
-                  specificRequirements: "",
-                };
-
-                localStorage.setItem(
-                  "customPlanProposal",
-                  JSON.stringify(updatedData)
-                );
-
-                navigate("/pricing/custom");
-              }}
+              onClick={() =>
+                handlePlanClick(plans.find((p) => p.id === "custom"))
+              }
             >
               Request a Custom Quote
             </button>
@@ -434,9 +390,9 @@ const Pricing1 = () => {
             <span>
               Or contact our{" "}
 
-             
+              <Link to="/contact-us">
                 sales team
-             {" "}
+              </Link>{" "}
 
               directly
             </span>
@@ -478,6 +434,13 @@ const Pricing1 = () => {
         </div>
 
       </div>
+
+      {leadPlan && (
+        <PlanLeadForm
+          plan={leadPlan}
+          onClose={() => setLeadPlan(null)}
+        />
+      )}
     </section>
   );
 };
