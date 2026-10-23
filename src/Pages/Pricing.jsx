@@ -1,15 +1,11 @@
 import Pricing1 from "../Components/Pricing/Pricing1";
-import BreadCumb from "../Components/Common/BreadCumb";
 
-
+// No breadcrumb banner on this page: the pricing header is the page's h1
 
 const Pricing = () => {
     return (
         <div>
-            <BreadCumb Title="Pricing"></BreadCumb>
-           
-         <Pricing1></Pricing1>
-           
+            <Pricing1 headingTag="h1"></Pricing1>
         </div>
     );
 };

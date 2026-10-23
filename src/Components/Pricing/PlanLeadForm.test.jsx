@@ -98,7 +98,8 @@ describe("PlanLeadForm", () => {
 
     renderForm(TRIAL_PLAN);
 
-    expect(screen.getByRole("heading", { name: "Start your 15-day free trial" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Request your 15-day free trial" })).toBeInTheDocument();
+    expect(screen.getByText("Our team will set up your account and email your login.")).toBeInTheDocument();
 
     await fillForm(user);
     await user.click(submitButton());

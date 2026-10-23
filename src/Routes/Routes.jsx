@@ -16,14 +16,6 @@ import ServicePage from "../Pages/ServicePage";
 import ProjectPage from "../Pages/ProjectPage";
 import ContactPage from "../Pages/ContactPage";
 import Pricing from "../Pages/Pricing";
-import CustomPlanProposal from "../Pages/CustomPlanProposal";
-import Requirements from "../Pages/Requirements";
-import AdditionalInformation from "../Pages/AdditionalInformation";
-import Review from "../Pages/Review";
-import Submitted from "../Pages/Submitted";
-import RequestPricing from "../Pages/RequestPricing";
-import Login from "../Pages/Login";
-import Signup from "../Pages/Signup";
 import TeamPage from "../Pages/TeamPage";
 import TestimonialPage from "../Pages/TestimonialPage";
 import ServiceDetailsLeft from "../Pages/ServiceDetailsLeft";
@@ -54,7 +46,6 @@ import BlogDetailsRightDark from "../Pages/BlogDetailsRightDark";
 import BlogDetailsCenterDark from "../Pages/BlogDetailsCenterDark";
 import ModulePricing from "../Components/Pricing/ModulePricing";
 import PlanDetailsPage from "../Pages/Plandetailspage";
-import EnquiryPage from "../Pages/EnquiryPage";
 import TermsAndConditions from "../Components/Common/Terms";
 import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
 import ScrollToTop from "../Components/Common/ScrollToTop";
@@ -157,42 +148,6 @@ export const router = createBrowserRouter([
   path: "/module-pricing/:moduleId/:planId/details",
   element: <PlanDetailsPage />,
 },
-{
-  path: "/pricing/:planId",
-  element: <RequestPricing />,
-},
-{
-  path: "/enquiry",
-  element: <EnquiryPage />,
-},
-{
-  path: "/custom-plan-proposal",
-  element: <CustomPlanProposal />,
-},      
-{
-  path: "/requirements",
-  element: <Requirements />,
-},
-{
-  path: "/additional-information",
-  element: <AdditionalInformation />,
-},
-{
-  path: "/review",
-  element: <Review />,
-},
-{
-  path: "/submitted",
-  element: <Submitted />,
-},
-{
-  path: "/login",
-  element: <Login />,
-},
-{
-  path: "/signup",
-  element: <Signup />,
-},                                      
         {
           path: "/contact-us",
           element:<ContactPage></ContactPage> ,

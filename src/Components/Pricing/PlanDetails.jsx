@@ -1,33 +1,32 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { modulePricing } from "./modulePricingData";
-import { planMatrix, commercialExtras, TIERS, TIER_LABELS } from "./planFeatureMatrix";
 import PlanLeadForm from "./PlanLeadForm";
+import { TIERS, billingTerms, modules } from "./pricingData";
+import { moduleDefaultQuantity, moduleRuleText, moduleUnitLabel } from "./pricingCalc";
+import { moduleLead } from "./leadSelections";
+import {
+  BillingToggle,
+  ComingSoonBadge,
+  FeatureList,
+  PriceDisplay,
+  PricingNote,
+} from "./PricingParts";
 
+// All prices and features come from ./pricingData.js
 
 const PlanDetails = () => {
   const { moduleId, planId } = useParams();
   const navigate = useNavigate();
 
-  const moduleInfo = modulePricing[moduleId];
-  const matrix = planMatrix[moduleId];
-  const startIdx = TIERS.indexOf(planId);
+  const module = modules[moduleId];
+  const startIdx = TIERS.findIndex((t) => t.id === planId);
 
   const [activeTier, setActiveTier] = useState(startIdx < 0 ? 0 : startIdx);
   const [showLocked, setShowLocked] = useState(true);
+  const [billing, setBilling] = useState("annual");
   const [leadPlan, setLeadPlan] = useState(null);
 
-  const groups = useMemo(
-    () =>
-      (matrix?.groups || []).map((g) => ({
-        ...g,
-        included: g.features.filter((f) => f[1] <= activeTier),
-        locked: g.features.filter((f) => f[1] > activeTier),
-      })),
-    [matrix, activeTier]
-  );
-
-  if (!moduleInfo || !matrix || startIdx < 0) {
+  if (!module || startIdx < 0) {
     return (
       <section className="pd-section">
         <div className="pd-container pd-center">
@@ -38,148 +37,144 @@ const PlanDetails = () => {
     );
   }
 
-  const tierId = TIERS[activeTier];
-  const plan = moduleInfo.plans.find((p) => p.id === tierId); // undefined for Enterprise
-  const totalIncluded = groups.reduce((n, g) => n + g.included.length, 0);
-  const totalLocked = groups.reduce((n, g) => n + g.locked.length, 0);
+  const tier = TIERS[activeTier];
+  const tierData = module.tiers[tier.id];
+  const { pricing } = module;
 
-  const handleRequest = () => {
-    setLeadPlan({
-      kind: "module",
-      planInterest: `${moduleId}-${tierId}`.toUpperCase(),
-      label: `${moduleInfo.requirementName} – ${TIER_LABELS[activeTier]}`,
-      modules: [moduleInfo.requirementName],
-    });
-  };
+  const included = TIERS.slice(0, activeTier + 1);
+  const locked = TIERS.slice(activeTier + 1);
+  const count = (list) => list.reduce((n, t) => n + module.tiers[t.id].features.length, 0);
 
-  const levelBadge = (f) => {
-    const lvl = f[2]?.[activeTier];
-    return lvl && lvl !== "Included" ? <span className="pd-level">{lvl}</span> : null;
-  };
+  const openLead = (trial) =>
+    setLeadPlan(
+      moduleLead({
+        moduleId,
+        tierId: tier.id,
+        billing,
+        quantity: moduleDefaultQuantity(module),
+        trial,
+      })
+    );
 
   return (
     <section className="pd-section">
       <div className="pd-container">
-        <button type="button" className="pd-back" onClick={() => navigate(-1)}>
-          ← Back to {moduleInfo.requirementName} plans
+        <button type="button" className="pd-back" onClick={() => navigate(`/module-pricing/${moduleId}`)}>
+          ← Back to {module.name} plans
         </button>
 
         {/* HEADER */}
         <div className="pd-header">
-          <div className="pd-header-icon"><i className={moduleInfo.icon}></i></div>
+          <div className="pd-header-icon"><i className={module.icon} aria-hidden="true"></i></div>
           <div>
-            <h1>{moduleInfo.requirementName} – {TIER_LABELS[activeTier]}</h1>
-            <p className="pd-sub">{moduleInfo.title}</p>
+            <h2>{module.name} – {tier.name}</h2>
+            <p className="pd-sub">{module.title}</p>
           </div>
         </div>
 
         {/* TIER SWITCHER */}
-        <div className="pd-tabs">
-          {TIER_LABELS.map((label, i) => (
+        <div className="pd-tabs" role="group" aria-label="Plan tier">
+          {TIERS.map((t, i) => (
             <button
-              key={label}
+              key={t.id}
               type="button"
               className={`pd-tab ${i === activeTier ? "active" : ""}`}
+              aria-pressed={i === activeTier}
               onClick={() => setActiveTier(i)}
             >
-              {label}
+              {t.name}
             </button>
           ))}
+        </div>
+
+        <div className="pr-billing pr-billing--left">
+          <BillingToggle billing={billing} onChange={setBilling} />
+          <PricingNote billing={billing} />
         </div>
 
         {/* SUMMARY */}
         <div className="pd-summary">
           <div className="pd-price-box">
-            {plan ? (
-              <>
-                <span className="pd-cur">SGD</span>
-                <span className="pd-amt">{plan.price}</span>
-                <span className="pd-unit">/ {moduleInfo.unitLabel.replace(" / month", "")} / mo</span>
-                <div className="pd-minpay">
-                  {moduleInfo.minLabel} · Min. payable <strong>{plan.minPayable}</strong> / month
-                </div>
-                <div className="pd-minpay">Billed annually, excl. GST</div>
-              </>
+            {pricing.model === "per_unit" ? (
+              <PriceDisplay monthly={tierData.price} billing={billing} unit={pricing.unit} yearlyUnit={pricing.unit} />
             ) : (
-              <>
-                <span className="pd-amt">Custom</span>
-                <div className="pd-minpay">Enterprise pricing is quoted per requirement.</div>
-              </>
+              <PriceDisplay monthly={tierData.price} billing={billing} />
             )}
+            {pricing.model !== "per_unit" && (
+              <div className="pd-minpay">SGD {moduleUnitLabel(module)}</div>
+            )}
+            <div className="pd-minpay">{moduleRuleText(module, tier.id)}</div>
           </div>
-          <div className="pd-stat"><strong>{totalIncluded}</strong><span>Features included</span></div>
-          <div className="pd-stat"><strong>{totalLocked}</strong><span>In higher plans</span></div>
-          <button type="button" className="pd-cta" onClick={handleRequest}>Request Pricing →</button>
+          <div className="pd-stat"><strong>{count(included)}</strong><span>Features included</span></div>
+          <div className="pd-stat"><strong>{count(locked)}</strong><span>In higher plans</span></div>
+          <div className="pr-card-actions pr-card-actions--stack">
+            <button type="button" className="pd-cta" onClick={() => openLead(false)}>Request Pricing →</button>
+            <button type="button" className="pr-btn-outline" onClick={() => openLead(true)}>
+              Request a free trial
+            </button>
+          </div>
         </div>
 
         <label className="pd-toggle">
           <input type="checkbox" checked={showLocked} onChange={(e) => setShowLocked(e.target.checked)} />
-          Show features not in this plan
+          Show features in higher plans
         </label>
 
-        {/* FEATURE GROUPS */}
+        {/* FEATURES BY TIER */}
         <div className="pd-groups">
-          {groups.map((g) => {
-            if (g.included.length === 0 && !showLocked) return null;
-            return (
-              <div className="pd-group" key={g.area}>
+          {included.map((t, i) => (
+            <div className="pd-group" key={t.id}>
+              <div className="pd-group-head">
+                <h3>{i === 0 ? `${t.name} features` : `Added in ${t.name}`}</h3>
+                <span className="pd-dep">Included</span>
+              </div>
+              <FeatureList
+                features={module.tiers[t.id].features}
+                className="pd-list pr-pd-list"
+                checkClass="pd-mark"
+              />
+            </div>
+          ))}
+
+          {showLocked &&
+            locked.map((t) => (
+              <div className="pd-group pr-pd-locked" key={t.id}>
                 <div className="pd-group-head">
-                  <h3>{g.area}</h3>
-                  <span className="pd-dep">Depends on: {g.dependency}</span>
+                  <h3>Available in {t.name}</h3>
+                  <span className="pd-dep">Upgrade to {t.name}</span>
                 </div>
-                <ul className="pd-list">
-                  {g.included.map((f) => (
-                    <li key={f[0]} className="pd-item yes">
-                      <span className="pd-mark">✓</span>
-                      <span className="pd-name">{f[0]}</span>
-                      {levelBadge(f)}
-                    </li>
-                  ))}
-                  {showLocked &&
-                    g.locked.map((f) => (
-                      <li key={f[0]} className="pd-item no">
-                        <span className="pd-mark">🔒</span>
-                        <span className="pd-name">{f[0]}</span>
-                        <span className="pd-avail">{TIER_LABELS[f[1]]}+</span>
+                <ul className="pd-list pr-pd-list">
+                  {module.tiers[t.id].features.map((f) => {
+                    const item = typeof f === "string" ? { text: f } : f;
+                    return (
+                      <li key={item.text} className="pd-item no">
+                        <span className="pd-mark" aria-hidden="true">🔒</span>
+                        <span className="pd-name">
+                          {item.text}
+                          {item.comingSoon && <> <ComingSoonBadge /></>}
+                        </span>
                       </li>
-                    ))}
+                    );
+                  })}
                 </ul>
               </div>
-            );
-          })}
+            ))}
         </div>
 
-        {/* COMMERCIAL TERMS */}
+        {/* PLAN TERMS */}
         <div className="pd-group">
-          <div className="pd-group-head"><h3>Plan terms &amp; services</h3></div>
-          <div className="pd-table-wrap">
-            <table className="pd-table">
-              <thead>
-                <tr>
-                  <th></th>
-                  {TIER_LABELS.map((t, i) => (
-                    <th key={t} className={i === activeTier ? "hl" : ""}>{t}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {commercialExtras.map((row) => (
-                  <tr key={row.label}>
-                    <td className="pd-rowlabel">{row.label}</td>
-                    {row.values.map((v, i) => (
-                      <td key={i} className={i === activeTier ? "hl" : ""}>{v}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <div className="pd-group-head"><h3>Plan terms</h3></div>
+          <ul className="pd-list pr-pd-list">
+            {billingTerms.map((term) => (
+              <li key={term}>
+                <span className="pd-mark" aria-hidden="true">✓</span>
+                <span>{term}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {moduleInfo.footnote && <p className="pd-footnote">{moduleInfo.footnote}</p>}
-        <p className="pd-footnote">
-          Enterprise includes Advanced capabilities plus enterprise controls, compliance, integrations and analytics.
-        </p>
+        {module.footnote && <p className="pd-footnote">{module.footnote}</p>}
       </div>
 
       {leadPlan && (

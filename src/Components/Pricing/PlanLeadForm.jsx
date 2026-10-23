@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { LEAD_LIMITS, buildLeadPayload, submitLead } from "../../api/erpLeads";
+import { employeeRange } from "./pricingCalc";
 
 /* =========================================================
    PLAN LEAD FORM (modal)
@@ -79,17 +80,36 @@ const errorMessageFor = (error) => {
 };
 
 const titleFor = (plan) => {
-  if (plan.freeTrial) return `Start your ${plan.trialDays}-day free trial`;
-  if (plan.kind === "custom") return "Request a custom proposal";
+  if (plan.kind === "addon") {
+    return plan.notify ? `Notify me when ${plan.label} is available` : `Request ${plan.label}`;
+  }
+  if (plan.freeTrial) return `Request your ${plan.trialDays}-day free trial`;
+  if (plan.kind === "custom") return "Request a custom quote";
   return `Request pricing – ${plan.label} plan`;
 };
+
+const successTextFor = (plan) => {
+  if (plan.kind === "addon") {
+    return plan.notify
+      ? <>Thanks, we will let you know when <strong>{plan.label}</strong> is available.</>
+      : <>Thanks, our team will contact you about <strong>{plan.label}</strong>.</>;
+  }
+  return <>Thanks, our team will contact you about the <strong>{plan.label}</strong> plan.</>;
+};
+
+// Pre-fill "Number of Employees" from the calculator
+const initialValuesFor = (plan) => ({
+  ...EMPTY_VALUES,
+  employees: plan.quantityUnit === "employees" ? employeeRange(plan.quantity) : "",
+});
 
 /* =========================================================
    COMPONENT
 ========================================================= */
 
 const PlanLeadForm = ({ plan, onClose }) => {
-  const [values, setValues] = useState(EMPTY_VALUES);
+  const [values, setValues] = useState(() => initialValuesFor(plan));
+  const [addOnCodes, setAddOnCodes] = useState([]);
   const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | success
@@ -202,7 +222,11 @@ const PlanLeadForm = ({ plan, onClose }) => {
     setFormError("");
 
     try {
-      await submitLead(buildLeadPayload(plan, values, window.location.href));
+      const addOns = (plan.addOnOptions || [])
+        .filter((o) => addOnCodes.includes(o.code))
+        .map((o) => o.label);
+
+      await submitLead(buildLeadPayload(plan, { ...values, addOns }, window.location.href));
       setStatus("success");
     } catch (error) {
       setStatus("idle");
@@ -291,10 +315,7 @@ const PlanLeadForm = ({ plan, onClose }) => {
           <div className="plf-success" role="status">
             <div className="plf-success-icon" aria-hidden="true">✓</div>
             <h2 id="plf-title">Thank you!</h2>
-            <p>
-              Thanks, our team will contact you about the{" "}
-              <strong>{plan.label}</strong> plan.
-            </p>
+            <p>{successTextFor(plan)}</p>
             <button
               type="button"
               className="enq-btn-next plf-success-close"
@@ -307,21 +328,40 @@ const PlanLeadForm = ({ plan, onClose }) => {
           <form onSubmit={handleSubmit} noValidate>
             <h2 id="plf-title" className="plf-title">{titleFor(plan)}</h2>
 
+            {plan.freeTrial && (
+              <p className="plf-intro">
+                Our team will set up your account and email your login.
+              </p>
+            )}
+
             {/* SELECTED PLAN */}
             <div className="plf-plan">
-              <span className="plf-plan-label">Selected plan</span>
+              <span className="plf-plan-label">
+                {plan.kind === "addon" ? "Selected add-on" : "Selected plan"}
+              </span>
               <strong className="plf-plan-name">{plan.label}</strong>
               <div className="plf-chips">
                 {plan.billingCycle && (
-                  <span className="plf-chip">{plan.billingCycle} billing</span>
+                  <span className="plf-chip">Billing: {plan.billingCycle}</span>
                 )}
                 {plan.freeTrial && (
                   <span className="plf-chip">{plan.trialDays}-day free trial</span>
                 )}
+                {plan.quantity && plan.quantityUnit && (
+                  <span className="plf-chip">{plan.quantity} {plan.quantityUnit}</span>
+                )}
+                {plan.addOn && <span className="plf-chip">{plan.addOn.price}</span>}
+                {plan.notify && <span className="plf-chip">Coming soon</span>}
                 {plan.modules?.length > 0 && (
                   <span className="plf-chip">{plan.modules.join(", ")}</span>
                 )}
+                {plan.preselectedAddOns?.map((a) => (
+                  <span className="plf-chip" key={a}>{a}</span>
+                ))}
               </div>
+              {plan.priceShown && (
+                <span className="plf-plan-price">Price shown: {plan.priceShown}</span>
+              )}
             </div>
 
             <div className="enq-grid">
@@ -355,6 +395,31 @@ const PlanLeadForm = ({ plan, onClose }) => {
                 </div>
               ))}
             </div>
+
+            {/* OPTIONAL ADD-ONS */}
+            {plan.addOnOptions?.length > 0 && (
+              <fieldset className="plf-addons">
+                <legend>Interested in add-ons? (optional)</legend>
+                {plan.addOnOptions.map((o) => (
+                  <label key={o.code} className="plf-addon-option">
+                    <input
+                      type="checkbox"
+                      name="addOns"
+                      value={o.code}
+                      checked={addOnCodes.includes(o.code)}
+                      onChange={(e) =>
+                        setAddOnCodes((prev) =>
+                          e.target.checked
+                            ? [...prev, o.code]
+                            : prev.filter((c) => c !== o.code)
+                        )
+                      }
+                    />
+                    <span>{o.label}</span>
+                  </label>
+                ))}
+              </fieldset>
+            )}
 
             {/* HONEYPOT – hidden from people, bots fill it */}
             <div className="plf-hp" aria-hidden="true">
