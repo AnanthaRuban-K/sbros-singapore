@@ -28,6 +28,11 @@ const solutions = [
     title: "Sales",
     image: "/assets/img/bg/product.png",
   },
+  {
+    id: "06",
+    title: "Recruitment",
+    image: "/assets/img/bg/recruit.png",
+  },
 ];
 
 const Choose1 = () => {

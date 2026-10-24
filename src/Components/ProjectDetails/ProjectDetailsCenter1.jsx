@@ -109,8 +109,8 @@ const ProjectDetailsCenter1 = () => {
         "Offer Management",
       ],
       // No product video yet: the card shows the image without a play button
-      video: null,
-      thumbnail: "/assets/img/about/girl.jpg",
+      video: "/assets/videos/sales.mp4",
+      thumbnail: "/assets/img/thumb/image6.jpeg",
       tag: "HIRING",
     },
   ];
