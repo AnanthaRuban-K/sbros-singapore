@@ -47,10 +47,7 @@ const ModuleTierGrid = ({ moduleId, billing, onSelectTier, tierHeading: TierHead
     ? Math.max(toQuantity(quantityInput ?? defaultQuantity, defaultQuantity), minQuantity)
     : null;
 
-  const quantityHint =
-    pricing.model === "per_unit"
-      ? `Minimum ${pricing.min} ${pricing.unitPlural} applies.`
-      : `${pricing.included} ${pricing.unitPlural} included in every tier.`;
+  const quantityHint = `Minimum ${pricing.min} ${pricing.unitPlural} applies.`;
 
   return (
     <>
@@ -80,6 +77,8 @@ const ModuleTierGrid = ({ moduleId, billing, onSelectTier, tierHeading: TierHead
                 <TierHeading>{t.name}</TierHeading>
                 <span className="mp-trial-chip">{TRIAL_DAYS}-day free trial</span>
               </div>
+
+              {tier.limit && <div className="pr-limit">{tier.limit}</div>}
 
               {pricing.model === "per_unit" ? (
                 <PriceDisplay

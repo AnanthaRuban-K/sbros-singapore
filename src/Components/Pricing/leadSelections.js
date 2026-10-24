@@ -4,8 +4,6 @@ import {
   allAddOns,
   completeErp,
   modules,
-  platformAddOns,
-  recruitmentAddOns,
 } from "./pricingData";
 import { completeErpMonthly, describePrice, moduleMonthly, tierName } from "./pricingCalc";
 
@@ -39,32 +37,22 @@ export const completeErpLead = ({ tierId, billing, employees, trial = false }) =
 });
 
 /* ---------- single module tier ---------- */
-export const moduleLead = ({ moduleId, tierId, billing, quantity, trial = false, bundle = null }) => {
+export const moduleLead = ({ moduleId, tierId, billing, quantity, trial = false }) => {
   const module = modules[moduleId];
   const unitPlural = module.pricing.unitPlural;
-  const bundleAddOns = (bundle?.addOnCodes || [])
-    .map((code) => allAddOns.find((a) => a.code === code))
-    .filter(Boolean);
 
   return {
     kind: "module",
-    planInterest: bundle ? bundle.planInterest : `${moduleId}-${tierId}`.toUpperCase(),
-    label: bundle
-      ? `${module.name} ${bundle.name} bundle`
-      : `${module.name} – ${tierName(tierId)}`,
+    planInterest: `${moduleId}-${tierId}`.toUpperCase(),
+    label: `${module.name} – ${tierName(tierId)}`,
     billingCycle: BILLING_LABELS[billing],
     quantity: unitPlural ? quantity : null,
     quantityUnit: unitPlural || null,
-    priceShown: bundle
-      ? describePrice(bundle.price, billing)
-      : describePrice(moduleMonthly(module, tierId, quantity), billing),
+    priceShown: describePrice(moduleMonthly(module, tierId, quantity), billing),
     modules: [module.name],
     freeTrial: trial,
     trialDays: TRIAL_DAYS,
-    preselectedAddOns: bundleAddOns.map(addOnText),
-    addOnOptions: addOnOptionsFor(moduleId).filter(
-      (o) => !bundleAddOns.some((a) => a.code === o.code)
-    ),
+    addOnOptions: addOnOptionsFor(moduleId),
   };
 };
 
@@ -87,12 +75,6 @@ export const addOnLead = (addOn) => ({
   notify: addOn.status === "coming_soon",
 });
 
-// Add-ons listed on a module page: module-specific group first, then platform add-ons
-export const addOnGroupsForModule = (moduleId) => {
-  const own = recruitmentAddOns.filter((a) => a.modules.includes(moduleId));
-  const platform = platformAddOns.filter((a) => !a.modules || a.modules.includes(moduleId));
-  return [
-    own.length > 0 && { title: `${modules[moduleId].name} add-ons`, addOns: own },
-    { title: "Platform add-ons", addOns: platform },
-  ].filter(Boolean);
-};
+// Add-ons listed on a module page (all modules, plus module-specific ones like biometric for HRM)
+export const addOnsForModule = (moduleId) =>
+  allAddOns.filter((a) => !a.modules || a.modules.includes(moduleId));

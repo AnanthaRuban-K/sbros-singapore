@@ -4,14 +4,8 @@ import PlanLeadForm from "./PlanLeadForm";
 import ModuleTierGrid from "./ModuleTierGrid";
 import { MODULE_ORDER, modules } from "./pricingData";
 import { moduleUnitLabel } from "./pricingCalc";
-import { addOnGroupsForModule, addOnLead, customLead, moduleLead } from "./leadSelections";
-import {
-  AddOnCompactList,
-  BillingToggle,
-  ComingSoonBadge,
-  PriceDisplay,
-  PricingNote,
-} from "./PricingParts";
+import { addOnLead, addOnsForModule, customLead, moduleLead } from "./leadSelections";
+import { AddOnCompactList, BillingToggle, PricingNote } from "./PricingParts";
 
 // All prices, features and add-ons come from ./pricingData.js
 
@@ -65,7 +59,6 @@ const ModulePricing = () => {
           <p>
             SGD {moduleUnitLabel(module)}
             {pricing.model === "per_unit" && <> · Min. {pricing.min} {pricing.unitPlural}</>}
-            {pricing.model === "flat_with_users" && <> · {pricing.included} {pricing.unitPlural} included</>}
             {pricing.model === "flat" && <> · {pricing.note}</>}
           </p>
           {module.intro && <p className="pr-intro">{module.intro}</p>}
@@ -113,51 +106,13 @@ const ModulePricing = () => {
 
         {module.footnote && <p className="mp-footnote">{module.footnote}</p>}
 
-        {/* BUNDLES (Recruitment) */}
-        {module.bundles?.length > 0 && (
-          <div className="pr-block">
-            <h2>{module.name} bundles</h2>
-            <div className="pr-bundle-grid">
-              {module.bundles.map((bundle) => {
-                const soon = bundle.status === "coming_soon";
-                return (
-                  <div className={`pr-bundle ${soon ? "is-soon" : ""}`} key={bundle.code}>
-                    <div className="pr-addon-head">
-                      <h3>{bundle.name}</h3>
-                      {soon && <ComingSoonBadge />}
-                    </div>
-                    <p>{bundle.includes}</p>
-                    <PriceDisplay monthly={bundle.price} billing={billing} />
-                    <button
-                      type="button"
-                      className={soon ? "pr-btn-outline" : "pr-btn"}
-                      aria-label={`${soon ? "Notify me about" : "Request"} ${bundle.name}`}
-                      onClick={() => {
-                        const lead = moduleLead({ moduleId, tierId: bundle.tier, billing, quantity: null, bundle });
-                        setLeadPlan(soon ? { ...lead, notify: true } : lead);
-                      }}
-                    >
-                      {soon ? "Notify me" : "Request"}
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
         {/* ADD-ONS */}
         <div className="pr-block">
           <h2>Add-ons</h2>
-          {addOnGroupsForModule(moduleId).map((group) => (
-            <div key={group.title}>
-              <h3 className="pr-subheading">{group.title}</h3>
-              <AddOnCompactList
-                addOns={group.addOns}
-                onSelect={(a) => setLeadPlan(addOnLead(a))}
-              />
-            </div>
-          ))}
+          <AddOnCompactList
+            addOns={addOnsForModule(moduleId)}
+            onSelect={(a) => setLeadPlan(addOnLead(a))}
+          />
           <p className="pr-footnote">
             See every add-on on the <Link to="/Pricing#add-ons">pricing page</Link>.
           </p>

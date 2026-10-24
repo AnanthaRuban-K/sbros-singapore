@@ -8,7 +8,7 @@ import { MODULE_ORDER, TRIAL_DAYS, modules } from "../Pricing/pricingData";
 
 const HIGHLIGHTS = [
   `${TRIAL_DAYS}-day free trial on ERP plans`,
-  "CPF calculated on every plan; CPF submission and EZPay from Intermediate; IRAS and MOM on Advanced",
+  "CPF, SDL and IR8A preparation on every plan; FWL and MOM work pass from Intermediate; IR21 on Advanced",
   "Mobile app on every plan",
 ];
 

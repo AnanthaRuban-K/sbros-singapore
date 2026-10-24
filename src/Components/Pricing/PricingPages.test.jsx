@@ -43,15 +43,15 @@ describe("/Pricing", () => {
     const user = userEvent.setup();
     renderPricing();
 
-    // Annual is the default: SGD 150 x 10 / 12 = SGD 125 per month, SGD 1,500 per year
-    expect(within(card("Basic")).getByText("SGD 125")).toBeInTheDocument();
-    expect(within(card("Basic")).getByText(/SGD 1,500\s+billed yearly/)).toBeInTheDocument();
+    // Annual prepay is the default: SGD 150 x 12 x 0.85 = SGD 1,530 per year (SGD 127.50 / month)
+    expect(within(card("Basic")).getByText("SGD 127.50")).toBeInTheDocument();
+    expect(within(card("Basic")).getByText(/SGD 1,530\s+billed yearly, excl\. GST/)).toBeInTheDocument();
 
     await user.click(screen.getAllByRole("button", { name: "Monthly" })[0]);
 
     expect(screen.getAllByRole("button", { name: "Monthly" })[0]).toHaveAttribute("aria-pressed", "true");
     expect(within(card("Basic")).getByText("SGD 150")).toBeInTheDocument();
-    expect(within(card("Basic")).getByText("Billed monthly")).toBeInTheDocument();
+    expect(within(card("Basic")).getByText("Billed monthly, excl. GST")).toBeInTheDocument();
   });
 
   it("employee calculator updates every tier and is sent with the lead", async () => {
@@ -64,9 +64,10 @@ describe("/Pricing", () => {
     await user.clear(input);
     await user.type(input, "40");
 
-    expect(within(card("Basic")).getByText("SGD 240")).toBeInTheDocument();
-    expect(within(card("Intermediate")).getByText("SGD 400")).toBeInTheDocument();
-    expect(within(card("Advanced")).getByText("SGD 560")).toBeInTheDocument();
+    // base + 30 extra employees x 4 / 6 / 8
+    expect(within(card("Basic")).getByText("SGD 270")).toBeInTheDocument();
+    expect(within(card("Intermediate")).getByText("SGD 430")).toBeInTheDocument();
+    expect(within(card("Advanced")).getByText("SGD 590")).toBeInTheDocument();
 
     await user.click(within(card("Advanced")).getByRole("button", { name: /Request Pricing/ }));
 
@@ -77,7 +78,7 @@ describe("/Pricing", () => {
     expect(within(dialog).getByLabelText(/Number of Employees/)).toHaveValue("11-50");
 
     await fillLeadForm(user);
-    await user.click(within(dialog).getByLabelText(/Extra storage/));
+    await user.click(within(dialog).getByLabelText(/Biometric device integration/));
     await user.click(within(dialog).getByRole("button", { name: /Submit Request/ }));
     await screen.findByRole("status");
 
@@ -87,8 +88,9 @@ describe("/Pricing", () => {
     expect(body.requirements).toContain("Plan: Complete ERP Advanced");
     expect(body.requirements).toContain("Billing cycle: Monthly");
     expect(body.requirements).toContain("Quantity: 40 employees");
-    expect(body.requirements).toContain("Price shown: SGD 560 / month\n");
-    expect(body.requirements).toContain("Add-ons: Extra storage (SGD 10 / month per 10 GB)");
+    expect(body.requirements).toContain("Price shown: SGD 590 / month\n");
+    expect(body.requirements).toContain("Add-ons: Biometric device integration (SGD 49 / month per site)");
+    expect(body.requirements).toContain("Modules: HRM, Finance & Accounts, Sales, Procurement, CRM, Recruitment");
   });
 
   it("custom quote box sends CUSTOM", async () => {
@@ -185,8 +187,8 @@ describe("/Pricing", () => {
     expect(document.getElementById("modules")).toHaveTextContent("Individual modules");
 
     // "From" prices follow the billing toggle (annual default: x 10 / 12)
-    expect(erp).toHaveTextContent("From SGD 125 / month for 10 employees");
-    expect(mods).toHaveTextContent("From SGD 3.33 per employee / month");
+    expect(erp).toHaveTextContent("From SGD 127.50 / month for 10 employees");
+    expect(mods).toHaveTextContent("From SGD 3.40 per employee / month");
 
     await user.click(screen.getAllByRole("button", { name: "Monthly" })[0]);
     expect(erp).toHaveTextContent("From SGD 150 / month for 10 employees");
@@ -219,7 +221,17 @@ describe("/Pricing", () => {
     expect(screen.getAllByText("Also included: Inventory (warehouses and stock)")).toHaveLength(3);
 
     // job slots are not enforced yet
-    expect(screen.getByRole("button", { name: "Notify me about Extra active job slots" })).toBeInTheDocument();
+    // coming-soon add-ons and features: shown, never sold
+    expect(screen.getByRole("button", { name: "Notify me about Extra storage" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Request Extra storage" })).not.toBeInTheDocument();
+    expect(screen.getAllByText(/InvoiceNow \(Peppol\) e-invoicing/).length).toBeGreaterThanOrEqual(2);
+
+    // 15-day trial and 15% annual prepay are shown
+    expect(text).toContain("15-day free trial (extendable to 30 days on request)");
+    expect(text).toContain("Annual prepay: pay the yearly subscription upfront and save 15%.");
+
+    // the package covers all six modules
+    expect(screen.getAllByText("All six modules on the Basic plan")).toHaveLength(1);
   });
 
   it("lists every module as a tab", () => {
@@ -290,15 +302,16 @@ describe("module pages", () => {
     expect(within(card).getByText(/For 25 employees:/)).toHaveTextContent("SGD 150 / month");
   });
 
-  it("shows the Recruitment page by features only, with bundles and add-ons", () => {
+  it("shows the Recruitment page with active-job limits and add-ons", () => {
     renderModule("/module-pricing/recruitment");
 
     expect(screen.getByRole("heading", { level: 1, name: "Recruitment" })).toBeInTheDocument();
-    // job limits are not enforced by the platform, so tiers no longer promise them
-    expect(screen.queryByText(/active jobs/)).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Notify me about Extra active job slots" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Request Hiring Starter" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Notify me about Hiring Pro" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Request Public Careers Site" })).toBeInTheDocument();
+    expect(screen.getByText("Up to 5 active job openings")).toBeInTheDocument();
+    expect(screen.getByText("Up to 20 active job openings")).toBeInTheDocument();
+    expect(screen.getByText("Unlimited active job openings")).toBeInTheDocument();
+    // no bundles or recruitment-only add-ons in the 24 Oct price list
+    expect(screen.queryByText(/bundle/i)).not.toBeInTheDocument();
+    expect(screen.queryByText("Public Careers Site")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Request Training" })).toBeInTheDocument();
   });
 });

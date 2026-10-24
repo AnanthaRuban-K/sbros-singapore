@@ -1,27 +1,29 @@
 // =====================================================
 // PRICING DATA  (single source for every pricing page)
-// Source: One Solution ERP approved pricing.
+// Source: One Solution ERP - Plans & Pricing, initial selling price,
+// version 1.0, 24 October 2026.
 // List prices are SGD per month, excluding GST.
 // To change a price, feature or add-on status, edit this file only.
 // =====================================================
 
 export const CURRENCY = "SGD";
 
-// Free trial length (days) on any plan
+// Free trial length (days) on any plan, and how far it can be extended on request
 export const TRIAL_DAYS = 15;
+export const TRIAL_MAX_DAYS = 30;
 
-// Annual billing: pay for 10 months, get 12 ("2 months free")
-export const ANNUAL_MONTHS_CHARGED = 10;
+// Annual prepay: pay the year upfront and save 15%
+export const ANNUAL_DISCOUNT = 0.15;
 
 export const BILLING_LABELS = {
   monthly: "Monthly",
-  annual: "Annual (2 months free)",
+  annual: "Annual prepay (save 15%)",
 };
 
 export const PRICING_NOTE = {
   base: "All prices in SGD per month, excluding GST.",
-  annual: "Billed annually: 2 months free.",
-  monthly: "Billed monthly. Choose annual billing to get 2 months free.",
+  annual: "Annual prepay: pay the year upfront and save 15%.",
+  monthly: "Billed monthly. Choose annual prepay to save 15%.",
 };
 
 export const TIERS = [
@@ -33,9 +35,9 @@ export const TIERS = [
 // =====================================================
 // MODULES
 // pricing.model:
-//   "per_unit"        price x max(quantity, min)
-//   "flat_with_users" flat price, `included` users, extra user rate per tier
-//   "flat"            flat price per organisation
+//   "per_unit"  price x max(quantity, min)   (min payable = price x min)
+//   "flat"      flat price per organisation
+// tier.limit: plan limit shown on the card (e.g. Recruitment active jobs)
 // Feature item: "text" or { text, comingSoon: true }
 // Each tier lists only what it adds to the tier below.
 // =====================================================
@@ -57,36 +59,38 @@ export const modules = {
           "Organisation structure, departments, designations",
           "Onboarding and exit / offboarding",
           "Attendance, punch-in, shifts, holidays",
-          "Leave apply and approve",
-          "Basic payroll processing and payslips",
+          "Leave apply and approve, configurable leave types and government-paid leave claims",
+          "Payroll processing and payslips",
+          "CPF contributions and SDL, CPF EZPay file",
+          "IR8A and Appendix 8A preparation for IRAS filing",
           "Mobile app for employees",
         ],
       },
       intermediate: {
         price: 6,
         features: [
-          "CPF and FWL contributions, CPF EZPay file",
           "Attendance correction, overtime",
           "Leave policies, cancellation, carry forward",
           "Expense claims",
           "Employee contracts, payroll adjustments",
           "Performance management",
           "Announcements, company policies, asset tracking",
+          "MOM work pass and quota tracking, FWL contributions",
+          { text: "Bank salary payment file (GIRO)", comingSoon: true },
         ],
       },
       advanced: {
-        price: 9,
+        price: 8,
         features: [
-          "IR8A / IRAS tax filing, IR21",
-          "MOM work pass and quota tracking",
+          "IR21 tax clearance tracking (cessation of foreign employees)",
           "Bonus and ad-hoc payments",
-          "Multi-level approvals",
-          "Audit log and advanced reports",
+          "Multi-level approval workflows",
+          "Audit log, attendance and statutory reports",
         ],
       },
     },
     footnote:
-      "CPF is in Intermediate because Singapore payroll is not usable without it. IRAS tax filing and MOM compliance are in Advanced.",
+      "CPF, SDL and IR8A preparation are in every plan. FWL and MOM work pass tracking start at Intermediate; IR21 tax clearance tracking is in Advanced.",
   },
 
   finance: {
@@ -94,39 +98,44 @@ export const modules = {
     name: "Finance & Accounts",
     title: "Finance & Accounts",
     icon: "bi bi-wallet-fill",
-    pricing: { model: "flat_with_users", unit: "user", unitPlural: "users", included: 3 },
+    pricing: {
+      model: "flat",
+      note: "Unlimited users, no per-user charge (accountants and auditors can be added free)",
+    },
     tiers: {
       basic: {
-        price: 39,
-        extraUser: 13,
+        price: 30,
         features: [
           "Chart of accounts, general ledger",
           "Journals and vouchers",
           "Customer invoices, vendor bills, payments",
           "Customer and vendor ledgers",
-          "Trial balance, standard reports",
+          "Trial balance, P&L, balance sheet, cash flow and ageing reports",
+          "GST (9%) tax codes and GST tax invoices",
+          "GST F5 return report (main boxes calculated automatically)",
         ],
       },
       intermediate: {
-        price: 69,
-        extraUser: 23,
+        price: 60,
         features: [
           "Bank accounts and bank reconciliation",
           "Credit notes and debit notes",
           "Cost centres",
           "Multi-currency and exchange rates",
           "Fiscal years, posting periods, finance approvals",
+          { text: "InvoiceNow (Peppol) e-invoicing to IRAS", comingSoon: true },
         ],
       },
       advanced: {
-        price: 99,
-        extraUser: 33,
+        price: 90,
         features: [
           "Fixed assets and depreciation",
           "Tally sync and export",
           "Payroll-to-Finance integration",
-          "Sub-ledger reconciliation, period re-open",
-          "Online payment tracking, data migration",
+          "Period re-open with approval",
+          "Online payment tracking (FAST, GIRO, PayNow)",
+          "Data migration (ledgers and opening balances)",
+          { text: "Sub-ledger reconciliation", comingSoon: true },
         ],
       },
     },
@@ -141,13 +150,18 @@ export const modules = {
     tiers: {
       basic: {
         price: 10,
-        features: ["Sales quotations", "Sales orders", "Sales invoices", "Direct sales"],
+        features: [
+          "Sales quotations",
+          "Sales orders",
+          "Sales invoices (GST tax invoice format)",
+          "Direct sales",
+        ],
       },
       intermediate: {
         price: 15,
         features: [
           "Quotation revisions",
-          "Delivery challan and dispatch",
+          "Delivery order (DO) and dispatch; service delivery",
           "Credit notes and sales returns",
         ],
       },
@@ -155,7 +169,7 @@ export const modules = {
         price: 20,
         features: [
           "Pick lists and packing lists",
-          "Return request and approval workflow",
+          "Return request and approval workflow; service cancellation approval",
           "Customer purchase orders",
           "Service and maintenance tracking",
         ],
@@ -168,7 +182,7 @@ export const modules = {
     name: "Procurement",
     title: "Procurement",
     icon: "bi bi-cart-check-fill",
-    pricing: { model: "flat", note: "Unlimited users, flat price" },
+    pricing: { model: "flat", note: "Unlimited users, flat price, no per-user charge" },
     tiers: {
       basic: {
         price: 49,
@@ -182,8 +196,8 @@ export const modules = {
         price: 149,
         features: [
           "Goods receipt (GRN) flow",
+          "Vendor bills linked to PO and GRN in Finance payables",
           "Approval workflows",
-          { text: "Automatic posting to Finance payables", comingSoon: true },
         ],
       },
     },
@@ -202,14 +216,15 @@ export const modules = {
       },
       intermediate: {
         price: 12,
-        features: ["Marketing campaigns", "Follow-up reminders"],
+        features: ["Marketing campaigns", "Follow-up reminders (email and WhatsApp)"],
       },
       advanced: {
         price: 15,
         features: [
-          "Campaign analytics",
+          "Campaign analytics (ROI, cost per conversion)",
           "Team-based data access",
-          "CRM audit trail and automation",
+          "CRM audit trail",
+          "Lead scoring and web-form lead capture",
         ],
       },
     },
@@ -222,10 +237,11 @@ export const modules = {
     icon: "bi bi-person-badge-fill",
     intro:
       "Priced flat per organisation, so recruiters, hiring managers and interview panel members can all take part at no extra cost.",
-    pricing: { model: "flat", note: "Unlimited users, flat price" },
+    pricing: { model: "flat", note: "Unlimited users, flat price, no per-user charge" },
     tiers: {
       basic: {
         price: 49,
+        limit: "Up to 5 active job openings",
         features: [
           "Job openings",
           "Applications inbox",
@@ -236,6 +252,7 @@ export const modules = {
       },
       intermediate: {
         price: 99,
+        limit: "Up to 20 active job openings",
         features: [
           "Job requisitions with approval",
           "Interview scheduling and panels",
@@ -246,109 +263,109 @@ export const modules = {
       },
       advanced: {
         price: 149,
+        limit: "Unlimited active job openings",
         features: [
-          "Advanced hiring analytics and funnel reports",
+          "Hiring analytics: funnel, time-to-fill and time-to-hire",
           "Custom pipeline stages and settings",
-          "Hire-to-employee conversion into HRM",
+          "Hire-to-employee conversion into HRM onboarding",
           "Full audit trail",
         ],
       },
     },
-    bundles: [
-      {
-        code: "HIRING-STARTER",
-        planInterest: "RECRUITMENT-BUNDLE-STARTER",
-        name: "Hiring Starter",
-        tier: "intermediate",
-        includes: "Recruitment Intermediate + Careers Site",
-        addOnCodes: ["CAREERS-SITE"],
-        price: 128,
-        status: "available",
-      },
-      {
-        code: "HIRING-PRO",
-        planInterest: "RECRUITMENT-BUNDLE-PRO",
-        name: "Hiring Pro",
-        tier: "advanced",
-        includes: "Recruitment Advanced + Careers Site + Multi-posting + AI Parsing",
-        addOnCodes: ["CAREERS-SITE", "MULTI-POSTING", "AI-PARSING"],
-        price: 266,
-        status: "coming_soon",
-      },
-    ],
   },
 };
 
 // =====================================================
-// COMPLETE ERP PACKAGE
+// COMPLETE ERP PACKAGE  (all six modules, one tier)
 // price = base + max(0, employees - includedEmployees) x extraEmployee
 // =====================================================
 
 export const completeErp = {
   name: "Complete ERP",
-  moduleIds: ["hrm", "finance", "sales", "procurement", "crm"],
+  moduleIds: ["hrm", "finance", "sales", "procurement", "crm", "recruitment"],
   // Also part of every ERP plan, not sold as a separate module
   alsoIncluded: ["Inventory (warehouses and stock)"],
   includedEmployees: 10,
-  includedUsers: "Includes 3 Finance users, 5 Sales users and 5 CRM users. Additional users are charged at each module's extra-user rate.",
   plans: [
-    { tier: "basic", icon: "leaf", base: 150, extraEmployee: 3, description: "Perfect for startups and small teams" },
-    { tier: "intermediate", icon: "chart", base: 250, extraEmployee: 5, description: "Ideal for growing businesses" },
-    { tier: "advanced", icon: "rocket", base: 350, extraEmployee: 7, description: "For established and expanding teams" },
+    {
+      tier: "basic",
+      icon: "leaf",
+      base: 150,
+      extraEmployee: 4,
+      description: "Perfect for startups and small teams",
+      features: [
+        "All six modules on the Basic plan",
+        "Features as listed under each module's Basic plan",
+        "Cross-module integration: Payroll to Finance, Procurement to Payables, Recruitment to HRM onboarding",
+        "Singapore compliance: CPF and SDL, IR8A preparation, GST (9%)",
+      ],
+    },
+    {
+      tier: "intermediate",
+      icon: "chart",
+      base: 250,
+      extraEmployee: 6,
+      description: "Ideal for growing businesses",
+      features: [
+        "All six modules on the Intermediate plan",
+        "Features as listed under each module's Intermediate plan",
+        "Cross-module integration, as in Basic",
+        "Singapore compliance: CPF, SDL and FWL, IR8A preparation, MOM work pass tracking, GST (9%)",
+        { text: "InvoiceNow (Peppol) e-invoicing", comingSoon: true },
+      ],
+    },
+    {
+      tier: "advanced",
+      icon: "rocket",
+      base: 350,
+      extraEmployee: 8,
+      description: "For established and expanding teams",
+      features: [
+        "All six modules on the Advanced plan",
+        "Features as listed under each module's Advanced plan",
+        "Cross-module integration, as in Basic",
+        "Singapore compliance: as Intermediate, plus IR21 tax clearance tracking",
+        { text: "InvoiceNow (Peppol) e-invoicing", comingSoon: true },
+      ],
+    },
   ],
-  // "Cheaper than buying modules separately" table (Advanced tier)
+  // "Cheaper than buying modules separately" table (Advanced tier).
+  // Figures and footnote are calculated from the module prices above.
   comparison: {
     tier: "advanced",
     employeeCounts: [10, 20, 50, 100],
-    footnote:
-      "Separately = HRM SGD 9/employee + Finance 99 + Sales 100 + Procurement 149 + CRM 75.",
   },
 };
 
 // =====================================================
 // ADD-ONS
-// status: "available" | "coming_soon"
+// status: "available" | "coming_soon" (coming soon: shown, never sold)
 // modules: module ids where the add-on is listed (omit = all modules)
 // =====================================================
 
 export const platformAddOns = [
-  { code: "STORAGE", name: "Extra storage", price: "SGD 10 / month per 10 GB", description: "Documents, payslips, resumes", status: "available" },
   { code: "BIOMETRIC", name: "Biometric device integration", price: "SGD 49 / month per site", description: "Attendance devices synced automatically", status: "available", modules: ["hrm"] },
-  { code: "API", name: "API access", price: "SGD 79 / month", description: "Integration with your other systems", status: "coming_soon" },
-  { code: "SSO", name: "Single sign-on (SSO / SAML)", price: "SGD 99 / month", description: "Microsoft / Google login", status: "coming_soon" },
-  { code: "SANDBOX", name: "Sandbox environment", price: "SGD 99 / month", description: "Test configuration safely before going live", status: "coming_soon" },
-  { code: "AUDIT-RETENTION", name: "Extended audit log retention", price: "SGD 29 / month", description: "7-year retention", status: "coming_soon" },
-  { code: "PREMIUM-SUPPORT", name: "Premium support", price: "15% of subscription", description: "Dedicated account manager, 4-hour response", status: "available" },
-  { code: "IMPLEMENTATION", name: "Implementation and data migration", price: "SGD 500 to 3,000 one-time", description: "Based on modules and data volume", status: "available" },
+  { code: "PREMIUM-SUPPORT", name: "Premium support", price: "15% of subscription (minimum SGD 99 / month)", description: "Dedicated account manager, 4-hour response time", status: "available" },
+  { code: "IMPLEMENTATION", name: "Implementation and data migration", price: "SGD 500 / 1,500 / 3,000 one-time", description: "Fixed packages: 500 (1-2 modules, up to 20 employees), 1,500 (3-4 modules), 3,000 (all modules + data migration). Waived for founding customers.", status: "available" },
   { code: "TRAINING", name: "Training", price: "SGD 300 per session", description: "Online or on-site", status: "available" },
+  { code: "STORAGE", name: "Extra storage", price: "SGD 10 / month per 10 GB", description: "Documents, payslips, resumes", status: "coming_soon" },
+  { code: "API", name: "API access", price: "SGD 79 / month", description: "Integration with your other systems", status: "coming_soon" },
+  { code: "SSO", name: "Single sign-on (SSO / SAML)", price: "SGD 99 / month", description: "Microsoft / Google login for enterprise customers", status: "coming_soon" },
+  { code: "SANDBOX", name: "Sandbox environment", price: "SGD 99 / month", description: "Test configuration safely before going live", status: "coming_soon" },
+  { code: "AUDIT-RETENTION", name: "Extended audit log retention", price: "SGD 29 / month", description: "Standard plans keep records for 5 years (IRAS / ACRA minimum). This add-on extends retention to 7 years or longer.", status: "coming_soon" },
 ];
 
-export const recruitmentAddOns = [
-  { code: "CAREERS-SITE", name: "Public Careers Site", price: "SGD 29 / month", description: "Branded careers page where candidates browse jobs and apply online", status: "available" },
-  { code: "CUSTOM-DOMAIN", name: "Custom domain and branding", price: "SGD 15 / month", description: "Careers site on your own domain, our branding removed", status: "coming_soon" },
-  { code: "MULTI-POSTING", name: "Job multi-posting", price: "SGD 49 / month", description: "Post once to MyCareersFuture, JobStreet, LinkedIn and Indeed", status: "coming_soon" },
-  { code: "AI-PARSING", name: "AI resume parsing and scoring", price: "SGD 39 / month (500 resumes)", description: "Reads CVs, fills candidate details, ranks candidates", status: "coming_soon" },
-  { code: "E-SIGNATURE", name: "E-signature offer letters", price: "SGD 19 / month", description: "Candidates review, accept and sign offers online", status: "coming_soon" },
-  { code: "VIDEO-INTERVIEW", name: "Video interview integration", price: "SGD 25 / month", description: "Teams / Zoom / Google Meet links with calendar sync", status: "coming_soon" },
-  { code: "ASSESSMENTS", name: "Online assessments", price: "SGD 29 / month", description: "Skill and aptitude tests before shortlisting", status: "coming_soon" },
-  { code: "NOTIFICATIONS", name: "WhatsApp and SMS notifications", price: "SGD 15 / month + usage", description: "Interview reminders and status updates", status: "coming_soon" },
-  { code: "REFERRALS", name: "Employee referral programme", price: "SGD 19 / month", description: "Referral portal with bonus tracking", status: "coming_soon" },
-  { code: "AGENCY-PORTAL", name: "Agency / vendor portal", price: "SGD 39 / month", description: "Agencies submit CVs directly into the pipeline", status: "coming_soon" },
-  { code: "BACKGROUND-CHECK", name: "Background verification", price: "Per check", description: "Partner integration", status: "coming_soon" },
-  { code: "EXTRA-JOB-SLOTS", name: "Extra active job slots", price: "SGD 10 / month per 5 jobs", description: "Run more job openings at the same time", status: "coming_soon" },
-].map((addOn) => ({ ...addOn, modules: ["recruitment"] }));
-
-export const allAddOns = [...platformAddOns, ...recruitmentAddOns];
+export const allAddOns = platformAddOns;
 
 // =====================================================
 // HERO TRUST POINTS (top of /Pricing)
 // =====================================================
 
 export const heroHighlights = [
-  `${TRIAL_DAYS}-day free trial on any plan`,
+  `${TRIAL_DAYS}-day free trial (extendable to ${TRIAL_MAX_DAYS} days on request)`,
   "No credit card required",
-  "Upgrade any time: our team adjusts your invoice pro-rata",
-  "Mobile app on every tier",
+  "Annual prepay: save 15%",
+  "Mobile app on every plan",
 ];
 
 // =====================================================
@@ -356,10 +373,11 @@ export const heroHighlights = [
 // =====================================================
 
 export const billingTerms = [
-  "Each higher tier includes everything in the tier below.",
-  "Need different tiers for different modules? Ask us for a custom quote.",
+  `Free trial: ${TRIAL_DAYS} days, can be extended to ${TRIAL_MAX_DAYS} days on request.`,
+  "Annual prepay: pay the yearly subscription upfront and save 15%.",
+  "Prices in SGD per month, exclusive of GST. GST is added at the prevailing rate.",
   "Upgrade any time: our team adjusts your invoice pro-rata.",
-  "Every tier includes the mobile app, data backup, SSL security and standard email support.",
-  `Annual billing: 2 months free. Free trial: ${TRIAL_DAYS} days on any plan.`,
-  "Prices in SGD, excluding GST.",
+  "Each higher plan includes everything in the plan below.",
+  "Need different tiers for different modules? Ask us for a custom quote.",
+  "Every plan includes the mobile app, data backup, SSL security and standard email support.",
 ];

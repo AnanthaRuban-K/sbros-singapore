@@ -64,7 +64,7 @@ const HomePricingTeaser = () => {
         </div>
 
         <p className="hm-note">
-          {TRIAL_DAYS}-day free trial on any plan · Annual billing: 2 months free
+          {TRIAL_DAYS}-day free trial on any plan · Annual prepay: save 15%
         </p>
 
       </div>

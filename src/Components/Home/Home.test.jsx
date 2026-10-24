@@ -24,7 +24,7 @@ describe("home page sections", () => {
 
     expect(screen.getByText("SGD 150")).toBeInTheDocument();
     expect(screen.getByText("SGD 4")).toBeInTheDocument();
-    expect(screen.getByText(/then SGD 3 per extra employee/)).toBeInTheDocument();
+    expect(screen.getByText(/then SGD 4 per extra employee/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /See ERP plans/ })).toHaveAttribute("href", "/Pricing#erp-plans");
     expect(screen.getByRole("link", { name: /See module plans/ })).toHaveAttribute("href", "/Pricing#modules");
   });

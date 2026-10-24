@@ -106,7 +106,7 @@ export const submitLead = async (payload, { fetchImpl = fetch } = {}) => {
      kind: "complete" | "module" | "custom" | "addon",
      planInterest: "BASIC" | "HRM-INTERMEDIATE" | "CUSTOM" | "ADDON-STORAGE",
      label: "Complete ERP – Advanced" | "HRM – Intermediate" | "Extra storage",
-     billingCycle?: "Monthly" | "Annual (2 months free)",
+     billingCycle?: "Monthly" | "Annual prepay (save 15%)",
      quantity?: number, quantityUnit?: "employees" | "users",
      priceShown?: string,            // price as displayed to the visitor
      freeTrial?: boolean, trialDays?: number,

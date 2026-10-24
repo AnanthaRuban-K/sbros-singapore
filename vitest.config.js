@@ -6,6 +6,8 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.js'],
+    // the page tests type into full forms; allow for slow machines when files run in parallel
+    testTimeout: 20000,
     env: {
       VITE_ERP_API_URL: 'https://erp.test',
     },

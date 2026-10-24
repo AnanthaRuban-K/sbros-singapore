@@ -56501,6 +56501,17 @@ select.enq-input {
   white-space: nowrap;
 }
 
+.pr-limit {
+  align-self: flex-start;
+  margin: -4px 0 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #e7f0ff;
+  font-size: 12px;
+  font-weight: 700;
+  color: #075bc8;
+}
+
 .pr-includes {
   margin: 0 0 6px;
   font-size: 14px;

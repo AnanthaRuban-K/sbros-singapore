@@ -9,9 +9,9 @@ import {
   heroHighlights,
   modules,
   platformAddOns,
-  recruitmentAddOns,
 } from "./pricingData";
 import {
+  comparisonFootnote,
   comparisonRows,
   completeErpFrom,
   completeErpMonthly,
@@ -26,6 +26,7 @@ import { addOnLead, completeErpLead, customLead, moduleLead } from "./leadSelect
 import {
   AddOnCard,
   BillingToggle,
+  FeatureList,
   PriceDisplay,
   PricingNote,
 } from "./PricingParts";
@@ -268,25 +269,12 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
                   then {formatSGD(plan.extraEmployee)} per extra employee / month.
                 </p>
 
-                <ul className="pricing1-features">
-                  <li>
-                    <span className="pricing1-check" aria-hidden="true">✓</span>
-                    <span>
-                      All core modules on the {name} tier: features as listed under each
-                      module&apos;s {name} plan
-                    </span>
-                  </li>
-                  {completeErp.alsoIncluded.map((item) => (
-                    <li key={item}>
-                      <span className="pricing1-check" aria-hidden="true">✓</span>
-                      <span>Also included: {item}</span>
-                    </li>
-                  ))}
-                  <li>
-                    <span className="pricing1-check" aria-hidden="true">✓</span>
-                    <span>{completeErp.includedUsers}</span>
-                  </li>
-                </ul>
+                <FeatureList
+                  features={[
+                    ...plan.features,
+                    ...completeErp.alsoIncluded.map((item) => `Also included: ${item}`),
+                  ]}
+                />
 
                 <nav className="pr-module-links" aria-label={`${name} tier features by module`}>
                   {completeErp.moduleIds.map((id) => (
@@ -391,8 +379,6 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
               SGD {moduleUnitLabel(modules[activeModule])}
               {modules[activeModule].pricing.model === "per_unit" &&
                 <> · Min. {modules[activeModule].pricing.min} {modules[activeModule].pricing.unitPlural}</>}
-              {modules[activeModule].pricing.model === "flat_with_users" &&
-                <> · {modules[activeModule].pricing.included} {modules[activeModule].pricing.unitPlural} included</>}
               {modules[activeModule].pricing.model === "flat" && <> · {modules[activeModule].pricing.note}</>}
             </p>
             {modules[activeModule].intro && <p>{modules[activeModule].intro}</p>}
@@ -419,8 +405,7 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
 
           <p className="pr-footnote pr-module-more">
             <Link to={`/module-pricing/${activeModule}`}>
-              See the full {modules[activeModule].name} page
-              {modules[activeModule].bundles?.length ? ", bundles" : ""} and add-ons →
+              See the full {modules[activeModule].name} page and add-ons →
             </Link>
           </p>
         </div>
@@ -458,7 +443,7 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
             </table>
           </div>
 
-          <p className="pr-footnote">{completeErp.comparison.footnote}</p>
+          <p className="pr-footnote">{comparisonFootnote()}</p>
         </div>
 
         {/* =================================================
@@ -472,20 +457,8 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
             &quot;Notify me&quot; and we will tell you when they launch.
           </p>
 
-          <h3 className="pr-subheading">Platform add-ons (all modules)</h3>
           <div className="pr-addon-grid">
             {platformAddOns.map((addOn) => (
-              <AddOnCard
-                key={addOn.code}
-                addOn={addOn}
-                onSelect={(a) => setLeadPlan(addOnLead(a))}
-              />
-            ))}
-          </div>
-
-          <h3 className="pr-subheading">Recruitment add-ons</h3>
-          <div className="pr-addon-grid">
-            {recruitmentAddOns.map((addOn) => (
               <AddOnCard
                 key={addOn.code}
                 addOn={addOn}

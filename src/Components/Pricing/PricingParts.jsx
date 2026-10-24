@@ -53,10 +53,10 @@ export const PriceDisplay = ({ monthly, billing, unit = "", yearlyUnit = "" }) =
       {billing === "annual" ? (
         <div className="pr-price-sub">
           <s aria-label={`was ${formatSGD(monthly)} per month`}>{formatSGD(monthly)}</s>{" "}
-          {formatSGD(perYear)} {yearlyUnit ? `per ${yearlyUnit} ` : ""}billed yearly
+          {formatSGD(perYear)} {yearlyUnit ? `per ${yearlyUnit} ` : ""}billed yearly, excl. GST
         </div>
       ) : (
-        <div className="pr-price-sub">Billed monthly</div>
+        <div className="pr-price-sub">Billed monthly, excl. GST</div>
       )}
     </div>
   );

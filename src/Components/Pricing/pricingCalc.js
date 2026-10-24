@@ -1,5 +1,5 @@
 import {
-  ANNUAL_MONTHS_CHARGED,
+  ANNUAL_DISCOUNT,
   TIERS,
   completeErp,
   modules,
@@ -21,13 +21,15 @@ export const formatSGD = (amount) => {
   })}`;
 };
 
+const toCents = (amount) => Math.round(amount * 100) / 100;
+
 /* ---------- billing cycle ----------
    monthly: pay the list price every month
-   annual:  pay 10 months for 12 (list x 10 per year)            */
+   annual:  prepay the year with ANNUAL_DISCOUNT off (list x 12 x 0.85)  */
 export const cyclePrice = (monthly, billing) => {
   if (billing === "annual") {
-    const perYear = monthly * ANNUAL_MONTHS_CHARGED;
-    return { perMonth: perYear / 12, perYear };
+    const perYear = toCents(monthly * 12 * (1 - ANNUAL_DISCOUNT));
+    return { perMonth: toCents(perYear / 12), perYear };
   }
   return { perMonth: monthly, perYear: null };
 };
@@ -61,9 +63,7 @@ export const completeErpMonthly = (tierId, employees) => {
    (employees / users; ignored for flat modules).                */
 export const moduleDefaultQuantity = (module) => {
   const { pricing } = module;
-  if (pricing.model === "per_unit") return pricing.min;
-  if (pricing.model === "flat_with_users") return pricing.included;
-  return null;
+  return pricing.model === "per_unit" ? pricing.min : null;
 };
 
 export const moduleMinQuantity = (module) =>
@@ -75,11 +75,6 @@ export const moduleMonthly = (module, tierId, quantity) => {
 
   if (pricing.model === "per_unit") {
     return tier.price * Math.max(quantity ?? pricing.min, pricing.min);
-  }
-
-  if (pricing.model === "flat_with_users") {
-    const users = quantity ?? pricing.included;
-    return tier.price + Math.max(0, users - pricing.included) * tier.extraUser;
   }
 
   return tier.price;
@@ -99,10 +94,6 @@ export const moduleRuleText = (module, tierId) => {
 
   if (pricing.model === "per_unit") {
     return `Min. ${pricing.min} ${pricing.unitPlural} (min payable ${formatSGD(tier.price * pricing.min)} / month)`;
-  }
-
-  if (pricing.model === "flat_with_users") {
-    return `${pricing.included} users included, extra user ${formatSGD(tier.extraUser)} / month`;
   }
 
   return pricing.note;
@@ -139,6 +130,20 @@ export const comparisonRows = () => {
       savingPercent: Math.round((1 - complete / separately) * 100),
     };
   });
+};
+
+// "Separately = HRM SGD 8/employee + Finance 90 + Sales 100 (5 users) + ..."
+export const comparisonFootnote = () => {
+  const { tier } = completeErp.comparison;
+  const parts = completeErp.moduleIds.map((id) => {
+    const module = modules[id];
+    const { pricing } = module;
+    const price = module.tiers[tier].price;
+    if (pricing.model === "per_unit" && pricing.unit === "employee") return `${module.name} ${price}/employee`;
+    if (pricing.model === "per_unit") return `${module.name} ${price * pricing.min} (${pricing.min} ${pricing.unitPlural})`;
+    return `${module.name} ${price}`;
+  });
+  return `Separately = SGD ${parts.join(" + ")}.`;
 };
 
 /* ---------- "From" prices for the /Pricing banner ---------- */
