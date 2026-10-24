@@ -92,7 +92,7 @@ const ModulePricing = () => {
   return (
     <section className="mp-section">
       <div className="mp-container">
-        <Link to="/products" className="mp-back">← Back to Products</Link>
+        {/* <Link to="/products" className="mp-back">← Back to Products</Link> */}
 
         <div className="mp-header">
           <div className="mp-header-icon"><i className={module.icon}></i></div>

@@ -45,13 +45,19 @@ const ServiceDetailsCenterERP = () => {
                 "Streamline purchasing, supplier management, purchase orders and procurement workflows.",
         },
         {
-    number: "05",
-    icon: "bi bi-cart-check",
-    title: "Sales",
-    description:
-        "Manage products, services, quotations, sales orders, customers, contracts and complete sales operations in one platform.",
-},
-        
+            number: "05",
+            icon: "bi bi-cart-check",
+            title: "Sales",
+            description:
+                "Manage products, services, quotations, sales orders, customers, contracts and complete sales operations in one platform.",
+        },
+        {
+            number: "06",
+            icon: "bi bi-person-plus",
+            title: "Recruitment",
+            description:
+                "Manage job openings, candidate applications, interviews, selection and onboarding with a streamlined hiring process.",
+        },
     ];
 
     /* =====================================================
@@ -561,83 +567,84 @@ const ServiceDetailsCenterERP = () => {
                         </section>
 
 
-                          {/* =====================================================
-                              FAQ
-                          ===================================================== */}
-                          <section className="trading-faq-section">
-              
+                        {/* =====================================================
+                            FAQ
+                        ===================================================== */}
+
+                        <section className="trading-faq-section">
+
                             <div className="trading-section-heading">
-              
-                              <span className="trading-small-label">
-                                FAQ
-                              </span>
-              
-                              <h2>
-                                Frequently Asked
-                                <span> Questions</span>
-                              </h2>
-              
-                              <p>
-                                Find answers to common questions about our IT trading
-                                and technology supply services.
-                              </p>
-              
+
+                                <span className="trading-small-label">
+                                    FAQ
+                                </span>
+
+                                <h2>
+                                    Frequently Asked
+                                    <span> Questions</span>
+                                </h2>
+
+                                <p>
+                                    Find answers to common questions about our IT trading
+                                    and technology supply services.
+                                </p>
+
                             </div>
-              
-              
+
+
                             <div className="trading-faq-list">
-              
-                              {data.slice(0, 4).map((item, index) => (
-              
-                                <div
-                                  key={index}
-                                  className={`trading-faq-item ${
-                                    openItemIndex === index ? "active" : ""
-                                  }`}
-                                >
-              
-                                  <button
-                                    type="button"
-                                    className="trading-faq-question"
-                                    onClick={() => handleItemClick(index)}
-                                  >
-              
-                                    <span className="faq-count">
-                                      {String(index + 1).padStart(2, "0")}
-                                    </span>
-              
-                                    <span className="faq-question-text">
-                                      {item.title}
-                                    </span>
-              
-                                    <span className="faq-toggle">
-                                      <i
-                                        className={`bi ${
-                                          openItemIndex === index
-                                            ? "bi-dash"
-                                            : "bi-plus"
+
+                                {data.slice(0, 4).map((item, index) => (
+
+                                    <div
+                                        key={index}
+                                        className={`trading-faq-item ${
+                                            openItemIndex === index ? "active" : ""
                                         }`}
-                                      ></i>
-                                    </span>
-              
-                                  </button>
-              
-              
-                                  {openItemIndex === index && (
-              
-                                    <div className="trading-faq-answer">
-                                      <p>{item.desc}</p>
+                                    >
+
+                                        <button
+                                            type="button"
+                                            className="trading-faq-question"
+                                            onClick={() => handleItemClick(index)}
+                                        >
+
+                                            <span className="faq-count">
+                                                {String(index + 1).padStart(2, "0")}
+                                            </span>
+
+                                            <span className="faq-question-text">
+                                                {item.title}
+                                            </span>
+
+                                            <span className="faq-toggle">
+                                                <i
+                                                    className={`bi ${
+                                                        openItemIndex === index
+                                                            ? "bi-dash"
+                                                            : "bi-plus"
+                                                    }`}
+                                                ></i>
+                                            </span>
+
+                                        </button>
+
+
+                                        {openItemIndex === index && (
+
+                                            <div className="trading-faq-answer">
+                                                <p>{item.desc}</p>
+                                            </div>
+
+                                        )}
+
                                     </div>
-              
-                                  )}
-              
-                                </div>
-              
-                              ))}
-              
+
+                                ))}
+
                             </div>
-              
-                          </section>
+
+                        </section>
 
                     </div>
 

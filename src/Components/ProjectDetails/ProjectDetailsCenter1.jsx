@@ -227,6 +227,18 @@ const ProjectDetailsCenter1 = () => {
                 </div>
               </div>
             </div>
+            {/* 06 - RECRUITMENT */}
+<div className="neural-module neural-6">
+  <div className="neural-module-card">
+    <div className="neural-icon">
+      <i className="bi bi-person-plus-fill"></i>
+    </div>
+    <div>
+      <small>06</small>
+      <span>Recruitment</span>
+    </div>
+  </div>
+</div>
 
           </div>
 
