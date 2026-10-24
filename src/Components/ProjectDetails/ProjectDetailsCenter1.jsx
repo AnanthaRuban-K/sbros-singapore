@@ -5,9 +5,9 @@ const ProjectDetailsCenter1 = () => {
   const [activeVideo, setActiveVideo] = useState(null);
 
   // =====================================================
-  // ERP MODULES - 5 MODULES
-  // `id` must match the keys in Pricing/modulePricingData.js
-  // (hrm, crm, finance, procurement, sales)
+  // ERP MODULES - 6 MODULES
+  // `id` must match the keys of `modules` in Pricing/pricingData.js
+  // (hrm, crm, finance, procurement, sales, recruitment)
   // =====================================================
   const modules = [
     {
@@ -94,6 +94,24 @@ const ProjectDetailsCenter1 = () => {
       video: "/assets/videos/sales.mp4",
       thumbnail: "/assets/img/thumb/image5.jpeg",
       tag: "SALES",
+    },
+    {
+      id: "recruitment",
+      number: "06",
+      icon: "bi bi-person-badge-fill",
+      title: "Recruitment",
+      shortTitle: "RECRUITMENT",
+      text: "Hire faster with job openings, a candidate pipeline, interview scheduling and offer approvals in one place.",
+      features: [
+        "Job Openings",
+        "Candidate Pipeline",
+        "Interview Scheduling",
+        "Offer Management",
+      ],
+      // No product video yet: the card shows the image without a play button
+      video: null,
+      thumbnail: "/assets/img/about/girl.jpg",
+      tag: "HIRING",
     },
   ];
 
@@ -287,6 +305,7 @@ const ProjectDetailsCenter1 = () => {
 
 
               {/* ================= VIDEO ================= */}
+              {module.video ? (
               <div
                 className="erp-module-media"
                 role="button"
@@ -320,6 +339,21 @@ const ProjectDetailsCenter1 = () => {
                   }}
                 ></div>
               </div>
+              ) : (
+              <div className="erp-module-media">
+                <img
+                  src={module.thumbnail}
+                  alt={module.title}
+                  className="erp-module-thumbnail"
+                />
+
+                <div className="erp-media-gradient"></div>
+
+                <div className="erp-media-label">
+                  <span>{module.shortTitle}</span>
+                </div>
+              </div>
+              )}
 
 
               {/* ================= CARD BODY ================= */}

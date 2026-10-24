@@ -12,8 +12,6 @@ const Project1 = () => {
   const startXRef = useRef(0);
   const startPositionRef = useRef(0);
 
-  if (!data?.length) return null;
-
   // Duplicate logos for infinite scrolling
   const logos = [...data, ...data, ...data];
 
@@ -118,8 +116,12 @@ const Project1 = () => {
       e.currentTarget.releasePointerCapture(
         e.pointerId
       );
-    } catch {}
+    } catch {
+      // Pointer capture may already be released
+    }
   };
+
+  if (!data?.length) return null;
 
   return (
     <section className="clients-section">

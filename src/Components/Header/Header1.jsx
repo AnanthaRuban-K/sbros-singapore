@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
+import HeaderScene from './HeaderScene';
 export default function Header1({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState();
@@ -31,6 +32,7 @@ export default function Header1({ variant }) {
       >
 
         <div className="cs_main_header cs_accent_bg">
+          <HeaderScene />
           <div className="container">
             <div className="cs_main_header_in">
 

@@ -1,24 +1,18 @@
 import About1 from "../Components/About/About1";
 import Choose1 from "../Components/Choose/Choose1";
-import HeroBanner1 from "../Components/HeroBanner/HeroBanner1";
 import Project1 from "../Components/Project/Project1";
 import Services1 from "../Components/Services/Services1";
 import HeroVideo from "../Components/HeroVideo/HeroVideo";
+import HomeHero from "../Components/Home/HomeHero";
+import HomePricingTeaser from "../Components/Home/HomePricingTeaser";
+import HomeCta from "../Components/Home/HomeCta";
 
 const Home = () => {
     return (
         <div className="home-page1">
 
-            {/* ================= HERO ================= */}
-            <HeroBanner1
-                bgImg="/assets/img/bg/blueshine.png"
-                subTitle="SBros"
-                title="Powering Businesses With <span class='after'>Software Built for Growth</span>"
-                content="We deliver innovative, secure, and scalable IT solutions that simplify operations, enhance efficiency, and empower businesses to achieve sustainable growth."
-                btnName="Explore"
-                btnUrl="/contact-us"
-                image2="/assets/img/hero/headimg5.png"
-            />
+            {/* ================= HERO (brand banner) ================= */}
+            <HomeHero />
 
             {/* ================= CINEMATIC VIDEO ================= */}
             <HeroVideo
@@ -45,8 +39,14 @@ const Home = () => {
             {/* ================= WHY CHOOSE US ================= */}
             <Choose1 />
 
+            {/* ================= PRICING TEASER ================= */}
+            <HomePricingTeaser />
+
             {/* ================= PROJECTS ================= */}
             <Project1 />
+
+            {/* ================= CALL TO ACTION ================= */}
+            <HomeCta />
 
         </div>
     );

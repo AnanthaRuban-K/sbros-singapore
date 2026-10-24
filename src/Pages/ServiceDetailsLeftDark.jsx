@@ -1,7 +1,7 @@
 import BreadCumb2 from "../Components/Common/BreadCumb2";
 import Cta2 from "../Components/Cta/Cta2";
 import MarqueeText from "../Components/MarqueeText/MarqueeText";
-import ServiceITNetworking from "../Components/ServiceDetails/ServiceITNetworking";
+import ServiceDetailsLeft1 from "../Components/ServiceDetails/ServiceDetailsLeft1";
 const ServiceDetailsLeftDark = () => {
     return (
         <div>
