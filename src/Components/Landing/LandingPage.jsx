@@ -472,7 +472,6 @@ export default function LandingPage() {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="+65 XXXX XXXX"
                     autoComplete="tel"
                     required
                   />
