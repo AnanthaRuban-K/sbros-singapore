@@ -168,7 +168,7 @@ export const router = createBrowserRouter([
     },
     // NEW: landing page, outside Main so it has no header/footer
 {
-  path: "/landing",
+  path: "/landing-page",
   element: <LandingPage></LandingPage>,
 },
     {
