@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -19,35 +18,34 @@ const EMAILJS_TEMPLATE_ID = "template_qzmm58o";
 const EMAILJS_PUBLIC_KEY = "dEim8gAkIEVm2Gvjb";
 
 // =====================================================
-// SERVICES
+// SERVICES  [bootstrap icon class, title, description]
 // =====================================================
 
 const services = [
   [
-    "⚙",
+    "bi-diagram-3",
     "ERP Solutions",
     "Setup, customisation and staff training for your ERP.",
   ],
   [
-    "⌘",
+    "bi-window-desktop",
     "Website Development",
     "Fast, mobile-friendly websites and landing pages.",
   ],
-  
   [
-    "⇄",
+    "bi-hdd-network",
     "IT Networking",
     "Office networks, Wi-Fi, servers and devices.",
   ],
   [
-    "</>",
+    "bi-code-slash",
     "Software Development",
     "Apps built around how your business works.",
   ],
   [
-    "✔",
+    "bi-graph-up-arrow",
     "Trading",
-    "Quick help when something stops working.",
+    "Reliable supply of products for your business needs.",
   ],
 ];
 
@@ -64,14 +62,7 @@ const modules = [
   "Recruitment",
   "Inventory & Warehouse",
   "Reports & Analytics",
-  
 ];
-
-// =====================================================
-// BENEFITS
-// =====================================================
-
-
 
 // =====================================================
 // LANDING PAGE
@@ -252,14 +243,12 @@ export default function LandingPage() {
               <article className="card" key={title}>
 
                 <div className="ico">
-                  {icon}
+                  <i className={`bi ${icon}`}></i>
                 </div>
 
                 <h3>{title}</h3>
 
                 <p>{description}</p>
-
-              
 
               </article>
             ))}
@@ -290,9 +279,6 @@ export default function LandingPage() {
 
           </div>
 
-          
-
-          
           <a href="#contact" className="btn btn-red">
             Request ERP Demo
           </a>
@@ -568,8 +554,6 @@ export default function LandingPage() {
 
         </div>
       </footer>
-
-      
 
     </div>
   );
