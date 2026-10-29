@@ -15,6 +15,10 @@ describe("header scene", () => {
     expect(scene).toHaveAttribute("aria-hidden", "true");
     expect(scene.querySelector(".hdr-skyline")).toBeInTheDocument();
     expect(scene.querySelector(".hdr-walker-figure")).toBeInTheDocument();
+    // Merlion with its water spout and splash
+    expect(scene.querySelector(".hdr-merlion .hdr-merlion-body")).toBeInTheDocument();
+    expect(scene.querySelector(".hdr-merlion .hdr-spout")).toBeInTheDocument();
+    expect(scene.querySelector(".hdr-merlion .hdr-splash")).toBeInTheDocument();
     expect(scene.querySelectorAll("a, button, [tabindex]")).toHaveLength(0);
 
     // it sits inside the header card, before the menu container

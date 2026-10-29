@@ -58316,6 +58316,73 @@ body:has(.hm-hero) .cs_site_header:not(.cs-gescout_sticky)::before {
 }
 
 
+/* ---------- header scene: Merlion fountain (HeaderScene.jsx) ---------- */
+.hdr-skyline .hdr-merlion-body {
+  fill: rgba(48, 80, 160, 0.6);
+}
+
+.hdr-skyline .hdr-merlion-base {
+  fill: rgba(48, 80, 160, 0.3);
+}
+
+.hdr-skyline .hdr-merlion-eye {
+  fill: #ffffff;
+}
+
+/* water jet: dashes travel along the arc so the water looks like it flows */
+.hdr-skyline .hdr-spout,
+.hdr-skyline .hdr-spout-core {
+  fill: none;
+  stroke-linecap: round;
+  animation: hdr-spout-flow 0.7s linear infinite;
+}
+
+.hdr-skyline .hdr-spout {
+  stroke: #5aa9e6;
+  stroke-width: 1.4;
+  stroke-dasharray: 3 0.8;
+}
+
+.hdr-skyline .hdr-spout-core {
+  stroke: #d6eefc;
+  stroke-width: 0.55;
+  stroke-dasharray: 1.4 1.8;
+  animation-duration: 0.5s;
+}
+
+.hdr-skyline .hdr-splash {
+  fill: #9fd0f5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hdr-splash 0.9s ease-out infinite;
+}
+
+@keyframes hdr-spout-flow {
+  to {
+    stroke-dashoffset: -7.6;
+  }
+}
+
+@keyframes hdr-splash {
+  0% {
+    transform: scale(0.6, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.35, 1.6);
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hdr-skyline .hdr-spout,
+  .hdr-skyline .hdr-spout-core,
+  .hdr-skyline .hdr-splash {
+    animation: none;
+  }
+}
+
+
 
 
 
