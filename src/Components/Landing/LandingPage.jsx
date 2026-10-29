@@ -1,6 +1,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import TrialRequestForm from "./TrialRequestForm";
+import { TRIAL_NOTE } from "./trialRequest";
 
 // =====================================================
 // SBROS TECH CONTACT DETAILS
@@ -90,6 +92,10 @@ export default function LandingPage() {
 
   const [scrolled, setScrolled] = useState(false);
 
+  // 15-day free trial request modal
+  const [trialOpen, setTrialOpen] = useState(false);
+  const openTrial = () => setTrialOpen(true);
+
   // =====================================================
   // NAVBAR SCROLL EFFECT
   // =====================================================
@@ -175,9 +181,9 @@ export default function LandingPage() {
             />
           </a>
 
-          <a href="#contact" className="btn btn-red nav-cta">
-            Book a Free Demo
-          </a>
+          <button type="button" className="btn btn-red nav-cta" onClick={openTrial}>
+            Start 15-Day Free Trial
+          </button>
         </div>
       </header>
 
@@ -198,8 +204,12 @@ export default function LandingPage() {
             </p>
 
             <div className="btn-row">
-              <a href="#contact" className="btn btn-red">
-                Book a Free Demo
+              <button type="button" className="btn btn-red" onClick={openTrial}>
+                Start 15-Day Free Trial
+              </button>
+
+              <a href="#contact" className="btn btn-outline">
+                Book a Demo
               </a>
 
               <a
@@ -211,6 +221,8 @@ export default function LandingPage() {
                 WhatsApp Us
               </a>
             </div>
+
+            <p className="trial-note">{TRIAL_NOTE}</p>
           </div>
 
           <div className="hero-visual">
@@ -268,9 +280,11 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <a href="#contact" className="btn btn-red">
-            Request ERP Demo
-          </a>
+          <button type="button" className="btn btn-red" onClick={openTrial}>
+            Start 15-Day Free Trial
+          </button>
+
+          <p className="trial-note trial-note-center">{TRIAL_NOTE}</p>
         </div>
       </section>
 
@@ -290,7 +304,7 @@ export default function LandingPage() {
             <span className="contact-tag">GET IN TOUCH</span>
 
             <h2>
-              Let's Start a{" "}
+              Let&apos;s Start a{" "}
               <span className="red">Conversation</span>
             </h2>
 
@@ -377,7 +391,7 @@ export default function LandingPage() {
 
             <p className="contact-bottom-text">
               Have a project in mind?
-              <strong> Let's make it happen.</strong>
+              <strong> Let&apos;s make it happen.</strong>
             </p>
           </div>
 
@@ -539,6 +553,10 @@ export default function LandingPage() {
           <a href="#top">Back to Top ↑</a>
         </div>
       </footer>
+
+      {trialOpen && (
+        <TrialRequestForm onClose={() => setTrialOpen(false)} contactEmail={EMAIL} />
+      )}
     </div>
   );
 }

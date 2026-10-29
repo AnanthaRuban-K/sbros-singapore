@@ -59865,3 +59865,201 @@ body:has(.hm-hero) .cs_site_header:not(.cs-gescout_sticky)::before {
     transform: scale(1.05);
   }
 }
+
+/* =========================================================
+   LANDING: 15-DAY FREE TRIAL  (Components/Landing/TrialRequestForm.jsx)
+========================================================= */
+
+.sb .trial-note {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sb .trial-note-center {
+  text-align: center;
+}
+
+.sb .trial-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+  overflow-y: auto;
+  background: rgba(7, 19, 38, 0.62);
+}
+
+.sb .form.form-card.trial-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: auto 0;
+}
+
+.sb .trial-dialog .form-heading {
+  margin-bottom: 22px;
+  padding-right: 44px;
+}
+
+.sb .trial-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sb .trial-close:hover {
+  color: var(--navy);
+  background: var(--light);
+}
+
+.sb .trial-error {
+  color: #b42332;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.sb .contact-field input[aria-invalid="true"],
+.sb .contact-field textarea[aria-invalid="true"] {
+  border-color: #e05261;
+  background: #fffafa;
+}
+
+.sb .trial-modules {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.sb .trial-modules legend {
+  margin-bottom: 8px;
+  padding: 0;
+  float: none;
+  width: auto;
+  color: #253249;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.sb .trial-module-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+
+.sb .trial-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #253249;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.sb .trial-check input {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  accent-color: var(--red);
+}
+
+.sb .trial-consent {
+  margin-top: 20px;
+}
+
+.sb .trial-consent a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* honeypot: off-screen, not display:none (some bots skip hidden fields) */
+.sb .trial-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sb .trial-done {
+  padding: 16px 4px 4px;
+  text-align: center;
+}
+
+.sb .trial-done-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 14px;
+  color: #126b43;
+  background: #eaf8f0;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.sb .trial-done h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 26px;
+  font-weight: 850;
+}
+
+.sb .trial-done p {
+  max-width: 460px;
+  margin: 0 auto 24px;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .sb .trial-module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .sb .trial-overlay {
+    padding: 0;
+  }
+
+  .sb .form.form-card.trial-dialog {
+    min-height: 100%;
+    margin: 0;
+    padding: 26px 18px;
+    border-radius: 0;
+  }
+
+  .sb .trial-dialog .contact-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sb .trial-done .trial-done-close,
+.sb .trial-done .trial-done-close:focus {
+  min-width: 160px;
+  color: #fff;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.sb .trial-done .trial-done-close:hover {
+  color: #1d4ed8;
+  background: #fff;
+}
