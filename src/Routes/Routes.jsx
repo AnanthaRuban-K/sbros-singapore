@@ -44,8 +44,7 @@ import BlogPageDark from "../Pages/BlogPageDark";
 import BlogDetailsLeftDark from "../Pages/BlogDetailsLeftDark";
 import BlogDetailsRightDark from "../Pages/BlogDetailsRightDark";
 import BlogDetailsCenterDark from "../Pages/BlogDetailsCenterDark";
-import ModulePricing from "../Components/Pricing/ModulePricing";
-import PlanDetailsPage from "../Pages/Plandetailspage";
+import ModulePlansRedirect from "../Components/Pricing/ModulePlansRedirect";
 import TermsAndConditions from "../Components/Common/Terms";
 import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
 import ScrollToTop from "../Components/Common/ScrollToTop";
@@ -141,12 +140,12 @@ export const router = createBrowserRouter([
         },  
 {
   path: "/module-pricing/:moduleId",
-  element: <ModulePricing />,
+  element: <ModulePlansRedirect />,
 },
 
 {
   path: "/module-pricing/:moduleId/:planId/details",
-  element: <PlanDetailsPage />,
+  element: <ModulePlansRedirect />,
 },
         {
           path: "/contact-us",

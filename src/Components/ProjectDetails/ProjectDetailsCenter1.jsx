@@ -374,12 +374,12 @@ const ProjectDetailsCenter1 = () => {
                 </div>
 
                 {/* ================= BUTTON =================
-                    Goes to that module's own pricing page.
-                    HRM -> /module-pricing/hrm
-                    CRM -> /module-pricing/crm  ... etc.
+                    Goes to that module's plans on the Plans page.
+                    HRM -> /Pricing#plans-hrm
+                    CRM -> /Pricing#plans-crm  ... etc.
                 ============================================ */}
                 <Link
-                  to={`/module-pricing/${module.id}`}
+                  to={`/Pricing#plans-${module.id}`}
                   className="erp-explore-btn"
                 >
                   <span>Explore Module</span>

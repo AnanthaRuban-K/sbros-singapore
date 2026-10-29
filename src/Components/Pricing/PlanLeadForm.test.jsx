@@ -6,12 +6,11 @@ import PlanLeadForm from "./PlanLeadForm";
 
 const MODULE_PLAN = {
   kind: "module",
-  planInterest: "HRM-INTERMEDIATE",
-  label: "HRM – Intermediate",
+  planInterest: "HRM - Intermediate",
+  label: "HRM - Intermediate",
   modules: ["HRM"],
 };
 
-const TRIAL_PLAN = { ...MODULE_PLAN, freeTrial: true, trialDays: 15 };
 
 const jsonResponse = (status, body) => ({
   ok: status >= 200 && status < 300,
@@ -59,13 +58,13 @@ describe("PlanLeadForm", () => {
 
     renderForm();
 
-    expect(screen.getByRole("dialog")).toHaveAccessibleName("Request pricing – HRM – Intermediate plan");
+    expect(screen.getByRole("dialog")).toHaveAccessibleName("Get pricing – HRM - Intermediate");
 
     await fillForm(user);
     await user.click(submitButton());
 
     expect(await screen.findByRole("status")).toHaveTextContent(
-      "Thanks, our team will contact you about the HRM – Intermediate plan."
+      "Thank you - our team will send you pricing for your selected plan within one business day."
     );
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -83,30 +82,28 @@ describe("PlanLeadForm", () => {
       email: "alex@acme.com.sg",
       phone: "+65 9123 4567",
       companySize: "11-50",
-      planInterest: "HRM-INTERMEDIATE",
+      planInterest: "HRM - Intermediate",
     });
     expect(body).not.toHaveProperty("website");
     expect(body.requirements).toContain("Request type: Pricing request");
-    expect(body.requirements).toContain("Plan: HRM – Intermediate");
+    expect(body.requirements).toContain("Plan: HRM - Intermediate");
     expect(body.requirements).toContain("Number of employees: 11-50");
     expect(body.requirements).toContain("Need payroll by January.");
   });
 
-  it("marks free trial requests", async () => {
+  it("never shows or sends a price", async () => {
     const user = userEvent.setup();
     fetchMock.mockResolvedValue(jsonResponse(201, { ok: true, id: 8 }));
 
-    renderForm(TRIAL_PLAN);
-
-    expect(screen.getByRole("heading", { name: "Request your 15-day free trial" })).toBeInTheDocument();
-    expect(screen.getByText("Our team will set up your account and email your login.")).toBeInTheDocument();
+    renderForm();
+    expect(document.body.textContent).not.toMatch(/SGD|\/ ?month|per (user|employee)/);
 
     await fillForm(user);
     await user.click(submitButton());
     await screen.findByRole("status");
 
     const body = JSON.parse(fetchMock.mock.calls[0][1].body);
-    expect(body.requirements.startsWith("Free trial request (15 days)")).toBe(true);
+    expect(body.requirements).not.toMatch(/SGD|Price|Billing/);
   });
 
   it("does not call the API when required fields are missing", async () => {
@@ -168,7 +165,7 @@ describe("PlanLeadForm", () => {
     });
     await user.click(submitButton());
 
-    expect(await screen.findByRole("status")).toHaveTextContent(/HRM – Intermediate plan/);
+    expect(await screen.findByRole("status")).toHaveTextContent(/send you pricing for your selected plan/);
     expect(fetchMock).not.toHaveBeenCalled();
   });
 

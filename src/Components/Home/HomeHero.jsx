@@ -9,7 +9,7 @@ import { MODULE_ORDER, TRIAL_DAYS, modules } from "../Pricing/pricingData";
 const HIGHLIGHTS = [
   `${TRIAL_DAYS}-day free trial on ERP plans`,
   "CPF, SDL and IR8A preparation on every plan; FWL and MOM work pass from Intermediate; IR21 on Advanced",
-  "Mobile app on every plan",
+  "Cross-module integration: Payroll to Finance, Procurement to Payables",
 ];
 
 const HomeHero = () => (
@@ -34,7 +34,7 @@ const HomeHero = () => (
             Explore our ERP <span aria-hidden="true">→</span>
           </Link>
           <Link to="/Pricing" className="hm-btn hm-btn-ghost">
-            See pricing
+            See plans
           </Link>
         </div>
 
@@ -60,7 +60,7 @@ const HomeHero = () => (
 
         <nav className="hm-hero-modules" aria-label="ERP modules">
           {MODULE_ORDER.map((id) => (
-            <Link key={id} to={`/module-pricing/${id}`}>
+            <Link key={id} to={`/Pricing#plans-${id}`}>
               {modules[id].name}
             </Link>
           ))}

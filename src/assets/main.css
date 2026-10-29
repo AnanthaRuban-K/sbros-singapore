@@ -60063,3 +60063,34 @@ body:has(.hm-hero) .cs_site_header:not(.cs-gescout_sticky)::before {
   color: #1d4ed8;
   background: #fff;
 }
+
+/* ---------- Plans page (no prices) ---------- */
+.pr-modules .pr-module-section {
+  scroll-margin-top: 140px;
+  margin-top: 40px;
+}
+
+.pr-modules .pr-module-section + .pr-module-section {
+  padding-top: 32px;
+  border-top: 1px solid #e3e8f2;
+}
+
+.pr-module-head h3 i {
+  color: #3f5aa8;
+  margin-right: 6px;
+}
+
+.pr-includes--card {
+  margin: 22px 0 -14px;
+}
+
+.mp-card .pr-get-pricing {
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+}
+
+.pr-addon-card {
+  gap: 12px;
+}

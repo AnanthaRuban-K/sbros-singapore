@@ -98,7 +98,7 @@ export default function Nav({ setMobileToggle }) {
       </li> */}
       <li>
         <Link to="/Pricing" onClick={() => setMobileToggle(false)}>
-          Pricing
+          Plans
         </Link>
       </li>
 

@@ -4,34 +4,17 @@ import PlanLeadForm from "./PlanLeadForm";
 import ModuleTierGrid from "./ModuleTierGrid";
 import {
   MODULE_ORDER,
-  billingTerms,
+  addOns,
   completeErp,
-  heroHighlights,
   modules,
-  platformAddOns,
-} from "./pricingData";
-import {
-  comparisonFootnote,
-  comparisonRows,
-  completeErpFrom,
-  completeErpMonthly,
-  cyclePrice,
-  formatSGD,
-  moduleFrom,
-  moduleUnitLabel,
+  planTerms,
   tierName,
-  toQuantity,
-} from "./pricingCalc";
+} from "./pricingData";
 import { addOnLead, completeErpLead, customLead, moduleLead } from "./leadSelections";
-import {
-  AddOnCard,
-  BillingToggle,
-  FeatureList,
-  PriceDisplay,
-  PricingNote,
-} from "./PricingParts";
+import { AddOnCard, FeatureList } from "./PricingParts";
 
-// All prices, features and add-ons come from ./pricingData.js
+// Plans, features and add-ons come from ./pricingData.js.
+// No prices on this page: every plan has a "Get pricing" enquiry.
 
 // =====================================================
 // ICON COMPONENT
@@ -78,53 +61,38 @@ const Icon = ({ type }) => {
 
 // headingTag: "h1" when this is the page title (/Pricing), "h2" when embedded (home4)
 const Pricing1 = ({ headingTag: Heading = "h2" }) => {
-  const [billing, setBilling] = useState("annual");
-
-  // Employee calculator (raw input text, parsed when used)
-  const [employeesInput, setEmployeesInput] = useState(String(completeErp.includedEmployees));
-  const employees = toQuantity(employeesInput, completeErp.includedEmployees);
-
-  // Plan shown in the lead form modal (null = closed)
+  // Plan shown in the enquiry form modal (null = closed)
   const [leadPlan, setLeadPlan] = useState(null);
-
-  // "Pricing by module" tab
-  const [activeModule, setActiveModule] = useState(MODULE_ORDER[0]);
-
-  const openPlan = (tierId, trial) =>
-    setLeadPlan(completeErpLead({ tierId, billing, employees, trial }));
-
-  const comparison = comparisonRows();
-  const comparisonTier = tierName(completeErp.comparison.tier);
 
   // On /Pricing the header is a full-width banner in the brand colours
   const isPage = Heading === "h1";
 
-  const coreModuleNames = completeErp.moduleIds.map((id) => modules[id].name).join(", ");
-  const erpFrom = cyclePrice(completeErpFrom(), billing).perMonth;
-  const modFrom = moduleFrom();
-  const modFromPrice = cyclePrice(modFrom.price, billing).perMonth;
+  const moduleNames = completeErp.moduleIds.map((id) => modules[id].name).join(", ");
+
+  const terms = (
+    <ul className="pr-hero-points">
+      {planTerms.map((term) => (
+        <li key={term}>
+          <span aria-hidden="true">✓</span>
+          {term}
+        </li>
+      ))}
+    </ul>
+  );
 
   // /Pricing banner: both ways to buy, side by side
   const hero = (
     <div className="pricing1-header pr-hero-content">
 
       {/* Page title for search engines and screen readers only (not shown) */}
-      <Heading className="visually-hidden">SBros ERP Pricing</Heading>
-
-      <BillingToggle billing={billing} onChange={setBilling} />
-
-      <PricingNote billing={billing} />
+      <Heading className="visually-hidden">One Solution ERP Plans</Heading>
 
       <div className="pr-options">
         <a href="#erp-plans" className="pr-option">
           <span className="pr-option-tag">Option 1</span>
-          <span className="pr-option-title">Complete ERP package</span>
+          <span className="pr-option-title">{completeErp.title}</span>
           <span className="pr-option-text">
-            All {completeErp.moduleIds.length} core modules in one price: {coreModuleNames},
-            plus {completeErp.alsoIncluded.join(", ")}.
-          </span>
-          <span className="pr-option-price">
-            From <strong>{formatSGD(erpFrom)}</strong> / month for {completeErp.includedEmployees} employees
+            All six modules on the plan you choose: {moduleNames}.
           </span>
           <span className="pr-option-cta">View ERP plans ↓</span>
         </a>
@@ -133,55 +101,32 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
           <span className="pr-option-tag">Option 2</span>
           <span className="pr-option-title">Individual modules</span>
           <span className="pr-option-text">
-            Pay only for the modules you use. Need different tiers for different
-            modules? Ask us for a custom quote.
+            Choose only the modules you need, each in Basic, Intermediate or Advanced.
           </span>
           <span className="pr-option-chips" aria-hidden="true">
             {MODULE_ORDER.map((id) => (
               <span key={id}>{modules[id].name}</span>
             ))}
           </span>
-          <span className="pr-option-price">
-            From <strong>{formatSGD(modFromPrice)}</strong> per {modFrom.unit} / month
-          </span>
           <span className="pr-option-cta">View module plans ↓</span>
         </a>
       </div>
 
-      <ul className="pr-hero-points">
-        {heroHighlights.map((point) => (
-          <li key={point}>
-            <span aria-hidden="true">✓</span>
-            {point}
-          </li>
-        ))}
-      </ul>
+      {terms}
 
     </div>
   );
 
-  // Embedded (home4): compact header, Complete ERP first
+  // Embedded (home4): compact header
   const header = (
     <div className="pricing1-header">
-
-      <span className="pricing1-badge">
-        Complete ERP package
-      </span>
-
+      <span className="pricing1-badge">One Solution ERP</span>
       <Heading>
         Choose the Right <span>Plan</span>
       </Heading>
-
       <p>
-        All core modules ({coreModuleNames}) in one price, on the tier of your choice.
+        The Complete ERP Package or individual modules, each in Basic, Intermediate and Advanced.
       </p>
-
-      <BillingToggle billing={billing} onChange={setBilling} />
-
-      <PricingNote billing={billing} />
-
-      <a href="#modules" className="pr-jump">Need only some modules? See pricing by module ↓</a>
-
     </div>
   );
 
@@ -199,51 +144,19 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
         {!isPage && header}
 
         {/* =================================================
-            OPTION 1: COMPLETE ERP
+            OPTION 1: COMPLETE ERP PACKAGE
         ================================================= */}
 
-        {isPage && (
-          <div className="pr-section-head" id="erp-plans">
-            <span className="pr-section-tag">Option 1</span>
-            <h2>Complete ERP package</h2>
-            <p>
-              All core modules ({coreModuleNames}) in one price, on the tier of your choice.
-            </p>
-          </div>
-        )}
-
-        {/* =================================================
-            EMPLOYEE CALCULATOR
-        ================================================= */}
-
-        <div className="pr-calculator">
-          <label htmlFor="erp-employees">Number of employees</label>
-          <input
-            id="erp-employees"
-            type="number"
-            inputMode="numeric"
-            min={1}
-            step={1}
-            value={employeesInput}
-            onChange={(e) => setEmployeesInput(e.target.value)}
-            onBlur={() => setEmployeesInput(String(employees))}
-            aria-describedby="erp-employees-hint"
-          />
-          <span id="erp-employees-hint" className="pr-qty-hint">
-            Prices below update for {employees} employees.
-            {" "}{completeErp.includedEmployees} employees are included in every plan.
-          </span>
+        <div className="pr-section-head" id="erp-plans">
+          {isPage && <span className="pr-section-tag">Option 1</span>}
+          <h2>{completeErp.title}</h2>
+          <p>{completeErp.intro}</p>
         </div>
-
-        {/* =================================================
-            PRICING CARDS
-        ================================================= */}
 
         <div className="pricing1-grid pricing1-grid--3">
 
-          {completeErp.plans.map((plan) => {
+          {completeErp.plans.map((plan, index) => {
             const name = tierName(plan.tier);
-            const monthly = completeErpMonthly(plan.tier, employees);
 
             return (
               <div
@@ -262,43 +175,20 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
                   </div>
                 </div>
 
-                <PriceDisplay monthly={monthly} billing={billing} />
+                {index > 0 && (
+                  <p className="pr-includes pr-includes--card">Everything in the plan below, plus:</p>
+                )}
 
-                <p className="pr-card-rule">
-                  For {employees} employees. Includes {completeErp.includedEmployees} employees,
-                  then {formatSGD(plan.extraEmployee)} per extra employee / month.
-                </p>
-
-                <FeatureList
-                  features={[
-                    ...plan.features,
-                    ...completeErp.alsoIncluded.map((item) => `Also included: ${item}`),
-                  ]}
-                />
-
-                <nav className="pr-module-links" aria-label={`${name} tier features by module`}>
-                  {completeErp.moduleIds.map((id) => (
-                    <Link key={id} to={`/module-pricing/${id}/${plan.tier}/details`}>
-                      {modules[id].name}
-                    </Link>
-                  ))}
-                </nav>
+                <FeatureList features={plan.features} />
 
                 <div className="pr-card-actions">
                   <button
                     type="button"
-                    className="pricing1-card-button pr-btn-trial"
-                    onClick={() => openPlan(plan.tier, true)}
-                  >
-                    Request a free trial
-                  </button>
-
-                  <button
-                    type="button"
                     className="pricing1-card-button"
-                    onClick={() => openPlan(plan.tier, false)}
+                    onClick={() => setLeadPlan(completeErpLead(plan.tier))}
+                    aria-label={`Get pricing for ${completeErp.name} ${name}`}
                   >
-                    Request Pricing
+                    Get pricing
                     <span className="pricing1-button-arrow" aria-hidden="true"> →</span>
                   </button>
                 </div>
@@ -310,7 +200,7 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
         </div>
 
         {/* =================================================
-            CUSTOM QUOTE SECTION
+            CUSTOM QUOTE
         ================================================= */}
 
         <div className="pricing1-custom-box">
@@ -325,16 +215,13 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
           <div className="pricing1-custom-content">
             <h3>Need something different?</h3>
             <p>
-              Tell us what you need and we&apos;ll put together a custom quote that
-              fits your requirements and budget.
+              Need different plans for different modules? Tell us what you need and
+              we&apos;ll put together a custom quote.
             </p>
           </div>
 
           <div className="pricing1-custom-action">
-            <button
-              type="button"
-              onClick={() => setLeadPlan(customLead({ billing }))}
-            >
+            <button type="button" onClick={() => setLeadPlan(customLead())}>
               Request a custom quote
             </button>
 
@@ -348,117 +235,54 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
         </div>
 
         {/* =================================================
-            PRICING BY MODULE
+            OPTION 2: INDIVIDUAL MODULES (one section per module)
         ================================================= */}
 
         <div className="pr-block pr-modules" id="modules">
           {isPage && <span className="pr-section-tag">Option 2</span>}
           <h2>Individual modules</h2>
           <p className="pr-block-sub">
-            Need only some modules? Buy any module on its own, on the tier you need.
-            Need different tiers for different modules? Ask us for a custom quote.
+            Need only some modules? Choose any module on its own, on the plan you need.
           </p>
 
-          <div className="pr-module-nav pr-module-tabs" role="group" aria-label="Choose a module">
+          <nav className="pr-module-nav pr-module-tabs" aria-label="Jump to a module">
             {MODULE_ORDER.map((id) => (
-              <button
-                key={id}
-                type="button"
-                className={id === activeModule ? "active" : ""}
-                aria-pressed={id === activeModule}
-                onClick={() => setActiveModule(id)}
-              >
+              <a key={id} href={`#plans-${id}`}>
                 {modules[id].name}
-              </button>
+              </a>
             ))}
-          </div>
+          </nav>
 
-          <div className="pr-module-head">
-            <h3>{modules[activeModule].title}</h3>
-            <p>
-              SGD {moduleUnitLabel(modules[activeModule])}
-              {modules[activeModule].pricing.model === "per_unit" &&
-                <> · Min. {modules[activeModule].pricing.min} {modules[activeModule].pricing.unitPlural}</>}
-              {modules[activeModule].pricing.model === "flat" && <> · {modules[activeModule].pricing.note}</>}
-            </p>
-            {modules[activeModule].intro && <p>{modules[activeModule].intro}</p>}
+          {MODULE_ORDER.map((id) => (
+            <div className="pr-module-section" id={`plans-${id}`} key={id}>
+              <div className="pr-module-head">
+                <h3>
+                  <i className={modules[id].icon} aria-hidden="true"></i> {modules[id].title}
+                </h3>
+                {modules[id].note && <p>{modules[id].note}</p>}
+              </div>
 
-            <div className="pr-billing">
-              <BillingToggle billing={billing} onChange={setBilling} />
-              <PricingNote billing={billing} />
+              <ModuleTierGrid
+                moduleId={id}
+                onGetPricing={(tierId) => setLeadPlan(moduleLead(id, tierId))}
+              />
             </div>
-          </div>
-
-          <ModuleTierGrid
-            key={activeModule}
-            moduleId={activeModule}
-            billing={billing}
-            tierHeading="h4"
-            onSelectTier={(tierId, trial, quantity) =>
-              setLeadPlan(moduleLead({ moduleId: activeModule, tierId, billing, quantity, trial }))
-            }
-          />
-
-          {modules[activeModule].footnote && (
-            <p className="mp-footnote">{modules[activeModule].footnote}</p>
-          )}
-
-          <p className="pr-footnote pr-module-more">
-            <Link to={`/module-pricing/${activeModule}`}>
-              See the full {modules[activeModule].name} page and add-ons →
-            </Link>
-          </p>
+          ))}
         </div>
 
         {/* =================================================
-            CHEAPER THAN SEPARATELY
-        ================================================= */}
-
-        <div className="pr-block">
-          <h2>Cheaper than buying modules separately</h2>
-          <p className="pr-block-sub">
-            {comparisonTier} tier, per month, list prices.
-          </p>
-
-          <div className="pr-table-wrap" tabIndex={0} role="region" aria-label="Price comparison table">
-            <table className="pr-table">
-              <thead>
-                <tr>
-                  <th scope="col">Employees</th>
-                  <th scope="col">Separately</th>
-                  <th scope="col">Complete ERP {comparisonTier}</th>
-                  <th scope="col">Saving</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.map((row) => (
-                  <tr key={row.employees}>
-                    <th scope="row">{row.employees}</th>
-                    <td>{formatSGD(row.separately)}</td>
-                    <td>{formatSGD(row.complete)}</td>
-                    <td className="pr-saving">{row.savingPercent}%</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="pr-footnote">{comparisonFootnote()}</p>
-        </div>
-
-        {/* =================================================
-            ADD-ONS
+            ADD-ONS (names only)
         ================================================= */}
 
         <div className="pr-block" id="add-ons">
           <h2>Add-ons</h2>
           <p className="pr-block-sub">
-            Extend any plan. Items marked &quot;Coming soon&quot; are not available yet: choose
-            &quot;Notify me&quot; and we will tell you when they launch.
+            Extend any plan. Items marked &quot;Coming soon&quot; are on our roadmap and not
+            available yet.
           </p>
 
           <div className="pr-addon-grid">
-            {platformAddOns.map((addOn) => (
+            {addOns.map((addOn) => (
               <AddOnCard
                 key={addOn.code}
                 addOn={addOn}
@@ -469,13 +293,13 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
         </div>
 
         {/* =================================================
-            BILLING TERMS
+            PLAN TERMS
         ================================================= */}
 
         <div className="pr-block pr-terms">
-          <h2>Billing terms</h2>
+          <h2>Plan terms</h2>
           <ul>
-            {billingTerms.map((term) => (
+            {[...planTerms, "Each higher plan includes everything in the plan below."].map((term) => (
               <li key={term}>
                 <span className="pricing1-check" aria-hidden="true">✓</span>
                 <span>{term}</span>

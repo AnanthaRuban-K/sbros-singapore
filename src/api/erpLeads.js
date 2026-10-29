@@ -101,19 +101,13 @@ export const submitLead = async (payload, { fetchImpl = fetch } = {}) => {
 };
 
 /* =====================================================
-   PAYLOAD BUILDERS
+   PAYLOAD BUILDERS  (no prices: the sales team replies with pricing)
    selection = {
      kind: "complete" | "module" | "custom" | "addon",
-     planInterest: "BASIC" | "HRM-INTERMEDIATE" | "CUSTOM" | "ADDON-STORAGE",
-     label: "Complete ERP – Advanced" | "HRM – Intermediate" | "Extra storage",
-     billingCycle?: "Monthly" | "Annual prepay (save 15%)",
-     quantity?: number, quantityUnit?: "employees" | "users",
-     priceShown?: string,            // price as displayed to the visitor
-     freeTrial?: boolean, trialDays?: number,
+     planInterest: "Complete ERP - Advanced" | "HRM - Intermediate" | "Custom quote" | "Add-on - Training",
+     label: string,
      modules?: string[],
-     addOn?: { name, price },        // kind "addon"
-     notify?: boolean,               // add-on is "coming soon"
-     preselectedAddOns?: string[],   // e.g. add-ons in a bundle
+     addOn?: { name },               // kind "addon"
      addOnOptions?: [{ code, label }] // tick boxes shown in the form
    }
    values.addOns: labels of the add-ons ticked in the form
@@ -122,8 +116,7 @@ export const submitLead = async (payload, { fetchImpl = fetch } = {}) => {
 const clip = (value, max) => String(value || "").trim().slice(0, max);
 
 const requestTypeOf = (selection) => {
-  if (selection.kind === "addon") return selection.notify ? "Add-on: notify when available" : "Add-on request";
-  if (selection.freeTrial) return "Free trial request";
+  if (selection.kind === "addon") return "Add-on enquiry";
   if (selection.kind === "custom") return "Custom quote request";
   return "Pricing request";
 };
@@ -131,35 +124,12 @@ const requestTypeOf = (selection) => {
 export const buildRequirements = (selection, values, pageUrl) => {
   const lines = [];
 
-  if (selection.freeTrial) {
-    lines.push(`Free trial request (${selection.trialDays} days)`);
-  }
-
-  if (selection.notify) {
-    lines.push("Notify me when available");
-  }
-
   lines.push(`Request type: ${requestTypeOf(selection)}`);
-
-  if (selection.addOn) {
-    lines.push(`Add-on: ${selection.addOn.name} (${selection.addOn.price})`);
-  } else {
-    lines.push(`Plan: ${selection.label}`);
-  }
-
-  lines.push(`Plan code: ${selection.planInterest}`);
-
-  if (selection.billingCycle) lines.push(`Billing cycle: ${selection.billingCycle}`);
-
-  if (selection.quantity && selection.quantityUnit) {
-    lines.push(`Quantity: ${selection.quantity} ${selection.quantityUnit}`);
-  }
-
-  if (selection.priceShown) lines.push(`Price shown: ${selection.priceShown}`);
+  lines.push(selection.addOn ? `Add-on: ${selection.addOn.name}` : `Plan: ${selection.label}`);
 
   if (selection.modules?.length) lines.push(`Modules: ${selection.modules.join(", ")}`);
 
-  const addOns = [...(selection.preselectedAddOns || []), ...(values.addOns || [])];
+  const addOns = values.addOns || [];
   if (addOns.length) lines.push(`Add-ons: ${addOns.join("; ")}`);
 
   lines.push(`Number of employees: ${values.employees || "Not specified"}`);

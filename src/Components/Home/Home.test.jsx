@@ -14,17 +14,16 @@ describe("home page sections", () => {
 
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
     expect(screen.getByRole("link", { name: /Explore our ERP/ })).toHaveAttribute("href", "/products");
-    expect(screen.getByRole("link", { name: "See pricing" })).toHaveAttribute("href", "/Pricing");
-    expect(screen.getByRole("link", { name: "Recruitment" })).toHaveAttribute("href", "/module-pricing/recruitment");
+    expect(screen.getByRole("link", { name: "See plans" })).toHaveAttribute("href", "/Pricing");
+    expect(screen.getByRole("link", { name: "Recruitment" })).toHaveAttribute("href", "/Pricing#plans-recruitment");
     expect(screen.getByText("15-day free trial on ERP plans")).toBeInTheDocument();
   });
 
-  it("pricing teaser shows prices from the pricing data and links to each option", () => {
+  it("plans teaser shows no prices and links to each option", () => {
     inRouter(<HomePricingTeaser />);
 
-    expect(screen.getByText("SGD 150")).toBeInTheDocument();
-    expect(screen.getByText("SGD 4")).toBeInTheDocument();
-    expect(screen.getByText(/then SGD 4 per extra employee/)).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/SGD|\/ ?month|per (user|employee)|\d+%/);
+    expect(screen.getByText(/Discount for annual prepayment/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /See ERP plans/ })).toHaveAttribute("href", "/Pricing#erp-plans");
     expect(screen.getByRole("link", { name: /See module plans/ })).toHaveAttribute("href", "/Pricing#modules");
   });

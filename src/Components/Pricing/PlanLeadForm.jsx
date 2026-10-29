@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { LEAD_LIMITS, buildLeadPayload, submitLead } from "../../api/erpLeads";
-import { employeeRange } from "./pricingCalc";
 
 /* =========================================================
    PLAN LEAD FORM (modal)
@@ -80,35 +79,24 @@ const errorMessageFor = (error) => {
 };
 
 const titleFor = (plan) => {
-  if (plan.kind === "addon") {
-    return plan.notify ? `Notify me when ${plan.label} is available` : `Request ${plan.label}`;
-  }
-  if (plan.freeTrial) return `Request your ${plan.trialDays}-day free trial`;
+  if (plan.kind === "addon") return `Ask about ${plan.label}`;
   if (plan.kind === "custom") return "Request a custom quote";
-  return `Request pricing – ${plan.label} plan`;
+  return `Get pricing – ${plan.label}`;
 };
 
+// Never shows a price: the sales team replies with pricing
 const successTextFor = (plan) => {
-  if (plan.kind === "addon") {
-    return plan.notify
-      ? <>Thanks, we will let you know when <strong>{plan.label}</strong> is available.</>
-      : <>Thanks, our team will contact you about <strong>{plan.label}</strong>.</>;
-  }
-  return <>Thanks, our team will contact you about the <strong>{plan.label}</strong> plan.</>;
+  if (plan.kind === "addon") return `Thank you - our team will contact you about ${plan.label} within one business day.`;
+  if (plan.kind === "custom") return "Thank you - our team will contact you about your custom quote within one business day.";
+  return "Thank you - our team will send you pricing for your selected plan within one business day.";
 };
-
-// Pre-fill "Number of Employees" from the calculator
-const initialValuesFor = (plan) => ({
-  ...EMPTY_VALUES,
-  employees: plan.quantityUnit === "employees" ? employeeRange(plan.quantity) : "",
-});
 
 /* =========================================================
    COMPONENT
 ========================================================= */
 
 const PlanLeadForm = ({ plan, onClose }) => {
-  const [values, setValues] = useState(() => initialValuesFor(plan));
+  const [values, setValues] = useState(EMPTY_VALUES);
   const [addOnCodes, setAddOnCodes] = useState([]);
   const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState({});
@@ -314,7 +302,7 @@ const PlanLeadForm = ({ plan, onClose }) => {
         {status === "success" ? (
           <div className="plf-success" role="status">
             <div className="plf-success-icon" aria-hidden="true">✓</div>
-            <h2 id="plf-title">Thank you!</h2>
+            <h2 id="plf-title">Enquiry received</h2>
             <p>{successTextFor(plan)}</p>
             <button
               type="button"
@@ -328,12 +316,6 @@ const PlanLeadForm = ({ plan, onClose }) => {
           <form onSubmit={handleSubmit} noValidate>
             <h2 id="plf-title" className="plf-title">{titleFor(plan)}</h2>
 
-            {plan.freeTrial && (
-              <p className="plf-intro">
-                Our team will set up your account and email your login.
-              </p>
-            )}
-
             {/* SELECTED PLAN */}
             <div className="plf-plan">
               <span className="plf-plan-label">
@@ -341,27 +323,10 @@ const PlanLeadForm = ({ plan, onClose }) => {
               </span>
               <strong className="plf-plan-name">{plan.label}</strong>
               <div className="plf-chips">
-                {plan.billingCycle && (
-                  <span className="plf-chip">Billing: {plan.billingCycle}</span>
-                )}
-                {plan.freeTrial && (
-                  <span className="plf-chip">{plan.trialDays}-day free trial</span>
-                )}
-                {plan.quantity && plan.quantityUnit && (
-                  <span className="plf-chip">{plan.quantity} {plan.quantityUnit}</span>
-                )}
-                {plan.addOn && <span className="plf-chip">{plan.addOn.price}</span>}
-                {plan.notify && <span className="plf-chip">Coming soon</span>}
                 {plan.modules?.length > 0 && (
                   <span className="plf-chip">{plan.modules.join(", ")}</span>
                 )}
-                {plan.preselectedAddOns?.map((a) => (
-                  <span className="plf-chip" key={a}>{a}</span>
-                ))}
               </div>
-              {plan.priceShown && (
-                <span className="plf-plan-price">Price shown: {plan.priceShown}</span>
-              )}
             </div>
 
             <div className="enq-grid">

@@ -1,80 +1,43 @@
-import {
-  BILLING_LABELS,
-  TRIAL_DAYS,
-  allAddOns,
-  completeErp,
-  modules,
-} from "./pricingData";
-import { completeErpMonthly, describePrice, moduleMonthly, tierName } from "./pricingCalc";
+import { addOns, completeErp, modules, tierName } from "./pricingData";
 
 // =====================================================
 // Builds the `plan` object passed to <PlanLeadForm />.
+// planInterest (max 50 chars) is the plan as the sales team reads it,
+// e.g. "Complete ERP - Advanced" or "HRM - Intermediate".
+// No prices: the sales team replies with the base price.
 // See "selection" in src/api/erpLeads.js.
 // =====================================================
 
-const addOnText = (addOn) => `${addOn.name} (${addOn.price})`;
+// Available add-ons a visitor can tick in the enquiry form
+export const addOnOptions = addOns
+  .filter((a) => a.status === "available")
+  .map((a) => ({ code: a.code, label: a.name }));
 
-// Available add-ons a visitor can tick in the lead form
-export const addOnOptionsFor = (moduleId) =>
-  allAddOns
-    .filter((a) => a.status === "available")
-    .filter((a) => (moduleId ? !a.modules || a.modules.includes(moduleId) : !a.modules || a.modules.includes("hrm")))
-    .map((a) => ({ code: a.code, label: addOnText(a) }));
+const allModuleNames = () => completeErp.moduleIds.map((id) => modules[id].name);
 
 /* ---------- Complete ERP plan ---------- */
-export const completeErpLead = ({ tierId, billing, employees, trial = false }) => ({
-  kind: "complete",
-  planInterest: tierId.toUpperCase(),
-  label: `${completeErp.name} ${tierName(tierId)}`,
-  billingCycle: BILLING_LABELS[billing],
-  quantity: employees,
-  quantityUnit: "employees",
-  priceShown: describePrice(completeErpMonthly(tierId, employees), billing),
-  modules: completeErp.moduleIds.map((id) => modules[id].name),
-  freeTrial: trial,
-  trialDays: TRIAL_DAYS,
-  addOnOptions: addOnOptionsFor(null),
-});
+export const completeErpLead = (tierId) => {
+  const label = `${completeErp.name} - ${tierName(tierId)}`;
+  return { kind: "complete", planInterest: label, label, modules: allModuleNames(), addOnOptions };
+};
 
-/* ---------- single module tier ---------- */
-export const moduleLead = ({ moduleId, tierId, billing, quantity, trial = false }) => {
-  const module = modules[moduleId];
-  const unitPlural = module.pricing.unitPlural;
-
-  return {
-    kind: "module",
-    planInterest: `${moduleId}-${tierId}`.toUpperCase(),
-    label: `${module.name} – ${tierName(tierId)}`,
-    billingCycle: BILLING_LABELS[billing],
-    quantity: unitPlural ? quantity : null,
-    quantityUnit: unitPlural || null,
-    priceShown: describePrice(moduleMonthly(module, tierId, quantity), billing),
-    modules: [module.name],
-    freeTrial: trial,
-    trialDays: TRIAL_DAYS,
-    addOnOptions: addOnOptionsFor(moduleId),
-  };
+/* ---------- single module plan ---------- */
+export const moduleLead = (moduleId, tierId) => {
+  const label = `${modules[moduleId].name} - ${tierName(tierId)}`;
+  return { kind: "module", planInterest: label, label, modules: [modules[moduleId].name], addOnOptions };
 };
 
 /* ---------- custom quote ---------- */
-export const customLead = ({ billing, moduleId = null }) => ({
+export const customLead = () => ({
   kind: "custom",
-  planInterest: moduleId ? `CUSTOM-${moduleId.toUpperCase()}` : "CUSTOM",
-  label: moduleId ? `${modules[moduleId].name} – Custom` : "Custom",
-  billingCycle: BILLING_LABELS[billing],
-  modules: moduleId ? [modules[moduleId].name] : completeErp.moduleIds.map((id) => modules[id].name),
-  addOnOptions: addOnOptionsFor(moduleId),
+  planInterest: "Custom quote",
+  label: "Custom quote",
+  modules: allModuleNames(),
+  addOnOptions,
 });
 
-/* ---------- add-on request / notify ---------- */
-export const addOnLead = (addOn) => ({
-  kind: "addon",
-  planInterest: `ADDON-${addOn.code}`,
-  label: addOn.name,
-  addOn: { name: addOn.name, price: addOn.price },
-  notify: addOn.status === "coming_soon",
-});
-
-// Add-ons listed on a module page (all modules, plus module-specific ones like biometric for HRM)
-export const addOnsForModule = (moduleId) =>
-  allAddOns.filter((a) => !a.modules || a.modules.includes(moduleId));
+/* ---------- add-on enquiry ---------- */
+export const addOnLead = (addOn) => {
+  const label = `Add-on - ${addOn.name}`;
+  return { kind: "addon", planInterest: label, label: addOn.name, addOn: { name: addOn.name } };
+};
