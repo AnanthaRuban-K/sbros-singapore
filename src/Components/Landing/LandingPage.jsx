@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -9,16 +10,25 @@ const WHATSAPP = "6590214545";
 const PHONE = "+65 9021 4545";
 const EMAIL = "enquiry@sbrostech.com.sg";
 
-const ADDRESS =
+const SINGAPORE_ADDRESS =
   "27 Woodlands Industrial Park E1, #03-10, Singapore 757718";
 
-// EmailJS credentials from your ContactInfo1.jsx
+const INDIA_ADDRESS =
+  "No. 15/25, Madavilagam, Kandanvilai Post, Kanniyakumari District, Tamil Nadu - 629810";
+
+const SINGAPORE_MAP_URL =
+  "https://www.google.com/maps/search/?api=1&query=27+Woodlands+Industrial+Park+E1+Singapore+757718";
+
+const INDIA_MAP_URL =
+  "https://www.google.com/maps/place/SBros+Tech+Pvt+Ltd/@8.2056778,77.3243475,17z/";
+
+// EmailJS credentials
 const EMAILJS_SERVICE_ID = "service_9cg099a";
 const EMAILJS_TEMPLATE_ID = "template_qzmm58o";
 const EMAILJS_PUBLIC_KEY = "dEim8gAkIEVm2Gvjb";
 
 // =====================================================
-// SERVICES  [bootstrap icon class, title, description]
+// SERVICES
 // =====================================================
 
 const services = [
@@ -150,12 +160,10 @@ export default function LandingPage() {
 
   return (
     <div className="sb">
-
       {/* ================= NAVBAR ================= */}
 
       <header className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="container nav-inner">
-
           <a
             href="#top"
             className="nav-logo"
@@ -170,7 +178,6 @@ export default function LandingPage() {
           <a href="#contact" className="btn btn-red nav-cta">
             Book a Free Demo
           </a>
-
         </div>
       </header>
 
@@ -178,14 +185,10 @@ export default function LandingPage() {
 
       <section className="hero" id="top">
         <div className="container hero-grid">
-
           <div className="hero-text">
-
             <h1>
               Streamline Your Business with{" "}
-              <span className="red">
-                Smart ERP Solutions
-              </span>
+              <span className="red">Smart ERP Solutions</span>
             </h1>
 
             <p className="lead">
@@ -195,7 +198,6 @@ export default function LandingPage() {
             </p>
 
             <div className="btn-row">
-
               <a href="#contact" className="btn btn-red">
                 Book a Free Demo
               </a>
@@ -208,21 +210,16 @@ export default function LandingPage() {
               >
                 WhatsApp Us
               </a>
-
             </div>
-
           </div>
 
           <div className="hero-visual">
-
             <img
               src="/assets/img/hero/headimg5.png"
               alt="ERP software dashboard for business"
               className="hero-img"
             />
-
           </div>
-
         </div>
       </section>
 
@@ -230,7 +227,6 @@ export default function LandingPage() {
 
       <section className="section grey" id="services">
         <div className="container">
-
           <h2>Our Services</h2>
 
           <p className="sub">
@@ -238,10 +234,8 @@ export default function LandingPage() {
           </p>
 
           <div className="grid g3">
-
             {services.map(([icon, title, description]) => (
               <article className="card" key={title}>
-
                 <div className="ico">
                   <i className={`bi ${icon}`}></i>
                 </div>
@@ -249,10 +243,8 @@ export default function LandingPage() {
                 <h3>{title}</h3>
 
                 <p>{description}</p>
-
               </article>
             ))}
-
           </div>
         </div>
       </section>
@@ -261,7 +253,6 @@ export default function LandingPage() {
 
       <section className="section dark" id="erp">
         <div className="container">
-
           <h2>ERP That Runs Your Whole Business</h2>
 
           <p className="sub">
@@ -270,19 +261,16 @@ export default function LandingPage() {
           </p>
 
           <div className="grid g4">
-
             {modules.map((module) => (
               <div className="mod" key={module}>
                 {module}
               </div>
             ))}
-
           </div>
 
           <a href="#contact" className="btn btn-red">
             Request ERP Demo
           </a>
-
         </div>
       </section>
 
@@ -290,26 +278,20 @@ export default function LandingPage() {
 
       <section className="section dark" id="contact">
         <div className="container contact-grid">
-
           {/* ================= LEFT CONTACT INFO ================= */}
 
           <div className="contact-details">
-
             <img
               src="/assets/img/logo/sbros-logo1.png"
               alt="SBros Tech"
               className="logo logo-white-card"
             />
 
-            <span className="contact-tag">
-              GET IN TOUCH
-            </span>
+            <span className="contact-tag">GET IN TOUCH</span>
 
             <h2>
               Let's Start a{" "}
-              <span className="red">
-                Conversation
-              </span>
+              <span className="red">Conversation</span>
             </h2>
 
             <p className="sub">
@@ -318,11 +300,10 @@ export default function LandingPage() {
             </p>
 
             <div className="contact-info-list">
-
               {/* PHONE */}
 
               <a
-                href="tel:+6590214545"
+                href={`tel:${PHONE.replace(/\s/g, "")}`}
                 className="contact-info-item"
               >
                 <span className="contact-info-icon">
@@ -354,7 +335,7 @@ export default function LandingPage() {
               {/* SINGAPORE OFFICE */}
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=27+Woodlands+Industrial+Park+E1+Singapore+757718"
+                href={SINGAPORE_MAP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-info-item"
@@ -365,39 +346,54 @@ export default function LandingPage() {
 
                 <span className="contact-info-text">
                   <small>Singapore Office</small>
-                  <strong>{ADDRESS}</strong>
+                  <strong>{SINGAPORE_ADDRESS}</strong>
+                  {/* <small className="office-map-link">
+                    View on Google Maps ↗
+                  </small> */}
                 </span>
               </a>
 
+              {/* INDIA BRANCH - NEW */}
+
+              <a
+                href={INDIA_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-info-item"
+              >
+                <span className="contact-info-icon">
+                  <i className="bi bi-geo-alt"></i>
+                </span>
+
+                <span className="contact-info-text">
+                  <small>India Branch</small>
+                  <strong>{INDIA_ADDRESS}</strong>
+                  {/* <small className="office-map-link">
+                    View on Google Maps ↗
+                  </small> */}
+                </span>
+              </a>
             </div>
 
             <p className="contact-bottom-text">
               Have a project in mind?
               <strong> Let's make it happen.</strong>
             </p>
-
           </div>
 
           {/* ================= EMAILJS FORM ================= */}
 
           <div className="form form-card">
-
             <div className="form-heading">
-
               <div>
                 <span className="form-eyebrow">
                   DROP US A MESSAGE
                 </span>
 
-                <h3>
-                  Tell us about your project
-                </h3>
+                <h3>Tell us about your project</h3>
               </div>
 
-              <div className="form-number">
-                01
-              </div>
-
+              <div className="form-number">01</div>
             </div>
 
             <form
@@ -405,9 +401,7 @@ export default function LandingPage() {
               onSubmit={handleSubmit}
               className="emailjs-contact-form"
             >
-
               <div className="contact-form-grid">
-
                 {/* FIRST NAME */}
 
                 <label className="contact-field">
@@ -488,7 +482,6 @@ export default function LandingPage() {
                     required
                   />
                 </label>
-
               </div>
 
               {/* SUBMIT BUTTON */}
@@ -498,7 +491,6 @@ export default function LandingPage() {
                 className="btn btn-red emailjs-submit"
                 disabled={loading}
               >
-
                 <span>
                   {loading ? "Sending..." : "Send Message"}
                 </span>
@@ -510,7 +502,6 @@ export default function LandingPage() {
                       : "bi bi-arrow-up-right"
                   }
                 ></i>
-
               </button>
 
               {/* SUCCESS / ERROR MESSAGE */}
@@ -528,13 +519,11 @@ export default function LandingPage() {
               )}
 
               <p className="form-note">
-                Your information will be used to respond to your enquiry.
+                Your information will be used to respond to your
+                enquiry.
               </p>
-
             </form>
-
           </div>
-
         </div>
       </section>
 
@@ -542,19 +531,14 @@ export default function LandingPage() {
 
       <footer className="landing-footer">
         <div className="container footer-inner">
-
           <p>
             © {new Date().getFullYear()} SBROS TECH (S) PTE LTD.
             All rights reserved.
           </p>
 
-          <a href="#top">
-            Back to Top ↑
-          </a>
-
+          <a href="#top">Back to Top ↑</a>
         </div>
       </footer>
-
     </div>
   );
 }
