@@ -1,3 +1,4 @@
+import {HelmetProvider} from 'react-helmet-async';
 import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
@@ -52,6 +53,8 @@ const App = () => {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <HelmetProvider>
     <App />
+    </HelmetProvider>
   </StrictMode>
 );

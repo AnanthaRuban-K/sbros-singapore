@@ -25,6 +25,7 @@ const ProjectDetailsCenter1 = () => {
       ],
       video: "/assets/img/Video1.mp4",
       thumbnail: "/assets/img/thumb/image.png",
+      alt: "HRM software employee management module by SBROS Tech",
       tag: "PEOPLE",
     },
     {
@@ -42,6 +43,7 @@ const ProjectDetailsCenter1 = () => {
       ],
       video: "/assets/img/Video2.mp4",
       thumbnail: "/assets/img/thumb/image2.jpeg",
+      alt:"CRM customer relationship management software by SBROS Tech",
       tag: "CUSTOMERS",
     },
     {
@@ -59,6 +61,7 @@ const ProjectDetailsCenter1 = () => {
       ],
       video: "/assets/img/Video3.mp4",
       thumbnail: "/assets/img/thumb/image3.jpeg",
+      alt:"Finance and accounting management software by SBROS Tech",
       tag: "FINANCE",
     },
     {
@@ -76,6 +79,7 @@ const ProjectDetailsCenter1 = () => {
       ],
       video: "/assets/videos/procurement.mp4",
       thumbnail: "/assets/img/thumb/image4.jpeg",
+      alt:"Procurement and purchase management software by SBROS Tech",
       tag: "PURCHASING",
     },
     {
@@ -93,6 +97,7 @@ const ProjectDetailsCenter1 = () => {
       ],
       video: "/assets/videos/sales.mp4",
       thumbnail: "/assets/img/thumb/image5.jpeg",
+      alt:"Sales and order management software by SBROS Tech",
       tag: "SALES",
     },
     {
@@ -111,6 +116,7 @@ const ProjectDetailsCenter1 = () => {
       // No product video yet: the card shows the image without a play button
       video: "/assets/videos/sales.mp4",
       thumbnail: "/assets/img/thumb/image6.jpeg",
+      alt:"Recruitment and candidate management software by SBROS Tech",
       tag: "HIRING",
     },
   ];

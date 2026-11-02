@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet-async";
 
 const projects = [
   {
@@ -45,6 +46,21 @@ const projects = [
 
 function Testimonial5() {
   return (
+    <>
+      <Helmet>
+        <title>IT Projects & Business Solutions in Singapore | SBros Tech
+
+</title>
+        <meta
+          name="description"
+          content="Explore SBros Tech projects in Singapore and discover how our technology solutions support business needs across software, networking and digital services.
+"
+        />
+      </Helmet>
+      <link
+          rel="canonical"
+          href="https://sbrostech.com.sg/Projects"
+        />
     <section className="projects-section">
       <div className="container">
         <h2 className="section-title">Websites We Built</h2>
@@ -76,6 +92,7 @@ function Testimonial5() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

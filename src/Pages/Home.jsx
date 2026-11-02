@@ -1,3 +1,4 @@
+import {Helmet} from "react-helmet-async";
 import About1 from "../Components/About/About1";
 import Choose1 from "../Components/Choose/Choose1";
 import Project1 from "../Components/Project/Project1";
@@ -9,6 +10,19 @@ import HomeCta from "../Components/Home/HomeCta";
 
 const Home = () => {
     return (
+        <>
+      <Helmet>
+        <title>Business Software Solutions in Singapore | SBros Tech
+</title>
+        <meta
+          name="description"
+          content="SBros Tech offers IT solutions, software development, web development and digital marketing services in Singapore to support business growth."
+        />
+      </Helmet>
+      <link
+          rel="canonical"
+          href="https://sbrostech.com.sg/"
+        />
         <div className="home-page1">
 
             {/* ================= HERO (brand banner) ================= */}
@@ -49,6 +63,7 @@ const Home = () => {
             <HomeCta />
 
         </div>
+     </>
     );
 };
 

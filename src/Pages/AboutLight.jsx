@@ -1,4 +1,5 @@
- import About6 from "../Components/About/About6";
+import {Helmet} from "react-helmet-async";
+import About6 from "../Components/About/About6";
 import BreadCumb from "../Components/Common/BreadCumb";
 import Cta1 from "../Components/Cta/Cta1";
 
@@ -9,6 +10,19 @@ import Testimonial1 from "../Components/Testimonial/Testimonial1";
 
 const AboutLight = () => {
     return (
+         <>
+      <Helmet>
+        <title>Best IT Solutions in Singapore | About SBros Tech </title>
+        <meta
+          name="description"
+          content="Learn about SBros Tech, an IT company in Singapore offering software development, networking and digital solutions for businesses.
+"
+        />
+      </Helmet>
+      <link
+          rel="canonical"
+          href="https://sbrostech.com.sg/About-us"
+        />
         <div>
           
              <BreadCumb Title="About us"></BreadCumb>
@@ -27,6 +41,7 @@ const AboutLight = () => {
             <Vission1></Vission1>
            
         </div>
+    </>
     );
 };
 
