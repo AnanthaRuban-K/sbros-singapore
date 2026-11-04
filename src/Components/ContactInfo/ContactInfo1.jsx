@@ -1,10 +1,13 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactInfo1 = () => {
     const form = useRef();
+    const recaptchaRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState("");
+    const [captchaToken, setCaptchaToken] = useState(null);
 
     // =====================================================
     // SBROS TECH SINGAPORE OFFICE
@@ -24,6 +27,10 @@ const ContactInfo1 = () => {
     // =====================================================
     const sendEmail = (e) => {
         e.preventDefault();
+           if (!captchaToken) {
+        setStatus("captcha");
+        return;
+    }   
 
         setLoading(true);
         setStatus("");
@@ -36,12 +43,20 @@ const ContactInfo1 = () => {
                 "dEim8gAkIEVm2Gvjb"
             )
             .then(
-                () => {
-                    setLoading(false);
-                    setStatus("success");
+    () => {
+        setLoading(false);
+        setStatus("success");
 
-                    form.current.reset();
-                },
+        // Clear all form fields
+        form.current.reset();
+
+        // Reset CAPTCHA after successful submission
+        recaptchaRef.current?.reset();
+
+        // Clear CAPTCHA token
+        setCaptchaToken(null);
+    },
+                
                 (error) => {
                     setLoading(false);
                     setStatus("error");
@@ -444,8 +459,32 @@ const ContactInfo1 = () => {
                                             </div>
 
                                         </div>
+{/* ================= GOOGLE RECAPTCHA ================= */}
 
+<div className="col-12 mb-3">
 
+    <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+        onChange={(token) => {
+            setCaptchaToken(token);
+            setStatus("");
+        }}
+        onExpired={() => {
+            setCaptchaToken(null);
+        }}
+        onErrored={() => {
+            setCaptchaToken(null);
+        }}
+    />
+
+    {status === "captcha" && (
+        <p style={{ color: "red", marginTop: "8px" }}>
+            Please complete the reCAPTCHA.
+        </p>
+    )}
+
+</div>
                                         {/* ================= SEND BUTTON ================= */}
 
                                         <div className="col-12">
