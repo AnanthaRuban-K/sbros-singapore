@@ -1,3 +1,4 @@
+
 import { TIERS, modules } from "./pricingData";
 import { FeatureList } from "./PricingParts";
 
@@ -9,7 +10,11 @@ import { FeatureList } from "./PricingParts";
    onGetPricing(tierId) opens the enquiry form for that plan.
 ========================================================= */
 
-const ModuleTierGrid = ({ moduleId, onGetPricing, tierHeading: TierHeading = "h4" }) => {
+const ModuleTierGrid = ({
+  moduleId,
+  onGetPricing,
+  tierHeading: TierHeading = "h4",
+}) => {
   const module = modules[moduleId];
 
   return (
@@ -17,16 +22,26 @@ const ModuleTierGrid = ({ moduleId, onGetPricing, tierHeading: TierHeading = "h4
       {TIERS.map((t, index) => {
         const tier = module.tiers[t.id];
 
+        // Get the previous plan
+        const previousTier = TIERS[index - 1];
+
         return (
           <div className={`mp-card mp-${t.id}`} key={t.id}>
             <div className="mp-card-head">
               <TierHeading>{t.name}</TierHeading>
             </div>
 
-            {tier.limit && <div className="pr-limit">{tier.limit}</div>}
+            {tier.limit && (
+              <div className="pr-limit">
+                {tier.limit}
+              </div>
+            )}
 
+            {/* Display the previous plan name */}
             {index > 0 && (
-              <p className="pr-includes">Everything in the plan below, plus:</p>
+              <p className="pr-includes">
+               Includes everything in the {previousTier.name} plan, plus:
+              </p>
             )}
 
             <FeatureList

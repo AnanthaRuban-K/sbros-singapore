@@ -175,9 +175,17 @@ const Pricing1 = ({ headingTag: Heading = "h2" }) => {
                   </div>
                 </div>
 
-                {index > 0 && (
-                  <p className="pr-includes pr-includes--card">Everything in the plan below, plus:</p>
-                )}
+               {plan.tier === "intermediate" && (
+  <p className="pr-includes pr-includes--card">
+    Includes everything in the Basic plan, plus:
+  </p>
+)}
+
+{plan.tier === "advanced" && (
+  <p className="pr-includes pr-includes--card">
+    Includes everything in the Intermediate plan, plus:
+  </p>
+)}
 
                 <FeatureList features={plan.features} />
 
