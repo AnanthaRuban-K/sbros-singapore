@@ -1,36 +1,29 @@
+
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactInfo1 = () => {
     const form = useRef();
-    const recaptchaRef = useRef(null);
+
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState("");
-    const [captchaToken, setCaptchaToken] = useState(null);
 
     // =====================================================
     // SBROS TECH SINGAPORE OFFICE
     // =====================================================
-    const officeAddress =
-        "27 Woodlands Industrial Park E1, #03-10, Singapore 757718";
 
     const officeMapLink =
         "https://www.google.com/maps/place/27+Woodlands+Industrial+Park+E1,+%2303+10+E1,+Singapore+757718/@1.4553029,103.7957439,17z/data=!3m1!4b1!4m5!3m4!1s0x31da1314d2917679:0xcaef219f43ebed43!8m2!3d1.4553029!4d103.7983188";
 
-    // Exact coordinates from your Google Maps location
     const latitude = 1.4553029;
     const longitude = 103.7983188;
 
     // =====================================================
     // SEND EMAIL
     // =====================================================
+
     const sendEmail = (e) => {
         e.preventDefault();
-           if (!captchaToken) {
-        setStatus("captcha");
-        return;
-    }   
 
         setLoading(true);
         setStatus("");
@@ -43,20 +36,13 @@ const ContactInfo1 = () => {
                 "dEim8gAkIEVm2Gvjb"
             )
             .then(
-    () => {
-        setLoading(false);
-        setStatus("success");
+                () => {
+                    setLoading(false);
+                    setStatus("success");
 
-        // Clear all form fields
-        form.current.reset();
-
-        // Reset CAPTCHA after successful submission
-        recaptchaRef.current?.reset();
-
-        // Clear CAPTCHA token
-        setCaptchaToken(null);
-    },
-                
+                    // Clear all form fields after successful submission
+                    form.current.reset();
+                },
                 (error) => {
                     setLoading(false);
                     setStatus("error");
@@ -99,13 +85,11 @@ const ContactInfo1 = () => {
 
                     </div>
 
-
                     {/* =================================================
                         CONTACT CONTENT
                     ================================================== */}
 
                     <div className="row align-items-stretch">
-
 
                         {/* =================================================
                             LEFT SIDE
@@ -114,7 +98,6 @@ const ContactInfo1 = () => {
                         <div className="col-lg-5">
 
                             <div className="sbros-contact-info">
-
 
                                 {/* ================= INFO TOP ================= */}
 
@@ -138,13 +121,11 @@ const ContactInfo1 = () => {
 
                                 </div>
 
-
                                 {/* =================================================
                                     CONTACT ITEMS
                                 ================================================== */}
 
                                 <div className="sbros-contact-items">
-
 
                                     {/* ================= PHONE ================= */}
 
@@ -180,7 +161,6 @@ const ContactInfo1 = () => {
 
                                     </a>
 
-
                                     {/* ================= EMAIL ================= */}
 
                                     <a
@@ -214,7 +194,6 @@ const ContactInfo1 = () => {
                                         </div>
 
                                     </a>
-
 
                                     {/* =================================================
                                         OFFICE LOCATION
@@ -266,7 +245,6 @@ const ContactInfo1 = () => {
 
                                 </div>
 
-
                                 {/* ================= BOTTOM ================= */}
 
                                 <div className="sbros-contact-bottom">
@@ -285,7 +263,6 @@ const ContactInfo1 = () => {
 
                         </div>
 
-
                         {/* =================================================
                             RIGHT SIDE FORM
                         ================================================== */}
@@ -293,7 +270,6 @@ const ContactInfo1 = () => {
                         <div className="col-lg-7">
 
                             <div className="sbros-form-card">
-
 
                                 {/* ================= FORM TITLE ================= */}
 
@@ -317,7 +293,6 @@ const ContactInfo1 = () => {
 
                                 </div>
 
-
                                 {/* =================================================
                                     FORM
                                 ================================================== */}
@@ -328,7 +303,6 @@ const ContactInfo1 = () => {
                                 >
 
                                     <div className="row">
-
 
                                         {/* ================= FIRST NAME ================= */}
 
@@ -351,7 +325,6 @@ const ContactInfo1 = () => {
 
                                         </div>
 
-
                                         {/* ================= LAST NAME ================= */}
 
                                         <div className="col-md-6">
@@ -373,7 +346,6 @@ const ContactInfo1 = () => {
 
                                         </div>
 
-
                                         {/* ================= EMAIL ================= */}
 
                                         <div className="col-md-6">
@@ -393,7 +365,6 @@ const ContactInfo1 = () => {
                                             </div>
 
                                         </div>
-
 
                                         {/* ================= PHONE ================= */}
 
@@ -416,7 +387,6 @@ const ContactInfo1 = () => {
 
                                         </div>
 
-
                                         {/* ================= SUBJECT ================= */}
 
                                         <div className="col-12">
@@ -438,7 +408,6 @@ const ContactInfo1 = () => {
 
                                         </div>
 
-
                                         {/* ================= MESSAGE ================= */}
 
                                         <div className="col-12">
@@ -459,32 +428,7 @@ const ContactInfo1 = () => {
                                             </div>
 
                                         </div>
-{/* ================= GOOGLE RECAPTCHA ================= */}
 
-<div className="col-12 mb-3">
-
-    <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-        onChange={(token) => {
-            setCaptchaToken(token);
-            setStatus("");
-        }}
-        onExpired={() => {
-            setCaptchaToken(null);
-        }}
-        onErrored={() => {
-            setCaptchaToken(null);
-        }}
-    />
-
-    {status === "captcha" && (
-        <p style={{ color: "red", marginTop: "8px" }}>
-            Please complete the reCAPTCHA.
-        </p>
-    )}
-
-</div>
                                         {/* ================= SEND BUTTON ================= */}
 
                                         <div className="col-12">
@@ -511,7 +455,6 @@ const ContactInfo1 = () => {
 
                                             </button>
 
-
                                             {/* ================= SUCCESS ================= */}
 
                                             {status === "success" && (
@@ -527,7 +470,6 @@ const ContactInfo1 = () => {
                                                 </p>
 
                                             )}
-
 
                                             {/* ================= ERROR ================= */}
 
@@ -561,7 +503,6 @@ const ContactInfo1 = () => {
 
             </section>
 
-
             {/* =====================================================
                 MAP SECTION
             ====================================================== */}
@@ -569,7 +510,6 @@ const ContactInfo1 = () => {
             <section className="sbros-map-section">
 
                 <div className="container">
-
 
                     {/* ================= MAP HEADER ================= */}
 
@@ -589,21 +529,13 @@ const ContactInfo1 = () => {
 
                     </div>
 
-
                     {/* =================================================
                         MAP WRAPPER
                     ================================================== */}
 
                     <div className="sbros-map-wrapper">
 
-
-                        {/* =================================================
-                            GOOGLE MAP
-
-                            Coordinates:
-                            Latitude  : 1.4553029
-                            Longitude : 103.7983188
-                        ================================================== */}
+                        {/* ================= GOOGLE MAP ================= */}
 
                         <iframe
                             src={`https://www.google.com/maps?q=${latitude},${longitude}&z=17&output=embed`}
@@ -618,10 +550,7 @@ const ContactInfo1 = () => {
                             title="SBROS Tech Singapore Office Location"
                         ></iframe>
 
-
-                        {/* =================================================
-                            MAP CARD
-                        ================================================== */}
+                        {/* ================= MAP CARD ================= */}
 
                         <div className="sbros-map-card">
 
@@ -656,10 +585,7 @@ const ContactInfo1 = () => {
 
                         </div>
 
-
-                        {/* =================================================
-                            OPEN GOOGLE MAP BUTTON
-                        ================================================== */}
+                        {/* ================= DIRECTIONS BUTTON ================= */}
 
                         <a
                             href={officeMapLink}
