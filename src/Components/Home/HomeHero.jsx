@@ -60,7 +60,7 @@ const HomeHero = () => (
 
         <nav className="hm-hero-modules" aria-label="ERP modules">
           {MODULE_ORDER.map((id) => (
-            <Link key={id} to={`/Pricing#plans-${id}`}>
+            <Link key={id} to={`/pricing#plans-${id}`}>
               {modules[id].name}
             </Link>
           ))}
