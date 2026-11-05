@@ -33,7 +33,7 @@ const HomeHero = () => (
           <Link to="/products" className="hm-btn hm-btn-primary">
             Explore our ERP <span aria-hidden="true">→</span>
           </Link>
-          <Link to="/Pricing" className="hm-btn hm-btn-ghost">
+          <Link to="/pricing" className="hm-btn hm-btn-ghost">
             See plans
           </Link>
         </div>

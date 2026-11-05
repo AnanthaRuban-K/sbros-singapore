@@ -71,13 +71,13 @@ const expertiseList = [
 const relatedServices = [
   {
     title: "Network Solutions",
-    to: "/IT-Networking",
+    to: "/it-networking",
     icon: "/assets/img/icons/service-page-icon1.png",
     desc: "Strategic IT planning, network infrastructure design, and business process analysis to strengthen your technology foundation.",
   },
   {
     title: "Website Development",
-    to: "/Website-Development",
+    to: "/website-development",
     icon: "/assets/img/icons/service-page-icon2.png",
     desc: "Responsive and high-performance websites designed to provide an excellent digital experience across all devices.",
   },

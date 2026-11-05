@@ -549,7 +549,7 @@ const ServiceDetailsCenter3 = () => {
                                     <div>
 
                                         <h3>
-                                            <Link to="/Software-Development">
+                                            <Link to="/software-development">
                                                 Software Development
                                             </Link>
                                         </h3>
@@ -560,7 +560,7 @@ const ServiceDetailsCenter3 = () => {
                                         </p>
 
                                         <Link
-                                            to="/Software-Development"
+                                            to="/software-development"
                                             className="related-service-link"
                                         >
                                             Explore Service
@@ -584,7 +584,7 @@ const ServiceDetailsCenter3 = () => {
                                     <div>
 
                                         <h3>
-                                            <Link to="/IT-Networking">
+                                            <Link to="/it-networking">
                                                 IT Networking
                                             </Link>
                                         </h3>
@@ -595,7 +595,7 @@ const ServiceDetailsCenter3 = () => {
                                         </p>
 
                                         <Link
-                                            to="/IT-Networking"
+                                            to="/it-networking"
                                             className="related-service-link"
                                         >
                                             Explore Service

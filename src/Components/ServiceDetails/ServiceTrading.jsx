@@ -401,7 +401,7 @@ const ServiceTrading = () => {
                   </p>
 
                   <Link
-                    to="/contact"
+                    to="/contact-us"
                     className="trading-primary-btn"
                   >
                     Talk To Our Experts
@@ -503,7 +503,7 @@ const ServiceTrading = () => {
 
                   <div>
                     <h3>
-                      <Link to="/IT-Networking">
+                      <Link to="/it-networking">
                         IT Networking
                       </Link>
                     </h3>
@@ -514,7 +514,7 @@ const ServiceTrading = () => {
                     </p>
 
                     <Link
-                      to="/IT-Networking"
+                      to="/it-networking"
                       className="related-link"
                     >
                       Explore Service
@@ -536,7 +536,7 @@ const ServiceTrading = () => {
 
                   <div>
                     <h3>
-                      <Link to="/Software-Development">
+                      <Link to="/software-development">
                         Software Development
                       </Link>
                     </h3>
@@ -547,7 +547,7 @@ const ServiceTrading = () => {
                     </p>
 
                     <Link
-                      to="/Software-Development"
+                      to="/software-development"
                       className="related-link"
                     >
                       Explore Service

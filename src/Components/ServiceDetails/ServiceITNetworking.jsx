@@ -306,7 +306,7 @@ const ServiceITNetworking = () => {
                     </div>
 
                     <Link
-                      to="/ERP-Solutions"
+                      to="/erp-solutions"
                       className="arrow"
                     >
                       <i className="bi bi-arrow-right"></i>
@@ -315,7 +315,7 @@ const ServiceITNetworking = () => {
                     <div className="heading1">
 
                       <h4>
-                        <Link to="/ERP-Solutions">
+                        <Link to="/erp-solutions">
                           ERP Solutions
                         </Link>
                       </h4>
@@ -348,7 +348,7 @@ const ServiceITNetworking = () => {
                     </div>
 
                     <Link
-                      to="/Website-Development"
+                      to="/website-development"
                       className="arrow"
                     >
                       <i className="bi bi-arrow-right"></i>
@@ -357,7 +357,7 @@ const ServiceITNetworking = () => {
                     <div className="heading1">
 
                       <h4>
-                        <Link to="/Website-Development">
+                        <Link to="/website-development">
                           Website Development
                         </Link>
                       </h4>

@@ -508,7 +508,7 @@ const ServiceDetailsCenterERP = () => {
                                     <div>
 
                                         <h3>
-                                            <Link to="/Software-Development">
+                                            <Link to="/software-development">
                                                 Software Development
                                             </Link>
                                         </h3>
@@ -519,7 +519,7 @@ const ServiceDetailsCenterERP = () => {
                                         </p>
 
                                         <Link
-                                            to="/Software-Development"
+                                            to="/software-development"
                                             className="erp-related-link"
                                         >
                                             Explore Service
@@ -540,7 +540,7 @@ const ServiceDetailsCenterERP = () => {
                                     <div>
 
                                         <h3>
-                                            <Link to="/IT-Networking">
+                                            <Link to="/it-networking">
                                                 IT Networking
                                             </Link>
                                         </h3>
@@ -551,7 +551,7 @@ const ServiceDetailsCenterERP = () => {
                                         </p>
 
                                         <Link
-                                            to="/IT-Networking"
+                                            to="/it-networking"
                                             className="erp-related-link"
                                         >
                                             Explore Service

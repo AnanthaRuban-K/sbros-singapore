@@ -17,7 +17,7 @@ const HomeCta = () => (
       </div>
 
       <div className="hm-cta-actions">
-        <Link to="/Pricing" className="hm-btn hm-btn-primary">
+        <Link to="/pricing" className="hm-btn hm-btn-primary">
           Request a free trial <span aria-hidden="true">→</span>
         </Link>
         <Link to="/contact-us" className="hm-btn hm-btn-ghost">

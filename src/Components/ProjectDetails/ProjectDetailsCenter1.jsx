@@ -385,7 +385,7 @@ const ProjectDetailsCenter1 = () => {
                     CRM -> /Pricing#plans-crm  ... etc.
                 ============================================ */}
                 <Link
-                  to={`/Pricing#plans-${module.id}`}
+                  to={`/pricing#plans-${module.id}`}
                   className="erp-explore-btn"
                 >
                   <span>Explore Module</span>
