@@ -14,7 +14,8 @@ const ServicePage = () => {
 </title>
         <meta
           name="description"
-          content="Explore SBros Tech services in Singapore, including ERP solutions, software development, web development, digital marketing and IT networking.
+          content="Explore SBros Tech services in Singapore, including ERP, software development,
+           web development, digital marketing and IT networking.
 "
         />
       </Helmet>

@@ -15,7 +15,8 @@ const AboutLight = () => {
         <title>Best IT Solutions in Singapore | About SBros Tech </title>
         <meta
           name="description"
-          content="Learn about SBros Tech, an IT company in Singapore offering software development, networking and digital solutions for businesses.
+          content="Learn about SBros Tech, an IT company in Singapore offering software development,
+           networking and digital solutions for businesses.
 "
         />
       </Helmet>

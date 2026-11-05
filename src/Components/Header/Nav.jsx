@@ -12,39 +12,39 @@ export default function Nav({ setMobileToggle }) {
       </li>
 
       <li>
-        <Link to="/About-us" onClick={() => setMobileToggle(false)}>
+        <Link to="/about-us" onClick={() => setMobileToggle(false)}>
           About Us
         </Link>
       </li>
 
       <li className="menu-item-has-children">
-         <Link to="/Services" onClick={() => setMobileToggle(false)}>
+         <Link to="/services" onClick={() => setMobileToggle(false)}>
           Services
         </Link>
         <DropDown>
           <ul>
             <li>
-              <Link to="/ERP-Solutions" onClick={() => setMobileToggle(false)}>
+              <Link to="/erp-solutions" onClick={() => setMobileToggle(false)}>
                 ERP Solutions
               </Link>
             </li>
             <li>
-              <Link to="/Software-Development" onClick={() => setMobileToggle(false)}>
+              <Link to="/software-development" onClick={() => setMobileToggle(false)}>
                 Software Development
               </Link>
             </li>
             <li>
-              <Link to="/Website-Development" onClick={() => setMobileToggle(false)}>
+              <Link to="/website-development" onClick={() => setMobileToggle(false)}>
                 Website Development
               </Link>
             </li>
             <li>
-              <Link to="/IT-Networking" onClick={() => setMobileToggle(false)}>
+              <Link to="/it-networking" onClick={() => setMobileToggle(false)}>
                 IT Networking
               </Link>
             </li>
             <li>
-              <Link to="/Trading" onClick={() => setMobileToggle(false)}>
+              <Link to="/trading" onClick={() => setMobileToggle(false)}>
                 Trading
               </Link>
             </li>
@@ -97,14 +97,14 @@ export default function Nav({ setMobileToggle }) {
         </Link>
       </li> */}
       <li>
-        <Link to="/Pricing" onClick={() => setMobileToggle(false)}>
+        <Link to="/pricing" onClick={() => setMobileToggle(false)}>
           Plans
         </Link>
       </li>
 
 
       <li>
-        <Link to="/Projects" onClick={() => setMobileToggle(false)}>
+        <Link to="/projects" onClick={() => setMobileToggle(false)}>
           Projects
         </Link>
       </li>

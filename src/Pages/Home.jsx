@@ -16,7 +16,8 @@ const Home = () => {
 </title>
         <meta
           name="description"
-          content="SBros Tech offers IT solutions, software development, web development and digital marketing services in Singapore to support business growth."
+          content="SBros Tech offers IT solutions, software development, 
+          web development and digital marketing services in Singapore for business growth."
         />
       </Helmet>
       <link

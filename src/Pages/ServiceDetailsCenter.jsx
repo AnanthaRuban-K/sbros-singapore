@@ -12,7 +12,7 @@ const ServiceDetailsCenter = () => {
 </title>
         <meta
           name="description"
-          content="SBros Tech provides web development services in Singapore, creating professional websites to strengthen your online presence and support business goals.
+          content="SBros Tech offers web development in Singapore, creating professional websites to support your online presence and business goals.
 "
         />
       </Helmet>

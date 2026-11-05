@@ -11,7 +11,7 @@ const ServiceDetailsLeftDark = () => {
 </title>
         <meta
           name="description"
-          content="Explore trading services from SBros Tech in Singapore. Contact our team to learn how our offerings can support your business requirements."
+          content="Explore trading services from SBros Tech in Singapore. Contact our team to find solutions that meet your business requirements."
         />
       </Helmet>
       <link

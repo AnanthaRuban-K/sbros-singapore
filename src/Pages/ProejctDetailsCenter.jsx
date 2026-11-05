@@ -13,7 +13,7 @@ const ProejctDetailsCenter = () => {
 </title>
         <meta
           name="description"
-          content="Explore IT products from SBros Tech in Singapore. Discover technology solutions for your business needs and contact our team for more information."
+          content="Explore IT products from SBros Tech in Singapore and discover technology solutions for your business needs."
         />
       </Helmet>
       <link

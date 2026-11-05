@@ -53,7 +53,7 @@ function Testimonial5() {
 </title>
         <meta
           name="description"
-          content="Explore SBros Tech projects in Singapore and discover how our technology solutions support business needs across software, networking and digital services.
+          content="Explore SBros Tech projects in Singapore and see how our technology solutions support software, networking and digital service needs.
 "
         />
       </Helmet>

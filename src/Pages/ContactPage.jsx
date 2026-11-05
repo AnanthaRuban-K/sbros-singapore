@@ -14,7 +14,8 @@ const ContactPage = () => {
         </title>
                 <meta
                   name="description"
-                  content="Contact SBros Tech for ERP, software development, web development and IT networking services in Singapore. Discuss your business needs with us.
+                  content="Contact SBros Tech for ERP, software development, web development and
+                   IT networking services in Singapore. Let's discuss your needs.	
                   "
                 />
               </Helmet>

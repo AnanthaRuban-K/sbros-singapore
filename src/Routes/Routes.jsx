@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
           element: <Home></Home>,
         },
         {
-            path: "/About-us",
+            path: "/about-us",
             element:<AboutLight></AboutLight> ,
         }, 
         {
@@ -75,23 +75,23 @@ export const router = createBrowserRouter([
           element:<ServicePage></ServicePage> ,
         }, 
         {
-          path: "/Software-Development",
+          path: "/software-development",
           element:<ServiceDetailsLeft></ServiceDetailsLeft> ,
         }, 
         {
-          path: "/IT-Networking",
+          path: "/it-networking",
           element:<ServiceITNetworking></ServiceITNetworking>,
         },
         {
-          path: "/Trading",
+          path: "/trading",
           element:<ServiceTrading></ServiceTrading>,
         }, 
         {
-          path: "/ERP-Solutions",
+          path: "/erp-solutions",
           element:<ServiceDetailsRight></ServiceDetailsRight> ,
         },
         {
-          path: "/Website-Development",
+          path: "/website-development",
           element:<ServiceDetailsCenter></ServiceDetailsCenter>,
         },                                  
         {
@@ -107,7 +107,7 @@ export const router = createBrowserRouter([
           element:<ProjectDetailsRight></ProjectDetailsRight>,
         }, 
         {
-          path: "/Products",
+          path: "/products",
           element:<ProejctDetailsCenter></ProejctDetailsCenter>,
         },                       
         {
@@ -135,7 +135,7 @@ export const router = createBrowserRouter([
           element:<BlogDetailsCenter></BlogDetailsCenter>,
         },    
         {
-          path: "/Pricing",
+          path: "/pricing",
           element:<Pricing></Pricing> ,
         },  
 {
@@ -152,7 +152,7 @@ export const router = createBrowserRouter([
           element:<ContactPage></ContactPage> ,
         }, 
         {
-  path: "/terms",
+  path: "/terms-and-conditions",
   element: <TermsAndConditions />,
 },         
 {

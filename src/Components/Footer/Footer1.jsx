@@ -72,11 +72,11 @@ const Footer1 = () => {
               <h3>Services We Offer</h3>
 
               <ul className="menu-list">
-                <li><Link to="/ERP-Solutions">ERP Solutions</Link></li>
-                <li><Link to="/Software-Development">Software Development</Link></li>
-                <li><Link to="/Website-Development">Website Development</Link></li>
-                <li><Link to="/IT-Networking">IT Networking</Link></li>
-                <li><Link to="/Trading">Trading</Link></li>
+                <li><Link to="/erp-solutions">ERP Solutions</Link></li>
+                <li><Link to="/software-development">Software Development</Link></li>
+                <li><Link to="/website-development">Website Development</Link></li>
+                <li><Link to="/it-networking">IT Networking</Link></li>
+                <li><Link to="/trading">Trading</Link></li>
               </ul>
             </div>
           </div>
@@ -87,9 +87,9 @@ const Footer1 = () => {
               <h3>Useful Links</h3>
 
               <ul className="menu-list">
-                <li><Link to="/About-us">About us</Link></li>
+                <li><Link to="/about-us">About us</Link></li>
                 <li><Link to="/services">Services</Link></li>
-                <li><Link to="/Products">Products</Link></li>
+                <li><Link to="/products">Products</Link></li>
                 <li><Link to="/contact-us">Contact us</Link></li>
               </ul>
             </div>
@@ -198,14 +198,15 @@ const Footer1 = () => {
             <div className="col-md-5">
               <div className="coppyright">
                 <p>
-                  Copyright @2024{" "}
+                  Copyright @2026{" "}
                   <a
-                    href="https://sbrostech.com.sg/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SBROS TECH (S) PTE LTD
-                  </a>
+  href="https://sbrostech.com.sg/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="copyright-company"
+>
+  SBROS TECH (S) PTE LTD
+</a>
                   . All Rights Reserved
                 </p>
               </div>
@@ -214,7 +215,7 @@ const Footer1 = () => {
             {/* TERMS / PRIVACY */}
             <div className="col-md-7">
               <div className="coppyright right-area">
-                <Link to="/terms">Terms &amp; Conditions</Link>
+                <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
                 <Link to="/privacy-policy">Privacy Policy</Link>
               </div>
             </div>

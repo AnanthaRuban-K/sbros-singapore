@@ -12,7 +12,8 @@ const ServiceDetailsLeft = () => {
 </title>
         <meta
           name="description"
-          content="SBros Tech delivers software development services in Singapore, helping businesses address operational needs with practical software solutions."
+          content="SBros Tech provides software development in Singapore,
+           helping businesses meet operational needs with practical software solutions."
         />
       </Helmet>
       <link

@@ -10158,7 +10158,14 @@ a.header__search.header-search-btn p {
 
 
 
+.copyright-company {
+    color: #e5202d !important;
+    font-weight: 600;
+}
 
+.copyright-company:hover {
+    color: #ffffff !important;
+}
 /* Copyright - Keep Everything in One Line */
 .copyright-area .coppyright p {
   white-space: nowrap !important;

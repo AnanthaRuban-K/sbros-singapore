@@ -11,7 +11,7 @@ const ServiceDetailsLeftDark = () => {
 </title>
         <meta
           name="description"
-          content="Get IT networking services in Singapore from SBros Tech for business connectivity, network infrastructure and reliable communication between systems."
+          content="Get IT networking services in Singapore from SBros Tech for business connectivity, network infrastructure and reliable communication."
         />
       </Helmet>
       <link

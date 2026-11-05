@@ -12,7 +12,8 @@ const ServiceDetailsRight = () => {
 </title>
         <meta
           name="description"
-          content="Discover ERP software solutions in Singapore with SBros Tech to streamline business processes, improve efficiency and manage daily operations."
+          content="Discover ERP software in Singapore with SBros Tech
+           to streamline business processes, improve efficiency and manage daily operations."
         />
       </Helmet>
       <link
