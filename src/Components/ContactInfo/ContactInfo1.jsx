@@ -412,18 +412,19 @@ const ContactInfo1 = () => {
                     </div>
 
                     <div className="sbros-map-wrapper">
-                        <iframe
-                            src={`https://www.google.com/maps?q=${latitude},${longitude}&z=17&output=embed`}
-                            width="100%"
-                            height="450"
-                            style={{ border: 0 }}
-                            loading="lazy"
-                            allowFullScreen
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="SBROS Tech Singapore Office Location"
-                        ></iframe>
+                        
+ <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5321902439787!2d103.7980744919986!3d1.454839849282296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da132461eced91%3A0xe00c5aebd32c11d8!2sSBros%20Tech(S)%20Pte%20Ltd!5e0!3m2!1sen!2sin!4v1793866530347!5m2!1sen!2sin"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="SBros Tech Singapore Location"
+                />
 
-                        <div className="sbros-map-card">
+                        {/* <div className="sbros-map-card">
                             <div className="sbros-map-pin">📍</div>
 
                             <div>
@@ -443,7 +444,7 @@ const ContactInfo1 = () => {
                                     #03-10, Singapore 757718
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
 
                         <a
                             href={officeMapLink}
