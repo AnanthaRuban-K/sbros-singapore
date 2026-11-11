@@ -141,9 +141,9 @@ const ProjectDetailsCenter1 = () => {
             </span>
 
             <h2>
-              Different Modules.
+             Integrated Business Solutions
               <br />
-              <span>One Connected Business.</span>
+              <span>for Singapore Businesses</span>
             </h2>
 
             <p>

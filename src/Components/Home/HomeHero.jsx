@@ -20,13 +20,12 @@ const HomeHero = () => (
         <span className="hm-hero-tag">SBros Tech (S) Pte Ltd · Singapore</span>
 
         <h1>
-          Powering Businesses With <span>Software Built for Growth</span>
+      <span>Software and ERP Solutions</span> for Businesses in Singapore
+ 
         </h1>
 
         <p>
-          We deliver innovative, secure, and scalable IT solutions that simplify
-          operations, enhance efficiency, and empower businesses to achieve
-          sustainable growth.
+          SBros Tech provides professional IT solutions in Singapore, including software development, ERP solutions, website development and IT networking, to help businesses improve their operations and grow efficiently. 
         </p>
 
         <div className="hm-hero-actions">

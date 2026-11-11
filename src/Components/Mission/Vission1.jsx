@@ -79,8 +79,8 @@ const Vission1 = () => {
 
 
                 <h2>
-                  Technology That
-                  <strong> Moves Business Forward.</strong>
+                  Technology Solutions to 
+                  <strong> Help your Business Grow</strong>
                 </h2>
 
 
@@ -91,20 +91,12 @@ const Vission1 = () => {
 
 
                 <p className="overview-description">
-                  SBROS TECH (S) PTE LTD is a technology company based in Singapore
-                  with a branch presence in India , focused on delivering
-                  practical and innovative digital solutions for modern
-                  businesses. We bring together expertise from both locations
-                  to provide reliable, scalable, and business-focused
-                  technology solutions.
+                  SBROS TECH (S) PTE LTD is an IT solutions company based in Singapore, with a branch presence in India. We provide reliable and innovative IT solutions in Singapore, helping businesses improve efficiency and achieve their goals through practical, scalable technology.
                 </p>
 
 
                 <p className="overview-description">
-                  From custom software and websites to e-commerce, business
-                  portals, digital marketing, and network solutions, we combine
-                  technology with business understanding to build solutions
-                  that are reliable, scalable, and ready for the future.
+                  From custom software development and ERP solutions to website development, digital marketing, e-commerce and IT networking, we deliver business-focused solutions tailored to your requirements. Our team combines expertise from Singapore and India to support businesses with reliable technology and long-term growth.
                 </p>
 
 
@@ -207,8 +199,8 @@ const Vission1 = () => {
                   </h3>
 
                   <p>
-                    We understand your business needs and create technology
-                    solutions that support your goals.
+                    We provide reliable IT solutions in Singapore to meet your business needs and support growth.
+
                   </p>
 
                 </div>
@@ -248,8 +240,8 @@ const Vission1 = () => {
                   </h3>
 
                   <p>
-                    We use modern and reliable technologies to build practical
-                    digital solutions.
+                    We use modern technology to deliver quality software development and digital solutions.
+
                   </p>
 
                 </div>
@@ -289,8 +281,8 @@ const Vission1 = () => {
                   </h3>
 
                   <p>
-                    Our solutions are designed to adapt, scale, and grow along
-                    with your business.
+                    Our ERP and custom software solutions grow with your business and changing needs.
+
                   </p>
 
                 </div>
@@ -330,8 +322,8 @@ const Vission1 = () => {
                   </h3>
 
                   <p>
-                    We remain connected with our clients to provide dependable
-                    long-term technical support.
+                   We provide dependable IT support in Singapore to keep your business systems running smoothly.
+
                   </p>
 
                 </div>

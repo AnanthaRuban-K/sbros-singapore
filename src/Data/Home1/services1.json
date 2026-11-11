@@ -2,7 +2,7 @@
   {
     "image": "/assets/img/service/digitalmarketing.png",
     "title": "ERP Solutions",
-    "desc": "Smart ERP solutions designed to simplify operations, boost productivity, streamline workflows, and support better business decisions.",   
+    "desc": "Smart ERP solutions in Singapore that streamline business operations, automate workflows, and improve productivity with an integrated business management system.",   
     "btnText": "Learn More",
     "btnLink": "/erp-solutions",
     "addClass": "col-lg-4"
@@ -12,7 +12,7 @@
      "imageWidth": "150px",
     "imageHeight": "90px",
     "title": "Software Development",
-    "desc": "Custom software designed to simplify work and improve performance. Built to support your business growth with smart solutions.",   
+    "desc": "We can provide you with custom software development solutions to fit your business requirements, increasing productivity and helping you grow in the long term.",   
     "btnText": "Learn More",
     "btnLink": "/software-development",
     "addClass": "col-lg-6"
@@ -20,7 +20,7 @@
   {
     "image": "/assets/img/service/website.jpeg",
     "title": "Website Development",
-    "desc": "Build a strong online presence with responsive websites designed to attract visitors, improve engagement, and support business growth.",   
+    "desc": "Build responsive, SEO-friendly websites in Singapore to strengthen your online presence and support business growth.",   
     "btnText": "Learn More",
     "btnLink": "/website-development",
     "addClass": "col-lg-6"
@@ -28,7 +28,7 @@
   {
     "image": "/assets/img/service/network.jpg",
     "title": "IT Networking",
-    "desc": "Reliable network solutions that ensure secure connectivity, smooth performance, and seamless business communication.",   
+    "desc": "Get reliable IT networking solutions in Singapore for secure connectivity, smooth performance and better business communication.",   
     "btnText": "Learn More",
     "btnLink": "/it-networking",
     "addClass": "col-lg-4"
@@ -37,7 +37,7 @@
   {
     "image": "/assets/img/service/trading.png",
     "title": "Trading",
-    "desc": "Trading services that connect businesses to reliable markets, suppliers, and opportunities through efficient and secure solutions.",   
+    "desc": "Access reliable IT trading solutions in Singapore with quality technology products and business-focused services.",   
     "btnText": "Learn More",
     "btnLink": "/trading",
     "addClass": "col-lg-4"

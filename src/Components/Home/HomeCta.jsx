@@ -9,7 +9,8 @@ const HomeCta = () => (
   <section className="hm-cta">
     <div className="container hm-cta-inner">
       <div className="hm-cta-text">
-        <h2>Ready to simplify your business operations?</h2>
+        <h2>Ready to improve your business with intelligent IT solutions?
+</h2>
         <p>
           Request a {TRIAL_DAYS}-day free trial, or talk to our team about the right
           plan for your business.

@@ -2,31 +2,31 @@
   {
     "icon": "/assets/img/icons/service-page-icon1.png",
     "title": "ERP Solutions",
-    "desc": "Smart ERP solutions that simplify business operations, streamline workflows, improve productivity, and support better business decisions.",
+    "desc": "Smart ERP solutions are provided at SBros Tech to help you manage your day to day operations. Our ERP software will help you manage your business better and make informed decisions.",
     "btnLink": "/erp-solutions"
   },
   {
     "icon": "/assets/img/icons/service-page-icon2.png",
     "title": "Software Development",
-    "desc": "Custom software solutions that simplify business processes, improve operational efficiency, enhance productivity, and support business growth.",
+    "desc": "Our bespoke software development solutions help you simplify your business processes. Our software solutions will help you become more efficient and increase your productivity.",
     "btnLink": "/software-development"
   },
   {
     "icon": "/assets/img/icons/service-page-icon3.png",
     "title": "Website Development",
-    "desc": "Professional websites that strengthen your online presence, improve customer engagement, enhance user experience, and support business growth.",
+    "desc": "Build a strong online presence with our professional web development solutions. Our solutions will help you create a business focussed website which will improve your users experience and help engage customers.",
     "btnLink": "/website-development"
   },
   {
     "icon": "/assets/img/icons/service-page-icon4.png",
     "title": "IT Networking",
-    "desc": "Reliable IT networking solutions that ensure secure connectivity, smooth performance, efficient communication, and seamless business operations.",
+    "desc": "Reliable IT networking solutions are provided at SBros Tech to help you keep your systems secure, running smoothly and help your business communicate efficiently.",
     "btnLink": "/it-networking"
   },
   {
     "icon": "/assets/img/icons/service-page-icon5.png",
     "title": "Trading",
-    "desc": "Smart trading solutions that connect businesses with reliable opportunities, efficient processes, secure operations, and sustainable business growth.",
+    "desc": "SBros Tech provide trading solutions to help your business connect to reliable opportunities. Our solutions will help your business run efficiently.",
     "btnLink": "/trading"
   }
 ]

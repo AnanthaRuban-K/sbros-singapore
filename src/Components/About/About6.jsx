@@ -104,10 +104,7 @@ const About6 = ({
                 </div>
 
                 <p>
-                  "By combining deep technology expertise with strategic
-                  thinking, SBROS enables businesses to enhance operational
-                  efficiency, strengthen their digital presence, and achieve
-                  long-term success."
+                  "SBros Tech is committed to helping businesses in Singapore become more efficient, enhance their digital presence and achieve long term business growth by having extensive knowledge in technology and providing innovative IT solutions."
                 </p>
 
               </div>

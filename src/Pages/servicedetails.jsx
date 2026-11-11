@@ -3,7 +3,7 @@
     "slug": "software-development",
     "title": "Software Development",
     "image": "/assets/img/service/service-details-img.png",
-    "intro": "Welcome to SBROS Tech (S) Pte Ltd, your trusted partner for comprehensive software development services tailored to meet your business needs. Our team of experienced developers is dedicated to delivering high-quality, scalable, and innovative software solutions that drive real business growth.",
+    "intro": "  your trusted partner for comprehensive software development services tailored to meet your business needs. Our team of experienced developers is dedicated to delivering high-quality, scalable, and innovative software solutions that drive real business growth.",
     "approach": "At SBROS Tech, we take a client-centric approach to software development, prioritizing your unique requirements and objectives. Our process begins with a thorough understanding of your business goals, target audience, and technical specifications.",
     "expertise": [
       "Frontend: HTML, CSS, JavaScript, React, Angular, Vue.js",

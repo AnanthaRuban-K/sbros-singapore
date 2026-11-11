@@ -39,12 +39,15 @@ const Home = () => {
             <About1
                 image1="/assets/img/about/about5.jpg"
                 image2="/assets/img/about/about1img1.jpeg"
-                Title="Empowering Businesses with Smarter Software Solutions"
-                content="SBros empowers businesses with innovative, secure, and scalable software solutions designed to simplify operations and accelerate growth. From customized software and web development to business applications and digital solutions, we help organizations improve efficiency, make smarter decisions, and unlock their full potential."
+                Title=" Smart IT Solutions to Drive Business Growth in Singapore "
+                content="We help businesses in Singapore streamline operations and improve productivity through reliable IT solutions, custom software development and ERP systems. Our team delivers practical, scalable and business-focused technology solutions tailored to your requirements. 
+
+
+"
                 featurelist={[
-                    "Turning business challenges into smarter software solutions.",
-                    "Driving business growth through innovative digital solutions.",
-                    "Empowering businesses with technology built for the future.",
+                    "Solve business challenges with reliable IT solutions in Singapore.",
+                    "Help your business grow using innovative digital and IT solutions.",
+                    "Grow your business with reliable software development solutions ",
                 ]}
             />
 
