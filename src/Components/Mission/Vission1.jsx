@@ -1,6 +1,121 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// =====================================================
+// FAQ DATA  (3 categories x 4 questions)
+// =====================================================
+
+const faqGroups = [
+  {
+    title: "General Questions",
+    icon: "bi-chat-dots",
+    items: [
+      {
+        q: "What do SBros Tech do?",
+        a: (
+          <>
+            SBros Tech (S) PTE LTD is an IT solutions provider based in
+            Singapore, with a branch in India. We provide ERP solutions,
+            software development, web development, digital marketing and IT
+            networking. For more information on how we can help your business
+            using our technology solutions, please visit our{" "}
+            <Link to="/contact-us" className="sbfaq-link">
+              Contact Us
+            </Link>{" "}
+            page.
+          </>
+        ),
+      },
+      {
+        q: "Where is SBros Tech based?",
+        a: "We are based in Singapore and have a branch in India.",
+      },
+      {
+        q: "Why is SBros Tech a trustworthy technology partner?",
+        a: "We provide practical, scalable and trustworthy IT solutions using our technical knowledge and business knowledge.",
+      },
+      {
+        q: "Which businesses can benefit from SBros Tech?",
+        a: "Start-ups, small businesses and larger businesses can benefit from our software, ERP, web and digital solutions.",
+      },
+    ],
+  },
+  {
+    title: "IT Services & Solutions",
+    icon: "bi-cpu",
+    items: [
+      {
+        q: "What IT services does SBros Tech provide?",
+        a: (
+          <>
+            We provide bespoke software, web development, e-commerce, business
+            portals, digital marketing and IT networking in Singapore. Please{" "}
+            <Link to="/contact-us" className="sbfaq-link">
+              Contact Us
+            </Link>{" "}
+            to discuss your business needs.
+          </>
+        ),
+      },
+      {
+        q: "Do you provide bespoke software development?",
+        a: "Yes! We provide bespoke software solutions to help your business manage its workflow, automate processes and be more efficient.",
+      },
+      {
+        q: "Do you provide web & e-commerce development?",
+        a: "Yes! We can provide professional web development and e-commerce solutions to help your business.",
+      },
+      {
+        q: "How can IT solutions help my business be more efficient?",
+        a: "IT solutions can help reduce manual tasks, keep information organised, improve communication and make your daily operations run more efficiently.",
+      },
+    ],
+  },
+  {
+    title: "ERP Software & Business Solutions",
+    icon: "bi-diagram-3",
+    items: [
+      {
+        q: "What ERP solutions do you provide?",
+        a: (
+          <>
+            We provide ERP software. This includes modules for HRM, Finance &
+            Accounts, Sales, Procurement, CRM & Recruitment. Businesses can
+            choose to purchase the full ERP or individual modules. Please{" "}
+            <Link to="/contact-us" className="sbfaq-link">
+              Contact Us
+            </Link>{" "}
+            to find the right solution for you.
+          </>
+        ),
+      },
+      {
+        q: "How can ERP software help my business?",
+        a: "ERP software can help link different parts of your business. This can help companies manage their information, track operations and improve communication between departments.",
+      },
+      {
+        q: "Can I purchase individual modules?",
+        a: "Yes! You can purchase individual modules.",
+      },
+      {
+        q: "How do I choose the right ERP software?",
+        a: "Think about the size of your business, what your daily operations involve, what features you need, your budget and future growth. Choosing the right modules can help make managing your business easier.",
+      },
+    ],
+  },
+];
+
 const Vission1 = () => {
+  // one open question per category card (first one open by default)
+  const [openItems, setOpenItems] = useState({ 0: 0, 1: 0, 2: 0 });
+
+  const toggleItem = (groupIndex, itemIndex) => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [groupIndex]: prev[groupIndex] === itemIndex ? null : itemIndex,
+    }));
+  };
+
   return (
     <>
       {/* =========================================================
@@ -79,7 +194,7 @@ const Vission1 = () => {
 
 
                 <h2>
-                  Technology Solutions to 
+                  Technology Solutions to
                   <strong> Help your Business Grow</strong>
                 </h2>
 
@@ -205,11 +320,6 @@ const Vission1 = () => {
 
                 </div>
 
-
-                {/* <div className="why-card-arrow">
-                  <i className="bi bi-arrow-up-right"></i>
-                </div> */}
-
               </div>
 
             </div>
@@ -245,11 +355,6 @@ const Vission1 = () => {
                   </p>
 
                 </div>
-
-
-                {/* <div className="why-card-arrow">
-                  <i className="bi bi-arrow-up-right"></i>
-                </div> */}
 
               </div>
 
@@ -287,11 +392,6 @@ const Vission1 = () => {
 
                 </div>
 
-
-                {/* <div className="why-card-arrow">
-                  <i className="bi bi-arrow-up-right"></i>
-                </div> */}
-
               </div>
 
             </div>
@@ -328,11 +428,6 @@ const Vission1 = () => {
 
                 </div>
 
-{/* 
-                <div className="why-card-arrow">
-                  <i className="bi bi-arrow-up-right"></i>
-                </div> */}
-
               </div>
 
             </div>
@@ -342,6 +437,147 @@ const Vission1 = () => {
 
         </div>
 
+      </section>
+
+
+      {/* =========================================================
+          FREQUENTLY ASKED QUESTIONS  (3 category cards)
+      ========================================================= */}
+
+      <section className="sbfaq">
+        <div className="container">
+
+          <div className="sbfaq-head">
+            <div className="sbfaq-label">
+              <span></span>
+              FAQ
+            </div>
+
+            <h2>
+              Frequently Asked <strong>Questions</strong>
+            </h2>
+
+            <p>
+              Quick answers about SBros Tech, our IT services and ERP
+              solutions.
+            </p>
+          </div>
+
+          <div className="row g-4 sbfaq-grid">
+            {faqGroups.map((group, gi) => (
+              <div className="col-lg-4" key={group.title}>
+                <div className={`sbfaq-card sbfaq-card--${gi + 1}`}>
+
+                  {/* Card header */}
+                  <div className="sbfaq-card-head">
+                    <span className="sbfaq-card-bgnum" aria-hidden="true">
+                      {String(gi + 1).padStart(2, "0")}
+                    </span>
+
+                    <div className="sbfaq-card-icon">
+                      <i className={`bi ${group.icon}`}></i>
+                    </div>
+
+                    <div className="sbfaq-card-title">
+                      <h3>{group.title}</h3>
+                      <small>{group.items.length} Questions</small>
+                    </div>
+                  </div>
+
+                  {/* Questions */}
+                  <div className="sbfaq-card-body">
+                    {group.items.map((item, ii) => {
+                      const isOpen = openItems[gi] === ii;
+                      const panelId = `sbfaq-a-${gi}-${ii}`;
+
+                      return (
+                        <div
+                          className={`sbfaq-item ${isOpen ? "is-open" : ""}`}
+                          key={item.q}
+                        >
+                          <button
+                            type="button"
+                            className="sbfaq-q"
+                            aria-expanded={isOpen}
+                            aria-controls={panelId}
+                            onClick={() => toggleItem(gi, ii)}
+                          >
+                            <span>{item.q}</span>
+                            <span className="sbfaq-icon" aria-hidden="true"></span>
+                          </button>
+
+                          <div className="sbfaq-a" id={panelId} role="region">
+                            <div>
+                              <p>{item.a}</p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =========================================================
+          CALL TO ACTION
+      ========================================================= */}
+
+      <section className="sbcta">
+        <div className="container">
+          <div className="sbcta-box">
+
+            <div className="sbcta-text">
+              <span className="sbcta-label">
+                <i className="bi bi-rocket-takeoff"></i>
+                Let&apos;s Work Together
+              </span>
+
+              <h2>Ready to Take Your Business Forward?</h2>
+
+              <p>
+                Discover how SBros Tech can support your business with reliable
+                IT solutions, custom software and ERP systems. Connect with our
+                team to explore the right solutions for your business.
+              </p>
+
+              <div className="sbcta-actions">
+                <Link to="/services" className="sbcta-btn sbcta-btn--solid">
+                  Explore Our Services
+                  <i className="bi bi-arrow-right"></i>
+                </Link>
+
+                <Link to="/contact-us" className="sbcta-btn sbcta-btn--ghost">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+
+            <div className="sbcta-stack" aria-hidden="true">
+              <div className="sbcta-chip sbcta-chip--1">
+                <i className="bi bi-code-slash"></i>
+                <span>Custom Software</span>
+              </div>
+
+              <div className="sbcta-chip sbcta-chip--2">
+                <i className="bi bi-diagram-3"></i>
+                <span>ERP Systems</span>
+              </div>
+
+              <div className="sbcta-chip sbcta-chip--3">
+                <i className="bi bi-shield-check"></i>
+                <span>Reliable IT Solutions</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
     </>

@@ -1,8 +1,106 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+// =====================================================
+// FAQ DATA  (3 groups x 3 questions)
+// =====================================================
+const faqGroups = [
+  {
+    title: "ERP Software & Business Management",
+    icon: "bi bi-diagram-3-fill",
+    items: [
+      {
+        q: "How can I contact SBros Tech to find the right ERP software in Singapore?",
+        a: (
+          <>
+            You can{" "}
+            <Link to="/contact-us" className="erp-faq-link">
+              contact us
+            </Link>{" "}
+            to discuss your business needs and find the right ERP solution for
+            your company.
+          </>
+        ),
+      },
+      {
+        q: "What is ERP software, and how does it help businesses?",
+        a: "ERP software connects different business operations in one platform, helping businesses improve efficiency and manage daily activities.",
+      },
+      {
+        q: "What makes SBros ERP suitable for businesses in Singapore?",
+        a: "SBros ERP brings HRM, CRM, Finance, Procurement, Sales and Recruitment together in one integrated platform.",
+      },
+    ],
+  },
+  {
+    title: "ERP Modules & Features",
+    icon: "bi bi-grid-1x2-fill",
+    items: [
+      {
+        q: "How can I contact SBros Tech to learn more about ERP modules?",
+        a: (
+          <>
+            <Link to="/contact-us" className="erp-faq-link">
+              Contact our team
+            </Link>{" "}
+            to understand the available ERP modules and choose the features
+            that match your business requirements.
+          </>
+        ),
+      },
+      {
+        q: "What modules are included in SBros ERP software?",
+        a: "SBros ERP includes HRM, CRM, Finance, Procurement, Sales and Recruitment modules.",
+      },
+      {
+        q: "Can I manage HR, finance and sales in one ERP system?",
+        a: "Yes. You can manage employee records, financial activities, customer details and sales operations through one connected platform.",
+      },
+    ],
+  },
+  {
+    title: "ERP Pricing, Plans & Free Trial",
+    icon: "bi bi-tags-fill",
+    items: [
+      {
+        q: "How can I contact SBros Tech for ERP pricing in Singapore?",
+        a: (
+          <>
+            <Link to="/contact-us" className="erp-faq-link">
+              Contact our team
+            </Link>{" "}
+            to discuss ERP pricing, available plans and the best package for
+            your business.
+          </>
+        ),
+      },
+      {
+        q: "What ERP pricing plans does SBros Tech offer?",
+        a: "We offer Basic, Intermediate and Advanced plans with full ERP packages and individual module options.",
+      },
+      {
+        q: "Does SBros Tech offer a free ERP trial?",
+        a: "Yes. You can try SBros ERP with a 15-day free trial, which can be extended to 30 days on request.",
+      },
+    ],
+  },
+];
+
 const ProjectDetailsCenter1 = () => {
   const [activeVideo, setActiveVideo] = useState(null);
+
+  // FAQ state: which category tab + which question is open
+  const [faqGroup, setFaqGroup] = useState(0);
+  const [faqOpen, setFaqOpen] = useState(0);
+
+  const selectFaqGroup = (index) => {
+    setFaqGroup(index);
+    setFaqOpen(0);
+  };
+
+  const toggleFaq = (index) => {
+    setFaqOpen((current) => (current === index ? null : index));
+  };
 
   // =====================================================
   // ERP MODULES - 6 MODULES
@@ -16,7 +114,7 @@ const ProjectDetailsCenter1 = () => {
       icon: "bi bi-people-fill",
       title: "Human Resource Management",
       shortTitle: "HRM",
-      text: "Build a smarter workforce with centralized employee management and streamlined HR operations.",
+      text: "Manage employee records, documents, departments and salary details with our HRM software in Singapore.",
       features: [
         "Employee Profiles",
         "Employee Documents",
@@ -34,7 +132,7 @@ const ProjectDetailsCenter1 = () => {
       icon: "bi bi-person-lines-fill",
       title: "Customer Relationship Management",
       shortTitle: "CRM",
-      text: "Turn every lead into an opportunity with powerful customer tracking and follow-up management.",
+      text: "Track leads, manage customer details and follow-ups with our CRM software.",
       features: [
         "Lead Management",
         "Lead Assignment",
@@ -50,9 +148,9 @@ const ProjectDetailsCenter1 = () => {
       id: "finance",
       number: "03",
       icon: "bi bi-wallet-fill",
-      title: "Finance",
+      title: "Financial Management",
       shortTitle: "FINANCE",
-      text: "Keep your business financially organized with powerful transaction, invoice and reporting tools.",
+      text: "Manage accounts, invoices, income, expenses and financial reports with our ERP finance module.",
       features: [
         "Accounts Management",
         "Income & Expense Tracking",
@@ -68,9 +166,9 @@ const ProjectDetailsCenter1 = () => {
       id: "procurement",
       number: "04",
       icon: "bi bi-cart-check-fill",
-      title: "Procurement",
+      title: "Purchase Management",
       shortTitle: "PROCUREMENT",
-      text: "Simplify purchasing from material requests to supplier quotations and purchase orders.",
+      text: "Simplify purchasing, supplier quotations and purchase orders with our procurement management software.",
       features: [
         "Material Master",
         "Purchase Requests",
@@ -86,9 +184,9 @@ const ProjectDetailsCenter1 = () => {
       id: "sales",
       number: "05",
       icon: "bi bi-bag-check-fill",
-      title: "Sales",
+      title: "Sales Management",
       shortTitle: "SALES",
-      text: "Manage products, services, quotations, sales orders and customers through one connected sales platform.",
+      text: "Manage products, quotations, sales orders and customer information with our sales management software.",
       features: [
         "Product & Service Management",
         "Quotation Management",
@@ -104,9 +202,9 @@ const ProjectDetailsCenter1 = () => {
       id: "recruitment",
       number: "06",
       icon: "bi bi-person-badge-fill",
-      title: "Recruitment",
+      title: "Recruitment Management",
       shortTitle: "RECRUITMENT",
-      text: "Hire faster with job openings, a candidate pipeline, interview scheduling and offer approvals in one place.",
+      text: "Manage job openings, candidates, interviews and hiring processes with our recruitment management software.",
       features: [
         "Job Openings",
         "Candidate Pipeline",
@@ -141,16 +239,30 @@ const ProjectDetailsCenter1 = () => {
             </span>
 
             <h2>
-             Integrated Business Solutions
+              One ERP System.
               <br />
-              <span>for Singapore Businesses</span>
+              <span>Complete Business Management.</span>
             </h2>
 
             <p>
-              Stop switching between disconnected systems.
-              Bring your entire business into one intelligent
-              platform where every operation works together.
+
+              
+              Manage your entire business with all-in-one ERP software in
+              Singapore. Connect HR, CRM, Finance, Sales, Procurement and
+              Recruitment in one integrated platform to simplify operations
+              and improve productivity.
             </p>
+
+            <div className="erp-hero-actions">
+              <a href="#erp-modules" className="erp-hero-btn erp-hero-btn--primary">
+                Explore Our Products
+                <i className="bi bi-arrow-down"></i>
+              </a>
+
+              <Link to="/contact-us" className="erp-hero-btn erp-hero-btn--ghost">
+                Contact Us
+              </Link>
+            </div>
 
           </div>
 
@@ -274,16 +386,21 @@ const ProjectDetailsCenter1 = () => {
       {/* =====================================================
           ERP SHOWCASE
       ====================================================== */}
-      <section className="erp-showcase">
+      <section className="erp-showcase" id="erp-modules">
 
         <div className="erp-showcase-heading">
           <div>
-            <span>EXPLORE THE ECOSYSTEM</span>
+            <span>EXPLORE THE ERP MODULES</span>
             <h2>
-              One Platform.
+              One Integrated ERP System
               <br />
-              <em>Every Operation.</em>
+              <em>for Every Business Operation</em>
             </h2>
+            <p>
+              Manage your business efficiently with integrated ERP software in
+              Singapore, connecting essential business operations through six
+              powerful modules.
+            </p>
           </div>
         </div>
 
@@ -403,6 +520,136 @@ const ProjectDetailsCenter1 = () => {
 
         </div>
 
+      </section>
+
+
+      {/* =====================================================
+          FAQ  (dark section, category tabs + numbered accordion)
+      ====================================================== */}
+      <section className="erp-faq">
+
+        <div className="erp-faq-glow erp-faq-glow--one"></div>
+        <div className="erp-faq-glow erp-faq-glow--two"></div>
+
+        <div className="erp-faq-inner">
+
+          <div className="erp-faq-head">
+            <span className="erp-faq-label">FAQ</span>
+
+            <h2>
+              Frequently Asked <em>Questions</em>
+            </h2>
+          </div>
+
+          {/* ---------- Category tabs ---------- */}
+          <div className="erp-faq-tabs" role="tablist" aria-label="FAQ categories">
+            {faqGroups.map((group, gi) => (
+              <button
+                key={group.title}
+                type="button"
+                role="tab"
+                aria-selected={faqGroup === gi}
+                className={`erp-faq-tab ${faqGroup === gi ? "is-active" : ""}`}
+                onClick={() => selectFaqGroup(gi)}
+              >
+                <i className={group.icon}></i>
+                <span>{group.title}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* ---------- Questions ---------- */}
+          <div className="erp-faq-list" key={faqGroup} role="tabpanel">
+            {faqGroups[faqGroup].items.map((item, ii) => {
+              const isOpen = faqOpen === ii;
+              const panelId = `erp-faq-a-${faqGroup}-${ii}`;
+
+              return (
+                <div
+                  className={`erp-faq-item ${isOpen ? "is-open" : ""}`}
+                  key={item.q}
+                >
+                  <button
+                    type="button"
+                    className="erp-faq-q"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => toggleFaq(ii)}
+                  >
+                    <span className="erp-faq-num">
+                      {String(ii + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="erp-faq-text">{item.q}</span>
+
+                    <span className="erp-faq-icon" aria-hidden="true"></span>
+                  </button>
+
+                  <div className="erp-faq-a" id={panelId} role="region">
+                    <div>
+                      <p>{item.a}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FINAL CTA
+      ====================================================== */}
+      <section className="erp-cta">
+        <div className="erp-cta-box">
+
+          <div className="erp-cta-copy">
+            <span className="erp-cta-label">
+              <i className="bi bi-stars"></i>
+              SBROS ERP
+            </span>
+
+            <h2>Ready to Simplify Your Business with ERP Software?</h2>
+
+            <p>
+              Manage your business operations with SBros ERP Software in
+              Singapore. Explore our six integrated modules and find the right
+              ERP solution for your business.
+            </p>
+
+            <div className="erp-cta-actions">
+              <Link to="/pricing" className="erp-cta-btn erp-cta-btn--solid">
+                Start Free Trial
+                <i className="bi bi-arrow-right"></i>
+              </Link>
+
+              <Link to="/contact-us" className="erp-cta-btn erp-cta-btn--ghost">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          {/* mini orbit: the six modules around the ERP core */}
+          <div className="erp-cta-orbit" aria-hidden="true">
+            <div className="erp-cta-ring"></div>
+
+            <div className="erp-cta-core">ERP</div>
+
+            {modules.map((module, index) => (
+              <span
+                className="erp-cta-node"
+                key={module.id}
+                style={{ "--i": index }}
+              >
+                <i className={module.icon}></i>
+              </span>
+            ))}
+          </div>
+
+        </div>
       </section>
 
 
