@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../../Data/home3/faq1.json";
 
@@ -6,9 +7,7 @@ const ServiceDetailsCenter3 = () => {
     const [openItemIndex, setOpenItemIndex] = useState(0);
 
     const handleItemClick = (index) => {
-        setOpenItemIndex(
-            openItemIndex === index ? -1 : index
-        );
+        setOpenItemIndex(openItemIndex === index ? -1 : index);
     };
 
     /* =====================================================
@@ -26,7 +25,6 @@ const ServiceDetailsCenter3 = () => {
             url: "https://firstchoicehub.com.sg/",
             tag: "Corporate Website",
         },
-
         {
             number: "02",
             title: "ANS Fresh & Frozen",
@@ -37,7 +35,6 @@ const ServiceDetailsCenter3 = () => {
             url: "https://ansfreshmeat.com.sg/",
             tag: "E-Commerce",
         },
-
         {
             number: "03",
             title: "SASAN Construction",
@@ -48,7 +45,6 @@ const ServiceDetailsCenter3 = () => {
             url: "https://www.sasansg.com/",
             tag: "Corporate Website",
         },
-
         {
             number: "04",
             title: "Gold Sea Group",
@@ -64,22 +60,14 @@ const ServiceDetailsCenter3 = () => {
     return (
         <div className="website-service-page">
 
-            {/* =====================================================
-                MAIN SERVICE AREA
-            ===================================================== */}
-
             <div className="service-details-area-all sp">
-
                 <div className="container">
 
                     <div className="website-service-content">
 
-                        {/* =================================================
-                            HERO / INTRO
-                        ================================================= */}
+                        {/* HERO / INTRO */}
 
                         <section className="website-intro-section">
-
                             <div className="website-intro-content">
 
                                 <span className="website-label">
@@ -87,21 +75,22 @@ const ServiceDetailsCenter3 = () => {
                                 </span>
 
                                 <h1>
-                                    Websites That Turn
-                                    <span> Visitors Into Customers</span>
+                                    Grow Your Business with Website
+                                    <span> Design & Development </span>
                                 </h1>
 
                                 <p>
-                                    A website is more than a digital brochure —
-                                    it is your strongest sales tool, working
-                                    around the clock. We design and build fast,
-                                    responsive and SEO-ready websites that don't
-                                    just look good, but convert visitors into
-                                    leads and customers.
+                                    SBros Tech provides professional website
+                                    development services in Singapore to help
+                                    businesses build a strong online presence.
+                                    We design and develop responsive,
+                                    fast-loading and SEO-friendly websites that
+                                    showcase your services, improve user
+                                    experience and help turn visitors into
+                                    potential customers.
                                 </p>
 
                                 <div className="website-intro-points">
-
                                     <div>
                                         <i className="bi bi-check-circle-fill"></i>
                                         <span>Responsive Design</span>
@@ -116,316 +105,252 @@ const ServiceDetailsCenter3 = () => {
                                         <i className="bi bi-check-circle-fill"></i>
                                         <span>Fast Performance</span>
                                     </div>
-
                                 </div>
 
                             </div>
 
                             <div className="website-intro-image">
-
                                 <img
                                     src="/assets/img/service/website.jpg"
-                                    alt="Website Development"
+                                    alt="Website Development Services in Singapore"
                                 />
 
                                 <div className="intro-floating-card">
-
                                     <i className="bi bi-globe2"></i>
 
                                     <div>
                                         <strong>Digital Presence</strong>
                                         <span>Built for Growth</span>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </section>
 
 
-                        {/* =================================================
-                            FEATURES
-                        ================================================= */}
+                        {/* FEATURES */}
 
                         <section className="website-feature-section">
 
                             <div className="website-section-title">
-
                                 <span>OUR APPROACH</span>
 
                                 <h2>
                                     Built For Performance.
                                     <br />
-                                    Designed For Growth.
+                                    Designed For Business Growth.
                                 </h2>
 
                                 <p>
-                                    Every website we create combines modern
-                                    design, performance and business-focused
-                                    functionality.
+                                    We develop websites that combine modern
+                                    design, responsive layouts and
+                                    business-focused functionality.
                                 </p>
-
                             </div>
-
 
                             <div className="website-feature-grid">
 
                                 <div className="website-feature-card">
-
                                     <div className="feature-icon">
                                         <i className="bi bi-phone"></i>
                                     </div>
 
-                                    <span className="feature-number">
-                                        01
-                                    </span>
+                                    <span className="feature-number">01</span>
 
-                                    <h3>
-                                        Responsive & Fast
-                                    </h3>
+                                    <h3>Responsive & Fast</h3>
 
                                     <p>
-                                        Every website adapts seamlessly across
-                                        desktop, tablet and mobile devices with
-                                        performance optimized for fast loading.
+                                        We build responsive, SEO-friendly
+                                        websites optimized for speed,
+                                        performance, and seamless experiences
+                                        across all devices.
                                     </p>
-
                                 </div>
 
-
                                 <div className="website-feature-card">
-
                                     <div className="feature-icon">
                                         <i className="bi bi-bullseye"></i>
                                     </div>
 
-                                    <span className="feature-number">
-                                        02
-                                    </span>
+                                    <span className="feature-number">02</span>
 
-                                    <h3>
-                                        Built To Convert
-                                    </h3>
+                                    <h3>Built To Convert</h3>
 
                                     <p>
-                                        We design around the customer journey
-                                        with clear calls-to-action and simple
-                                        navigation.
+                                        We create user-friendly website
+                                        designs with intuitive navigation
+                                        and clear calls-to-action to improve
+                                        engagement and conversions.
                                     </p>
-
                                 </div>
 
-
                                 <div className="website-feature-card">
-
                                     <div className="feature-icon">
                                         <i className="bi bi-search"></i>
                                     </div>
 
-                                    <span className="feature-number">
-                                        03
-                                    </span>
+                                    <span className="feature-number">03</span>
 
-                                    <h3>
-                                        SEO Ready
-                                    </h3>
+                                    <h3>SEO Ready</h3>
 
                                     <p>
-                                        Clean structure and search-friendly
-                                        development help your website become
-                                        easier to discover online.
+                                        We develop SEO-friendly websites
+                                        with clean code and optimized
+                                        structure to improve search engine
+                                        visibility and online discoverability.
                                     </p>
-
                                 </div>
 
                             </div>
-
                         </section>
 
 
-                        {/* =================================================
-                            WEBSITE SERVICES
-                        ================================================= */}
+                        {/* WEBSITE SERVICES */}
 
                         <section className="website-services-section">
 
                             <div className="website-section-title">
-
                                 <span>WHAT WE BUILD</span>
 
-                                <h2>
-                                    Complete Website Solutions
-                                </h2>
+                                <h2>Complete Website Solutions</h2>
 
                                 <p>
-                                    From business websites to e-commerce
-                                    platforms, we build digital experiences
-                                    around your business goals.
+                                    We build responsive, SEO-friendly
+                                    websites that strengthen your online
+                                    presence and support business growth.
                                 </p>
-
                             </div>
-
 
                             <div className="website-services-list">
 
                                 <div className="website-service-item">
                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                        <i className="bi bi-star-fill"></i>
+                                    </span>
 
                                     <div>
                                         <strong>Corporate Websites</strong>
                                         <p>
                                             Professional websites that build
-                                            trust and strengthen your brand.
+                                            brand trust and credibility.
                                         </p>
                                     </div>
                                 </div>
 
-
                                 <div className="website-service-item">
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                    <span className="erp-check">
+                                        <i className="bi bi-star-fill"></i>
+                                    </span>
 
                                     <div>
                                         <strong>Business Websites</strong>
                                         <p>
-                                            Modern websites designed to present
-                                            your products and services clearly.
+                                            Modern websites that showcase
+                                            your business and services.
                                         </p>
                                     </div>
                                 </div>
 
-
                                 <div className="website-service-item">
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                    <span className="erp-check">
+                                        <i className="bi bi-star-fill"></i>
+                                    </span>
 
                                     <div>
-                                        <strong>E-Commerce</strong>
+                                        <strong>E-Commerce Websites</strong>
                                         <p>
-                                            User-friendly online stores built
-                                            for products, orders and growth.
+                                            Online stores designed for
+                                            smooth shopping and sales.
                                         </p>
                                     </div>
                                 </div>
 
-
                                 <div className="website-service-item">
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                    <span className="erp-check">
+                                        <i className="bi bi-star-fill"></i>
+                                    </span>
+
                                     <div>
                                         <strong>CMS Websites</strong>
                                         <p>
-                                            Easy-to-manage content systems for
-                                            growing businesses.
+                                            Easy-to-manage websites for
+                                            flexible content updates.
                                         </p>
                                     </div>
                                 </div>
 
-
                                 <div className="website-service-item">
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                    <span className="erp-check">
+                                        <i className="bi bi-star-fill"></i>
+                                    </span>
 
                                     <div>
                                         <strong>Landing Pages</strong>
                                         <p>
-                                            Conversion-focused pages designed
-                                            for campaigns and lead generation.
+                                            SEO-friendly pages designed
+                                            to generate quality leads.
                                         </p>
                                     </div>
                                 </div>
 
-
                                 <div className="website-service-item">
-                                     <span className="erp-check">
-    <i className="bi bi-star-fill"></i>
-</span>
+                                    <span className="erp-check">
+                                        <i className="bi bi-star-fill"></i>
+                                    </span>
 
                                     <div>
                                         <strong>Website Maintenance</strong>
                                         <p>
-                                            Continuous updates, improvements
-                                            and technical support.
+                                            Reliable support to keep your
+                                            website secure and updated.
                                         </p>
                                     </div>
                                 </div>
 
                             </div>
-
                         </section>
 
 
-                        {/* =================================================
-                            PROJECT SHOWCASE
-                        ================================================= */}
+                        {/* PROJECT SHOWCASE */}
 
                         <section className="website-project-section">
 
                             <div className="project-heading">
-
                                 <div>
-
-                                    <span>
-                                        OUR WORK
-                                    </span>
-
-                                    <h2>
-                                        Websites We've Built
-                                    </h2>
-
+                                    <span>OUR WORK</span>
+                                    <h2>Websites We've Built</h2>
                                 </div>
-
-                               
-
                             </div>
-
 
                             <div className="project-showcase-grid">
 
                                 {projects.map((project, index) => (
-
                                     <div
                                         className="website-project-card"
                                         key={index}
                                     >
 
-                                        {/* IMAGE */}
-
                                         <div className="project-image">
-
                                             <img
                                                 src={project.image}
-                                                alt={project.title}
+                                                alt={`${project.title} website development project`}
                                             />
 
                                             <div className="project-overlay">
-
                                                 <a
                                                     href={project.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="project-view-btn"
+                                                    aria-label={`View ${project.title} website`}
                                                 >
                                                     <i className="bi bi-arrow-up-right"></i>
                                                 </a>
-
                                             </div>
 
                                             <span className="project-tag">
                                                 {project.tag}
                                             </span>
-
                                         </div>
-
-
-                                        {/* CONTENT */}
 
                                         <div className="project-content">
 
@@ -437,13 +362,9 @@ const ServiceDetailsCenter3 = () => {
                                                 {project.category}
                                             </span>
 
-                                            <h3>
-                                                {project.title}
-                                            </h3>
+                                            <h3>{project.title}</h3>
 
-                                            <p>
-                                                {project.description}
-                                            </p>
+                                            <p>{project.description}</p>
 
                                             <a
                                                 href={project.url}
@@ -456,84 +377,48 @@ const ServiceDetailsCenter3 = () => {
                                             </a>
 
                                         </div>
-
                                     </div>
-
                                 ))}
 
                             </div>
-
                         </section>
 
 
-                        {/* =================================================
-                            PROJECT STATS
-                        ================================================= */}
+                        {/* PROJECT STATS */}
 
                         <section className="project-stats-section">
 
                             <div className="project-stat">
-
                                 <strong>25+</strong>
-
-                                <span>
-                                    Featured Websites
-                                </span>
-
+                                <span>Featured Websites</span>
                             </div>
 
-
                             <div className="project-stat">
-
                                 <strong>100%</strong>
-
-                                <span>
-                                    Responsive Design
-                                </span>
-
+                                <span>Responsive Design</span>
                             </div>
 
-
                             <div className="project-stat">
-
                                 <strong>SEO</strong>
-
-                                <span>
-                                    Ready Structure
-                                </span>
-
+                                <span>Ready Structure</span>
                             </div>
 
-
                             <div className="project-stat">
-
                                 <strong>24/7</strong>
-
-                                <span>
-                                    Digital Presence
-                                </span>
-
+                                <span>Digital Presence</span>
                             </div>
 
                         </section>
 
 
-                        {/* =================================================
-                            RELATED SERVICES
-                        ================================================= */}
+                        {/* RELATED SERVICES */}
 
                         <section className="related-services-section">
 
                             <div className="website-section-title">
-
                                 <span>EXPLORE MORE</span>
-
-                                <h2>
-                                    Related Services
-                                </h2>
-
+                                <h2>Related Services</h2>
                             </div>
-
 
                             <div className="related-service-grid">
 
@@ -547,7 +432,6 @@ const ServiceDetailsCenter3 = () => {
                                     </div>
 
                                     <div>
-
                                         <h3>
                                             <Link to="/software-development">
                                                 Software Development
@@ -566,11 +450,9 @@ const ServiceDetailsCenter3 = () => {
                                             Explore Service
                                             <i className="bi bi-arrow-right"></i>
                                         </Link>
-
                                     </div>
 
                                 </div>
-
 
                                 <div className="related-service-card">
 
@@ -582,7 +464,6 @@ const ServiceDetailsCenter3 = () => {
                                     </div>
 
                                     <div>
-
                                         <h3>
                                             <Link to="/it-networking">
                                                 IT Networking
@@ -601,51 +482,38 @@ const ServiceDetailsCenter3 = () => {
                                             Explore Service
                                             <i className="bi bi-arrow-right"></i>
                                         </Link>
-
                                     </div>
 
                                 </div>
 
                             </div>
-
                         </section>
 
 
-                        {/* =================================================
-                            FAQ
-                        ================================================= */}
+                        {/* FAQ */}
 
                         <section className="website-faq-section">
 
                             <div className="website-section-title">
+                                <span>FAQ</span>
 
-                                <span>
-                                    FAQ
-                                </span>
-
-                                <h2>
-                                    Frequently Asked Questions
-                                </h2>
+                                <h2>Frequently Asked Questions</h2>
 
                                 <p>
                                     Find answers to common questions about
                                     our website development services.
                                 </p>
-
                             </div>
-
 
                             <div className="website-faq-list">
 
                                 {data.slice(0, 4).map((item, index) => (
-
                                     <div
                                         key={index}
-                                        className={`website-faq-item ${
-                                            openItemIndex === index
+                                        className={`website-faq-item ${openItemIndex === index
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
 
                                         <button
@@ -655,46 +523,57 @@ const ServiceDetailsCenter3 = () => {
                                                 handleItemClick(index)
                                             }
                                         >
-
-                                            <span>
-                                                {item.title}
-                                            </span>
+                                            <span>{item.title}</span>
 
                                             <i
-                                                className={`bi ${
-                                                    openItemIndex === index
+                                                className={`bi ${openItemIndex === index
                                                         ? "bi-dash"
                                                         : "bi-plus"
-                                                }`}
+                                                    }`}
                                             ></i>
-
                                         </button>
 
-
                                         {openItemIndex === index && (
-
                                             <div className="website-faq-answer">
-                                                <p>
-                                                    {item.desc}
-                                                </p>
+                                                <p>{item.desc}</p>
                                             </div>
-
                                         )}
 
                                     </div>
-
                                 ))}
 
                             </div>
+                        </section>
 
+
+
+                        {/* COMPACT CTA SECTION */}
+
+                        <section className="website-cta-section">
+                            <div className="website-cta-content">
+
+                                <span className="website-cta-label">
+                                    LET'S WORK TOGETHER
+                                </span>
+
+                                <h2>Ready to Build Your Business Website?</h2>
+
+                                <p>
+                                    Get professional, SEO-friendly website development
+                                    services to grow your business online.
+                                </p>
+
+                                <Link to="/contact-us" className="website-cta-btn">
+                                    Talk to Our Experts
+                                    <i className="bi bi-arrow-right"></i>
+                                </Link>
+
+                            </div>
                         </section>
 
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     );
 };

@@ -31,16 +31,14 @@ const ServiceTrading = () => {
                 IT TRADING & TECHNOLOGY SUPPLY
               </span>
 
-              <h1>
-                Smart Technology
-                <span> For Better Business</span>
+              <h1>IT Products and Technology 
+                <span> Solutions for Businesses</span>
               </h1>
 
               <p>
-                Reliable technology products are the foundation of every
-                successful business. We provide trusted IT hardware,
-                networking equipment, software licensing and enterprise
-                technology solutions tailored to your business needs.
+               We supply quality IT hardware, networking equipment, software licenses,
+                and business technology products to support your business needs with reliable
+                 and cost-effective solutions.
               </p>
 
             </div>
@@ -122,7 +120,7 @@ const ServiceTrading = () => {
                   <i className="bi bi-pc-display"></i>
                 </div>
                 <h3>IT Hardware</h3>
-                <p>Reliable business technology products</p>
+                <p>Quality IT hardware and computer equipment for businesses.</p>
               </div>
 
               <div className="trading-stat-card">
@@ -130,23 +128,23 @@ const ServiceTrading = () => {
                   <i className="bi bi-diagram-3"></i>
                 </div>
                 <h3>Networking</h3>
-                <p>Secure and scalable infrastructure</p>
+                <p>Reliable networking equipment and business network solutions.</p>
               </div>
 
               <div className="trading-stat-card">
                 <div className="trading-stat-icon">
                   <i className="bi bi-key"></i>
                 </div>
-                <h3>Licensing</h3>
-                <p>Genuine software licensing solutions</p>
+                <h3>Software Licensing</h3>
+                <p>Genuine software licenses for business applications.</p>
               </div>
 
               <div className="trading-stat-card">
                 <div className="trading-stat-icon">
                   <i className="bi bi-headset"></i>
                 </div>
-                <h3>Support</h3>
-                <p>Reliable technology consultation</p>
+                <h3>IT Consultation</h3>
+                <p>Expert IT consultation and technology support for businesses.</p>
               </div>
 
             </section>
@@ -169,10 +167,8 @@ const ServiceTrading = () => {
                 </h2>
 
                 <p>
-                  From product selection to delivery and after-sales support,
-                  our team helps businesses procure the right technology
-                  based on operational requirements, business objectives
-                  and budget.
+                 We provide end-to-end IT procurement services, helping businesses source genuine IT hardware, networking equipment, 
+                 and software licenses at competitive prices with reliable delivery and ongoing support.
                 </p>
 
               </div>
@@ -188,11 +184,10 @@ const ServiceTrading = () => {
                     <i className="bi bi-search"></i>
                   </div>
 
-                  <h3>Understand</h3>
+                  <h3>Understand Your Needs</h3>
 
                   <p>
-                    We understand your business requirements, technical
-                    needs and budget before recommending solutions.
+                   We understand your IT needs and budget to recommend the right products.
                   </p>
 
                 </div>
@@ -206,11 +201,12 @@ const ServiceTrading = () => {
                     <i className="bi bi-box-seam"></i>
                   </div>
 
-                  <h3>Source</h3>
+                  <h3> Source Quality Products</h3>
 
                   <p>
-                    We source genuine technology products from trusted
-                    manufacturers and global brands.
+                   
+                    We source genuine IT hardware, networking equipment, and
+                     software from trusted brands and suppliers.
                   </p>
 
                 </div>
@@ -224,11 +220,11 @@ const ServiceTrading = () => {
                     <i className="bi bi-truck"></i>
                   </div>
 
-                  <h3>Deliver</h3>
+                  <h3> Reliable Delivery</h3>
 
                   <p>
-                    We coordinate product delivery while ensuring quality,
-                    reliability and timely procurement.
+                We ensure smooth IT product procurement and timely delivery 
+                to meet your business requirements.
                   </p>
 
                 </div>
@@ -242,11 +238,12 @@ const ServiceTrading = () => {
                     <i className="bi bi-person-check"></i>
                   </div>
 
-                  <h3>Support</h3>
+                  <h3>Ongoing IT Support</h3>
 
                   <p>
-                    Our team provides ongoing consultation and after-sales
-                    support for your technology environment.
+                    
+                We provide reliable technology consultation and after-sales 
+                support to keep your business running smoothly.
                   </p>
 
                 </div>

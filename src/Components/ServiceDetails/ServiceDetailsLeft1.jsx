@@ -1,6 +1,10 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import data from "../../Data/home3/faq1.json";
+
+/* ==========================================
+   SOFTWARE DEVELOPMENT SERVICES
+========================================== */
 
 const approachServices = [
   {
@@ -33,17 +37,17 @@ const approachServices = [
   },
   {
     title: "API & System Integration",
-    
-      desc:"ERP and CRM integration",
-     
+    desc: "ERP and CRM integration for connected business operations.",
   },
   {
     title: "Software Maintenance & Support",
-   
-     desc: "Existing software bug fixes",
-     
+    desc: "Existing software bug fixes and performance improvements.",
   },
 ];
+
+/* ==========================================
+   TECHNOLOGY EXPERTISE
+========================================== */
 
 const expertiseList = [
   {
@@ -68,6 +72,10 @@ const expertiseList = [
   },
 ];
 
+/* ==========================================
+   RELATED SERVICES
+========================================== */
+
 const relatedServices = [
   {
     title: "Network Solutions",
@@ -83,11 +91,121 @@ const relatedServices = [
   },
 ];
 
-const ServiceDetailsLeft1 = () => {
-  const [openItemIndex, setOpenItemIndex] = useState(0);
+/* ==========================================
+   SOFTWARE DEVELOPMENT FAQ DATA
+========================================== */
 
-  const handleItemClick = (index) => {
-    setOpenItemIndex(openItemIndex === index ? -1 : index);
+const softwareFaqs = [
+  {
+    category: "General Software Development",
+    subtitle: "Understanding our software development services",
+    questions: [
+      {
+        title:
+          "How can I contact SBros Tech for software development services in Singapore?",
+        desc:
+          "You can contact SBros Tech through our Contact Us page to discuss your software development requirements. Our team will understand your business needs and recommend suitable software solutions.",
+      },
+      {
+        title:
+          "What software development services does SBros Tech offer?",
+        desc:
+          "SBros Tech provides custom ERP development, HRM and payroll solutions, CRM software, web and mobile applications, AI automation, API integration and software maintenance services.",
+      },
+      {
+        title:
+          "Why should businesses choose custom software development?",
+        desc:
+          "Custom software is designed around your business requirements. It helps streamline workflows, improve productivity, reduce manual tasks and support long-term business growth.",
+      },
+    ],
+  },
+
+  {
+    category: "Custom Software & ERP Solutions",
+    subtitle: "Business applications built around your needs",
+    questions: [
+      {
+        title:
+          "How can I contact SBros Tech to develop custom ERP or business management software?",
+        desc:
+          "You can contact SBros Tech through our Contact Us page to discuss your ERP or business management software requirements. Our team can help identify the right solution based on your business operations.",
+      },
+      {
+        title:
+          "What is the difference between custom ERP and ready-made ERP software?",
+        desc:
+          "Custom ERP software is developed according to specific business workflows, while ready-made ERP software offers standard features for general business requirements. Custom ERP provides greater flexibility to match your operations.",
+      },
+      {
+        title:
+          "Does SBros Tech provide HRM, payroll and CRM software development?",
+        desc:
+          "Yes. SBros Tech develops HRM, payroll and CRM solutions to manage employee records, attendance, leave, payroll, customer information, leads and sales activities.",
+      },
+    ],
+  },
+
+  {
+    category: "Technology & Development Process",
+    subtitle: "Our technologies and development capabilities",
+    questions: [
+      {
+        title:
+          "How can I contact SBros Tech to discuss my software project requirements?",
+        desc:
+          "You can reach our team through the Contact Us page on the SBros Tech website. Share your project requirements, and our team will help you explore suitable development solutions.",
+      },
+      {
+        title:
+          "Which technologies does SBros Tech use for software development?",
+        desc:
+          "SBros Tech works with modern technologies such as React, Next.js, JavaScript, Node.js, Python, PHP, MySQL, MongoDB and PostgreSQL to develop scalable software applications.",
+      },
+      {
+        title:
+          "Does SBros Tech develop web and mobile applications?",
+        desc:
+          "Yes. We develop custom web applications, business portals and Android and iOS mobile applications based on specific business and customer requirements.",
+      },
+    ],
+  },
+
+  {
+    category: "Support & Business Solutions",
+    subtitle: "Keeping your software reliable and connected",
+    questions: [
+      {
+        title:
+          "How can I contact SBros Tech for software maintenance and technical support in Singapore?",
+        desc:
+          "You can contact SBros Tech through our Contact Us page for software maintenance and technical support enquiries. Our team can understand your requirements and assist with suitable support solutions.",
+      },
+      {
+        title:
+          "Does SBros Tech provide ongoing software updates and bug fixes?",
+        desc:
+          "Yes. SBros Tech provides software maintenance services, including bug fixes, performance improvements, security updates and feature enhancements to keep applications running smoothly.",
+      },
+      {
+        title:
+          "Can SBros Tech integrate existing business systems with ERP and CRM software?",
+        desc:
+          "Yes. We provide API and system integration services to connect existing business applications with ERP, CRM and other platforms, enabling smoother data exchange and workflow management.",
+      },
+    ],
+  },
+];
+
+/* ==========================================
+   MAIN COMPONENT
+========================================== */
+
+const ServiceDetailsLeft1 = () => {
+  const [openFaq, setOpenFaq] = useState("0-0");
+
+  const handleFaqClick = (id) => {
+    setOpenFaq((previous) => (previous === id ? null : id));
   };
 
   return (
@@ -95,57 +213,56 @@ const ServiceDetailsLeft1 = () => {
       <div className="container">
         <div className="service-content-wrapper">
           <div className="service-details-post">
-            {/* ================= MAIN INTRO ================= */}
+
+            {/* ==================================
+                MAIN INTRODUCTION
+            ================================== */}
+
             <article className="service-section">
               <div className="service-main-image">
                 <img
                   src="/assets/img/service/software.jpg"
-                  alt="Software Development"
+                  alt="Custom Software Development Services"
                 />
               </div>
 
               <div className="service-intro">
-                <span className="service-label">SOFTWARE SOLUTIONS</span>
+                <span className="service-label">
+                  SOFTWARE SOLUTIONS
+                </span>
 
                 <h2>Software Development</h2>
 
                 <p>
-                  Welcome to SBROS Tech (S) Pte Ltd, your trusted partner for
-                  comprehensive software development services tailored to meet
-                  your business needs. Our team of experienced developers is
-                  dedicated to delivering high-quality, scalable, and
-                  innovative software solutions that drive real business
-                  growth — because at SBROS Tech, your dreams are our mission.
+                  At SBros Tech we offer bespoke software development
+                  services in Singapore to help streamline processes,
+                  increase productivity and drive growth. We create
+                  software solutions including ERP, HRM, CRM, Web &
+                  Mobile Applications that can be scaled to fit your
+                  business needs.
                 </p>
               </div>
             </article>
 
-            {/* ================= OUR APPROACH ================= */}
+            {/* ==================================
+                OUR APPROACH
+            ================================== */}
+
             <article className="service-section approach-section">
               <div className="section-heading">
                 <span>01</span>
+
                 <div>
                   <h3>Our Approach</h3>
-                  <p>
-                    A structured and client-focused approach to building
-                    reliable digital solutions.
-                  </p>
                 </div>
               </div>
 
               <div className="section-content">
                 <p>
-                  At SBROS Tech (S) Pte Ltd, we take a client-centric approach
-                  to software development, prioritizing your unique
-                  requirements and objectives. Our process begins with a
-                  thorough understanding of your business goals, target
-                  audience, and technical specifications.
-                </p>
-
-                <p>
-                  We then collaborate closely with you at every stage of the
-                  development cycle to ensure that the final product meets
-                  your expectations and delivers measurable business value.
+                  We take a structured and client-focused approach
+                  to developing new software for you. We work with
+                  you to understand what you need to achieve, and
+                  create an efficient solution that meets your needs.
                 </p>
               </div>
 
@@ -172,27 +289,26 @@ const ServiceDetailsLeft1 = () => {
               </div>
             </article>
 
-            {/* ================= OUR EXPERTISE ================= */}
+            {/* ==================================
+                OUR EXPERTISE
+            ================================== */}
+
             <article className="service-section expertise-section">
               <div className="section-heading">
                 <span>02</span>
+
                 <div>
                   <h3>Our Expertise</h3>
+
                   <p>
-                    Modern technologies and scalable development practices for
-                    growing businesses.
+                    We use modern technologies and scalable
+                    development practices to build secure,
+                    responsive and high-performance software
+                    applications. Our technical expertise covers
+                    frontend, backend, database, mobile and cloud
+                    technologies.
                   </p>
                 </div>
-              </div>
-
-              <div className="section-content">
-                <p>
-                  Our technical expertise enables us to create secure,
-                  scalable, responsive, and high-performance applications
-                  across multiple platforms. We combine modern technologies
-                  with practical business requirements to deliver solutions
-                  that are reliable and future-ready.
-                </p>
               </div>
 
               <ul className="expertise-list">
@@ -211,10 +327,14 @@ const ServiceDetailsLeft1 = () => {
               </ul>
             </article>
 
-            {/* ================= RELATED SERVICES ================= */}
+            {/* ==================================
+                RELATED SERVICES
+            ================================== */}
+
             <section className="related-services">
               <div className="section-heading">
                 <span>03</span>
+
                 <div>
                   <h3>Related Services</h3>
                   <p>Explore our other technology solutions.</p>
@@ -226,16 +346,25 @@ const ServiceDetailsLeft1 = () => {
                   <div className="service-card" key={service.title}>
                     <div className="service-card-top">
                       <div className="service-icon">
-                        <img src={service.icon} alt={service.title} />
+                        <img
+                          src={service.icon}
+                          alt={service.title}
+                        />
                       </div>
 
-                      <Link to={service.to} className="service-arrow">
+                      <Link
+                        to={service.to}
+                        className="service-arrow"
+                        aria-label={`Explore ${service.title}`}
+                      >
                         <i className="bi bi-arrow-right"></i>
                       </Link>
                     </div>
 
                     <h4>
-                      <Link to={service.to}>{service.title}</Link>
+                      <Link to={service.to}>
+                        {service.title}
+                      </Link>
                     </h4>
 
                     <p>{service.desc}</p>
@@ -244,58 +373,171 @@ const ServiceDetailsLeft1 = () => {
               </div>
             </section>
 
-            {/* ================= FAQ ================= */}
-            <section className="faq-section">
-              <div className="section-heading faq-heading">
-                <span>04</span>
-                <div>
-                  <h3>Frequently Asked Questions</h3>
+            {/* ==================================
+                PROFESSIONAL FAQ SECTION
+            ================================== */}
+
+            <section className="sbros-faq-section">
+
+              {/* FAQ HEADER */}
+
+              <div className="sbros-faq-header">
+                <div className="sbros-faq-heading">
+                  <span className="sbros-faq-eyebrow">
+                    HAVE QUESTIONS?
+                  </span>
+
+                  <h3>
+                    Frequently Asked <span>Questions</span>
+                  </h3>
+
                   <p>
-                    Find answers to common questions about our software
-                    development services.
+                    Everything you need to know about our software
+                    development services, technologies and business
+                    solutions.
                   </p>
+                </div>
+
+                <div className="sbros-faq-count">
+                  <strong>12</strong>
+                  <span>Common Questions</span>
                 </div>
               </div>
 
-              <div className="professional-faq">
-                {data.slice(0, 4).map((item, index) => (
+              {/* FAQ CATEGORIES */}
+
+              <div className="sbros-faq-groups">
+                {softwareFaqs.map((group, groupIndex) => (
                   <div
-                    key={index}
-                    className={`faq-item ${
-                      index === openItemIndex ? "faq-active" : ""
-                    }`}
+                    className="sbros-faq-group"
+                    key={group.category}
                   >
-                    <button
-                      type="button"
-                      className="faq-question"
-                      onClick={() => handleItemClick(index)}
-                    >
-                      <span className="faq-number">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
 
-                      <span className="faq-title">{item.title}</span>
+                    {/* CATEGORY TITLE */}
 
-                      <span className="faq-icon">
-                        <i
-                          className={
-                            index === openItemIndex
-                              ? "bi bi-dash"
-                              : "bi bi-plus"
-                          }
-                        ></i>
-                      </span>
-                    </button>
-
-                    {index === openItemIndex && (
-                      <div className="faq-answer">
-                        <p>{item.desc}</p>
+                    <div className="sbros-faq-category">
+                      <div className="sbros-faq-category-number">
+                        {String(groupIndex + 1).padStart(2, "0")}
                       </div>
-                    )}
+
+                      <div className="sbros-faq-category-info">
+                        <h4>{group.category}</h4>
+                        <p>{group.subtitle}</p>
+                      </div>
+
+                      <span className="sbros-faq-category-count">
+                        {String(group.questions.length).padStart(
+                          2,
+                          "0"
+                        )}{" "}
+                        FAQs
+                      </span>
+                    </div>
+
+                    {/* QUESTIONS */}
+
+                    <div className="sbros-faq-list">
+                      {group.questions.map(
+                        (item, questionIndex) => {
+                          const faqId = `${groupIndex}-${questionIndex}`;
+                          const isOpen = openFaq === faqId;
+
+                          return (
+                            <div
+                              className={`sbros-faq-item ${
+                                isOpen ? "active" : ""
+                              }`}
+                              key={faqId}
+                            >
+
+                              <button
+                                type="button"
+                                className="sbros-faq-question"
+                                onClick={() =>
+                                  handleFaqClick(faqId)
+                                }
+                                aria-expanded={isOpen}
+                                aria-controls={`faq-answer-${faqId}`}
+                                id={`faq-question-${faqId}`}
+                              >
+
+                                <span className="sbros-faq-question-number">
+                                  {String(
+                                    questionIndex + 1
+                                  ).padStart(2, "0")}
+                                </span>
+
+                                <span className="sbros-faq-question-title">
+                                  {item.title}
+                                </span>
+
+                                <span className="sbros-faq-toggle">
+                                  <i
+                                    className={
+                                      isOpen
+                                        ? "bi bi-dash"
+                                        : "bi bi-plus"
+                                    }
+                                  ></i>
+                                </span>
+
+                              </button>
+
+                              <div
+                                id={`faq-answer-${faqId}`}
+                                className={`sbros-faq-answer-wrapper ${
+                                  isOpen ? "show" : ""
+                                }`}
+                                role="region"
+                                aria-labelledby={`faq-question-${faqId}`}
+                                aria-hidden={!isOpen}
+                              >
+                                <div className="sbros-faq-answer">
+                                  <p>{item.desc}</p>
+                                </div>
+                              </div>
+
+                            </div>
+                          );
+                        }
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
+
+              {/* FAQ CONTACT CTA */}
+
+              <div className="sbros-faq-cta">
+                <div className="sbros-faq-cta-content">
+                  <span>
+                    LET'S BUILD SOMETHING GREAT
+                  </span>
+
+                  <h3>
+                    Ready to Build Your Custom Software Solution?
+                  </h3>
+
+                  <p>
+                    Transform your business operations with custom
+                    software development from SBros Tech. Contact
+                    our team to discuss your requirements and
+                    explore the right software solution for your
+                    business.
+                  </p>
+                </div>
+
+                <Link
+                  to="/contact-us"
+                  className="sbros-faq-cta-button"
+                >
+                  Talk to Our Experts
+                  <i className="bi bi-arrow-up-right"></i>
+                </Link>
+              </div>
+
             </section>
+
           </div>
         </div>
       </div>

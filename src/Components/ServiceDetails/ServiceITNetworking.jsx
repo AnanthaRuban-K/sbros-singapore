@@ -59,17 +59,15 @@ const ServiceITNetworking = () => {
                   <div className="heading1">
 
                     <h2>
-                      Reliable IT Infrastructure for Your Business
+                      Reliable IT Networking Solutions for Your Business
                     </h2>
 
                     <div className="space16"></div>
 
                     <p>
-                      A stable, secure network is the backbone of every
-                      modern business. We design, install, and maintain IT
-                      infrastructure that keeps your team connected, your
-                      data protected, and your operations running without
-                      interruption.
+                      We deliver reliable IT infrastructure and network solutions, including secure network installation, 
+                      maintenance, and data protection. Our solutions ensure seamless connectivity, improved network performance, 
+                      and uninterrupted business operations.
                     </p>
 
                   </div>
@@ -101,10 +99,10 @@ const ServiceITNetworking = () => {
                         <div className="space16"></div>
 
                         <p>
-                          We assess your infrastructure needs, design a
-                          network architecture built for security and
-                          uptime, and implement it with minimal disruption
-                          to your daily operations.
+                         We provide customized IT infrastructure and network solutions, 
+                         from network planning and design to secure installation, ensuring reliable connectivity and 
+                         minimal business disruption.
+
                         </p>
 
                       </div>
@@ -125,10 +123,8 @@ const ServiceITNetworking = () => {
                         <div className="space20"></div>
 
                         <p>
-                          Every network we build includes proper firewall
-                          configuration and access controls, protecting
-                          your business from unauthorized access and
-                          threats.
+                          Our secure network solutions include firewall configuration, access control, 
+                          and data protection to safeguard your business IT infrastructure from cyber threats.
                         </p>
 
                       </div>
@@ -149,9 +145,8 @@ const ServiceITNetworking = () => {
                         <div className="space20"></div>
 
                         <p>
-                          Whether you're a small office or a multi-branch
-                          operation, we design networks that grow with
-                          your business without needing a full rebuild.
+                       We design scalable business network solutions for small offices and multi-branch organizations,
+                        supporting future growth with reliable and flexible IT infrastructure.
                         </p>
 
                       </div>
@@ -365,8 +360,7 @@ const ServiceITNetworking = () => {
                       <div className="space16"></div>
 
                       <p>
-                        Responsive, high-performance websites that turn
-                        visitors into customers.
+                       SEO-friendly websites that attract customers and improve online visibility.
                       </p>
 
                     </div>
@@ -449,7 +443,25 @@ const ServiceITNetworking = () => {
                 </div>
 
               </div>
+{/* IT NETWORKING CTA SECTION */}
 
+<section className="it-networking-cta">
+  <div className="it-networking-cta-content">
+
+    <h3>Need Reliable IT Networking Solutions?</h3>
+
+    <p>
+      Connect with SBros Tech for secure and reliable IT networking
+      services in Singapore.
+    </p>
+
+    <Link to="/contact-us" className="it-networking-cta-btn">
+      Contact Us
+      <i className="bi bi-arrow-right"></i>
+    </Link>
+
+  </div>
+</section>
             </div>
 
           </div>

@@ -21,7 +21,7 @@ const ServiceDetailsCenterERP = () => {
             icon: "bi bi-people",
             title: "Human Resource Management",
             description:
-                "Manage employees, attendance, leave, payroll and workforce operations from one centralized system.",
+                "Manage employees, attendance, leave and payroll easily with our HRM software in Singapore.",
         },
         {
             number: "02",
@@ -70,21 +70,21 @@ const ServiceDetailsCenterERP = () => {
             icon: "bi bi-grid-1x2",
             title: "All-in-One Platform",
             description:
-                "Connect multiple business operations through one centralized ERP platform.",
+                "Manage multiple business operations through one centralized ERP platform. Connect departments and simplify daily business activities.",
         },
         {
             number: "02",
             icon: "bi bi-bar-chart-line",
             title: "Real-Time Insights",
             description:
-                "Get clear business visibility with dashboards, reports and real-time operational data.",
+                "Access dashboards, reports and real-time operational information to understand business performance and make informed decisions.",
         },
         {
             number: "03",
             icon: "bi bi-shield-check",
             title: "Secure & Scalable",
             description:
-                "Built with secure architecture and flexible modules that can grow with your business.",
+                "Use a flexible ERP platform with secure architecture and modules that can support your changing business requirements.",
         },
     ];
 
@@ -110,13 +110,13 @@ const ServiceDetailsCenterERP = () => {
             number: "01",
             title: "Business Analysis",
             description:
-                "We understand your business processes, challenges and operational requirements.",
+                "We analyse your business needs and ERP requirements in Singapore. ",
         },
         {
             number: "02",
             title: "ERP Planning",
             description:
-                "Our team plans the required ERP modules, workflows and system structure.",
+                "We plan ERP modules and workflows to meet your business needs in Singapore.",
         },
         {
             number: "03",
@@ -128,7 +128,7 @@ const ServiceDetailsCenterERP = () => {
             number: "04",
             title: "Testing & Launch",
             description:
-                "The system is tested, optimized and prepared for a smooth business launch.",
+                "We test and optimize ERP software for smooth business operations in Singapore.",
         },
     ];
 
@@ -154,16 +154,13 @@ const ServiceDetailsCenterERP = () => {
                                 </span>
 
                                 <h1>
-                                    Everything Your Business Needs.
-                                    <span> In One ERP.</span>
+                                      <span> ERP Software</span> in Singapore for Complete 
+
+                                  Business Management
                                 </h1>
 
                                 <p>
-                                    Manage your entire business from one
-                                    powerful platform. Our ERP solutions
-                                    connect HR, CRM, Finance, Procurement,
-                                    Sales and Recruitment to help businesses
-                                    work smarter and grow faster.
+                                    Simplify your business operations with SBros Tech ERP solutions. Manage HR, CRM, Finance, Procurement, Sales and Recruitment in one integrated platform to improve efficiency, streamline workflows and support business growth.
                                 </p>
 
                                 {/* <div className="erp-intro-points">
@@ -221,15 +218,13 @@ const ServiceDetailsCenterERP = () => {
                                 <span>WHY ERP</span>
 
                                 <h2>
-                                    One Platform.
+                                     One Platform
                                     <br />
-                                    Complete Business Control.
+                                   One Complete Business Solution.
                                 </h2>
 
                                 <p>
-                                    Bring your departments, data and
-                                    business processes together with a
-                                    centralized ERP platform.
+                                    SBros Tech provides integrated ERP software to help businesses manage multiple departments through one centralized system. Connect business data, simplify processes and improve coordination between teams with a complete ERP solution.
                                 </p>
 
                             </div>
@@ -280,13 +275,11 @@ const ServiceDetailsCenterERP = () => {
                                 <span>ERP MODULES</span>
 
                                 <h2>
-                                    Everything Your Business Needs
+                                    ERP Modules For Complete Business Management
                                 </h2>
 
                                 <p>
-                                    Our ERP platform connects essential
-                                    business functions into one integrated
-                                    system.
+                                   SBros Tech ERP software brings essential business functions together through integrated modules. Choose the modules that support your business operations and manage important activities through one platform.
                                 </p>
 
                             </div>
@@ -343,20 +336,18 @@ const ServiceDetailsCenterERP = () => {
                             <div className="erp-benefits-content">
 
                                 <span>
-                                    BUSINESS BENEFITS
+                                    BENEFITS OF
                                 </span>
 
                                 <h2>
-                                    Transform The Way
+                                    ERP Software for Businesses 
                                     <br />
-                                    Your Business Works.
+                                   
                                 </h2>
 
                                 <p>
-                                    An integrated ERP system reduces
-                                    complexity, improves productivity and
-                                    gives your team better visibility into
-                                    daily business operations.
+                                    Improve productivity and simplify daily operations with SBros Tech ERP software in Singapore for better business management. 
+
                                 </p>
 
                             </div>
@@ -447,38 +438,7 @@ const ServiceDetailsCenterERP = () => {
                             CTA
                         ================================================= */}
 
-                        <section className="erp-cta-section">
-
-                            <div>
-
-                                <span>
-                                    READY TO GO DIGITAL?
-                                </span>
-
-                                <h2>
-                                    Bring Your Business
-                                    <br />
-                                    Together With ERP.
-                                </h2>
-
-                                <p>
-                                    Connect your teams, processes and
-                                    business data with one powerful ERP
-                                    platform.
-                                </p>
-
-                            </div>
-
-                            <Link
-                                to="/contact-us"
-                                className="erp-cta-button"
-                            >
-                                Talk To Our Experts
-                                <i className="bi bi-arrow-right"></i>
-                            </Link>
-
-                        </section>
-
+                       
 
                         {/* =================================================
                             RELATED SERVICES
@@ -643,6 +603,38 @@ const ServiceDetailsCenterERP = () => {
                                 ))}
 
                             </div>
+
+                        </section>
+ <section className="erp-cta-section">
+
+                            <div>
+
+                                <span>
+                                    READY TO GO DIGITAL?
+                                </span>
+
+                                <h2>
+                                    Ready to Improve Your Business with ERP Software?
+                                    <br />
+                                    
+                                </h2>
+
+                                <p>
+                                    Bring your teams, processes and business data together with SBros Tech ERP solutions. Simplify business operations, improve productivity and manage multiple departments through one integrated ERP platform.
+Looking for the right ERP solution for your business? Talk to our team about your requirements.
+ data with one powerful ERP
+                                    platform.
+                                </p>
+
+                            </div>
+
+                            <Link
+                                to="/contact-us"
+                                className="erp-cta-button"
+                            >
+                                Talk To Our Experts
+                                <i className="bi bi-arrow-right"></i>
+                            </Link>
 
                         </section>
 
