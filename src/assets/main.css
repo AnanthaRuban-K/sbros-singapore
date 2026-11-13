@@ -65113,7 +65113,7 @@ body:has(.hm-hero) .cs_site_header:not(.cs-gescout_sticky)::before {
   justify-content: center;
   border-radius: 50%;
   color: #fff;
-  background: var(--sb-blue);
+  /* background: var(--sb-blue); */
   opacity: 0;
   transform: translateY(-6px);
   transition: opacity 0.3s ease, transform 0.3s ease;
