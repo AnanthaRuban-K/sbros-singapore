@@ -499,10 +499,10 @@ const ServiceDetailsCenter3 = () => {
 
                                 <h2>Frequently Asked Questions</h2>
 
-                                <p>
+                                {/* <p>
                                     Find answers to common questions about
                                     our website development services.
-                                </p>
+                                </p> */}
                             </div>
 
                             <div className="website-faq-list">

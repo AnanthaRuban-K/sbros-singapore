@@ -544,10 +544,10 @@ const ServiceDetailsCenterERP = () => {
                                     <span> Questions</span>
                                 </h2>
 
-                                <p>
+                                {/* <p>
                                     Find answers to common questions about our IT trading
                                     and technology supply services.
-                                </p>
+                                </p> */}
 
                             </div>
 
