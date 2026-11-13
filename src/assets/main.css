@@ -6278,20 +6278,443 @@ a.header__search.header-search-btn p {
 
 
 /* =====================================================
-   TECHNOLOGY DOMAINS SECTION
+   TECHNOLOGY DOMAINS SECTION (click based, no scroll)
 ===================================================== */
-/* mobile panel is hidden everywhere except mobile */
+
+.choose-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 80px 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(14, 165, 233, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(124, 58, 237, 0.08),
+      transparent 28%
+    ),
+    #ffffff;
+
+  overflow: visible;
+}
+
+
+/* =====================================================
+   CONTAINER (no sticky anymore)
+===================================================== */
+
+.choose-sticky {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+
+/* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+.choose-wrapper {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.choose-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.choose-heading {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #000000;
+}
+
+.choose-heading-line {
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #06b6d4, #2563eb, #7c3aed);
+}
+
+
+/* =====================================================
+   MAIN GRID
+===================================================== */
+
+.choose-main {
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(340px, 0.85fr);
+  align-items: center;
+  gap: 65px;
+}
+
+
+/* =====================================================
+   IMAGE SIDE
+===================================================== */
+
+.choose-image-side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose-image-box {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 26px;
+
+  background: linear-gradient(135deg, #dbeafe, #e0e7ff, #f3e8ff);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+
+  box-shadow:
+    0 25px 60px rgba(37, 99, 235, 0.15),
+    0 10px 30px rgba(124, 58, 237, 0.08);
+}
+
+
+/* =====================================================
+   IMAGE STACK
+   All images sit on top of each other in the same area.
+   The slide-up animation is controlled by React
+   (inline style on click).
+===================================================== */
+
+.choose-image-stack {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.choose-stack-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+
+  transition:
+    transform 0.6s ease,
+    opacity 0.3s ease;
+
+  will-change: transform, opacity;
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.choose-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0) 20%,
+    rgba(15, 23, 42, 0.1) 50%,
+    rgba(15, 23, 42, 0.88) 100%
+  );
+}
+
+
+/* =====================================================
+   IMAGE NUMBER
+===================================================== */
+
+.choose-image-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0284c7, #2563eb, #7c3aed);
+  z-index: 90;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+
+/* =====================================================
+   IMAGE CONTENT
+===================================================== */
+
+.choose-image-content {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: 23px;
+  z-index: 90;
+}
+
+.choose-image-content span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.choose-image-content h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.choose-content-side {
+  width: 100%;
+}
+
+.choose-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/* =====================================================
+   HEADING ITEM
+===================================================== */
+
+.choose-item {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  display: grid;
+  grid-template-columns: 48px 1fr 38px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 0 13px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.28s ease;
+}
+
+.choose-number {
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  color: #94a3b8;
+  background: #f1f5f9;
+  font-size: 10px;
+  font-weight: 800;
+  transition: all 0.28s ease;
+}
+
+.choose-name {
+  color: #475569;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.2;
+  transition: all 0.28s ease;
+}
+
+.choose-arrow {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #94a3b8;
+  font-size: 17px;
+  transition: all 0.28s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.choose-item:hover {
+  transform: translateX(6px);
+  background: linear-gradient(100deg, #eff6ff, #f5f3ff);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
+}
+
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.choose-item-active {
+  transform: translateX(7px);
+  background: linear-gradient(100deg, #eff6ff, #f5f3ff);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.12);
+}
+
+.choose-item-active::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 7px;
+  bottom: 7px;
+  width: 4px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #06b6d4, #2563eb, #7c3aed);
+}
+
+.choose-item-active .choose-number {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0284c7, #2563eb, #7c3aed);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.22);
+}
+
+.choose-item-active .choose-name {
+  color: #1e1b4b;
+  font-weight: 800;
+}
+
+.choose-item-active .choose-arrow {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+
+/* =====================================================
+   MOBILE PANEL (hidden on desktop)
+===================================================== */
+
 .choose-mobile-panel {
   display: none;
 }
 
 
 /* =====================================================
-   MOBILE ONLY  (tap item = image opens under it)
+   LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+  .choose-wrapper {
+    width: 94%;
+  }
+
+  .choose-main {
+    gap: 40px;
+  }
+
+  .choose-image-box {
+    max-width: 650px;
+    height: 330px;
+  }
+
+  .choose-heading {
+    font-size: 36px;
+  }
+
+  .choose-item {
+    height: 50px;
+  }
+
+  .choose-name {
+    font-size: 14px;
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .choose-section {
+    padding: 65px 0;
+  }
+
+  .choose-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .choose-image-box {
+    max-width: 480px;
+    height: 285px;
+  }
+
+  .choose-heading {
+    font-size: 32px;
+  }
+
+  .choose-item {
+    height: 47px;
+    grid-template-columns: 38px 1fr 30px;
+    gap: 5px;
+    padding-left: 9px;
+  }
+
+  .choose-number {
+    width: 29px;
+    height: 29px;
+  }
+
+  .choose-name {
+    font-size: 13px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE ONLY (tap item = image opens under it)
 ===================================================== */
 
 @media (max-width: 767px) {
-
   .choose-section {
     height: auto;
     padding: 55px 0;
@@ -6330,7 +6753,7 @@ a.header__search.header-search-btn p {
     gap: 0;
   }
 
-  /* ---------- ITEM (closed state, grey) ---------- */
+  /* ---------- ITEM (closed state) ---------- */
 
   .choose-section .choose-item {
     box-sizing: border-box;
@@ -6351,6 +6774,13 @@ a.header__search.header-search-btn p {
   .choose-section .choose-item:hover,
   .choose-section .choose-item-active {
     transform: none;
+  }
+
+  /* on mobile the highlight follows the OPEN item, not the active one */
+  .choose-section .choose-item-active:not(.choose-item-open) {
+    background: #ffffff;
+    border-color: rgba(148, 163, 184, 0.25);
+    box-shadow: none;
   }
 
   .choose-section .choose-item::before {
@@ -6382,7 +6812,7 @@ a.header__search.header-search-btn p {
     transition: transform 0.3s ease;
   }
 
-  /* ---------- ITEM (open state, highlighted) ---------- */
+  /* ---------- ITEM (open state) ---------- */
 
   .choose-section .choose-item-open {
     background: linear-gradient(100deg, #eff6ff, #f5f3ff);
@@ -6454,7 +6884,6 @@ a.header__search.header-search-btn p {
 ===================================================== */
 
 @media (max-width: 480px) {
-
   .choose-section {
     padding: 48px 0;
   }
@@ -6490,806 +6919,6 @@ a.header__search.header-search-btn p {
     border-radius: 14px;
   }
 }
-.choose-section {
-  position: relative;
-  width: 100%;
-
-  /*
-    7 images = 7 scroll stages
-  */
-  height: 700vh;
-
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(14, 165, 233, 0.08),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(124, 58, 237, 0.08),
-      transparent 28%
-    ),
-    #ffffff;
-
-  overflow: visible;
-}
-
-
-/* =====================================================
-   STICKY CONTAINER
-===================================================== */
-
-.choose-sticky {
-  position: sticky;
-  top: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-}
-
-
-/* =====================================================
-   MAIN WRAPPER
-===================================================== */
-
-.choose-wrapper {
-  width: min(1400px, 92%);
-
-  margin: 0 auto;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.choose-header {
-  width: 100%;
-
-  text-align: center;
-
-  margin-bottom: 25px;
-}
-
-.choose-heading {
-  margin: 0;
-
-  font-size: 40px;
-
-  line-height: 1.1;
-
-  font-weight: 800;
-
-  letter-spacing: -1px;
-
-  background:black;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.choose-heading-line {
-  display: block;
-
-  width: 70px;
-  height: 4px;
-
-  margin: 12px auto 0;
-
-  border-radius: 50px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #06b6d4,
-      #2563eb,
-      #7c3aed
-    );
-}
-
-
-/* =====================================================
-   MAIN GRID
-===================================================== */
-
-.choose-main {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.35fr)
-    minmax(340px, 0.85fr);
-
-  align-items: center;
-
-  gap: 65px;
-}
-
-
-/* =====================================================
-   IMAGE SIDE
-===================================================== */
-
-.choose-image-side {
-  width: 100%;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* =====================================================
-   IMAGE BOX
-===================================================== */
-
-.choose-image-box {
-  position: relative;
-
-  width: 100%;
-
-  max-width: 760px;
-
-  height: 360px;
-
-  overflow: hidden;
-
-  border-radius: 26px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #dbeafe,
-      #e0e7ff,
-      #f3e8ff
-    );
-
-  border:
-    1px solid
-    rgba(99, 102, 241, 0.20);
-
-  box-shadow:
-    0 25px 60px
-      rgba(37, 99, 235, 0.15),
-    0 10px 30px
-      rgba(124, 58, 237, 0.08);
-}
-
-
-/* =====================================================
-   IMAGE STACK
-
-   VERY IMPORTANT
-
-   All images occupy exactly the same area.
-===================================================== */
-
-.choose-image-stack {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  overflow: hidden;
-}
-
-
-/* =====================================================
-   IMAGES
-
-   Images are stacked on top of each other.
-===================================================== */
-
-.choose-stack-image {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-
-  /*
-    IMPORTANT:
-    No CSS animation here.
-    React scroll position controls
-    the exact overlap.
-  */
-
-  transition:
-    transform 0.05s linear,
-    opacity 0.05s linear;
-
-  will-change:
-    transform,
-    opacity;
-
-  pointer-events: none;
-}
-
-
-/* =====================================================
-   IMAGE OVERLAY
-===================================================== */
-
-.choose-image-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 70;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(15, 23, 42, 0.00) 20%,
-      rgba(15, 23, 42, 0.10) 50%,
-      rgba(15, 23, 42, 0.88) 100%
-    );
-}
-
-
-/* =====================================================
-   IMAGE NUMBER
-===================================================== */
-
-.choose-image-number {
-  position: absolute;
-
-  top: 20px;
-  left: 20px;
-
-  width: 52px;
-  height: 52px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 14px;
-
-  color: #ffffff;
-
-  font-size: 14px;
-
-  font-weight: 800;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0284c7,
-      #2563eb,
-      #7c3aed
-    );
-
-  z-index: 90;
-
-  box-shadow:
-    0 10px 25px
-      rgba(79, 70, 229, 0.30);
-}
-
-
-/* =====================================================
-   IMAGE CONTENT
-===================================================== */
-
-.choose-image-content {
-  position: absolute;
-
-  left: 25px;
-  right: 25px;
-
-  bottom: 23px;
-
-  z-index: 90;
-}
-
-.choose-image-content span {
-  display: block;
-
-  margin-bottom: 6px;
-
-  color:
-    rgba(255, 255, 255, 0.75);
-
-  font-size: 9px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.8px;
-}
-
-.choose-image-content h3 {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 23px;
-
-  line-height: 1.2;
-
-  font-weight: 800;
-}
-
-
-/* =====================================================
-   RIGHT SIDE
-===================================================== */
-
-.choose-content-side {
-  width: 100%;
-}
-
-
-/* =====================================================
-   LIST
-===================================================== */
-
-.choose-list {
-  width: 100%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 8px;
-}
-
-
-/* =====================================================
-   HEADING ITEM
-===================================================== */
-
-.choose-item {
-  position: relative;
-
-  width: 100%;
-
-  height: 54px;
-
-  display: grid;
-
-  grid-template-columns:
-    48px 1fr 38px;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding:
-    0 10px 0 13px;
-
-  border:
-    1px solid
-    rgba(148, 163, 184, 0.20);
-
-  border-radius: 14px;
-
-  background: #ffffff;
-
-  cursor: pointer;
-
-  text-align: left;
-
-  transition:
-    all 0.28s ease;
-}
-
-
-/* =====================================================
-   NUMBER
-===================================================== */
-
-.choose-number {
-  width: 33px;
-  height: 33px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 9px;
-
-  color: #94a3b8;
-
-  background: #f1f5f9;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  transition:
-    all 0.28s ease;
-}
-
-
-/* =====================================================
-   NAME
-===================================================== */
-
-.choose-name {
-  color: #475569;
-
-  font-size: 15px;
-
-  font-weight: 650;
-
-  line-height: 1.2;
-
-  transition:
-    all 0.28s ease;
-}
-
-
-/* =====================================================
-   ARROW
-===================================================== */
-
-.choose-arrow {
-  width: 32px;
-  height: 32px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  color: #94a3b8;
-
-  font-size: 17px;
-
-  transition:
-    all 0.28s ease;
-}
-
-
-/* =====================================================
-   HOVER
-===================================================== */
-
-.choose-item:hover {
-  transform:
-    translateX(6px);
-
-  background:
-    linear-gradient(
-      100deg,
-      #eff6ff,
-      #f5f3ff
-    );
-
-  border-color:
-    rgba(99, 102, 241, 0.30);
-
-  box-shadow:
-    0 10px 25px
-      rgba(79, 70, 229, 0.10);
-}
-
-
-/* =====================================================
-   ACTIVE
-===================================================== */
-
-.choose-item-active {
-  transform:
-    translateX(7px);
-
-  background:
-    linear-gradient(
-      100deg,
-      #eff6ff,
-      #f5f3ff
-    );
-
-  border-color:
-    rgba(99, 102, 241, 0.30);
-
-  box-shadow:
-    0 12px 30px
-      rgba(79, 70, 229, 0.12);
-}
-
-
-/* =====================================================
-   ACTIVE LEFT LINE
-===================================================== */
-
-.choose-item-active::before {
-  content: "";
-
-  position: absolute;
-
-  left: -1px;
-
-  top: 7px;
-  bottom: 7px;
-
-  width: 4px;
-
-  border-radius: 10px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #06b6d4,
-      #2563eb,
-      #7c3aed
-    );
-}
-
-
-/* =====================================================
-   ACTIVE NUMBER
-===================================================== */
-
-.choose-item-active .choose-number {
-  color: #ffffff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0284c7,
-      #2563eb,
-      #7c3aed
-    );
-
-  box-shadow:
-    0 6px 16px
-      rgba(79, 70, 229, 0.22);
-}
-
-
-/* =====================================================
-   ACTIVE NAME
-===================================================== */
-
-.choose-item-active .choose-name {
-  color: #1e1b4b;
-
-  font-weight: 800;
-}
-
-
-/* =====================================================
-   ACTIVE ARROW
-===================================================== */
-
-.choose-item-active .choose-arrow {
-  color: #ffffff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #7c3aed
-    );
-}
-
-
-/* =====================================================
-   LAPTOP
-===================================================== */
-
-@media (max-width: 1200px) {
-
-  .choose-wrapper {
-    width: 94%;
-  }
-
-  .choose-main {
-    gap: 40px;
-  }
-
-  .choose-image-box {
-    max-width: 650px;
-
-    height: 330px;
-  }
-
-  .choose-heading {
-    font-size: 36px;
-  }
-
-  .choose-item {
-    height: 50px;
-  }
-
-  .choose-name {
-    font-size: 14px;
-  }
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 991px) {
-
-  .choose-main {
-    grid-template-columns:
-      1fr 1fr;
-
-    gap: 25px;
-  }
-
-  .choose-image-box {
-    max-width: 480px;
-
-    height: 285px;
-  }
-
-  .choose-heading {
-    font-size: 32px;
-  }
-
-  .choose-item {
-    height: 47px;
-
-    grid-template-columns:
-      38px 1fr 30px;
-
-    gap: 5px;
-
-    padding-left: 9px;
-  }
-
-  .choose-number {
-    width: 29px;
-    height: 29px;
-  }
-
-  .choose-name {
-    font-size: 13px;
-  }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 767px) {
-
-  .choose-section {
-    height: auto;
-
-    padding:
-      55px 0;
-
-    overflow: visible;
-  }
-
-  .choose-sticky {
-    position: relative;
-
-    height: auto;
-
-    overflow: visible;
-  }
-
-  .choose-wrapper {
-    width: 92%;
-  }
-
-  /*
-    Hide image completely on mobile
-  */
-
-  .choose-image-side {
-    display: none;
-  }
-
-  .choose-main {
-    display: block;
-  }
-
-  .choose-header {
-    margin-bottom: 27px;
-  }
-
-  .choose-heading {
-    font-size: 30px;
-  }
-
-  .choose-item {
-    height: 58px;
-
-    min-height: 58px;
-
-    grid-template-columns:
-      42px 1fr 31px;
-
-    padding:
-      0 10px;
-  }
-
-  .choose-item:hover,
-  .choose-item-active {
-    transform: none;
-  }
-
-  .choose-number {
-    width: 31px;
-    height: 31px;
-  }
-
-  .choose-name {
-    font-size: 14px;
-  }
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 480px) {
-
-  .choose-section {
-    padding:
-      48px 0;
-  }
-
-  .choose-wrapper {
-    width: 90%;
-  }
-
-  .choose-heading {
-    font-size: 27px;
-  }
-
-  .choose-item {
-    height: 54px;
-
-    min-height: 54px;
-
-    grid-template-columns:
-      37px 1fr 28px;
-
-    padding:
-      0 8px;
-  }
-
-  .choose-number {
-    width: 28px;
-    height: 28px;
-
-    font-size: 8px;
-  }
-
-  .choose-name {
-    font-size: 13px;
-  }
-
-  .choose-arrow {
-    width: 27px;
-    height: 27px;
-  }
-}
-
 
 
 

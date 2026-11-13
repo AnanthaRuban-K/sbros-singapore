@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
 const solutions = [
   {
@@ -36,92 +36,46 @@ const solutions = [
 ];
 
 const Choose1 = () => {
-  const sectionRef = useRef(null);
-
-  const [scrollProgress, setScrollProgress] = useState(0);
+  // Currently shown image (desktop)
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Image that was shown before (stays underneath while new one slides in)
+  const [prevIndex, setPrevIndex] = useState(0);
 
   // MOBILE ONLY: which item is opened (-1 = none)
   const [mobileOpen, setMobileOpen] = useState(-1);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-
-      // Total distance available for the sticky section
-      const totalScroll = section.offsetHeight - window.innerHeight;
-
-      if (totalScroll <= 0) return;
-
-      // 0 = section start, 1 = section end
-      let progress = -rect.top / totalScroll;
-      progress = Math.max(0, Math.min(1, progress));
-
-      // Each whole number = one image
-      const imageProgress = progress * (solutions.length - 1);
-
-      setScrollProgress(imageProgress);
-
-      // Active heading
-      const currentIndex = Math.round(imageProgress);
-
-      setActiveIndex(
-        Math.max(0, Math.min(solutions.length - 1, currentIndex))
-      );
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
-
   /*
-    IMAGE OVERLAP LOGIC (desktop, unchanged)
+    IMAGE STYLE (click based, no scroll)
+    - active image  : on top, slides up from bottom
+    - previous image: stays visible underneath
+    - others        : hidden below
   */
   const getImageStyle = (index) => {
-    const difference = index - scrollProgress;
+    const base = {
+      transition: "transform 0.6s ease, opacity 0.3s ease",
+    };
 
-    // CURRENT / PREVIOUS IMAGE
-    if (difference <= 0 && difference > -1) {
+    if (index === activeIndex) {
       return {
+        ...base,
         transform: "translate3d(0, 0, 0)",
         opacity: 1,
         zIndex: 10,
       };
     }
 
-    // NEXT IMAGE: comes from bottom and covers the previous one
-    if (difference > 0 && difference <= 1) {
-      const translateY = difference * 100;
-
+    if (index === prevIndex) {
       return {
-        transform: `translate3d(0, ${translateY}%, 0)`,
+        ...base,
+        transform: "translate3d(0, 0, 0)",
         opacity: 1,
-        zIndex: 30,
+        zIndex: 5,
       };
     }
 
-    // OLDER IMAGE
-    if (difference < -1 && difference >= -2) {
-      return {
-        transform: "translate3d(0, -12%, 0)",
-        opacity: 0,
-        zIndex: 1,
-      };
-    }
-
-    // FUTURE IMAGES
     return {
+      ...base,
       transform: "translate3d(0, 100%, 0)",
       opacity: 0,
       zIndex: 1,
@@ -132,7 +86,7 @@ const Choose1 = () => {
     CLICK HEADING
 
     Mobile  : open / close the image under that item
-    Desktop : smooth scroll to that image (unchanged)
+    Desktop : show that image
   */
   const handleItemClick = (index) => {
     if (window.innerWidth <= 767) {
@@ -140,28 +94,16 @@ const Choose1 = () => {
       return;
     }
 
-    const section = sectionRef.current;
+    if (index === activeIndex) return;
 
-    if (!section) return;
-
-    const sectionTop = window.scrollY + section.getBoundingClientRect().top;
-
-    const scrollDistance = section.offsetHeight - window.innerHeight;
-
-    const targetProgress = index / (solutions.length - 1);
-
-    const targetScroll = sectionTop + targetProgress * scrollDistance;
-
-    window.scrollTo({
-      top: targetScroll,
-      behavior: "smooth",
-    });
+    setPrevIndex(activeIndex);
+    setActiveIndex(index);
   };
 
   const activeSolution = solutions[activeIndex];
 
   return (
-    <section ref={sectionRef} className="choose-section">
+    <section className="choose-section">
       <div className="choose-sticky">
         <div className="choose-wrapper">
           {/* TITLE */}

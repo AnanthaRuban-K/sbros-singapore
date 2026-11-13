@@ -136,7 +136,7 @@ const Footer1 = () => {
 
                 <div className="pera">
                   <a
-                    href="https://www.google.com/maps/place/27+Woodlands+Industrial+Park+E1,+%2303+10+E1,+Singapore+757718/@1.4553029,103.7957439,17z/"
+                    href="https://www.google.com/maps/place/SBros+Tech(S)+Pte+Ltd/@1.4550224,103.7954278,871m/data=!3m3!1e3!4b1!5s0x31da1314d218f747:0x5d1f9356279f250b!4m6!3m5!1s0x31da132461eced91:0xe00c5aebd32c11d8!8m2!3d1.4550224!4d103.7980027!16s%2Fg%2F11zz1jt2h7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="address-link"
@@ -162,7 +162,7 @@ const Footer1 = () => {
 
                 <div className="pera">
                   <a
-                    href="https://www.google.co.in/maps/place/SBros+Tech+Pvt+Ltd/@8.205644,77.3239503,20.75z/"
+                    href="https://www.google.com/maps/place/SBros+Tech+Pvt+Ltd/@8.2056778,77.3243475,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhDMdTU0A4ObHWnVAXapHPAa!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgrass-cs%2FAABkmLfaf6G4KsnarB1AQJkXkHIOH8-sEzCqEh7R16Hv82C52NVvJIjQuJkGzbiSxLOI0LgUEyK2bSoG1puMMY73PlunMQUmaPC4N4a0zCLGjAGR09su_HnjAy3Xnz3z2Dlv1qjlx-wM2Kgxaz9f%3Dw190-h86-k-no!7i4032!8i1816!4m7!3m6!1s0x3b04fbaac0db9d55:0xdef8ffd0b62a1f73!8m2!3d8.2056778!4d77.3243475!10e5!16s%2Fg%2F11sdxg3g_2?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="address-link"
