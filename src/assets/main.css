@@ -6015,7 +6015,7 @@ a.header__search.header-search-btn p {
 .sbfaq-link {
   color: var(--f-primary);
   font-weight: 700;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-underline-offset: 3px;
 }
 .sbfaq-link:hover { color: var(--f-primary-2); }
