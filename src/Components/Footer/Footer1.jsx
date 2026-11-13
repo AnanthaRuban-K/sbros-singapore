@@ -31,6 +31,16 @@ const Footer1 = () => {
               {/* SOCIAL MEDIA */}
               <ul className="social-icon">
                 <li>
+  <a
+    href="https://www.linkedin.com/company/sbros-tech-singapore"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <i className="bi bi-linkedin"></i>
+  </a>
+</li>
+                <li>
                   <a
                     href="https://www.facebook.com/sbrostechsg"
                     target="_blank"
