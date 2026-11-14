@@ -22,7 +22,7 @@ const ContactInfo1 = () => {
 
     // SBROS TECH SINGAPORE OFFICE
     const officeMapLink =
-        "https://www.google.com/maps/place/27+Woodlands+Industrial+Park+E1,+%2303+10+E1,+Singapore+757718/@1.4553029,103.7957439,17z/data=!3m1!4b1!4m5!3m4!1s0x31da1314d2917679:0xcaef219f43ebed43!8m2!3d1.4553029!4d103.7983188";
+        "https://www.google.com/maps/place/SBros+Tech(S)+Pte+Ltd/@1.4550224,103.7980027,17z/data=!3m2!4b1!5s0x31da1314d218f747:0x5d1f9356279f250b!4m6!3m5!1s0x31da132461eced91:0xe00c5aebd32c11d8!8m2!3d1.4550224!4d103.7980027!16s%2Fg%2F11zz1jt2h7?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D";
 
     const latitude = 1.4553029;
     const longitude = 103.7983188;
