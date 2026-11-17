@@ -206,21 +206,21 @@ const Footer1 = () => {
           <div className="row align-items-center">
 
             <div className="col-md-5">
-              <div className="coppyright">
-                <p>
-                  Copyright @2026{" "}
-                  <a
-  href="https://sbrostech.com.sg/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="copyright-company"
->
-  SBROS TECH (S) PTE LTD
-</a>
-                  . All Rights Reserved
-                </p>
-              </div>
-            </div>
+  <div className="coppyright">
+    <p>
+      Copyright @2026{" "}
+      <a
+        href="https://sbrostech.com.sg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="copyright-company"
+      >
+        SBROS TECH (S) PTE LTD
+      </a>
+      {" "}All Rights Reserved
+    </p>
+  </div>
+</div>
 
             {/* TERMS / PRIVACY */}
             <div className="col-md-7">
