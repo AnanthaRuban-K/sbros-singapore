@@ -61,7 +61,12 @@ export default function Nav({ setMobileToggle }) {
       </li>
 
 
-        
+        <li>
+        <Link to="/blog" onClick={() => setMobileToggle(false)}>
+          Blog
+        </Link>
+      </li>
+
 
       {/*<li className="menu-item-has-children">
         <Link to="/industries">Industries</Link>

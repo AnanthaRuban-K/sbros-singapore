@@ -133,7 +133,11 @@ export const router = createBrowserRouter([
         {
           path: "/blog/blog-details-center",
           element:<BlogDetailsCenter></BlogDetailsCenter>,
-        },    
+        }, 
+        {
+  path: "/blog/:slug",
+  element:<BlogDetailsCenter></BlogDetailsCenter>,
+},   
         {
           path: "/pricing",
           element:<Pricing></Pricing> ,
