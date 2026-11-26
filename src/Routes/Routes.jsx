@@ -50,7 +50,7 @@ import PrivacyPolicy from "../Components/Common/PrivacyPolicy";
 import ScrollToTop from "../Components/Common/ScrollToTop";
 import FloatingButtons from "../Components/Common/FloatingButtons";
 import NotFound from "../Pages/NotFound";
-import LandingPage from "../Pages/LandingPage"; // NEW: landing page
+import LandingPage from "../Pages/business-solution"; // NEW: landing page
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -171,7 +171,7 @@ export const router = createBrowserRouter([
     },
     // NEW: landing page, outside Main so it has no header/footer
 {
-  path: "/landing-page",
+  path: "/business-solution",
   element: <LandingPage></LandingPage>,
 },
     {
