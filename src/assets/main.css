@@ -11562,6 +11562,89 @@ a.header__search.header-search-btn p {
 
 
 
+/* =========================================
+   EXTRA SMALL MOBILE - 320px TO 360px
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+    .copyright-area {
+        width: 100%;
+        padding: 18px 0 90px;
+        overflow: hidden;
+    }
+
+    .copyright-area .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .copyright-area .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 14px;
+    }
+
+    .copyright-area .row > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Copyright text */
+    .copyright-area .coppyright,
+    .copyright-area .coppyright p {
+        width: 100% !important;
+        max-width: 100%;
+        text-align: center !important;
+    }
+
+    .copyright-area .coppyright p {
+        font-size: 11px !important;
+        line-height: 1.8;
+        white-space: normal !important;
+        overflow-wrap: break-word;
+        word-break: normal;
+        margin: 0;
+        padding: 0 3px;
+    }
+
+    /* Company name */
+    .copyright-company {
+        display: inline;
+        font-size: 11px;
+    }
+
+    /* Terms and Privacy */
+    .copyright-area .right-area {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 8px;
+        margin-top: 0;
+    }
+
+    .copyright-area .right-area a {
+        font-size: 11px !important;
+        white-space: normal !important;
+        text-align: center;
+    }
+
+    .copyright-area .right-area a + a {
+        border-left: 1px solid #777;
+        padding-left: 8px;
+    }
+}
+
 
 .copyright-company {
     color: #e5202d !important;

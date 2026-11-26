@@ -208,7 +208,7 @@ const Footer1 = () => {
             <div className="col-md-5">
   <div className="coppyright">
     <p>
-      Copyright @2026{" "}
+      © 2026{" "}
       <a
         href="https://sbrostech.com.sg/"
         target="_blank"
@@ -217,7 +217,7 @@ const Footer1 = () => {
       >
         SBROS TECH (S) PTE LTD
       </a>
-      {" "}All Rights Reserved
+      . All Rights Reserved
     </p>
   </div>
 </div>
