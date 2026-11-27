@@ -2,8 +2,8 @@
 // The slug here must match the link used in the cards: /blog/<slug>
 
 export const company = {
-    name: "SBROS TECH (SINGAPORE) PTE. LTD.",
-    address: "111 North Bridge Road, #05-47, Peninsula Plaza, Singapore 179098",
+    name: "SBROS TECH(S) PTE. LTD.",
+    address: "27 Woodlands Industrial Park E1, #03-10, Singapore 757718",
 };
 
 export const posts = [
@@ -11,9 +11,9 @@ export const posts = [
         slug: "custom-erp-software-singapore",
         image: "/assets/img/blog/img5.jpg",
         category: "ERP Software",
-        day: "10",
-        month: "Feb",
-        date: "10 Feb 2024",
+        day: "25",
+        month: "Nov",
+        date: "25 Nov 2026",
         title: "7 Benefits of Custom ERP Software for Growing Businesses in Singapore",
         excerpt: "Practical advantages of a custom ERP system for growing companies.",
         intro: [
@@ -94,9 +94,9 @@ export const posts = [
         slug: "custom-vs-ready-made-software",
         image: "/assets/img/blog/img2.jpg",
         category: "Software Development",
-        day: "10",
-        month: "Feb",
-        date: "10 Feb 2024",
+        day: "25",
+        month: "Nov",
+        date: "25 Nov 2026",
         title: "Custom Software Development: How Is It Different from Ready-Made Software?",
         excerpt: "Understand the key differences to choose the right solution.",
         intro: [
@@ -179,7 +179,7 @@ export const posts = [
         category: "Web Development",
         day: "10",
         month: "Feb",
-        date: "10 Feb 2024",
+        date: "25 Nov 2026",
         title: "Custom Website vs Template Website: Which Is Better?",
         excerpt: "Compare design, cost, performance and flexibility.",
         intro: [
@@ -259,9 +259,9 @@ export const posts = [
         slug: "reliable-network-infrastructure",
         image: "/assets/img/blog/img4.jpg",
         category: "IT Networking",
-        day: "10",
-        month: "Feb",
-        date: "10 Feb 2024",
+        day: "25",
+        month: "Nov",
+        date: "25 Nov 2026",
         title: "Why Every Growing Business Needs a Reliable Network Infrastructure",
         excerpt: "How installation, security and support keep your business running.",
         intro: [
